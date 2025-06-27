@@ -5,7 +5,7 @@ ENV ADDITIONAL_OS_PACKAGES="postfix php-ldap php81-pecl-redis php81-xmlreader"
 
 ENV DRUPAL_SITE_ID="wills"
 ENV DRUPAL_SITE_URI="eastindiawills.lib.unb.ca"
-# ENV DRUPAL_SITE_UUID="d5f8f4e2-fb53-42e5-a71e-c6b48f4a766f"
+ENV DRUPAL_SITE_UUID="e21a0a05-37d7-47d0-9a1c-a0b00bdf6fef"
 
 # Build application.
 COPY ./build/ /build/
