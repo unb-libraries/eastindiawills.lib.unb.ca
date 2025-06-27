@@ -1,0 +1,64 @@
+dockworker:
+  version: '6'
+  application:
+    name: History of Information Technology at The University of New Brunswick
+    uri: https://eastindiawills.lib.unb.ca
+    description: >
+      This site tells the story of how group of visionary believers in the transformative power of information
+      technology at UNB (a small Eastern Canadian University deep in the great North Woods of Outer Canada) led their
+      university, city, province, region and occasionally even Canada and the whole world into the information age.
+    topics:
+      - information technology
+      - history
+      - research
+    identifiers:
+      id: eastindiawills.lib.unb.ca
+      slug: eastindiawills-lib-unb-ca
+      short_slug: wills
+      uuid: 3120
+    framework:
+      name: Drupal
+      version: 10
+      startup_finished_marker: '99_startup_sequence_complete'
+      endpoint:
+        name: http
+        port: 80
+        readiness_timeout: 15
+    license:
+      license: MIT
+      holder: University of New Brunswick Libraries
+    shell:
+      path: /bin/sh
+  endpoints:
+    env:
+      - dev
+      - prod
+    deployments:
+      eastindiawills-lib-unb-ca:
+        default: true
+        managed: true
+        name: eastindiawills-lib-unb-ca
+      drupal-mysql-lib-unb-ca:
+        managed: false
+        name: mysql
+      drupal-redis-lib-unb-ca:
+        managed: false
+        name: redis
+      drupal-solr-lib-unb-ca:
+        managed: false
+        name: solr
+  workflows:
+    vcs:
+      type: github
+      owner: unb-libraries
+      name: eastindiawills.lib.unb.ca
+    jira:
+      project_keys:
+        - WILLS
+    image:
+      name: ghcr.io/unb-libraries/eastindiawills.lib.unb.ca
+      parent: ghcr.io/unb-libraries/drupal:10.x-1.x-unblib
+      repository: GitHub
+      push-branches:
+        - dev
+        - prod

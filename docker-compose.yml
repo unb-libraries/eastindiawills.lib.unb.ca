@@ -1,0 +1,77 @@
+services:
+  eastindiawills-lib-unb-ca:
+    build:
+      context: .
+    restart: unless-stopped
+    container_name: eastindiawills-lib-unb-ca
+    expose:
+      - "80"
+    ports:
+      - "3120:80"
+    env_file:
+      - ./env/drupal.env
+    networks:
+      - eastindiawills.lib.unb.ca
+    volumes:
+      - drupal-data:/app/html/sites/default
+      - ./configuration:/app/configuration
+      - ./custom/modules:/app/html/modules/custom
+      - ./custom/themes:/app/html/themes/custom
+      - ./tests:/app/tests
+    depends_on:
+      - drupal-mysql-lib-unb-ca
+      - drupal-redis-lib-unb-ca
+      - drupal-solr-lib-unb-ca
+  drupal-mysql-lib-unb-ca:
+    image: mariadb:10.11
+    restart: unless-stopped
+    command: mysqld --skip-name-resolve --max_allowed_packet=64M
+    env_file:
+      - ./env/mysql.env
+    expose:
+      - "3306"
+    networks:
+      - eastindiawills.lib.unb.ca
+    volumes:
+      - mysql-data:/var/lib/mysql
+  drupal-redis-lib-unb-ca:
+    image: redis:7-alpine
+    command: redis-server --maxmemory-policy allkeys-lru --maxmemory 128mb
+    restart: unless-stopped
+    expose:
+      - "6379"
+    networks:
+      - eastindiawills.lib.unb.ca
+    env_file:
+      - ./env/redis.env
+  drupal-solr-lib-unb-ca:
+    image: ghcr.io/unb-libraries/solr-drupal:8.x-10.x
+    restart: unless-stopped
+    expose:
+      - "8983"
+    networks:
+      - eastindiawills.lib.unb.ca
+    entrypoint:
+      - docker-entrypoint-multiple.sh
+      - eastindiawills.lib.unb.ca:/solr-conf
+    volumes:
+      - solr-data:/opt/solr/server/solr/mycores
+  mailhog:
+    image: mailhog/mailhog
+    restart: unless-stopped
+    expose:
+      - "1025"
+      - "8025"
+    ports:
+      - "4094:8025"
+    networks:
+      - eastindiawills.lib.unb.ca
+    profiles:
+      - mailhog
+networks:
+  eastindiawills.lib.unb.ca:
+    name: eastindiawills.lib.unb.ca
+volumes:
+  drupal-data:
+  mysql-data:
+  solr-data:

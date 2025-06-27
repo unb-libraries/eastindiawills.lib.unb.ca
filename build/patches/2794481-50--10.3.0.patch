@@ -1,0 +1,137 @@
+diff --git a/core/modules/datetime_range/config/schema/datetime_range.schema.yml b/core/modules/datetime_range/config/schema/datetime_range.schema.yml
+index bb244553..d2a6f153 100644
+--- a/core/modules/datetime_range/config/schema/datetime_range.schema.yml
++++ b/core/modules/datetime_range/config/schema/datetime_range.schema.yml
+@@ -6,6 +6,10 @@
+ field.storage_settings.daterange:
+   type: field.storage_settings.datetime
+   label: 'Date range settings'
++  mapping:
++    optional_end_date:
++      type: boolean
++      label: 'Optional end date'
+ 
+ field.value.daterange:
+   type: mapping
+diff --git a/core/modules/datetime_range/src/DateTimeRangeTrait.php b/core/modules/datetime_range/src/DateTimeRangeTrait.php
+index 0563f7ff..240e6927 100644
+--- a/core/modules/datetime_range/src/DateTimeRangeTrait.php
++++ b/core/modules/datetime_range/src/DateTimeRangeTrait.php
+@@ -31,13 +31,13 @@ public function viewElements(FieldItemListInterface $items, $langcode) {
+     $separator = $this->getSetting('separator');
+ 
+     foreach ($items as $delta => $item) {
+-      if (!empty($item->start_date) && !empty($item->end_date)) {
++      if (!empty($item->start_date)) {
+         /** @var \Drupal\Core\Datetime\DrupalDateTime $start_date */
+         $start_date = $item->start_date;
+         /** @var \Drupal\Core\Datetime\DrupalDateTime $end_date */
+         $end_date = $item->end_date;
+ 
+-        if ($start_date->getTimestamp() !== $end_date->getTimestamp()) {
++        if ($end_date !== NULL && $start_date->getTimestamp() !== $end_date->getTimestamp()) {
+           $elements[$delta] = $this->renderStartEndWithIsoAttribute($start_date, $separator, $end_date);
+         }
+         else {
+diff --git a/core/modules/datetime_range/src/Plugin/Field/FieldType/DateRangeItem.php b/core/modules/datetime_range/src/Plugin/Field/FieldType/DateRangeItem.php
+index 85680e69..027c8e36 100644
+--- a/core/modules/datetime_range/src/Plugin/Field/FieldType/DateRangeItem.php
++++ b/core/modules/datetime_range/src/Plugin/Field/FieldType/DateRangeItem.php
+@@ -30,6 +30,15 @@
+ )]
+ class DateRangeItem extends DateTimeItem {
+ 
++  /**
++   * {@inheritdoc}
++   */
++  public static function defaultStorageSettings() {
++    return [
++      'optional_end_date' => FALSE,
++    ] + parent::defaultStorageSettings();
++  }
++
+   /**
+    * Value for the 'datetime_type' setting: store a date and time.
+    */
+@@ -50,9 +59,10 @@ public static function propertyDefinitions(FieldStorageDefinitionInterface $fiel
+       ->setClass(DateTimeComputed::class)
+       ->setSetting('date source', 'value');
+ 
++    // @todo Write a comment on why we can't use the $field_definition here.
+     $properties['end_value'] = DataDefinition::create('datetime_iso8601')
+       ->setLabel(t('End date value'))
+-      ->setRequired(TRUE);
++      ->setRequired(FALSE);
+ 
+     $properties['end_date'] = DataDefinition::create('any')
+       ->setLabel(t('Computed end date'))
+@@ -89,6 +99,12 @@ public function storageSettingsForm(array &$form, FormStateInterface $form_state
+ 
+     $element['datetime_type']['#options'][static::DATETIME_TYPE_ALLDAY] = $this->t('All Day');
+ 
++    $element['optional_end_date'] = [
++      '#type' => 'checkbox',
++      '#title' => t('Optional end date'),
++      '#default_value' => $this->getSetting('optional_end_date'),
++    ];
++
+     return $element;
+   }
+ 
+@@ -100,6 +116,7 @@ public static function generateSampleValue(FieldDefinitionInterface $field_defin
+ 
+     // Just pick a date in the past year. No guidance is provided by this Field
+     // type.
++    // @todo Do we need to update this?
+     $start = \Drupal::time()->getRequestTime() - mt_rand(0, 86400 * 365) - 86400;
+     $end = $start + 86400;
+     if ($type == static::DATETIME_TYPE_DATETIME) {
+@@ -118,6 +135,10 @@ public static function generateSampleValue(FieldDefinitionInterface $field_defin
+    */
+   public function isEmpty() {
+     $start_value = $this->get('value')->getValue();
++    if ($this->getFieldDefinition()->getFieldStorageDefinition()->getSetting('optional_end_date')) {
++      return $start_value === NULL || $start_value === '';
++    }
++
+     $end_value = $this->get('end_value')->getValue();
+     return ($start_value === NULL || $start_value === '') && ($end_value === NULL || $end_value === '');
+   }
+diff --git a/core/modules/datetime_range/src/Plugin/Field/FieldWidget/DateRangeWidgetBase.php b/core/modules/datetime_range/src/Plugin/Field/FieldWidget/DateRangeWidgetBase.php
+index b0f3ea7b..66617dd3 100644
+--- a/core/modules/datetime_range/src/Plugin/Field/FieldWidget/DateRangeWidgetBase.php
++++ b/core/modules/datetime_range/src/Plugin/Field/FieldWidget/DateRangeWidgetBase.php
+@@ -19,6 +19,7 @@ class DateRangeWidgetBase extends DateTimeWidgetBase {
+    */
+   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
+     $element = parent::formElement($items, $delta, $element, $form, $form_state);
++    $optional_end_date = $this->getFieldSetting('optional_end_date');
+ 
+     // Wrap all of the select elements with a fieldset.
+     $element['#theme_wrappers'][] = 'fieldset';
+@@ -27,9 +28,13 @@ public function formElement(FieldItemListInterface $items, $delta, array $elemen
+     $element['value']['#title'] = $this->t('Start date');
+ 
+     $element['end_value'] = [
+-      '#title' => $this->t('End date'),
++      '#title' => $optional_end_date ? $this->t('End date (optional)'): $this->t('End date'),
+     ] + $element['value'];
+ 
++    if ($element['#required'] && $optional_end_date) {
++      $element['end_value']['#required'] = FALSE;
++    }
++
+     if ($items[$delta]->start_date) {
+       /** @var \Drupal\Core\Datetime\DrupalDateTime $start_date */
+       $start_date = $items[$delta]->start_date;
+@@ -116,6 +121,10 @@ public function validateStartEnd(array &$element, FormStateInterface $form_state
+     $start_date = $element['value']['#value']['object'];
+     $end_date = $element['end_value']['#value']['object'];
+ 
++    if (!$this->getFieldSetting('optional_end_date') && $end_date === NULL) {
++      $form_state->setError($element['end_value'], $this->t('The @title end date is required', ['@title' => $element['#title']]));
++    }
++
+     if ($start_date instanceof DrupalDateTime && $end_date instanceof DrupalDateTime) {
+       if ($start_date->getTimestamp() !== $end_date->getTimestamp()) {
+         $interval = $start_date->diff($end_date);

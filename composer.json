@@ -1,0 +1,34 @@
+{
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "php-http/discovery": true
+    },
+    "preferred-install": {
+      "*": "dist"
+    }
+  },
+  "description": "Scaffold and provision local development for eastindiawills.lib.unb.ca",
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "name": "unb-libraries/eastindiawills.lib.unb.ca",
+  "prefer-stable": true,
+  "replace": {
+    "drupal/core": "*"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    }
+  ],
+  "require-dev": {
+    "drupal/bootstrap4": "^3",
+    "unb-libraries/dockworker-drupal": "6.x-dev"
+  },
+  "scripts": {
+    "post-update-cmd": [
+      "vendor/bin/dockworker git:setup-hooks"
+    ]
+  }
+}
