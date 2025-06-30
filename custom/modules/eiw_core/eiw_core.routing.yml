@@ -1,0 +1,4 @@
+eiw_core.home:
+  path: '/'
+  requirements:
+    _permission: 'access content'

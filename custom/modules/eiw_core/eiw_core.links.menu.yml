@@ -1,0 +1,7 @@
+eiw_core.home:
+  title: 'Home'
+  description: 'Home'
+  parent: main
+  menu_name: main
+  route_name: eiw_core.home
+  weight: 10

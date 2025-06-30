@@ -1,0 +1,6 @@
+name: East India Wills core module
+type: module
+description: Core functionality extension for eastindiawills.lib.unb.ca
+core: 8.x
+core_version_requirement: ^9 || ^10
+package: EIW
