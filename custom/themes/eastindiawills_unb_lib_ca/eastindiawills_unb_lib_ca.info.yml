@@ -5,10 +5,8 @@ core_version_requirement: '^10.1 || ^11.0'
 'base theme': bootstrap5
 libraries:
   - eastindiawills_unb_lib_ca/global-styling
-ckeditor_stylesheets:
-  - css/style.css
 ckeditor5-stylesheets:
-  - css/ck5style.css
+  - dist/css/ck5style.css
 regions:
   header: Header
   nav_branding: 'Navigation branding region'
