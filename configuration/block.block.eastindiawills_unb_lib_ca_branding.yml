@@ -1,0 +1,25 @@
+uuid: 508a63c4-40df-4f05-a4a1-60481d683e54
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - eastindiawills_unb_lib_ca
+_core:
+  default_config_hash: RKdO7WslSNcopF-13WlesdZUDFuLwI089xuhtqaSqvo
+id: eastindiawills_unb_lib_ca_branding
+theme: eastindiawills_unb_lib_ca
+region: nav_branding
+weight: -6
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

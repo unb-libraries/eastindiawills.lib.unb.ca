@@ -1,0 +1,22 @@
+uuid: 5bea95df-fffd-4ed3-b2b6-fe59ebbdd457
+langcode: en
+status: true
+dependencies:
+  theme:
+    - eastindiawills_unb_lib_ca
+_core:
+  default_config_hash: bt_aCdXcXbI4gwBPfIGSDeW-A3EGGl7TZn0TsnU2MFM
+id: eastindiawills_unb_lib_ca_local_tasks
+theme: eastindiawills_unb_lib_ca
+region: content
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

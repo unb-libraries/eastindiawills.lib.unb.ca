@@ -1,0 +1,22 @@
+uuid: 723ccb67-d18f-41b0-a91b-e9dbb0da852a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - eastindiawills_unb_lib_ca
+_core:
+  default_config_hash: 4jL4tMv_VMWV3Pkh8EFRlhIqOc37NqBzw7HHO0J6jqE
+id: eastindiawills_unb_lib_ca_content
+theme: eastindiawills_unb_lib_ca
+region: content
+weight: -1
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

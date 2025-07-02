@@ -1,0 +1,20 @@
+uuid: 0a7944c4-f090-4c84-8a5e-4455ad8506b4
+langcode: en
+status: true
+dependencies:
+  theme:
+    - eastindiawills_unb_lib_ca
+_core:
+  default_config_hash: cJx2vTDXOiiNnfWhMvT6KiavfhKtEWh37WGGcjLlTkI
+id: eastindiawills_unb_lib_ca_page_title
+theme: eastindiawills_unb_lib_ca
+region: content
+weight: -6
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

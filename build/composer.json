@@ -96,31 +96,31 @@
     },
     {
       "package": {
-        "dist": {
-          "type": "zip",
-          "url": "https://github.com/FortAwesome/Font-Awesome/archive/5.14.0.zip"
-        },
+        "name": "fontawesome/fontawesome",
+        "version": "6.5.1",
+        "type": "drupal-library",
         "extra": {
           "installer-name": "fontawesome"
         },
-        "name": "unb-libraries/font_awesome",
-        "type": "drupal-library",
-        "version": "5.14.0"
+        "dist": {
+          "url": "https://use.fontawesome.com/releases/v6.5.1/fontawesome-free-6.5.1-web.zip",
+          "type": "zip"
+        }
       },
       "type": "package"
     },
     {
       "package": {
-        "dist": {
-          "type": "zip",
-          "url": "https://github.com/jackmoore/colorbox/archive/1.x.zip"
-        },
+        "name": "jacklmoore/colorbox",
+        "version": "dev-master",
+        "type": "drupal-library",
         "extra": {
           "installer-name": "colorbox"
         },
-        "name": "unb-libraries/colorbox",
-        "type": "drupal-library",
-        "version": "1.x-dev"
+        "dist": {
+          "url": "https://github.com/jackmoore/colorbox/archive/master.zip",
+          "type": "zip"
+        }
       },
       "type": "package"
     },
@@ -133,36 +133,33 @@
     "drupal/core-composer-scaffold": "^10",
     "drupal/core-recommended": "^10",
     "drupal/core": "^10",
-    "drupal/redis": "^1",
     "drupal/admin_toolbar": "^3",
-    "drupal/bootstrap4": "^3",
-    "drupal/captcha": "^1",
-    "drupal/color": "^1",
+    "drupal/bootstrap5": "^4",
+    "drupal/ckeditor5_plugin_pack": "^1",
     "drupal/colorbox": "^2",
     "drupal/editor_file": "^1",
     "drupal/entity_browser": "^2",
-    "drupal/facets": "^3",
     "drupal/file_management": "^2",
     "drupal/fontawesome": "^2",
-    "drupal/fontawesome_iconpicker": "*",
     "drupal/google_analytics": "^4",
     "drupal/health_check": "^3",
     "drupal/honeypot": "^2",
+    "drupal/linkit": "^7.0",
     "drupal/media_entity_browser": "^2",
+    "drupal/override_node_options": "^2",
     "drupal/pathauto": "^1",
-    "drupal/quickedit": "^1",
-    "drupal/rdf": "^2",
-    "drupal/recaptcha": "^3",
+    "drupal/redis": "^1",
     "drupal/samlauth": "^3",
     "drupal/search_api": "^1",
     "drupal/search_api_autocomplete": "^1",
     "drupal/search_api_solr": "^4",
+    "drupal/simple_sitemap": "^4",
     "drupal/token": "^1",
     "drupal/twig_tweak": "^3",
-    "drupal/video_embed_field": "^2",
-    "appolodev/vanilla-icon-picker": "^1",
-    "unb-libraries/colorbox": "1.x-dev",
-    "unb-libraries/font_awesome": "~5.14",
+    "drupal/view_unpublished": "^1",
+    "drupal/unpublished_node_permissions": "^1",
+    "fontawesome/fontawesome": "^6",
+    "jacklmoore/colorbox": "dev-master",
     "unb-libraries/saml_features": "dev-10.x-1.x",
     "unb-libraries/composer-drupal-scaffold": "^10"
   },

@@ -1,0 +1,20 @@
+uuid: 88a1a776-ae90-4c45-918c-75423ba52934
+langcode: en
+status: true
+dependencies:
+  theme:
+    - eastindiawills_unb_lib_ca
+_core:
+  default_config_hash: kNzBapD80hWYI-I893YBu9DmcalX8hjN5WclPfWq0W4
+id: eastindiawills_unb_lib_ca_local_actions
+theme: eastindiawills_unb_lib_ca
+region: content
+weight: -2
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

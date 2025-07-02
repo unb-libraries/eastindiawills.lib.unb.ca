@@ -1,0 +1,22 @@
+uuid: d1d5556c-853c-4b0c-a990-ea67b1ad3c68
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - eastindiawills_unb_lib_ca
+_core:
+  default_config_hash: 7o31RnIDRiAz03Z5WhX5lA1CuoDH_w3KdEhq-WR5M5g
+id: eastindiawills_unb_lib_ca_messages
+theme: eastindiawills_unb_lib_ca
+region: content
+weight: -7
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Messages
+  label_display: '0'
+  provider: system
+visibility: {  }

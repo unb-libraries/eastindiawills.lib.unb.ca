@@ -1,0 +1,27 @@
+uuid: a17ef083-e4d7-4bc4-877a-71ab0f073617
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - eastindiawills_unb_lib_ca
+_core:
+  default_config_hash: SEk8W7hpungIDNSw6vpI8H3-IcwpCa3PFiQxZlnBXvw
+id: eastindiawills_unb_lib_ca_account_menu
+theme: eastindiawills_unb_lib_ca
+region: nav_additional
+weight: -7
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

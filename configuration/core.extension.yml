@@ -3,10 +3,11 @@ _core:
 module:
   block: 0
   breakpoint: 0
-  dblog: 0
   dynamic_page_cache: 0
   field: 0
+  file: 0
   filter: 0
+  image: 0
   link: 0
   menu_link_content: 0
   menu_ui: 0
@@ -20,9 +21,12 @@ module:
   toolbar: 0
   update: 0
   user: 0
+  views_ui: 0
+  views: 10
   minimal: 1000
 theme:
-  stark: 0
   claro: 0
-  olivero: 0
+  stable9: 0
+  bootstrap5: 0
+  eastindiawills_unb_lib_ca: 0
 profile: minimal

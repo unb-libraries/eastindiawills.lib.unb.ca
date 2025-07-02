@@ -1,0 +1,22 @@
+uuid: d91331ba-e8ed-44c8-9845-3fc7d20532e5
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - eastindiawills_unb_lib_ca
+_core:
+  default_config_hash: aBh5LXaK05nZGs1Zo7VIO_bKosJCPQkTmHwpfRoSIyY
+id: eastindiawills_unb_lib_ca_breadcrumbs
+theme: eastindiawills_unb_lib_ca
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }
