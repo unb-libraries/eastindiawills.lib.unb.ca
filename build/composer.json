@@ -97,13 +97,13 @@
     {
       "package": {
         "name": "fontawesome/fontawesome",
-        "version": "6.5.1",
+        "version": "6.7.2",
         "type": "drupal-library",
         "extra": {
           "installer-name": "fontawesome"
         },
         "dist": {
-          "url": "https://use.fontawesome.com/releases/v6.5.1/fontawesome-free-6.5.1-web.zip",
+          "url": "https://use.fontawesome.com/releases/v6.7.2/fontawesome-free-6.7.2-web.zip",
           "type": "zip"
         }
       },
@@ -140,7 +140,7 @@
     "drupal/editor_file": "^1",
     "drupal/entity_browser": "^2",
     "drupal/file_management": "^2",
-    "drupal/fontawesome": "^2",
+    "drupal/fontawesome": "^3",
     "drupal/google_analytics": "^4",
     "drupal/health_check": "^3",
     "drupal/honeypot": "^2",
