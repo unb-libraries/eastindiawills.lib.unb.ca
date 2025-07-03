@@ -1,0 +1,21 @@
+uuid: fc67a386-b59a-425a-8b68-3ea8dec83fe0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_of_probate
+    - node.type.eiw_will
+  module:
+    - datetime
+id: node.eiw_will.field_date_of_probate
+field_name: field_date_of_probate
+entity_type: node
+bundle: eiw_will
+label: 'Date of Probate'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

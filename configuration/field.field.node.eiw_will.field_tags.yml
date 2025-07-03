@@ -1,0 +1,29 @@
+uuid: 2c0ad557-06c3-4f6b-82c6-3b1ca24b7a16
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tags
+    - node.type.eiw_will
+    - taxonomy.vocabulary.eiw_tags
+id: node.eiw_will.field_tags
+field_name: field_tags
+entity_type: node
+bundle: eiw_will
+label: Tags
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      eiw_tags: eiw_tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,27 @@
+uuid: 7d616fcc-33a2-4873-9631-ffda9922fffc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_document_images
+    - node.type.eiw_will
+  module:
+    - file
+id: node.eiw_will.field_document_images
+field_name: field_document_images
+entity_type: node
+bundle: eiw_will
+label: 'Document Images'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: document_images
+  file_extensions: pdf
+  max_filesize: ''
+  description_field: true
+field_type: file

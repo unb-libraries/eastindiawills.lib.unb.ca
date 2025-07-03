@@ -1,0 +1,21 @@
+uuid: b03ff305-5d20-42f8-addb-02cde3d3dbfd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_of_will
+    - node.type.eiw_will
+  module:
+    - datetime
+id: node.eiw_will.field_date_of_will
+field_name: field_date_of_will
+entity_type: node
+bundle: eiw_will
+label: 'Date of Will'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

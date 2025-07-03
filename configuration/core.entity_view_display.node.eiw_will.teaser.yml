@@ -1,0 +1,38 @@
+uuid: 2f337ab8-8932-4c0a-9131-0f4737a2bc62
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.eiw_will.field_date_of_probate
+    - field.field.node.eiw_will.field_date_of_will
+    - field.field.node.eiw_will.field_document_images
+    - field.field.node.eiw_will.field_first_name
+    - field.field.node.eiw_will.field_last_name
+    - field.field.node.eiw_will.field_reference
+    - field.field.node.eiw_will.field_tags
+    - field.field.node.eiw_will.field_testator
+    - field.field.node.eiw_will.field_tropy_title
+    - node.type.eiw_will
+  module:
+    - user
+id: node.eiw_will.teaser
+targetEntityType: node
+bundle: eiw_will
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_date_of_probate: true
+  field_date_of_will: true
+  field_document_images: true
+  field_first_name: true
+  field_last_name: true
+  field_reference: true
+  field_tags: true
+  field_testator: true
+  field_tropy_title: true

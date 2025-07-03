@@ -1,0 +1,91 @@
+uuid: 6245766a-0ba0-4e83-a05a-6cc96c42ce9d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.eiw_will.field_date_of_probate
+    - field.field.node.eiw_will.field_date_of_will
+    - field.field.node.eiw_will.field_document_images
+    - field.field.node.eiw_will.field_first_name
+    - field.field.node.eiw_will.field_last_name
+    - field.field.node.eiw_will.field_reference
+    - field.field.node.eiw_will.field_tags
+    - field.field.node.eiw_will.field_testator
+    - field.field.node.eiw_will.field_tropy_title
+    - node.type.eiw_will
+  module:
+    - datetime
+    - file
+    - user
+id: node.eiw_will.default
+targetEntityType: node
+bundle: eiw_will
+mode: default
+content:
+  field_date_of_probate:
+    type: datetime_plain
+    label: above
+    settings:
+      timezone_override: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_date_of_will:
+    type: datetime_plain
+    label: above
+    settings:
+      timezone_override: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_document_images:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_first_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_last_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_reference:
+    type: datetime_plain
+    label: above
+    settings:
+      timezone_override: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_testator:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden:
+  field_tropy_title: true
+  links: true

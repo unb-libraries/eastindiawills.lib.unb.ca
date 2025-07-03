@@ -1,0 +1,21 @@
+uuid: 19c232ae-bfcc-46c9-b055-fc1bef85dedb
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_tropy_title
+field_name: field_tropy_title
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

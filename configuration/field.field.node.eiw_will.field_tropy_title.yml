@@ -1,0 +1,19 @@
+uuid: 5ae45264-ad53-405d-be3e-e5deefb2a487
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tropy_title
+    - node.type.eiw_will
+id: node.eiw_will.field_tropy_title
+field_name: field_tropy_title
+entity_type: node
+bundle: eiw_will
+label: 'Tropy Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

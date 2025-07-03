@@ -4,8 +4,10 @@ module:
   admin_toolbar: 0
   block: 0
   breakpoint: 0
+  datetime: 0
   dynamic_page_cache: 0
   field: 0
+  field_ui: 0
   file: 0
   filter: 0
   fontawesome: 0
@@ -20,6 +22,7 @@ module:
   path_alias: 0
   redis: 0
   system: 0
+  taxonomy: 0
   text: 0
   toolbar: 0
   update: 0

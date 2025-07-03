@@ -1,0 +1,19 @@
+uuid: 5d0de306-0a8a-4e25-90eb-0192beb95d96
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_first_name
+    - node.type.eiw_will
+id: node.eiw_will.field_first_name
+field_name: field_first_name
+entity_type: node
+bundle: eiw_will
+label: 'First Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,21 @@
+uuid: 9ed717b9-cbbe-4852-8801-f4bae236c383
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_reference
+    - node.type.eiw_will
+  module:
+    - datetime
+id: node.eiw_will.field_reference
+field_name: field_reference
+entity_type: node
+bundle: eiw_will
+label: Reference
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime
