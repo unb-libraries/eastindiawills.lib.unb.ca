@@ -1,0 +1,10 @@
+name: East India Wills migration module
+type: module
+description: Data migration extension for eastindiawills.lib.unb.ca
+core: 8.x
+core_version_requirement: ^9 || ^10
+package: EIW
+dependencies:
+  - drupal:migrate_plus
+  - drupal:migrate_tools
+  - drupal:migrate_source_csv

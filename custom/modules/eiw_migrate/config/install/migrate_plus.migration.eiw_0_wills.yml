@@ -1,0 +1,75 @@
+id: eiw_0_wills
+label: East India Wills migration from Tropy CSV export
+
+migration_tags:
+  - Wills
+  - Tropy
+  - CSV
+
+source:
+  plugin: csv
+  path: '/app/html/modules/custom/eiw_migrate/data/csv/eiw_tropy.csv'
+  header_row_count: 1
+  ids: [tropy_title]
+  
+  fields:
+    0:
+      name: tropy_title
+      label: Tropy Title
+    1:
+      name: creator
+      label: Creator
+    2:
+      name: date
+      label: Date
+    3:
+      name: type
+      label: Type
+    4:
+      name: source
+      label: Source
+    5:
+      name: collection
+      label: Collection
+    6:
+      name: box
+      label: Box
+    7:
+      name: folder
+      label: Folder
+    8:
+      name: identifier
+      label: Identifier
+    9:
+      name: rights
+      label: Rights
+    10:
+      name: tag
+      label: Tag
+    11:
+      name: path
+      label: Path
+    12:
+      name: note
+      label: Note
+
+process:
+  field_tropy_title: 
+    plugin: callback
+    callable: trim
+    source: tropy_title
+  field_pdf_name: 
+    plugin: callback
+    callable: trim
+    source: path
+
+destination:
+  plugin: 'entity:node'
+  default_bundle: 'eiw_will'
+
+dependencies:
+  module:
+    - eiw_migrate
+  enforced:
+    module:
+    - eiw_migrate
