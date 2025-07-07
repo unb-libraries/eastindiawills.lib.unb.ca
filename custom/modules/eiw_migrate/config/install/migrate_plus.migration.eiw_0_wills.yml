@@ -54,6 +54,10 @@ source:
       label: Note
 
 process:
+  title: 
+    plugin: callback
+    callable: trim
+    source: tropy_title
   field_tropy_title: 
     plugin: callback
     callable: trim
@@ -64,8 +68,8 @@ process:
     source: path
 
 destination:
-  plugin: 'entity:node'
-  default_bundle: 'eiw_will'
+  plugin: entity:node
+  default_bundle: eiw_will
 
 dependencies:
   module:

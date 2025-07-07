@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Contains eiw_util.module
+ */
+
+/**
+ * {@inheritdoc}
+ */
+function eiw_util_node_load($entities) {
+  kint($entities);
+}

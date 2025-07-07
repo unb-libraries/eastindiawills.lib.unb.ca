@@ -1,0 +1,6 @@
+services:
+  eiw_migrate.0_item_migrate_subscriber:
+    class: Drupal\eiw_migrate\Event\ItemMigrateEvent
+    arguments: ['@entity_type.manager']
+    tags:
+      - { name: event_subscriber }

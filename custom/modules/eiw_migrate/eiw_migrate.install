@@ -2,12 +2,12 @@
 
 /**
  * @file
- * Contains nbbib_initial_content.install.
+ * Contains eiw_migrate.install.
  */
 
 use Symfony\Component\Finder\Finder;
 
-function nbbib_initial_content_install() {
+function eiw_migrate_install() {
   /*
    * Get access to drush functions. NO LONGER WORKS in Drupal 9.
    * module_load_include('inc', 'migrate_tools', 'migrate_tools.drush');
