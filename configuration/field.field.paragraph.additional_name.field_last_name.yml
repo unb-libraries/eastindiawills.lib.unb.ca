@@ -1,0 +1,19 @@
+uuid: e79757e7-d555-4efd-ba1e-0287327bd5c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_last_name
+    - paragraphs.paragraphs_type.additional_name
+id: paragraph.additional_name.field_last_name
+field_name: field_last_name
+entity_type: paragraph
+bundle: additional_name
+label: 'Last Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

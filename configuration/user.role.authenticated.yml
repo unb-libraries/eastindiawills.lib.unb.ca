@@ -2,7 +2,10 @@ uuid: a3266b9d-128f-4ef6-9a98-6997c4ddcf7c
 langcode: en
 status: true
 dependencies:
+  config:
+    - filter.format.unb_libraries
   module:
+    - filter
     - fontawesome
     - system
 _core:
@@ -14,3 +17,4 @@ is_admin: false
 permissions:
   - 'access content'
   - 'access fontawesome additional settings'
+  - 'use text format unb_libraries'

@@ -1,15 +1,15 @@
-uuid: 342c7c5b-6a5e-44c9-a0ed-b7dc1bce834c
+uuid: 31358b0e-6023-4fb4-b0c8-bd8f06ec8034
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_reference
+    - field.storage.node.field_summary
     - node.type.eiw_will
-id: node.eiw_will.field_reference
-field_name: field_reference
+id: node.eiw_will.field_summary
+field_name: field_summary
 entity_type: node
 bundle: eiw_will
-label: Reference
+label: Summary
 description: ''
 required: false
 translatable: false

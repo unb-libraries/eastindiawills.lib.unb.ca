@@ -1,0 +1,22 @@
+uuid: 4b637d43-4a5d-40c6-af43-9e15c1ba53d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_transcription
+    - node.type.eiw_will
+  module:
+    - text
+id: node.eiw_will.field_transcription
+field_name: field_transcription
+entity_type: node
+bundle: eiw_will
+label: Transcription
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

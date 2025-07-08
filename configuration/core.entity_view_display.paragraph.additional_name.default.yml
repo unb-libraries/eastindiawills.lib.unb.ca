@@ -1,0 +1,39 @@
+uuid: 323d3390-8b1d-4a98-aeb4-d861bc268a1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.additional_name.field_first_name
+    - field.field.paragraph.additional_name.field_last_name
+    - field.field.paragraph.additional_name.field_type
+    - paragraphs.paragraphs_type.additional_name
+id: paragraph.additional_name.default
+targetEntityType: paragraph
+bundle: additional_name
+mode: default
+content:
+  field_first_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_last_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

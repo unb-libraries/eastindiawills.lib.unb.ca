@@ -1,15 +1,15 @@
-uuid: fc452d36-eb97-4788-a82f-a6a519ceb9a1
+uuid: 921751c6-5935-4a5f-858f-9a1fc4ccac53
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_reference
-field_name: field_reference
+id: node.field_summary
+field_name: field_summary
 entity_type: node
 type: string
 settings:
-  max_length: 255
+  max_length: 511
   case_sensitive: false
   is_ascii: false
 module: core

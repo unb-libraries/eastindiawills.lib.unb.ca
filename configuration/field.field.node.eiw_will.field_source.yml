@@ -1,0 +1,29 @@
+uuid: 23e9cb96-0e8e-4e01-977c-e76e3da56cf2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_source
+    - node.type.eiw_will
+    - taxonomy.vocabulary.eiw_sources
+id: node.eiw_will.field_source
+field_name: field_source
+entity_type: node
+bundle: eiw_will
+label: Source
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      eiw_sources: eiw_sources
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

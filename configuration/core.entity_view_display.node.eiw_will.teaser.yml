@@ -4,14 +4,22 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.eiw_will.field_additional_names
+    - field.field.node.eiw_will.field_court
     - field.field.node.eiw_will.field_date_of_probate
     - field.field.node.eiw_will.field_date_of_will
     - field.field.node.eiw_will.field_document_images
     - field.field.node.eiw_will.field_first_name
+    - field.field.node.eiw_will.field_health_notes
     - field.field.node.eiw_will.field_last_name
+    - field.field.node.eiw_will.field_marital_status
+    - field.field.node.eiw_will.field_notes
     - field.field.node.eiw_will.field_reference
-    - field.field.node.eiw_will.field_tags
+    - field.field.node.eiw_will.field_ship_name
+    - field.field.node.eiw_will.field_source
+    - field.field.node.eiw_will.field_summary
     - field.field.node.eiw_will.field_testator
+    - field.field.node.eiw_will.field_transcription
     - field.field.node.eiw_will.field_tropy_title
     - node.type.eiw_will
   module:
@@ -27,12 +35,20 @@ content:
     weight: 100
     region: content
 hidden:
+  field_additional_names: true
+  field_court: true
   field_date_of_probate: true
   field_date_of_will: true
   field_document_images: true
   field_first_name: true
+  field_health_notes: true
   field_last_name: true
+  field_marital_status: true
+  field_notes: true
   field_reference: true
-  field_tags: true
+  field_ship_name: true
+  field_source: true
+  field_summary: true
   field_testator: true
+  field_transcription: true
   field_tropy_title: true

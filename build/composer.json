@@ -148,6 +148,7 @@
     "drupal/media_entity_browser": "^2",
     "drupal/noreqnewpass": "^1",
     "drupal/override_node_options": "^2",
+    "drupal/paragraphs": "^1",
     "drupal/pathauto": "^1",
     "drupal/redis": "^1",
     "drupal/samlauth": "^3",

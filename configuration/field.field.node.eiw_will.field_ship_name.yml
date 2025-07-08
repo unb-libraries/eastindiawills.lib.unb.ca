@@ -1,15 +1,15 @@
-uuid: 342c7c5b-6a5e-44c9-a0ed-b7dc1bce834c
+uuid: 545d2441-cf24-4760-96ce-8bc3e3a77c9c
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_reference
+    - field.storage.node.field_ship_name
     - node.type.eiw_will
-id: node.eiw_will.field_reference
-field_name: field_reference
+id: node.eiw_will.field_ship_name
+field_name: field_ship_name
 entity_type: node
 bundle: eiw_will
-label: Reference
+label: 'Ship Name'
 description: ''
 required: false
 translatable: false

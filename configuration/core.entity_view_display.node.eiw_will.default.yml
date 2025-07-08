@@ -3,25 +3,52 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.eiw_will.field_additional_names
+    - field.field.node.eiw_will.field_court
     - field.field.node.eiw_will.field_date_of_probate
     - field.field.node.eiw_will.field_date_of_will
     - field.field.node.eiw_will.field_document_images
     - field.field.node.eiw_will.field_first_name
+    - field.field.node.eiw_will.field_health_notes
     - field.field.node.eiw_will.field_last_name
+    - field.field.node.eiw_will.field_marital_status
+    - field.field.node.eiw_will.field_notes
     - field.field.node.eiw_will.field_reference
-    - field.field.node.eiw_will.field_tags
+    - field.field.node.eiw_will.field_ship_name
+    - field.field.node.eiw_will.field_source
+    - field.field.node.eiw_will.field_summary
     - field.field.node.eiw_will.field_testator
+    - field.field.node.eiw_will.field_transcription
     - field.field.node.eiw_will.field_tropy_title
     - node.type.eiw_will
   module:
     - datetime
+    - entity_reference_revisions
     - file
+    - text
     - user
 id: node.eiw_will.default
 targetEntityType: node
 bundle: eiw_will
 mode: default
 content:
+  field_additional_names:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_court:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 11
+    region: content
   field_date_of_probate:
     type: datetime_plain
     label: above
@@ -54,6 +81,14 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_health_notes:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 14
+    region: content
   field_last_name:
     type: string
     label: above
@@ -62,21 +97,53 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_reference:
-    type: datetime_plain
+  field_marital_status:
+    type: string
     label: above
     settings:
-      timezone_override: ''
+      link_to_entity: false
     third_party_settings: {  }
-    weight: 4
+    weight: 13
     region: content
-  field_tags:
+  field_notes:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 15
+    region: content
+  field_reference:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_ship_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_source:
     type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    weight: 7
+    weight: 10
+    region: content
+  field_summary:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 16
     region: content
   field_testator:
     type: string
@@ -85,6 +152,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 5
+    region: content
+  field_transcription:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 17
     region: content
 hidden:
   field_tropy_title: true

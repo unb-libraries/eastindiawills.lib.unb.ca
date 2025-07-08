@@ -1,15 +1,15 @@
-uuid: 342c7c5b-6a5e-44c9-a0ed-b7dc1bce834c
+uuid: acb94512-8e3c-415b-be65-caa7e96e9794
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_reference
+    - field.storage.node.field_marital_status
     - node.type.eiw_will
-id: node.eiw_will.field_reference
-field_name: field_reference
+id: node.eiw_will.field_marital_status
+field_name: field_marital_status
 entity_type: node
 bundle: eiw_will
-label: Reference
+label: 'Marital Status'
 description: ''
 required: false
 translatable: false

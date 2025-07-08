@@ -1,16 +1,16 @@
-uuid: 2c0ad557-06c3-4f6b-82c6-3b1ca24b7a16
+uuid: 73a88021-4ae6-40fe-a96e-e73613c6dd03
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_tags
+    - field.storage.node.field_court
     - node.type.eiw_will
-    - taxonomy.vocabulary.eiw_tags
-id: node.eiw_will.field_tags
-field_name: field_tags
+    - taxonomy.vocabulary.eiw_courts
+id: node.eiw_will.field_court
+field_name: field_court
 entity_type: node
 bundle: eiw_will
-label: Tags
+label: Court
 description: ''
 required: false
 translatable: false
@@ -20,10 +20,10 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      eiw_tags: eiw_tags
+      eiw_courts: eiw_courts
     sort:
       field: name
       direction: asc
-    auto_create: true
+    auto_create: false
     auto_create_bundle: ''
 field_type: entity_reference

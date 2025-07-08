@@ -1,0 +1,57 @@
+uuid: 5e3d1451-5e8d-4c36-bb01-4b19678510ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.unb_libraries
+  module:
+    - ckeditor5
+format: unb_libraries
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - undo
+      - redo
+      - heading
+      - alignment
+      - '|'
+      - bold
+      - italic
+      - underline
+      - strikethrough
+      - superscript
+      - subscript
+      - removeFormat
+      - '|'
+      - link
+      - bulletedList
+      - numberedList
+      - blockQuote
+      - insertTable
+      - horizontalLine
+      - '|'
+      - sourceEditing
+  plugins:
+    ckeditor5_alignment:
+      enabled_alignments:
+        - center
+        - justify
+        - left
+        - right
+    ckeditor5_heading:
+      enabled_headings:
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+    ckeditor5_list:
+      properties:
+        reversed: false
+        startIndex: true
+      multiBlock: true
+    ckeditor5_sourceEditing:
+      allowed_tags: {  }
+image_upload:
+  status: false
