@@ -1,0 +1,22 @@
+eiw_admin.admin:
+  title: 'East India Wills'
+  description: 'Manage content admin features.'
+  route_name: <front>
+  parent: system.admin
+  weight: -100
+  options:
+    attributes:
+      class:
+        - custom-editor-menu
+eiw_admin.admin.content:
+  title: 'Content'
+  description: 'Manage site content.'
+  url: internal:/admin/content
+  parent: eiw_admin.admin
+  weight: 10
+eiw_admin.wills.add:
+  title: 'Add Will'
+  description: 'Create a new will.'
+  url: internal:/node/add/eiw_will
+  parent: eiw_admin.admin
+  weight: 20

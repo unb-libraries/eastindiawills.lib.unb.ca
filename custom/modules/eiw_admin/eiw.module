@@ -1,0 +1,17 @@
+<?php
+
+/**
+* @file
+* Contains eiw_admin.module.
+*/
+
+/**
+* Implements hook_page_attachments().
+*/
+function eiw_admin_page_attachments(array &$attachments) {
+ if (!\Drupal::currentUser()->hasPermission('access toolbar')) {
+   return;
+ }
+
+ $attachments['#attached']['library'][] = 'eiw_admin/toolbar-overrides';
+}

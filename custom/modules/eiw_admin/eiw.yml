@@ -1,0 +1,5 @@
+services:
+  eiw_admin.eiw_route_subscriber:
+    class: Drupal\eiw_admin\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }
