@@ -1,0 +1,14 @@
+uuid: 6c4bf029-7e22-4b1d-b93d-2bd59657b4a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.eiw_editor
+  module:
+    - user
+id: user_remove_role_action.eiw_editor
+label: 'Remove the EIW Editor role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: eiw_editor

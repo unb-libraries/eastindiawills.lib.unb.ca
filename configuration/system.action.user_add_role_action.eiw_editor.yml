@@ -1,0 +1,14 @@
+uuid: e9528038-ec6d-43df-b913-4692bee42dbf
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.eiw_editor
+  module:
+    - user
+id: user_add_role_action.eiw_editor
+label: 'Add the EIW Editor role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: eiw_editor
