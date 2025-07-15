@@ -1,16 +1,16 @@
-uuid: e0c729af-1d76-4df3-bcde-7c08c10f5134
+uuid: 6fb21cef-0ac4-4aa7-ab07-2f427b27b230
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_marital_status
+    - field.storage.node.field_source_type
     - node.type.eiw_will
-    - taxonomy.vocabulary.eiw_marital_statuses
-id: node.eiw_will.field_marital_status
-field_name: field_marital_status
+    - taxonomy.vocabulary.eic_source_types
+id: node.eiw_will.field_source_type
+field_name: field_source_type
 entity_type: node
 bundle: eiw_will
-label: 'Marital Status'
+label: 'Source Type'
 description: ''
 required: false
 translatable: false
@@ -20,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      eiw_marital_statuses: eiw_marital_statuses
+      eic_source_types: eic_source_types
     sort:
       field: name
       direction: asc

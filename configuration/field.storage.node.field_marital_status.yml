@@ -1,17 +1,16 @@
-uuid: 65bcb194-b6cb-46a5-a760-115a0468604d
+uuid: efe27922-3785-4bcf-840d-a0ab42b64cf1
 langcode: en
 status: true
 dependencies:
   module:
     - node
+    - taxonomy
 id: node.field_marital_status
 field_name: field_marital_status
 entity_type: node
-type: string
+type: entity_reference
 settings:
-  max_length: 255
-  case_sensitive: false
-  is_ascii: false
+  target_type: taxonomy_term
 module: core
 locked: false
 cardinality: 1

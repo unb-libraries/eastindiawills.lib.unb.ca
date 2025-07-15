@@ -4,9 +4,9 @@ status: true
 dependencies:
   config:
     - node.type.eiw_will
+    - taxonomy.vocabulary.eic_source_types
     - taxonomy.vocabulary.eiw_courts
     - taxonomy.vocabulary.eiw_ntypes
-    - taxonomy.vocabulary.eiw_sources
   module:
     - node
     - taxonomy
@@ -20,25 +20,25 @@ permissions:
   - 'access taxonomy overview'
   - 'access toolbar'
   - 'create eiw_will content'
+  - 'create terms in eic_source_types'
   - 'create terms in eiw_courts'
   - 'create terms in eiw_ntypes'
-  - 'create terms in eiw_sources'
   - 'delete any eiw_will content'
   - 'delete eiw_will revisions'
+  - 'delete term revisions in eic_source_types'
   - 'delete term revisions in eiw_ntypes'
-  - 'delete term revisions in eiw_sources'
+  - 'delete terms in eic_source_types'
   - 'delete terms in eiw_courts'
   - 'delete terms in eiw_ntypes'
-  - 'delete terms in eiw_sources'
   - 'edit any eiw_will content'
+  - 'edit terms in eic_source_types'
   - 'edit terms in eiw_courts'
   - 'edit terms in eiw_ntypes'
-  - 'edit terms in eiw_sources'
   - 'revert eiw_will revisions'
+  - 'revert term revisions in eic_source_types'
   - 'revert term revisions in eiw_courts'
   - 'revert term revisions in eiw_ntypes'
-  - 'revert term revisions in eiw_sources'
   - 'view eiw_will revisions'
+  - 'view term revisions in eic_source_types'
   - 'view term revisions in eiw_courts'
   - 'view term revisions in eiw_ntypes'
-  - 'view term revisions in eiw_sources'

@@ -1,16 +1,16 @@
-uuid: 23e9cb96-0e8e-4e01-977c-e76e3da56cf2
+uuid: 16f88aee-e2f8-48eb-ae55-111c74c8ba2f
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_source
-    - node.type.eiw_will
-    - taxonomy.vocabulary.eiw_sources
-id: node.eiw_will.field_source
-field_name: field_source
-entity_type: node
-bundle: eiw_will
-label: Source
+    - field.storage.paragraph.field_ship_name
+    - paragraphs.paragraphs_type.eiw_voyages
+    - taxonomy.vocabulary.eiw_ships
+id: paragraph.eiw_voyages.field_ship_name
+field_name: field_ship_name
+entity_type: paragraph
+bundle: eiw_voyages
+label: 'Ship Name'
 description: ''
 required: false
 translatable: false
@@ -20,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      eiw_sources: eiw_sources
+      eiw_ships: eiw_ships
     sort:
       field: name
       direction: asc

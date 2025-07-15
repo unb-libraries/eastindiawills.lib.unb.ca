@@ -15,12 +15,11 @@ dependencies:
     - field.field.node.eiw_will.field_marital_status
     - field.field.node.eiw_will.field_notes
     - field.field.node.eiw_will.field_reference
-    - field.field.node.eiw_will.field_ship_name
-    - field.field.node.eiw_will.field_source
+    - field.field.node.eiw_will.field_source_type
     - field.field.node.eiw_will.field_summary
-    - field.field.node.eiw_will.field_testator
     - field.field.node.eiw_will.field_transcription
     - field.field.node.eiw_will.field_tropy_title
+    - field.field.node.eiw_will.field_voyage
     - node.type.eiw_will
   module:
     - user
@@ -46,9 +45,8 @@ hidden:
   field_marital_status: true
   field_notes: true
   field_reference: true
-  field_ship_name: true
-  field_source: true
+  field_source_type: true
   field_summary: true
-  field_testator: true
   field_transcription: true
   field_tropy_title: true
+  field_voyage: true

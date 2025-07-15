@@ -1,0 +1,9 @@
+uuid: ba19f225-22c8-4caf-addc-c7fa27c11238
+langcode: en
+status: true
+dependencies: {  }
+name: 'Marital Statuses'
+vid: eiw_marital_statuses
+description: null
+weight: 0
+new_revision: false

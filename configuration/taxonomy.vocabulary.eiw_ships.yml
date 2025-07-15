@@ -1,9 +1,9 @@
-uuid: 2df22c88-fa0b-43c3-aeba-f7cd9c96cd7f
+uuid: c9f57de8-14f4-4196-935b-af4076271342
 langcode: en
 status: true
 dependencies: {  }
-name: Sources
-vid: eiw_sources
+name: Ships
+vid: eiw_ships
 description: null
 weight: 0
 new_revision: false

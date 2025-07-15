@@ -10,8 +10,9 @@ function eiw_core_install() {
   // Add default terms.
   $terms = [
     'eiw_courts' => ['A', 'C', 'P', 'PPC', 'PPC PROB'],
-    'eiw_sources' => ['Microfilm', 'Other'],
+    'eiw_source_types' => ['Microfilm', 'Other'],
     'eiw_ntypes' => ['Alternate', 'Corrected', 'Extra', 'Other'],
+    'eiw_marital_statuses' => ['Married', 'Single'],
   ];
 
   foreach ($terms as $voc => $term_names) {

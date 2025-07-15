@@ -1,13 +1,13 @@
-uuid: 862772b8-982f-4a89-a3e0-fb0cc09df766
+uuid: 5f072148-d46e-4c49-9f0a-9e7350008a9c
 langcode: en
 status: true
 dependencies:
   module:
-    - node
+    - paragraphs
     - taxonomy
-id: node.field_source
-field_name: field_source
-entity_type: node
+id: paragraph.field_ship_name
+field_name: field_ship_name
+entity_type: paragraph
 type: entity_reference
 settings:
   target_type: taxonomy_term
