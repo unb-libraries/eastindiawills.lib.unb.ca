@@ -1,0 +1,28 @@
+uuid: c74b800e-02ef-41de-a403-16ac33831e69
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.eiw_voyage.field_ship_name
+    - node.type.eiw_voyage
+  module:
+    - user
+id: node.eiw_voyage.default
+targetEntityType: node
+bundle: eiw_voyage
+mode: default
+content:
+  field_ship_name:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

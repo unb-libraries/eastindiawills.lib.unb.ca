@@ -1,0 +1,18 @@
+uuid: 0fd841ad-6d2b-47f7-af42-a1e1bdf56899
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.eiw_voyage
+id: node.eiw_voyage.title
+field_name: title
+entity_type: node
+bundle: eiw_voyage
+label: 'Voyage Name'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

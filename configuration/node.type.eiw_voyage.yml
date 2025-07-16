@@ -1,0 +1,18 @@
+uuid: ccca9bdd-181a-4a67-88ec-7e8a46310593
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Voyage
+type: eiw_voyage
+description: null
+help: null
+new_revision: true
+preview_mode: 0
+display_submitted: true

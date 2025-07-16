@@ -1,9 +1,9 @@
-uuid: f8d89fa1-08ae-44de-82c7-6fa7cb8329ab
+uuid: 203d4352-717f-4204-9d1f-b4106505fa61
 langcode: en
 status: true
 dependencies: {  }
 name: 'Source Types'
-vid: eic_source_types
+vid: eiw_source_types
 description: null
 weight: 0
 new_revision: false

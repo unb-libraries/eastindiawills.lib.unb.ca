@@ -23,6 +23,7 @@ dependencies:
   module:
     - datetime
     - file
+    - inline_entity_form
     - paragraphs
     - text
 id: node.eiw_will.default
@@ -32,23 +33,23 @@ mode: default
 content:
   field_additional_names:
     type: paragraphs
-    weight: 3
+    weight: 14
     region: content
     settings:
       title: Name
       title_plural: Names
       edit_mode: closed
-      closed_mode: preview
+      closed_mode: summary
       autocollapse: all
-      closed_mode_threshold: 0
+      closed_mode_threshold: 2
       add_mode: button
       form_display_mode: default
       default_paragraph_type: additional_name
       features:
         add_above: '0'
-        collapse_edit_all: collapse_edit_all
+        collapse_edit_all: '0'
         convert: '0'
-        duplicate: duplicate
+        duplicate: '0'
     third_party_settings: {  }
   field_court:
     type: options_select
@@ -70,7 +71,7 @@ content:
     third_party_settings: {  }
   field_document_images:
     type: file_generic
-    weight: 11
+    weight: 10
     region: content
     settings:
       progress_indicator: throbber
@@ -84,11 +85,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_health_notes:
-    type: string_textfield
-    weight: 12
+    type: string_textarea
+    weight: 9
     region: content
     settings:
-      size: 60
+      rows: 5
       placeholder: ''
     third_party_settings: {  }
   field_last_name:
@@ -101,16 +102,16 @@ content:
     third_party_settings: {  }
   field_marital_status:
     type: options_select
-    weight: 10
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   field_notes:
-    type: string_textfield
+    type: string_textarea
     weight: 15
     region: content
     settings:
-      size: 60
+      rows: 5
       placeholder: ''
     third_party_settings: {  }
   field_reference:
@@ -122,18 +123,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_source_type:
-    type: entity_reference_autocomplete
-    weight: 17
+    type: options_select
+    weight: 11
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_summary:
     type: string_textarea
-    weight: 13
+    weight: 12
     region: content
     settings:
       rows: 5
@@ -141,31 +138,29 @@ content:
     third_party_settings: {  }
   field_transcription:
     type: text_textarea
-    weight: 14
+    weight: 13
     region: content
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
   field_voyage:
-    type: paragraphs
-    weight: 9
+    type: inline_entity_form_complex
+    weight: 3
     region: content
     settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      closed_mode: summary
-      autocollapse: none
-      closed_mode_threshold: 0
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: eiw_voyages
-      features:
-        add_above: '0'
-        collapse_edit_all: collapse_edit_all
-        convert: '0'
-        duplicate: duplicate
+      form_mode: default
+      override_labels: true
+      label_singular: Voyage
+      label_plural: Voyages
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      allow_duplicate: false
+      collapsible: false
+      collapsed: false
+      revision: false
+      removed_reference: optional
     third_party_settings: {  }
   status:
     type: boolean_checkbox

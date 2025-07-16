@@ -1,4 +1,4 @@
-uuid: 65749496-47b8-4cf9-bc5c-bc7241be9464
+uuid: a57d5127-a8d7-496b-99be-0e5ea8f6e7a2
 langcode: en
 status: true
 dependencies:
@@ -7,11 +7,9 @@ dependencies:
 id: node.field_health_notes
 field_name: field_health_notes
 entity_type: node
-type: string
+type: string_long
 settings:
-  max_length: 255
   case_sensitive: false
-  is_ascii: false
 module: core
 locked: false
 cardinality: 1
