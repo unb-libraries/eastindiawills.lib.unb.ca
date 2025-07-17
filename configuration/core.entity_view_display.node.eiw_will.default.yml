@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.eiw_will.field_marital_status
     - field.field.node.eiw_will.field_notes
     - field.field.node.eiw_will.field_reference
+    - field.field.node.eiw_will.field_ship
     - field.field.node.eiw_will.field_source_type
     - field.field.node.eiw_will.field_summary
     - field.field.node.eiw_will.field_transcription
@@ -118,6 +119,14 @@ content:
     third_party_settings: {  }
     weight: 4
     region: content
+  field_ship:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 16
+    region: content
   field_source_type:
     type: entity_reference_label
     label: above
@@ -141,12 +150,12 @@ content:
     weight: 13
     region: content
   field_voyage:
-    type: entity_reference_label
+    type: string
     label: above
     settings:
-      link: true
+      link_to_entity: false
     third_party_settings: {  }
-    weight: 3
+    weight: 15
     region: content
 hidden:
   field_tropy_title: true

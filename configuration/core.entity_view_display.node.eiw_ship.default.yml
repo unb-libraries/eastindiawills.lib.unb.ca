@@ -1,0 +1,15 @@
+uuid: 4c352e46-52fd-472b-b258-c193f766090e
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.eiw_ship
+  module:
+    - user
+id: node.eiw_ship.default
+targetEntityType: node
+bundle: eiw_ship
+mode: default
+content: {  }
+hidden:
+  links: true

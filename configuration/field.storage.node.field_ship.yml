@@ -1,16 +1,15 @@
-uuid: 8e50ebe6-adbc-479a-97b2-04026161cbbe
+uuid: f28e05da-7ef9-46b0-a220-c741187a1ad1
 langcode: en
 status: true
 dependencies:
   module:
     - node
-    - taxonomy
-id: node.field_ship_name
-field_name: field_ship_name
+id: node.field_ship
+field_name: field_ship
 entity_type: node
 type: entity_reference
 settings:
-  target_type: taxonomy_term
+  target_type: node
 module: core
 locked: false
 cardinality: 1

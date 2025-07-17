@@ -6,9 +6,17 @@
 function eiw_core_node_presave($entity) {
   // Check if the entity is a node of type 'eiw_will'.
   if ($entity->bundle() === 'eiw_will') {
-    // Set title to name values (single value fields).
-    $first_name = trim($entity->get('field_first_name')->value) ?? 'N/A';
+    // Set title to name/date values (single value fields).
     $last_name = trim($entity->get('field_last_name')->value) ?? 'N/A';
-    $entity->setTitle("$last_name, $first_name");
+    $first_name = !$entity->get('field_first_name')->isEmpty() ? 
+      ', ' . trim($entity->get('field_first_name')->value) :
+      ''
+    ;
+    $date = !$entity->get('field_date_of_will')->isEmpty() ?
+      ' [ ' . $entity->get('field_date_of_will')->value . ' ]': 
+      NULL
+    ;
+    
+    $entity->setTitle($last_name . $first_name . $date);
   }
 }

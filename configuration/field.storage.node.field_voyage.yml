@@ -1,4 +1,4 @@
-uuid: 827d4ce6-ebb9-4609-a48a-6e85963602dc
+uuid: 3ccb0617-3b8c-438f-8c92-0e7f381bedae
 langcode: en
 status: true
 dependencies:
@@ -7,9 +7,11 @@ dependencies:
 id: node.field_voyage
 field_name: field_voyage
 entity_type: node
-type: entity_reference
+type: string
 settings:
-  target_type: node
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
 module: core
 locked: false
 cardinality: 1

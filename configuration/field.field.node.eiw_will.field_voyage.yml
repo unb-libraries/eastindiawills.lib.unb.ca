@@ -1,10 +1,9 @@
-uuid: cfd242cd-3c64-42f3-9bf8-4d359b2437b2
+uuid: f2f33f8f-1fb6-442a-8f89-182eaf448175
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_voyage
-    - node.type.eiw_voyage
     - node.type.eiw_will
 id: node.eiw_will.field_voyage
 field_name: field_voyage
@@ -16,14 +15,5 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings:
-  handler: 'default:node'
-  handler_settings:
-    target_bundles:
-      eiw_voyage: eiw_voyage
-    sort:
-      field: _none
-      direction: ASC
-    auto_create: false
-    auto_create_bundle: ''
-field_type: entity_reference
+settings: {  }
+field_type: string

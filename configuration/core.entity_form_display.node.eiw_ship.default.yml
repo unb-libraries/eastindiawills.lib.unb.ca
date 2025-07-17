@@ -1,0 +1,25 @@
+uuid: 835fde93-7fed-4af9-b1af-7148a2778294
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.eiw_ship
+id: node.eiw_ship.default
+targetEntityType: node
+bundle: eiw_ship
+mode: default
+content:
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true

@@ -1,14 +1,14 @@
-uuid: 0fd841ad-6d2b-47f7-af42-a1e1bdf56899
+uuid: 98f0e85b-231a-4b6e-a12d-571a5cbea578
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.eiw_voyage
-id: node.eiw_voyage.title
+    - node.type.eiw_ship
+id: node.eiw_ship.title
 field_name: title
 entity_type: node
-bundle: eiw_voyage
-label: 'Voyage Name'
+bundle: eiw_ship
+label: Name
 description: ''
 required: true
 translatable: true

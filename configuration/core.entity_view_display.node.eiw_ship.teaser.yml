@@ -1,16 +1,15 @@
-uuid: db1829ab-0553-4e33-b974-8f6b6a90f6e7
+uuid: 533f3ee6-4218-425f-b68b-bbfbd6f214db
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.eiw_voyage.field_ship_name
-    - node.type.eiw_voyage
+    - node.type.eiw_ship
   module:
     - user
-id: node.eiw_voyage.teaser
+id: node.eiw_ship.teaser
 targetEntityType: node
-bundle: eiw_voyage
+bundle: eiw_ship
 mode: teaser
 content:
   links:
@@ -18,5 +17,4 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
-hidden:
-  field_ship_name: true
+hidden: {  }

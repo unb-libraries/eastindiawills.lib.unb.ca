@@ -1,4 +1,4 @@
-uuid: ccca9bdd-181a-4a67-88ec-7e8a46310593
+uuid: 3cce6ed5-f10d-45de-9814-8fa4fce0d5e6
 langcode: en
 status: true
 dependencies:
@@ -6,13 +6,12 @@ dependencies:
     - menu_ui
 third_party_settings:
   menu_ui:
-    available_menus:
-      - main
-    parent: 'main:'
-name: Voyage
-type: eiw_voyage
+    available_menus: {  }
+    parent: ''
+name: Ship
+type: eiw_ship
 description: null
 help: null
 new_revision: true
 preview_mode: 0
-display_submitted: true
+display_submitted: false
