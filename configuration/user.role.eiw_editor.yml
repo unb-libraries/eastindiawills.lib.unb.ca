@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - node.type.eiw_ship
     - node.type.eiw_will
     - taxonomy.vocabulary.eiw_courts
     - taxonomy.vocabulary.eiw_ntypes
@@ -18,20 +19,26 @@ permissions:
   - 'access content overview'
   - 'access taxonomy overview'
   - 'access toolbar'
+  - 'create eiw_ship content'
   - 'create eiw_will content'
   - 'create terms in eiw_courts'
   - 'create terms in eiw_ntypes'
+  - 'delete any eiw_ship content'
   - 'delete any eiw_will content'
+  - 'delete eiw_ship revisions'
   - 'delete eiw_will revisions'
   - 'delete term revisions in eiw_ntypes'
   - 'delete terms in eiw_courts'
   - 'delete terms in eiw_ntypes'
+  - 'edit any eiw_ship content'
   - 'edit any eiw_will content'
   - 'edit terms in eiw_courts'
   - 'edit terms in eiw_ntypes'
+  - 'revert eiw_ship revisions'
   - 'revert eiw_will revisions'
   - 'revert term revisions in eiw_courts'
   - 'revert term revisions in eiw_ntypes'
+  - 'view eiw_ship revisions'
   - 'view eiw_will revisions'
   - 'view term revisions in eiw_courts'
   - 'view term revisions in eiw_ntypes'
