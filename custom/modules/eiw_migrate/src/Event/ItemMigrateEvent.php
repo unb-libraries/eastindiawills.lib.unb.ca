@@ -85,9 +85,19 @@ class ItemMigrateEvent implements EventSubscriberInterface {
    * Process Tropy migration row.
    */
   public function process_tropy($row) {
-    // Data.
-    $note = $row->getSourceProperty('note');
-    dump($note);
+    // Parse notes.
+    $notes = $row->getSourceProperty('note');
+    $tokens = explode('---', $notes);
+    $values = [];
+    
+    foreach ($tokens as $token) {
+      // Raw label: Everything before colon, trimmed.
+      $label = $this->text_trim(strstr($token, ':', TRUE), FALSE);
+      // Raw value: The rest, trimmed. 
+      $value = $this->text_trim(str_replace($label, '', $token), FALSE);
+      $values[preg_replace('/\s+/', '_', strtolower($label))] = $value;
+    }
+    dump($values);
     // Process title.
   }
 
@@ -97,7 +107,7 @@ class ItemMigrateEvent implements EventSubscriberInterface {
    * @param string $text
    *   The text to process.
    * @param bool $sentence
-   *   Is the text a sentence?
+   *   Is the text to be treated as a sentence?
    * @param string $starters
    *   Starter special characters to ignore for sentences.
    * @param string $enders
@@ -113,12 +123,12 @@ class ItemMigrateEvent implements EventSubscriberInterface {
     $starters = !$sentence ? [] : $starters;
     $enders = !$sentence ? [] : $enders;
   
-    while (!ctype_alnum($first) and (!in_array($first, $starters) or substr($text, 1, 1) == ' ')) {
+    while ($first and !ctype_alnum($first) and !in_array($first, $starters)) {
       $text = substr($text, 1);
       $first = substr($text, 0, 1);
     }
-  
-    while (!ctype_alnum($last) and (!in_array($last, $enders) or substr($text, -2) == ' ')) {
+    
+    while ($first and !ctype_alnum($last) and !in_array($last, $enders)) {
       $text = substr($text, 0, -1);
       $last = substr($text, -1);
     }
