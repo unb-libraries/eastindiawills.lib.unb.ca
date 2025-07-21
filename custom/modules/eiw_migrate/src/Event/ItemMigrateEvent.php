@@ -54,9 +54,21 @@ class ItemMigrateEvent implements EventSubscriberInterface {
     $migration = $event->getMigration();
     $migration_id = $migration->id();
 
-    // Only act on rows for this migration.
+    // Only act on rows for current migration.
     if (array_key_exists($migration_id, self::getMigrations())) {
-      $lname = $row->getSourceProperty('last_name');
+
+      switch ($migration_id) {
+        case 'eiw_0_tropy':
+          // Handle migration for eiw_0_tropy
+          $this->process_tropy($row);
+          break;
+        case 'eiw_1_gsheet':
+          // Handle migration for eiw_1_gsheet
+          break;
+        default:
+          // Handle unknown migration_id
+          break;
+      }
     }
   }
 
@@ -67,6 +79,16 @@ class ItemMigrateEvent implements EventSubscriberInterface {
    *   The post-import event.
    */
   public function onPostImport(MigrateImportEvent $event) {
+  }
+
+  /**
+   * Process Tropy migration row.
+   */
+  public function process_tropy($row) {
+    // Data.
+    $note = $row->getSourceProperty('note');
+    dump($note);
+    // Process title.
   }
 
   /**
