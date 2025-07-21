@@ -27,9 +27,9 @@ eiw_admin.courts:
   parent: eiw_admin.admin
   weight: 30
 eiw_admin.sources:
-  title: 'Sources'
-  description: 'Create/edit/remove will sources.'
-  url: internal:/admin/structure/taxonomy/manage/eiw_sources/overview
+  title: 'Source Types'
+  description: 'Create/edit/remove will source types.'
+  url: internal:/admin/structure/taxonomy/manage/eiw_source_types/overview
   parent: eiw_admin.admin
   weight: 40
 eiw_admin.ntypes:
