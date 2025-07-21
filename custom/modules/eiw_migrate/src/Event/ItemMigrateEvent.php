@@ -86,19 +86,27 @@ class ItemMigrateEvent implements EventSubscriberInterface {
    */
   public function process_tropy($row) {
     // Parse notes.
-    $notes = $row->getSourceProperty('note');
-    $tokens = explode('---', $notes);
-    $values = [];
+    $notes_raw = $row->getSourceProperty('note');
+    $tokens = explode('---', $notes_raw);
+    $notes = [];
     
     foreach ($tokens as $token) {
       // Raw label: Everything before colon, trimmed.
       $label = $this->text_trim(strstr($token, ':', TRUE), FALSE);
       // Raw value: The rest, trimmed. 
       $value = $this->text_trim(str_replace($label, '', $token), FALSE);
-      $values[preg_replace('/\s+/', '_', strtolower($label))] = $value;
+      // Each value pair will be inthe form: 'a_label' => 'The value'. 
+      $notes[preg_replace('/\s+/', '_', strtolower($label))] = $value;
     }
-    dump($values);
     // Process title.
+    $testator = $notes['testator'];
+    $tokens = array_reverse(explode(' ', $testator));
+    $last = $tokens[0];
+    unset($tokens[0]);
+    $tokens = array_reverse($tokens);
+    $first = implode(' ', $tokens);
+    $title = "$last, $first";
+    dump($title);
   }
 
   /**
