@@ -74,6 +74,18 @@ process:
     plugin: callback
     callable: trim
     source: last_name
+  field_notes: 
+    plugin: callback
+    callable: trim
+    source: note
+  field_date_of_will:
+    plugin: callback
+    callable: trim
+    source: date_of_will
+  field_date_of_probate:
+    plugin: callback
+    callable: trim
+    source: date_of_probate
 
 destination:
   plugin: entity:node
