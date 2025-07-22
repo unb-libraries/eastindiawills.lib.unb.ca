@@ -8,6 +8,7 @@ use Drupal\migrate\Event\MigrateEvents;
 use Drupal\migrate\Event\MigrateImportEvent;
 use Drupal\migrate_plus\Event\MigrateEvents as MigratePlusEvents;
 use Drupal\migrate_plus\Event\MigratePrepareRowEvent;
+use Drupal\taxonomy\Entity\Term;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
@@ -35,7 +36,7 @@ class ItemMigrateEvent implements EventSubscriberInterface {
   }
 
   /**
-   * {@inheritdoc}
+   * {@inheritdoc}\Drupal\taxonomy\Entity\Term
    */
   public static function getSubscribedEvents() {
     $events[MigratePlusEvents::PREPARE_ROW][] = ['onPrepareRow', 0];
@@ -60,7 +61,7 @@ class ItemMigrateEvent implements EventSubscriberInterface {
       switch ($migration_id) {
         case 'eiw_0_tropy':
           // Handle migration for eiw_0_tropy
-          $this->process_tropy($row);
+          $row = $this->process_tropy($row);
           break;
         case 'eiw_1_gsheet':
           // Handle migration for eiw_1_gsheet
@@ -84,7 +85,7 @@ class ItemMigrateEvent implements EventSubscriberInterface {
   /**
    * Process Tropy migration row.
    */
-  public function process_tropy($row) {
+  public function process_tropy(&$row) {
     // Parse notes.
     $notes_raw = $row->getSourceProperty('note');
     $tokens = explode('---', $notes_raw);
@@ -98,7 +99,7 @@ class ItemMigrateEvent implements EventSubscriberInterface {
       // Each value pair will be inthe form: 'a_label' => 'The value'. 
       $notes[preg_replace('/\s+/', '_', strtolower($label))] = $value;
     }
-    // Process title.
+    // Update title.
     $testator = $notes['testator'];
     $tokens = array_reverse(explode(' ', $testator));
     $last = $tokens[0];
@@ -106,7 +107,43 @@ class ItemMigrateEvent implements EventSubscriberInterface {
     $tokens = array_reverse($tokens);
     $first = implode(' ', $tokens);
     $title = "$last, $first";
-    dump($title);
+    $row->setSourceProperty('eiw_title', $title);
+    // Update names.
+    $row->setSourceProperty('first_name', $first);
+    $row->setSourceProperty('last_name', $last);
+  }
+
+  /**
+   * Get the ID of a taxonomy term by name and vocabulary.
+   * If the term does not exist, create it and return its ID.
+   *
+   * @param string $name The name of the taxonomy term.
+   * @param string $vocabulary The vocabulary machine name.
+   * @return int|null The term ID (tid) or null on failure.
+   */
+  public function getOrCreateTermId(string $name, string $vocabulary): ?int {
+    // Try to find the term by name and vocabulary
+    $term = \Drupal::entityTypeManager()
+      ->getStorage('taxonomy_term')
+      ->loadByProperties([
+        'name' => $name,
+        'vid' => $vocabulary,
+      ]);
+
+    if (!empty($term)) {
+      // Term exists - return its ID
+      $term = reset($term);
+      return $term->id();
+    }
+
+    // Term does not exist - create it
+    $new_term = Term::create([
+      'name' => $name,
+      'vid' => $vocabulary,
+    ]);
+    $new_term->save();
+
+    return $new_term->id();
   }
 
   /**

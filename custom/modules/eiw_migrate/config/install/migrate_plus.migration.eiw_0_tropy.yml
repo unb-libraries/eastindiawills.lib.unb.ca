@@ -57,7 +57,7 @@ process:
   title: 
     plugin: callback
     callable: trim
-    source: tropy_title
+    source: eiw_title
   field_tropy_title: 
     plugin: callback
     callable: trim
@@ -65,7 +65,15 @@ process:
   field_pdf_name: 
     plugin: callback
     callable: trim
-    source: path
+    source: path    
+  field_first_name: 
+    plugin: callback
+    callable: trim
+    source: first_name
+  field_last_name: 
+    plugin: callback
+    callable: trim
+    source: last_name
 
 destination:
   plugin: entity:node
