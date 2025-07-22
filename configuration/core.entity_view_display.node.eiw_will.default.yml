@@ -23,7 +23,6 @@ dependencies:
     - node.type.eiw_will
   module:
     - datetime
-    - entity_reference_revisions
     - file
     - text
     - user
@@ -33,13 +32,12 @@ bundle: eiw_will
 mode: default
 content:
   field_additional_names:
-    type: entity_reference_revisions_entity_view
+    type: string
     label: above
     settings:
-      view_mode: default
-      link: ''
+      link_to_entity: false
     third_party_settings: {  }
-    weight: 2
+    weight: 17
     region: content
   field_court:
     type: entity_reference_label

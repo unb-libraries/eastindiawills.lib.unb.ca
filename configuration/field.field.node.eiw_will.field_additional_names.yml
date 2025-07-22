@@ -1,13 +1,10 @@
-uuid: 6287993d-6f26-4cef-aab4-1ae30a559e01
+uuid: 9e449fe0-5e6b-48c0-accd-3a0fd60db166
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_additional_names
     - node.type.eiw_will
-    - paragraphs.paragraphs_type.additional_name
-  module:
-    - entity_reference_revisions
 id: node.eiw_will.field_additional_names
 field_name: field_additional_names
 entity_type: node
@@ -18,14 +15,5 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings:
-  handler: 'default:paragraph'
-  handler_settings:
-    target_bundles:
-      additional_name: additional_name
-    negate: 0
-    target_bundles_drag_drop:
-      additional_name:
-        weight: 2
-        enabled: true
-field_type: entity_reference_revisions
+settings: {  }
+field_type: string

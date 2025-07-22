@@ -86,6 +86,10 @@ process:
     plugin: callback
     callable: trim
     source: date_of_probate
+  field_reference:
+    plugin: callback
+    callable: trim
+    source: reference
 
 destination:
   plugin: entity:node

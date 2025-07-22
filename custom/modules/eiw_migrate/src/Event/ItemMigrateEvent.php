@@ -104,13 +104,14 @@ class ItemMigrateEvent implements EventSubscriberInterface {
       // Each value pair will be inthe form: 'a_label' => 'The value'. 
       $notes[preg_replace('/\s+/', '_', strtolower($label))] = $value;
     }
-    // Parse testator.
+
     $testator = $notes['testator'] ?? NULL;
     // If no testator, fail.
     if (!$testator) {
       return FALSE;
     }
-
+    
+    // Parse testator.
     $tokens = array_reverse(explode(' ', $testator));
     $last = $tokens[0];
     unset($tokens[0]);
@@ -119,6 +120,9 @@ class ItemMigrateEvent implements EventSubscriberInterface {
     // Update names.
     $row->setSourceProperty('first_name', $first);
     $row->setSourceProperty('last_name', $last);
+    // Update reference.
+    $reference = $notes['reference'] ?? NULL;
+    $row->setSourceProperty('reference', $reference);
     // Update date of will.
     $date = $notes['date_of_will'] ?? NULL;
     $row->setSourceProperty('date_of_will', $date);
