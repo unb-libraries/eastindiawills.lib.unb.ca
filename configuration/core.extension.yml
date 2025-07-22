@@ -29,6 +29,7 @@ module:
   page_cache: 0
   path_alias: 0
   redis: 0
+  saml_features: 0
   samlauth: 0
   system: 0
   taxonomy: 0
