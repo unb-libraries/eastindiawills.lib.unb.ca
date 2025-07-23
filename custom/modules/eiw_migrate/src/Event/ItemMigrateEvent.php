@@ -62,11 +62,7 @@ class ItemMigrateEvent implements EventSubscriberInterface {
       switch ($migration_id) {
         case 'eiw_0_tropy':
           // Handle migration for eiw_0_tropy
-          $result = $this->process_tropy($row);
-          // If process fails, skip row.
-          if (!$result) {
-            return FALSE;
-          }
+          $this->process_tropy($row);
           break;
         case 'eiw_1_gsheet':
           // Handle migration for eiw_1_gsheet
@@ -93,42 +89,82 @@ class ItemMigrateEvent implements EventSubscriberInterface {
   public function process_tropy(&$row) {
     // Parse notes.
     $notes_raw = $row->getSourceProperty('note');
-    $tokens = explode('---', $notes_raw);
-    $notes = [];
-    
-    foreach ($tokens as $token) {
-      // Raw label: Everything before colon, trimmed.
-      $label = $this->text_trim(strstr($token, ':', TRUE), FALSE);
-      // Raw value: The rest, trimmed. 
-      $value = $this->text_trim(str_replace($label, '', $token), FALSE);
-      // Each value pair will be inthe form: 'a_label' => 'The value'. 
-      $notes[preg_replace('/\s+/', '_', strtolower($label))] = $value;
-    }
+    $first = '';
+    $last = '';
 
-    $testator = $notes['testator'] ?? NULL;
-    // If no testator, fail.
-    if (!$testator) {
-      return FALSE;
+    if ($notes_raw) {
+      $tokens = explode('---', $notes_raw);
+      $notes = [];
+      
+      foreach ($tokens as $token) {
+        // Raw label: Everything before colon, trimmed.
+        $label = $this->text_trim(strstr($token, ':', TRUE), FALSE);
+        // Raw value: The rest, trimmed. 
+        $value = $this->text_trim(str_replace($label, '', $token), FALSE);
+        // Each value pair will be inthe form: 'a_label' => 'The value'.
+        $notes[preg_replace('/\s+/', '_', strtolower($label))] = $value;
+      }
+
+      if (!empty($notes)) {
+        // Process testator.
+        $testator = $notes['testator'] ?? NULL;
+        // Parse testator.
+        $tokens = array_reverse(explode(' ', $testator));
+        $last = $tokens[0];
+        unset($tokens[0]);
+        $tokens = array_reverse($tokens);
+        $first = implode(' ', $tokens);
+        // Update names.
+        $row->setSourceProperty('first_name', $first);
+        $row->setSourceProperty('last_name', $last);
+        // Update reference.
+        $reference = $notes['reference'] ?? NULL;
+        $row->setSourceProperty('reference', $reference);
+        // Update date of will.
+        $date = $notes['date_of_will'] ?? NULL;
+        $row->setSourceProperty('date_of_will', $date);
+        // Update date of probate.
+        $probate = $notes['date_of_probate'] ?? NULL;
+        $row->setSourceProperty('date_of_probate', $probate);
+        // Process ship and additional names.
+        $add_names = [];
+        // Filter notes containing 'name' in the key.
+        $names = array_filter(
+          $notes,
+          function($label) {
+            return strpos($label, 'name') !== false;
+          },
+          ARRAY_FILTER_USE_KEY
+        );
+        // Iterate and populate additional names.
+        foreach($names as $label => $name) {
+          // Update ship name when available.
+          if (strpos($label, 'ship_name')) {
+            $row->setSourceProperty('ship_name', $name);
+          }
+          else {
+            $add_names[] = "$label $name";
+          }
+        }
+        // Update additional names.
+        $row->setSourceProperty('additional_names', $add_names);
+      }
     }
-    
-    // Parse testator.
-    $tokens = array_reverse(explode(' ', $testator));
-    $last = $tokens[0];
-    unset($tokens[0]);
-    $tokens = array_reverse($tokens);
-    $first = implode(' ', $tokens);
-    // Update names.
-    $row->setSourceProperty('first_name', $first);
-    $row->setSourceProperty('last_name', $last);
-    // Update reference.
-    $reference = $notes['reference'] ?? NULL;
-    $row->setSourceProperty('reference', $reference);
-    // Update date of will.
-    $date = $notes['date_of_will'] ?? NULL;
-    $row->setSourceProperty('date_of_will', $date);
-    // Update date of probate.
-    $probate = $notes['date_of_probate'] ?? NULL;
-    $row->setSourceProperty('date_of_probate', $probate);
+    // If no last name, retrieve from Tropy title.
+    if (!$last) {
+      $tropy_title = $row->getSourceProperty('tropy_title');
+      $parts = explode(',', $tropy_title);
+
+      if ($parts[0] == $tropy_title) {
+        $parts = explode('-', $tropy_title);
+        $last = $parts[0] ?? NULL;
+        $first = $parts[1] ?? NULL;
+      }
+      else {
+        $last = trim($parts[0]);
+        $first = trim($parts[1]);
+      }
+    }
   }
 
   /**
