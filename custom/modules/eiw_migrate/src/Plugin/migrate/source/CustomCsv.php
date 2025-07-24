@@ -4,6 +4,8 @@ namespace Drupal\eiw_migrate\Plugin\migrate\source;
 
 use Drupal\migrate_source_csv\Plugin\migrate\source\CSV;
 use Drupal\migrate\Row;
+use Drupal\node\Entity\Node;
+use Drupal\taxonomy\Entity\Term;
 
 /**
  * Custom CSV source plugin to allow row skipping.
@@ -81,7 +83,15 @@ class CustomCsv extends CSV {
         foreach($names as $label => $name) {
           // Update ship name when available.
           if (strpos($label, 'ship_name')) {
-            $row->setSourceProperty('ship_name', $name);
+            echo "\nREACHED\n";
+
+            if ($name) {
+              $row->setSourceProperty(
+                'ship',
+                $this->getOrCreateNodeId('title', $name, 'eiw_ship') 
+              );
+              echo $row->getSourceProperty('ship'); 
+            }
           }
           else {
             $add_names[] = "$label $name";
@@ -109,6 +119,40 @@ class CustomCsv extends CSV {
     // Update names.
     $row->setSourceProperty('first_name', $first);
     $row->setSourceProperty('last_name', $last);
+  }
+
+    /**
+ * Get the ID of a node by field value and bundle.
+   * If the node does not exist, create it with the specified field populated.
+   *
+   * @param string $field_name The machine name of the field (e.g., 'field_title').
+   * @param mixed $field_value The value to search for and populate in the field.
+   * @param string $bundle The content type machine name.
+   * @return int|null The node ID (nid) or null on failure.
+   */
+  public function getOrCreateNodeId(string $field_name, $field_value, string $bundle): ?int {
+    // Try to find the node by field value and bundle
+    $nodes = \Drupal::entityTypeManager()
+      ->getStorage('node')
+      ->loadByProperties([
+        $field_name => $field_value,
+        'type' => $bundle,
+      ]);
+
+    if (!empty($nodes)) {
+      // Node exists - return its ID
+      $node = reset($nodes);
+      return $node->id();
+    }
+
+    // Node does not exist - create it with only the specified field populated
+    $new_node = Node::create([
+      'type' => $bundle,
+      $field_name => $field_value,
+    ]);
+    $new_node->save();
+
+    return $new_node->id();
   }
 
   /**

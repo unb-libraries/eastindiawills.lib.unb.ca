@@ -90,10 +90,10 @@ process:
     plugin: callback
     callable: trim
     source: reference
-  field_ship_name:
+  field_ship:
     plugin: callback
     callable: trim
-    source: ship_name
+    source: ship
   field_additional_names:
     plugin: callback
     callable: trim
