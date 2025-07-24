@@ -83,22 +83,21 @@ class CustomCsv extends CSV {
         foreach($names as $label => $name) {
           // Update ship name when available.
           if (strpos($label, 'ship_name')) {
-            echo "\nREACHED\n";
-
+            
             if ($name) {
               $row->setSourceProperty(
                 'ship',
                 $this->getOrCreateNodeId('title', $name, 'eiw_ship') 
               );
-              echo $row->getSourceProperty('ship'); 
             }
           }
           else {
-            $add_names[] = "$label $name";
+            $label = ucwords($this->snakeToSentence($label));
+            $add_names[] = "$label: $name";
           }
         }
         // Update additional names.
-        $row->setSourceProperty('additional_names', $add_names);
+        $row->setSourceProperty('add_names', $add_names);
       }
     }
     // If no last name, retrieve from Tropy title.
@@ -121,8 +120,8 @@ class CustomCsv extends CSV {
     $row->setSourceProperty('last_name', $last);
   }
 
-    /**
- * Get the ID of a node by field value and bundle.
+  /**
+   * Get the ID of a node by field value and bundle.
    * If the node does not exist, create it with the specified field populated.
    *
    * @param string $field_name The machine name of the field (e.g., 'field_title').
@@ -189,4 +188,23 @@ class CustomCsv extends CSV {
   
   return $text;
   }
+
+  /**
+   * Convert snake_case string to Sentence case.
+   *
+   * @param string $snake
+   *   The input string in snake_case format.
+   * @return string
+   *   The string converted to sentence case.
+   */
+  public function snakeToSentence($snake) {
+      // Replace underscores with spaces
+      $sentence = str_replace('_', ' ', $snake);
+      // Lowercase everything
+      $sentence = strtolower($sentence);
+      // Capitalize first letter
+      $sentence = ucfirst($sentence);
+      return $sentence;
+  }
+
 }
