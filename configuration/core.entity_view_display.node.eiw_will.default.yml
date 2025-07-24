@@ -37,7 +37,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 17
+    weight: 15
     region: content
   field_court:
     type: entity_reference_label
@@ -123,7 +123,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 16
+    weight: 2
     region: content
   field_source_type:
     type: entity_reference_label
@@ -153,7 +153,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 15
+    weight: 3
     region: content
 hidden:
   field_tropy_title: true
