@@ -2,17 +2,17 @@
 
 namespace Drupal\eiw_migrate\Plugin\migrate\source;
 
-use Drupal\migrate\Plugin\migrate\source\Callback;
+use Drupal\migrate_source_csv\Plugin\migrate\source\CSV;
 use Drupal\migrate\Row;
 
 /**
- * Custom Callback source plugin to allow row skipping.
+ * Custom CSV source plugin to allow row skipping.
  *
  * @MigrateSource(
- *   id = "custom_callback"
+ *   id = "custom_csv"
  * )
  */
-class CustomCallback extends Callback {
+class CustomCsv extends CSV {
 
   /**
    * {@inheritdoc}
@@ -109,5 +109,40 @@ class CustomCallback extends Callback {
     // Update names.
     $row->setSourceProperty('first_name', $first);
     $row->setSourceProperty('last_name', $last);
+  }
+
+  /**
+   * Trim spaces and special characters from text.
+   *
+   * @param string $text
+   *   The text to process.
+   * @param bool $sentence
+   *   Is the text to be treated as a sentence?
+   * @param string $starters
+   *   Starter special characters to ignore for sentences.
+   * @param string $enders
+   *   Ender special characters to ignore for sentences.
+   */
+  public function text_trim(
+    string $text, 
+    bool $sentence = FALSE, 
+    array $starters = ["'", '"', '(', '['], 
+    array $enders = ['.', '!', '?' , "'", '"', ')', ']']) {
+    $first = substr($text, 0, 1);
+    $last = substr($text, -1);
+    $starters = !$sentence ? [] : $starters;
+    $enders = !$sentence ? [] : $enders;
+  
+    while ($first and !ctype_alnum($first) and !in_array($first, $starters)) {
+      $text = substr($text, 1);
+      $first = substr($text, 0, 1);
+    }
+    
+    while ($first and !ctype_alnum($last) and !in_array($last, $enders)) {
+      $text = substr($text, 0, -1);
+      $last = substr($text, -1);
+    }
+  
+  return $text;
   }
 }
