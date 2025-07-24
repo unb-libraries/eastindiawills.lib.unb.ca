@@ -18,8 +18,8 @@ class CustomCallback extends Callback {
    * {@inheritdoc}
    */
   public function prepareRow(Row $row) {
+    $this->process_tropy($row);
     // Skip row if last_name is missing or empty.
-    echo($row->getSourceProperty('last_name'));
     if (!$row->getSourceProperty('last_name')) {
       return FALSE;
     }
@@ -27,4 +27,87 @@ class CustomCallback extends Callback {
     return parent::prepareRow($row);
   }
 
+  /**
+   * Process Tropy migration row.
+   */
+  public function process_tropy(&$row) {
+    // Parse notes.
+    $notes_raw = $row->getSourceProperty('note');
+    $first = '';
+    $last = '';
+
+    if ($notes_raw) {
+      $tokens = explode('---', $notes_raw);
+      $notes = [];
+      
+      foreach ($tokens as $token) {
+        // Raw label: Everything before colon, trimmed.
+        $label = $this->text_trim(strstr($token, ':', TRUE), FALSE);
+        // Raw value: The rest, trimmed. 
+        $value = $this->text_trim(str_replace($label, '', $token), FALSE);
+        // Each value pair will be inthe form: 'a_label' => 'The value'.
+        $notes[preg_replace('/\s+/', '_', strtolower($label))] = $value;
+      }
+
+      if (!empty($notes)) {
+        // Process testator.
+        $testator = $notes['testator'] ?? NULL;
+        // Parse testator.
+        $tokens = array_reverse(explode(' ', $testator));
+        $last = $tokens[0];
+        unset($tokens[0]);
+        $tokens = array_reverse($tokens);
+        $first = implode(' ', $tokens);
+        // Update reference.
+        $reference = $notes['reference'] ?? NULL;
+        $row->setSourceProperty('reference', $reference);
+        // Update date of will.
+        $date = $notes['date_of_will'] ?? NULL;
+        $row->setSourceProperty('date_of_will', $date);
+        // Update date of probate.
+        $probate = $notes['date_of_probate'] ?? NULL;
+        $row->setSourceProperty('date_of_probate', $probate);
+        // Process ship and additional names.
+        $add_names = [];
+        // Filter notes containing 'name' in the key.
+        $names = array_filter(
+          $notes,
+          function($label) {
+            return strpos($label, 'name') !== false;
+          },
+          ARRAY_FILTER_USE_KEY
+        );
+        // Iterate and populate additional names.
+        foreach($names as $label => $name) {
+          // Update ship name when available.
+          if (strpos($label, 'ship_name')) {
+            $row->setSourceProperty('ship_name', $name);
+          }
+          else {
+            $add_names[] = "$label $name";
+          }
+        }
+        // Update additional names.
+        $row->setSourceProperty('additional_names', $add_names);
+      }
+    }
+    // If no last name, retrieve from Tropy title.
+    if (!$last) {
+      $tropy_title = $row->getSourceProperty('tropy_title');
+      $parts = explode(',', $tropy_title);
+      
+      if ($parts[0] == $tropy_title) {
+        $parts = explode('-', $tropy_title);
+        $last = $parts[0] ?? NULL;
+        $first = $parts[1] ?? NULL;
+      }
+      else {
+        $last = trim($parts[0]);
+        $first = trim($parts[1]);
+      }
+    }
+    // Update names.
+    $row->setSourceProperty('first_name', $first);
+    $row->setSourceProperty('last_name', $last);
+  }
 }

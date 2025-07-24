@@ -62,7 +62,7 @@ class ItemMigrateEvent implements EventSubscriberInterface {
       switch ($migration_id) {
         case 'eiw_0_tropy':
           // Handle migration for eiw_0_tropy
-          $this->process_tropy($row);
+          // $this->process_tropy($row);
           break;
         case 'eiw_1_gsheet':
           // Handle migration for eiw_1_gsheet
@@ -114,9 +114,6 @@ class ItemMigrateEvent implements EventSubscriberInterface {
         unset($tokens[0]);
         $tokens = array_reverse($tokens);
         $first = implode(' ', $tokens);
-        // Update names.
-        $row->setSourceProperty('first_name', $first);
-        $row->setSourceProperty('last_name', $last);
         // Update reference.
         $reference = $notes['reference'] ?? NULL;
         $row->setSourceProperty('reference', $reference);
@@ -154,7 +151,7 @@ class ItemMigrateEvent implements EventSubscriberInterface {
     if (!$last) {
       $tropy_title = $row->getSourceProperty('tropy_title');
       $parts = explode(',', $tropy_title);
-
+      
       if ($parts[0] == $tropy_title) {
         $parts = explode('-', $tropy_title);
         $last = $parts[0] ?? NULL;
@@ -165,6 +162,9 @@ class ItemMigrateEvent implements EventSubscriberInterface {
         $first = trim($parts[1]);
       }
     }
+    // Update names.
+    $row->setSourceProperty('first_name', $first);
+    $row->setSourceProperty('last_name', $last);
   }
 
   /**
