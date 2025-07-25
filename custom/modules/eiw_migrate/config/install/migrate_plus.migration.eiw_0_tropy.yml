@@ -98,6 +98,10 @@ process:
     plugin: callback
     callable: trim
     source: add_names
+  field_role:
+    plugin: callback
+    callable: trim
+    source: role
 
 destination:
   plugin: entity:node

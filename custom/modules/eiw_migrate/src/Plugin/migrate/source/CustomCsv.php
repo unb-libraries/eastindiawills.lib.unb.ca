@@ -134,7 +134,7 @@ class CustomCsv extends CSV {
     $nodes = \Drupal::entityTypeManager()
       ->getStorage('node')
       ->loadByProperties([
-        $field_name => $field_value,
+        trim($field_name) => trim($field_value),
         'type' => $bundle,
       ]);
 

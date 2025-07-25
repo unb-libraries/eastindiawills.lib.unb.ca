@@ -62,7 +62,7 @@ class ItemMigrateEvent implements EventSubscriberInterface {
       switch ($migration_id) {
         case 'eiw_0_tropy':
           // Handle migration for eiw_0_tropy
-          // $this->process_tropy($row);
+          $this->process_tropy($row);
           break;
         case 'eiw_1_gsheet':
           // Handle migration for eiw_1_gsheet
@@ -87,118 +87,7 @@ class ItemMigrateEvent implements EventSubscriberInterface {
    * Process Tropy migration row.
    */
   public function process_tropy(&$row) {
-    // Parse notes.
-    $notes_raw = $row->getSourceProperty('note');
-    $first = '';
-    $last = '';
-
-    if ($notes_raw) {
-      $tokens = explode('---', $notes_raw);
-      $notes = [];
-      
-      foreach ($tokens as $token) {
-        // Raw label: Everything before colon, trimmed.
-        $label = $this->text_trim(strstr($token, ':', TRUE), FALSE);
-        // Raw value: The rest, trimmed. 
-        $value = $this->text_trim(str_replace($label, '', $token), FALSE);
-        // Each value pair will be inthe form: 'a_label' => 'The value'.
-        $notes[preg_replace('/\s+/', '_', strtolower($label))] = $value;
-      }
-
-      if (!empty($notes)) {
-        // Process testator.
-        $testator = $notes['testator'] ?? NULL;
-        // Parse testator.
-        $tokens = array_reverse(explode(' ', $testator));
-        $last = $tokens[0];
-        unset($tokens[0]);
-        $tokens = array_reverse($tokens);
-        $first = implode(' ', $tokens);
-        // Update reference.
-        $reference = $notes['reference'] ?? NULL;
-        $row->setSourceProperty('reference', $reference);
-        // Update date of will.
-        $date = $notes['date_of_will'] ?? NULL;
-        $row->setSourceProperty('date_of_will', $date);
-        // Update date of probate.
-        $probate = $notes['date_of_probate'] ?? NULL;
-        $row->setSourceProperty('date_of_probate', $probate);
-        // Process ship and additional names.
-        $add_names = [];
-        // Filter notes containing 'name' in the key.
-        $names = array_filter(
-          $notes,
-          function($label) {
-            return strpos($label, 'name') !== false;
-          },
-          ARRAY_FILTER_USE_KEY
-        );
-        // Iterate and populate additional names.
-        foreach($names as $label => $name) {
-          // Update ship name when available.
-          if (strpos($label, 'ship_name')) {
-            $row->setSourceProperty('ship_name', $name);
-          }
-          else {
-            $add_names[] = "$label $name";
-          }
-        }
-        // Update additional names.
-        $row->setSourceProperty('additional_names', $add_names);
-      }
-    }
-    // If no last name, retrieve from Tropy title.
-    if (!$last) {
-      $tropy_title = $row->getSourceProperty('tropy_title');
-      $parts = explode(',', $tropy_title);
-      
-      if ($parts[0] == $tropy_title) {
-        $parts = explode('-', $tropy_title);
-        $last = $parts[0] ?? NULL;
-        $first = $parts[1] ?? NULL;
-      }
-      else {
-        $last = trim($parts[0]);
-        $first = trim($parts[1]);
-      }
-    }
-    // Update names.
-    $row->setSourceProperty('first_name', $first);
-    $row->setSourceProperty('last_name', $last);
-  }
-
-  /**
-   * Get the ID of a node by field value and bundle.
-   * If the node does not exist, create it with the specified field populated.
-   *
-   * @param string $field_name The machine name of the field (e.g., 'field_title').
-   * @param mixed $field_value The value to search for and populate in the field.
-   * @param string $bundle The content type machine name.
-   * @return int|null The node ID (nid) or null on failure.
-   */
-  public function getOrCreateNodeId(string $field_name, $field_value, string $bundle): ?int {
-    // Try to find the node by field value and bundle
-    $nodes = \Drupal::entityTypeManager()
-      ->getStorage('node')
-      ->loadByProperties([
-        $field_name => $field_value,
-        'type' => $bundle,
-      ]);
-
-    if (!empty($nodes)) {
-      // Node exists - return its ID
-      $node = reset($nodes);
-      return $node->id();
-    }
-
-    // Node does not exist - create it with only the specified field populated
-    $new_node = Node::create([
-      'type' => $bundle,
-      $field_name => $field_value,
-    ]);
-    $new_node->save();
-
-    return $new_node->id();
+    
   }
 
   /**
@@ -214,7 +103,7 @@ class ItemMigrateEvent implements EventSubscriberInterface {
     $term = \Drupal::entityTypeManager()
       ->getStorage('taxonomy_term')
       ->loadByProperties([
-        'name' => $name,
+        'name' => trim($name),
         'vid' => $vocabulary,
       ]);
 
