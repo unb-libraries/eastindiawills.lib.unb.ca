@@ -1,0 +1,29 @@
+uuid: b8259151-7079-4c04-b6ea-0a607b840e10
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_role
+    - node.type.eiw_will
+    - taxonomy.vocabulary.eiw_roles
+id: node.eiw_will.field_role
+field_name: field_role
+entity_type: node
+bundle: eiw_will
+label: Role
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      eiw_roles: eiw_roles
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

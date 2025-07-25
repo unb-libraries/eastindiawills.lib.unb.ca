@@ -20,21 +20,28 @@ eiw_admin.wills.add:
   url: internal:/node/add/eiw_will
   parent: eiw_admin.admin
   weight: 20
+eiw_admin.ships.add:
+  title: 'Add Ship'
+  description: 'Create a new ship.'
+  url: internal:/node/add/eiw_ship
+  parent: eiw_admin.admin
+  weight: 21
 eiw_admin.courts:
   title: 'Courts'
   description: 'Create/edit/remove courts.'
   url: internal:/admin/structure/taxonomy/manage/eiw_courts/overview
   parent: eiw_admin.admin
   weight: 30
+eiw_admin.roles:
+  title: 'Roles'
+  description: 'Create/edit/remove roles.'
+  url: internal:/admin/structure/taxonomy/manage/eiw_roles/overview
+  parent: eiw_admin.admin
+  weight: 31
 eiw_admin.sources:
   title: 'Source Types'
   description: 'Create/edit/remove will source types.'
   url: internal:/admin/structure/taxonomy/manage/eiw_source_types/overview
   parent: eiw_admin.admin
   weight: 40
-eiw_admin.ntypes:
-  title: 'Additional Name Types'
-  description: 'Create/edit/remove additional name types.'
-  url: internal:/admin/structure/taxonomy/manage/eiw_ntypes/overview
-  parent: eiw_admin.admin
-  weight: 50
+

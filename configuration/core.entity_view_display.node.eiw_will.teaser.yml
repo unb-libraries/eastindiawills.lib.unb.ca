@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.eiw_will.field_marital_status
     - field.field.node.eiw_will.field_notes
     - field.field.node.eiw_will.field_reference
+    - field.field.node.eiw_will.field_role
     - field.field.node.eiw_will.field_ship
     - field.field.node.eiw_will.field_source_type
     - field.field.node.eiw_will.field_summary
@@ -46,6 +47,7 @@ hidden:
   field_marital_status: true
   field_notes: true
   field_reference: true
+  field_role: true
   field_ship: true
   field_source_type: true
   field_summary: true

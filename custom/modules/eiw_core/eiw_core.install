@@ -11,7 +11,6 @@ function eiw_core_install() {
   $terms = [
     'eiw_courts' => ['A', 'C', 'P', 'PPC', 'PPC PROB'],
     'eiw_source_types' => ['Microfilm', 'Other'],
-    'eiw_ntypes' => ['Alternate', 'Corrected', 'Extra', 'Other'],
     'eiw_marital_statuses' => ['Married', 'Single'],
   ];
 
