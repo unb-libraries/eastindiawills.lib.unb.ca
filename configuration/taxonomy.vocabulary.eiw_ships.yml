@@ -1,9 +1,0 @@
-uuid: c9f57de8-14f4-4196-935b-af4076271342
-langcode: en
-status: true
-dependencies: {  }
-name: Ships
-vid: eiw_ships
-description: null
-weight: 0
-new_revision: false
