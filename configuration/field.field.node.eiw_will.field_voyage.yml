@@ -1,10 +1,11 @@
-uuid: f2f33f8f-1fb6-442a-8f89-182eaf448175
+uuid: 80f594b0-9bd0-446f-8a7c-ba52e122d91a
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_voyage
     - node.type.eiw_will
+    - taxonomy.vocabulary.eiw_voyages
 id: node.eiw_will.field_voyage
 field_name: field_voyage
 entity_type: node
@@ -15,5 +16,14 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: string
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      eiw_voyages: eiw_voyages
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

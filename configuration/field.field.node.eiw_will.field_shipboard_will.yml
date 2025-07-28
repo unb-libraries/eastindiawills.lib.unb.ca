@@ -1,0 +1,21 @@
+uuid: 3dfdba5d-7a4f-48b5-845c-7368055391be
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_shipboard_will
+    - node.type.eiw_will
+id: node.eiw_will.field_shipboard_will
+field_name: field_shipboard_will
+entity_type: node
+bundle: eiw_will
+label: 'Shipboard Will'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

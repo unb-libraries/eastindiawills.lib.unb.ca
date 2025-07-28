@@ -1,16 +1,14 @@
-uuid: b8372a45-d389-4ed3-8617-72fdd7f28cc4
+uuid: c30b567f-26f7-4531-b214-b0637f2359b5
 langcode: en
 status: true
 dependencies:
   module:
     - node
-    - taxonomy
-id: node.field_voyage
-field_name: field_voyage
+id: node.field_shipboard_will
+field_name: field_shipboard_will
 entity_type: node
-type: entity_reference
-settings:
-  target_type: taxonomy_term
+type: boolean
+settings: {  }
 module: core
 locked: false
 cardinality: 1

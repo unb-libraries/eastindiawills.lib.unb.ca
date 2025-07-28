@@ -17,6 +17,7 @@ dependencies:
     - field.field.node.eiw_will.field_reference
     - field.field.node.eiw_will.field_role
     - field.field.node.eiw_will.field_ship
+    - field.field.node.eiw_will.field_shipboard_will
     - field.field.node.eiw_will.field_source_type
     - field.field.node.eiw_will.field_summary
     - field.field.node.eiw_will.field_transcription
@@ -49,6 +50,7 @@ hidden:
   field_reference: true
   field_role: true
   field_ship: true
+  field_shipboard_will: true
   field_source_type: true
   field_summary: true
   field_transcription: true

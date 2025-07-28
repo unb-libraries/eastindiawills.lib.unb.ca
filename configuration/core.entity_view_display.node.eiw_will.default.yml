@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.eiw_will.field_reference
     - field.field.node.eiw_will.field_role
     - field.field.node.eiw_will.field_ship
+    - field.field.node.eiw_will.field_shipboard_will
     - field.field.node.eiw_will.field_source_type
     - field.field.node.eiw_will.field_summary
     - field.field.node.eiw_will.field_transcription
@@ -38,7 +39,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 16
+    weight: 17
     region: content
   field_court:
     type: entity_reference_label
@@ -70,7 +71,7 @@ content:
     settings:
       use_description_as_link_text: true
     third_party_settings: {  }
-    weight: 11
+    weight: 12
     region: content
   field_first_name:
     type: string
@@ -108,7 +109,7 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 15
+    weight: 16
     region: content
   field_reference:
     type: string
@@ -132,7 +133,17 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 2
+    weight: 3
+    region: content
+  field_shipboard_will:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 11
     region: content
   field_source_type:
     type: entity_reference_label
@@ -140,29 +151,29 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 12
+    weight: 13
     region: content
   field_summary:
     type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 13
+    weight: 14
     region: content
   field_transcription:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 14
+    weight: 15
     region: content
   field_voyage:
-    type: string
+    type: entity_reference_label
     label: above
     settings:
-      link_to_entity: false
+      link: true
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
 hidden:
   field_tropy_title: true
