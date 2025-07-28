@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\Core\Datetime\DrupalDateTime;
+
 /**
  * Implements hook_ENTITY_TYPE_presave().
  */
@@ -16,9 +18,27 @@ function eiw_core_node_presave($entity) {
     ;
     $date = !$entity->get('field_date_of_probate')->isEmpty() ?
       ' [ ' . $entity->get('field_date_of_probate')->value . ' ]': 
-      NULL
+      ' [ n.d. ]'
     ;
     
     $entity->setTitle($last_name . $first_name . $date);
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function eiw_core_form_node_eiw_will_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $node = $form_state->getFormObject()->getEntity();
+
+  if ($node->isNew()) {
+    $default_date = new DrupalDateTime(date('Y') . '-01-01');
+
+    if (isset($form['field_date_of_will']['widget'][0]['value'])) {
+      $form['field_date_of_will']['widget'][0]['value']['#default_value'] = $default_date;
+    }
+    if (isset($form['field_date_of_probate']['widget'][0]['value'])) {
+      $form['field_date_of_probate']['widget'][0]['value']['#default_value'] = $default_date;
+    }
   }
 }
