@@ -9,9 +9,9 @@ use Drupal\taxonomy\Entity\Term;
 function eiw_core_install() {
   // Add default terms.
   $terms = [
-    'eiw_courts' => ['A', 'C', 'P', 'PPC', 'PPC PROB'],
+    'eiw_courts' => ['A', 'C', 'P', 'Other'],
     'eiw_source_types' => ['Microfilm', 'Other'],
-    'eiw_marital_statuses' => ['Married', 'Single'],
+    'eiw_marital_statuses' => ['Married', 'Single', 'N/A'],
     'eiw_roles' => [
       "1/4 gunner", 
       "1/4 master",
