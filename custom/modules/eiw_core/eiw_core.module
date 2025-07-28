@@ -14,8 +14,8 @@ function eiw_core_node_presave($entity) {
       ', ' . trim($entity->get('field_first_name')->value) :
       ''
     ;
-    $date = !$entity->get('field_date_of_will')->isEmpty() ?
-      ' [ ' . $entity->get('field_date_of_will')->value . ' ]': 
+    $date = !$entity->get('field_date_of_probate')->isEmpty() ?
+      ' [ ' . $entity->get('field_date_of_probate')->value . ' ]': 
       NULL
     ;
     
