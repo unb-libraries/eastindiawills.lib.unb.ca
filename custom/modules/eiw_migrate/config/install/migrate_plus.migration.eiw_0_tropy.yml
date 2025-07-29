@@ -102,6 +102,10 @@ process:
     plugin: callback
     callable: trim
     source: role
+  field_court:
+    plugin: callback
+    callable: trim
+    source: court_ref
 
 destination:
   plugin: entity:node

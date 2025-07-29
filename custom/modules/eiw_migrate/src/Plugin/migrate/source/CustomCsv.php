@@ -118,6 +118,17 @@ class CustomCsv extends CSV {
     // Update names.
     $row->setSourceProperty('first_name', $first);
     $row->setSourceProperty('last_name', $last);
+    // Update courts.
+    $court = $row->getSourceProperty('tag');
+    echo "\nREACHED\n";
+    dump($court);
+    
+    if ($court) {
+      $row->setSourceProperty(
+        'court_ref',
+        $this->getOrCreateTermId($court, 'eiw_courts')
+      );
+    }
   }
 
   /**
@@ -152,6 +163,39 @@ class CustomCsv extends CSV {
     $new_node->save();
 
     return $new_node->id();
+  }
+
+    /**
+   * Get the ID of a taxonomy term by name and vocabulary.
+   * If the term does not exist, create it and return its ID.
+   *
+   * @param string $name The name of the taxonomy term.
+   * @param string $vocabulary The vocabulary machine name.
+   * @return int|null The term ID (tid) or null on failure.
+   */
+  public function getOrCreateTermId(string $name, string $vocabulary): ?int {
+    // Try to find the term by name and vocabulary
+    $term = \Drupal::entityTypeManager()
+      ->getStorage('taxonomy_term')
+      ->loadByProperties([
+        'name' => trim($name),
+        'vid' => $vocabulary,
+      ]);
+
+    if (!empty($term)) {
+      // Term exists - return its ID
+      $term = reset($term);
+      return $term->id();
+    }
+
+    // Term does not exist - create it
+    $new_term = Term::create([
+      'name' => $name,
+      'vid' => $vocabulary,
+    ]);
+    $new_term->save();
+
+    return $new_term->id();
   }
 
   /**

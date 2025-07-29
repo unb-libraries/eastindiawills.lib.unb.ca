@@ -87,40 +87,6 @@ class ItemMigrateEvent implements EventSubscriberInterface {
    * Process Tropy migration row.
    */
   public function process_tropy(&$row) {
-    
-  }
-
-  /**
-   * Get the ID of a taxonomy term by name and vocabulary.
-   * If the term does not exist, create it and return its ID.
-   *
-   * @param string $name The name of the taxonomy term.
-   * @param string $vocabulary The vocabulary machine name.
-   * @return int|null The term ID (tid) or null on failure.
-   */
-  public function getOrCreateTermId(string $name, string $vocabulary): ?int {
-    // Try to find the term by name and vocabulary
-    $term = \Drupal::entityTypeManager()
-      ->getStorage('taxonomy_term')
-      ->loadByProperties([
-        'name' => trim($name),
-        'vid' => $vocabulary,
-      ]);
-
-    if (!empty($term)) {
-      // Term exists - return its ID
-      $term = reset($term);
-      return $term->id();
-    }
-
-    // Term does not exist - create it
-    $new_term = Term::create([
-      'name' => $name,
-      'vid' => $vocabulary,
-    ]);
-    $new_term->save();
-
-    return $new_term->id();
   }
 
   /**
