@@ -6,6 +6,11 @@ dependencies:
     - node.type.eiw_ship
     - node.type.eiw_will
     - taxonomy.vocabulary.eiw_courts
+    - taxonomy.vocabulary.eiw_keywords
+    - taxonomy.vocabulary.eiw_marital_statuses
+    - taxonomy.vocabulary.eiw_roles
+    - taxonomy.vocabulary.eiw_source_types
+    - taxonomy.vocabulary.eiw_voyages
   module:
     - node
     - taxonomy
@@ -21,17 +26,30 @@ permissions:
   - 'create eiw_ship content'
   - 'create eiw_will content'
   - 'create terms in eiw_courts'
+  - 'create terms in eiw_keywords'
+  - 'create terms in eiw_marital_statuses'
+  - 'create terms in eiw_roles'
+  - 'create terms in eiw_source_types'
+  - 'create terms in eiw_voyages'
   - 'delete any eiw_ship content'
   - 'delete any eiw_will content'
   - 'delete eiw_ship revisions'
   - 'delete eiw_will revisions'
   - 'delete terms in eiw_courts'
+  - 'delete terms in eiw_keywords'
+  - 'delete terms in eiw_marital_statuses'
+  - 'delete terms in eiw_roles'
+  - 'delete terms in eiw_source_types'
+  - 'delete terms in eiw_voyages'
   - 'edit any eiw_ship content'
   - 'edit any eiw_will content'
   - 'edit terms in eiw_courts'
+  - 'edit terms in eiw_keywords'
+  - 'edit terms in eiw_marital_statuses'
+  - 'edit terms in eiw_roles'
+  - 'edit terms in eiw_source_types'
+  - 'edit terms in eiw_voyages'
   - 'revert eiw_ship revisions'
   - 'revert eiw_will revisions'
-  - 'revert term revisions in eiw_courts'
   - 'view eiw_ship revisions'
   - 'view eiw_will revisions'
-  - 'view term revisions in eiw_courts'

@@ -25,23 +25,10 @@ eiw_admin.ships.add:
   description: 'Create a new ship.'
   url: internal:/node/add/eiw_ship
   parent: eiw_admin.admin
-  weight: 21
-eiw_admin.courts:
-  title: 'Courts'
-  description: 'Create/edit/remove courts.'
-  url: internal:/admin/structure/taxonomy/manage/eiw_courts/overview
-  parent: eiw_admin.admin
   weight: 30
-eiw_admin.roles:
-  title: 'Roles'
-  description: 'Create/edit/remove roles.'
-  url: internal:/admin/structure/taxonomy/manage/eiw_roles/overview
-  parent: eiw_admin.admin
-  weight: 31
-eiw_admin.sources:
-  title: 'Source Types'
-  description: 'Create/edit/remove will source types.'
-  url: internal:/admin/structure/taxonomy/manage/eiw_source_types/overview
+eiw_admin.voyages:
+  title: 'Voyages'
+  description: 'Create/edit/remove voyages.'
+  url: internal:/admin/structure/taxonomy/manage/eiw_voyages/overview
   parent: eiw_admin.admin
   weight: 40
-

@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.eiw_will.field_document_images
     - field.field.node.eiw_will.field_first_name
     - field.field.node.eiw_will.field_health_notes
+    - field.field.node.eiw_will.field_keywords
     - field.field.node.eiw_will.field_last_name
     - field.field.node.eiw_will.field_marital_status
     - field.field.node.eiw_will.field_notes
@@ -39,7 +40,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 17
+    weight: 16
     region: content
   field_court:
     type: entity_reference_label
@@ -88,6 +89,14 @@ content:
     third_party_settings: {  }
     weight: 10
     region: content
+  field_keywords:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 17
+    region: content
   field_last_name:
     type: string
     label: above
@@ -109,7 +118,7 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 16
+    weight: 18
     region: content
   field_reference:
     type: string

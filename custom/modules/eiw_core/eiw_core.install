@@ -9,9 +9,26 @@ use Drupal\taxonomy\Entity\Term;
 function eiw_core_install() {
   // Add default terms.
   $terms = [
-    'eiw_courts' => ['A', 'C', 'P', 'Other'],
-    'eiw_source_types' => ['Microfilm', 'Other'],
-    'eiw_marital_statuses' => ['Married', 'Single', 'N/A'],
+    'eiw_courts' => [
+      'Archdeaconry Court of London', 
+      'Commissary Court of London', 
+      'Prerogative Court of Canterbury'
+    ],
+
+    'eiw_source_types' => [
+      'Digital', 
+      'Microfilm', 
+      'Original',
+      'Print'
+    ],
+    
+    'eiw_marital_statuses' => [
+      'Married', 
+      'Single', 
+      'Widowed',
+      'Unknown'
+    ],
+    
     'eiw_roles' => [
       "1/4 gunner", 
       "1/4 master",
