@@ -44,8 +44,8 @@ source:
       name: rights
       label: Rights
     10:
-      name: tag
-      label: Tag
+      name: tags
+      label: Tags
     11:
       name: path
       label: Path
@@ -98,14 +98,7 @@ process:
     plugin: callback
     callable: trim
     source: add_names
-  field_role:
-    plugin: callback
-    callable: trim
-    source: role
-  field_court:
-    plugin: callback
-    callable: trim
-    source: court_ref
+  field_court: court_ref
 
 destination:
   plugin: entity:node

@@ -118,17 +118,41 @@ class CustomCsv extends CSV {
     // Update names.
     $row->setSourceProperty('first_name', $first);
     $row->setSourceProperty('last_name', $last);
-    // Update courts.
-    $court = $row->getSourceProperty('tag');
-    echo "\nREACHED\n";
-    dump($court);
+
+    // Process tags.
+    $tags = $row->getSourceProperty('tags');
     
-    if ($court) {
-      $row->setSourceProperty(
-        'court_ref',
-        $this->getOrCreateTermId($court, 'eiw_courts')
-      );
-    }
+    if ($tags) {
+      $tokens = explode(', ', $tags);
+
+      foreach($tokens as $i => $tag) {
+        // Map, collect, and unset court values.
+        if (in_array($tag, ['P', 'PPC'])) {
+          $court = 'Prerogative Court of Canterbury';
+          unset($tokens[$i]);
+        }
+        elseif ($tag == 'C') {
+          $court = 'Commissary Court of London';
+          unset($tokens[$i]);
+        }
+        elseif ($tag == 'A') {
+          $court = 'Archdeaconry Court of London';
+          unset($tokens[$i]);
+        }
+      }
+      
+      // Update court.
+      if (isset($court) and $court) {
+        $tid = $this->getOrCreateTermId($court, 'eiw_courts');
+        
+        if ($tid) {
+          $row->setSourceProperty(
+            'court_ref',
+            $tid
+          );
+        }
+      }
+    } 
   }
 
   /**
@@ -165,7 +189,7 @@ class CustomCsv extends CSV {
     return $new_node->id();
   }
 
-    /**
+  /**
    * Get the ID of a taxonomy term by name and vocabulary.
    * If the term does not exist, create it and return its ID.
    *
@@ -249,6 +273,23 @@ class CustomCsv extends CSV {
       // Capitalize first letter
       $sentence = ucfirst($sentence);
       return $sentence;
+  }
+
+  /**
+   * Dump item to terminal
+   *
+   * @param string $label
+   *   A label for identification.
+   * @param mixed $item
+   *   The item to dump.
+   */
+  public function tdump($label, $item) {
+    $label = strtoupper($label);
+    echo "\n";
+    echo "***$label***\n";
+    echo var_dump($item);
+    echo "***$label***";
+    echo "\n\n";
   }
 
 }

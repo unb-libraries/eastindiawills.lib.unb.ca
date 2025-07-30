@@ -54,6 +54,7 @@ function eiw_core_install() {
       "sailor",
       "shipwright",
       "smith",
+      "smith's mate",
       "surgeon",
       "surgeon's mate",
       "trumpeter",
