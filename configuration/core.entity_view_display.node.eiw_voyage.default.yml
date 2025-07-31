@@ -1,0 +1,23 @@
+uuid: ba367c3f-cd07-4c3d-88a7-3b50e4447618
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.eiw_voyage.field_notes
+    - node.type.eiw_voyage
+  module:
+    - user
+id: node.eiw_voyage.default
+targetEntityType: node
+bundle: eiw_voyage
+mode: default
+content:
+  field_notes:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  links: true

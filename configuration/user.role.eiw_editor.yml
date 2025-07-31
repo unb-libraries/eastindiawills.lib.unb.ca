@@ -10,7 +10,6 @@ dependencies:
     - taxonomy.vocabulary.eiw_marital_statuses
     - taxonomy.vocabulary.eiw_roles
     - taxonomy.vocabulary.eiw_source_types
-    - taxonomy.vocabulary.eiw_voyages
   module:
     - node
     - taxonomy
@@ -30,7 +29,6 @@ permissions:
   - 'create terms in eiw_marital_statuses'
   - 'create terms in eiw_roles'
   - 'create terms in eiw_source_types'
-  - 'create terms in eiw_voyages'
   - 'delete any eiw_ship content'
   - 'delete any eiw_will content'
   - 'delete eiw_ship revisions'
@@ -40,7 +38,6 @@ permissions:
   - 'delete terms in eiw_marital_statuses'
   - 'delete terms in eiw_roles'
   - 'delete terms in eiw_source_types'
-  - 'delete terms in eiw_voyages'
   - 'edit any eiw_ship content'
   - 'edit any eiw_will content'
   - 'edit terms in eiw_courts'
@@ -48,7 +45,6 @@ permissions:
   - 'edit terms in eiw_marital_statuses'
   - 'edit terms in eiw_roles'
   - 'edit terms in eiw_source_types'
-  - 'edit terms in eiw_voyages'
   - 'revert eiw_ship revisions'
   - 'revert eiw_will revisions'
   - 'view eiw_ship revisions'

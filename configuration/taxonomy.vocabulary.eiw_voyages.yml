@@ -1,9 +1,0 @@
-uuid: 6939c022-8737-447e-9510-3b68b44f546c
-langcode: en
-status: true
-dependencies: {  }
-name: Voyages
-vid: eiw_voyages
-description: null
-weight: 0
-new_revision: false

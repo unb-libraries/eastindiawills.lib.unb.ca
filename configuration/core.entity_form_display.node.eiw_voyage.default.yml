@@ -1,0 +1,27 @@
+uuid: 0baf136c-206d-4909-9028-a6be59fc52a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.eiw_voyage.field_notes
+    - node.type.eiw_voyage
+id: node.eiw_voyage.default
+targetEntityType: node
+bundle: eiw_voyage
+mode: default
+content:
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_notes: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true

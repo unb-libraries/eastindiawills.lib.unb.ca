@@ -149,7 +149,7 @@ content:
       collapsible: false
       collapsed: false
       revision: false
-      removed_reference: keep
+      removed_reference: delete
     third_party_settings: {  }
   field_shipboard_will:
     type: boolean_checkbox
@@ -181,14 +181,22 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_voyage:
-    type: entity_reference_autocomplete
+    type: inline_entity_form_complex
     weight: 2
     region: content
     settings:
+      form_mode: default
+      override_labels: true
+      label_singular: Voyage
+      label_plural: Voyages
+      allow_new: true
+      allow_existing: true
       match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      allow_duplicate: false
+      collapsible: false
+      collapsed: false
+      revision: false
+      removed_reference: delete
     third_party_settings: {  }
   status:
     type: boolean_checkbox
