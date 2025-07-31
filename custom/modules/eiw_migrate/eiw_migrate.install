@@ -30,4 +30,119 @@ function eiw_migrate_install() {
     $command->import($migration_id, ['update' => TRUE, 'sync' => TRUE]);
   }
 
+  eiw_migrate_setup();
+}
+
+/**
+ * Create default entities.
+ */
+function eiw_migrate_setup() {
+  // Add default terms.
+  $courts = \Drupal::config('eiw_migrate.settings')->get('courts');
+  $roles = \Drupal::config('eiw_migrate.settings')->get('roles');
+  $statuses = \Drupal::config('eiw_migrate.settings')->get('marital_statuses');
+  $types = \Drupal::config('eiw_migrate.settings')->get('source_types');
+
+  $terms = [
+    'eiw_courts' => $courts,
+    'eiw_roles' => $roles,
+    'eiw_marital_statuses' => $statuses,
+    'eiw_source_types' => $types,
+  ];
+
+  foreach ($terms as $voc => $term_names) {
+    foreach ($term_names as $term_name) {
+      $result = eiw_migrate_create_term($term_name, $voc);
+      
+      $message = $result ?
+        "Created taxonomy term $term_name." :
+        "Couldn't create taxonomy term $term_name";
+
+      \Drupal::logger('eiw_migrate')->notice($message);
+    }
+  }
+  
+  // Add default entities.
+  $ships = \Drupal::config('eiw_migrate.settings')->get('ships');
+  
+  foreach ($ships as $ship) {    
+    $result = eiw_migrate_create_node('eiw_ship', $ship);
+    
+    $message = $result ?
+      "Created ship $ship." :
+      "Couldn't create taxonomy term $ship.";
+  
+    \Drupal::logger('eiw_migrate')->notice($message);
+  }
+}
+
+/**
+ * Creates term if non-existent.
+ * 
+ * @param string $term
+ *  Name of term.
+ * @param string $vocabulary
+ *  Name of vocabulary.
+ * 
+ * @return int
+ */
+function eiw_migrate_create_term($term, $vocabulary) {
+  // Check if term already exists.
+  $existing_terms = \Drupal::entityTypeManager()
+    ->getStorage('taxonomy_term')
+    ->loadByProperties([
+      'name' => $term,
+      'vid' => $vocabulary,
+  ]);
+
+  if (empty($existing_terms)) {
+    $term = Term::create([
+      'name' => $term,
+      'vid' => $vocabulary,
+    ]);
+    
+    $term->save();
+    return $term->id();
+  }
+  else {
+    // Get the first key (ID) from the array.
+    $ids = array_keys($existing_terms);
+    return $ids[0];
+  }
+}
+
+/**
+ * Creates a node if non-existent (by title and bundle).
+ * 
+ * @param string $title
+ *   The title of the node.
+ * @param string $bundle
+ *   The machine name of the content type (bundle).
+ * 
+ * @return int
+ *   The node ID (nid) of the created or existing node.
+ */
+function eiw_migrate_create_node($title, $bundle) {
+  // Check if node already exists with the given title and bundle.
+  $existing_nodes = \Drupal::entityTypeManager()
+    ->getStorage('node')
+    ->loadByProperties([
+      'title' => $title,
+      'type' => $bundle,
+    ]);
+
+  if (empty($existing_nodes)) {
+    $node = \Drupal\node\Entity\Node::create([
+      'type' => $bundle,
+      'title' => $title,
+      'status' => 1, // published by default, change if needed
+    ]);
+    $node->save();
+    return $node->id();
+  }
+  else {
+    // Get the first key (ID) from the array.
+    $ids = array_keys($existing_nodes);
+    return $ids[0];
+  }
 }

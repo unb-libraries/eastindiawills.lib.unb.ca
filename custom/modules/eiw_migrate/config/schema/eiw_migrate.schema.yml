@@ -1,0 +1,29 @@
+eiw_migrate.settings:
+  type: config_object
+  label: 'East India Wills Migration Settings'
+  mapping:
+    courts:
+      type: sequence
+      label: 'Courts'
+      sequence:
+        - type: string
+    roles:
+      type: sequence
+      label: 'Roles'
+      sequence:
+        - type: string
+    ships:
+      type: sequence
+      label: 'Ships'
+      sequence:
+        - type: string
+    marital_statuses:
+      type: sequence
+      label: 'Marital Statuses'
+      sequence:
+        - type: string
+    source_types:
+      type: sequence
+      label: 'Source Types'
+      sequence:
+        - type: string
