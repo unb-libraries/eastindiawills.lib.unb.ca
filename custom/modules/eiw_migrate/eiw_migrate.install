@@ -42,7 +42,7 @@ function eiw_migrate_install() {
   $ships = \Drupal::config('eiw_migrate.settings')->get('ships');
   
   foreach ($ships as $ship) {    
-    $result = eiw_migrate_create_node('eiw_ship', $ship);
+    $result = eiw_migrate_create_node($ship, 'eiw_ship');
     
     $message = $result ?
       "Created ship $ship." :

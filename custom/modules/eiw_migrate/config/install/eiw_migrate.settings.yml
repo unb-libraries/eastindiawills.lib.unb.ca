@@ -1,7 +1,7 @@
 courts:
-  - "A"
-  - "C"
-  - "P"
+  - "Archdeaconry Court of London"
+  - "Commissary Court of London"
+  - "Prerogative Court of Canterbury"
 roles:
   - "1/4 Gunner"
   - "1/4 Master"

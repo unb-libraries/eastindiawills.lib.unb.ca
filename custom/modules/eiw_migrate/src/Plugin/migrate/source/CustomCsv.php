@@ -47,7 +47,7 @@ class CustomCsv extends CSV {
         $label = $this->text_trim(strstr($token, ':', TRUE), FALSE);
         // Raw value: The rest, trimmed. 
         $value = $this->text_trim(str_replace($label, '', $token), FALSE);
-        // Each value pair will be inthe form: 'a_label' => 'The value'.
+        // Each value pair will be in the form: 'a_label' => 'The value'.
         $notes[preg_replace('/\s+/', '_', strtolower($label))] = $value;
       }
 
@@ -81,20 +81,8 @@ class CustomCsv extends CSV {
         );
         // Iterate and populate additional names.
         foreach($names as $label => $name) {
-          // Update ship name when available.
-          if (strpos($label, 'ship_name')) {
-            
-            if ($name) {
-              $row->setSourceProperty(
-                'ship',
-                $this->getOrCreateNodeId('title', $name, 'eiw_ship') 
-              );
-            }
-          }
-          else {
-            $label = ucwords($this->snakeToSentence($label));
-            $add_names[] = "$label: $name";
-          }
+          $label = ucwords($this->snakeToSentence($label));
+          $add_names[] = "$label: $name";
         }
         // Update additional names.
         $row->setSourceProperty('add_names', $add_names);
@@ -125,19 +113,35 @@ class CustomCsv extends CSV {
     if ($tags) {
       $tokens = explode(', ', $tags);
 
-      foreach($tokens as $i => $tag) {
+      foreach($tokens as $tag) {
+        $clean_tag = strtolower(trim($tag));
+        
         // Map, collect, and unset court values.
-        if (in_array($tag, ['P', 'PPC'])) {
-          $court = 'Prerogative Court of Canterbury';
-          unset($tokens[$i]);
-        }
-        elseif ($tag == 'C') {
-          $court = 'Commissary Court of London';
-          unset($tokens[$i]);
-        }
-        elseif ($tag == 'A') {
+        if ($clean_tag == 'a') {
           $court = 'Archdeaconry Court of London';
-          unset($tokens[$i]);
+          continue;
+        }
+        elseif ($clean_tag == 'c') {
+          $court = 'Commissary Court of London';
+          continue;
+        }
+        elseif (in_array($clean_tag, ['p', 'ppc'])) {
+          $court = 'Prerogative Court of Canterbury';
+          continue;
+        }
+        else {
+          // Search for tag in roles.
+          $matched_tids = $this->termByName($clean_tag, 'eiw_roles');
+
+          if (!empty($matched_tids)) {
+            // Update role.
+            $role_tid = reset($matched_tids)[0];
+            $row->setSourceProperty('role_ref', $role_tid);
+          }
+          else {
+            $ship_nid = $this->getOrCreateNodeId('title', $clean_tag, 'eiw_ship');
+            $row->setSourceProperty('role_ref', $ship_nid);
+          }
         }
       }
       
@@ -151,6 +155,13 @@ class CustomCsv extends CSV {
             $tid
           );
         }
+      }
+      // Update ship.
+      if (isset($ship_nid) and $ship_nid) {
+        $row->setSourceProperty(
+          'ship_ref',
+          $ship_nid
+        );        
       }
     } 
   }
@@ -169,7 +180,7 @@ class CustomCsv extends CSV {
     $nodes = \Drupal::entityTypeManager()
       ->getStorage('node')
       ->loadByProperties([
-        trim($field_name) => trim($field_value),
+        $field_name => $field_value,
         'type' => $bundle,
       ]);
 
@@ -202,7 +213,7 @@ class CustomCsv extends CSV {
     $term = \Drupal::entityTypeManager()
       ->getStorage('taxonomy_term')
       ->loadByProperties([
-        'name' => trim($name),
+        'name' => $name,
         'vid' => $vocabulary,
       ]);
 
@@ -220,6 +231,68 @@ class CustomCsv extends CSV {
     $new_term->save();
 
     return $new_term->id();
+  }
+
+  /**
+   * Finds node IDs in the given bundle where the lowercase title matches $value.
+   *
+   * @param string $value
+   *   String to match against node titles (case-insensitive).
+   * @param string $bundle
+   *   The node bundle (content type).
+   * @return array
+   *   Array of matching node IDs.
+   */
+  public function nodeByTitle($value, $bundle) {
+    $query = \Drupal::entityQuery('node')
+      ->accessCheck(FALSE)
+      ->condition('type', $bundle);
+
+    $nids = $query->execute();
+    $matched_nids = [];
+
+    if (!empty($nids)) {
+      $nodes = \Drupal\node\Entity\Node::loadMultiple($nids);
+      foreach ($nodes as $node) {
+        $title = $node->getTitle();
+        if (strtolower($title) === strtolower($value)) {
+          $matched_nids[] = $node->id();
+        }
+      }
+    }
+
+    return $matched_nids;
+  }
+
+  /**
+   * Finds taxonomy term IDs in the given vocabulary where the lowercase term name matches $value.
+   *
+   * @param string $value
+   *   String to match against term names (case-insensitive).
+   * @param string $vocabulary
+   *   The vocabulary machine name.
+   * @return array
+   *   Array of matching term IDs.
+   */
+  public function termByName($value, $vocabulary) {
+    $query = \Drupal::entityQuery('taxonomy_term')
+      ->accessCheck(FALSE)
+      ->condition('vid', $vocabulary);
+
+    $tids = $query->execute();
+    $matched_tids = [];
+
+    if (!empty($tids)) {
+      $terms = \Drupal\taxonomy\Entity\Term::loadMultiple($tids);
+      foreach ($terms as $term) {
+        $name = $term->getName();
+        if (strtolower($name) === strtolower($value)) {
+          $matched_tids[] = $term->id();
+        }
+      }
+    }
+
+    return $matched_tids;
   }
 
   /**

@@ -93,12 +93,13 @@ process:
   field_ship:
     plugin: callback
     callable: trim
-    source: ship
+    source: ship_ref
   field_additional_names:
     plugin: callback
     callable: trim
     source: add_names
   field_court: court_ref
+  field_role: role_ref
 
 destination:
   plugin: entity:node
