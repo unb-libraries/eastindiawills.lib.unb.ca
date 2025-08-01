@@ -5,38 +5,14 @@
  * Contains eiw_migrate.install.
  */
 
-use Symfony\Component\Finder\Finder;
-
-function eiw_migrate_install() {
-  /*
-   * Get access to drush functions. NO LONGER WORKS in Drupal 9.
-   * module_load_include('inc', 'migrate_tools', 'migrate_tools.drush');
-   */
-
-  // Determine migrations to run. If there is a migrate_plus.migration file, we assume a migration.
-  $import_config_path = DRUPAL_ROOT . '/' . \Drupal::service('extension.list.module')->getPath('eiw_migrate') . '/config/install';
-  $finder = new Finder();
-  $finder->files()->name('migrate_plus.migration.*.yml')->in($import_config_path);
-
-  // Run migrations.
-  foreach ($finder as $file) {
-    $migration_id = str_replace(
-      ['migrate_plus.migration.', '.yml'],
-      '',
-      $file->getFilename()
-    );
-
-    $command = \Drupal::service('migrate_tools.commands');
-    $command->import($migration_id, ['update' => TRUE, 'sync' => TRUE]);
-  }
-
-  eiw_migrate_setup();
-}
+use Drupal\taxonomy\Entity\Term;
 
 /**
- * Create default entities.
+ * Implements hook_install().
+ *
+ * Perform setup tasks when the eiw_migrate module is installed.
  */
-function eiw_migrate_setup() {
+function eiw_migrate_install() {
   // Add default terms.
   $courts = \Drupal::config('eiw_migrate.settings')->get('courts');
   $roles = \Drupal::config('eiw_migrate.settings')->get('roles');
