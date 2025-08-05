@@ -5,6 +5,7 @@
  * Contains eiw_migrate.install.
  */
 
+use Drupal\node\Entity\Node;
 use Drupal\taxonomy\Entity\Term;
 
 /**
@@ -53,72 +54,65 @@ function eiw_migrate_install() {
 }
 
 /**
- * Creates term if non-existent.
- * 
+ * Creates term if non-existent (case-insensitive).
+ *
  * @param string $term
- *  Name of term.
+ *   Name of term.
  * @param string $vocabulary
- *  Name of vocabulary.
- * 
+ *   Name of vocabulary.
+ *
  * @return int
  */
 function eiw_migrate_create_term($term, $vocabulary) {
-  // Check if term already exists.
-  $existing_terms = \Drupal::entityTypeManager()
-    ->getStorage('taxonomy_term')
-    ->loadByProperties([
-      'name' => $term,
-      'vid' => $vocabulary,
+  $storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+  // Load all terms in the vocabulary.
+  $terms = $storage->loadByProperties(['vid' => $vocabulary]);
+  foreach ($terms as $t) {
+    if (strcasecmp($t->getName(), $term) === 0) {
+      return $t->id();
+    }
+  }
+  // Not found, create new.
+  $new_term = Term::create([
+    'name' => $term,
+    'vid' => $vocabulary,
   ]);
-
-  if (empty($existing_terms)) {
-    $term = Term::create([
-      'name' => $term,
-      'vid' => $vocabulary,
-    ]);
-    
-    $term->save();
-    return $term->id();
-  }
-  else {
-    // Get the first key (ID) from the array.
-    $ids = array_keys($existing_terms);
-    return $ids[0];
-  }
+  $new_term->save();
+  return $new_term->id();
 }
 
 /**
- * Creates a node if non-existent (by title and bundle).
- * 
+ * Creates a node if non-existent (case-insensitive by title and bundle).
+ *
  * @param string $title
  *   The title of the node.
  * @param string $bundle
  *   The machine name of the content type (bundle).
- * 
+ *
  * @return int
  *   The node ID (nid) of the created or existing node.
  */
 function eiw_migrate_create_node($title, $bundle) {
-  // Check if node already exists with the given title and bundle.
-  $existing_nodes = \Drupal::entityTypeManager()
-    ->getStorage('node')
-    ->loadByProperties([
-      'title' => $title,
-      'type' => $bundle,
-    ]);
-
-  if (empty($existing_nodes)) {
-    $node = \Drupal\node\Entity\Node::create([
-      'type' => $bundle,
-      'title' => $title,
-      'status' => 1, // published by default, change if needed
-    ]);
-    $node->save();
-    return $node->id();
+  $storage = \Drupal::entityTypeManager()->getStorage('node');
+  // Load all nodes of this bundle and with the same title (case-insensitive check in PHP).
+  $query = \Drupal::entityQuery('node')
+    ->condition('type', $bundle)
+    ->accessCheck(FALSE);
+  $nids = $query->execute();
+  if (!empty($nids)) {
+    $nodes = $storage->loadMultiple($nids);
+    foreach ($nodes as $node) {
+      if (strcasecmp($node->getTitle(), $title) === 0) {
+        return $node->id();
+      }
+    }
   }
-  else {
-    // Get the first key (ID) from the array.
-    $ids = array_keys($existing_nodes);
-    return $ids[0];
-  }
+  // Not found, create new.
+  $node = Node::create([
+    'type' => $bundle,
+    'title' => $title,
+    'status' => 1,
+  ]);
+  $node->save();
+  return $node->id();
 }

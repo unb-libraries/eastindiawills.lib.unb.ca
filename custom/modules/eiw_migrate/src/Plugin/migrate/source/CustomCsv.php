@@ -113,61 +113,54 @@ class CustomCsv extends CSV {
     if ($tags) {
       $tokens = explode(', ', $tags);
 
-      foreach($tokens as $tag) {
-        $clean_tag = strtolower(trim($tag));
-        
+      foreach($tokens as $tag) {        
         // Map, collect, and unset court values.
-        if ($clean_tag == 'a') {
+        if (strtolower($tag) == 'a') {
           $court = 'Archdeaconry Court of London';
-          continue;
         }
-        elseif ($clean_tag == 'c') {
+        elseif (strtolower($tag) == 'c') {
           $court = 'Commissary Court of London';
-          continue;
         }
-        elseif (in_array($clean_tag, ['p', 'ppc'])) {
+        elseif (in_array(strtolower($tag), ['p', 'pcc'])) {
           $court = 'Prerogative Court of Canterbury';
-          continue;
         }
         else {
           // Search for tag in roles.
-          $matched_tids = $this->termByName($clean_tag, 'eiw_roles');
+          $role_tids = $this->termByName($tag, 'eiw_roles');
 
-          if (!empty($matched_tids)) {
+          if (!empty($role_tids)) {
             // Update role.
-            $role_tid = reset($matched_tids)[0];
+            $role_tid = reset($role_tids);
             $row->setSourceProperty('role_ref', $role_tid);
           }
           else {
-            $ship_nid = $this->getOrCreateNodeId('title', $clean_tag, 'eiw_ship');
-            $row->setSourceProperty('role_ref', $ship_nid);
+            $ship_nid = $this->getOrCreateNodeId('title', $tag, 'eiw_ship');
+          }
+        }        
+        // Update court.
+        if (isset($court) and $court) {
+          $court_tid = $this->termByName($court, 'eiw_courts');
+          
+          if ($court_tid) {
+            $row->setSourceProperty(
+              'court_ref',
+              $court_tid
+            );
           }
         }
-      }
-      
-      // Update court.
-      if (isset($court) and $court) {
-        $tid = $this->getOrCreateTermId($court, 'eiw_courts');
-        
-        if ($tid) {
+        // Update ship.
+        if (isset($ship_nid) and $ship_nid) {
           $row->setSourceProperty(
-            'court_ref',
-            $tid
-          );
+            'ship_ref',
+            $ship_nid
+          );        
         }
-      }
-      // Update ship.
-      if (isset($ship_nid) and $ship_nid) {
-        $row->setSourceProperty(
-          'ship_ref',
-          $ship_nid
-        );        
       }
     } 
   }
 
   /**
-   * Get the ID of a node by field value and bundle.
+   * Get the ID of a node by field value and bundle (case-insensitive).
    * If the node does not exist, create it with the specified field populated.
    *
    * @param string $field_name The machine name of the field (e.g., 'field_title').
@@ -176,18 +169,21 @@ class CustomCsv extends CSV {
    * @return int|null The node ID (nid) or null on failure.
    */
   public function getOrCreateNodeId(string $field_name, $field_value, string $bundle): ?int {
-    // Try to find the node by field value and bundle
-    $nodes = \Drupal::entityTypeManager()
-      ->getStorage('node')
-      ->loadByProperties([
-        $field_name => $field_value,
-        'type' => $bundle,
-      ]);
+    // Query all nodes of the given bundle where field is set, ignoring access.
+    $query = \Drupal::entityQuery('node')
+      ->accessCheck(FALSE)
+      ->condition('type', $bundle);
+    $nids = $query->execute();
 
-    if (!empty($nodes)) {
-      // Node exists - return its ID
-      $node = reset($nodes);
-      return $node->id();
+    if ($nids) {
+      $nodes = Node::loadMultiple($nids);
+      foreach ($nodes as $node) {
+        $node_value = $node->get($field_name)->value ?? '';
+        // Case-insensitive comparison
+        if (strcasecmp((string)$node_value, (string)$field_value) === 0) {
+          return $node->id();
+        }
+      }
     }
 
     // Node does not exist - create it with only the specified field populated
@@ -201,7 +197,7 @@ class CustomCsv extends CSV {
   }
 
   /**
-   * Get the ID of a taxonomy term by name and vocabulary.
+   * Get the ID of a taxonomy term by name and vocabulary (case-insensitive).
    * If the term does not exist, create it and return its ID.
    *
    * @param string $name The name of the taxonomy term.
@@ -209,18 +205,21 @@ class CustomCsv extends CSV {
    * @return int|null The term ID (tid) or null on failure.
    */
   public function getOrCreateTermId(string $name, string $vocabulary): ?int {
-    // Try to find the term by name and vocabulary
-    $term = \Drupal::entityTypeManager()
-      ->getStorage('taxonomy_term')
-      ->loadByProperties([
-        'name' => $name,
-        'vid' => $vocabulary,
-      ]);
+    // Query all terms in the vocabulary, ignoring access.
+    $query = \Drupal::entityQuery('taxonomy_term')
+      ->accessCheck(FALSE)
+      ->condition('vid', $vocabulary);
+    $tids = $query->execute();
 
-    if (!empty($term)) {
-      // Term exists - return its ID
-      $term = reset($term);
-      return $term->id();
+    if ($tids) {
+      $terms = Term::loadMultiple($tids);
+      foreach ($terms as $term) {
+        $term_name = $term->getName();
+        // Case-insensitive comparison
+        if (strcasecmp($term_name, $name) === 0) {
+          return $term->id();
+        }
+      }
     }
 
     // Term does not exist - create it
