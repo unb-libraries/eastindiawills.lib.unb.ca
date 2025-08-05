@@ -2,6 +2,7 @@
 
 namespace Drupal\eiw_migrate\Plugin\migrate\source;
 
+use Drupal\file\Entity\File;
 use Drupal\migrate_source_csv\Plugin\migrate\source\CSV;
 use Drupal\migrate\Row;
 use Drupal\node\Entity\Node;
@@ -20,7 +21,7 @@ class CustomCsv extends CSV {
    * {@inheritdoc}
    */
   public function prepareRow(Row $row) {
-    $this->process_tropy($row);
+    $this->processTropy($row);
     // Skip row if last_name is missing or empty.
     if (!$row->getSourceProperty('last_name')) {
       return FALSE;
@@ -32,7 +33,7 @@ class CustomCsv extends CSV {
   /**
    * Process Tropy migration row.
    */
-  public function process_tropy(&$row) {
+  public function processTropy(&$row) {
     // Parse notes.
     $notes_raw = $row->getSourceProperty('note');
     $first = '';
@@ -156,7 +157,18 @@ class CustomCsv extends CSV {
           );        
         }
       }
-    } 
+    }
+    
+    // Process images (PDF).
+    $path = $row->getSourceProperty('path');
+    $filename = $path ?? basename($row->getSourceProperty('path'));
+    $file = $filename ?? "custom/modules/eiw_migrate/data/pdf/$filename";
+    $fid = $file ?? $this->fileFromUrl($file);
+
+    $row->setSourceProperty(
+      'fid',
+      $fid
+    );     
   }
 
   /**
@@ -230,6 +242,49 @@ class CustomCsv extends CSV {
     $new_term->save();
 
     return $new_term->id();
+  }
+
+  /**
+   * Creates a Drupal file entity from a file URL and returns the target_id.
+   *
+   * @param string $url
+   *   The absolute URL to the file.
+   *
+   * @param array $file_options
+   *   (optional) Options for file_save_data, e.g., ['uri' => 'public://filename.ext'].
+   *
+   * @return int|false
+   *   The file entity ID (target_id) on success, or FALSE on failure.
+   */
+  public function fileFromUrl(string $url, array $file_options = []) {
+    // Download the file data.
+    $data = file_get_contents($url);
+    if ($data === FALSE) {
+      \Drupal::logger('eiw_migrate')->error('Could not fetch file from URL: @url', ['@url' => $url]);
+      return FALSE;
+    }
+
+    // Determine the file name.
+    $basename = basename(parse_url($url, PHP_URL_PATH));
+    if (empty($basename)) {
+      $basename = 'downloaded_file_' . time();
+    }
+
+    // Determine the file destination.
+    $destination = $file_options['uri'] ?? 'public://' . $basename;
+
+    // Save the file in Drupal's managed files.
+    $file = file_save_data($data, $destination, FILE_EXISTS_RENAME);
+    if (!$file) {
+      \Drupal::logger('eiw_migrate')->error('Could not save file from URL: @url', ['@url' => $url]);
+      return FALSE;
+    }
+
+    // Set status to permanent.
+    $file->setPermanent();
+    $file->save();
+
+    return $file->id();
   }
 
   /**
