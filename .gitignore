@@ -6,3 +6,4 @@ scripts/local
 
 .idea
 configuration/.htaccess
+custom/modules/eiw_migrate/data/pdf

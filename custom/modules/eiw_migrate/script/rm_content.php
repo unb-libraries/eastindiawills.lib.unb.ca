@@ -3,11 +3,14 @@
 use Drupal\node\Entity\Node;
 use Drupal\taxonomy\Entity\Term;
 
-// Usage: drush php:script delete_after_date.php [YYYY-MM-DD]
+// Usage: drush php:script rm_content.php [YYYY-MM-DD]
 
 // If no date is passed, use today's date (current time).
-if (!empty($argv[1])) {
-  $date_string = $argv[1];
+$date_arg = isset($extra[0]) ? $extra[0] : null;
+
+
+if (!empty($date_arg)) {
+  $date_string = $date_arg;
   $timestamp = strtotime($date_string);
   if (!$timestamp) {
     echo "Invalid date format. Use YYYY-MM-DD.\n";

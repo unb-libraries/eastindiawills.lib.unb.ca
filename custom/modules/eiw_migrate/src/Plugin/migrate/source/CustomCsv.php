@@ -161,12 +161,12 @@ class CustomCsv extends CSV {
     
     // Process images (PDF).
     $path = $row->getSourceProperty('path');
-    $filename = $path ?? basename($row->getSourceProperty('path'));
-    $file = $filename ?? "custom/modules/eiw_migrate/data/pdf/$filename";
-    $fid = $file ?? $this->fileFromUrl($file);
+    $filename = $path ? basename($row->getSourceProperty('path')) : NULL;
+    $file = $filename ? "/app/html/sites/default/files/eiw_migrate_pdf/$filename" : NULL;
+    $fid = $file ? $this->fileFromUrl($file) : NULL;
 
     $row->setSourceProperty(
-      'fid',
+      'img_ref',
       $fid
     );     
   }
@@ -274,7 +274,12 @@ class CustomCsv extends CSV {
     $destination = $file_options['uri'] ?? 'public://' . $basename;
 
     // Save the file in Drupal's managed files.
-    $file = file_save_data($data, $destination, FILE_EXISTS_RENAME);
+    if (!defined('FILE_EXISTS_RENAME')) {
+      define('FILE_EXISTS_RENAME', 3);
+    }
+    $file_repository = \Drupal::service('file.repository');
+    $file = $file_repository->writeData($data, $destination, FILE_EXISTS_RENAME);
+
     if (!$file) {
       \Drupal::logger('eiw_migrate')->error('Could not save file from URL: @url', ['@url' => $url]);
       return FALSE;

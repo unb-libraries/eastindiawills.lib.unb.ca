@@ -70,7 +70,7 @@ content:
     type: file_default
     label: above
     settings:
-      use_description_as_link_text: true
+      use_description_as_link_text: false
     third_party_settings: {  }
     weight: 12
     region: content

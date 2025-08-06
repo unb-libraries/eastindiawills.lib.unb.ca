@@ -100,7 +100,7 @@ process:
     source: add_names
   field_court: court_ref
   field_role: role_ref
-  field_document_images: fid
+  field_document_images: img_ref
 
 destination:
   plugin: entity:node
