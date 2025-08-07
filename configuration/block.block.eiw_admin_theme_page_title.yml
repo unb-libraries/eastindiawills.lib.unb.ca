@@ -1,0 +1,20 @@
+uuid: 2bb1629a-85f1-4bc0-9c57-e0f1d0b9d29c
+langcode: en
+status: true
+dependencies:
+  theme:
+    - eiw_admin_theme
+_core:
+  default_config_hash: fNwDdW063tk_ktzSWzZVeQS9wzvLooVO280BQ9WrsIs
+id: eiw_admin_theme_page_title
+theme: eiw_admin_theme
+region: header
+weight: -30
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

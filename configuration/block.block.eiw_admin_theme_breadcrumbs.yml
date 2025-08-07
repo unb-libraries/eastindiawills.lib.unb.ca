@@ -1,0 +1,22 @@
+uuid: 0e1872fe-8789-4208-8370-bca880d43c11
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - eiw_admin_theme
+_core:
+  default_config_hash: NjcxOBrPOiK5-38t56DwFBDVY4yer7YSlbRWXFuHe7A
+id: eiw_admin_theme_breadcrumbs
+theme: eiw_admin_theme
+region: header
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

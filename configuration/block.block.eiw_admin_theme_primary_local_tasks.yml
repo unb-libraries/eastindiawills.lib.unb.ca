@@ -1,0 +1,22 @@
+uuid: e66e34dd-fbf4-4119-b8da-bbd0ac1b448d
+langcode: en
+status: true
+dependencies:
+  theme:
+    - eiw_admin_theme
+_core:
+  default_config_hash: ACjBZI5shAMiiUpsz-inLYVXDqNNXRnSzAWV3kV_8Hw
+id: eiw_admin_theme_primary_local_tasks
+theme: eiw_admin_theme
+region: header
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

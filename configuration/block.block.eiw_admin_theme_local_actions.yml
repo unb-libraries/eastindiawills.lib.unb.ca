@@ -1,0 +1,20 @@
+uuid: 4db6ddce-4e39-477a-8ee3-9817e4fd82e1
+langcode: en
+status: true
+dependencies:
+  theme:
+    - eiw_admin_theme
+_core:
+  default_config_hash: CdXfDmRgAvms7EQovxxWPdYi0GitxeRbVtScYK16ZH0
+id: eiw_admin_theme_local_actions
+theme: eiw_admin_theme
+region: content
+weight: -10
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }
