@@ -41,7 +41,7 @@ class ItemMigrateEvent implements EventSubscriberInterface {
    */
   public static function getSubscribedEvents() {
     $events[MigratePlusEvents::PREPARE_ROW][] = ['onPrepareRow', 0];
-    $events[MigrateEvents::POST_IMPORT][] = ['onPostImport', 0];
+    $events[MigratePlusEvents::POST_IMPORT][] = ['onPostImport', 0];
     return $events;
   }
 
