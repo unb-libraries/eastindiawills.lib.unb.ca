@@ -34,6 +34,8 @@ roles:
   - "Quartermaster"
   - "Sailor"
   - "Servant of EIC"
+  - "Servant to EIC"
+  - "Servant to Henry Middleton"
   - "Servant to Captain"
   - "Shipwright"
   - "Smith"
