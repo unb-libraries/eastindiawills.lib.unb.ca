@@ -10,7 +10,7 @@ source:
   plugin: custom_csv
   path: '/app/html/modules/custom/eiw_migrate/data/csv/eiw_tropy.csv'
   header_row_count: 1
-  ids: [tropy_title]
+  ids: [path]
   
   fields:
     0:
