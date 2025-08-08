@@ -36,6 +36,7 @@ class CustomCsv extends CSV {
   public function processTropy(&$row) {
     // Parse notes.
     $notes_raw = $row->getSourceProperty('note');
+    $notes_raw = $notes_raw ?? $row->getSourceProperty('note2');
     $first = '';
     $last = '';
 

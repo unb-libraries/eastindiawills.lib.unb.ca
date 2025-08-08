@@ -52,6 +52,12 @@ source:
     12:
       name: note
       label: Note
+    11:
+      name: path2
+      label: Path 2
+    12:
+      name: note2
+      label: Note 2
 
 process:
   title: 
