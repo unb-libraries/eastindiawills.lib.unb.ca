@@ -1,6 +1,7 @@
 <?php
 
 use Drupal\Core\Datetime\DrupalDateTime;
+use Drupal\file\Entity\File;
 
 /**
  * Implements hook_ENTITY_TYPE_presave().
@@ -22,6 +23,16 @@ function eiw_core_node_presave($entity) {
     ;
     
     $entity->setTitle($last_name . $first_name . $date);
+    // Update document images PDF filename.
+    if ($entity->hasField('field_document_images') && 
+    !$entity->get('field_document_images')->isEmpty()) {
+      $file = $entity->get('field_document_images')->entity;
+      if ($file instanceof File) {
+        // Set new filename
+        $file->setFilename(strtolower(slugify($entity->getTitle())) . '.pdf');
+        $file->save();
+      }
+    }
   }
 }
 
@@ -41,4 +52,24 @@ function eiw_core_form_node_eiw_will_form_alter(&$form, \Drupal\Core\Form\FormSt
       $form['field_date_of_probate']['widget'][0]['value']['#default_value'] = $default_date;
     }
   }
+}
+
+/**
+ * Converts a string to a "slug" format.
+ *
+ * This function replaces all special characters in the input string with dashes,
+ * collapses multiple consecutive dashes into a single dash, and optionally trims
+ * leading or trailing dashes. The result is suitable for URLs or filenames.
+ *
+ * @param string $string The input string to be slugified.
+ * @return string The slugified version of the string.
+ */
+function slugify($string) {
+  // Replace all non-alphanumeric characters with a dash
+  $string = preg_replace('/[^A-Za-z0-9]+/', '-', $string);
+  // Collapse multiple consecutive dashes into a single dash
+  $string = preg_replace('/-+/', '-', $string);
+  // Optionally trim dashes from the beginning and end
+  $string = trim($string, '-');
+  return $string;
 }

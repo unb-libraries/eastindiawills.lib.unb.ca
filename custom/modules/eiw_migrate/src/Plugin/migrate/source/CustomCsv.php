@@ -286,6 +286,9 @@ class CustomCsv extends CSV {
     }
 
     // Set status to permanent.
+    if (isset($file_options['filename'])) {
+      $file->setFilename($file_options['filename']);
+    }
     $file->setPermanent();
     $file->save();
 
