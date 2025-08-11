@@ -17,13 +17,11 @@ use Drupal\taxonomy\Entity\Term;
  * )
  */
 class CustomCsv extends CSV {
-  protected $counter = 1;
 
   /**
    * {@inheritdoc}
    */
   public function prepareRow(Row $row) {
-    $row->setSourceProperty('migrate_id', $this->counter++);
     $this->processTropy($row);
     // Skip row if last_name is missing or empty.
     if (!$row->getSourceProperty('last_name')) {
@@ -174,14 +172,6 @@ class CustomCsv extends CSV {
       'img_ref',
       $fid
     );     
-  }
-
-  public function getIds() {
-    return [
-      'migrate_id' => [
-        'type' => 'integer',
-      ],
-    ];
   }
 
   /**
