@@ -176,6 +176,14 @@ class CustomCsv extends CSV {
     );     
   }
 
+  public function getIds() {
+    return [
+      'migrate_id' => [
+        'type' => 'integer',
+      ],
+    ];
+  }
+
   /**
    * Get the ID of a node by field value and bundle (case-insensitive).
    * If the node does not exist, create it with the specified field populated.
