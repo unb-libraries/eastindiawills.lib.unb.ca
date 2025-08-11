@@ -2,6 +2,7 @@
 
 namespace Drupal\eiw_migrate\Plugin\migrate\source;
 
+use Drupal\Core\File\FileExists;
 use Drupal\file\Entity\File;
 use Drupal\migrate_source_csv\Plugin\migrate\source\CSV;
 use Drupal\migrate\Row;
@@ -275,11 +276,8 @@ class CustomCsv extends CSV {
     $destination = $file_options['uri'] ?? 'public://' . $basename;
 
     // Save the file in Drupal's managed files.
-    if (!defined('FILE_EXISTS_RENAME')) {
-      define('FILE_EXISTS_RENAME', 3);
-    }
     $file_repository = \Drupal::service('file.repository');
-    $file = $file_repository->writeData($data, $destination, FILE_EXISTS_RENAME);
+    $file = $file_repository->writeData($data, $destination, FileExists::Replace);
 
     if (!$file) {
       \Drupal::logger('eiw_migrate')->error('Could not save file from URL: @url', ['@url' => $url]);
