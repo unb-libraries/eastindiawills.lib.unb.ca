@@ -2,6 +2,9 @@
 
 use Drupal\node\Entity\Node;
 use Drupal\taxonomy\Entity\Term;
+use Drupal\Core\Database\Database;
+use Drupal\Core\File\FileSystemInterface;
+use Drupal\file\Entity\File;
 
 // Usage: drush php:script rm_content.php [YYYY-MM-DD]
 
@@ -54,6 +57,44 @@ if (!empty($tids)) {
   }
 } else {
   echo "No taxonomy terms found modified since $date_string.\n";
+}
+
+// Delete all managed files (file entities).
+$file_ids = \Drupal::entityQuery('file')
+  ->condition('created', $timestamp, '>')
+  ->execute();
+
+if (empty($file_ids)) {
+  echo "No managed files found created after timestamp {$timestamp}.\n";
+  exit;
+}
+
+$storage = \Drupal::entityTypeManager()->getStorage('file');
+$files = $storage->loadMultiple($file_ids);
+
+foreach ($files as $file) {
+  /** @var \Drupal\file\FileInterface $file */
+  $uri = $file->getFileUri();
+  $created = $file->getCreatedTime();
+  echo "Deleting file entity: {$file->id()} ({$uri}) - Created: {$created}\n";
+  try {
+    // Delete the file entity (removes references in Drupal).
+    $file->delete();
+
+    // Remove the physical file if it exists.
+    if (file_exists($file->getFileUri())) {
+      $result = \Drupal::service('file_system')->delete($uri, FileSystemInterface::DELETE);
+      if ($result) {
+        echo "Deleted physical file: {$uri}\n";
+      } else {
+        echo "Failed to delete physical file: {$uri}\n";
+      }
+    } else {
+      echo "Physical file does not exist: {$uri}\n";
+    }
+  } catch (Exception $e) {
+    echo "Error deleting file {$file->id()}: " . $e->getMessage() . "\n";
+  }
 }
 
 echo "Done.\n";
