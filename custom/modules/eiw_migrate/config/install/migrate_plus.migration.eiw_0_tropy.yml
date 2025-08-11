@@ -10,7 +10,8 @@ source:
   plugin: custom_csv
   path: '/app/html/modules/custom/eiw_migrate/data/csv/eiw_tropy.csv'
   header_row_count: 1
-  ids: [custom_source_id]
+  ids:
+    migrate_id: {}
   
   fields:
     0:
@@ -66,12 +67,6 @@ source:
       label: Note 3
 
 process:
-  custom_source_id:
-    plugin: concat
-    source:
-      - tropy_title
-      - path
-    delimiter: '-'
   title: 
     plugin: callback
     callable: trim
