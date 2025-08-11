@@ -62,6 +62,7 @@ if (!empty($tids)) {
 // Delete all managed files (file entities).
 $file_ids = \Drupal::entityQuery('file')
   ->condition('created', $timestamp, '>')
+  ->accessCheck(FALSE)
   ->execute();
 
 if (empty($file_ids)) {
