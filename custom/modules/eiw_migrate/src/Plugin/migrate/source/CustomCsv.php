@@ -38,6 +38,7 @@ class CustomCsv extends CSV {
     // Parse notes.
     $notes_raw = $row->getSourceProperty('note');
     $notes_raw = $notes_raw ?? $row->getSourceProperty('note2');
+    $notes_raw = $notes_raw ?? $row->getSourceProperty('note3');
     $first = '';
     $last = '';
 

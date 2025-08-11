@@ -58,6 +58,12 @@ source:
     14:
       name: note2
       label: Note 2
+    15:
+      name: path3
+      label: Path 3
+    16:
+      name: note3
+      label: Note 3
 
 process:
   title: 
