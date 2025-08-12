@@ -37,8 +37,8 @@ class CustomCsv extends CSV {
   public function processTropy(&$row) {
     // Parse notes.
     $notes_raw = $row->getSourceProperty('note');
-    $notes_raw = $notes_raw ?? $row->getSourceProperty('note2');
-    $notes_raw = $notes_raw ?? $row->getSourceProperty('note3');
+    $notes_raw = $notes_raw == '' ? $row->getSourceProperty('note2') : $notes_raw;
+    $notes_raw = $notes_raw == '' ? $row->getSourceProperty('note3') : $notes_raw;
     $first = '';
     $last = '';
 
@@ -163,6 +163,7 @@ class CustomCsv extends CSV {
     }
     
     // Process images (PDF).
+    /*
     $path = $row->getSourceProperty('path');
     $filename = $path ? basename($row->getSourceProperty('path')) : NULL;
     $file = $filename ? "/app/html/sites/default/files/eiw_migrate_pdf/$filename" : NULL;
@@ -171,7 +172,8 @@ class CustomCsv extends CSV {
     $row->setSourceProperty(
       'img_ref',
       $fid
-    );     
+    );
+    */     
   }
 
   /**
