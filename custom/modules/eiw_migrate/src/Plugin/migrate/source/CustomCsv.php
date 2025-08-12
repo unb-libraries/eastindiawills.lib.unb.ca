@@ -163,7 +163,6 @@ class CustomCsv extends CSV {
     }
     
     // Process images (PDF).
-    /*
     $path = $row->getSourceProperty('path');
     $filename = $path ? basename($row->getSourceProperty('path')) : NULL;
     $file = $filename ? "/app/html/sites/default/files/eiw_migrate_pdf/$filename" : NULL;
@@ -173,7 +172,6 @@ class CustomCsv extends CSV {
       'img_ref',
       $fid
     );
-    */     
   }
 
   /**
