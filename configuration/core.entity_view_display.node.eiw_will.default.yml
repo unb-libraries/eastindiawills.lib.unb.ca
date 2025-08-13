@@ -83,7 +83,7 @@ content:
     weight: 0
     region: content
   field_health_notes:
-    type: basic_string
+    type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -163,7 +163,7 @@ content:
     weight: 13
     region: content
   field_summary:
-    type: basic_string
+    type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }

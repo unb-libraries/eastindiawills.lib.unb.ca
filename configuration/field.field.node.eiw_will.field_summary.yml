@@ -1,10 +1,13 @@
-uuid: a96f792e-25ce-4984-8113-726aa78fef27
+uuid: f5ca8f88-4132-4ebd-9b45-4f911bc17cf8
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_summary
+    - filter.format.unb_libraries
     - node.type.eiw_will
+  module:
+    - text
 id: node.eiw_will.field_summary
 field_name: field_summary
 entity_type: node
@@ -15,5 +18,7 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: string_long
+settings:
+  allowed_formats:
+    - unb_libraries
+field_type: text_long

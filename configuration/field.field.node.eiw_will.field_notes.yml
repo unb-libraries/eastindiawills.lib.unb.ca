@@ -9,7 +9,7 @@ id: node.eiw_will.field_notes
 field_name: field_notes
 entity_type: node
 bundle: eiw_will
-label: Notes
+label: 'Notes (Private)'
 description: ''
 required: false
 translatable: false

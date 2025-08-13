@@ -1,4 +1,4 @@
-eiw_admin.admin:
+eiw_admin.root:
   title: 'East India Wills'
   description: 'Manage content admin features.'
   route_name: <front>
@@ -8,27 +8,33 @@ eiw_admin.admin:
     attributes:
       class:
         - custom-editor-menu
-eiw_admin.admin.content:
+eiw_admin.content:
   title: 'Content'
   description: 'Manage site content.'
   url: internal:/admin/content
-  parent: eiw_admin.admin
+  parent: eiw_admin.root
   weight: 10
 eiw_admin.wills.add:
   title: 'Add Will'
   description: 'Create a new will.'
   url: internal:/node/add/eiw_will
-  parent: eiw_admin.admin
+  parent: eiw_admin.root
   weight: 20
 eiw_admin.ships.add:
   title: 'Add Ship'
   description: 'Create a new ship.'
   url: internal:/node/add/eiw_ship
-  parent: eiw_admin.admin
+  parent: eiw_admin.root
   weight: 30
 eiw_admin.voyages:
   title: 'Voyages'
   description: 'Create/edit/remove voyages.'
   url: internal:/admin/structure/taxonomy/manage/eiw_voyages/overview
-  parent: eiw_admin.admin
+  parent: eiw_admin.root
   weight: 40
+eiw_admin.wills.audit:
+  title: 'Audit Wills'
+  description: 'Audit wills.'
+  url: internal:/audit-wills
+  parent: eiw_admin.root
+  weight: 50

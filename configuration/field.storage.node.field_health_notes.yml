@@ -1,16 +1,16 @@
-uuid: a57d5127-a8d7-496b-99be-0e5ea8f6e7a2
+uuid: 1fdd59b2-186a-475f-8f32-3eb586388bdd
 langcode: en
 status: true
 dependencies:
   module:
     - node
+    - text
 id: node.field_health_notes
 field_name: field_health_notes
 entity_type: node
-type: string_long
-settings:
-  case_sensitive: false
-module: core
+type: text_long
+settings: {  }
+module: text
 locked: false
 cardinality: 1
 translatable: true

@@ -1,10 +1,13 @@
-uuid: 45952e77-8aa4-4504-b67e-6b70d95cfd81
+uuid: 592c60e5-61e6-4ae4-9e3f-0c76270b2922
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_health_notes
+    - filter.format.unb_libraries
     - node.type.eiw_will
+  module:
+    - text
 id: node.eiw_will.field_health_notes
 field_name: field_health_notes
 entity_type: node
@@ -15,5 +18,7 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: string_long
+settings:
+  allowed_formats:
+    - unb_libraries
+field_type: text_long

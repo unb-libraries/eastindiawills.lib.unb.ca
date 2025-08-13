@@ -76,7 +76,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_health_notes:
-    type: string_textarea
+    type: text_textarea
     weight: 10
     region: content
     settings:
@@ -165,7 +165,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_summary:
-    type: string_textarea
+    type: text_textarea
     weight: 14
     region: content
     settings:
