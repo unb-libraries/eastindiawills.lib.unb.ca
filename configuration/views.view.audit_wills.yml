@@ -724,7 +724,7 @@ display:
         options:
           offset: 0
           pagination_heading_level: h4
-          items_per_page: 25
+          items_per_page: 50
           total_pages: null
           id: 0
           tags:
@@ -806,12 +806,27 @@ display:
           default_row_class: true
           columns:
             title: title
+            field_date_of_will: field_date_of_will
             status: status
+            field_shipboard_will: field_shipboard_will
             changed: changed
+            field_ship: field_ship
+            field_voyage: field_voyage
+            nothing: nothing
+            field_role: field_role
+            field_document_images: field_document_images
+            nothing_1: nothing_1
           default: changed
           info:
             title:
               sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_date_of_will:
+              sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
@@ -824,9 +839,54 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
+            field_shipboard_will:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
             changed:
               sortable: true
               default_sort_order: desc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_ship:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_voyage:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            nothing:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_role:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_document_images:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            nothing_1:
               align: ''
               separator: ''
               empty_column: false
