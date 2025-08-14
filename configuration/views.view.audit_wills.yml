@@ -826,7 +826,7 @@ display:
               empty_column: false
               responsive: ''
             field_date_of_will:
-              sortable: false
+              sortable: true
               default_sort_order: asc
               align: ''
               separator: ''
@@ -840,7 +840,7 @@ display:
               empty_column: false
               responsive: ''
             field_shipboard_will:
-              sortable: false
+              sortable: true
               default_sort_order: asc
               align: ''
               separator: ''
@@ -861,7 +861,7 @@ display:
               empty_column: false
               responsive: ''
             field_voyage:
-              sortable: false
+              sortable: true
               default_sort_order: asc
               align: ''
               separator: ''
@@ -873,7 +873,7 @@ display:
               empty_column: false
               responsive: ''
             field_role:
-              sortable: false
+              sortable: true
               default_sort_order: asc
               align: ''
               separator: ''
