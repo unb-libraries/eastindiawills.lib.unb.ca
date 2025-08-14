@@ -1,18 +1,19 @@
-uuid: f28e05da-7ef9-46b0-a220-c741187a1ad1
+uuid: 088817f0-2de1-43bc-9a11-a8160f4fc40b
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_ship
-field_name: field_ship
+    - paragraphs
+id: node.field_will_voyages
+field_name: field_will_voyages
 entity_type: node
 type: entity_reference
 settings:
-  target_type: node
+  target_type: paragraph
 module: core
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

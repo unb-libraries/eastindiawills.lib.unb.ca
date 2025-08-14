@@ -1,12 +1,13 @@
-uuid: f4dd5655-64c9-4f6c-8257-88dd77489815
+uuid: e101be8c-02ab-410e-a8f5-a7d78935cabc
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_voyage
-field_name: field_voyage
-entity_type: node
+    - paragraphs
+id: paragraph.field_ship
+field_name: field_ship
+entity_type: paragraph
 type: entity_reference
 settings:
   target_type: node

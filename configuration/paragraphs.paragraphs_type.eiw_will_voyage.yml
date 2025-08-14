@@ -1,0 +1,10 @@
+uuid: b8648b2e-7821-4e4b-937a-5eaa2335c80d
+langcode: en
+status: true
+dependencies: {  }
+id: eiw_will_voyage
+label: 'Will Voyage'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

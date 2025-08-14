@@ -1,0 +1,65 @@
+uuid: 31926b44-01f3-435f-ac93-162bf21a097d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.eiw_will_voyage.field_role
+    - field.field.paragraph.eiw_will_voyage.field_ship
+    - field.field.paragraph.eiw_will_voyage.field_voyage
+    - paragraphs.paragraphs_type.eiw_will_voyage
+  module:
+    - inline_entity_form
+id: paragraph.eiw_will_voyage.default
+targetEntityType: paragraph
+bundle: eiw_will_voyage
+mode: default
+content:
+  field_role:
+    type: entity_reference_autocomplete
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_ship:
+    type: inline_entity_form_complex
+    weight: 1
+    region: content
+    settings:
+      form_mode: default
+      override_labels: true
+      label_singular: Ship
+      label_plural: Ships
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      allow_duplicate: false
+      collapsible: true
+      collapsed: false
+      revision: false
+      removed_reference: keep
+    third_party_settings: {  }
+  field_voyage:
+    type: inline_entity_form_complex
+    weight: 0
+    region: content
+    settings:
+      form_mode: default
+      override_labels: true
+      label_singular: Voyage
+      label_plural: Voyages
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      allow_duplicate: false
+      collapsible: true
+      collapsed: false
+      revision: false
+      removed_reference: keep
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

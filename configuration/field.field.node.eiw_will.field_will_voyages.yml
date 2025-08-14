@@ -1,0 +1,32 @@
+uuid: 0f499d97-4a9f-4512-89e7-6bf12ba7d702
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_will_voyages
+    - node.type.eiw_will
+    - paragraphs.paragraphs_type.eiw_will_voyage
+id: node.eiw_will.field_will_voyages
+field_name: field_will_voyages
+entity_type: node
+bundle: eiw_will
+label: 'Will Voyage(s)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      eiw_will_voyage: eiw_will_voyage
+    negate: 0
+    target_bundles_drag_drop:
+      eiw_leg:
+        weight: 4
+        enabled: false
+      eiw_will_voyage:
+        weight: 3
+        enabled: true
+field_type: entity_reference

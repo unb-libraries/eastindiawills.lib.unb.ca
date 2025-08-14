@@ -1,15 +1,15 @@
-uuid: 239604fe-c569-4cb2-99db-3c3c869f3f3a
+uuid: f5e3bda2-bf44-4202-89a2-c6c6b8f945e8
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_voyage
+    - field.storage.paragraph.field_voyage
     - node.type.eiw_voyage
-    - node.type.eiw_will
-id: node.eiw_will.field_voyage
+    - paragraphs.paragraphs_type.eiw_will_voyage
+id: paragraph.eiw_will_voyage.field_voyage
 field_name: field_voyage
-entity_type: node
-bundle: eiw_will
+entity_type: paragraph
+bundle: eiw_will_voyage
 label: Voyage
 description: ''
 required: false

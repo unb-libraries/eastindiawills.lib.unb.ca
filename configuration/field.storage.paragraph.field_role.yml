@@ -1,13 +1,13 @@
-uuid: 8030f033-9636-44f3-80a4-753d7f463043
+uuid: 9fb76ab1-e9a2-4e45-866e-20049f386059
 langcode: en
 status: true
 dependencies:
   module:
-    - node
+    - paragraphs
     - taxonomy
-id: node.field_role
+id: paragraph.field_role
 field_name: field_role
-entity_type: node
+entity_type: paragraph
 type: entity_reference
 settings:
   target_type: taxonomy_term

@@ -1,15 +1,15 @@
-uuid: b8259151-7079-4c04-b6ea-0a607b840e10
+uuid: def33fa0-3229-4a09-bf75-36f165fdadc0
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_role
-    - node.type.eiw_will
+    - field.storage.paragraph.field_role
+    - paragraphs.paragraphs_type.eiw_will_voyage
     - taxonomy.vocabulary.eiw_roles
-id: node.eiw_will.field_role
+id: paragraph.eiw_will_voyage.field_role
 field_name: field_role
-entity_type: node
-bundle: eiw_will
+entity_type: paragraph
+bundle: eiw_will_voyage
 label: Role
 description: ''
 required: false
@@ -24,6 +24,6 @@ settings:
     sort:
       field: name
       direction: asc
-    auto_create: false
+    auto_create: true
     auto_create_bundle: ''
 field_type: entity_reference

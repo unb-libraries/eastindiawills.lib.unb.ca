@@ -1,15 +1,15 @@
-uuid: cd02b5c5-bfc5-4c7c-88ed-709e48d09a93
+uuid: 972d02a2-5202-4c8e-8a64-eb1797e77b3d
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_ship
+    - field.storage.paragraph.field_ship
     - node.type.eiw_ship
-    - node.type.eiw_will
-id: node.eiw_will.field_ship
+    - paragraphs.paragraphs_type.eiw_will_voyage
+id: paragraph.eiw_will_voyage.field_ship
 field_name: field_ship
-entity_type: node
-bundle: eiw_will
+entity_type: paragraph
+bundle: eiw_will_voyage
 label: Ship
 description: ''
 required: false

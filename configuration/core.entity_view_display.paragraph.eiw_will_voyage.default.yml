@@ -1,0 +1,39 @@
+uuid: d61dbb77-24fc-4955-be43-04f77f1de9dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.eiw_will_voyage.field_role
+    - field.field.paragraph.eiw_will_voyage.field_ship
+    - field.field.paragraph.eiw_will_voyage.field_voyage
+    - paragraphs.paragraphs_type.eiw_will_voyage
+id: paragraph.eiw_will_voyage.default
+targetEntityType: paragraph
+bundle: eiw_will_voyage
+mode: default
+content:
+  field_role:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_ship:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_voyage:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }
