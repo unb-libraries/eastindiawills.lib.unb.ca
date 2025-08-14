@@ -105,6 +105,10 @@ process:
   field_ship:
     plugin: callback
     callable: trim
+    source: marital_ref
+  field_marital_status:
+    plugin: callback
+    callable: trim
     source: ship_ref
   field_additional_names:
     plugin: callback

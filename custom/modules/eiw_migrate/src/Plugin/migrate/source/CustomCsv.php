@@ -129,13 +129,19 @@ class CustomCsv extends CSV {
           $court = 'Prerogative Court of Canterbury';
         }
         else {
-          // Search for tag in roles.
+          // Search for tag in roles and marital status.
           $role_tids = $this->termByName($tag, 'eiw_roles');
+          $marital_tids = $this->termByName($tag, 'eiw_marital_statuses');
 
           if (!empty($role_tids)) {
             // Update role.
             $role_tid = reset($role_tids);
             $row->setSourceProperty('role_ref', $role_tid);
+          }
+          elseif (!empty($marital_tids)) {
+            // Update marital status.
+            $marital_tid = reset($marital_tids);
+            $row->setSourceProperty('marital_ref', $marital_tid);
           }
           else {
             $ship_nid = $this->getOrCreateNodeId('title', $tag, 'eiw_ship');
