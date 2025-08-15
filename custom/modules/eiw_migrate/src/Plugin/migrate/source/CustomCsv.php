@@ -160,28 +160,25 @@ class CustomCsv extends CSV {
         }
       }
       // Will voyage.
-      if ((isset($ship_nid) and $ship_nid) or
-        (isset($role_tid) and $role_tid)) {
+      if ((isset($ship_nid)) or
+        (isset($role_tid))) {
         // Create paragraph.
-        $will_voyage = Paragraph::create([
-          'type' => 'eiw_will_voyage',
-          'field_ship' => [
-            'target_id' => $ship_nid,
-          ],
-          'field_role' => [
-            'target_id' => $role_tid,
-          ],
-        ]);
+        $will_voyage = Paragraph::create(['type' => 'eiw_will_voyage']);
+        if (isset($ship_nid) && $ship_nid) {
+          $will_voyage->set('field_ship', ['target_id' => $ship_nid]);
+        }
+        if (isset($role_tid) && $role_tid) {
+          $will_voyage->set('field_role', ['target_id' => $role_tid]);
+        }
         // Save the paragraph and get ID.
         $will_voyage->save();
         $pid = $will_voyage->id();
+        // Update will voyage.
+        $row->setSourceProperty(
+          'will_voyage_ref',
+          $pid
+        );        
       }
-
-      // Update will voyage.
-      $row->setSourceProperty(
-        'will_voyage_ref',
-        $pid
-      );        
     }
     
     // Process images (PDF).
