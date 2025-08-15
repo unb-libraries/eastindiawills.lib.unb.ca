@@ -7,6 +7,7 @@ use Drupal\file\Entity\File;
 use Drupal\migrate_source_csv\Plugin\migrate\source\CSV;
 use Drupal\migrate\Row;
 use Drupal\node\Entity\Node;
+use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\taxonomy\Entity\Term;
 
 /**
@@ -136,7 +137,6 @@ class CustomCsv extends CSV {
           if (!empty($role_tids)) {
             // Update role.
             $role_tid = reset($role_tids);
-            $row->setSourceProperty('role_ref', $role_tid);
           }
           elseif (!empty($marital_tids)) {
             // Update marital status.
@@ -158,21 +158,37 @@ class CustomCsv extends CSV {
             );
           }
         }
-        // Update ship.
-        if (isset($ship_nid) and $ship_nid) {
-          $row->setSourceProperty(
-            'ship_ref',
-            $ship_nid
-          );        
-        }
       }
+      // Will voyage.
+      if ((isset($ship_nid) and $ship_nid) or
+        (isset($role_tid) and $role_tid)) {
+        // Create paragraph.
+        $will_voyage = Paragraph::create([
+          'type' => 'eiw_will_voyage',
+          'field_ship' => [
+            'target_id' => $ship_nid,
+          ],
+          'field_role' => [
+            'target_id' => $role_tid,
+          ],
+        ]);
+        // Save the paragraph and get ID.
+        $will_voyage->save();
+        $pid = $will_voyage->id();
+      }
+
+      // Update will voyage.
+      $row->setSourceProperty(
+        'will_voyage_ref',
+        $pid
+      );        
     }
     
     // Process images (PDF).
     $path = $row->getSourceProperty('path');
     $filename = $path ? basename($row->getSourceProperty('path')) : NULL;
     $file = $filename ? "/app/html/sites/default/files/eiw_migrate_pdf/$filename" : NULL;
-    $fid = $file ? $this->fileFromUrl($file) : NULL;
+    $fid = $file ? [$this->fileFromUrl($file)] : NULL;
 
     $row->setSourceProperty(
       'img_ref',

@@ -102,21 +102,13 @@ process:
     plugin: callback
     callable: trim
     source: reference
-  field_ship:
-    plugin: callback
-    callable: trim
-    source: marital_ref
-  field_marital_status:
-    plugin: callback
-    callable: trim
-    source: ship_ref
   field_additional_names:
     plugin: callback
     callable: trim
     source: add_names
   field_court: court_ref
-  field_role: role_ref
   field_document_images: img_ref
+  field_will_voyages: will_voyage_ref
 
 destination:
   plugin: entity:node
