@@ -41,13 +41,24 @@ function eiw_migrate_install() {
   
   // Add default entities.
   $ships = \Drupal::config('eiw_migrate.settings')->get('ships');
+  $voyages = \Drupal::config('eiw_migrate.settings')->get('voyages');
   
   foreach ($ships as $ship) {    
     $result = eiw_migrate_create_node($ship, 'eiw_ship');
     
     $message = $result ?
       "Created ship $ship." :
-      "Couldn't create taxonomy term $ship.";
+      "Couldn't create ship $ship.";
+  
+    \Drupal::logger('eiw_migrate')->notice($message);
+  }
+  
+  foreach ($voyages as $voyage) {    
+    $result = eiw_migrate_create_node($voyage, 'eiw_voyage');
+    
+    $message = $result ?
+      "Created voyage $voyage." :
+      "Couldn't create voyage $voyage.";
   
     \Drupal::logger('eiw_migrate')->notice($message);
   }

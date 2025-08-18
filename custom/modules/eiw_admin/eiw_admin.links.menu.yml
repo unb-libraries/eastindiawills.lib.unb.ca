@@ -21,6 +21,12 @@ eiw_admin.wills.add:
   parent: eiw_admin.root
   weight: 20
 eiw_admin.ships.add:
+  title: 'Add Voyage'
+  description: 'Create a new voyage.'
+  url: internal:/node/add/eiw_voyage
+  parent: eiw_admin.root
+  weight: 21
+eiw_admin.ships.add:
   title: 'Add Ship'
   description: 'Create a new ship.'
   url: internal:/node/add/eiw_ship

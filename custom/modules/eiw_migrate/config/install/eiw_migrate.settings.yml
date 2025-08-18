@@ -117,6 +117,7 @@ ships:
   - "Unicorn"
   - "Union"
   - "Unity"
+  - "Unknown"
   - "Whale"
   - "White Bear"
   - "William"
@@ -129,3 +130,5 @@ source_types:
   - "Microfilm" 
   - "Original"
   - "Print"
+voyages:
+  - "Unknown"
