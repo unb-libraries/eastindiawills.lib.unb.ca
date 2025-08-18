@@ -22,6 +22,8 @@ dependencies:
     - field.field.node.eiw_will.field_transcription
     - field.field.node.eiw_will.field_tropy_title
     - field.field.node.eiw_will.field_will_voyages
+    - field.field.node.eiw_will.field_year_only_probate
+    - field.field.node.eiw_will.field_year_only_will
     - node.type.eiw_will
   module:
     - user
@@ -54,3 +56,5 @@ hidden:
   field_transcription: true
   field_tropy_title: true
   field_will_voyages: true
+  field_year_only_probate: true
+  field_year_only_will: true

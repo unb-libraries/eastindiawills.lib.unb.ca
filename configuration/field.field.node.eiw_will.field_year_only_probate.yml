@@ -1,0 +1,21 @@
+uuid: 2c7b6ad9-d8db-403c-891e-67e33e1a479c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_year_only_probate
+    - node.type.eiw_will
+id: node.eiw_will.field_year_only_probate
+field_name: field_year_only_probate
+entity_type: node
+bundle: eiw_will
+label: 'Year Only (probate)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

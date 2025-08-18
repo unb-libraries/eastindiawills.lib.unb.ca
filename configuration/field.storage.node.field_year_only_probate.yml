@@ -1,0 +1,18 @@
+uuid: dde7bdc8-dd7b-492a-b363-0dde767f14e5
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_year_only_probate
+field_name: field_year_only_probate
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

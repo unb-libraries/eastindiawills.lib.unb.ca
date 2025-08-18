@@ -55,6 +55,46 @@ function eiw_core_form_node_eiw_will_form_alter(&$form, \Drupal\Core\Form\FormSt
 }
 
 /**
+ * Implements hook_preprocess_node().
+ */
+function eiw_core_preprocess_node(array &$variables) {
+  // Only alter nodes of type 'eiw_will'.
+  if ($variables['node']->bundle() === 'eiw_will') {
+    $node = $variables['node'];
+
+    // Helper function to alter field display if boolean is TRUE.
+    $alter_year_only = function ($field_name, $year_only_field) use (&$variables, $node) {
+      if (
+        $node->hasField($year_only_field) &&
+        !$node->get($year_only_field)->isEmpty() &&
+        $node->get($year_only_field)->value &&
+        $node->hasField($field_name) &&
+        !$node->get($field_name)->isEmpty() &&
+        isset($variables['content'][$field_name]['#items'][0]->value)
+      ) {
+        $date_value = $node->get($field_name)->value;
+        $year = substr($date_value, 0, 4);
+
+        // Update only the rendered value, preserving the rest of the render array.
+        foreach ($variables['content'][$field_name] as $delta => &$item) {
+          if (is_array($item) && isset($item['#markup'])) {
+            $item['#markup'] = $year;
+          }
+        }
+        // Also update the raw item for other formatters.
+        if (isset($variables['content'][$field_name]['#items'][0]->value)) {
+          $variables['content'][$field_name]['#items'][0]->value = $year;
+        }
+      }
+    };
+
+    // Apply for both fields.
+    $alter_year_only('field_date_of_probate', 'field_year_only_probate');
+    $alter_year_only('field_date_of_will', 'field_year_only_will');
+  }
+}
+
+/**
  * Converts a string to a "slug" format.
  *
  * This function replaces all special characters in the input string with dashes,
