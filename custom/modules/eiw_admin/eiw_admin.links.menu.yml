@@ -25,17 +25,11 @@ eiw_admin.voyages.add:
   description: 'Create a new voyage.'
   url: internal:/node/add/eiw_voyage
   parent: eiw_admin.root
-  weight: 21
+  weight: 30
 eiw_admin.ships.add:
   title: 'Add Ship'
   description: 'Create a new ship.'
   url: internal:/node/add/eiw_ship
-  parent: eiw_admin.root
-  weight: 30
-eiw_admin.voyages:
-  title: 'Voyages'
-  description: 'Create/edit/remove voyages.'
-  url: internal:/admin/structure/taxonomy/manage/eiw_voyages/overview
   parent: eiw_admin.root
   weight: 40
 eiw_admin.wills.audit:
