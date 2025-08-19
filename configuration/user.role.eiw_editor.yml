@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - node.type.eiw_ship
-    - node.type.eiw_voyage
     - node.type.eiw_will
     - taxonomy.vocabulary.eiw_courts
     - taxonomy.vocabulary.eiw_keywords
@@ -24,7 +23,6 @@ permissions:
   - 'access taxonomy overview'
   - 'access toolbar'
   - 'create eiw_ship content'
-  - 'create eiw_voyage content'
   - 'create eiw_will content'
   - 'create terms in eiw_courts'
   - 'create terms in eiw_keywords'
@@ -32,10 +30,8 @@ permissions:
   - 'create terms in eiw_roles'
   - 'create terms in eiw_source_types'
   - 'delete any eiw_ship content'
-  - 'delete any eiw_voyage content'
   - 'delete any eiw_will content'
   - 'delete eiw_ship revisions'
-  - 'delete eiw_voyage revisions'
   - 'delete eiw_will revisions'
   - 'delete terms in eiw_courts'
   - 'delete terms in eiw_keywords'
@@ -43,7 +39,6 @@ permissions:
   - 'delete terms in eiw_roles'
   - 'delete terms in eiw_source_types'
   - 'edit any eiw_ship content'
-  - 'edit any eiw_voyage content'
   - 'edit any eiw_will content'
   - 'edit terms in eiw_courts'
   - 'edit terms in eiw_keywords'
@@ -51,8 +46,6 @@ permissions:
   - 'edit terms in eiw_roles'
   - 'edit terms in eiw_source_types'
   - 'revert eiw_ship revisions'
-  - 'revert eiw_voyage revisions'
   - 'revert eiw_will revisions'
   - 'view eiw_ship revisions'
-  - 'view eiw_voyage revisions'
   - 'view eiw_will revisions'

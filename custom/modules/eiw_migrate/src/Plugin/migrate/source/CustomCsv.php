@@ -23,7 +23,14 @@ class CustomCsv extends CSV {
    * {@inheritdoc}
    */
   public function prepareRow(Row $row) {
-    $this->processTropy($row);
+    $migration_id = $this->migration->id();
+
+    if ($migration_id === 'eiw_0_tropy') {
+      $this->processTropy($row);
+    } 
+    elseif ($migration_id === 'eiw_1_gs') {
+      $this->processGs($row);
+    } 
     // Skip row if last_name is missing or empty.
     if (!$row->getSourceProperty('last_name')) {
       return FALSE;
@@ -192,6 +199,12 @@ class CustomCsv extends CSV {
       'img_ref',
       $fid
     );
+  }
+
+  /**
+   * Process Tropy migration row.
+   */
+  public function processGs(&$row) {
   }
 
   /**

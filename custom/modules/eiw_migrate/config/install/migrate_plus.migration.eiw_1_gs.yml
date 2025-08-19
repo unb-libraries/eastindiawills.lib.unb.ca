@@ -1,0 +1,113 @@
+id: eiw_1_gs
+label: East India Wills migration from Tropy CSV export
+
+migration_tags:
+  - Wills
+  - GSheets
+  - CSV
+
+source:
+  plugin: custom_csv
+  path: '/app/html/modules/custom/eiw_migrate/data/csv/eiw_gs.csv'
+  header_row_count: 1
+  ids: [row]
+  
+  fields:
+    0:
+      name: row
+      label: Row
+    1:
+      name: source
+      label: Source
+    2:
+      name: reference
+      label: Reference
+    3:
+      name: court
+      label: Court
+    4:
+      name: first_name
+      label: First Name
+    5:
+      name: last_name
+      label: Last Name
+    6:
+      name: testator
+      label: Testator
+    7:
+      name: ship_name
+      label: Ship Name
+    8:
+      name: date_of_will
+      label: Date of Will
+    9:
+      name: date_of_probate
+      label: Date of Probate
+    10:
+      name: role
+      label: Role
+    11:
+      name: married
+      label: Married
+    12:
+      name: sick
+      label: Sick
+    13:
+      name: notes
+      label: Notes
+    14:
+      name: will
+      label: Will
+    15:
+      name: summary
+      label: Summary
+    16:
+      name: transcription
+      label: Transcription
+
+process:
+  title: 
+    plugin: callback
+    callable: trim
+    source: eiw_title
+  field_tropy_title: 
+    plugin: callback
+    callable: trim
+    source: row   
+  field_first_name: 
+    plugin: callback
+    callable: trim
+    source: first_name
+  field_last_name: 
+    plugin: callback
+    callable: trim
+    source: last_name
+  field_notes: 
+    plugin: callback
+    callable: trim
+    source: notes
+  field_date_of_will:
+    plugin: callback
+    callable: trim
+    source: date_of_will
+  field_date_of_probate:
+    plugin: callback
+    callable: trim
+    source: date_of_probate
+  field_reference:
+    plugin: callback
+    callable: trim
+    source: reference
+  field_court: court_ref
+  field_will_voyages: will_voyage_ref
+
+destination:
+  plugin: entity:node
+  default_bundle: eiw_will
+
+dependencies:
+  module:
+    - eiw_migrate
+  enforced:
+    module:
+    - eiw_migrate

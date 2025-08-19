@@ -16,6 +16,7 @@ trait EiwMigrationTrait {
   public function getMigrations() {
     return [
       'eiw_0_tropy' => 'East India Wills from Tropy',
+      'eiw_1_gs' => 'East India Wills from Google Sheets',
     ];
   }
 

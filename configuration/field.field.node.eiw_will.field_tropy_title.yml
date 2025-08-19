@@ -9,7 +9,7 @@ id: node.eiw_will.field_tropy_title
 field_name: field_tropy_title
 entity_type: node
 bundle: eiw_will
-label: 'Tropy Title'
+label: 'External Title'
 description: ''
 required: false
 translatable: false

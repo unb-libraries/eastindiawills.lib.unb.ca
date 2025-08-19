@@ -7,16 +7,6 @@ eiw_migrate.settings:
       label: 'Courts'
       sequence:
         - type: string
-    roles:
-      type: sequence
-      label: 'Roles'
-      sequence:
-        - type: string
-    ships:
-      type: sequence
-      label: 'Ships'
-      sequence:
-        - type: string
     marital_statuses:
       type: sequence
       label: 'Marital Statuses'
