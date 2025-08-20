@@ -1,2 +1,6 @@
 // Sub theme styling.
 @import 'variables_drupal';
+
+[id $= "format-help"] {
+  display: none !important;
+}
