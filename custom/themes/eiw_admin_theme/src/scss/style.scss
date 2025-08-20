@@ -1,6 +1,7 @@
 // Sub theme styling.
 @import 'variables_drupal';
 
+// Hide all 'about text formats' links in forms.
 [id $= "format-help"] {
   display: none !important;
 }
