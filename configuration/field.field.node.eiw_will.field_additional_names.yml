@@ -10,7 +10,7 @@ field_name: field_additional_names
 entity_type: node
 bundle: eiw_will
 label: 'Additional Names'
-description: ''
+description: 'Extra names associated with the current will. This includes alternate, ambiguous, and/or potentially misspelled family names.'
 required: false
 translatable: false
 default_value: {  }

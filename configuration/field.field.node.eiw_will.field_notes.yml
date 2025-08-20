@@ -10,7 +10,7 @@ field_name: field_notes
 entity_type: node
 bundle: eiw_will
 label: 'Notes (Private)'
-description: ''
+description: 'These notes can only be seen by site editors and administrators.'
 required: false
 translatable: false
 default_value: {  }

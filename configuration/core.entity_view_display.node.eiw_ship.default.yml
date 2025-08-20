@@ -3,13 +3,22 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.eiw_ship.field_description
     - node.type.eiw_ship
   module:
+    - text
     - user
 id: node.eiw_ship.default
 targetEntityType: node
 bundle: eiw_ship
 mode: default
-content: {  }
+content:
+  field_description:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
 hidden:
   links: true

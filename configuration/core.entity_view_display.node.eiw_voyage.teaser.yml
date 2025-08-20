@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.eiw_voyage.field_description
     - field.field.node.eiw_voyage.field_notes
     - node.type.eiw_voyage
   module:
@@ -19,4 +20,5 @@ content:
     weight: 100
     region: content
 hidden:
+  field_description: true
   field_notes: true

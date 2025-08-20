@@ -1,8 +1,8 @@
 courts:
-  - "Other"
   - "Archdeaconry Court of London"
   - "Commissary Court of London"
   - "Prerogative Court of Canterbury"
+  - "Other"
 roles:
   - "1/4 Gunner"
   - "1/4 Master"

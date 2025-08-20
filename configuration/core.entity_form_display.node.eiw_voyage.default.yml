@@ -3,13 +3,24 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.eiw_voyage.field_description
     - field.field.node.eiw_voyage.field_notes
     - node.type.eiw_voyage
+  module:
+    - text
 id: node.eiw_voyage.default
 targetEntityType: node
 bundle: eiw_voyage
 mode: default
 content:
+  field_description:
+    type: text_textarea
+    weight: 26
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
   title:
     type: string_textfield
     weight: 0

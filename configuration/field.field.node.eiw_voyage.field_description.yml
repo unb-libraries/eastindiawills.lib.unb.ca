@@ -1,19 +1,19 @@
-uuid: f5ca8f88-4132-4ebd-9b45-4f911bc17cf8
+uuid: 9dc5e8b6-2f69-4ee6-b8bd-efd34ae0aa33
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_summary
+    - field.storage.node.field_description
     - filter.format.unb_libraries
-    - node.type.eiw_will
+    - node.type.eiw_voyage
   module:
     - text
-id: node.eiw_will.field_summary
-field_name: field_summary
+id: node.eiw_voyage.field_description
+field_name: field_description
 entity_type: node
-bundle: eiw_will
-label: Notes
-description: 'These notes are public and will be displayed to site users.'
+bundle: eiw_voyage
+label: Description
+description: ''
 required: false
 translatable: false
 default_value: {  }

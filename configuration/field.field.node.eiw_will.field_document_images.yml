@@ -12,7 +12,7 @@ field_name: field_document_images
 entity_type: node
 bundle: eiw_will
 label: 'Document Images'
-description: ''
+description: "Upload PDF file containing <i>all pages</i> of the current will's original document."
 required: false
 translatable: false
 default_value: {  }

@@ -11,7 +11,7 @@ field_name: field_will_voyages
 entity_type: node
 bundle: eiw_will
 label: 'Will Voyage(s)'
-description: ''
+description: 'Enter each combination of voyage, ship, and role covered by the current will. Click the button below to add a new set.'
 required: false
 translatable: false
 default_value: {  }
@@ -23,9 +23,6 @@ settings:
       eiw_will_voyage: eiw_will_voyage
     negate: 0
     target_bundles_drag_drop:
-      eiw_leg:
-        weight: 4
-        enabled: false
       eiw_will_voyage:
         weight: 3
         enabled: true

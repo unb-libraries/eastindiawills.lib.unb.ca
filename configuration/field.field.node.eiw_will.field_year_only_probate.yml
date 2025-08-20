@@ -10,7 +10,7 @@ field_name: field_year_only_probate
 entity_type: node
 bundle: eiw_will
 label: 'Year Only (probate)'
-description: ''
+description: "Checking this box will cause only the year of probate to be displayed on view.\r\n<em>Note: </em>Dates entered without specific month and day will default to month one, day one."
 required: false
 translatable: false
 default_value: {  }

@@ -3,12 +3,23 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.eiw_ship.field_description
     - node.type.eiw_ship
+  module:
+    - text
 id: node.eiw_ship.default
 targetEntityType: node
 bundle: eiw_ship
 mode: default
 content:
+  field_description:
+    type: text_textarea
+    weight: 26
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
   title:
     type: string_textfield
     weight: 0
