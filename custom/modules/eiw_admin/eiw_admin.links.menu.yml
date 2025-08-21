@@ -32,9 +32,15 @@ eiw_admin.ships.add:
   url: internal:/node/add/eiw_ship
   parent: eiw_admin.root
   weight: 40
+eiw_admin.roles:
+  title: 'Roles'
+  description: 'Manage roles.'
+  url: internal/admin/structure/taxonomy/manage/eiw_roles/overview
+  parent: eiw_admin.root
+  weight: 50
 eiw_admin.wills.audit:
   title: 'Audit Wills'
   description: 'Audit wills.'
   url: internal:/audit-wills
   parent: eiw_admin.root
-  weight: 50
+  weight: 60
