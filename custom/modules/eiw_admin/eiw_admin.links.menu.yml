@@ -35,7 +35,7 @@ eiw_admin.ships.add:
 eiw_admin.roles:
   title: 'Roles'
   description: 'Manage roles.'
-  url: internal/admin/structure/taxonomy/manage/eiw_roles/overview
+  url: internal:/admin/structure/taxonomy/manage/eiw_roles/overview
   parent: eiw_admin.root
   weight: 50
 eiw_admin.wills.audit:
