@@ -42,9 +42,11 @@ roles:
   - "Shipwright"
   - "Smith"
   - "Smith's Mate"
+  - "Steward"
   - "Surgeon's Mate"
   - "Surgoen"
   - "Swabber"
+  - "Tailor"
   - "Trumpeter"
 ships:
   - "Abigail"
