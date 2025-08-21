@@ -137,7 +137,6 @@ class CustomCsv extends CSV {
           $court = 'Prerogative Court of Canterbury';
         }
         else {
-          $court = "Other";
           // Search for tag in roles and marital status.
           $role_tids = $this->termByName($tag, 'eiw_roles');
           $marital_tids = $this->termByName($tag, 'eiw_marital_statuses');
