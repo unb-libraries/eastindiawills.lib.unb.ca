@@ -2,6 +2,8 @@
 
 use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\file\Entity\File;
+use Drupal\Core\Link;
+use Drupal\Core\Url;
 
 /**
  * Implements hook_ENTITY_TYPE_presave().
@@ -54,6 +56,59 @@ function eiw_core_form_node_eiw_will_form_alter(&$form, \Drupal\Core\Form\FormSt
   }
 }
 
+function eiw_core_form_taxonomy_overview_terms_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  \Drupal::logger('eiw_core')->notice('form_taxonomy_overview_terms_alter called');
+
+  // Try to get the vocabulary from the route if not set in the form.
+  $vocabulary_name = NULL;
+  if (isset($form['#vocabulary'])) {
+    $vocabulary_name = is_object($form['#vocabulary']) && method_exists($form['#vocabulary'], 'id') ? $form['#vocabulary']->id() : NULL;
+    \Drupal::logger('eiw_core')->notice('Found #vocabulary: ' . $vocabulary_name);
+  }
+  else {
+    // Get from route.
+    $route_match = \Drupal::routeMatch();
+    $route_vocabulary = $route_match->getParameter('taxonomy_vocabulary');
+    if (is_object($route_vocabulary) && method_exists($route_vocabulary, 'id')) {
+      $vocabulary_name = $route_vocabulary->id();
+      \Drupal::logger('eiw_core')->notice('Found vocabulary from route object: ' . $vocabulary_name);
+    }
+    elseif (is_string($route_vocabulary)) {
+      $vocabulary_name = $route_vocabulary;
+      \Drupal::logger('eiw_core')->notice('Found vocabulary from route string: ' . $vocabulary_name);
+    }
+    else {
+      \Drupal::logger('eiw_core')->notice('No vocabulary found on route.');
+    }
+  }
+
+  if (
+    $vocabulary_name === 'eiw_roles' &&
+    !empty($form['terms']) &&
+    is_array($form['terms'])
+  ) {
+    \Drupal::logger('eiw_core')->notice('Inside the main if block for eiw_roles');
+    foreach (array_keys($form['terms']) as $row_key) {
+      if (strpos($row_key, 'tid:') === 0 && isset($form['terms'][$row_key]['term'])) {
+        // Load the term for its label.
+        $parts = explode(':', $row_key);
+        $tid = $parts[1];
+        $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($tid);
+        if ($term) {
+          $url = \Drupal\Core\Url::fromUri('internal:/audit-wills/all/all/' . $tid);
+          $link = [
+            '#type' => 'link',
+            '#title' => $term->label(),
+            '#url' => $url,
+            '#attributes' => ['class' => ['custom-admin-role-link']],
+          ];
+          $form['terms'][$row_key]['term'] = $link;
+        }
+      }
+    }
+  }
+}
+
 /**
  * Implements hook_preprocess_node().
  */
@@ -91,6 +146,100 @@ function eiw_core_preprocess_node(array &$variables) {
     // Apply for both fields.
     $alter_year_only('field_date_of_probate', 'field_year_only_probate');
     $alter_year_only('field_date_of_will', 'field_year_only_will');
+  }
+}
+
+/**
+ * Implements hook_preprocess_paragraph().
+ */
+function eiw_core_preprocess_paragraph(array &$variables) {
+  /**
+   * Override voyage, ship, and role links to audit-wills when paragraph is displayed.
+   * Only target the 'eiw_will_voyage' paragraph type.
+   */ 
+  if ($variables['paragraph']->bundle() === 'eiw_will_voyage') {
+    // Handle field_voyage.
+    if (!empty($variables['content']['field_voyage'])) {
+      // Loop through all referenced entities (should be just one).
+      foreach ($variables['content']['field_voyage']['#items'] as $delta => $item) {
+        // Load the referenced node.
+        $nid = $item->target_id;
+        $node = \Drupal::entityTypeManager()
+          ->getStorage('node')
+          ->load($nid);
+        if ($node && $node->bundle() == 'eiw_voyage') {
+          // Build your custom link. Example: change to a custom path or alter the link text.
+          $url = Url::fromUri('internal:/audit-wills/' . $node->id());
+          $link = Link::fromTextAndUrl($node->label(), $url)->toRenderable();
+          // Optionally, add custom classes or attributes.
+          $link['#attributes']['class'][] = 'my-custom-voyage-link';
+          // Override the rendered field output.
+          $variables['content']['field_voyage'][$delta] = $link;
+        }
+      }
+    }
+    // Handle field_ship.
+    if (!empty($variables['content']['field_ship'])) {
+      // Loop through all referenced entities (should be just one).
+      foreach ($variables['content']['field_ship']['#items'] as $delta => $item) {
+        // Load the referenced node.
+        $nid = $item->target_id;
+        $node = \Drupal::entityTypeManager()
+          ->getStorage('node')
+          ->load($nid);
+        if ($node && $node->bundle() == 'eiw_ship') {
+          // Build your custom link. Example: change to a custom path or alter the link text.
+          $url = Url::fromUri('internal:/audit-wills/all/' . $node->id());
+          $link = Link::fromTextAndUrl($node->label(), $url)->toRenderable();
+          // Optionally, add custom classes or attributes.
+          $link['#attributes']['class'][] = 'my-custom-ship-link';
+          // Override the rendered field output.
+          $variables['content']['field_ship'][$delta] = $link;
+        }
+      }
+    }
+    // Handle field_role for taxonomy term references.
+    if (!empty($variables['content']['field_role'])) {
+      foreach ($variables['content']['field_role']['#items'] as $delta => $item) {
+        $term = \Drupal::entityTypeManager()
+          ->getStorage('taxonomy_term')
+          ->load($item->target_id);
+        if ($term && $term->bundle() === 'eiw_roles') {
+          // Custom link to /audit-roles/$tid
+          $url = Url::fromUri('internal:/audit-wills/all/all/' . $term->id());
+          $link = Link::fromTextAndUrl($term->label(), $url)->toRenderable();
+          $link['#attributes']['class'][] = 'custom-role-link';
+          $variables['content']['field_role'][$delta] = $link;
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_views_view_table().
+ */
+function eiw_core_preprocess_views_view_table(&$variables) {
+  // Check if this is the taxonomy overview table for eiw_roles.
+  if (
+    isset($variables['view']) &&
+    $variables['view']->id() === 'taxonomy_overview_terms' &&
+    $variables['view']->args[0] === 'eiw_roles'
+  ) {
+    foreach ($variables['rows'] as &$row) {
+      // Find the term object for this row.
+      if (isset($row['term']) && is_array($row['term']) && isset($row['term']['#taxonomy_term'])) {
+        $term = $row['term']['#taxonomy_term'];
+        // Build a custom link.
+        $tid = $term->id();
+        $url = \Drupal\Core\Url::fromUri('internal:/audit-wills/' . $tid);
+        $link = \Drupal\Core\Link::fromTextAndUrl($term->label(), $url)->toRenderable();
+        // Optionally add custom classes.
+        $link['#attributes']['class'][] = 'custom-admin-role-link';
+        // Override the label cell with your custom link.
+        $row['term'] = $link;
+      }
+    }
   }
 }
 
