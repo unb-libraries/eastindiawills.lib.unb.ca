@@ -57,13 +57,10 @@ function eiw_core_form_node_eiw_will_form_alter(&$form, \Drupal\Core\Form\FormSt
 }
 
 function eiw_core_form_taxonomy_overview_terms_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
-  \Drupal::logger('eiw_core')->notice('form_taxonomy_overview_terms_alter called');
-
   // Try to get the vocabulary from the route if not set in the form.
   $vocabulary_name = NULL;
   if (isset($form['#vocabulary'])) {
     $vocabulary_name = is_object($form['#vocabulary']) && method_exists($form['#vocabulary'], 'id') ? $form['#vocabulary']->id() : NULL;
-    \Drupal::logger('eiw_core')->notice('Found #vocabulary: ' . $vocabulary_name);
   }
   else {
     // Get from route.
@@ -71,11 +68,9 @@ function eiw_core_form_taxonomy_overview_terms_alter(&$form, \Drupal\Core\Form\F
     $route_vocabulary = $route_match->getParameter('taxonomy_vocabulary');
     if (is_object($route_vocabulary) && method_exists($route_vocabulary, 'id')) {
       $vocabulary_name = $route_vocabulary->id();
-      \Drupal::logger('eiw_core')->notice('Found vocabulary from route object: ' . $vocabulary_name);
     }
     elseif (is_string($route_vocabulary)) {
       $vocabulary_name = $route_vocabulary;
-      \Drupal::logger('eiw_core')->notice('Found vocabulary from route string: ' . $vocabulary_name);
     }
     else {
       \Drupal::logger('eiw_core')->notice('No vocabulary found on route.');
@@ -87,7 +82,9 @@ function eiw_core_form_taxonomy_overview_terms_alter(&$form, \Drupal\Core\Form\F
     !empty($form['terms']) &&
     is_array($form['terms'])
   ) {
-    \Drupal::logger('eiw_core')->notice('Inside the main if block for eiw_roles');
+    // Remove form help (unusable for non-nested terms).
+    unset($form['help']);
+
     foreach (array_keys($form['terms']) as $row_key) {
       if (strpos($row_key, 'tid:') === 0 && isset($form['terms'][$row_key]['term'])) {
         // Load the term for its label.
@@ -159,7 +156,7 @@ function eiw_core_preprocess_paragraph(array &$variables) {
    */ 
   if ($variables['paragraph']->bundle() === 'eiw_will_voyage') {
     // Handle field_voyage.
-    if (!empty($variables['content']['field_voyage'])) {
+    if (!empty($variables['content']['field_voyage']) and isset($variables['content']['field_voyage']['#items'])) {
       // Loop through all referenced entities (should be just one).
       foreach ($variables['content']['field_voyage']['#items'] as $delta => $item) {
         // Load the referenced node.
@@ -211,33 +208,6 @@ function eiw_core_preprocess_paragraph(array &$variables) {
           $link['#attributes']['class'][] = 'custom-role-link';
           $variables['content']['field_role'][$delta] = $link;
         }
-      }
-    }
-  }
-}
-
-/**
- * Implements hook_preprocess_views_view_table().
- */
-function eiw_core_preprocess_views_view_table(&$variables) {
-  // Check if this is the taxonomy overview table for eiw_roles.
-  if (
-    isset($variables['view']) &&
-    $variables['view']->id() === 'taxonomy_overview_terms' &&
-    $variables['view']->args[0] === 'eiw_roles'
-  ) {
-    foreach ($variables['rows'] as &$row) {
-      // Find the term object for this row.
-      if (isset($row['term']) && is_array($row['term']) && isset($row['term']['#taxonomy_term'])) {
-        $term = $row['term']['#taxonomy_term'];
-        // Build a custom link.
-        $tid = $term->id();
-        $url = \Drupal\Core\Url::fromUri('internal:/audit-wills/' . $tid);
-        $link = \Drupal\Core\Link::fromTextAndUrl($term->label(), $url)->toRenderable();
-        // Optionally add custom classes.
-        $link['#attributes']['class'][] = 'custom-admin-role-link';
-        // Override the label cell with your custom link.
-        $row['term'] = $link;
       }
     }
   }

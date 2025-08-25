@@ -755,7 +755,20 @@ display:
       cache:
         type: tag
         options: {  }
-      empty: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: 'No results found for <strong><em>{{ arguments.field_voyage_target_id }} {{ arguments.field_ship_target_id }} {{ arguments.field_role_target_id }}</em></strong>'
+            format: unb_libraries
+          tokenize: true
       sorts:
         created:
           id: created
