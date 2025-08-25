@@ -176,7 +176,7 @@ function eiw_core_preprocess_paragraph(array &$variables) {
       }
     }
     // Handle field_ship.
-    if (!empty($variables['content']['field_ship'])) {
+    if (!empty($variables['content']['field_ship']) and isset($variables['content']['field_ship']['#items'])) {
       // Loop through all referenced entities (should be just one).
       foreach ($variables['content']['field_ship']['#items'] as $delta => $item) {
         // Load the referenced node.
@@ -196,7 +196,7 @@ function eiw_core_preprocess_paragraph(array &$variables) {
       }
     }
     // Handle field_role for taxonomy term references.
-    if (!empty($variables['content']['field_role'])) {
+    if (!empty($variables['content']['field_role']) and isset($variables['content']['field_role']['#items'])) {
       foreach ($variables['content']['field_role']['#items'] as $delta => $item) {
         $term = \Drupal::entityTypeManager()
           ->getStorage('taxonomy_term')

@@ -4,3 +4,18 @@
  * @file
  * East India Wills theme file.
  */
+
+/**
+ * Implements hook_views_post_render().
+ */
+function eastindiawills_unb_lib_ca_views_post_render($view, &$output, &$cache) {
+  if ($view->id() === 'audit_wills' && $view->current_display === 'page_1') {
+    // If there are no results.
+    if (empty($view->result)) {
+      // Override the title after all other processing.
+      $view->setTitle('Audit Wills');
+      // You may also need to directly override $output['#title'] if the above doesn't work:
+      $output['#title'] = 'Audit Wills';
+    }
+  }
+}

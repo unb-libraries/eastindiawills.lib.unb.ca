@@ -13,6 +13,7 @@ dependencies:
     - taxonomy.vocabulary.eiw_source_types
   module:
     - node
+    - system
     - taxonomy
     - toolbar
 id: eiw_editor
@@ -56,3 +57,4 @@ permissions:
   - 'view eiw_ship revisions'
   - 'view eiw_voyage revisions'
   - 'view eiw_will revisions'
+  - 'view the administration theme'
