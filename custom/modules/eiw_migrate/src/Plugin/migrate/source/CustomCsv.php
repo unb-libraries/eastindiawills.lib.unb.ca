@@ -233,6 +233,64 @@ class CustomCsv extends CSV {
         }
       }
     }
+
+    // Will voyage.
+    $ship = $row->getSourceProperty('ship_name');
+    $role = $row->getSourceProperty('role');
+    $ship_nid = $ship ? $this->getOrCreateNodeId('title', $ship, 'eiw_ship') : NULL;
+    $role_tid = $role ? $this->getOrCreateTermId($role, 'eiw_roles') : NULL;
+
+    if ((isset($ship_nid)) or
+      (isset($role_tid))) {
+      // Create paragraph.
+      $will_voyage = Paragraph::create(['type' => 'eiw_will_voyage']);
+      if (isset($ship_nid) && $ship_nid) {
+        $will_voyage->set('field_ship', ['target_id' => $ship_nid]);
+      }
+      if (isset($role_tid) && $role_tid) {
+        $will_voyage->set('field_role', ['target_id' => $role_tid]);
+      }
+      // Save the paragraph and get ID.
+      $will_voyage->save();
+      $pid = $will_voyage->id();
+      // Update will voyage.
+      $row->setSourceProperty(
+        'will_voyage_ref',
+        $pid
+      );        
+    }
+
+    // Process additional names.
+    $notes = [];
+    $notes_in = $row->getSourceProperty('notes');
+    $tokens = explode(';', $notes_in);
+
+    foreach ($tokens as $token) {
+      // Raw label: Everything before colon, trimmed.
+      $label = $this->text_trim(strstr($token, ':', TRUE), FALSE);
+      // Raw value: The rest, trimmed. 
+      $value = $this->text_trim(str_replace($label, '', $token), FALSE);
+      // Each value pair will be in the form: 'a_label' => 'The value'.
+      $notes[preg_replace('/\s+/', '_', strtolower($label))] = $value;
+    }
+
+    $add_names = [];
+    // Filter notes containing 'name' in the key.
+    $names = array_filter(
+      $notes,
+      function($label) {
+        return strpos($label, 'name') !== false;
+      },
+      ARRAY_FILTER_USE_KEY
+    );
+    $this->tdump('names', $names);
+    // Iterate and populate additional names.
+    foreach($names as $label => $name) {
+      $label = ucwords($this->snakeToSentence($label));
+      $add_names[] = "$label: $name";
+    }
+    // Update additional names.
+    $row->setSourceProperty('add_names', $add_names);
   }
 
   /**

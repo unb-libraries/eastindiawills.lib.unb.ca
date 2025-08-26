@@ -98,9 +98,13 @@ process:
     plugin: callback
     callable: trim
     source: reference
+  field_additional_names:
+    plugin: callback
+    callable: trim
+    source: add_names
   field_court: court_ref
   field_will_voyages: will_voyage_ref
-
+  
 destination:
   plugin: entity:node
   default_bundle: eiw_will
