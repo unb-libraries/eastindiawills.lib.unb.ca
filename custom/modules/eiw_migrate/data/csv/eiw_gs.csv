@@ -1,631 +1,642 @@
-,"source","reference","court","nameFirst","nameLast","testator","shipName"," dateOfWill","dateOfProbate","role","married","sick","notes","will","summary","transcription",,,,,,,,,,,,
-2,,"11/107/266v","P","John","Abell","John Abell",,"1604-03-13","1606-06-19",,,,,"John Abell",,,"#NAME?",,,,,,,,,,,"A"
-3,,"11/156/157","P","Robert","Abett","Robert Abett","Eagle",,"1629-01-01","bosn's mate",,,,"Robert Abett",,,"#NAME?",,,,,,,,,,,"A"
-4,,"11/123/677","P","Robert","Acton","Robert Acton","Dragon","1613-07-24","1614-07-11",,,,,"Robert Acton",,,"#NAME?",,,,,,,,,,,"A"
-5,,"11/102/350","P","Olliveri","Addams","Olliveri Addams","Hector","1602-07-30","1603-11-02",,,,,"Olliveri Addams",,,"#NAME?",,,,,,,,,,,"A"
-6,,,"C","William ","Adams","William Adams",,,"1621-10-08","mariner",,,,"William Adams",,,"#NAME?",,,,,,,,,,,"A"
-7,,,"C","William","Addams","William Addams","Trades Increase","1613-02-15","1615-10-09",,,,,"William Addams",,,,,,,,,,,,,,"A"
-8,,"11/131/377","P","Thomas","Addecot","Thomas Addecot","Dragon","1616-02-25","1618-04-13",,,,,"Thomas Addecot",,,,,,,,,,,,,,"A"
-9,,"11/107/266","P","John","Addis","John Addis","Dragon","1605-05-22","1606-06-04",,,,,"John Addis",,,,,,,,,,,,,,"A"
-10,,"11/128/94","P","William","Addis","William Addis","New Year's Gift",,"1616-07-10","sailor",,,,"William Addis",,,,,,,,,,,,,,"A"
-11,,,"P","John","Adlington","John Adlington","Abigail",,"1626-01-01",,,,"probate date: missing month; probate date: missing day","John Adlington",,,,,,,,,,,,,,"A"
-12,,,"P","Ephraim","Adsley","Ephraim Adsley","Anne",,"1619-01-01",,,,"probate date: missing month; probate date: missing day","Ephraim Adsley",,,,,,,,,,,,,,"A"
-13,,"11/102/198","P","Robert","Alburye","Robert Alburye","Dragon","1602-11-20","1603-10-03",,,,,"Robert Alburye",,,,,,,,,,,,,,"A"
-14,,"11/122/336","P","Jonas","Aldriche","Jonas Aldriche",,"1612-08-01","1613-10-02",,,,,"Jonas Aldriche",,,,,,,,,,,,,,"A"
-15,,,"C","John","Alexander","John Alexander","Moon","1618-09-09","1620-03-03",,,,,"John Alexander",,,,,,,,,,,,,,"A"
-16,,"11/113/236v","C","John","Allen","John Allen",,"1614-05-01","1616-07-15",,,,,"John Allen",,,,,,,,,,,,,,"A"
-17,,,"P","Richard","Allen","Richard Allen","Charles",,"1626-01-01",,,,"probate date: missing month; probate date: missing day","Richard Allen",,,,,,,,,,,,,,"A"
-18,,,"P","Thomas","Allen","Thomas Allen","Royal James",,"1621-01-01",,,,"probate date: missing month; probate date: missing day","Thomas Allen",,,,,,,,,,,,,,"A"
-19,,"11/113/316","P","John","Allen.Sallowes","John Allen.Sallowes",,,"1609-04-16",,,,,"John Allen.Sallowes",,,,,,,,,,,,,,"A"
-20,"LMA Microfilm",,"A","Robert","Alline","Robert Alline","Peppercorn",,"1617-01-01","purser",,,"probate date: missing month; probate date: missing day","Robert Alline",,,,,,,,,,,,,,"A"
-21,,,"C","George","Allysonne","George Allysonne","Trades Increase","1613-04-03","1614-09-03",,,,"alternate last name: Allinson","George Allysonne",,,,,,,,,,,,,,"A"
-22,,,"C","John","Ambros","John Ambros","Expedition","1616-10-24","1616-11-26",,,,"corrected ship name: Expedition","John Ambros",,,,,,,,,,,,,,"A"
-23,,,"C","Abell","Amesse","Abell Amesse",,"1617-08-22","1618-09-09",,,,"alternate last name: Ames","Abell Amesse",,,,,,,,,,,,,,"A"
-24,,"11/156/143","P","John","Amie/Amye","John Amie","Exchange",,"1629-07-27","swabber",,,,"John Amie",,,,,,,,,,,,,,"A"
-25,,,"C","John","Amisse/Amys/Ames","John Ames",,"1617-10-08","1618-09-15",,,,"alternate last name: Amisse/Amys/Ames","John Ames",,,,,,,,,,,,,,"A"
-26,,"11/107/385","P","Edward","Androwes","Edward Androwes","Dragon","1605-02-20","1606-06-12",,,,,"Edward Androwes",,,,,,,,,,,,,,"A"
-27,,,"C","Prestwick","Ange","Prestwick Ange","Bull",,"1619-01-01",,,,"probate date: missing month; probate date: missing day","Prestwick Ange",,,,,,,,,,,,,,"A"
-28,,,"P","John","Anton","John Anton","Jonas",,"1623-01-01",,,,"probate date: missing month; probate date: missing day","John Anton",,,,,,,,,,,,,,"A"
-31,,,"C","Richard","Ardemor/Ardemore","Richard Ardemor","Dragon","1616-12-24","1617-06-18","gunner's mate",,,,"Richard Ardemore",,,,,,,,,,,,,,"A"
-32,,,"C","ffrauncis","Arderne","ffrauncis Arderne",,"1617-03-09","1618-10-06",,,,"alternate last name: Arden","Ffrauncis Arderne",,,,,,,,,,,,,,"A"
-33,,,"C","Thomas","Armestronge","Thomas Armestronge","Charles","1618-03-25","1618-09-21",,,,,"Thomas Armestronge",,,,,,,,,,,,,,"A"
-34,,"11/151/535","P","Nicholas","Arrington","Nicholas Arrington","Charles",,"1627-04-24","sailor",,,,"Nicholas Arrington",,,,,,,,,,,,,,"A"
-35,,,"C","illiam","Arthur","illiam Arthur","New Year's Gift",,"1622-01-01",,,,"probate date: missing month; probate date: missing day","illiam Arthur",,,,,,,,,,,,,,"A"
-36,,,"C","John","Ashbie","John Ashbie","Peppercorn","1613-08-31","1613-12-07",,,,,"John Ashbie",,,,,,,,,,,,,,"A"
-37,,"9171/21/273v","C","John ","Ashenhurst","John Ashenhurst","Hector","1608-06-05","1610-07-28",,,,,"John Ashenhurst",,,,,,,,,,,,,,"A"
-38,,"11/153/275","P","William","Ashley","William Ashley","London",,"1628-02-28",,,,"probate date: missing month; probate date: missing day","William Ashley",,,,,,,,,,,,,,"A"
-39,,"9171/21/354v","C","James","Ashlie","James Ashlie","Consent","1610-11-29","1611-08-15",,,,,"James Ashlie",,,,,,,,,,,,,,"A"
-40,,"11/130/299","P","Edmond'und ","Aspinall","Edmund Aspinall",,"1615-12-31","1617-09-20",,,,,"Edmund Aspinall",,,,,,,,,,,,,,"A"
-41,,,"P","Richard","Aston","Richard Aston","James","1617-07-14","1618-09-21",,,,,"Richard Aston",,,,,,,,,,,,,,"A"
-42,,"11/151/403","P","Anthony","Atkins","Anthony Atkins","Charles",,"1627-03-29","sailor",,,"probate date: missing month; probate date: missing day","Anthony Atkins",,,,,,,,,,,,,,"A"
-43,,"11/101/357V","P","John","Atkins","John Atkins","Ascension","1602-11-20","1603-06-24",,,,,"John Atkins",,,,,,,,,,,,,,"A"
-44,,"11/138/289","P","Edward","Aucher","Edward Aucher","Royal James",,"1621-10-19","sailor",,,"probate date: missing month; probate date: missing day; Alternate last name: Archer","Edward Aucher",,,,,,,,,,,,,,"A"
-45,,"11/130/167","P","John","Austine","John Austine/Austin",,"1616-05-20","1617-07-24",,,,,"John Austine",,,,,,,,,,,,,,"A"
-46,,,"P","John","Baber","John Baber","Peppercorn","1610-02-09","1613-12-16",,,,,"John Baber",,,,,,,,,,,,,,"A"
-47,"C  1613 22 243v",,"C","John","Backer","John Backer",,"1611-01-22","1613-12-10","mariner",,,"Alternate last name: Barker","John Backer",,,,,,,,,,,,,,"A"
-48,,,"C","Richard","Backler","Richard Backler","Hector","1615-12-23","1617-06-20",,,,,"Richard Backler",,,,,,,,,,,,,,"A"
-49,,"11/102/94","P","John","Badbye","John Badbye","Ascension","1602-07-06","1603-09-06",,,,,"John Badbye",,,,,,,,,,,,,,"A"
-50,,,"P","Thomas","Badger","Thomas Badger","Discovery",,"1625-01-01",,,,"probate date: missing month; probate date: missing day","Thomas Badger",,,,,,,,,,,,,,"A"
-51,,,"C","Richard","Bailey","Richard Bailey",,"1616-10-27","1617-07-07",,,,,"Richard Bailey",,,,,,,,,,,,,,"A"
-52,,"11/130/161","P","Thomas","Baily","Thomas Baily","New Year's Gift","1616-05-12","1617-07-22","sailor",,,,"Thomas Baily",,,,,,,,,,,,,,"A"
-53,,,"P","Alexander","Baines","Alexander Baines","Royal James",,"1621-01-01",,,,"probate date: missing month; probate date: missing day","Alexander Baines",,,,,,,,,,,,,,"A"
-54,,,"C","John","Bainham","John Bainham","James   ",,"1620-01-01",,,,"probate date: missing month; probate date: missing day","John Bainham",,,,,,,,,,,,,,"A"
-55,,,"C","Ffrauncis","Baker","ffrauncis Baker",,"1617-05-02","1618-09-12",,,,,"Ffrauncis Baker",,,,,,,,,,,,,,"A"
-56,,,"P","John","Baker","John Baker","Expedition","1614-01-15","1614-07-27",,,,,"John Baker",,,,,,,,,,,,,,"A"
-57,,,"P","Richard","Baker","Richard Baker","Dragon","1616-06-27","1617-10-20",,,,,"Richard Baker",,,,,,,,,,,,,,"A"
-58,,"11/102/190v","P","Robert","Baker","Robert Baker","Hector","1603-06-13","1603-10-17",,,,,"Robert Baker",,,,,,,,,,,,,,"A"
-59,,"9171/22/201v","C","Denis","Baldwen","Denis Baldwen",,"1613-05-17","1613-10-13",,,,,"Denis Baldwen",,,,,,,,,,,,,,"A"
-61,,,"P","Josua","Banister","Josua Banister","Charles",,"1626-01-01",,,,"probate date: missing month; probate date: missing day","Josua Banister",,,,,,,,,,,,,,"A"
-62,,,"P","Edward","Bantam","Edward Bantam","Clove","1614-02-13","1614-12-17",,,,,"Bantam Edward",,,,,,,,,,,,,,"A"
-63,,"11/115/413v","P","Baldwyn","Barber","Baldwyn Barber","Dragon","1608-11-29","1610-06-08",,,,"alternate last name: Barbers; alternate first name: Baldwin","Baldwyn Barber",,,,,,,,,,,,,,"A"
-65,,"9171/176v","C","Thomas","Barker","Thomas Barker","Dragon","1605-10-10","1606-06-05",,,,,"Thomas Barker",,,,,,,,,,,,,,"A"
-67,,,"C","John","Barley","John Barley","James","1617-09-18","1618-09-22",,,,,"John Barley",,,,,,,,,,,,,,"A"
-68,,,"P","Richard","Barlowe","Richard Barlowe","Dragon","1603-07-08","1603-10-25",,,,,"Richard Barlowe",,,,,,,,,,,,,,"A"
-69,,"11/126/115v","P","Anthony","Barnes","Anthony Barnes",,,"1615-07-20","EIC",1,,,"Anthony Barnes",,,,,,,,,,,,,,"A"
-70,,"11/114/653","P","Henrick","Barnes","Henrick Barnes",,"1609-04-15","1609-12-15","mariner",,,"married","Henrick Barnes",,,,,,,,,,,,,,"A"
-71,,,"P","Samuell","Barnes","Samuell Barnes","James","1617-07-09","1618-10-08",,,,,"Samuell Barnes",,,,,,,,,,,,,,"A"
-72,,,"C","Stephen","Barnes","Stephen Barnes",,,"1625-01-01",,,,"extra name: Ethoned; probate date: missing month; probate date: missing day","Stephen Barnes",,,,,,,,,,,,,,"A"
-73,,,"C","Richard","Barnicastle","Richard Barnicastle","New Year's Gift","1615-12-05","1616-07-10",,,,,"Richard Barnicastle",,,,,,,,,,,,,,"A"
-74,,,"P","Richard","Barnicot","Richard Barnicot","Blessing",,"1626-01-01",,,,"probate date: missing month; probate date: missing day","Richard Barnicot",,,,,,,,,,,,,,"A"
-75,,,"P","George ","Barron","George  Barron","Mary",,"1629-03-17","trumpeter",,,,"George Barron",,,,,,,,,,,,,,"A"
-76,,"11/119/10v","P","Ralphe","Barret","Ralphe Barret","Tiger","1604-10-22","1599-01-19",,,,"probate date: missing year","Ralphe Barret",,,,,,,,,,,,,,"A"
-77,,"11/107/337v","P","John","Barron","John Barron","Susan","1605-01-16","1606-06-20",,,,"additional ship: Ascension","John Barron",,,,,,,,,,,,,,"A"
-78,,"11/150/324",,"John ","Barron","John Barron","London",,"1626-11-17","quartermaster",,,,"John Barron",,,,,,,,,,,,,,"A"
-79,,"11/147/593","P","Peter","Barrow","Peter Barrow","Discovery",,"1625-12-22","bosn's mate",,,"alternate last name: Barow","Peter Barrow",,,,,,,,,,,,,,"A"
-80,,,"C","William","Barrowes","William Barrowes","New Year's Gift","1614-02-21","1616-10-26",,,,,"William Barrowes",,,,,,,,,,,,,,"A"
-81,,,"P","Robert","Barston","Robert Barston","Jonas",,"1626-01-01",,,,"probate date: missing month; probate date: missing day","Robert Barston",,,,,,,,,,,,,,"A"
-83,,,"C","ffardinando","Barton","ffardinando Barton","New Year's Gift","1616-06-20","1616-07-13",,,,,"Ffardinando Barton",,,,,,,,,,,,,,"A"
-84,,,"C","John","Bassett","John Bassett","Diamond",,"1622-07-24","sailor",,,,"John Bassett",,,,,,,,,,,,,,"A"
-85,,"11/102/221v","P","John","Baston","John Baston","Hector","1605-08-16","1606-05-07",,,,"will date: flipped day/month?","John Baston",,,,,,,,,,,,,,"A"
-86,,,"P","Christopher","Baynham","Christopher Baynham","Thomas","1614-05-05","1618-09-14",,,,,"Christopher Baynham",,,,,,,,,,,,,,"A"
-87,,"11/107/330v","P","Ralphe","Beadle","Ralphe Beadle","Dragon","1605-07-13","1606-06-22",,,,"alternate first name: Ralph","Ralphe Beadle",,,,,,,,,,,,,,"A"
-88,,,"P","Henry","Beale","Henry Beale","Hope","1617-01-30","1618-09-10",,,,,"Henry Beale",,,,,,,,,,,,,,"A"
-89,,,"P","John","Bean","John Bean","Elizabeth",,"1624-01-01",,,,"probate date: missing month; probate date: missing day","John Bean",,,,,,,,,,,,,,"A"
-90,,,"C","George","Beanes","George Beanes","Anne",,"1620-06-14",,,,"alternate last name: Beanes; probate date: missing month; probate date: missing day","George Beanes",,,,,,,,,,,,,,"A"
-91,,,"P","Charles","Bell","Charles Bell","Dragon","1616-07-01","1617-06-28",,,,,"Charles Bell",,,,,,,,,,,,,,"A"
-93,,"11/129/697","P","William","Bell","William Bell","Expedition","1616-12-18","1617-06-07",,,,,"William Bell",,,,,,,,,,,,,,"A"
-94,,"11/107/386v","P","William","Belladyne","William Belladyne","Dragon","1605-01-18","1606-06-11",,,,,"William Belladyne",,,,,,,,,,,,,,"A"
-95,,"11/147/128","P","Henry","Bennet","Henry Bennet","Discovery",,"1625-10-19","quartermaster",,,"probate date: missing month; probate date: missing day","Henry Bennett",,,,,,,,,,,,,,"A"
-96,,,"C","Richard","Bennett","Richard Bennett",,"1612-01-20","1615-10-07",,,,,"Richard Bennett",,,,,,,,,,,,,,"A"
-97,,,"P","Samuel","Bennett","Samuel Bennett","Royal James",,"1621-01-01",,,,"probate date: missing month; probate date: missing day","Samuel Bennett",,,,,,,,,,,,,,"A"
-99,,,"P","Henry","Benson","Henry Benson","Moon",,"1624-01-01",,,,"probate date: missing month; probate date: missing day","Henry Benson",,,,,,,,,,,,,,"A"
-100,,,"P","John","Benson","John Benson","Hart",,"1622-01-01",,,,"probate date: missing month; probate date: missing day","John Benson",,,,,,,,,,,,,,"A"
-102,,,"P","John","Berrie","John Berrie","Dolphin",,"1628-01-01",,,,"probate date: missing month; probate date: missing day","John Berrie",,,,,,,,,,,,,,"A"
-103,,,"C","Richard ","Berry","Richard Berry","Clove",,"1622-08-24","carpenter's mate",,,"Alternate last name: Borry","Richard Berry",,,,,,,,,,,,,,"A"
-104,,,"P","John","Berrye","John Berrye","Charles","1618-04-24","1618-09-16",,,,,"John Berrye",,,,,,,,,,,,,,"A"
-105,,,"P","Thomas","Bethell","Thomas Bethell","Hector","1613-09-02","1613-10-25",,,,,"Thomas Bethell",,,,,,,,,,,,,,"A"
-106,,,"P","Robert","Bettie","Robert Bettie","Expedition",,"1628-01-01",,,,"probate date: missing month; probate date: missing day","Robert Bettie",,,,,,,,,,,,,,"A"
-107,,,"P","William","Bettie","William Bettie",,,"1603-07-01",,,,,"William Bettie",,,,,,,,,,,,,,"A"
-108,,,"P","John","Bickerton","John Bickerton","Charles","1618-02-18","1618-09-17",,,,,"John Bickerton",,,,,,,,,,,,,,"A"
-109,,,"C","Warren","Bickford","Warren Bickford","Peppercorn","1615-01-11","1617-09-13",,,,,"Warren Bickford",,,,,,,,,,,,,,"A"
-110,,,"C","ffredericke","Bickner","ffredericke Bickner","Tiger","1614-02-08","1615-01-30",,,,,"Ffredericke Bickner",,,,,,,,,,,,,,"A"
-111,,,"C","Richard","Bidulph","Richard Bidulph","New Year's Gift","1616-06-17","1617-01-09",,,,,"Richard Bidulph",,,,,,,,,,,,,,"A"
-112,,"11/128/140","P","Henry ","Bingley/Binglye","Henry  Bingley","New Year's Gift",,"1616-07-22","sailor",,,"alternate last name: Bingleye; alternate last name: Binglye","Henry Bingley",,,,,,,,,,,,,,"A"
-113,,"11/124/279","P","Tobias","Birche","Tobias Birche","Trades Increase","1613-02-16","1614-08-12","sailor",,,,"Tobias Birche",,,,,,,,,,,,,,"A"
-114,,,"P","Jasper","Bishopp","Jasper Bishopp","Charles",,"1627-01-01",,,,"probate date: missing month; probate date: missing day","Jasper Bishopp",,,,,,,,,,,,,,"A"
-115,,"9171/22/211","C","John","Bishopp","John Bishopp","Hector","1612-08-05","1613-10-18",,,,,"John Bishopp",,,,,,,,,,,,,,"A"
-116,,,"C","Hugh","Blackborne","Hugh Blackborne","Hector","1615-06-19","1617-06-17",,,,,"Hugh Blackborne",,,,,,,,,,,,,,"A"
-117,,"9171/20/195","C","William","Blacke","William Blacke",,,"1606-07-23",,,,,"William Blacke",,,,,,,,,,,,,,"A"
-118,,,"C","Thomas","Blackeman","Thomas Blackeman","Dragon","1613-11-08","1614-07-08",,,,,"Thomas Blackeman",,,,,,,,,,,,,,"A"
-119,,,"P","John","Blackman","John Blackman","Charles",,"1626-01-01",,,,"probate date: missing month; probate date: missing day","John Blackman",,,,,,,,,,,,,,"A"
-120,,"11/150/219","P","George","Blaides","George Blaides","Hart",,"1626-11-31","sailor",,,"probate date: missing month; probate date: missing day","George Blaides",,,,,,,,,,,,,,"A"
-121,"LMA Microfilm",,"C","Richard","Blancke","Richard Blancke",,"1611-10-28","1616-03-02",,,,"alternate last name: le Blanc; Alternte last name: Blancbe","Richard Blancke",,,,,,,,,,,,,,"A"
-122,,"9171/22/209v","C","Anthonie","Blare","Anthonie Blare","Hector","1613-09-04","1613-10-25","trumpeter",,,"alternate last name: Blaire; alternate first name: Anthony","Anthonie Blare",,,,,,,,,,,,,,"A"
-123,,"11/150/218",,"William","Blare","William Blare",,,,,,,,"William Blare",,,,,,,,,,,,,,"A"
-125,,,"C","Richard","Bleanen","Richard Bleanen","Dragon",,"1624-01-01",,,,"probate date: missing month; probate date: missing day","Richard Bleanen",,,,,,,,,,,,,,"A"
-126,"LMA Microfilm","11/123/im 995","P","Frauncis","Blevin","Frauncis Blevin",,"1613/4-01-25","1614-06-25",,,,"referred to as Francis & James/Jacobi ; Alternate first name: James; Alternate last name: Belvin","Ffrauncis Blevin",,,,,,,,,,,,,,"A"
-127,,,"C","Thomas","Bloyce","Thomas Bloyce","Royal James",,"1621-01-01",,,,"probate date: missing month; probate date: missing day","Thomas Bloyce",,,,,,,,,,,,,,"A"
-128,,,"C","Thomas","Blundell","Thomas Blundell","Whale",,"1624-01-01",,,,"probate date: missing month; probate date: missing day","Thomas Blundell",,,,,,,,,,,,,,"A"
-130,,,"P","John","Bond","John Bond","London",,"1627-01-01",,,,"probate date: missing month; probate date: missing day","John Bond",,,,,,,,,,,,,,"A"
-131,,"11/124/63","P","Arnold","Bonde","Arnold Bonde","Trades Increase","1613-04-02","1614-07-07","sailor",,,,"Arnold Bonde",,,,,,,,,,,,,,"A"
-132,,,"C","Gabriel","Bonnage","Gabriel Bonnage",,"1616-08-22","1618-09-22",,,,,"Gabriel Bonnage",,,,,,,,,,,,,,"A"
-133,,,"P","Abraham","Bonner","Abraham Bonner",,"1614-05-12","1614-08-02",,,,,"Abraham Bonner",,,,,,,,,,,,,,"A"
-135,,,"P","Samuell","Bonner","Samuell Bonner",,,"1625-01-01",,,,"probate date: missing month; probate date: missing day","Samuell Bonner",,,,,,,,,,,,,,"A"
-136,,,"P","Thomas","Bonner","Thomas Bonner","Expedition","1616-07-19","1617-09-06",,,,,"Thomas Bonner",,,,,,,,,,,,,,"A"
-137,,,"P","John","Boomer","John Boomer","Jonas",,"1627-01-01",,,,"probate date: missing month; probate date: missing day","John Boomer",,,,,,,,,,,,,,"A"
-138,,,"P","William","Boomer","William Boomer","Dragon","1616-07-01","1617-06-27",,,,,"William Boomer",,,,,,,,,,,,,,"A"
-139,,,"P","John","Booth","John Booth","Charles",,"1627-01-01",,,,"probate date: missing month; probate date: missing day","John Booth",,,,,,,,,,,,,,"A"
-141,,"9052/14/94","A","Gibert","Botham","Gibert Botham","Thomas","1611-03-27","1613-11-08",,,,,"Gibert Botham",,,,,,,,,,,,,,"A"
-142,,"11/108/71v","P","Zachary","Bottrell","Zachary Bottrell",,"1605-03-22","1606-07-04",,,,"alternate last name: Bottwell","Zachary Bottrell",,,,,,,,,,,,,,"A"
-143,,"11/138/258","P","Arthure","Boulton/Bowlton","Arthure Boulton",,,"1621-10-12","mariner, EIC",,,"alternate last name: Bowlton","Arthure Boulton",,,,,,,,,,,,,,"A"
-144,,,"P","Edward","Bourne","Edward Bourne","Anne",,"1619-01-01",,,,"extra name: Browne; probate date: missing month; probate date: missing day","Edward Bourne",,,,,,,,,,,,,,"A"
-146,,,"P","Thomas","Bowers","Thomas Bowers","Jonas",,"1623-01-01",,,,"probate date: missing month; probate date: missing day","Thomas Bowers",,,,,,,,,,,,,,"A"
-147,,,"C","Robert","Bowle","Robert Bowle","Concord","1613-12-16","1617-07-02",,,,,"Robert Bowle",,,,,,,,,,,,,,"A"
-148,,,"P","Edward","Bowles","Edward Bowles","London",,"1627-01-01",,,,"probate date: missing month; probate date: missing day","Edward Bowles",,,,,,,,,,,,,,"A"
-150,,,"C","Richard","Bowser","Richard Bowser","Peppercorn",,"1620-01-01",,,,"probate date: missing month; probate date: missing day","Richard Bowser",,,,,,,,,,,,,,"A"
-151,,,"P","Henry","Bowyer","Henry Bowyer","Lion",,"1620-01-01",,,,"corrected ship name: Lyon; probate date: missing month; probate date: missing day","Henry Bowyer",,,,,,,,,,,,,,"A"
-152,,,"P","John","Bowyer","John Bowyer","Bee",,"1624-01-01",,,,"probate date: missing month; probate date: missing day","John Bowyer",,,,,,,,,,,,,,"A"
-154,,,"P","Richard","Bracye","Richard Bracye","Hector","1612-12-20","1613-10-19",,,,"Alternate last name: Bracy","Richard Bracye",,,,,,,,,,,,,,"A"
-155,,,"P","William","Bradbent","William Bradbent",,"1600-03-16","1603-11-12",,,,,"William Bradbent",,,,,,,,,,,,,,"A"
-156,,,"C","Nicholas","Bradley","Nicholas Bradley","Trades Increase","1613-04-12","1614-07-06",,,,,"Nicholas Bradley",,,,,,,,,,,,,,"A"
-157,,,"P","Paul","Bradley","Paul Bradley","Clove",,"1622-01-01",,,,"probate date: missing month; probate date: missing day","Paul Bradley",,,,,,,,,,,,,,"A"
-159,,,"C","Matthewe","Bragg","Matthewe Bragg","Dragon",,"1614-07-15",,,,,"Matthewe Bragg",,,,,,,,,,,,,,"A"
-160,,,"P","Martin","Branch","Martin Branch","Charles",,"1629-01-01",,,,"probate date: missing month; probate date: missing day","Martin Branch",,,,,,,,,,,,,,"A"
-161,,,"P","Robert","Brande","Robert Brande","Charite",,"1611-01-01",,,,"probate date: missing month; probate date: missing day","Robert Brande",,,,,,,,,,,,,,"A"
-162,,,"C","George","Brandon","George Brandon","Unicorn","1617-04-21","1618-09-20",,,,,"George Brandon",,,,,,,,,,,,,,"A"
-163,,"11/128/176","P","Roberte","Brayne","Roberte Brayne","New Year's Gift","1616-06-15","1616-08-05","sailor",,,"alternate last name: Brayme","Roberte Brayne",,,,,,,,,,,,,,"A"
-164,,,"C","Thomas","Brett","Thomas Brett",,"1614-06-01","1615-09-16",,,,"will date: missing day","Thomas Brett",,,,,,,,,,,,,,"A"
-165,,,"P","John","Brewer","John Brewer","Charles",,"1618-01-01",,,,"probate date: missing month; probate date: missing day","John Brewer",,,,,,,,,,,,,,"A"
-166,,"11/107/386","P","John","Brickly","John Brickly","Dragon","1605-07-03","1606-06-17",,,,,"John Brickly",,,,,,,,,,,,,,"A"
-167,,,"C","John","Briges","John Briges","Globe","1599-03-14","1615-09-19",,,,"unsure ship name; will date: missing year","John Briges",,,,,,,,,,,,,,"A"
-168,,,"C","Henry","Brighouse","Henry Brighouse","New Year's Gift","1615-12-30","1616-07-19",,,,,"Henry Brighouse",,,,,,,,,,,,,,"A"
-169,,,"C","Thomas","Brighouse","Thomas Brighouse",,"1617-09-26","1618-10-03",,,,,"Thomas Brighouse",,,,,,,,,,,,,,"A"
-170,,,"P","John","Brison","John Brison","London",,"1627-01-01",,,,"probate date: missing month; probate date: missing day","John Brison",,,,,,,,,,,,,,"A"
-171,,,"C","George","Britton","George Britton","Moon",,"1622-01-01",,,,"probate date: missing month; probate date: missing day","George Britton",,,,,,,,,,,,,,"A"
-172,,,"P","Andrew","Brodgate","Andrew Brodgate","Peppercorn",,"1621-01-01",,,,"alternate last name: Breadgate; probate date: missing month; probate date: missing day","Andrew Brodgate",,,,,,,,,,,,,,"A"
-173,,"11/102/342","P","Jasper","Broeckman","Jasper Broeckman",,"1603-01-01","1603-10-12",,,,"will date: missing month; will date: missing day","Jasper Broeckman",,,,,,,,,,,,,,"A"
-174,,,"P","Ernest","Brommist","Ernest Brommist","Anne",,"1619-01-01",,,,"probate date: missing month; probate date: missing day","Ernest Brommist",,,,,,,,,,,,,,"A"
-175,,,"C","John ","Broode","John  Broode",,"1614-01-07","1615-09-13",,,,"alternate last name: Broad","John Broode",,,,,,,,,,,,,,"A"
-178,"LMA Microfilm",,"C","David","Browne","David Browne","Charles","1618-06-01","1618-09-17",,,,,"David Browne",,,,,,,,,,,,,,"A"
-179,,,"C","Henry","Browne","Henry Browne","Solomon","1615-02-25","1618-09-30",,,,,"Henry Browne",,,,,,,,,,,,,,"A"
-180,,,"C","John","Browne","John Browne",,"1617-01-08","1617-06-12",,,,,"John Browne",,,,,,,,,,,,,,"A"
-181,,,"P","John","Browne","John Browne",,"1613-02-07","1613-10-27",,,,,"John Browne",,,,,,,,,,,,,,"A"
-182,,,"C","Roger","Browne","Roger Browne",,"1614-05-03","1614-07-29",,,,,"Roger Browne",,,,,,,,,,,,,,"A"
-185,,,"C","William","Browne","William Browne","Moon",,"1621-01-01",,,,"probate date: missing month; probate date: missing day","William Browne",,,,,,,,,,,,,,"A"
-186,,,"C","Thomas","Browning","Thomas Browning","Peppercorn","1613-02-11","1613-12-16",,,,"unsure ship name","Thomas Browning",,,,,,,,,,,,,,"A"
-189,"LMA Microfilm",,"C","John","Bryan","John Bryan","Trades Increase","1612-02-26","1614-09-26","mariner",,,,"John Bryan",,,,,,,,,,,,,,"A"
-190,,,"C","Robert ","Bryant","Robert Bryant","Jonas",,"1625-10-29",,,,,"Robert Bryant",,,,,,,,,,,,,,"A"
-191,,,"P","Richard","Buckley","Richard Buckley","Dragon","1616-02-21","1617-06-23",,,,,"Richard Buckley",,,,,,,,,,,,,,"A"
-192,,,"P","William","Buckley","William Buckley","London",,"1628-01-01",,,,"probate date: missing month; probate date: missing day","William Buckley",,,,,,,,,,,,,,"A"
-193,,"9171/20/178","C","ffrancis","Buckman","ffrancis Buckman","Dragon","1605-01-23","1606-06-12",,,,,"Ffrancis Buckman",,,,,,,,,,,,,,"A"
-194,,"9171/22/204v","C","John","Bullard","John Bullard",,"1612-12-01","1613-10-19",,,,"orginal will date: Xmas last; will date: missing month; will date: missing day","John Bullard",,,,,,,,,,,,,,"A"
-195,,,"P","Leonard","Buller","Leonard Buller","New Year's Gift",,"1621-01-01",,,,"probate date: missing month; probate date: missing day","Leonard Buller",,,,,,,,,,,,,,"A"
-196,,,"P","Juhn","Bullock","Juhn Bullock","Bull",,"1625-01-01",,,,"probate date: missing month; probate date: missing day","Juhn Bullock",,,,,,,,,,,,,,"A"
-197,,,"P","Thomas","Burch","Thomas Burch","Discovery",,"1625-01-01",,,,"probate date: missing month; probate date: missing day","Thomas Burch",,,,,,,,,,,,,,"A"
-198,,,"C","Henry","Burdell","Henry Burdell","Charles","1617-12-04","1618-09-12",,,,,"Henry Burdell",,,,,,,,,,,,,,"A"
-199,,,"C","Richard","Burges","Richard Burges","Trades Increase","1613-03-09","1614-07-14",,,,,"Richard Burges",,,,,,,,,,,,,,"A"
-200,,"9171/20/195v","C","Thomas","Burges","Thomas Burges","Hector",,"1606-07-20",,,,,"Thomas Burges",,,,,,,,,,,,,,"A"
-201,,,"P","ffrancis","Burgis","ffrancis Burgis","Hector","1612-12-23","1613-10-27",,,,,"Ffrancis Burgis",,,,,,,,,,,,,,"A"
-202,,"11/102/240","P","William","Burridge","William Burridge","Dragon","1603-04-14","1603-10-11",,,,,"William Burridge",,,,,,,,,,,,,,"A"
-203,,"1617 file ","A","Rowland","Burrow","Rowland Burrow","Dragon","1616-08-06","1617-06-21",,,,,"Rowland Burrow",,,,,,,,,,,,,,"A"
-205,,"11/102/175","P","William","Burrowes","William Burrowes","Dragon","1601-08-18","1603-10-20",,,,,"William Burrowes",,,,,,,,,,,,,,"A"
-206,"LMA Microfilm",,"C","John","Bustion","John Bustion","New Year's Gift","1618-11-25","1621-01-17",,,,,"John Bustion",,,,,,,,,,,,,,"A"
-207,,"11/102/231","P","William","Butler","William Butler","Dragon","1603-06-04","1603-10-11",,,,,"Butler, William",,,,,,,,,,,,,,"A"
-208,,,"C","Esaie","Butt","Esaie Butt","Hector","1599-08-26","1617-10-10",,,,"will date: missing year","Esaie Butt",,,,,,,,,,,,,,"A"
-209,,,"C","Thomas","Buttrice","Thomas Buttrice","Clove",,"1614-12-16",,,,"unsure ship name","Thomas Buttrice",,,,,,,,,,,,,,"A"
-210,,,"C","Thomas","Byram","Thomas Byram","Dragon","1608-01-04","1614-07-15",,,,"alternate last name: Briam","Thomas Byram",,,,,,,,,,,,,,"A"
-211,,"11/102/326v","P","Richard","Byrde","Richard Byrde","Dragon","1603-02-28","1603-11-11",,,,,"Richard Byrde",,,,,,,,,,,,,,"A"
-212,,"11/102/309","P","Thomas","Byshopp","Thomas Byshopp","Hector","1603-06-04","1603-10-08","trumpeter?",,,,"Thomas Byshopp",,,,,,,,,,,,,,"A"
-213,,,"P","ffrancis","Cadman","ffrancis Cadman","James","1617-09-25","1618-09-18",,,,,"Ffrancis Cadman",,,,,,,,,,,,,,"A"
-214,,,"C","Joseph","Calfe","Joseph Calfe",,,"1619-01-01",,,,"probate date: missing month; probate date: missing day","Joseph Calfe",,,,,,,,,,,,,,"A"
-215,,,"C","John","Calis","John Calis",,"1616-09-07","1617-06-17",,,,"alternate last name: Callis","John Calis",,,,,,,,,,,,,,"A"
-216,,,"P","Edmonde","Camden","Edmonde Camden",,,"1624-01-01",,,,"probate date: missing month; probate date: missing day","Edmonde Camden",,,,,,,,,,,,,,"A"
-217,,,"C","Daniel","Camell","Daniel Camell","Star",,"1624-01-01",,,,"correctted ship name: Star of London; probate date: missing month; probate date: missing day","Daniel Camell",,,,,,,,,,,,,,"A"
-220,,,"C","John","Cannon","John Cannon","Moon",,"1621-01-01",,,,"probate date: missing month; probate date: missing day","John Cannon",,,,,,,,,,,,,,"A"
-221,,,"C","Wiliam","Capplin","Wiliam Capplin","Globe","1617-09-20","1618-09-18",,,,,"Wiliam Capplin",,,,,,,,,,,,,,"A"
-222,,,"P","Thomas","Card","Thomas Card","Charles",,"1629-01-01",,,,"probate date: missing month; probate date: missing day","Thomas Card",,,,,,,,,,,,,,"A"
-223,,,"P","John","Carden","John Carden","Blessing",,"1629-01-01",,,,"probate date: missing month; probate date: missing day","John Carden",,,,,,,,,,,,,,"A"
-225,,"9171/22/209","C","George","Carme","George Carme","Solomon","1612-01-15","1613-10-25",,,,"alternate last name: Carnoe","George Carme",,,,,,,,,,,,,,"A"
-226,,,"P","William","Carnoe","William Carnoe","Royal James",,"1621-01-01",,,,"probate date: missing month; probate date: missing day","William Carnoe",,,,,,,,,,,,,,"A"
-227,,,"C","George","Carre","George Carre","Clove","1616-05-04","1617-07-01",,,,,"George Carre",,,,,,,,,,,,,,"A"
-228,,"11/102/392v","P","Edward","Carrecke","Edward Carrecke","Ascension","1602-08-28","1603-07-01",,,,,"Edward Carrecke",,,,,,,,,,,,,,"A"
-229,,,"P","William","Carrie","William Carrie","Darling","1613-11-12","1614-12-16",,,,,"Wiliam Carrie",,,,,,,,,,,,,,"A"
-230,,,"P","John","Carter","John Carter","Exchange",,"1629-01-01",,,,"probate date: missing month; probate date: missing day","John Carter",,,,,,,,,,,,,,"A"
-231,,,"C","Richard","Carter","Richard Carter","Expedition","1616-11-05","1617-06-12",,,,,"Richard Carter",,,,,,,,,,,,,,"A"
-232,,,"P","Samuel","Case","Samuel Case","London",,"1627-01-01",,,,"probate date: missing month; probate date: missing day","Samuel Case",,,,,,,,,,,,,,"A"
-233,,"11/115/283","P","John","Castleden","John Castleden","Hector",,"1610-05-24",,,,,"John Castleden",,,,,,,,,,,,,,"A"
-234,,,"P","Richard","Caswell","Richard Caswell","Peppercorn",,"1621-01-01",,,,"probate date: missing month; probate date: missing day","Richard Caswell",,,,,,,,,,,,,,"A"
-235,,,"P","Bartholomew","Cavell","Bartholomew Cavell","London",,"1627-01-01",,,,"probate date: missing month; probate date: missing day","Bartholomew Cavell",,,,,,,,,,,,,,"A"
-237,,"11/104/51","P","Hughe","Cavill","Hughe Cavill","Hector","1603-05-28","1604-05-11",,,,"alternate first name: Hugh","Hughe Cavill",,,,,,,,,,,,,,"A"
-238,,,"C","Thomas","Chackrett","Thomas Chackrett","Attendant",,"1618-01-01",,,,"probate date: missing month; probate date: missing day","Thomas Chackrett",,,,,,,,,,,,,,"A"
-239,,,"P","David","Chamberlaine","David Chamberlaine","James","1618-12-07","1619-12-24",,,,,"David Chamberlaine",,,,,,,,,,,,,,"A"
-240,,"11/102/233v","P","John","Chamberlaine","John Chamberlaine","Dragon","1603-02-13","1603-10-12",,,,,"John Chamberlaine",,,,,,,,,,,,,,"A"
-241,,,"P","Hughe","11/132/249","Hughe Chambers",,"1613-04-22","1614-08-08",,,,,"Hughe Chambers",,,,,,,,,,,,,,"A"
-242,,,"P","John","Chambers","John Chambers",,"1610-03-11","1614-06-11",,,,,"John Chambers",,,,,,,,,,,,,,"A"
-243,,"11/141/392","P","Reginald","Chambers","Reginald Chambers","Moon",,"1623-04-25","cooper",,,"probate date: missing month; probate date: missing day","Reginald Chambers",,,,,,,,,,,,,,"A"
-244,,,"P","Robert","Chambers","Robert Chambers","Charles","1617-09-08","1618-09-16",,,,,"Robert Chambers",,,,,,,,,,,,,,"A"
-245,,"9171/22/215","C","Thomas","Chapline","Thomas Chapline","Hector","1613-05-20","1613-11-03",,,,,"Thomas Chapline",,,,,,,,,,,,,,"A"
-246,,"11/120/90","P","John","Chapman","John Chapman",,,"1612-08-17",,,,,"John Chapman",,,,,,,,,,,,,,"A"
-247,,"11/102/371","P","Edwarde","Chapman also Norris","Edwarde Norrys Chapman","Dragon","1603-02-15","1603-10-15",,,,"extra name: Edward","Edwarde Chapman",,,,,,,,,,,,,,"A"
-249,,"11/144/158","P","Peter","Chapman","Peter Chapman","Unity",,"1626-09-18","sailor",,,,"Peter Chapman",,,,,,,,,,,,,,"A"
-250,,,"P","William","Chapman","William Chapman",,"1606-05-08","1606-06-02",,,,,"William Chapman",,,,,,,,,,,,,,"A"
-251,,,"C","Jacob","Charke","Jacob Charke","Peppercorn","1606-05-08","1620-03-06",,,,,"Jacob Charke",,,,,,,,,,,,,,"A"
-253,,,"P","Edward","Chatfeild","Edward Chatfeild","Mary",,"1629-01-01",,,,"probate date: missing month; probate date: missing day","Edward Chatfeild",,,,,,,,,,,,,,"A"
-254,,"11/130/146","P","George ","Chauncey","George Chauncey",,,"1617-11-27","merchant",,,,"George Chauncey",,,,,,,,,,,,,,"A"
-255,,"9052/4/xx","A","William","Cheney","William Cheney","Clove","1616-11-14","1617-07-04",,,,"alternate last name: Chenye","William Cheney",,,,,,,,,,,,,,"A"
-256,,,"C","William","Chesterton","William Chesterton",,"1617-12-25","1618-09-17",,,,"alias: Parsons","William Chesterton",,,,,,,,,,,,,,"A"
-257,,"9171/20/174","C","Edward","Chewne","Edward Chewne",,"1606-08-15","1606-06-02",,,,"alternate last name: Chewine","Edward Chewne",,,,,,,,,,,,,,"A"
-259,,"11/102/150","P","Adam","Childeren","Adam Childeren","Dragon","1601-08-31",,,,,,"Adam Childeren",,,,,,,,,,,,,,"A"
-261,,,"P","John","Christian","John Christian","Charles",,"1627-01-01",,,,"probate date: missing month; probate date: missing day","John Christian",,,,,,,,,,,,,,"A"
-262,,,"P","Edward","Church","Edward Church","Blessing",,"1625-01-01",,,,"probate date: missing month; probate date: missing day","Edward Church",,,,,,,,,,,,,,"A"
-263,,"11/147/138","P","Thomas","Church","Thomas Church","Discovery",,"1625-10-20","sailor",,,"probate date: missing month; probate date: missing day","Thomas Church",,,,,,,,,,,,,,"A"
-264,,"11/115/279","P","Andrew","Churchward","Andrew Churchward","Hector","1608-05-16","1610-05-16",,,,,"Andrew Churchward",,,,,,,,,,,,,,"A"
-265,,"11/115/279","P","Richard","Churchward","Richard Churchward","Hector","1609-01-12","1610-05-16",,,,,"Richard Churchward",,,,,,,,,,,,,,"A"
-266,"LMA Microfilm",,"C","Richard","Clap","Richard Clap","New Year's Gift","1614-12-20","1616-08-08",,,,,"Richard Clap",,,,,,,,,,,,,,"A"
-267,,,"C","William","Clarck","William Clarck","Globe",,"1618-01-01",,,,"alternate last name: Clearke; probate date: missing month; probate date: missing day","William Clarck",,,,,,,,,,,,,,"A"
-268,,,"C","John","Clark","John Clark","Sampson",,"1621-01-01",,,,"probate date: missing month; probate date: missing day","John Clark",,,,,,,,,,,,,,"A"
-269,,,"C","John","Clarke","John Clarke","Trades Increase","1613-03-03",,,,,,"John Clarke",,,,,,,,,,,,,,"A"
-271,,"9171/20/192","C","Paul","Clarke","Paul Clarke","Hector","1606-04-15","1606-07-14",,,,"additional ship: Dragon; additional ship: Ascension","Paul Clarke",,,,,,,,,,,,,,"A"
-272,,"11/138/233","P","Thomas","Clarke","Thomas Clarke","Royal James",,"1621-10-07","sailor",,,"probate date: missing month; probate date: missing day","Thomas Clarke",,,,,,,,,,,,,,"A"
-,,"11/155/53","P","Thomas","Clarke","Thomas Clarke","Jonas",,"1629-01-21","mariner",,,,"Thomas Clarke",,,,,,,,,,,,,,"A"
-275,,"11/117/12","P","Thomas","Clayborne","Thomas Clayborne","Expedition","1610-07-17","1611-07-28",,,,,"Thomas Clayborne",,,,,,,,,,,,,,"A"
-277,,,"P","Nicholas","Clements","Nicholas Clements","Anne",,"1619-01-01",,,,"probate date: missing month; probate date: missing day","Nicholas Clements",,,,,,,,,,,,,,"A"
-278,,,"P","Stephen","Clifton","Stephen Clifton","Charles","1617-12-04","1618-09-12",,,,,"Stephen Clifton",,,,,,,,,,,,,,"A"
-279,,,"P","Thomas","Coale","Thomas Coale","Charles",,"1625-01-01",,,,"probate date: missing month; probate date: missing day","Thomas Coale",,,,,,,,,,,,,,"A"
-280,,"9171/19/444","C","Walter","Cobb","Walter Cobb","Hector",,"1603-11-05",,,,,"Walter Cobb",,,,,,,,,,,,,,"A"
-281,,,"C","Daniel","Cobden","Daniel Cobden","Royal James",,"1621-01-01",,,,"probate date: missing month; probate date: missing day","Daniel Cobden",,,,,,,,,,,,,,"A"
-282,,,"P","John","Cocke","John Cocke","Charles",,"1618-01-01",,,,"probate date: missing month; probate date: missing day","John Cocke",,,,,,,,,,,,,,"A"
-284,"LMA Microfilm",,"C","Richard","Cockerell","Richard Cockerell","New Year's Gift","1616-04-24","1616-07-09",,,,,"Richard Cockerell",,,,,,,,,,,,,,"A"
-285,,"11/150/460","P","Robert ","Cocks","Robert Cocks",,,"1626-11-30","sailor",,,,"Robert Cocks",,,,,,,,,,,,,,"A"
-286,,,"C","Richard","Coggins","Richard Coggins",,"1617-09-04","1618-09-19",,,,,"Richard Coggins",,,,,,,,,,,,,,"A"
-287,,,"C","Geffrie","Cole","Geffrie Cole","Peppercorn","1613-03-17","1615-04-05",,,,,"Geffrie Cole",,,,,,,,,,,,,,"A"
-288,,,"P","John","Cole","John Cole","Hector","1613-07-12","1613-10-29",,,,,"John Cole",,,,,,,,,,,,,,"A"
-290,,,"C","Edward","Collins","Edward Collins",,,"1617-01-01",,,,"alternate last name: Collinge; probate date: missing month; probate date: missing day","Edward Collins",,,,,,,,,,,,,,"A"
-293,,"11/138/487","P","William","Colwall","William Colwall","Royal James",,"1621-11-29","sailor",,,"probate date: missing month; probate date: missing day","William Colwall",,,,,,,,,,,,,,"A"
-296,,,"P","Christopher","Conningham","Christopher Conningham",,"1610-03-18","1614-09-10",,,,,"Christopher Conningham",,,,,,,,,,,,,,"A"
-298,,"11/124/239","P","John","Cooke","John Cooke","Trades Increase","1610-03-09","1614-07-27","mercer to EI",,,,"John Cooke",,,,,,,,,,,,,,"A"
-299,,"11/124/186","P","William","Cooke also Toole","William Cooke",,"1612-01-22","1614-07-18",,,,,"William Cooke",,,,,,,,,,,,,,"A"
-300,,,"C","John","Coop","John Coop","Trades Increase","1613-04-10","1616-03-10",,,,,"John Coop",,,,,,,,,,,,,,"A"
-303,,,"P","John","Coopper","John Coopper","Charles",,"1626-01-01",,,,"probate date: missing month; probate date: missing day","John Coopper",,,,,,,,,,,,,,"A"
-304,,"9051/371v","A","Martyn","Cornelous","Martyn Cornelous","Dragon","1602-02-07","1603-10-14",,,,,"Martyn Cornelous",,,,,,,,,,,,,,"A"
-305,,"11/102/179","P","Edward","Cornewill","Edward Cornewill","Dragon","1603-07-01","1603-10-27",,,,,"Edward Cornewill",,,,,,,,,,,,,,"A"
-307,,"11/107/346v","P","Gilbert","Cotherom","Gilbert Cotherom",,"1605-07-30","1606-06-30",,,,,"Gilbert Cotherom",,,,,,,,,,,,,,"A"
-308,,,"C","Thomas","Cottingham","Thomas Cottingham",,,"1621-01-01",,,,"probate date: missing month; probate date: missing day","Thomas Cottingham",,,,,,,,,,,,,,"A"
-309,,,"P","fferdenando","Cotton","fferdenando Cotton","Trades Increase","1613-06-07","1614-09-02",,,,,"Fferdenando Cotton",,,,,,,,,,,,,,"A"
-310,,,"P","John","Cotton","John Cotton","Dragon",,"1617-01-01",,,,"probate date: missing month; probate date: missing day","John Cotton",,,,,,,,,,,,,,"A"
-311,,,"P","Peter","Cotton","Peter Cotton",,"1617-12-03","1618-09-12",,,,,"Peter Cotton",,,,,,,,,,,,,,"A"
-312,,"9171/20/181","C","Robert","Couche","Robert Couche",,"1604-03-10","1606-06-17","cook",,,"alternate last name: Conche","Robert Couche",,,,,,,,,,,,,,"A"
-315,,,"C","Thomas","Coupper","Thomas Coupper","Thomas",,"1613-11-09",,,,"alternate last name: Cooper; unsure ship name","Thomas Coupper",,,,,,,,,,,,,,"A"
-316,,,"P","Edmundish","Courtman","Edmundish Courtman","Trades Increase","1612-12-03","1614-07-16",,,,,"Edmundish Courtman",,,,,,,,,,,,,,"A"
-317,,,"P","Owen","Cowell","Owen Cowell","Royal James",,"1621-01-01",,,,"probate date: missing month; probate date: missing day","Owen Cowell",,,,,,,,,,,,,,"A"
-320,,,"P","Tobias","Coxe","Tobias Coxe",,"1612-11-25","1613-10-26",,,,,"Tobias Coxe",,,,,,,,,,,,,,"A"
-321,,,"C","Sam","Crafford","Sam Crafford","Eagle",,"1620-01-01",,,,"probate date: missing month; probate date: missing day","Sam Crafford",,,,,,,,,,,,,,"A"
-322,,"11/128/637","P","William","Crandall","William Crandall","New Year's Gift","1616-01-29","1616-12-02","1/4 gunner",,,,"William Crandall",,,,,,,,,,,,,,"A"
-323,,,"C","Richard","Crane","Richard Crane","Gamaliell",,"1624-01-01",,,,"probate date: missing month; probate date: missing day","Richard Crane",,,,,,,,,,,,,,"A"
-324,,,"P","John","Cransbee","John Cransbee",,"1613-05-16","1615-03-24",,,,,"John Cransbee",,,,,,,,,,,,,,"A"
-325,,,"C","Jas ","Creighton","Jas  Creighton","Royal James",,,,,,"alternate last name: Cryton","Jas Creighton",,,,,,,,,,,,,,"A"
-326,,,"C","John","Crewe","John Crewe","Bee",,"1623-01-01",,,,"probate date: missing month; probate date: missing day","John Crewe",,,,,,,,,,,,,,"A"
-327,,,"C","Nicholas","Crisp","Nicholas Crisp","Paulsgrave",,"1623-01-01",,,,"alternate last name: Crisph; probate date: missing month; probate date: missing day","Nicholas Crisp",,,,,,,,,,,,,,"A"
-328,,,"P","Thomas","Croche","Thomas Croche","Defence",,"1622-01-01",,,,"probate date: missing month; probate date: missing day","Thomas Croche",,,,,,,,,,,,,,"A"
-329,,,"P","Raphe","Croft","Raphe Croft","Dragon","1613-12-14","1614-07-16",,,,,"Raphe Croft",,,,,,,,,,,,,,"A"
-330,,,"C","Mich","Cromer","Mich Cromer","Anne",,"1619-01-01",,,,"probate date: missing month; probate date: missing day","Mich Cromer",,,,,,,,,,,,,,"A"
-331,,,"P","Henry","Cross","Henry Cross","Charles",,"1627-01-01",,,,"probate date: missing month; probate date: missing day","Henry Cross",,,,,,,,,,,,,,"A"
-332,,,"P","Thomas","Crosse","Thomas Crosse",,"1613-08-30","1613-12-03",,,,,"Thomas Crosse",,,,,,,,,,,,,,"A"
-334,,,"C","Christopher","Crowe","Christopher Crowe","The Guest","1606-06-02","1606-07-18",,,,"uncertain first name","Christopher Crowe",,,,,,,,,,,,,,"A"
-335,,,"P","Thomas","Crowther","Thomas Crowther","Royal James",,"1621-01-01",,,,"probate date: missing month; probate date: missing day","Thomas Crowther",,,,,,,,,,,,,,"A"
-336,,"11/146/531","P","Peter","Cullin","Peter Cullin","Royal James",,"1625-09-30","gunner",,,,"John Cullin",,,,,,,,,,,,,,"A"
-337,,,"P","Thomas","Culline","Thomas Culline","Hart",,"1625-01-01",,,,"probate date: missing month; probate date: missing day","Thomas Culline",,,,,,,,,,,,,,"A"
-339,,,"C","Richard","Cundy","Richard Cundy","Moon",,"1623-01-01",,,,"probate date: missing month; probate date: missing day","Richard Cundy",,,,,,,,,,,,,,"A"
-340,,"11/126/121v","P","Robert","Cungam","Robert Cungam",,"1612-09-15","1615-09-14",,,,,"Robert Cungam",,,,,,,,,,,,,,"A"
-341,,"11/138/216","P","John","Cuningham","John Cuningham","Royal James",,"1621-10-05",,,,"probate date: missing month; probate date: missing day","John Cuningham",,,,,,,,,,,,,,"A"
-342,,"11/124/333","P","Christopher","Coningham","Christopher Coningham","Trades Increase","1610-03-18","1614-09-10","servant to Henry Middleton",,,"alternate last anme: Conningham","Christopher Coningham",,,,,,,,,,,,,,"A"
-343,,,"P","Faustin","Cuppidge","Faustin Cuppidge","Pearl",,"1610-01-01",,,,"probate date: missing month; probate date: missing day","Faustin Cuppidge",,,,,,,,,,,,,,"A"
-344,,,"C","Patrick","Cussen","Patrick Cussen","Bear",,"1624-01-01",,,,"probate date: missing month; probate date: missing day; corrected ship name: Beare","Patrick Cussen",,,,,,,,,,,,,,"A"
-345,,"9171/22/224","C","Mathewe","Cutbersone","Mathewe Cutbersone","Hector","1611-11-26","1613-11-17",,,,,"Mathewe Cutbersone",,,,,,,,,,,,,,"A"
-346,,"11/128/93","P","Beniamen","Daie","Beniamen Daie","New Year's Gift","1615-11-17","1616-07-09","purser",,,,"Beniamen Daie",,,,,,,,,,,,,,"A"
-347,,,"P","James","Dakes","James Dakes","Charles",,"1618-01-01",,,,"probate date: missing month; probate date: missing day","James Dakes",,,,,,,,,,,,,,"A"
-348,,,"C","Henry","Dale","Henry Dale","Eagle",,"1627-01-01",,,,"probate date: missing month; probate date: missing day","Henry Dale",,,,,,,,,,,,,,"A"
-349,,,"P","Hugh","Dale","Hugh Dale","Dragon","1617-04-16","1617-06-20",,,,,"Hugh Dale",,,,,,,,,,,,,,"A"
-350,,,"P","Richard","Dale","Richard Dale","Charles",,"1627-01-01",,,,"probate date: missing month; probate date: missing day","Richard Dale",,,,,,,,,,,,,,"A"
-351,,,"P","Robert ","Dale","Robert  Dale","Hart",,"1628-01-01",,,,"probate date: missing month; probate date: missing day","Robert Dale",,,,,,,,,,,,,,"A"
-352,,,"P","Richard","Danby","Richard Danby","Royal James",,"1621-01-01",,,,"probate date: missing month; probate date: missing day","Richard Danby",,,,,,,,,,,,,,"A"
-353,,,"P","Thomas","Danne","Thomas Danne","Trades Increase","1610-02-08","1614-07-11",,,,,"Thomas Danne",,,,,,,,,,,,,,"A"
-354,,"11/155/223 &224","P","John","Darby","John Darby","Discovery",,"1629-02-17","master's mate",,,"probate date: missing month; probate date: missing day","John Darby",,,,,,,,,,,,,,"A"
-356,,,"C","Bartholmew","Davies","Bartholmew Davies","Trades Increase","1612-04-11","1614-02-17",,,,"probate date: flipped day/month?","Bartholmew Davies",,,,,,,,,,,,,,"A"
-359,,"11/150/413","P","John ","Davis","John Davis","Anne",,"1626-11-26","carpenter",,,,"John Davis",,,,,,,,,,,,,,"A"
-360,,,"C","John","Davis","John Davis","Peppercorn","1616-06-15","1617-09-12","carpenter's mate",,,,"John Davis",,,,,,,,,,,,,,"A"
-361,,"11/109/15","P","John","Davis","John Davis","Tiger for China","1604-10-12","1607-01-10",,,,,"John Davis",,,,,,,,,,,,,,"A"
-362,,"11/138/314","P","Lewis","Davis","Lewis Davis","Clove",,"1621-01-01",,,,"probate date: missing month; probate date: missing day; Alternate last name: Ludovic","Lewis Davis",,,,,,,,,,,,,,"A"
-363,,"11/122/355","P","Richard","Davis","Richard Davis","Hector","1612-12-14","1613-10-26","sailor",,,,"Richard Davis",,,,,,,,,,,,,,"A"
-365,,,"C","Simon","Davis","Simon Davis","Royal James",,"1621-01-01",,,,"probate date: missing month; probate date: missing day","Simon Davis",,,,,,,,,,,,,,"A"
-368,"LMA Microfilm",,"C","James","Davison","James Davison","New Year's Gift","1616-06-20","1616-07-22",,,,,"James Davison",,,,,,,,,,,,,,"A"
-369,,,"C","Hendrie","Davy","Hendrie Davy","Moon",,"1625-01-01",,,,"alternate last name: Davie; probate date: missing month; probate date: missing day","Hendrie Davy",,,,,,,,,,,,,,"A"
-370,,"PROB11/132/299","P","Alexander","Dawson","Alexander Dawson","Hope","1617-10-08","1618-09-25","joiner",,,,"Alexander Dawson",,,,,,,,,,,,,,"A"
-371,,,"P","Henry","Dawson","Henry Dawson","Charles",,"1626-01-01",,,,"probate date: missing month; probate date: missing day","Henry Dawson",,,,,,,,,,,,,,"A"
-372,,,"C","William","Dawson","William Dawson","Diamond",,"1624-01-01",,,,"probate date: missing month; probate date: missing day","William Dawson",,,,,,,,,,,,,,"A"
-373,,"11/152/236","P","John","Daye","John Daye","London",,"1627-07-05","sailor",,,"probate date: missing month; probate date: missing day","John Daye",,,,,,,,,,,,,,"A"
-374,,,"C","William","Deacon","William Deacon","Clove",,"1622-01-01",,,,"probate date: missing month; probate date: missing day","William Deacon",,,,,,,,,,,,,,"A"
-375,,,"C","Henry","Deale","Henry Deale","Paulsgrave",,"1623-01-01",,,,"probate date: missing month; probate date: missing day; Alternate last name: Dale","Henry Deale",,,,,,,,,,,,,,"A"
-376,,,"P","Richard","Deane","Richard Deane","Royal James",,"1621-01-01",,,,"alternate last name: Dean; probate date: missing month; probate date: missing day","Richard Deane",,,,,,,,,,,,,,"A"
-377,,,"P","Anthony","Delovear","Anthony Delovear","Hart",,"1626-01-01",,,,"probate date: missing month; probate date: missing day","Anthony Delovear",,,,,,,,,,,,,,"A"
-378,,,"C","Thomas","Dent","Thomas Dent","James","1613-01-30","1615-09-15",,,,,"Thomas Dent",,,,,,,,,,,,,,"A"
-379,,,"P","Andrew","Derry","Andrew Derry","Charles",,"1628-01-01",,,,"probate date: missing month; probate date: missing day","Andrew Derry",,,,,,,,,,,,,,"A"
-380,,,"C","John","Dickinson","John Dickinson","Anne",,"1619-01-01",,,,"probate date: missing month; probate date: missing day","John Dickinson",,,,,,,,,,,,,,"A"
-381,,"9171/20/199","C","Robert","Dingle","Robert Dingle",,"1606-07-27","1606-08-18",,,,,"Robert Dingle",,,,,,,,,,,,,,"A"
-382,,,"C","John","Dinsdale","John Dinsdale","Dragon",,"1620-01-01",,,,"probate date: missing month; probate date: missing day","John Dinsdale",,,,,,,,,,,,,,"A"
-383,,,"C","William","Dickenson","William Dickenson","Moon",,"1625-01-01",,,,"probate date: missing month; probate date: missing day","William Dickenson",,,,,,,,,,,,,,"A"
-384,,"11/138/","P","William","Dickson","William Dickson","Royal James",,,"sailor",,,,"William Dickson",,,,,,,,,,,,,,"A"
-385,,"9171/20/179v","C","Roger","Ditche","Roger Ditche","Susan","1601-02-04","1606-06-17",,,,"unsure ship name","Roger Ditche",,,,,,,,,,,,,,"A"
-386,,,"C","Richard","Dixon","Richard Dixon","Lion",,"1616-01-01",,,,"corrected ship name: Lyon; probate date: missing month; probate date: missing day","Richard Dixon",,,,,,,,,,,,,,"A"
-387,,,"P","John","Dodd","John Dodd","Hart",,"1625-01-01",,,,"probate date: missing month; probate date: missing day","John Dodd",,,,,,,,,,,,,,"A"
-388,,"11/154/548","P","Richard","Dodd","Richard Dodd/Dodde","Discovery",,"1628-12-08",,,,"probate date: missing month; probate date: missing day","Richard Dodd",,,,,,,,,,,,,,"A"
-389,,,"C","John","Dolton","John Dolton","Royal James",,"1621-01-01",,,,"probate date: missing month; probate date: missing day","John Dolton",,,,,,,,,,,,,,"A"
-390,,,"C","Thomas","Douglas","Thomas Douglas","Ruby",,"1625-01-01",,,,"probate date: missing month; probate date: missing day; corrected ship name: Rubie","Thomas Douglas",,,,,,,,,,,,,,"A"
-392,,,"C","John","Downing","John Downing","Clove",,"1623-01-01",,,,"probate date: missing month; probate date: missing day","John Downing",,,,,,,,,,,,,,"A"
-393,"LMA Microfilm",,"C","George","Downton","George Downton","New Year's Gift","1614-02-15","1616-08-21",,,,,"George Downton",,,,,,,,,,,,,,"A"
-394,,"11/128/111","P","Nicholas","Downton","Nicholas Downton","New Year's Gift",,"1616-07-16","captain",,,,"Nicholas Downton",,,,,,,,,,,,,,"A"
-395,,,"C","John","Dowseing","John Dowseing","Unicorn","1617-07-05","1618-09-14",,,,,"John Dowseing",,,,,,,,,,,,,,"A"
-396,,,"C","William","Dracket","William Dracket","Globe",,"1615-01-01",,,,"probate date: missing month; probate date: missing day","William Dracket",,,,,,,,,,,,,,"A"
-397,,,"C","John","Driscott","John Driscott","Rose",,"1620-01-01",,,,"probate date: missing month; probate date: missing day","John Driscott",,,,,,,,,,,,,,"A"
-398,,,"P","William","Dudding","William Dudding","Clove",,"1620-01-01",,,,"probate date: missing month; probate date: missing day","William Dudding",,,,,,,,,,,,,,"A"
-399,,"9171/22/211","C","William","Duffe","William Duffe","Hector","1611-03-26","1613-10-27",,,,,"William Duffe",,,,,,,,,,,,,,"A"
-400,,,"C","William","Duglasse","William Duglasse","Charles",,"1622-01-01",,,,"alternate last name: Douglasse; probate date: missing month; probate date: missing day","William Duglasse",,,,,,,,,,,,,,"A"
-401,,,"C","Thomas","Duke","Thomas Duke","Globe","1616-12-24","1617-10-10",,,,,"Thomas Duke",,,,,,,,,,,,,,"A"
-402,,,"P","Thomas","Dunne","Thomas Dunne","London",,"1623-01-01",,,,"probate date: missing month; probate date: missing day","Thomas Dunne",,,1,,,,,,,,,,,"A"
-403,,,"C","John","Durine","John Durine","Solomon","1614-02-26","1618-10-16",,,,,"John Durine",,,,,,,,,,,,,,"A"
-404,,,"C","Thomas","Durnell","Thomas Durnell","Hector","1617-10-06","1618-09-21",,,,,"Thomas Durnell",,,,,,,,,,,,,,"A"
-405,,,"P","John","Dyer","John Dyer",,"1616-03-20","1617-06-14",,,,,"John Dyer",,,,,,,,,,,,,,"A"
-406,,,"P","Mathew","Dymmocke","Mathew Dymmocke","Diamond",,"1624-01-01",,,,"probate date: missing month; probate date: missing day","Mathew Dymmocke",,,,,,,,,,,,,,"A"
-408,,,"C","Thomas","Eachell","Thomas Eachell","Sampson",,"1622-01-01",,,,"probate date: missing month; probate date: missing day","Thomas Eachell",,,,,,,,,,,,,,"A"
-410,,,"P","Robert","Eason","Robert Eason","London",,"1628-01-01","carpenter",,,"probate date: missing month; probate date: missing day","Robert Eason",,,,,,,,,,,,,,"A"
-411,,,"C","Robert","Eatten","Robert Eatten","Darling",,"1618-01-01",,,,"probate date: missing month; probate date: missing day","Robert Eatten",,,,,,,,,,,,,,"A"
-412,,"11/122/681","P","Raphe","Ebbotes","Raphe Ebbotes","Clove","1611-03-20","1613-12-24",,,,"alternate last name: Ibbots","Raphe Ebbotes",,,,,,,,,,,,,,"A"
-413,,"11/108/162","P","William","Edon","William Edon",,"1605-06-13","1606-07-29",,,,,"William Edon",,,,,,,,,,,,,,"A"
-414,,"11/107/447","P","Edwarde","Edmondes","Edward Edmondes","Dragon","1605-08-02","1606-06-06",,,,"earlier will: 08.03.04","Edward Edmondes",,,,,,,,,,,,,,"A"
-415,,"9171/20/172v","C","Thomas","Eldredge","Thomas Eldredge",,"1603-01-18","1606-05-31",,,,"alternate last name: Aldridge","Thomas Eldredge",,,,,,,,,,,,,,"A"
-421,,,"P","Benjamin","Elley","Benjamin Elley","Charles",,"1626-01-01",,,,"probate date: missing month; probate date: missing day","Benjamin Elley",,,,,,,,,,,,,,"A"
-423,,,"C","William","Ellinger","William Ellinger","Paulsgrave",,"1623-01-01",,,,"probate date: missing month; probate date: missing day","William Ellinger",,,,,,,,,,,,,,"A"
-428,,"11/118/68v","P","Thomas","Elliott","Thomas Elliott","Expedition","1610-11-02","1611-07-10",,,,,"Thomas Elliott",,,,,,,,,,,,,,"A"
-431,,,"P","Henry","Elmer","Henry Elmer",,"1614-12-23","1617-09-10",,,,"uncertain first name","Henry Elmer",,,,,,,,,,,,,,"A"
-433,,"11/152/260","P","Thomas","England","Thomas England","Hart",,"1627-01-01",,,,"probate date: missing month; probate date: missing day","Thomas England",,,,,,,,,,,,,,"A"
-434,,,"P","James","Ennis","James Ennis","Charles",,"1626-01-01",,,,"probate date: missing month; probate date: missing day","James Ennis",,,,,,,,,,,,,,"A"
-435,,"PROB11/147/234","P","Henry","Esaye","Henry Esaye",,,"1625-11-03","smith",,,,"Henry Esaye",,,,,,,,,,,,,,"A"
-437,"LMA Microfilm",,"C","Thomas","Essington","Thomas Essington","Globe","1610-12-30","1615-10-24",,,,,"Thomas Essington",,,,,,,,,,,,,,"A"
-440,,"11/126/130v","P","Simon","Evans","Simon Evans","James","1612-01-10","1615-09-18",,,,"unsure ship name","Simon Evans",,,,,,,,,,,,,,"A"
-441,,,"P","William","Evans","William Evans","Samaritan",,"1617-01-01",,,,"probate date: missing month; probate date: missing day","William Evans",,,,,,,,,,,,,,"A"
-446,,,"C","John","Fatheringham","John Fatheringham",,,"1620-01-01",,,,"probate date: missing month; probate date: missing day","John Fatheringham",,,,,,,,,,,,,,"A"
-447,,"11/128/170","P","Richard","Fawkner","Richard Fawkner","New Year's Gift","1615-09-23","1616-08-03","sailor",,,,"Richard Fawkner",,,,,,,,,,,,,,"A"
-450,,,"P","Edward","Ferne","Edward Ferne","Exchange",,"1623-01-01",,,,"probate date: missing month; probate date: missing day","Edward Ferne",,,,,,,,,,,,,,"A"
-451,"LMA Microfilm",,"C","John","ffallet","John ffallet","Globe","1616-11-16","1617-09-15",,,,,"John Ffallet",,,,,,,,,,,,,,"A"
-452,,"9171/20/183v","C","Josias","ffellowe","Josias ffellowe","Ascension","1604-12-09","1606-06-12",,,,,"Josias Ffellowe",,,,,,,,,,,,,,"A"
-453,"LMA Microfilm",,"C","Anthony","ffenny","Anthony ffenny",,"1614-06-10","1615-10-07",,,,"uncertain first name","Anthony Ffenny",,,,,,,,,,,,,,"A"
-454,,"9052/4/xx","A","Roger","ffereby","Roger ffereby",,"1616-09-07","1617-07-01",,,,"alternate last name: fferriby","Roger Fereby",,,,,,,,,,,,,,"A"
-458,,,"C","Andrew","ffiliter","Andrew ffiliter",,"1603-06-21","1603-06-28",,,,"uncertain first name","Andrew Ffiliter",,,,,,,,,,,,,,"A"
-463,,"11/108/80","P","William","fflud","William fflud","Dragon","1605-02-20","1606-07-07",,,,,"William Fflud",,,,,,,,,,,,,,"A"
-464,,"11/124/234","P","Henry","ffortie/Forty","Henry ffortie","Trades Increase","1613-03-16","1614-07-25","trumpeter",,,,"Henry Ffortie",,,,,,,,,,,,,,"A"
-465,,,"P","John","ffossett","John ffossett",,"1602-12-05",,,,,,"John Ffossett",,,,,,,,,,,,,,"A"
-466,"LMA Microfilm",,"C","Nycolas","ffoxe","Nycolas ffox",,"1617-12-03","1618-10-05",,,,,"Nycolas Ffoxe",,,,,,,,,,,,,,"A"
-468,,,"P","John","ffradanske","John ffradanske",,,"1613-11-11",,,,,"John Ffradanske",,,,,,,,,,,,,,"A"
-472,,"11/124/202","P","Hugh","ffrayne","Hugh ffrayne","Trades Increase","1610-03-13","1614-07-20",,,,,"Hugh Ffrayne",,,,,,,,,,,,,,"A"
-474,,"9171/20/178v","C","John","ffrye","John ffrye","Ascension","1605-01-21","1606-06-13",,,,"additional ship: Hector","John Ffrye",,,,,,,,,,,,,,"A"
-475,,,"C","Walter","ffrye","Walter ffrye","Eagle","1621-06-20","1622-08-06",,,,,"Walter Ffrye",,,,,,,,,,,,,,"A"
-476,,"11/122/569","P","William","Feild","William Feild",,,"1613-11-17",,,,"shared record with: Rodden","William Feild",,,,,,,,,,,,,,"A"
-479,,,"P","Lawrence","Flocker or Flooker","Lawrence Flocker","Royal James",,"1621-01-01",,,,"probate date: missing month; probate date: missing day","Lawrence Flocker",,,,,,,,,,,,,,"A"
-481,,"11/152/691","P","Costen","Fortmer","Costen Fortmer","Hart",,"1627-01-01",,,,"alternate first name: Christian; probate date: missing month; probate date: missing day","Costen Fortmer",,,,,,,,,,,,,,"A"
-482,,,"C","John","Fortune","John Fortune","Charles",,"1622-01-01",,,,"probate date: missing month; probate date: missing day","John Fortune",,,,,,,,,,,,,,"A"
-484,,,"C","Charles","Frederick","Charles Frederick","Bee",,"1621-01-01",,,,"probate date: missing month; probate date: missing day","Charles Frederick",,,,,,,,,,,,,,"A"
-485,,"11/136/325","P","Robert","Freeman","Robert Freeman","Dragon",,"1620-10-19",,,,"probate date: missing month; probate date: missing day","Robert Freeman",,,,,,,,,,,,,,"A"
-491,,,"C","Joseph","Furniss","Joseph Furniss","Royal James",,"1622-01-01",,,,"alternate last name: Furnice; probate date: missing month; probate date: missing day","Joseph Furniss",,,,,,,,,,,,,,"A"
-492,,"11/148/34","P","William","Gale","William Gale","Bull",,"1626-01-05",,,,"probate date: missing month; probate date: missing day","William Gale",,,,,,,,,,,,,,"A"
-498,,,"P","Alexander","Gee","Alexander Gee","Hector","1613-09-02","1613-10-30",,,,,"Alexander Gee",,,,,,,,,,,,,,"A"
-505,,,"P","Thomas","Gibson","Thomas Gibson",,"1617-12-26","1618-09-10",,,,,"Thomas Gibson",,,,,,,,,,,,,,"A"
-507,,,"P","John","Glover","John Glover",,"1613-08-22","1613-12-13",,,,"uncertain first name","John Glover",,,,,,,,,,,,,,"A"
-511,,,"P","Hans","Gooding","Hans Gooding","Royal James",,"1621-01-01",,,,"probate date: missing month; probate date: missing day","Hans Gooding",,,,,,,,,,,,,,"A"
-512,,"11/128/142","P","Anthony","Goodson","Anthony Goodson","New Year's Gift",,"1616-07-23","gunner's mate",,,"will date: taken from duplicate record","Anthony Goodson",,,,,,,,,,,,,,"A"
-515,,,"P","William","Goter","William Goter",,"1613-08-30","1613-12-10",,,,,"William Goter",,,,,,,,,,,,,,"A"
-521,,"11/107/382v","P","Martin","Graves","Martin Graves",,"1605-08-16","1606-06-21",,,,,"Martin Graves",,,,,,,,,,,,,,"A"
-522,,,"P","John","Graye","John Graye","Dragon","1599-12-22","1614-06-22",,,,"will date: missing year","John Graye",,,,,,,,,,,,,,"A"
-525,"LMA Microfilm",,"C","John","Greene","John Greene","Peppercorn","1614-12-19","1617-09-15",,,,,"John Greene",,,,,,,,,,,,,,"A"
-526,,,"P","William","Greene","William Greene","Floriander",,"1620-01-01",,,,"probate date: missing month; probate date: missing day","William Greene",,,,,,,,,,,,,,"A"
-528,,,"C","Edmund","Greenehurst","Edmund Greenehurst","New Year's Gift","1615-11-08","1616-07-20",,,,,"Edmund Greenehurst",,,,,,,,,,,,,,"A"
-529,,,"C","Humphrey","Griffen","Humphrey Griffen",,"1617-01-04","1617-10-06",,,,,"Humphrey Griffen",,,,,,,,,,,,,,"A"
-530,,,"C","John","Griffen","John Griffen","Exchange",,"1629-01-01",,,,"probate date: missing month; probate date: missing day","John Griffen",,,,,,,,,,,,,,"A"
-536,,,"C","Roger","Grigge","Roger Grigge",,"1612-12-10","1617-07-09",,,,,"Roger Grigge",,,,,,,,,,,,,,"A"
-546,,"11/107/370","P","Gilbert","Gylman","Gilbert Gylman",,"1605-03-09","1606-06-30",,,,"alternate last name: Glyman","Gilbert Gylman",,,,,,,,,,,,,,"A"
-550,,"11/130/291","P","John","Hall","John Hall",,"1616-08-19","1617-09-17","chaplain to Roe",,,,"John Hall",,,,,,,,,,,,,,"A"
-553,,"11/102/350","P","William","Hall","William Hall","Dragon","1603-02-24","1603-11-02",,,,,"William Hall",,,,,,,,,,,,,,"A"
-554,,,"C","Robert","Hambleton","Robert Hambleton","Charles",,"1617-09-26",,,,,"Robert Hambleton",,,,,,,,,,,,,,"A"
-555,,,"P","William","Hamlin","William Hamlin","Ascension","1601-08-13","1603-07-01",,,,,"William Hamlin",,,,,,,,,,,,,,"A"
-558,,,"C","Edward","Hancocke","Edward Hancocke","Peppercorn","1616-07-04","1617-10-10",,,,,"Edward Hancocke",,,,,,,,,,,,,,"A"
-559,,,"P","Richard","Hancocke","Richard Hancocke",,"1612-04-21","1613-11-20",,,,,"Richard Hancocke",,,,,,,,,,,,,,"A"
-562,,,"P","Nathaniell","Handson","Nathaniell Handson","Unicorn","1616-02-21","1618-09-16",,,,,"Nathaniell Handson",,,,,,,,,,,,,,"A"
-563,,,"P","Adam","Hannaver","Adam Hannaver","Elizabeth",,"1624-01-01",,,,"probate date: missing month; probate date: missing day","Adam Hannaver",,,,,,,,,,,,,,"A"
-564,,,"P","Thomas","Harman","Thomas Harman","Dragon","1603-10-27","1603-10-29",,,,,"Thomas Harman",,,,,,,,,,,,,,"A"
-571,,,"P","Richard","Hasell","Richard Hasell","Peppercorn","1616-10-28","1617-09-13",,,,,"Richard Hasell",,,,,,,,,,,,,,"A"
-572,,,"P","Anthonie","Hatfeild","Anthonie Hatfeild",,,"1619-01-01",,,,"probate date: missing month; probate date: missing day","Anthonie Hatfeild",,,,,,,,,,,,,,"A"
-579,,,"C","John","Hayman","John Hayman","Thomas",,"1613-01-01",,,,"alternate last name: Haman; probate date: missing month; probate date: missing day","John Hayman",,,,,,,,,,,,,,"A"
-592,,,"C","Raphe","Hedlie","Raphe Hedlie",,,"1615-09-13",,,,,"Raphe Hedlie",,,,,,,,,,,,,,"A"
-601,,"11/155/618",,"Thomas","Henry","Thomas Henry","Charles",,,,,,,"Thomas Henry",,,,,,,,,,,,,,"A"
-614,,,"P","David","Hill","David Hill","Dragon","1616-06-13","1617-06-19",,,,,"David Hill",,,,,,,,,,,,,,"A"
-627,,,"C","Tobias","Hollande","Tobias Hollande","Dragon","1616-10-16","1617-06-19",,,,,"Tobias Hollande",,,,,,,,,,,,,,"A"
-632,,,"P","John","Hooke","John Hooke",,"1603-10-12",,,,,"uncertain first name","John Hooke",,,,,,,,,,,,,,"A"
-641,,,"C","Martin","Houlte","Martin Houlte","Peppercorn","1615-02-01","1617-09-15",,,,"alternate last name: Holt","Martin Houlte",,,,,,,,,,,,,,"A"
-647,,,"C","Josias","Huby","Josias Huby","Globe","1615-06-13","1615-09-19",,,,"alternate last name: Hubbie","Josias Huby",,,,,,,,,,,,,,"A"
-648,,"11/124/55","P","William","Hugeson","William Hugeson","Trades Increase",,"1614-07-06","sailor",,,,"William Hugeson",,,,,,,,,,,,,,"A"
-656,,,"P","John","Hunscott","John Hunscott","London",,"1627-01-01",,,,"probate date: missing month; probate date: missing day","John Hunscott",,,,,,,,,,,,,,"A"
-658,,,"C","Christopher","Hunter","Christopher Hunter","Dragon","1606-03-19","1612-07-01",,,,,"Christopher Hunter",,,,,,,,,,,,,,"A"
-662,,"11/156/367","P","Stephen","Hurte","Steven Hurte","Bull",,"1629-01-01","gunner's mate",,,"probate date: missing month; probate date: missing day; alternate last name: Hurt","Steven Hurt",,,,,,,,,,,,,,"A"
-668,,,"C","Thomas","Ivat","Thomas Ivat","Peppercorn",,"1613-01-01",,,,"alternate last name: Ivett; extra name: Juett; probate date: missing month; probate date: missing day","Thomas Ivat",,,,,,,,,,,,,,"A"
-669,,,"C","John","Iveson","John Iveson","Dragon","1600-03-15","1603-06-21",,,,,"John Iveson",,,,,,,,,,,,,,"A"
-671,,,"C","John","Jackson","John Jackson","Charles","1618-05-24","1618-09-21",,,,,"John Jackson",,,,,,,,,,,,,,"A"
-675,,"11/102/221","P","Edward","James","Edward James","Hector","1603-05-05","1603-10-17",,,,,"Edward James",,,,,,,,,,,,,,"A"
-679,,,"P","Robert","Jefferey","Robert Jefferey","Peppercorn",,"1622-01-01",,,,"probate date: missing month; probate date: missing day","Robert Jefferey",,,,,,,,,,,,,,"A"
-689,,"9052/4/xx","A","Daniell","Jewell","Daniell Jewell","Dragon","1616-02-10","1617-06-23",,,,,"Daniell Jewell",,,,,,,,,,,,,,"A"
-693,,,"P","Jobe","Johnson","Jobe Johnson","Eagle",,"1629-01-01",,,,"probate date: missing month; probate date: missing day","Jobe Johnson",,,,,,,,,,,,,,"A"
-695,,,"C","Martin","Johnson","Martin Johnson","Charles","1618-05-02","1618-09-28",,,,,"Martin Johnson",,,,,,,,,,,,,,"A"
-697,,,"P","Robert","Johnson","Robert Johnson","Hart",,"1622-01-01",,,,"probate date: missing month; probate date: missing day","Robert Johnson",,,,,,,,,,,,,,"A"
-701,,,"P","Edward","Jones","Edward Jones","Hector","1613-09-02","1613-10-26",,,,,"Edward Jones",,,,,,,,,,,,,,"A"
-,,,,"Howell","Jones - Joanes","Howell Jones","Elizabeth",,1621,"cooper",,,,,,,,,,,,,,,,,,"A"
-703,,,"C","Howell","Jones","Howell Jones","Globe",,"1622-01-01",,,,"probate date: missing month; probate date: missing day","Howell Jones",,,,,,,,,,,,,,"A"
-,,,,"Howell ","Jones or Joanes","Howell Jones","James",,1623,"mariner",,,,,,,,,,,,,,,,,,"A"
-708,,,"C","Robert","Jones","Robert Jones","Clove",,"1614-12-22",,,,,"Robert Jones",,,,,,,,,,,,,,"A"
-711,"LMA Microfilm",,"C","Thomas","Jonson","Thomas Jonson",,,"1620-01-01",,,,"probate date: missing month; probate date: missing day","Thomas Jonson",,,,,,,,,,,,,,"A"
-712,,"11/118/146","P","Richard","Jordan","Richard Jordan","Union","1609-03-16","1611-08-07","mariner",,,,"Richard Jordan",,,,,,,,,,,,,,"A"
-714,,,"P","Lewis","Jucks","Lewis Jucks","Abigail",,"1626-01-01",,,,"probate date: missing month; probate date: missing day","Lewis Jucks",,,,,,,,,,,,,,"A"
-720,,,"C","Thomas","Kelsey","Thomas Kelsey","Ruby",,"1621-01-01",,,,"probate date: missing month; probate date: missing day","Thomas Kelsey",,,,,,,,,,,,,,"A"
-722,,,"P","John","Kennar","John Kennar","Solomon","1615-03-08","1618-09-18",,,,,"John Kennar",,,,,,,,,,,,,,"A"
-723,,"11/108/101","P","Willyam","Kerbye","Willyam Kerbye","Tiger","1606-08-04","1606-08-07",,,,,"Willyam Kerbye",,,,,,,,,,,,,,"A"
-728,,,"P","Peter","Kinge","Peter Kinge","New Year's Gift",,"1628-01-01",,,,"probate date: missing month; probate date: missing day","Peter Kinge",,,,,,,,,,,,,,"A"
-729,,,"P","Richard","Kinge","Richard Kinge","Exchange",,"1629-01-01",,,,"probate date: missing month; probate date: missing day","Richard Kinge",,,,,,,,,,,,,,"A"
-730,,,"P","Thomas","Kinge","Thomas Kinge","Charles",,"1628-01-01",,,,"probate date: missing month; probate date: missing day","Thomas Kinge",,,,,,,,,,,,,,"A"
-733,,"11/102/180v","P","Robert","Kitchingman","Robert Kitchingman","Dragon","1602-07-16","1603-10-27",,,,,"Robert Kitchingman",,,,,,,,,,,,,,"A"
-738,,,"P","Francis","Kniveton","Francis Kniveton","Bull",,"1625-01-01",,,,"probate date: missing month; probate date: missing day","Francis Kniveton",,,,,,,,,,,,,,"A"
-742,,"11/102/675","P","Henry ","Lambert","Henry Lambert",,,"1603-12-07",,,,,"Henry Lambert",,,,,,,,,,,,,,"A"
-749,,"11/117/170","P","Lewis","Lane","Lewis Lane","Hector","1608-12-28","1612-03-16",,,,,"Lewis Lane",,,,,,,,,,,,,,"A"
-751,,"11/126/113v","P","John","Lante","John Lante",,"1612-01-20","1615-09-22",,,,,"John Lante",,,,,,,,,,,,,,"A"
-759,,,"C","John","Lay","John Lay","New Year's Gift","1616-06-20","1616-07-09",,,,"alternate last name: Laye","John Lay",,,,,,,,,,,,,,"A"
-760,,,"C","Steeven","Layman","Steeven Layman","Globe","1610-12-31","1615-09-19",,,,"unceratin first name spelling; extra name: C","Steeven Layman",,,,,,,,,,,,,,"A"
-763,,"9171/20/175","C","John","Leache","John Leache","Ascension & Hector","1604-01-16","1606-06-03",,,,"additional ship: Hector","John Leache",,,,,,,,,,,,,,"A"
-767,,,"C","Edmund","Leany","Edmund Leany",,,"1618-09-17",,,,,"Edmund Leany",,,,,,,,,,,,,,"A"
-768,"LMA Microfilm",,"C","John","Leche","John Leche or Liche","Swann",,"1620-01-01","mariner",,,"missing first name; alternate last name: Lich; alternate last name: Leiche; alternate last name: Liche","0 Leche",,,,,,,,,,,,,,"A"
-770,,"11/102/236v","P","Danyell","Lee","Danyell Lee","Hector","1603-03-02","1603-10-10",,,,,"Danyell Lee",,,,,,,,,,,,,,"A"
-774,,"11/128/130","P","Peter","Lenderse","Peter Lenderse","New Year's Gift","1615-10-01","1616-07-16",,,,,"Peter Lenderse",,,,,,,,,,,,,,"A"
-775,,"9052/4/xx","A","Simon","Lennett","Simon Lennett","New Year's Gift","1615-09-06","1616-07-08",,,,,"Simon Lennett",,,,,,,,,,,,,,"A"
-783,,"11/126/114","P","David","Lloyd","David Lloyd",,"1615-08-04","1615-09-27",,,,,"David Lloyd",,,,,,,,,,,,,,"A"
-784,,,"P","William","Long","William Long","Diamond",,,,,,,"William Long",,,,,,,,,,,,,,"A"
-788,,,"C","Thomas","Lovell","Thomas Lovell",,,"1613-01-01",,,,"probate date: missing month; probate date: missing day","Thomas Lovell",,,,,,,,,,,,,,"A"
-792,,,"P","Christopher","Luther","Christopher Luther",,"1613-12-22","1614-06-30",,,,,"Christopher Luther",,,,,,,,,,,,,,"A"
-801,,,"C","Stephen","Mallard","Stephen Mallard","Charles","1617-02-12","1618-09-16",,,,,"Stephen Mallard",,,,,,,,,,,,,,"A"
-803,,"11/132/279","P","Tobias","Mansell","Tobias Mansell",,,"1618-09-22",,,,,"Tobias Mansell",,,,,,,,,,,,,,"A"
-812,,,"P","Richard","Marrowe","Richard Marrowe",,"1616-07-19","1617-09-13",,,,,"Richard Marrowe",,,,,,,,,,,,,,"A"
-821,,,"C","William","Mascall","William Mascall","Royal James",,"1621-01-01",,,,"alternate last name: Maschall; probate date: missing month; probate date: missing day","William Mascall",,,,,,,,,,,,,,"A"
-826,,,"C","Hugh","Masters","Hugh Masters","Peppercorn","1615-01-06","1617-06-17",,,,"alternate last name: Masters; alternate first name: Thomas","Hugh Masters",,,,,,,,,,,,,,"A"
-837,,,"C","Joshue","Medlicot","Joshue Medlicot","Anne",,"1619-01-01",,,,"alternate last name: Medlicott; alternate last name: Medliecoate; alternate last name: Medlycoate; probate date: missing month; probate date: missing day","Joshue Medlicot",,,,,,,,,,,,,,"A"
-842,,,"P","Zachie","Merefylde","Zachie Merefylde",,"1610-05-25","1614-12-23",,,,,"Zachie Merefylde",,,,,,,,,,,,,,"A"
-843,,"11/102/363","P","John","Metcalfe","John Metcalfe",,"1603-10-06","1603-10-14","shipwright",,,,"John Metcalfe",,,,,,,,,,,,,,"A"
-844,,"11/113/321","P","Edward","Michelborne","Sir Edward Michelborne","Tiger","1608-03-22","1609-04-27","captain",,,"designation: kt.","Edward Michelborne",,,,,,,,,,,,,,"A"
-847,,"11/108/242v","P","Thomas","Michell","Thomas Michell","Dragon","1605-01-29","1606-11-06",,,,,"Thomas Michell",,,,,,,,,,,,,,"A"
-857,,,"P","John","Moore","John Moore","Eagle",,"1623-01-01",,,,"probate date: missing month; probate date: missing day","John Moore",,,,,,,,,,,,,,"A"
-862,,"11/128/107","P","Richard","Moore","Richard Moore","New Year's Gift","1616-04-20","1616-07-15","sailor",,,,"Richard Moore",,,,,,,,,,,,,,"A"
-863,,"9171/21/350v","C","Robert","Moore","Robert Moore","Union","1608-03-03","1611-07-12",,,,,"Robert Moore",,,,,,,,,,,,,,"A"
-865,,"11/118/47v","P","Isacke","More","Isacke More","Union","1610-01-31","1611-07-01","carpenter",,,"alternate last name: Moore","Isacke More",,,,,,,,,,,,,,"A"
-867,,"11/118/124","P","Mark","More","Mark More","Union",,"1611-07-26","carpenter",,,,"Mark More",,,,,,,,,,,,,,"A"
-868,,,"C","Ralphe","Morefeild","Ralphe Morefeild","Thomas","1613-08-24","1613-11-16",,,,"unsure ship name","Ralphe Morefeild",,,,,,,,,,,,,,"A"
-872,,,"C","William","Morgen","William Morgen","Hector","1613-03-13","1614-03-02",,,,,"William Morgen",,,,,,,,,,,,,,"A"
-876,,,"P","George","Mountney","George Mountney",,"1605-04-26","1606-06-18",,,,,"George Mountney",,,,,,,,,,,,,,"A"
-894,,"9052/4/xx","A","Stephen","Newbold","Stephen Newbold",,"1616-11-24","1617-06-30",,,,,"Stephen Newbold",,,,,,,,,,,,,,"A"
-897,,"11/132/424","P","Christopher","Newport","Christopher Newport","Hope","1616-11-06","1618-10-27","captain",,,,"Christopher Newport",,,,,,,,,,,,,,"A"
-899,,"11/132/424","P","Christofer","Newporte","Christopher Newporte","Hope","1618-04-27","1618-09-22","master's mate",,,,"Christofer Newporte",,,,,,,,,,,,,,"A"
-901,,"11/126/131v","P","John","Newton","John Newton","James","1612-11-19","1615-09-16",,,,,"John Newton",,,,,,,,,,,,,,"A"
-902,,"11/150/494","P","Nicholas","Neylor","Nicholas Neylor","Charles",,"1626-04-12","sailor",,,,"Nicholas Neylor",,,,,,,,,,,,,,"A"
-903,,,"C","John","Nicholas","John Nicholas",,"1613-06-08","1613-11-20",,,,,"John Nicholas",,,,,,,,,,,,,,"A"
-915,,,"C","John","Norries","John Norries","New Year's Gift","1616-06-20","1616-07-25",,,,,"John Norries",,,,,,,,,,,,,,"A"
-916,,"11/124/79","P","Thomas","Norris","Thomas Norris","Trades Increase","1613-03-22","1614-07-08",,,,,"Thomas Norris",,,,,,,,,,,,,,"A"
-921,,,"C","Richard","Oglethorp","Richard Oglethorp","White Bear",,"1622-01-01",,,,"probate date: missing month; probate date: missing day","Richard Oglethorp",,,,,,,,,,,,,,"A"
-928,,,"C","Paul","Osborne","Paul Osborne","Thomas","1613-08-19","1613-11-27",,,,"unsure ship name","Paul Osborne",,,,,,,,,,,,,,"A"
-930,,"11/102/217v","P","John","Oswere","John Oswere","Hector","1601-10-04","1603-10-22",,,,,"John Oswere",,,,,,,,,,,,,,"A"
-931,,"11/128/97","P","Anthony","Owen","Anthony Owen","New Year's Gift","1615-10-03","1616-07-11","sailor",,,,"Anthony Owen",,,,,,,,,,,,,,"A"
-935,,,"C","Daniell","Palmer","Daniell Palmer","Hector","1615-05-26","1617-06-13",,,,,"Daniell Palmer",,,,,,,,,,,,,,"A"
-937,,"9171/19/448","C","Roger","Palmer","Roger Palmer",,"1601-02-27","1603-11-09",,,,,"Roger Palmer",,,,,,,,,,,,,,"A"
-940,,,"C","Willyam","Palmer","William Palmer","Defence",,"1620-10-10","shipwright",,,"probate date: missing month; probate date: missing day","Willyam Palmer",,,,,,,,,,,,,,"A"
-943,"LMA Microfilm",,"C","Henry","Parker","Henry Parker",,,"1620-01-01",,,,"probate date: missing month; probate date: missing day","Henry Parker",,,,,,,,,,,,,,"A"
-944,,"11/150/518","P","William","Parker","William Parker","Charles",,"1626-07-12","gunner's mate",,,"probate date: missing month; probate date: missing day","William Parker",,,,,,,,,,,,,,"A"
-945,,"11/122/484","P","William","Parker","William Parker","Thomas","1611-03-28","1613-11-16","sailor",,,,"William Parker",,,,,,,,,,,,,,"A"
-946,,"11/134/468","P","William","Parker","William Parker",,,"1619-04-12","gentleman of EIC ",,,"probate date: missing month; probate date: missing day","William Parker",,,,,,,,,,,,,,"A"
-948,,"11/155/72","P","William ","Parker","William Parker",,,"1629-01-26","of EIC",,,,"William Parker",,,,,,,,,,,,,,"A"
-949,,"11/108/73v","P","Richard","Parkes","Richard Parkes","Ascension","1605-12-08","1606-07-04",,,,,"Richard Parkes",,,,,,,,,,,,,,"A"
-951,,,"P","John","Parnell","John Parnell","Royal James",,"1622-01-01",,,,"probate date: missing month; probate date: missing day",,,,,,,,,,,,,,,"A"
-954,,,"P","John","Pattinson","John Pattinson","Dragon","1604-03-16","1614-07-07",,,,,"John Pattinson",,,,,,,,,,,,,,"A"
-976,,,"P","John","Pemberton","John Pemberton","Royal James",,"1621-01-01",,,,"probate date: missing month; probate date: missing day","John Pemberton",,,,,,,,,,,,,,"A"
-977,,,"C","William","Pemberton","William Pemberton","Trades Increase","1613-04-19","1614-07-15",,,,,"William Pemberton",,,,,,,,,,,,,,"A"
-979,,,"P","Henry","Pepwell","Henry Pepwell","Charles","1618-02-02","1618-09-16",,,,,"Henry Pepwell",,,,,,,,,,,,,,"A"
-980,,,"C","Edward","Perkins","Edward Perkins","Anne",,"1625-01-01",,,,"alternate first name: Tho; probate date: missing month; probate date: missing day","Edward Perkins",,,,,,,,,,,,,,"A"
-985,,"11/117/12","P","Richard","Pettican","Richard Pettican","Expedition","1611-04-18","1611-07-26",,,,,"Richard Pettican",,,,,,,,,,,,,,"A"
-986,,"11/136/489","P","Edward","Pettus","Edward Pettus",,,"1620-11-23","servant to EIC",,,,"Edward Pettus",,,,,,,,,,,,,,"A"
-,,"11/122/453","P","John","Pieterson","JOhn Pieterson",,,"1614-11-11",,,,"excellent on wages, part of Worshipful Company",,,,,,,,,,,,,,,"A"
-988,,"11/147/120","P","Elias","Phasey","Elias Phasey","Diamond",,"1625-10-18",,,,"probate date: missing month; probate date: missing day","Elias Phasey",,,,,,,,,,,,,,"A"
-989,,,"C","Abraham","Philips","Abraham Philips","Globe",,"1621-01-01",,,,"probate date: missing month; probate date: missing day","Abraham Philips",,,,,,,,,,,,,,"A"
-992,,,"C","Richard","Phillips","Richard Phillips","Charles",,"1623-01-01",,,,"probate date: missing month; probate date: missing day","Richard Philips",,,,,,,,,,,,,,"A"
-995,,,"P","George","Pibourne","George Pibourne",,,"1618-01-01",,,,"alternate last name: Pybourne probate date: missing month; probate date: missing day","George Pibourne",,,,,,,,,,,,,,"A"
-999,,,"C","Nicholas","Pilkinton","Nicholas Pilkinton","Peppercorn","1616-06-11","1617-09-15",,,,,"Nicholas Pilkinton",,,,,,,,,,,,,,"A"
-1005,,,"C","John","Poine","John Poine","Trades Increase",,"1624-01-01",,,,"probate date: missing month; probate date: missing day","John Poine",,,,,,,,,,,,,,"A"
-1007,,,"P","Arthur","Pope","Arthur Pope",,"1613-06-13","1614-07-02",,,,,"Arthur Pope",,,,,,,,,,,,,,"A"
-1009,,"11/102/149v","P","Thomas","Pormorte","Thomas Pormorte","Dragon","1603-03-26","1603-10-27",,,,"alternate last name: Portemorte","Thomas Pormorte",,,,,,,,,,,,,,"A"
-1014,,"11/126/125","P","John","Poslarte","John Poslarte","Globe","1615-04-21","1615-09-22",,,,"alternate last name: Poslante","John Poslarte",,,,,,,,,,,,,,"A"
-1016,,"11/126/132v","P","Nicholas","Potter","Nicholas Potter","Globe","1615-01-30","1615-09-14",,,,,"Nicholas Potter",,,,,,,,,,,,,,"A"
-1017,,"9171/20/177","C","Griffeth","Powell","Griffeth Powell",,"1605-04-18","1606-06-11",,,,"uncertain first name","Griffeth Powell",,,,,,,,,,,,,,"A"
-1018,,,"C","Henry","Powell","Henry Powell","Eagle",,"1623-01-01",,,,"probate date: missing month; probate date: missing day","Henry Powell",,,,,,,,,,,,,,"A"
-1025,,,"C","Richard","Preston","Richard Preston","Trades Increase","1613-03-14","1614-07-01",,,,,"Richard Preston",,,,,,,,,,,,,,"A"
-1027,,"11/138/35","P","Leonard","Prince","Leonard Prince","Sampson ",,"1621-07-18",,,,,"Leonard Prince",,,,,,,,,,,,,,"A"
-1028,,,"C","Matt","Pringle","Matt Pringle","Anne",,"1619-01-01",,,,"alternate last name: Pryngle; probate date: missing month; probate date: missing day","Matt Pringle",,,,,,,,,,,,,,"A"
-1031,,,"P","John","Prowse","John Prowse","Hart",,"1626-01-01",,,,"probate date: missing month; probate date: missing day","John Prowse",,,,,,,,,,,,,,"A"
-1038,,,"P","Edward","Radwell","Edward Radwell","Blessing",,"1629-01-01",,,,"probate date: missing month; probate date: missing day","Edward Radwell",,,,,,,,,,,,,,"A"
-1040,,"11/128/114","P","William","Ramsey","William Ramsey","New Year's Gift","1616-06-18","1616-07-17","sailor",,,"alternate last name: Ramsye","William Ramsey",,,,,,,,,,,,,,"A"
-1042,,,"C","Richard","Randall","Richard Randall",,,"1621-01-01",,,,"probate date: missing month; probate date: missing day","Richard Randall",,,,,,,,,,,,,,"A"
-1045,,,"P","Henry","Ravens","Henry Ravens","Merchant's Hope","1617-10-13","1618-09-16",,,,"earlier will: 19.11.16","Henry Ravens",,,,,,,,,,,,,,"A"
-1047,,,"C","Henry","Rawlings","Henry Rawlings","Thomas","1613-06-27","1613-11-20",,,,"unsure ship name","Henry Rawlings",,,,,,,,,,,,,,"A"
-1050,,,"P","William","Read","William Read","Elizabeth",,"1624-01-01",,,,"probate date: missing month; probate date: missing day","William Read",,,,,,,,,,,,,,"A"
-1052,,,"C","Henry","Reanolds","Henry Reanolds","Royal James",,"1621-01-01",,,,"probate date: missing month; probate date: missing day","Henry Reanolds",,,,,,,,,,,,,,"A"
-1053,,"9171/19/351","C","John","Reddoe","John Reddoe","Ascension","1602-10-16","1603-07-02",,,,,"John Reddoe",,,,,,,,,,,,,,"A"
-1054,,,"C","William","Redward","William Redward","Hope","1618-05-30","1618-09-18",,,,,"William Redward",,,,,,,,,,,,,,"A"
-1057,,,"C","William","Renoden","William Renoden","Ruby & Clover",,"1623-01-01","mariner",,,"probate date: missing month; probate date: missing day; corrected ship name: Rubie","William Renoden",,,,,,,,,,,,,,"A"
-1059,,,"C","Henry","Reynolds","Henry Reynolds",,"1617-08-18","1618-09-19",,,,,"Henry Reynolds",,,,,,,,,,,,,,"A"
-1068,,,"P","Nicholas","Roads","Nicholas Roads","Hart",,"1622-01-01",,,,"probate date: missing month; probate date: missing day","Nicholas Reynolds",,,,,,,,,,,,,,"A"
-1078,,,"P","George","Rodgers","George Rodgers","London",,"1627-01-01",,,,"probate date: missing month; probate date: missing day","George Rodgers",,,,,,,,,,,,,,"A"
-1080,,,"C","Lewis","Rogers","Lewis Rogers","Charles",,"1623-01-01",,,,"probate date: missing month; probate date: missing day","Lewis Rogers",,,,,,,,,,,,,,"A"
-1083,,,"P","John","Rosse","John Rosse","Charles",,"1626-01-01",,,,"probate date: missing month; probate date: missing day","John Rosse",,,,,,,,,,,,,,"A"
-1085,,"11/126/130v","P","Charles","Roulston","Charles Roulston","James","1613-01-14","1615-09-18",,,,,"Charles Roulston",,,,,,,,,,,,,,"A"
-1086,,,"C","John","Rowe","John Rowe","Thomas",,"1613-11-06",,,,"unsure ship name","John Rowe",,,,,,,,,,,,,,"A"
-1092,,,"P","Francis","Ryder","Francis Ryder","Charles",,"1622-01-01",,,,"probate date: missing month; probate date: missing day","Francis Ryder",,,,,,,,,,,,,,"A"
-1094,,"11/115/413v","P","Edward","Sadler","Edward Sadler",,"1608-10-13","1610-06-15",,,,,"Edward Sadler",,,,,,,,,,,,,,"A"
-1099,,"11/144/307","P","William","Sambridge",,"Whale",,"1624-10-21","cooper",,,"Alternate last name: Sambadge","William Sambridge",,,,,,,,,,,,,,"A"
-1105,,,"C","Gyles","Sauery","Gyles Sauery","Thomas","1613-03-02","1613-11-05",,,,"unsure ship name","Gyles Sauery",,,,,,,,,,,,,,"A"
-1108,,"9171/19/352","C","Robert","Savage","Robert Savage",,"1601-09-13","1603-07-04",,,,"uncertain first name","Robert Savage",,,,,,,,,,,,,,"A"
-1113,,"11/138/331","P","Jacob","Scuelt","Jacob Scuelt","Royal James",,"1621-10-31","mariner, EIC",,,,"Jacob Scuelt",,,,,,,,,,,,,,"A"
-1118,,,"C","John ","Seeley","John  Seeley",,"1617-09-24","1617-09-24",,,,"uncertain first name; date of probate corrected: 24.09.17 (sic)","John Seeley",,,,,,,,,,,,,,"A"
-1124,,,"P","Alexander","Sharppeigh","Alexander Sharppeigh","Ascension",,"1620-01-01",,,,"probate date: missing month; probate date: missing day","Alexander Sharppeigh",,,,,,,,,,,,,,"A"
-1126,,,"P","Thomas","Shepheard","Thomas Shepheard","Anne",,"1619-01-01",,,,"probate date: missing month; probate date: missing day","Thomas Shepheard",,,,,,,,,,,,,,"A"
-1127,,,"C","Anthony","Sheppard","Anthony Sheppard","Thomas","1613-08-03","1613-11-11",,,,"unsure ship name","Anthony Sheppard",,,,,,,,,,,,,,"A"
-1138,,,"P","John","Simmes","John Simmes","Dragon",,"1614-06-25",,,,,"John Simmes",,,,,,,,,,,,,,"A"
-1151,,"11/128/95","P","John","Slanye/ Slayne","John Slanye/Slayne","New Year's Gift",,"1616-07-10","gunner's mate",,,,"John Slayne",,,,,,,,,,,,,,"A"
-1153,,,"C","Richard","Slatter","Richard Slatter","Trades Increase","1613-04-17","1614-07-08",,,,,"Richard Slatter",,,,,,,,,,,,,,"A"
-1155,,,"P","Robert","Slosse","Robert Slosse","Royal James",,"1621-01-01",,,,"probate date: missing month; probate date: missing day","Robert Slosse",,,,,,,,,,,,,,"A"
-1157,,,"C","Bennett","Smith","Bennett Smith","Hector","1617-05-23","1617-06-17",,,,"alternate first name: Benedict; earlier will: 22.03.13","Bennett Smith",,,,,,,,,,,,,,"A"
-1158,,"11/108/80","P","Edward","Smith","Edward Smith","Dragon","1605-01-28","1606-06-16",,,,,"Edward Smith",,,,,,,,,,,,,,"A"
-1167,,"11/144/194","P","William ","Smith/Smythe","William Smith","Whale",,"1624-09-19","EIC outward","sailor",,,"William Smith",,,,,,,,,,,,,,"A"
-1174,,,"C","John","Softly","John Softly","New Year's Gift",,"1623-01-01",,,,"probate date: missing month; probate date: missing day","John Softly",,,,,,,,,,,,,,"A"
-1177,,,"C","John","Southerland","John Southerland","New Year's Gift","1616-06-02","1616-07-23",,,,"alternate last name: Sutherland","John Southerland",,,,,,,,,,,,,,"A"
-1180,,"11/128/103","P","Lawrence","Spooner","Lawrence Spooner","New Year's Gift","1615-11-20","1616-07-13","Master's Mate",,,,"Lawrence Spooner",,,,,,,,,,,,,,"A"
-1181,,,"P","Robert","Spooner","Robert Spooner","Charles",,"1627-01-01",,,,"alternate last name: Sowner; probate date: missing month; probate date: missing day","Robert Spooner",,,,,,,,,,,,,,"A"
-1184,,"11/124/245","P","Richard","Sprint","Richard Sprint","Trades Increase","1613-04-30","1614-07-28","carpenter",,,,"Richard Sprint",,,,,,,,,,,,,,"A"
-1187,,"11/124/70","P","Humfry","Stafflee","Humfry Stafflee",,"1614-06-20","1614-07-07",,,,,"Humfry Stafflee",,,,,,,,,,,,,,"A"
-1193,,"9052/4/xx","A","Anthony","Starkey","Anthony Starkey",,"1612-02-05","1615-01-16",,,,,"Anthony Starkey",,,,,,,,,,,,,,"A"
-1196,,,"C","William","Stebbard","William Stebbard",,"1616-09-18","1617-07-01",,,,,"William Stebbard",,,,,,,,,,,,,,"A"
-1197,,,"C","Isake","Steede","Isake Steede","Trades Increase","1612-07-07","1614-11-25",,,,,"Isake Steede",,,,,,,,,,,,,,"A"
-1198,,,"C","Robert","Steele","Robert Steele","Thomas","1613-07-17","1613-11-06",,,,"unsure ship name","Robert Steele",,,,,,,,,,,,,,"A"
-1200,,,"C","Robert","Steevens","Robert Steevens","James","1613-12-23","1615-09-21",,,,,"Robert Steevens",,,,,,,,,,,,,,"A"
-1202,,"11/140/177","P","Frances","Stephens","Frances Stephens","Diamond",,"1622-08-07","purser",,,"probate date: missing month; probate date: missing day","Frances Stephens",,,,,,,,,,,,,,"A"
-1205,,,"C","William","Stiles/Styles","William Styles","New Year's Gift","1614-12-20","1618-02-19","mariner",,,"alternate last name: Stiles","William Styles",,,,,,,,,,,,,,"A"
-1206,,,"P","James","Stoneman","James Stoneman","Charles","1618-01-19","1618-09-15",,,,,"James Stoneman",,,,,,,,,,,,,,"A"
-1209,,"11/124/252","P","ffrancis","Storey","ffrancis Storey","Trades Increase","1612-01-30","1614-07-30","trumpeter",,,,"Ffrancis Storey",,,,,,,,,,,,,,"A"
-1221,,"9051/6/226v","A","Peter","Swaine","Peter Swaine","Roebuck","1623-06-30","1625-12-21",,,,"will date: Only 30 days in June","Peter Swaine",,,,,,,,,,,,,,"A"
-1224,,,"C","William","Swetland/Sweatland       William","William Swetland","Thomas",,"1620-10-16",,,,"probate date: missing month; probate date: missing day","William Swetland",,,,,,,,,,,,,,"A"
-1231,,,"C","Roger","Symons","Roger Symons","Moon",,"1622-01-01",,,,"probate date: missing month; probate date: missing day","Roger Symons",,,,,,,,,,,,,,"A"
-1232,"LMA Microfilm",,"C","William","Symonson","William Symonson","Globe",,"1620-01-01",,,,,"William Symonson",,,,,,,,,,,,,,"A"
-1236,,"11/118/66v","P","Theophiluis","Tayler","Theophiluis Tayler","Expedition","1610-03-17","1611-07-05",,,,"alternate last name: Taylor","Theophiluis Tayler",,,,,,,,,,,,,,"A"
-1240,,,"C","Thomas","Taylor","Thomas Taylor","Anne",,"1620-01-01",,,,"probate date: missing month; probate date: missing day","Thomas Taylor",,,,,,,,,,,,,,"A"
-1242,,"11/129/299","P","Richard","Tether","Richard Tether","New Year's Gift","1616-05-27","1617-03-14","sailor",,,,"Richard Tether",,,,,,,,,,,,,,"A"
-1243,,,"P","Henrie","Thickpennie","Henrie Thickpennie",,"1602-02-11","1603-10-18",,,,,"Henrie Thickpennie",,,,,,,,,,,,,,"A"
-1245,,,"P","Henry","Thomas","Henry Thomas","Charles",,"1629-01-01",,,,"probate date: missing month; probate date: missing day","Henry Thomas",,,,,,,,,,,,,,"A"
-1253,,,"P","Gylls","Thornton","Gylls Thornton","Trades Increase","1613-01-27","1614-09-10",,,,"unsure ship name","Gylls Thornton",,,,,,,,,,,,,,"A"
-1255,,,"C","William","Thrum","William Thrum","Exchange",,"1624-01-01",,,,"probate date: missing month; probate date: missing day","William Thrum",,,,,,,,,,,,,,"A"
-1260,"LMA Microfilm",,"C",0,"Tiplen","0 Tiplen","Globe",,"1617-01-01",,,,"alternate last name: Typlen; probate date: missing month; probate date: missing day","0 Tiplen",,,,,,,,,,,,,,"A"
-1261,,,"P","Robert","Todd","Robert Todd","Hart",,"1625-01-01",,,,"probate date: missing month; probate date: missing day","Robert Todd",,,,,,,,,,,,,,"A"
-1266,,,"P","William","Torner","William Torner","Hector","1613-06-30","1613-11-03",,,,,"William Torner",,,,,,,,,,,,,,"A"
-1276,,"11/107/338v","P","John","Tuccher","John Tuccher",,"1599-01-16","1606-06-16",,,,,"John Tuccher",,,,,,,,,,,,,,"A"
-1277,,,"C","John ","Tucker/Turber","John Tucker/Turber",,,"1614-07-23",,,,,,,,,,,,,,,,,,,"A"
-1278,,,"C","John","Tucker","John Tucker",,"1614-02-21","1618-09-30","servant to EIC",,,,"John Tucker",,,,,,,,,,,,,,"A"
-1287,,,"C","Anthony","Twiddie","Anthony Twiddie","Hector",,"1600-01-01",,,,"alternate last name: Twedie; probate date: missing month; probate date: missing day","Anthony Twiddie",,,,,,,,,,,,,,"A"
-1294,,,"C","John","Upgrave","John Upgrave","Trades Increase","1613-03-05","1614-07-20",,,,"alternate last name: Upgrove","John Upgrave",,,,,,,,,,,,,,"A"
-1295,,"11/144/366","P","John","Urland","John Urland","Exchange",,"1624-11-02","shipwright",,,,"John Urland",,,,,,,,,,,,,,"A"
-1305,,,"C","Ralph","Wade","Ralph Wade","Dragon",,"1620-01-01",,,,"probate date: missing month; probate date: missing day","Ralph Wade",,,,,,,,,,,,,,"A"
-1307,,,"C","John","Walden","John Walden","Anne",,"1619-01-01",,,,"probate date: missing month; probate date: missing day","John Walden",,,,,,,,,,,,,,"A"
-1309,,,"P","James","Walle","James Walle","Hector","1612-02-04","1613-11-27",,,,,"James Walle",,,,,,,,,,,,,,"A"
-1310,,,"C","John","Walling","John Walling","Charles",,"1622-01-01",,,,"probate date: missing month; probate date: missing day","John Walling",,,,,,,,,,,,,,"A"
-1311,,,"C","John","Wallis","John Wallis","Solomon","1617-10-14","1618-09-21",,,,,"John Wallis",,,,,,,,,,,,,,"A"
-1314,,,"P","John","Walter","John Walter","London",,"1628-01-01",,,,"probate date: missing month; probate date: missing day","John Walter",,,,,,,,,,,,,,"A"
-1317,,,"P","Christopher","Warren","Christopher Warren","Charles",,"1625-01-01",,,,"alternate last name: Warrine; probate date: missing month; probate date: missing day","Christopher Warren",,,,,,,,,,,,,,"A"
-1318,,"11/117/377v","P","James","Warren","James Warren","Union","1608-03-07","1611-05-09",,,,,"James Warren",,,,,,,,,,,,,,"A"
-1321,,,"P","Nicholas","Watkins","Nicholas Watkins","Royal James",,"1622-01-01",,,,"probate date: missing month; probate date: missing day","Nicholas Watkins",,,,,,,,,,,,,,"A"
-1323,,,"C","Ambros","Watson","Ambros Watson",,"1617-10-06","1618-09-18",,,,,"Ambros Watson",,,,,,,,,,,,,,"A"
-1325,,,"P","Robert","Watson","Robert Watson","Bull",,"1625-01-01",,,,"probate date: missing month; probate date: missing day","Robert Watson",,,,,,,,,,,,,,"A"
-1327,,,"P","Thomas","Watson","Thomas Watson","Hart",,"1626-11-24","carpenter's mate",,,"probate date: missing month; probate date: missing day","Thomas Watson",,,1,,,,,,,,,,,"A"
-1328,,,"C","Edward","Watts","Edward Watts","Peppercorn","1613-08-20","1613-12-21",,,,"additonal ship: Solomon","Edward Watts",,,,,,,,,,,,,,"A"
-1330,,"11/142/154","P","Thomas","Waynewright","Thomas Waynewright","Dolphin",,"1623-07-29","mariner",,,,"Thomas Waynewright",,,,,,,,,,,,,,"A"
-1338,,"11/123/37","P","Alexander","Weekstede","Alexander Weekstede","Peppercorn","1613-02-03","1614-01-21","preacher",,,,"Alexander Weekstede",,,,,,,,,,,,,,"A"
-1341,,,"C","John","Welling","John Welling","Globe",,"1621-01-01",,,,"probate date: missing month; probate date: missing day","John Welling",,,,,,,,,,,,,,"A"
-1348,,,"P","Thomas","Westburry","Thomas Westburry","London",,"1627-01-01",,,,"probate date: missing month; probate date: missing day","Thomas Westburry",,,,,,,,,,,,,,"A"
-1353,,,"P","Thomas","Wheatley","Thomas Wheatley","Hector","1613-09-02","1613-10-25",,,,,"Thomas Wheatley",,,,,,,,,,,,,,"A"
-1356,,"11/115/283","P","Richard","Whitar","Richard Whitar","Hector","1608-12-09","1610-12-24","sailor",,,"alternate last name: Whiter","Richard Whiter",,,,,,,,,,,,,,"A"
-1363,,,"P","John","Whittakers","John Whittakers","Discovery",,"1628-01-01",,,,"probate date: missing month; probate date: missing day","John Whittakers",,,,,,,,,,,,,,"A"
-1364,,"11/123/724","P","Stephen","Whitter","Stephen Whitter",,"1613-04-11","1614-06-28","shipwright",,,"earlier will: 18.03.11","Stephen Whitter",,,,,,,,,,,,,,"A"
-1365,,,"C","William","Whittingham","William Whittingham",,"1617-08-18","1618-09-15",,,,,"William Whittingham",,,,,,,,,,,,,,"A"
-1372,,,"C","Richard .","Wiffin","Richard Wiffin",,"1617-10-27","1618-09-15",,,,,"Richard Wiffin",,,,,,,,,,,,,,"A"
-1385,,,"P","Fitz","Williams","Fitz Williams","Eagle",,"1622-01-01",,,,"probate date: missing month; probate date: missing day","Fitz Williams",,,,,,,,,,,,,,"A"
-1390,,"11/102/191v","P","Rice","Williams","Rice Williams","Dragon","1602-02-08","1603-10-12",,,,,"Rice Williams",,,,,,,,,,,,,,"A"
-1393,,"11/133/268","P","Edward","Willmotte","Edward Willmotte",,,"1619-02-26","Bantam",,,,"Edward Willmotte",,,,,,,,,,,,,,"A"
-1395,,"11/124/184","P","Saunders","Willson","Saunders Willson","Dragon","1612-01-15","1614-07-16","sailor",,,,"Saunders Wilson",,,,,,,,,,,,,,"A"
-1399,,"11/138/270","P","William","Wilson","William Wilson","James   ",,"1621-10-16","sailor",,,,"William Wilson",,,,,,,,,,,,,,"A"
-1402,,"11/132/278","P","John","Winston","John Winston","Charles","1618-05-22","1618-09-22","mariner",,,,"John Winston",,,,,,,,,,,,,,"A"
-1416,,,"C","Edward","Woodward","Edward Woodward","Paulsgrave",,"1623-01-01",,,,"probate date: missing month; probate date: missing day","Edward Woodward",,,,,,,,,,,,,,"A"
-1431,,"11/138/205","P","Richard","Yard","Richard Yard","Peppercorn",,"1621-10-04","master",,,,"Richard Yard",,,,,,,,,,,,,,"A"
+,"source","reference","court","nameFirst","nameLast","testator","shipName"," dateOfWill","dateOfProbate","role","married","sick","notes","will","summary","transcription",
+30,,,"C","Arthure","Archer","Arthure Archer","Swann",,"1620-01-01",,,,,,,,
+60,,,"C","Henry","Bamford","Henry Bamford","Royal James",,"1621-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+66,,,"C","Thomas","Barkings","Thomas Barkings","Paulsgrave",,"1623-01-01",,,,"alternate last name: Barkinge; probate date: missing month; probate date: missing day",,,,
+82,,,"C","Paul","Bartleson","Paul Bartleson","Paulsgrave",,"1621-01-01",,,,"alternate last name: Barttleson; alternate last name: Bartlesonn; probate date: missing month; probate date: missing day",,,,
+98,,,"C","William","Bennis","William Bennis","Trades Increase",,"1614-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+101,,,"C","John","Bernard","John Bernard","Royal James",,"1621-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+124,,,"C","Thomas","Blastocke","Thomas Blastocke",,,"1609-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+134,,,"P","Robert","Bonner","Robert Bonner",,"1618-02-06","1620-10-27",,,,,,,,
+145,,,"P","Richard","Bowden","Richard Bowden","Charles",,"1619-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+153,,,"P","Humfrey","Boyes","Humfrey Boyes","Blessing",,"1629-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+158,,,"C","Sam","Bradshaw","Sam Bradshaw",,,"1611-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+183,,"9171/21/184","C","Thomas","Browne","Thomas Browne",,,"1609-10-17","surgeon",,,,,,,
+184,,,"C","Thomas","Browne","Thomas Browne",,"1615-01-14","1615-09-22",,,,,,,,
+204,,,"C","Jas","Burrowes","Jas Burrowes","Star",,"1623-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+219,,,"C","Robert","Cane","Robert Cane","Bull",,"1622-01-01","steward",,,"probate date: missing month; probate date: missing day",,,,
+258,,,"C","Josh","Child","Josh Child","James",,"1623-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+274,,,"C","Henry","Clarkson","Henry Clarkson","Lion",,"1623-01-01",,,,"alternate last name: Clerkson; alternate last name: Clarckson; corrected ship name: Lyon; probate date: missing month; probate date: missing day",,,,
+276,,,"C","William","Clee","William Clee","Globe",,"1623-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+292,,,"C","Obed","Collins","Obed Collins","New Year's Gift",,"1621-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+313,,,"C","William","Coumes","William Coumes","James   ",,"1620-01-01",,,,"alternate last name: Covmes; probate date: missing month; probate date: missing day",,,,
+314,,,"C","Thomas","Country","Thomas Country","Eagle",,"1623-01-01","purser",,,"probate date: missing month; probate date: missing day",,,,
+333,,,"P","Thomas","Crowch","Thomas Crowch","Defence",,"1621-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+338,,,"C","John","Cumberland","John Cumberland",,,"1609-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+357,,,"C","John","Davies","John Davies","Bull",,"1622-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+358,,,"C","Francis","Davis","Francis Davis","Exchange",,"1623-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+364,,,"C","Robert","Davis","Robert Davis",,,"1613-01-01",,,,"alternate last name: Davies;probate date: missing month; probate date: missing day",,,,
+391,,,"C","George","Dowlasse","George Dowlasse","Globe",,"1621-01-01",,,,"alternate last name: Dowglass; alternate last name: Dowglasse; probate date: missing month; probate date: missing day",,,,
+407,,,"C","Thomas","Dyne","Thomas Dyne","Diamond",,"1624-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+409,,,"C","Constantine","Eackles","Constantine Eackles",,"1614-06-25","1615-09-21",,,,"alternate last name: Eccles",,,,
+416,,,"C","Thomas","Eley","Thomas Eley","Expedition",,"1617-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+417,,,"C","Jeofrey","Elford","Jeofrey Elford","Charles","1618-04-25","1618-09-15",,,,"alternate last name: Ilford",,,,
+418,,,"P","John","Elger","John Elger","Blessing",,"1625-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+419,,,"C","Edm","Elkin","Edm Elkin",,,"1609-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+424,,,"P","Robert","Ellingworth","Robert Ellingworth","Charles","1618-04-12","1618-09-28",,,,"unsure ship name",,,,
+426,,,"C","John","Elliot","John Elliot","Exchange",,"1624-01-01",,,,"alternate last name: Ellyott; probate date: missing month; probate date: missing day",,,,
+429,,,"C","Robert","Ellis","Robert Ellis","New Year's Gift","1616-06-05","1616-07-17",,,,,,,,
+432,,"11/135/175","P","Henry","Eltonhead","Henry Eltonhead",,,"1620-02-12","merchant",,,,,,,
+436,,,"C","William","Essex","William Essex","Royal James",,"1621-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+439,,,"C","Richard","Evans","Richard Evans","Anne",,"1619-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+443,,,"P","William","Ewards","William Ewards","London",,"1627-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+449,,,"C","Sam","Fenton","Sam Fenton","Diamond",,"1623-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+455,,"11/128/174","P","Thomas","fferries","Thomas fferries","New Year's Gift","1616-01-29","1616-08-03","sailor",,,,,,,
+457,,,"C","Balthaser","ffifeild","Balthaser ffifeild",,"1617-11-11","1618-09-12",,,,,,,,
+459,,,"C","William","ffinch","William ffinch",,"1612-01-27","1614-06-24",,,,,,,,
+461,,,"P","Robert","ffithey","Robert ffithey","Charles","1617-05-07","1618-09-16",,,,,,,,
+467,,,"C","Robert","ffox","Robert ffox","Peppercorn","1616-05-03","1617-10-10",,,,,,,,
+473,,,"C","Robert","ffrickley","Robert ffrickley","Trades Increase","1613-03-30","1615-02-28",,,,"probate date: earlier",,,,
+478,,,"C","William","Fletcher","William Fletcher","Royal Exchange",,"1625-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+480,,,"C","Richard","Flud","Richard Flud","Moon",,"1625-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+,,,"C","Costen ","Fortmer","Costen Fortmer","Charles",,1621,,,,,,,,
+483,,,"C","Michael","Frankland","Michael Frankland","Charles",,"1622-01-01",,,,"alternate last name: Franckland; probate date: missing month; probate date: missing day",,,,
+486,,,"C","Peter","Frewin","Peter Frewin","Clove",,"1617-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+487,,,"C","Robert","Friend","Robert Friend","New Year's Gift",,"1621-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+489,,,"C","Thomas","Fuller","Thomas Fuller",,,"1613-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+490,,,"C","Thomas","Furnisall","Thomas Furnisall","Royal Exchange",,"1623-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+493,,,"C","William","Gamels","William Gamels","Anne",,"1619-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+494,,,"C","John","Gammell","John Gammell","Paulsgrave",,"1623-01-01",,,,"alternate last name: Gamull; probate date: missing month; probate date: missing day",,,,
+495,,,"C","William","Gascoyne","William Gascoyne","Dragon",,"1614-01-01",,,,"alternate last name: Gascon; probate date: missing month; probate date: missing day",,,,
+497,,"9171/20/185","C","Thomas","Gaytes","Thomas Gaytes","Ascension","1604-01-06","1606-06-24",,,,"additional ship: Hector",,,,
+500,,"11/123/732","C","John","Geles","John Geles",,"1612-12-15","1614-07-21","1/4 master",,,"alternate last name: Giles",,,,
+501,,,"P","John","George","John George","Charles",,"1622-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+502,,,"P","John","George","John George","Defence","1617-03-12","1618-09-14",,,,"corrected ship name: Great Defence",,,,
+503,,,"C","Raph","Geoyles","Raph Geoyles","Hector","1614-02-24","1617-06-19",,,,"alternate last name: Giles",,,,
+504,,,"C","William","Gerrom","William Gerrom","Trades Increase","1613-05-02","1614-07-21",,,,,,,,
+506,,,"P","John","Giles","John Giles","Trades Increase","1613-03-22","1614-06-29",,,,,,,,
+509,,"11/102/345","P","John","Godderd","John Godderd","Hector","1602-11-29","1603-11-02",,,,,,,,
+510,,,"P","Edward","Goodall","Edward Goodall","Charles","1617-12-13","1618-09-23",,,,,,,,
+513,,,"C","John","Goodson","John Goodson",,,"1621-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+514,,,"C","Henry","Gosling","Henry Gosling","Moon",,"1620-01-01",,,,"alternate last name: Goslinge; probate date: missing month; probate date: missing day",,,,
+516,,,"P","John","Goulding","John Goulding","Elizabeth","1612-10-06","1624-10-07",,,,,,,,
+517,,,"C","James","Gourdonne","James Gourdonne",,"1617-09-09","1618-09-19",,,,"alternate last name: Gordon",,,,
+518,,,"P","Robert","Grafton","Robert Grafton","Charles",,"1628-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+519,,,"C","Alonco","Grancilla","Alonco Grancilla","Peppercorn","1611-09-11","1614-02-10",,,,,,,,
+520,,"11/126/131","P","James","Grantham","James Grantham","James","1614-05-05","1615-09-18",,,,"unsure ship name",,,,
+523,,,"C","Thomas","Graye","Thomas Graye","Thomas",,"1613-11-05",,,,"unsure ship name",,,,
+524,,,"P","Henry","Greene","Henry Greene","Hector","1613-09-02","1613-10-30",,,,,,,,
+527,,,"C","Thomas","Greenehough","Thomas Greenehough","Jonas",,"1623-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+532,,,"C","Raphe","Griffen","Raphe Griffen","New Year's Gift","1615-11-12","1617-07-01",,,,"date of probate corrected: n.o7.17; probate date: missing day",,,,
+533,,"11/108/132v","P","William","Griffin","William Griffin","Susan","1605-01-13","1606-09-13",,,,,,,,
+534,,"11/102/220v","P","Evans","Griffine","Evans Griffine","Dragon","1603-05-01","1603-10-17",,,,,,,,
+535,,"11/123/714","P","Richard","Griffines","Richard Griffines","Trades Increase","1613-04-03","1614-06-27","surgeon's mate",,,,,,,
+537,,,"C","Robert","Griggs","Robert Griggs","Charles",,"1622-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+538,,,"C","Thomas","Griggs","Thomas Griggs","Dragon","1615-06-06","1617-06-16",,,,,,,,
+539,,,"C","Joseph","Grigson","Joseph Grigson","Rose",,"1620-01-01",,,,"extra name: Radcliff; probate date: missing month; probate date: missing day",,,,
+540,,,"P","Peter","Grilles","Peter Grilles",,"1615-04-08","1617-06-27",,,,,,,,
+541,,,"C","John","Guillingham","John Guillingham","Trades Increase","1613-04-27","1614-10-31",,,,"alternate last name: Gillingham",,,,
+542,,,"C","John","Gulson","John Gulson","Eagle",,"1622-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+543,,,"C","John","Gunston","John Gunston","Paulsgrave",,"1622-01-01",,,,"alternate last name: Gunstone; probate date: missing month; probate date: missing day",,,,
+544,,,"P","John","Gunter","John Gunter","Discovery",,"1625-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+547,,,"C","Edward","Gynne","Edward Gynne","Globe","1616-01-30","1617-07-19",,,,"alternate last name: Ginns",,,,
+548,,,"C","John","Haies","John Haies","Charles",,"1618-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+551,,,"C","Paule","Hall","Paule Hall","James","1613-05-15","1615-10-20",,,,,,,,
+557,,,"C","William","Hamnett","William Hamnett","Royal Exchange",,"1623-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+560,,"11/124/306","P","Robert","Hancocke","Robert Hancocke","Trades Increase","1613-03-26","1614-08-25","sailor",,,,,,,
+561,,,"P","John","Handfield","John Handfield",,"1612-12-01","1614-07-02",,,,,,,,
+565,,,"C","Francis","Harper","Francis Harper","Anne",,"1624-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+566,,,"C","William","Harper","William Harper","Paulsgrave",,"1623-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+567,,,"P","William","Harris","William Harris","Mary",,"1628-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+568,,,"P","William","Harrision","William Harrision","Hector","1613-08-16","1613-10-22",,,,,,,,
+569,,,"C","Francis","Harvey","Francis Harvey","Diamond",,"1622-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+570,,"9171/22/213v","C","George","Harwood","George Harwood","Hector","1613-02-13","1613-11-02",,,,,,,,
+574,,,"C","George","Hawkins","George Hawkins","Expedition","1615-01-23","1617-03-20",,,,,,,,
+575,,"9171/21/265","C","John","Hawkins","John Hawkins","Hector","1609-11-13","1610-06-25",,,,,,,,
+576,,"11/107/388","P","Richard","Hawkins","Richard Hawkins",,"1604-03-20","1606-06-11",,,,,,,,
+577,,,"P","George","Hayes","George Hayes","Charles","1618-04-03","1618-09-16",,,,,,,,
+578,,"11/107/401v","P","Thomas","Hayles","Thomas Hayles","Dragon","1605-03-19","1606-06-06",,,,,,,,
+580,,,"P","John","Haynes","John Haynes","Abigail",,"1627-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+581,,,"C","Robert","Haynes","Robert Haynes","Hector","1613-09-02","1614-03-11",,,,,,,,
+582,,,"P","John","Hayward","John Hayward","Exchange",,"1625-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+585,,,"C","Ralph","Hearne","Ralph Hearne",,,"1614-01-01",,,,"uncertain first name; probate date: missing month; probate date: missing day",,,,
+590,,,"C","Thomas","Hebblethwaite","Thomas Hebblethwaite","Exchange",,"1623-01-01",,,,"alternate last name: Heblethwit; probate date: missing month; probate date: missing day",,,,
+591,,,"P","Percy","Hedges","Percy Hedges","New Year's Gift",,"1622-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+594,,,"C","John","Hellilfield","John Hellilfield","Hector",,"1622-01-01",,,,"alternate last name: Ellifield; probate date: missing month; probate date: missing day",,,,
+595,,,"C","William","Helme","William Helme","Merchant's Hope",,"1623-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+596,,,"P","John","Helmer","John Helmer","Charles",,"1626-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+597,,,"C","John","Hemingway","John Hemingway","White Bear",,"1625-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+598,,"11/147/133","P","Thomas","Kempe","Thomas kempe","Abigail",,"1625-01-01","bosn",,,"probate date: missing month; probate date: missing day",,,,
+602,,"11/147/316","P","Saveadge","Henworth","Saveadge Henworth","Discovery",,"1625-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+603,,,"C","John","Hertfordshire","John Hertfordshire","William",,"1625-01-01",,,,"alternate last name: Hartfordshiere; probate date: missing month; probate date: missing day",,,,
+604,,,"C","Sam","Hewes","Sam Hewes","Hope",,"1618-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+605,,"11/124/700","P","ffrauncis","Hewetson","ffrauncis Hewetson","Trades Increase","1613-04-22","1614-12-19",,,,"alternate last name: Huetson",,,,
+607,,,"P","John","Hickman","John Hickman","Solomon","1617-01-13","1618-11-13",,,,,,,,
+608,,,"P","Thomas","Hickocke","Thomas Hickocke",,"1612-09-28","1613-10-29",,,,,,,,
+609,,"11/122/552","P","Thomas","Hickocks","Thomas Hickocks","Darling","1613-08-07","1613-11-26",,,,,,,,
+610,,,"C","Edmund","Hicks","Edmund Hicks","Solomon","1617-07-11","1618-09-18",,,,"unsure ship name: Solomon; additional ship: Charles",,,,
+611,,,"C","Boniface","Hide","Boniface Hide","Clove",,"1623-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+612,,"11/107/331","P","William","Hider","William Hider",,"1605-01-19","1606-06-16",,,,,,,,
+613,,"11/107/266","P","Richard","Higge","Richard Higge","Dragon","1605-01-23","1606-06-24",,,,,,,,
+616,,"11/122/462","P","John","Hilliard","John Hilliard","Thomas","1613-08-09","1613-11-12",,,,,,,,
+617,,,"C","John","Hills","John Hills","Sampson",,"1624-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+618,,"11/124/34","P","John","Hills","John Hills","Trades Increase","1613-02-21","1614-07-05","sailor/baker",,,,,,,
+619,,,"C","Robert","Hills","Robert Hills","Clove",,"1621-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+620,,,"C","William","Hills","William Hills",,"1613-04-22","1614-12-05",,,,,,,,
+622,,"11/128/137","P","Edward","Hillton","Edward Hillton","New Year's Gift","1615-11-22","1616-07-22","sailor",,,,,,,
+623,,,"P","Henry","Hitchiocke","Henry Hitchiocke","Exchange",,"1623-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+624,,,"P","Robert","Hobbes","Robert Hobbes","Charles",,"1618-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+625,,"11/117/659","P","Robert","Hodgeson","Robert Hodgeson",,"1611-05-22","1611-07-25",,,,"uncertain first name",,,,
+626,,,"P","Edward","Holland","Edward Holland","Faulcon",,"1627-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+628,,"11/102/175v","P","John","Hollidaye","John Hollidaye","Hector","1602-10-02","1603-10-19",,,,,,,,
+629,,"9171/22/222v","C","William","Holman","William Holman",,"1608-12-18","1613-11-16",,,,,,,,
+630,,,"C","Thomas","Holme","Thomas Holme",,"1613-09-08","1614-06-22",,,,"alternate last name: Holmes",,,,
+631,,,"C","Griffith","Holmes","Griffith Holmes","Eagle",,"1622-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+633,,,"P","Mark","Hookenett","Mark Hookenett","Charles",,"1626-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+634,,"11/123/703","P","John","Hooper","John Hooper","Trades Increase","1613-03-05","1614-05-23","sailor",,,,,,,
+635,,"11/107/347v","P","James","Hope","James Hope","Dragon","1605-01-20","1606-06-11",,,,,,,,
+636,,,"P","Thomas","Hopwood","Thomas Hopwood","Jonas",,"1623-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+637,,,"C","John","Hore","John Hore","Expedition","1616-10-30","1616-11-26",,,,"corrected ship name: Expedition",,,,
+639,,"9152/4/xx ","A","Thomas","Horrell","Thomas Horrell","Darling","1612-11-23","1614-07-20",,,,,,,,
+642,,"11/130/38","P","Thomas","Hounsell","Thomas Hounsell","Attendant",,"1617-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+645,,,"C","Samuell","Howes","Samuell Howes","Hope","1617-12-09","1618-10-05",,,,"alternate last name: Hughes",,,,
+650,,,"P","David","Hughes","David Hughes","Dragon","1613-10-18","1614-07-04",,,,,,,,
+652,,,"P","William","Hugheson","William Hugheson","Trades Increase","1613-04-25","1614-07-06","sailor",,,,,,,
+653,,"11/101/393","P","Thomas","Humble","Thomas Humble","Ascension",,"1603-07-01",,,,,,,,
+654,,,"C","John","Humbye","John Humbye","Lion",,"1616-10-24",,,,,,,,
+655,,,"P","James","Humfrey","James Humfrey",,"1610-02-22","1614-06-24",,,,,,,,
+657,,,"C","Mathew","Hunt","Mathew Hunt","Clove","1613-02-08","1614-12-18","carpenter?",,,"unsure ship name",,,,
+660,,,"P","Robert","Huntley","Robert Huntley","Charles",,"1626-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+664,,,"C","Thomas","Hutchins","Thomas Hutchins","Rose",,"1620-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+670,,,"P","Christopher","Jackson","Christopher Jackson","Hope","1617-12-09","1618-09-12",,,,"unsure ship name",,,,
+673,,,"C","Cornelius","Jacobbes","Cornelius Jacobbes","Trades Increase","1613-02-10","1619-01-22",,,,,,,,
+674,,,"C","William","Jagges","William Jagges","New Year's Gift","1617-01-11","1620-04-13",,,,"alternate last name: Jakes",,,,
+677,,,"C","John","Jane","John Jane","Charles",,"1622-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+678,,,"C","Richard","Jarrett","Richard Jarrett","Lion",,"1623-01-01",,,,"corrected ship name: Lyon; probate date: missing month; probate date: missing day",,,,
+680,,,"P","Nicholas","Jefferie","Nicholas Jefferie","London",,"1627-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+682,,,"C","Anthony","Jefferson","Anthony Jefferson",,,"1610-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+690,,,"C","Edward","Johnes","Edward Johnes","Bear",,"1624-01-01",,,,"probate date: missing month; probate date: missing day; corrected ship name: Beare",,,,
+691,,,"C","Abraham","Johnson","Abraham Johnson","Advice",,"1620-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+692,,,"C","Gilbt","Johnson","Gilbt Johnson","Charles",,"1621-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+696,,,"C","Peter","Johnson","Peter Johnson","Charles","1618-05-22","1618-09-23",,,,,,,,
+698,,,"C","Thomas","Johnson","Thomas Johnson","Susan",,"1606-06-11",,,,,,,,
+699,,,"C","William","Johnson","William Johnson","Bull",,"1624-01-01","sailor",,,"probate date: missing month; probate date: missing day",,,,
+700,,"11/102/227","P","Owen","Johnsonne","Owen Johnsonne","Dragon","1603-08-02","1603-10-22",,,,,,,,
+704,,,"P","Hugh","Jones","Hugh Jones","Hart",,"1626-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+707,,,"C","Richard","Jones","Richard Jones","James   ",,"1620-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+724,,,"C","Thomas","Kickwood","Thomas Kickwood","Charles","1618-05-28","1618-09-14",,,,,,,,
+725,,"11/108/116","P","ffraunces","Kindes","ffraunces Kindes","Ascension","1605-11-01","1606-07-15","servant",,,"alternate first name: Frances",,,,
+726,,"11/148/142","P","John","King","John King","Charles",,"1626-01-01","sailor",,,"probate date: missing month; probate date: missing day",,,,
+727,,,"C","George","Kinge","George Kinge",,,"1609-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+732,,"11/122/506","P","William","Kinge","William Kinge","Hector","1613-08-15","1613-11-20","sailor",,,,,,,
+734,,,"C","William","Knapman","William Knapman","Dragon",,"1623-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+735,,"11/130/287","P","Gregory","Knight","Gregory Knight","Peppercorn","1617-04-30","1617-09-15",,,,,,,,
+736,,,"P","Marmaducke","Knighte","Marmaducke Knighte","Hector","1613-07-17","1613-11-03","cooper",,,"uncertain first name spelling",,,,
+737,,"11/138/377","P","Robert","Knighte","Robert Knighte","Royal James",,"1622-11-09",,,,"probate date: missing month; probate date: missing day",,,,
+739,,,"C","Robert","Knowler","Robert Knowler","Royal James",,"1621-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+740,,,"C","Martin","la Croix","Martin la Croix","Globe","1612-07-20","1616-04-10",,,,,,,,
+743,,,"C","William","Lambert","William Lambert","Expedition",,"1621-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+745,,,"P","Francis","Lane","Francis Lane","Royal James",,"1622-01-01",,1,,"probate date: missing month; probate date: missing day; widow: Joan Lane",,,,
+746,,,"C","George","Lane","George Lane","Clove",,"1622-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+752,,,"P","Robert","Larke","Robert Larke","Jonas",,"1626-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+753,"Ancestry lists ""Sarman""",,"C","Hugh","Larman","Hugh Larman","Ruby",,"1625-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+755,,,"C","Anthony","Lawrence","Anthony Lawrence",,"1614-07-19","1614-07-27",,,,,,,,
+757,,,"P","William","Lawrence","William Lawrence","London",,"1627-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+758,,,"C","Richard","Lawson","Richard Lawson",,"1606-02-06","1606-07-17",,,,,,,,
+762,,"9052/4/xx","A","Robert","Lea","Robert Lea","Globe","1615-03-16","1615-09-12",,,,,,,,
+765,,,"P","Thomas","Leake","Thomas Leake","Exchange",,"1629-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+766,,,"C","Sam","Leane","Sam Leane","Anne",,"1620-01-01","mariner",,,"probate date: missing month; probate date: missing day",,,,
+771,,,"C","ffolke","Lee","ffolke Lee","Trades Increase","1612-02-25","1614-07-08",,,,"unsure ship name",,,,
+772,,"9171/21/353","C","Gilbert","Lee","Gilbert Lee","Union","1611-01-01","1611-07-22","mariner",,,,,,,
+773,,,"C","David","Lees","David Lees","Dragon","1606-01-14","1614-07-13",,,,,,,,
+776,,,"C","John","Lermont","John Lermont","Anne",,"1619-01-01",,,,"alternate last name: Lermonte; probate date: missing month; probate date: missing day",,,,
+777,,,"C","Edward","Lewes","Edward Lewes","New Year's Gift",,"1621-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+778,,"9171/22/204 (?)","C","David","Lewis","David Lewis","Hector","1612-03-28","1613-10-18",,,,,,,,
+779,,,"P","David","Lewis","David Lewis","Hector","1612-11-20","1613-11-14",,,,,,,,
+780,,,"C","Chris","Lilbourne","Chris Lilbourne","Anne",,"1619-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+782,,,"C","John","Limpany","John Limpany",,"1617-10-26","1618-09-16",,,,"uncertain first name",,,,
+785,,"9171/20/184v","C","William","Loud","William Loud","Dragon","1604-01-17","1606-06-23",,,,,,,,
+786,,,"C","Thomas","Love","Thomas Love","Peppercorn",,"1614-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+787,,,"P","James","Lovell","James Lovell",,"1613-07-10","1614-06-22",,,,,,,,
+789,,,"C","George","Lowes","George Lowes","New Year's Gift",,"1621-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+790,,,"C","William","Lucas","William Lucas","Trades Increase","1612-04-11","1614-07-02",,,,"unsure ship name",,,,
+791,,,"C","Williams","Lucas","Williams Lucas","Unicorn",,"1620-01-01",,,,"probate date: missing month; probate date: missing day; corrected ship name: Unicorne",,,,
+793,,"11/108/60","P","Barnard","Luveridge","Barnard Luveridge","Ascension",,"1606-07-07",,,,,,,,
+794,,,"P","John","Lyfe","John Lyfe","Mary",,"1629-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+795,,,"C","Nicholas","Lyle","Nicholas Lyle","Lion",,"1623-01-01",,,,"corrected ship name: Lyon; probate date: missing month; probate date: missing day",,,,
+797,,"11/102/191v","P","Steven","Maddocke","Steven Maddocke","Dragon","1603-06-26","1603-10-25",,,,,,,,
+798,,"11/108/89","P","Thomas","Magweare","Thomas Magweare",,"1605-09-13","1606-07-08",,,,,,,,
+799,,,"P","Edward","Maior","Edward Maior","London",,"1628-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+800,,,"P","Richard","Makepeace","Richard Makepeace","Diamond",,"1622-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+802,,,"C","William","Mallard","William Mallard","Anne",,"1619-01-01",,,,,,,,
+804,,,"C","William","Mansfeild","William Mansfeild",,"1613-09-07","1613-11-24",,,,,,,,
+805,,,"C","Ansel","Manson","Ansel Manson",,"1608-03-07","1611-04-08",,,,,,,,
+806,,"11/101/401","P","Davy","Marchant","Davy Marchant","Ascension",,"1603-07-04",,,,,,,,
+807,,,"C","Peter","Marchante","Peter Marchante",,"1606-07-01","1606-07-21",,,,"uncertain first name",,,,
+808,,,"C","Edward","Markes","Edward Markes","Clove","1616-12-27","1617-07-14",,,,,,,,
+810,,"11/126/104","P","Edmonde","Marlowe","Edmonde Marlowe","James","1614-04-16","1615-09-22",,,,"designation: Capt.","Edmonde Marlowe",,,
+811,,"11/102/185v","P","John","Marmaduke","John Marmaduke","Dragon",,"1603-10-31",,,,,,,,
+813,,,"P","John","Marshall","John Marshall",,"1599-04-07","1606-06-06",,,,"will date: missing year","John Mascall",,,
+814,,,"P","Thomas","Marshall","Thomas Marshall","Royal James",,"1621-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+815,,,"C","William","Marshall","William Marshall","Royal James",,"1621-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+816,,,"P","John","Marten","John Marten","Charles",,"1626-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+,,"11/132/701","P","Thomas              Martin",,"Thomas Martin","Rose",,1618,"gunner",,,,,,,
+818,,,"P","Thomas","Martin","Thomas Martin","Charles",,"1626-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+819,,,"P","Thomas","Martin","Thomas Martin","London",,"1627-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+820,,,"P","John","Marychurch","John Marychurch",,"1617-08-01","1618-09-10",,,,,,,,
+822,,"9171/21/356","C","Anselline","Mason","Anselline Mason","Union","1609-04-26","1611-08-23",,,,"From oriignal file: \""(Manson",,,,
+823,,"11/102/180v","P","Ottes","Mason","Ottes Mason","Hector","1603-05-19","1603-10-29",,,,,,,,
+824,,,"P","Thomas","Massey","Thomas Massey","Swann",,"1609-01-01",,,,,,,,
+825,,,"C","Richard","Massie","Richard Massie",,"1613-02-14","1614-06-20",,,,,,,,
+827,,"11/117/399v","P","Nicholas","Mathewe","Nicholas Mathewe","Expedition","1610-12-03","1611-07-27",,,,,,,,
+828,,,"C","Henrie","Mathewes","Henrie Mathewes",,"1613-08-16","1614-07-04",,,,,,,,
+836,,,"C","Nicholas","Medland","Nicholas Medland",,,"1624-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+839,,,"C","And","Melvn","And Melvn","Royal James",,"1621-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+840,,,"P","William","Mendick","William Mendick","Diamond","1620-09-12","1624-10-19",,,,,,,,
+841,,,"P","Richard","Mercer","Richard Mercer",,,"1619-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+845,,,"P","Modecai","Michell","Modecai Michell","Clove",,"1621-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+848,,,"P","Henry","Middleton","Henry Middleton",,"1610-05-29","1614-06-22",,,,"designation: kt.",,,,
+849,,,"C","John","Middleton","John Middleton",,"1615-08-03","1616-10-22",,,,,,,,
+850,,,"C","William","Midgeley","William Midgeley",,"1611-07-01","1611-08-19",,,,,,,,
+851,,,"P","John","Miles","John Miles","Jonas",,"1629-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+852,,,"C","Nicholas","Milles","Nicholas Milles",,,"1614-05-13",,,,,,,,
+853,,"9052/4/xx","A","Edward","Mills","Edward Mills","Dragon",,"1617-06-14",,,,,,,,
+860,,,"C","Marten","Moore","Marten Moore","Trades Increase","1613-08-11","1614-07-30",,,,,,,,
+861,,"11/101/393","P","Nicholas","Moore","Nicholas Moore","Ascension","1603-02-17","1603-07-01",,,,,,,,
+864,,,"P","William","Moore","William Moore","London",,"1628-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+866,,"11/108/59v","P","Lancelete","More","Lancelete More",,"1605-08-20","1606-07-20",,,,,,,,
+869,,,"P","Hopkin","Morgan","Hopkin Morgan","Discovery",,"1625-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+870,,,"C","Walter","Morgan","Walter Morgan","New Year's Gift","1615-10-28","1616-07-08",,,,,,,,
+871,,,"C","William","Morgan","William Morgan",,"1616-07-13","1616-07-17",,,,"uncertain first name",,,,
+873,,,"P","Robert","Moseley","Robert Moseley","Hart",,"1626-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+874,,,"C","Francis","Moss","Francis Moss","Diamond",,"1622-01-01",,,,"alternate last name: Mosse",,,,
+875,,,"P","William","Mosse","William Mosse","Hart",,"1628-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+877,,,"C","John","Moyses","John Moyses","Trades Increase",,"1614-07-29",,,,,,,,
+878,,,"P","John","Mucknell","John Mucknell",,"1613-08-22","1613-11-18",,,,,,,,
+879,,,"C","John","Muffett","John Muffett",,,"1614-07-19",,,,,,,,
+880,,,"C","Tomas","Muge","Tomas Muge","Clove","1613-02-02","1615-01-07",,,,"alternate last name: Mudge; unsure ship name",,,,
+881,,"9171/22/210","C","ffrancis","Napper","ffrancis Napper","Hector","1613-09-05","1613-10-25",,,,,,,,
+882,,"11/102/193v","P","Henrye","Napper","Henrye Napper","Hector","1602-02-25","1603-10-17",,,,,,,,
+883,,"9171/21/203v","C","Lawrence","Nashe","Lawrence Nashe","Dragon",,"1609-12-04",,,,,,,,
+884,,,"P","Valentine","Nashe","Valentine Nashe","Hector","1614-02-19","1617-06-16",,,,,,,,
+885,,,"P","Nicholas","Nayler","Nicholas Nayler","Charles",,"1626-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+886,,,"P","John","Naylor","John Naylor","Jonas",,"1626-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+887,,,"C","John","Neale","John Neale","Anne",,"1619-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+888,,,"P","John","Neale","John Neale","Hector","1612-12-08","1613-10-30",,,,,,,,
+889,,,"P","William","Neale","William Neale","Dragon","1613-09-23","1614-06-28",,,,,,,,
+890,,,"P","Samuell","Negus","Nicholas",,"1615-05-17","1617-06-20",,,,,,,,
+891,,,"P","George","Nelson","George Nelson","Mary",,"1629-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+892,,"9171/22/210","C","Francis","Neper","Francis Neper","Hector","1613-09-05",,"sailor",,,"alternate last name: Naper; probate date: missing month; probate date: missing day",,,,
+893,,,"P","Hugh","Netle","Hugh Netle","London",,"1628-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+895,,,"P","Arthur","Newchurch","Arthur Newchurch","Dragon","1616-11-23","1617-06-17",,,,,,,,
+896,,,"C","John","Newcombe","John Newcombe",,,"1610-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+898,,,"P","John","Newport","John Newport","Jonas",,"1626-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+900,,,"C","Christopher","Newton","Christopher Newton",,"1608-03-07","1611-04-08",,,,,,,,
+904,,"11/118/71","P","William","Nicholles","William Nicholles","Expedition","1610-03-26","1611-07-04",,,,,,,,
+905,,,"P","Nicholas","Nicholls","Nicholas Nicholls","Solomon",,"1619-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+906,,,"P","Edward","Nicholson","Edward Nicholson","Discovery",,"1628-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+907,,,"C","Nicholas","Nickulls","Nicholas Nickulls","Diamond",,"1623-01-01",,,,"alternate last name: Nickulson",,,,
+908,,,"C","John","Ninns","John Ninns","Trades Increase","1613-03-02","1614-07-28",,,,"alternate last name: Ninus",,,,
+909,,,"P","John","Noakes","John Noakes","Charles","1618-02-08","1618-09-23",,,,,,,,
+910,,,"P","William","Nobbs","William Nobbs","Peppercorn",,"1621-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+911,,,"P","Andrew","Noble","Andrew Noble","Discovery",,"1625-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+912,,,"C","William","Noble","William Noble","Trades Increase","1613-05-26","1614-07-21",,,,,,,,
+913,,"11/124/284","P","John","Noddicott","John Noddicott","Trades Increase","1613-03-21","1614-08-15","trumpeter",,,,,,,
+914,,,"C","Edward","Norman","Edward Norman","Exchange",,"1623-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+917,,,"C","Luke","Nott","Luke Nott","Trades Increase",,"1614-07-16",,,,"alternate last name: Knott",,,,
+918,,,"P","Thomas","Nowell","Thomas Nowell",,"1615-01-03","1617-09-16",,,,,,,,
+920,,,"P","Richard","Oathweete","Richard Oathweete","Globe","1616-12-07","1617-09-20",,,,,,,,
+922,,,"P","Zachary","Olds","Zachary Olds","Royal James",,"1622-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+923,,,"P","Richard","Oliver","Richard Oliver","Discovery",,"1625-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+924,,,"C","Henry","Orange","Henry Orange","Royal James",,"1622-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+925,,,"C","Thomas","Orkney","Thomas Orkney","Swann",,"1620-01-01",,,,,,,,
+926,,,"P","Cornelius","Ortson","Cornelius Ortson","Royal James",,"1621-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+927,,,"P","Nicholas","Orwell","Nicholas Orwell","Hart",,"1626-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+929,,,"C","William","Osborne","William Osborne",,"1611-03-01",,,,,,,,,
+932,,,"C","Jasper","Owles","Jasper Owles","Paulsgrave",,"1623-01-01",,,,"alternate last name: Wells; probate date: missing month; probate date: missing day",,,,
+933,,"11/128/135","P","Thomas","Pagge","Thomas Pagge","New Year's Gift","1616-06-13","1616-07-22","sailor",,,,,,,
+934,,,"P","William","Paine","William Paine","Royal James",,"1621-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+936,,"9052/4/xx","A","Richard","Palmer","Richard Palmer",,"1615-01-17","1617-06-13",,,,,,,,
+941,,,"P","Tobias","Paris","Tobias Paris","Abigail",,"1625-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+942,,,"C","Alex","Parker","Alex Parker","Charles",,"1618-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+951,,,"P","John","Parnell","John Parnell","Royal James",,"1622-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+953,,"9052/4/xx","A","John","Parsons","John Parsons","Dragon","1617-01-09","1617-06-23",,,,"uncertain first name",,,,
+955,,,"C","Thomas","Pattinson","Thomas Pattinson","Dragon",,"1614-07-03",,,,"alternate last name: Pattison",,,,
+956,,,"P","Thomas","Paule","Thomas Paule","London",,"1628-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+957,,,"C","William","Paulinge","William Paulinge","Clove","1614-09-16","1615-07-20",,,,"alternate last name: Paulin; unsure ship name",,,,
+958,,,"C","Edward","Paull","Edward Paull",,"1617-11-13","1618-09-18",,,,,,,,
+959,,,"C","John","Paull","John Paull",,"1616-08-12","1616-08-26",,,,"uncertain first name; property named: The Ship",,,,
+960,,,"P","Andrew","Paullmer","Andrew Paullmer","Clove","1613-11-01","1614-12-06",,,,,,,,
+961,,,"P","William","Pawling","William Pawling","Charles",,"1626-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+962,,"11/107/343","P","John ","Pawll","John  Pawll","Hector","1604-03-30","1606-06-24",,,,"alternate last name: Paull; earlier will: 12.03.04",,,,
+963,,,"P","Roger","Payne","Roger Payne","Merchant's Hope","1616-11-13","1618-09-24",,,,,,,,
+964,,"11/102/349v","P","William","Payne","William Payne","Hector","1602-06-03","1603-11-02",,,,,,,,
+965,,,"C","John","Peache","John Peache","Discovery",,,,,,,,,,
+966,,,"C","Edward","Pearce","Edward Pearce","Anne",,"1619-01-01",,,,"alternate last name: Peirce; probate date: missing month; probate date: missing day",,,,
+967,,,"C","Thomas","Pearce","Thomas Pearce","Darling","1610-03-19","1614-06-29",,,,,,,,
+968,,,"C","William","Pearse","William Pearse","Expedition","1615-06-17","1615-08-28",,,,"; corrected ship name: Bonadventure",,,,
+969,,,"P","William","Peerce","William Peerce","Exchange",,"1624-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+970,,,"P","John","Peerson","John Peerson",,"1617-10-25","1618-09-08",,,,"uncertain first name",,,,
+971,,,"C","Lynnell","Peirce","Lynnell Peirce",,"1614-08-11","1614-08-19",,,,,,,,
+972,,,"C","Thomas","Peirce","Thomas Peirce","Paulsgrave",,"1623-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+978,,,"P","Frauncis","Pendren","Frauncis Pendren","Jonas",,"1626-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+981,,,"P","Henry","Perkins","Henry Perkins","Hope","1618-01-01","1618-09-15",,,,,,,,
+982,,,"P","Robert","Persie","Robert Persie","Dragon",,"1614-06-24",,,,"alternate last name: Percy",,,,
+983,,,"P","Joseph","Pett","Joseph Pett",,"1605-11-14","1606-06-26",,,,,,,,
+984,,"11/122/453","P","John","Petterson","John Petterson",,,"1613-11-11",,,,,,,,
+987,,"11/126/130","P","Richard","Pettye","Richard Pettye","Concord","1614-11-07","1615-09-18",,,,"unsure ship name",,,,
+,,"11/122/453","P","John","Pieterson","John Pieterson",,,"1614-11-11",,,,"excellent on wages, part of Worshipful Company",,,,
+990,,,"P","Richard","Philips","Richard Philips","Charles",,"1626-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+991,,,"C","John","Phillips","John Phillips","New Year's Gift","1615-10-29","1616-07-08",,,,"alias: Harvest; additional ship: Solomon",,,,
+993,,,"P","Robert","Phillips","Robert Phillips","Dragon","1616-08-01","1617-11-17",,,,,,,,
+994,,,"C","Thomas","Phillips","Thomas Phillips","Diamond",,"1622-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+996,,,"C","William","Pickis","William Pickis","Anne",,"1619-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+997,,,"P","Richard","Pike","Richard Pike","Trades Increase","1612-06-26","1614-08-05",,,,,,,,
+998,,,"C","Richard","Pilgram","Richard Pilgram","Royal James",,"1621-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1000,,"11/102/187","P","Thomas","Pinchebacke","Thomas Pinchebacke","Hector","1601-03-04","1603-10-11",,,,,,,,
+1001,,"9171/20/194v","C","Leonard","Pinchebate","Leonard Pinchebate","Dragon","1605-11-27","1606-07-18",,,,"alternate last name: Pinchbate",,,,
+1002,,,"P","Patrick","Plnderleethe","Patrick Plnderleethe","Royal James",,"1621-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1003,,,"C","John","Plum","John Plum","Defence","1616-08-01","1617-07-04",,,,"corrected ship name: Defense",,,,
+1004,,"9171/21/213v","C","John","Pocom","John Pocom","Dragon","1607-03-04","1610-01-12",,,,,,,,
+1006,,"11/124/137","P","John","Pooley","John Pooley","Trades Increase","1613-03-26","1614-08-25","sailor",,,"uncertain first name",,,,
+1008,,"11/128/162","P","Thomas","Pope","Thomas Pope","New Year's Gift","1615-10-16","1616-08-01","cooper's mate",,,,,,,
+1010,,,"C","William","Porter","William Porter","Moon",,"1621-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1011,,,"P","Richard ","Portman","Richard  Portman",,"1612-01-24","1614-07-20",,,,"alias; Poolehowse",,,,
+1012,,"9052/4/xx","A","Robert","Portman","Robert Portman",,"1613-10-18","1614-08-02",,,,,,,,
+1013,,"11/102/290v","P","ffrauncis","Portmort","ffrauncis Portmort","Dragon","1602-08-16","1603-11-01",,,,,,,,
+1015,,,"C","John","Potter","John Potter",,"1614-02-21","1617-10-10",,,,,,,,
+1019,,,"C","James","Powell","James Powell","Trades Increase","1613-05-17","1614-08-30",,,,,,,,
+1020,,,"P","William","Powell","William Powell","Discovery",,"1625-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1021,,,"C","William","Powell","William Powell","Swann",,"1620-01-01",,,,,,,,
+1022,,,"C","George","Power","George Power","James","1618-08-07","1620-02-15",,,,,,,,
+1023,,,"P","James","Poynter","James Poynter","Hope","1617-09-30","1618-09-17",,,,,,,,
+1024,,,"C","John","Pratt","John Pratt","Peppercorn","1614-01-11","1617-09-11",,,,,,,,
+1026,,,"P","William","Preston","William Preston","Charles",,"1627-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1029,,,"C","Stephen","Prior","Stephen Prior","James","1617-10-11","1618-09-16",,,,,,,,
+1030,,,"C","Nicholas","Procter","Nicholas Procter",,"1614-04-20","1617-07-16",,,,,,,,
+1032,,,"P","Stephen","Prust","Stephen Prust","Discovery",,"1625-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1033,,,"P","Richard","Puckell","Richard Puckell","Diamond",,,,,,,,,,
+1034,,,"P","George","Pybourne","George Pybourne",,"1617-07-03","1618-09-11","servant to EIC",,,,,,,
+1035,,,"P","Christopher","Pyne","Christopher Pyne","Hart",,"1622-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1036,,,"C","Robert","Pynne","Robert Pynne","Trades Increase","1612-02-20","1614-07-14",,,,"unsure ship name",,,,
+1037,,,"P","John","Radman","John Radman","William","1623-02-21","1624-10-06",,,,,,,,
+1039,,"11/102/194v","P","Nicholas","Ragwoode","Nicholas Ragwoode","Dragon","1603-09-28","1603-10-17",,,,,,,,
+1041,,,"C","Henrie","Rand","Henrie Rand","Darling","1611-03-12","1614-10-18",,,,,,,,
+1043,,,"C","John","Ratcliffe","John Ratcliffe","Anne",,"1619-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1044,,,"P","Richard","Rathbone","Richard Rathbone","Bull",,"1626-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1046,,,"P","John","Rawle","John Rawle",,"1615-01-17","1617-09-13",,,,"uncertain first name",,,,
+1048,,,"C","ffrauncis","Rawlingson","ffrauncis Rawlingson","James",,"1615-09-22",,,,"alternate last name: Rawlinson",,,,
+1049,,,"P","Edward","Read","Edward Read","Charles",,"1626-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1051,,,"P","Marke","Reade","Marke Reade","Hector","1615-06-27","1617-09-24",,,,,,,,
+1055,,,"P","William","Redwood","William Redwood","Abigail",,"1625-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1056,,,"C","William","Remington","William Remington","Hector","1616-01-08","1617-06-21",,,,,,,,
+1058,,,"C","Henrie","Reseth","Henrie Reseth","James","1612-12-14","1615-09-13",,,,,,,,
+1060,,,"C","Henry","Rickaman","Henry Rickaman","Charles",,"1622-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1061,,,"C","William","Rickman","William Rickman","New Year's Gift","1616-05-26","1616-07-15",,,,,,,,
+1062,,"9171/21/208","C","Robert","Rider","Robert Rider","Consent","1607-02-20","1609-12-13",,,,,,,,
+1063,,,"C","Peter","Rigby","Peter Rigby","New Year's Gift",,"1623-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1064,,"9171/20/179","C","Evan","Riggby","Evan Riggby","Dragon","1604-11-26","1606-06-13",,,,,,,,
+1065,,,"P","Rowland","Riles","Rowland Riles","Hector","1602-07-07","1603-10-07",,,,,,,,
+1066,,,"P","Rowland","Rilles","Rowland Rilles","Hector","1602-07-07","1603-10-07",,,,"corrected ship name: Oleander",,,,
+1067,,,"P","Edward","Roades","Edward Roades",,"1613-09-11","1614-06-22",,,,"alternate last name: Rodes",,,,
+1069,,"11/128/192","P","Thomas","Robbinson","Thomas Robbinson","New Year's Gift","1616-06-20","1616-08-13","sailor",,,,,,,
+1070,,,"P","Robert","Robinson","Robert Robinson","Trades Increase",,"1614-06-29",,,,,,,,
+1071,,"PROB 11/139/649","P","Thomas","Robinson","Thomas Robinson",,,"1622-09-02","cook",,,,,,,
+1072,,,"C","William","Robinson","William Robinson","Moon",,"1623-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1073,,"11/102/181v","P","James","Robson","James Robson","Dragon","1603-02-25","1603-10-31",,,,,,,,
+1074,,,"C","Mathew","Robson","Mathew Robson","Hector","1611-03-25","1613-11-20",,,,,,,,
+1075,,,"C","Michaell","Rochester","Michaell Rochester","Susan","1617-01-16","1617-09-13",,,,,,,,
+1076,,,"P","Walter","Rockwell","Walter Rockwell","Lion",,"1623-01-01",,,,"corrected ship name: Lyon; probate date: missing month; probate date: missing day",,,,
+1077,,,"P","Henry","Rodden","Henry Rodden",,,"1613-11-17",,,,"shared record with: Field",,,,
+1079,,,"C","John","Rogers","John Rogers",,,"1608-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1081,,,"P","William","Rogers","William Rogers","Thomas","1613-05-07","1613-11-22",,,,,,,,
+1084,,,"C","Martin","Rosse","Martin Rosse","Jonas",,"1623-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1087,,,"P","Richard","Rowe","Richard Rowe","Thomas","1617-04-11","1618-09-14",,,,,,,,
+1088,,,"C","And","Rugg","And Rugg","Elizabeth",,"1621-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1089,,,"P","Richard","Rumsey","Richard Rumsey","Clove",,"1617-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1090,,,"P","John","Russell","John Russell","Hector","1613-09-06","1613-11-02",,,,,,,,
+1091,,,"C","Richard","Russell","Richard Russell","Hector","1615-06-16","1617-06-19",,,,,,,,
+1093,,"9171/20/195v","C","Robert","Ryse","Robert Ryse",,"1605-01-13","1606-07-20",,,,,,,,
+1095,,,"P","John","Saggs","John Saggs","Lion",,"1620-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1096,,"9052/4/xx","A","John","Salsbery","John Salsbery",,"1613-07-21","1615-05-04",,,,"alternate last name: Salisbury",,,,
+1097,,"11/102/218","P","Ralphe","Salter","Ralphe Salter","Dragon","1602-02-02","1603-10-21",,,,,,,,
+1098,,,"C","Samuell","Saltonstall","Samuell Saltonstall",,"1616-07-15","1618-02-20",,,,,,,,
+1101,,,"C","Robert","Sander","Robert Sander",,,"1618-09-21",,,,"alternate last name: Saunders",,,,
+1102,,,"A","Richard","Sanders","Richard Sanders",,"1613-04-01","1615-07-24",,,,"uncertain first name",,,,
+1103,,,"C","Simon","Sanders","Simon Sanders","Diamond",,"1623-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1104,,,"P","Joseph","Sandes","Joseph Sandes","London",,"1627-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1106,,"9052/4/xx","A","John ","Saunders","John  Saunders","Darling","1614-04-26","1616-08-01",,,,"alternate last name: Sanders",,,,
+1107,,,"C","Richard","Saunders","Richard Saunders","Thomas",,"1620-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1109,,,"C","John","Sayer","John Sayer",,,"1612-01-01",,,,"alternate last name: Sayers; alternate last name: Sayre; alternate last name: Saier; date of probate corrected: ().().12/13; probate date: missing month; probate date: missing day",,,,
+1110,,,"P","Richard","Sayers","Richard Sayers","Globe","1617-01-01","1617-09-13",,,,,,,,
+1111,,,"C","Pasquell","Scoble","Pasquell Scoble","Trades Increase",,"1614-01-01",,,,"alternate last name: Squoble; alternate last name: Squobell; probate date: missing month; probate date: missing day",,,,
+1114,,,"C","John","Seaman","John Seaman",,"1616-08-04","1618-09-21",,,,,,,,
+1115,,"9171/20/224","C","John","Searche","John Searche",,,"1606-11-15",,,,,,,,
+1116,,,"P","Philip","Searle","Philip Searle",,,"1619-01-01",,,,"probate date: missing month; probate date: missing day",,,,1
+1117,,,"P","John","Seawrd","John Seawrd","New Year's Gift",,"1621-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1119,,,"C","John","Sellers","John Sellers","Jonas",,"1623-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1120,,,"C","Richard","Semper","Richard Semper",,"1615-04-20","1615-09-20",,,,,,,,
+1121,,,"P","Thomas","Sendall","Thomas Sendall","Hector",,"1613-11-05",,,,,,,,
+1122,,,"C","Thomas","Seriant","Thomas Seriant","Dragon",,"1620-01-01",,,,"alternate last name: Sergeant; probate date: missing month; probate date: missing day",,,,
+1123,,,"C","Martin","Shankes","Martin Shankes","Anne",,"1625-01-01",,,,"alternate last name: Shanckes; probate date: missing month; probate date: missing day",,,,
+1125,,,"C","Roger","Shelton","Roger Shelton","Solomon",,"1618-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1128,,,"C","John","Sheppard","John Sheppard","Hosiander","1616-06-27","1618-10-06",,,,,,,,
+1129,,,"P","Orchard","Sheppard","Orchard Sheppard","London",,"1627-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1131,,,"C","Isaac","Sherringham","Isaac Sherringham","Clove",,"1620-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1132,,"11/126/131","P","Robert","Sherwood","Robert Sherwood","James","1613-07-19","1615-09-18",,,,"will date: flipped day/month?",,,,
+1133,,"11/108/42v","P","John","Shewell","John Shewell",,,"1606-07-08",,,,,,,,
+1134,,,"P","Andrew","Shilling","Andrew Shilling","London",,"1622-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1135,,"11/124/25","P","Nicholas","Shoemaker","Nicholas Shoemaker","Trades Increase","1613-03-08","1614-07-04","sailor",,,,,,,
+1136,,,"P","Randall","Shotbolte","Randall Shotbolte",,"1608-08-25","1613-11-11",,,,,,,,
+1137,,"11/124/214","P","William","Shrandes","William Shrandes","Trades Increase","1612-01-03","1614-07-21","sailor",,,,,,,
+1139,,,"C","Robert","Simons","Robert Simons","Dragon","1614-01-20","1614-06-22",,,,"alternate last name: Simmonds",,,,
+1140,,"11/107/387V","P","Anthonie","Simpkins","Anthonie Simpkins",,"1604-03-05","1606-06-11",,,,"alternate first name: Anthony",,,,
+1141,,"9171/20/179v","C","David","Simpson","David Simpson","Susan","1603-05-24","1606-06-16",,,,,,,,
+1152,,,"C","Henry","Slapp","Henry Slapp","Peppercorn","1613-08-25","1613-12-07",,,,,,,,
+1154,,,"P","John","Sloper","John Sloper","London",,"1627-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1156,,,"C","William","Smarte","William Smarte",,"1613-03-09","1614-12-16",,,,,,,,
+1159,,,"P","Henry","Smith","Henry Smith","Dragon","1616-06-23","1617-06-18",,,,,,,,
+1160,,,"C","John","Smith","John Smith","Dragon","1612-01-11","1614-06-25",,,,,,,,
+1162,,,"C","John","Smith","John Smith",,"1616-08-17","1617-06-30",,,,,,,,
+1163,,,"P","Richard","Smith","Richard Smith","Bull",,"1628-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1164,,,"C","Robert","Smith","Robert Smith","Unicorn",,"1621-01-01",,,,"probate date: missing month; probate date: missing day; corrected ship name: Unicorne",,,,
+1165,,,"C","Thomas","Smith","Thomas Smith","Globe","1612-06-20","1615-09-11",,,,,,,,
+1166,,,"C","Thomas","Smith","Thomas Smith",,"1616-01-28","1617-10-01",,,,,,,,
+1168,,,"P","Thomas","Smithe","Thomas Smithe","Exchange",,"1624-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1169,,,"C","Roger","Smyth","Roger Smyth","New Year's Gift","1616-06-11","1616-07-11",,,,,,,,
+1170,,"11/126/105","P","George","Smythe","George Smythe","Star","1615-07-02","1615-09-21",,,,"corrected ship name: Starr; probate date: missing month; probate date: missing day",,,,
+1171,,,"P","John","Smythe","John Smythe","Solomon","1615-08-03","1618-09-12",,,,,,,,
+1172,,,"C","Henry","Snooke","Henry Snooke",,,"1623-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1173,,,"C","Thomas","Soeck","Thomas Soeck","Royal James",,"1620-01-01",,,,"alternate last name: Soecke; probate date: missing month; probate date: missing day",,,,
+1175,,"9171/21/299","C","James","Sonderland","James Sonderland","Hector","1609-07-08","1610-10-31",,,,,,,,
+1176,,,"P","Thomas","Soring","Thomas Soring","Royal James",,"1622-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1178,,,"P","John","Sparkes","John Sparkes",,"1618-08-29","1618-09-19",,,,,,,,
+1179,,,"P","Gabriell","Spencer","Gabriell Spencer","Darling","1612-11-22","1614-08-05",,,,,,,,
+1182,,,"C","Henry","Springall","Henry Springall","Charles","1617-11-19","1618-09-17",,,,,,,,
+1183,,,"P","Edward","Springe","Edward Springe",,"1613-08-26","1613-12-24",,,,"earlier will: 24.02.10",,,,
+1185,,,"C","John","Spur","John Spur","Dragon","1613-02-08","1614-06-24",,,,"additional ship: Trades Increase",,,,
+1186,,,"C","Pasquell","Squoble","Pasquell Squoble","Trades Increase","1613-02-14","1614-12-09",,,,,,,,
+1188,,,"P","Robert","Standbery","Robert Standbery","Charles",,"1626-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1189,,,"P","Augustin","Standen","Augustin Standen","Blessing",,"1625-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1190,,"9171/20/178v","C","Roberte","Stanford","Roberte Stanford","Dragon","1605-09-05","1606-06-13",,,,,,,,
+1191,,,"P","Robert","Stanton","Robert Stanton","Hart",,"1628-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1192,,,"C","Thomas","Staples","Thomas Staples","Royal James",,"1621-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1194,,"9052/4/xx","A","Edmund","Starkey","Edmund Starkey","New Year's Gift","1613-11-21","1615-11-04",,,,,,,,
+1195,,,"P","Thomas","Start","Thomas Start","Peppercorn","1615-01-23","1617-09-29",,,,,,,,
+1199,,,"P","William","Steesly","William Steesly","Abigail",,"1626-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1201,,,"C","Thomas","Steevens","Thomas Steevens","Trades Increase","1613-06-01","1614-07-02",,,,,,,,
+1203,,"9052/4/xx","A","David","Stevens","David Stevens",,"1614-06-24","1614-07-02",,,,,,,,
+1204,,"9171/21/266","C","Edward","Stevens","Edward Stevens","Hector","1609-01-10","1610-06-28",,,,,,,,
+1207,,,"C","Roger","Stones","Roger Stones","Thomas","1613-07-20","1614-01-06",,,,"unsure ship name; earlier probate: 30.11.13(sic)",,,,
+1208,,,"P","William","Store","William Store","Charles",,"1629-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1210,,,"P","John","Stoughton","John Stoughton","Darling","1612-11-26","1614-08-03",,,,,,,,
+1211,,,"P","Thomas","Stowers","Thomas Stowers","Charles",,"1626-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1212,,"9171/21/256","C","Andrew","Stragwhan","Andrew Stragwhan","Hector","1609-01-24","1610-06-06",,,,"alternate last name: Strachan",,,,
+1213,,,"C","John","Stronge","John Stronge",,"1613-10-07","1614-07-28",,,,,,,,
+1214,,,"C","William","Styles","William Styles","New Year's Gift",,"1618-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1215,,,"P","Thomas","Suddabie","Thomas Suddabie","Blessing",,"1625-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1216,,"11/130/285","P","Thomas","Sudgewicke","Thomas Sudgewicke","Peppercorn","1617-09-10","1617-09-13",,,,"alternate last name: Sedgewick",,,,
+1217,,"11/102/227","P","Henrie","Sumpter","Henrie Sumpter","Dragon","1603-09-14","1603-10-21",,,,,,,,
+1218,,"11/107/348v","P","Richard","Surflete","Richard Surflete",,"1604-03-01","1606-06-16",,,,"alternate last name: Surfleete",,,,
+1219,,,"C","Edward","Swabie","Edward Swabie","Hector","1614-02-15","1617-06-16",,,,,,,,
+1220,,,"C","William","Swabie","William Swabie","Elizabeth",,"1623-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1222,,,"C","William","Swanley","William Swanley","Unicorn",,"1618-10-05",,,,,,,,
+1223,,,"C","John","Swanne","John Swanne","Trades Increase","1613-04-23","1614-07-08",,,,,,,,
+1225,,"11/126/142","P","Roger","Swetman","Roger Swetman","Globe","1611-01-04","1615-09-07",,,,,,,,
+1226,,,"C","Jas","Swingleherst","Jas Swingleherst","Merchant's Hope",,"1624-01-01",,,,"corrected ship name: Marchant Hope; probate date: missing month; probate date: missing day",,,,
+1228,,,"C","John","Symes","John Symes","Hector","1612-04-13","1614-05-09",,,,"alternate last name: Simms",,,,
+1229,,"9171/22/220v","C","John","Symonds","John Symonds","Hector","1613-08-26","1613-11-13",,,,,,,,
+1230,,,"C","Nathaniell","Symons","Nathaniell Symons","Trades Increase","1613-09-15","1614-07-24",,,,"alternate last name: Simmonds",,,,
+1233,,,"C","Robert","Tailor","Robert Tailor","Dragon","1616-03-18","1617-07-14",,,,,,,,
+1234,,"11/107/338","P","Henry","Tanner","Henry Tanner",,"1605-01-13","1606-06-16",,,,,,,,
+1235,,,"C","John","Tayler","John Tayler","Clove","1616-12-02","1617-07-01",,,,,,,,
+1237,,,"C","John","Taylor","John Taylor","Exchange",,"1623-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1239,,,"C","Roger","Taylor","Roger Taylor",,"1615-03-19","1615-11-24",,,,,,,,
+1241,,,"C","Walter","Teage","Walter Teage","Swann",,"1622-01-01",,,,"alternate last name: Teague",,,,
+1244,,,"P","George","Thomas","George Thomas",,"1611-04-03","1613-10-19",,,,,,,,
+1246,,,"P","Philippe","Thomas","Philippe Thomas","London",,"1627-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1247,,,"P","Rowland","Thomas","Rowland Thomas","Hosiander",,"1619-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1248,,"9171/22/201","C","George","Thompson","George Thompson","Hector","1613-07-08","1613-10-09",,,,,,,,
+1249,,,"P","Thomas","Thompson","Thomas Thompson",,"1618-01-09","1618-09-23",,,,,,,,
+1250,,,"P","Jeffrey","Thorne","Jeffrey Thorne","Dragon","1612-01-21","1614-07-27",,,,,,,,
+1251,,,"P","Thomas","Thorneburrought","Thomas Thorneburrought","London",,"1627-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1252,,,"C","Thomas","Thorneton","Thomas Thorneton",,,"1623-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1256,,,"P","Christopher","Tiffinge","Christopher Tiffinge","Hart",,,,,,"unsure ship name",,,,
+1257,,"11/124/238","P","John","Tillman","John Tillman","Trades Increase","1613-05-22","1614-07-27","sailor",,,,,,,
+1258,,,"C","Jas","Timm","Jas Timm","Charles",,"1618-01-01",,,,"alternate last name: Tym",,,,
+1259,,,"P","Henry","Tincker","Henry Tincker","Bear",,"1624-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1262,,,"P","Thomas","Todd","Thomas Todd","Anne",,"1619-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1263,,,"P","William","Tolkine","William Tolkine","Anne",,"1619-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1265,,"11/123/21","P","John    ","Toocker","John Toocker",,,"1614-01-13","merchant to EIC",,,,,,,
+1268,,,"C","Gabriel","Tottom","Gabriel Tottom","Elizabeth",,"1622-01-01",,,,"alternate last name: Tatton; probate date: missing month; probate date: missing day",,,,
+1269,,,"C","Johan","Toucker/ Tourber","John Toucker junior","Trades Increase",,"1614-06-21","mariner",,,"alternate last name: Tucker",,,,
+1270,,,"C","Richard","Toucker/Turber","Richard Toucker","Trades Increase","1613-04-02","1614-07-23",,,,"brother to John jr on same ship",,,,
+1271,,,"P","John","Traughton","John Traughton","Bull",,"1627-01-01",,,,"alternate last name: Troughton; probate date: missing month; probate date: missing day",,,,
+1272,,,"P","Richard","Traviliere","Richard Traviliere","Charles",,"1618-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1273,,,"C","Richard","Treuer","Richard Treuer","Trades Increase","1613-04-10","1614-06-01",,,,"probate date: missing day",,,,
+1275,,"11/117/11v","P","George","Triplett","George Triplett",,"1609-04-06","1611-07-27",,,,,,,,
+1279,,,"C","Simon","Tucker","Simon Tucker","Royal James",,"1621-01-01",,,,"probate date: missing month; probate date: missing day; corrected ship name: Royal James",,,,
+1280,,,"P","George","Tuckwell","George Tuckwell","Bull",,"1619-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1281,,"11/108/86","P","Thomas","Tudd","Thomas Tudd",,"1604-04-12","1606-07-15",,,,,,,,
+1282,,,"C","John","Turber ","John Turber",,,"1614-07-23",,,,,,,,
+1283,,,"P","Robert","Turberville","Robert Turberville","Elizabeth",,"1624-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1284,,"9171/20/183","C","Barnard","Turnard","Barnard Turnard","Ascension","1603-05-30","1606-06-20",,,,"additional ship: Dragon",,,,
+1285,,"11/128/100","P","Christopher","Turpin","Christopher Turpin","New Year's Gift","1615-10-14","1616-07-11","caulker",,,,,,,
+1286,,,"C","Anthonie","Tuttie","Anthonie Tuttie","Dragon","1616-02-10","1617-06-13",,,,"unsure ship name",,,,
+1288,,,"P","Robert","Twimbloe","Robert Twimbloe","Charles",,"1618-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1289,,"9171/22/225","C","John","Tye","John Tye","Hector","1612-02-14","1613-11-20",,,,,,,,
+1290,,,"P","George","Tyler","George Tyler","Dragon","1617-05-03","1617-06-18",,,,,,,,
+1291,,,"C","Mathewe","Typlen","Mathewe Typlen","Globe","1617-08-19","1617-09-22",,,,,,,,
+1292,,,"C","Jacob","Tyro","Jacob Tyro","Charles","1618-02-25","1618-09-19",,,,"alternate first name: Timm",,,,
+1293,,,"C","Jas","Tyson","Jas Tyson","Charles",,"1621-01-01",,,,"alternate last name: Tison; probate date: missing month; probate date: missing day",,,,
+1296,,,"C","Abraham","Vallis","Abraham Vallis","New Year's Gift",,"1616-01-01",,,,"alternate last name: Vallies; probate date: missing month; probate date: missing day",,,,
+1297,,,"C","Andrew","Vandansker","Andrew Vandansker","Trades Increase","1613-04-24","1614-08-06",,,,,,,,
+1298,,,"C","Robert","Vaughan","Robert Vaughan","Rose","1617-01-15","1618-09-22",,,,"corrected ship name: Rose of London",,,,
+1299,,,"C","Gregory","Venne","Gregory Venne","Thomas","1617-05-14","1618-09-14",,,,,,,,
+1300,,"11/107/388v","P","Robert","Venus","Robert Venus",,"1604-02-17","1606-06-04",,,,,,,,
+1301,,,"C","John","Verdue","John Verdue",,"1606-05-16","1606-06-17",,,,"uncertain first name",,,,
+1302,,"11/107/383v","P","William","Vernute","William Vernute","Dragon","1605-03-03","1606-06-06",,,,,,,,
+1303,,"11/107/336","P","Thomas","Vyans","Thomas Vyans","Dragon","1604-12-17","1606-06-16",,,,,,,,
+1304,,,"C","Robert","Vye","Robert Vye","Clove","1614-09-13","1615-11-16",,,,"additional ship: Concord",,,,
+1306,,,"C","Thomas","Wakeline","Thomas Wakeline","New Year's Gift","1616-06-03","1616-07-13",,,,,,,,
+1308,,,"C","John","Walker","John Walker","Anne",,"1619-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1312,,"11/108/39","P","Robert","Wallis","Robert Wallis",,"1604-01-31","1606-07-15",,,,,,,,
+1313,,,"P","Henry","Walter","Henry Walter","Hope","1618-03-15","1618-09-28",,,,,,,,
+1315,,,"P","Gilbert","Waltham","Gilbert Waltham",,"1613-09-02","1613-12-23",,,,,,,,
+1316,,,"C",,"Wardle","Wardle",,,"1698-01-01",,,,"missing first name; alternate last name: Wardell; probate date: missing month; probate date: missing day",,,,
+1319,,"11/126/176v","P","John","Washer","John Washer","James","1613-04-22","1615-10-16",,,,,,,,
+1320,,,"P","John","Washington","John Washington","Charles","1618-04-25","1618-09-29",,,,,,,,
+1322,,,"P","William","Watkins","William Watkins","London",,"1627-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1324,,,"C","Peter","Watson","Peter Watson","Hector","1613-08-04","1614-01-05",,,,,,,,1
+1326,,,"C","Roger","Watson","Roger Watson","New Year's Gift","1616-06-06","1616-07-17",,,,,,,,
+1329,,,"C","Robert","Way","Robert Way","Eagle",,"1623-01-01",,,,"alternate last name: Wey; alternate last name: Wye; probate date: missing month; probate date: missing day",,,,
+1331,,,"C","Jas","Webb","Jas Webb","Clove",,"1622-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1332,,"11/102/318v","P","John","Webb","John Webb","Dragon","1601-09-04","1603-11-03",,,,,,,,
+1333,,,"P","Rowland","Webb","Rowland Webb",,"1611-09-14","1614-08-30",,,,,,,,
+1334,,,"C","William","Webb","William Webb",,"1617-10-12","1618-09-17",,,,,,,,
+1335,,,"P","James","Webber","James Webber","Clove",,"1622-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1336,,,"C","Thomas","Webstar","Thomas Webstar",,,"1619-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1337,,,"C","Richard","Weekes","Richard Weekes","Star",,"1622-01-01",,,,"corrected ship name: Starr; probate date: missing month; probate date: missing day",,,,
+1339,,,"P","George","Weigh","George Weigh","Charles",,"1627-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1342,,,"C","David","Welsh","David Welsh","Discovery",,"1625-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1343,,,"C","Stephen","Welshe","Stephen Welshe","Royal James",,"1621-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1344,,,"C","Henry","Weme","Henry Weme","Clove","1616-12-15","1617-07-01",,,,"alternate last name: Wemys",,,,
+1345,,"11/123/721","P","obert","Wentworthe","obert Wentworthe",,,"1614-06-28","merchant",,,,,,,
+1346,,"11/102/157","P","Henrie","West","Henrie West","Hector","1603-05-30","1603-10-15",,,,,,,,
+1347,,,"P","Thomas","West","Thomas West","Royal James",,"1621-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1349,,,"P","Richard","Westbye","Richard Westbye",,,"1619-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1350,,,"P","Henry","Westway","Henry Westway","Lion",,"1627-01-01",,,,"corrected ship name: Lyon; probate date: missing month; probate date: missing day",,,,
+1351,,,"P","William","Westwood","William Westwood",,,"1614-07-05",,,,"uncertain first name",,,,
+1352,,,"P","Thomas","Wharton","Thomas Wharton","Floriander",,"1618-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1354,,,"C","Cuthbert","Wherry","Cuthbert Wherry","Supply",,"1622-01-01",,,,"alternate last name: Whary; alternate last name: Wharie; probate date: missing month; probate date: missing day",,,,
+1355,,,"C","Thomas","Whichales","Thomas Whichales","Charles","1616-01-27","1618-09-16",,,,"alternate last name: Witchell",,,,
+1357,,,"P","James ","White","James  White","Royal James",,"1621-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1358,,"9171/20/197v","C","Roger","White","Roger White","Dragon","1605-07-27","1606-08-12",,,,"unsure ship name",,,,
+1359,,,"C","Thomas","White","Thomas White","James","1612-01-21","1615-09-15",,,,,,,,
+1360,,,"C","William","White","William White","Expedition",,"1617-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1361,,,"C","Nicholas","Whitfeild","Nicholas Whitfeild","James","1613-01-15","1615-09-22",,,,,,,,
+1362,,"11/101/398v","P","William","Whitinge","William Whitinge","Ascension","1601-09-04","1603-07-01",,,,,,,,
+1366,,,"P","Thomas","Whittington","Thomas Whittington",,"1610-03-19","1614-06-23",,,,,,,,
+1367,,,"C","William","Whyte","William Whyte","Expedition","1616-11-13","1617-06-16",,,,,,,,
+1368,,"9171/20/193","C","Robert","Wickes","Robert Wickes","Tiger","1604-10-21","1606-07-15",,,,,,,,
+1369,,,"P","Richard","Wickham","Richard Wickham","Clove",,"1621-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1370,,,"P","Alexander","Wicksted","Alexander Wicksted",,"1610-03-21","1613-10-22",,,,,,,,
+1373,,,"C","Richard","Wiles","Richard Wiles",,,"1610-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1374,,,"P","John","Wilkenson","John Wilkenson",,"1613-08-19","1613-12-14",,,,,,,,
+1375,,,"P","John","Wilkin","John Wilkin","Royal James",,"1621-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1376,,,"P","Morris","Wilkinson","Morris Wilkinson","London",,"1627-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1377,,"11/102/214","P","Georg","Wilkinsonne","Georg Wilkinsonne","Dragon","1602-12-08","1603-10-08",,,,,,,,
+1378,,,"C","William","Willams","William Willams","Trades Increase",,"1614-01-01",,,,"alternate last name: Williames; probate date: missing month; probate date: missing day",,,,
+1379,,,"C","Arthur","Willard","Arthur Willard","Anne",,"1619-01-01",,,,"alternate last name: Wyllard; probate date: missing month; probate date: missing day",,,,
+1380,,,"C","William","Williames","William Williames","Trades Increase","1613-04-16","1614-08-30",,,,,,,,
+1381,,,"P","Edward","Williams","Edward Williams","Peppercorn","1617-07-28","1617-09-13",,,,"additional ship: Globe",,,,
+1382,,,"C","Edward","Williams","Edward Williams",,"1613-01-12","1614-12-30",,,,,,,,
+1383,,"11/130/282","P","Edward ","Williams","Edward  Williams","Peppercorn",,"1617-09-12","bos'n",,,,,,,
+1384,,,"C","ffrances","Williams","ffrances Williams",,"1614-02-25","1614-12-13",,,,,,,,
+1386,,,"C","Frances","Williams","Frances Williams",,"1614-02-25","1614-12-13",,,,,,,,
+1387,,,"P","George","Williams","George Williams","Royal James",,"1621-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1388,,,"C","John","Williams","John Williams","Clove","1604-02-19","1614-12-22",,,,,,,,
+1389,,"11/126/111v","P","John","Williams","John Williams",,"1610-03-06","1615-09-30",,,,,,,,
+1391,,,"C","Thomas","Williams","Thomas Williams",,"1615-12-07","1617-09-26",,,,,,,,
+1392,,,"C","John","Willis","John Willis",,"1615-08-23","1615-09-13",,,,,,,,
+1394,,,"C","Roger","Willson","Roger Willson","New Year's Gift","1616-05-28","1616-07-12",,,,,,,,
+1396,,,"C","George","Wilson","George Wilson","New Year's Gift","1619-09-15","1621-01-08",,,,,,,,
+1397,,"11/107/387v","P","John","Wilson","John Wilson","Emanuell","1605-09-05","1621-10-16",,,,,,,,
+1398,,,"C","Roger","Wilson","Roger Wilson","New Year's Gift",,"1616-01-01",,,,"alternate last name: Willson; probate date: missing month; probate date: missing day",,,,
+1400,,,"C","John","Windresse","John Windresse","Dragon","1613-10-17","1614-07-14",,,,,,,,
+1401,,,"C","Robert","Winnie","Robert Winnie","Expedition","1617-01-05","1617-06-13",,,,,,,,
+1404,,"9171/21/200","C","George","Winter","George Winter","Hopewell","1609-08-20","1609-11-23",,,,,,,,
+,,"11/152/835","P","Walter ","Winter","Walter Winter ","Hart",,"1627-12-12","merchant tailor",,,,,,,
+1405,,"11/102/187","P","William","Winter","William Winter","Dragon","1602-02-26","1603-10-11",,,,,,,,
+1406,,"11/128/171","P","John","Wise","John Wise","New Year's Gift","1616-05-20","1616-08-05","sailor",,,,,,,
+1407,,,"P","Nicholas","Withen","Nicholas Withen","Dolphin",,"1628-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1408,,"9171/20/172","C","Charles","Wood","Charles Wood","Dragon","1605-11-07","1606-05-31",,,,,,,,
+1409,,,"C","Elias","Wood","Elias Wood","Discovery",,"1625-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1410,,,"C","Gwye","Wood","Gwye Wood","Peppercorn","1616-03-18","1617-09-13",,,,"alternate first name: Gwido",,,,
+1411,,,"C","John","Wood","John Wood","Jonas",,"1623-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1412,,,"C","Thomas","Wood","Thomas Wood","Lion",,"1620-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1413,,,"C","Thomas","Woode","Thomas Woode","Clove",,"1623-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1415,,,"P","Walter","Woodgreene","Walter Woodgreene",,"1603-11-20","1603-11-29",,,,,,,,
+1417,,,"C","Thomas","Woodyard","Thomas Woodyard","Solomon","1614-02-08","1618-09-17",,,,,,,,
+1418,,,"P","Richard","Woolters","Richard Woolters","Charles","1615-03-16","1618-09-21",,,,,,,,
+1419,,,"C","Thomas","Worsley","Thomas Worsley",,"1616-09-02","1617-07-04",,,,"uncertain first name",,,,
+1420,,,"C","Edward","Worsopp","Edward Worsopp","Royal James","1619-01-09","1622-08-04",,,,,,,,
+1422,,,"C","Richard","Wraxall","Richard Wraxall",,"1618-01-30","1620-03-07",,,,,,,,
+1423,,,"P","Christopher","Wright","Christopher Wright","Jonas",,"1626-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1424,,,"C","Peter","Wright","Peter Wright","Clove",,"1625-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1425,,,"P","John","Wrighte","John Wrighte","Hector","1603-08-08","1613-10-30",,,,,,,,
+1426,,,"P","John","Wrighte","John Wrighte","Hector","1603-08-08","1613-10-30",,,,,,,,
+1427,,,"C","John","Wrighte","John Wrighte","Thomas",,"1613-11-12",,,,"unsure ship name",,,,
+1428,,,"C","John","Wrighte","John Wrighte","Thomas",,"1613-11-12",,,,,,,,
+1429,,,"P","William","Wyet","William Wyet","Globe",,"1623-01-01","quartermaster",,,"probate date: missing month; probate date: missing day",,,,
+1430,,,"C","Seabrion","Wynon","Seabrion Wynon","Royal James",,"1623-01-01",,,,"probate date: missing month; probate date: missing day",,,,
+1431,,"11/138/205","P","Richard","Yard","Richard Yard","Peppercorn",,"1621-10-04","master",,,,"Richard Yard",,,

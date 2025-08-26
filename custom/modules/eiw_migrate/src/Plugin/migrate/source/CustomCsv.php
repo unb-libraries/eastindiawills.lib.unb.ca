@@ -126,7 +126,7 @@ class CustomCsv extends CSV {
       $tokens = explode(', ', $tags);
 
       foreach($tokens as $tag) {        
-        // Map, collect, and unset court values.
+        // Map and collect court values.
         if (strtolower($tag) == 'a') {
           $court = 'Archdeaconry Court of London';
         }
@@ -204,6 +204,35 @@ class CustomCsv extends CSV {
    * Process Tropy migration row.
    */
   public function processGs(&$row) {
+    // Process court.
+    $court = $row->getSourceProperty('court');
+    
+    if ($court) {
+      // Map and collect court values.
+      if (strtolower($court) == 'a') {
+        $court = 'Archdeaconry Court of London';
+      }
+      elseif (strtolower($court) == 'c') {
+        $court = 'Commissary Court of London';
+      }
+      elseif (in_array(strtolower($court), ['p', 'pcc'])) {
+        $court = 'Prerogative Court of Canterbury';
+      }
+      else {
+        $court = NULL;
+      }
+
+      if ($court) {
+        $court_tid = $this->termByName($court, 'eiw_courts');
+        
+        if ($court_tid) {
+          $row->setSourceProperty(
+            'court_ref',
+            $court_tid
+          );
+        }
+      }
+    }
   }
 
   /**
