@@ -1,0 +1,22 @@
+uuid: 5ec8b11e-719d-417e-9662-445304f17f9e
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.eiw_voyage
+id: node.eiw_voyage.promote
+field_name: promote
+entity_type: node
+bundle: eiw_voyage
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
