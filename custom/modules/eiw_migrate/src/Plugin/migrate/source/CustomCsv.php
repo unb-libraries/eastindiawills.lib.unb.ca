@@ -283,7 +283,6 @@ class CustomCsv extends CSV {
       },
       ARRAY_FILTER_USE_KEY
     );
-    $this->tdump('names', $names);
     // Iterate and populate additional names.
     foreach($names as $label => $name) {
       $label = ucwords($this->snakeToSentence($label));
