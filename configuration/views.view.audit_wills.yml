@@ -369,55 +369,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        nothing:
-          id: nothing
-          table: views
-          field: nothing
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: custom
-          label: Voyage
-          exclude: false
-          alter:
-            alter_text: true
-            text: "{% if field_voyage %}\r\nYes\r\n{% else %}\r\nNo\r\n{% endif %}"
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: false
         field_document_images:
           id: field_document_images
           table: node__field_document_images
@@ -716,11 +667,195 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        nothing_2:
-          id: nothing_2
-          table: views
-          field: nothing
-          plugin_id: custom
+        field_voyage_1:
+          id: field_voyage_1
+          table: paragraph__field_voyage
+          field: field_voyage
+          relationship: field_will_voyages
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: Voyage
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: true
+            path: 'audit-wills/{{ field_voyage_1__target_id }}'
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_role_1:
+          id: field_role_1
+          table: paragraph__field_role
+          field: field_role
+          relationship: field_will_voyages
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: Role
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: true
+            path: 'audit-wills/all/all/{{ field_role_1__target_id }}'
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_ship_1:
+          id: field_ship_1
+          table: paragraph__field_ship
+          field: field_ship
+          relationship: field_will_voyages
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: Ship
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: true
+            path: 'audit-wills/all/{{ field_ship_1__target_id }}'
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
       pager:
         type: full
         options:
@@ -806,7 +941,7 @@ display:
             title_enable: false
             title: All
           title_enable: true
-          title: 'Audit Wills by Voyage: {{ arguments.field_voyage_target_id }}'
+          title: 'Wills by Voyage: {{ arguments.field_voyage_target_id }}'
           default_argument_type: fixed
           default_argument_options:
             argument: all
@@ -840,7 +975,7 @@ display:
             title_enable: false
             title: All
           title_enable: true
-          title: 'Audit Wills by Ship: {{ arguments.field_ship_target_id }}'
+          title: 'Wills by Ship: {{ arguments.field_ship_target_id }}'
           default_argument_type: fixed
           default_argument_options:
             argument: ''
@@ -874,7 +1009,7 @@ display:
             title_enable: false
             title: All
           title_enable: true
-          title: 'Audit Wills by Role: {{ arguments.field_role_target_id }}'
+          title: 'Wills by Role: {{ arguments.field_role_target_id }}'
           default_argument_type: fixed
           default_argument_options:
             argument: ''
