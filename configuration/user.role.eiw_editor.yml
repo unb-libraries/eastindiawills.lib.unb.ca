@@ -16,6 +16,7 @@ dependencies:
     - system
     - taxonomy
     - toolbar
+    - view_unpublished
 id: eiw_editor
 label: 'EIW Editor'
 weight: 2
@@ -54,6 +55,7 @@ permissions:
   - 'revert eiw_ship revisions'
   - 'revert eiw_voyage revisions'
   - 'revert eiw_will revisions'
+  - 'view any unpublished content'
   - 'view eiw_ship revisions'
   - 'view eiw_voyage revisions'
   - 'view eiw_will revisions'

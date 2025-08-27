@@ -39,6 +39,7 @@ module:
   twig_tweak: 0
   update: 0
   user: 0
+  view_unpublished: 0
   views_ui: 0
   externalauth: 10
   views: 10
