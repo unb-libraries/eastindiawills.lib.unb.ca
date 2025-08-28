@@ -20,7 +20,7 @@ function datetime_settings($element) {
   if (in_array($element['#parents'][0], ['field_date_of_probate', 'field_date_of_will'])) {
     // Set HTML5 range attributes. Prevents defaulting to loaded value.
     $element['date']['#attributes']['min'] = '1500-01-01';
-    $element['date']['#attributes']['max'] = '1700-01-01';
+    $element['date']['#attributes']['max'] = '2025-01-01';
   }
 
 return $element;
