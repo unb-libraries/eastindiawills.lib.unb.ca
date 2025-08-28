@@ -43,9 +43,9 @@ function eiw_core_node_presave($entity) {
  */
 function eiw_core_form_node_eiw_will_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
   $node = $form_state->getFormObject()->getEntity();
-
+  // Set default date.
   if ($node->isNew()) {
-    $default_date = new DrupalDateTime(date('Y') . '-01-01');
+    $default_date = '1500-01-01';
 
     if (isset($form['field_date_of_will']['widget'][0]['value'])) {
       $form['field_date_of_will']['widget'][0]['value']['#default_value'] = $default_date;
