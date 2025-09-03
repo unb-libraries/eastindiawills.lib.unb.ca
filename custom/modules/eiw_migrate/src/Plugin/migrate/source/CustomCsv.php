@@ -33,6 +33,7 @@ class CustomCsv extends CSV {
     } 
     // Skip row if last_name is missing or empty.
     if (!$row->getSourceProperty('last_name')) {
+      $this->tdump('skipped', $row->getSourceProperty('row'));
       return FALSE;
     }
     // Otherwise, process as normal.
