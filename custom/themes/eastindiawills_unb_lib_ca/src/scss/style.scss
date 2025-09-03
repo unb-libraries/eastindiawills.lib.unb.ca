@@ -7,3 +7,33 @@
 
 // Include bootstrap.
 @import '../../../../../vendor/drupal/bootstrap5/scss/style';
+
+#block-eastindiawills-unb-lib-ca-content {
+  .node--type-eiw-will.node--view-mode-full {
+    .field {
+      margin-top: .5rem;
+    }
+  }
+  .paragraph--type--eiw-will-voyage.paragraph--view-mode--default {
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    .field {
+      margin-top: 0 !important;
+      .field__label {
+        display: inline-block;
+        font-weight: normal;
+        &::after {
+          content: ':';
+        }
+      }
+      .field__item {
+        display: inline-block;
+        margin-left: .2rem;
+      }
+    }
+  }
+  .view-id-audit_wills.view-display-id-page_1 {
+    .view-content {
+    }
+  }
+}

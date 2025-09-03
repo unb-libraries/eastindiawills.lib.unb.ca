@@ -6,9 +6,7 @@ dependencies:
     - field.storage.node.field_date_of_probate
     - field.storage.node.field_date_of_will
     - field.storage.node.field_document_images
-    - field.storage.paragraph.field_role
-    - field.storage.paragraph.field_ship
-    - field.storage.paragraph.field_voyage
+    - field.storage.node.field_will_voyages
     - node.type.eiw_will
   module:
     - datetime
@@ -481,16 +479,16 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: false
-        field_voyage:
-          id: field_voyage
-          table: paragraph__field_voyage
-          field: field_voyage
-          relationship: field_will_voyages
+        field_will_voyages:
+          id: field_will_voyages
+          table: node__field_will_voyages
+          field: field_will_voyages
+          relationship: none
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: Voyage
-          exclude: true
+          label: 'Will Voyages'
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -522,7 +520,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -531,195 +529,9 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: entity_reference_entity_id
-          settings: {  }
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_ship:
-          id: field_ship
-          table: paragraph__field_ship
-          field: field_ship
-          relationship: field_will_voyages
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: Ship
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_entity_id
-          settings: {  }
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_role:
-          id: field_role
-          table: paragraph__field_role
-          field: field_role
-          relationship: field_will_voyages
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: Role
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_entity_id
-          settings: {  }
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_voyage_1:
-          id: field_voyage_1
-          table: paragraph__field_voyage
-          field: field_voyage
-          relationship: field_will_voyages
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: Voyage
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: true
-            path: 'audit-wills/{{ field_voyage_1__target_id }}'
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
+          type: entity_reference_entity_view
           settings:
-            link: false
+            view_mode: default
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -728,133 +540,7 @@ display:
           delta_reversed: false
           delta_first_last: false
           multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_role_1:
-          id: field_role_1
-          table: paragraph__field_role
-          field: field_role
-          relationship: field_will_voyages
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: Role
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: true
-            path: 'audit-wills/all/all/{{ field_role_1__target_id }}'
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: false
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_ship_1:
-          id: field_ship_1
-          table: paragraph__field_ship
-          field: field_ship
-          relationship: field_will_voyages
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: Ship
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: true
-            path: 'audit-wills/all/{{ field_ship_1__target_id }}'
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: false
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
+          separator: ''
           field_api_classes: false
       pager:
         type: full
@@ -1085,16 +771,22 @@ display:
             field_date_of_will: field_date_of_will
             status: status
             changed: changed
-            nothing: nothing
             field_document_images: field_document_images
             nothing_1: nothing_1
+            field_will_voyages: field_will_voyages
+            field_voyage: field_voyage
+            field_ship: field_ship
+            field_role: field_role
+            field_voyage_1: field_voyage_1
+            field_role_1: field_role_1
+            field_ship_1: field_ship_1
           default: changed
           info:
             title:
               sortable: true
               default_sort_order: asc
               align: ''
-              separator: ''
+              separator: '---'
               empty_column: false
               responsive: ''
             field_date_of_probate:
@@ -1125,11 +817,6 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
-            nothing:
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
             field_document_images:
               sortable: false
               default_sort_order: asc
@@ -1138,6 +825,55 @@ display:
               empty_column: false
               responsive: ''
             nothing_1:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_will_voyages:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_voyage:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_ship:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_role:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_voyage_1:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_role_1:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_ship_1:
+              sortable: false
+              default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
@@ -1204,9 +940,7 @@ display:
         - 'config:field.storage.node.field_date_of_probate'
         - 'config:field.storage.node.field_date_of_will'
         - 'config:field.storage.node.field_document_images'
-        - 'config:field.storage.paragraph.field_role'
-        - 'config:field.storage.paragraph.field_ship'
-        - 'config:field.storage.paragraph.field_voyage'
+        - 'config:field.storage.node.field_will_voyages'
   page_1:
     id: page_1
     display_title: Page
@@ -1228,6 +962,4 @@ display:
         - 'config:field.storage.node.field_date_of_probate'
         - 'config:field.storage.node.field_date_of_will'
         - 'config:field.storage.node.field_document_images'
-        - 'config:field.storage.paragraph.field_role'
-        - 'config:field.storage.paragraph.field_ship'
-        - 'config:field.storage.paragraph.field_voyage'
+        - 'config:field.storage.node.field_will_voyages'
