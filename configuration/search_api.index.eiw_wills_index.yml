@@ -1,0 +1,39 @@
+uuid: ec4b83a6-eb0d-4bea-9ab4-db84620f04cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.server.eiw_local_server
+  module:
+    - node
+id: eiw_wills_index
+name: 'EIW Wills Index'
+description: ''
+read_only: false
+field_settings: {  }
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - eiw_will
+    languages:
+      default: false
+      selected:
+        - en
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  custom_value: {  }
+  entity_type: {  }
+  language_with_fallback: {  }
+  rendered_item: {  }
+tracker_settings:
+  default:
+    indexing_order: lifo
+options:
+  cron_limit: 50
+  delete_on_fail: true
+  index_directly: true
+  track_changes_in_references: true
+server: eiw_local_server

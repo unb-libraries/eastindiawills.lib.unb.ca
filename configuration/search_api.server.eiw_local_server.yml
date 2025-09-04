@@ -1,0 +1,15 @@
+uuid: 3bb034f0-40c0-47e9-a778-e62329de8042
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_db
+id: eiw_local_server
+name: 'EIW Local Server'
+description: ''
+backend: search_api_db
+backend_config:
+  database: 'default:default'
+  min_chars: 3
+  matching: partial
+  phrase: bigram
