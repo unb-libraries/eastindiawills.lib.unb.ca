@@ -13,6 +13,7 @@ dependencies:
     - taxonomy.vocabulary.eiw_source_types
   module:
     - node
+    - override_node_options
     - system
     - taxonomy
     - toolbar
@@ -52,11 +53,12 @@ permissions:
   - 'edit terms in eiw_marital_statuses'
   - 'edit terms in eiw_roles'
   - 'edit terms in eiw_source_types'
+  - 'enter eiw_will revision log entry'
+  - 'override eiw_will published option'
   - 'revert eiw_ship revisions'
   - 'revert eiw_voyage revisions'
   - 'revert eiw_will revisions'
   - 'view any unpublished content'
-  - 'view any unpublished eiw_will content'
   - 'view eiw_ship revisions'
   - 'view eiw_voyage revisions'
   - 'view eiw_will revisions'

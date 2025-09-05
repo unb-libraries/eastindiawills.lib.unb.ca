@@ -27,6 +27,7 @@ module:
   mysql: 0
   node: 0
   noreqnewpass: 0
+  override_node_options: 0
   page_cache: 0
   path_alias: 0
   redis: 0
