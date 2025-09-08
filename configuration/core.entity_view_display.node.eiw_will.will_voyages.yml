@@ -1,9 +1,9 @@
-uuid: 2f337ab8-8932-4c0a-9131-0f4737a2bc62
+uuid: 1450c701-bf7d-4fda-a74e-72c0ae6a4f39
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.will_voyages
     - field.field.node.eiw_will.field_additional_names
     - field.field.node.eiw_will.field_court
     - field.field.node.eiw_will.field_date_of_probate
@@ -27,15 +27,19 @@ dependencies:
     - node.type.eiw_will
   module:
     - user
-id: node.eiw_will.teaser
+id: node.eiw_will.will_voyages
 targetEntityType: node
 bundle: eiw_will
-mode: teaser
+mode: will_voyages
 content:
-  links:
-    settings: {  }
+  field_will_voyages:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: true
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
   field_additional_names: true
@@ -55,7 +59,7 @@ hidden:
   field_summary: true
   field_transcription: true
   field_tropy_title: true
-  field_will_voyages: true
   field_year_only_probate: true
   field_year_only_will: true
+  links: true
   search_api_excerpt: true

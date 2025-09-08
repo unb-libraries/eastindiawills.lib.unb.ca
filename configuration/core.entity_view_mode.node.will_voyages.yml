@@ -1,0 +1,11 @@
+uuid: cbf6029d-03ba-4d08-a748-07a4f8977c78
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.will_voyages
+label: 'Will Voyages'
+description: ''
+targetEntityType: node
+cache: true

@@ -3,14 +3,89 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.will_voyages
+    - field.storage.node.field_additional_names
+    - field.storage.node.field_court
+    - field.storage.node.field_keywords
+    - field.storage.node.field_marital_status
+    - field.storage.node.field_shipboard_will
+    - field.storage.node.field_source_type
     - search_api.server.eiw_local_server
   module:
+    - eiw_core
     - node
 id: eiw_wills_index
 name: 'EIW Wills Index'
 description: ''
 read_only: false
-field_settings: {  }
+field_settings:
+  field_additional_names:
+    label: 'Additional Names'
+    datasource_id: 'entity:node'
+    property_path: field_additional_names
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_additional_names
+  field_court:
+    label: Court
+    datasource_id: 'entity:node'
+    property_path: field_court
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_court
+  field_keywords:
+    label: Keywords
+    datasource_id: 'entity:node'
+    property_path: field_keywords
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_keywords
+  field_marital_status:
+    label: 'Marital Status'
+    datasource_id: 'entity:node'
+    property_path: field_marital_status
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_marital_status
+  field_shipboard_will:
+    label: 'Shipboard Will'
+    datasource_id: 'entity:node'
+    property_path: field_shipboard_will
+    type: boolean
+    dependencies:
+      config:
+        - field.storage.node.field_shipboard_will
+  field_source_type:
+    label: 'Source Type'
+    datasource_id: 'entity:node'
+    property_path: field_source_type
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_source_type
+  index_will_voyages:
+    label: 'Will Voyages'
+    property_path: rendered_item
+    type: text
+    configuration:
+      roles:
+        - anonymous
+      view_mode:
+        'entity:node':
+          ':default': ''
+          eiw_will: will_voyages
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: string
+    dependencies:
+      module:
+        - node
 datasource_settings:
   'entity:node':
     bundles:
@@ -26,6 +101,7 @@ processor_settings:
   aggregated_field: {  }
   custom_value: {  }
   entity_type: {  }
+  index_probate_year: {  }
   language_with_fallback: {  }
   rendered_item: {  }
 tracker_settings:

@@ -13,9 +13,9 @@ use Drupal\search_api\Processor\ProcessorProperty;
  * Adds sepparate integer year field to indexed legal articles.
  *
  * @SearchApiProcessor(
- *   id = "index_article_year",
- *   label = @Translation("Will Year Index"),
- *   description = @Translation("Adds sepparate integer year field to indexed legal articles."),
+ *   id = "index_probate_year",
+ *   label = @Translation("Year of Probate Index"),
+ *   description = @Translation("Adds sepparate integer year of probate field to indexed wills."),
  *   stages = {
  *     "add_properties" = 0,
  *   },
@@ -23,7 +23,7 @@ use Drupal\search_api\Processor\ProcessorProperty;
  *   hidden = true,
  * )
  */
-class IndexArticleYear extends ProcessorPluginBase {
+class IndexProbateYear extends ProcessorPluginBase {
 
   /**
    * Only enabled for node indexes.
@@ -48,13 +48,13 @@ class IndexArticleYear extends ProcessorPluginBase {
 
     if (!$datasource) {
       $definition = [
-        'label' => $this->t('Will Probate Year'),
-        'description' => $this->t('Year the will was put in effect.'),
+        'label' => $this->t('Probate Year'),
+        'description' => $this->t('Probate Year.'),
         'type' => 'integer',
         'is_list' => FALSE,
         'processor_id' => $this->getPluginId(),
       ];
-      $properties['field_date_of_probate'] = new ProcessorProperty($definition);
+      $properties['field_year_of_probate'] = new ProcessorProperty($definition);
     }
 
     return $properties;
@@ -69,13 +69,13 @@ class IndexArticleYear extends ProcessorPluginBase {
     if ($node instanceof NodeInterface) {
       // Only apply to will nodes.
       if ($node->bundle() == 'eiw_will') {
-        // Years published.
+        // Year published.
         $fields = $this->getFieldsHelper()
-          ->filterForPropertyPath($item->getFields(), NULL, 'field_date_of_probate');
+          ->filterForPropertyPath($item->getFields(), NULL, 'field_year_of_probate');
 
         foreach ($fields as $field) {
-          if (!empty($node->get('field_date')->date)) {
-            $year = (int) $node->get('field_date')->date->format('Y');
+          if (!empty($node->get('field_date_of_probate')->date)) {
+            $year = (int) $node->get('field_date_of_probate')->date->format('Y');
             $field->addValue($year);
           }
         }
