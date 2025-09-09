@@ -67,6 +67,10 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_source_type
+  field_year_of_probate:
+    label: 'Probate Year'
+    property_path: field_year_of_probate
+    type: integer
   index_will_voyages:
     label: 'Will Voyages'
     property_path: rendered_item
@@ -100,6 +104,7 @@ processor_settings:
   add_url: {  }
   aggregated_field: {  }
   custom_value: {  }
+  eiw_core_index_will_role_names: {  }
   entity_type: {  }
   index_probate_year: {  }
   language_with_fallback: {  }
