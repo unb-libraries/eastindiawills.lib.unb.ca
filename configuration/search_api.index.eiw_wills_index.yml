@@ -19,9 +19,25 @@ name: 'EIW Wills Index'
 description: ''
 read_only: false
 field_settings:
+  changed:
+    label: Changed
+    datasource_id: 'entity:node'
+    property_path: changed
+    type: date
+    dependencies:
+      module:
+        - node
   eiw_will_role_names:
     label: 'Will Role Names'
     property_path: eiw_will_role_names
+    type: string
+  eiw_will_ship_names:
+    label: 'Will Ship Names'
+    property_path: eiw_will_ship_names
+    type: string
+  eiw_will_voyage_names:
+    label: 'Will Voyage Names'
+    property_path: eiw_will_voyage_names
     type: string
   field_additional_names:
     label: 'Additional Names'
@@ -109,6 +125,8 @@ processor_settings:
   aggregated_field: {  }
   custom_value: {  }
   eiw_core_index_will_role_names: {  }
+  eiw_core_index_will_ship_names: {  }
+  eiw_core_index_will_voyage_names: {  }
   entity_type: {  }
   index_probate_year: {  }
   language_with_fallback: {  }
