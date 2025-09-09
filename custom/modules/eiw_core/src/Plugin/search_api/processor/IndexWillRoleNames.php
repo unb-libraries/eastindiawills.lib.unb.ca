@@ -30,8 +30,9 @@ class IndexWillRoleNames extends ProcessorPluginBase {
    */
   public function getPropertyDefinitions(DatasourceInterface $datasource = NULL) {
     $properties = [];
-    // Only add to node datasource.
-    if ($datasource && $datasource->getEntityTypeId() === 'node') {
+    $type = $datasource ? $datasource->getEntityTypeId() : 'No datasource';
+    
+    if (!$datasource || $datasource->getEntityTypeId() === 'node') {
       $definition = [
         'label' => $this->t('Will Role Names'),
         'description' => $this->t('All role names referenced by this will via voyages.'),
@@ -70,13 +71,13 @@ class IndexWillRoleNames extends ProcessorPluginBase {
           }
         }
       }
-
       // Remove duplicates and add to the index.
       $role_names = array_unique($role_names);
 
       if (!empty($role_names)) {
         $fields = $this->getFieldsHelper()
           ->filterForPropertyPath($item->getFields(), NULL, 'eiw_will_role_names');
+        
         foreach ($fields as $field) {
           foreach ($role_names as $name) {
             $field->addValue($name);

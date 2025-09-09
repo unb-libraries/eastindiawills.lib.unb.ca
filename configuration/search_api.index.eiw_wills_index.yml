@@ -19,6 +19,10 @@ name: 'EIW Wills Index'
 description: ''
 read_only: false
 field_settings:
+  eiw_will_role_names:
+    label: 'Will Role Names'
+    property_path: eiw_will_role_names
+    type: string
   field_additional_names:
     label: 'Additional Names'
     datasource_id: 'entity:node'

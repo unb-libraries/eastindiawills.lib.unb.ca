@@ -36,6 +36,7 @@ class IndexProbateYear extends ProcessorPluginBase {
         return TRUE;
       }
     }
+    
     return FALSE;
   }
 
@@ -43,7 +44,6 @@ class IndexProbateYear extends ProcessorPluginBase {
    * {@inheritdoc}
    */
   public function getPropertyDefinitions(DatasourceInterface $datasource = NULL) {
-
     $properties = [];
 
     if (!$datasource) {
