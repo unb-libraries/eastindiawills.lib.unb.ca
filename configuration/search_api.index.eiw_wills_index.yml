@@ -5,9 +5,6 @@ dependencies:
   config:
     - core.entity_view_mode.node.will_voyages
     - field.storage.node.field_additional_names
-    - field.storage.node.field_court
-    - field.storage.node.field_keywords
-    - field.storage.node.field_marital_status
     - field.storage.node.field_shipboard_will
     - field.storage.node.field_source_type
     - search_api.server.eiw_local_server
@@ -47,30 +44,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_additional_names
-  field_court:
-    label: Court
-    datasource_id: 'entity:node'
-    property_path: field_court
-    type: integer
-    dependencies:
-      config:
-        - field.storage.node.field_court
-  field_keywords:
-    label: Keywords
-    datasource_id: 'entity:node'
-    property_path: field_keywords
-    type: integer
-    dependencies:
-      config:
-        - field.storage.node.field_keywords
-  field_marital_status:
-    label: 'Marital Status'
-    datasource_id: 'entity:node'
-    property_path: field_marital_status
-    type: integer
-    dependencies:
-      config:
-        - field.storage.node.field_marital_status
   field_shipboard_will:
     label: 'Shipboard Will'
     datasource_id: 'entity:node'
@@ -106,7 +79,7 @@ field_settings:
     label: Title
     datasource_id: 'entity:node'
     property_path: title
-    type: string
+    type: text
     dependencies:
       module:
         - node

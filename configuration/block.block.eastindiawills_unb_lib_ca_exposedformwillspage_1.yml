@@ -1,0 +1,33 @@
+uuid: 7193d2eb-59e1-4435-947d-70b90a9187ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.wills
+  module:
+    - system
+    - views
+  theme:
+    - eastindiawills_unb_lib_ca
+id: eastindiawills_unb_lib_ca_exposedformwillspage_1
+theme: eastindiawills_unb_lib_ca
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'views_exposed_filter_block:wills-page_1'
+settings:
+  id: 'views_exposed_filter_block:wills-page_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+visibility:
+  response_status:
+    id: response_status
+    negate: false
+    status_codes:
+      - 200
+  request_path:
+    id: request_path
+    negate: false
+    pages: /wills
