@@ -2,6 +2,7 @@ _core:
   default_config_hash: 4GIX5Esnc_umpXUBj4IIocRX7Mt5fPhm4AgXfE3E56E
 module:
   admin_toolbar: 0
+  better_exposed_filters: 0
   block: 0
   breakpoint: 0
   ckeditor5: 0
@@ -13,6 +14,8 @@ module:
   eiw_admin: 0
   eiw_core: 0
   entity_reference_revisions: 0
+  facets: 0
+  facets_exposed_filters: 0
   field: 0
   field_ui: 0
   file: 0
