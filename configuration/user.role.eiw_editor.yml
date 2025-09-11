@@ -59,6 +59,7 @@ permissions:
   - 'revert eiw_voyage revisions'
   - 'revert eiw_will revisions'
   - 'view any unpublished content'
+  - 'view any unpublished eiw_will content'
   - 'view eiw_ship revisions'
   - 'view eiw_voyage revisions'
   - 'view eiw_will revisions'
