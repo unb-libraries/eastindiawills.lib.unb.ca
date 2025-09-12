@@ -1,0 +1,34 @@
+uuid: ea0ac6c0-9c01-4b41-9460-7d4018d3023b
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.will_voyage_names_facet
+  module:
+    - facets
+    - system
+  theme:
+    - eastindiawills_unb_lib_ca
+id: eastindiawills_unb_lib_ca_willvoyagenamesfacet
+theme: eastindiawills_unb_lib_ca
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'facet_block:will_voyage_names_facet'
+settings:
+  id: 'facet_block:will_voyage_names_facet'
+  label: 'Will Voyage Names Facet'
+  label_display: '0'
+  provider: facets
+  context_mapping: {  }
+  block_id: eastindiawills_unb_lib_ca_willvoyagenamesfacet
+visibility:
+  response_status:
+    id: response_status
+    negate: false
+    status_codes:
+      - 200
+  request_path:
+    id: request_path
+    negate: false
+    pages: /wills

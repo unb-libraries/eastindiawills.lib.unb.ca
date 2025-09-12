@@ -8,6 +8,12 @@
 // Include bootstrap.
 @import '../../../../../vendor/drupal/bootstrap5/scss/style';
 
+.block-facets {
+  margin-bottom: 1rem;
+  .facet-item__value {
+    margin-left: .5rem;
+  }
+}
 #block-eastindiawills-unb-lib-ca-content {
   .node--type-eiw-will.node--view-mode-full {
     .field {

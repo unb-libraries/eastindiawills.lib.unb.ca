@@ -64,6 +64,14 @@ field_settings:
     label: 'Probate Year'
     property_path: field_year_of_probate
     type: integer
+  field_year_of_probate_1:
+    label: 'Probate Year'
+    property_path: field_year_of_probate
+    type: integer
+  field_year_of_will:
+    label: 'Will Year'
+    property_path: field_year_of_will
+    type: integer
   index_will_voyages:
     label: 'Will Voyages'
     property_path: rendered_item
@@ -73,7 +81,7 @@ field_settings:
         - anonymous
       view_mode:
         'entity:node':
-          ':default': ''
+          ':default': will_voyages
           eiw_will: will_voyages
   status:
     label: Published
@@ -127,22 +135,23 @@ processor_settings:
     weights:
       preprocess_index: -15
       preprocess_query: -15
-    all_fields: true
+    all_fields: false
     fields:
       - eiw_will_role_names
       - eiw_will_ship_names
       - eiw_will_voyage_names
       - field_additional_names
-      - index_will_voyages
       - title
     title: true
     alt: true
     tags:
       b: 2
+      em: 1
       h1: 5
       h2: 3
       h3: 2
       strong: 2
+      u: 1
   ignore_character:
     weights:
       preprocess_index: -10
@@ -177,6 +186,7 @@ processor_settings:
       - index_will_voyages
       - title
   index_probate_year: {  }
+  index_will_year: {  }
   language_with_fallback: {  }
   rendered_item: {  }
   stemmer:
