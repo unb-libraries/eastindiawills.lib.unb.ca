@@ -5,6 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.node.will_voyages
     - field.storage.node.field_additional_names
+    - field.storage.node.field_date_of_probate
+    - field.storage.node.field_date_of_will
     - field.storage.node.field_shipboard_will
     - field.storage.node.field_source_type
     - search_api.server.eiw_local_server
@@ -44,6 +46,22 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_additional_names
+  field_date_of_probate:
+    label: 'Date of Probate'
+    datasource_id: 'entity:node'
+    property_path: field_date_of_probate
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_date_of_probate
+  field_date_of_will:
+    label: 'Date of Will'
+    datasource_id: 'entity:node'
+    property_path: field_date_of_will
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_date_of_will
   field_shipboard_will:
     label: 'Shipboard Will'
     datasource_id: 'entity:node'
@@ -61,10 +79,6 @@ field_settings:
       config:
         - field.storage.node.field_source_type
   field_year_of_probate:
-    label: 'Probate Year'
-    property_path: field_year_of_probate
-    type: integer
-  field_year_of_probate_1:
     label: 'Probate Year'
     property_path: field_year_of_probate
     type: integer

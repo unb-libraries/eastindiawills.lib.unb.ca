@@ -8,6 +8,10 @@
 // Include bootstrap.
 @import '../../../../../vendor/drupal/bootstrap5/scss/style';
 
+// Broad and site-wide rules (careful here).
+ul {
+  list-style: none;
+}
 .block-facets {
   margin-bottom: 1rem;
   .facet-item__value {

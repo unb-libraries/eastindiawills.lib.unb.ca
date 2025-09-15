@@ -112,9 +112,9 @@ function eiw_core_form_taxonomy_overview_terms_alter(&$form, \Drupal\Core\Form\F
  */
 function eiw_core_preprocess_node(array &$variables) {
   $node = $variables['node'];
-
+  
   // Only alter nodes of type 'eiw_will'.
-  if ($node->bundle() === 'eiw_will') {
+  if ($node && $node->bundle() === 'eiw_will') {
     // Helper function to alter field display if boolean is TRUE.
     $alter_year_only = function ($field_name, $year_only_field) use (&$variables, $node) {
       if (
@@ -273,14 +273,13 @@ function eiw_core_preprocess_field(array &$variables) {
  * Implements hook_search_api_result_item_alter().
  */
 function eiw_core_search_api_result_item_alter(ItemInterface &$item) {
-  \Drupal::logger('eiw_core')->notice(print_r($item));
+  \Drupal::logger('eiw_core')->notice("REACHED");
   // Check for the correct index, entity type, or bundle.
   if ($item->getIndex()->id() === 'eiw_wills_index') {
     // Alter the rendered will voyages HTML.
     if ($item->hasExtraData('rendered_item')) {
       $rendered = $item->getExtraData('rendered_item');
       // Alter the HTML.
-      exit;
       //$altered_html = '<div class="custom">' . $rendered . '</div>';
       //$item->setExtraData('rendered_item', $altered_html);
     }

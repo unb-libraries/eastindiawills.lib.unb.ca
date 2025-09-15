@@ -27,12 +27,11 @@ display:
       fields:
         title:
           id: title
-          table: search_api_datasource_eiw_wills_index_entity_node
+          table: search_api_index_eiw_wills_index
           field: title
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: node
           plugin_id: search_api_field
           label: Title
           exclude: false
@@ -67,7 +66,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: false
+          element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -98,12 +97,11 @@ display:
             multi_separator: ', '
         field_date_of_probate:
           id: field_date_of_probate
-          table: search_api_datasource_eiw_wills_index_entity_node
+          table: search_api_index_eiw_wills_index
           field: field_date_of_probate
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: node
           plugin_id: search_api_field
           label: 'Date of Probate'
           exclude: false
@@ -170,12 +168,11 @@ display:
             multi_separator: ', '
         field_date_of_will:
           id: field_date_of_will
-          table: search_api_datasource_eiw_wills_index_entity_node
+          table: search_api_index_eiw_wills_index
           field: field_date_of_will
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: node
           plugin_id: search_api_field
           label: 'Date of Will'
           exclude: false
@@ -248,7 +245,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: search_api_text
-          label: 'Will Voyages (indexed field)'
+          label: 'Will Voyages'
           exclude: false
           alter:
             alter_text: false
@@ -436,19 +433,25 @@ display:
             field_date_of_probate: field_date_of_probate
             field_date_of_will: field_date_of_will
             index_will_voyages: index_will_voyages
-          default: '-1'
+          default: title
           info:
             title:
+              sortable: true
+              default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
             field_date_of_probate:
+              sortable: true
+              default_sort_order: desc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
             field_date_of_will:
+              sortable: true
+              default_sort_order: desc
               align: ''
               separator: ''
               empty_column: false
@@ -460,7 +463,7 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
-          override: true
+          override: false
           sticky: false
           summary: ''
           empty_table: false
