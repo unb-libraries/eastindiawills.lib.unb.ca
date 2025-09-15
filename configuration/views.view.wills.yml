@@ -293,7 +293,7 @@ display:
           use_highlighting: false
           multi_type: ul
           multi_separator: ', '
-          filter_type: xss
+          filter_type: xss_admin
       pager:
         type: full
         options:

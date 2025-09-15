@@ -146,23 +146,20 @@ processor_settings:
     alt: true
     tags:
       b: 2
-      em: 1
       h1: 5
       h2: 3
       h3: 2
       strong: 2
-      u: 1
   ignore_character:
     weights:
       preprocess_index: -10
       preprocess_query: -10
-    all_fields: true
+    all_fields: false
     fields:
       - eiw_will_role_names
       - eiw_will_ship_names
       - eiw_will_voyage_names
       - field_additional_names
-      - index_will_voyages
       - title
     ignorable: "['¿¡!?,.:;]"
     ignorable_classes:
@@ -193,10 +190,9 @@ processor_settings:
     weights:
       preprocess_index: 0
       preprocess_query: 0
-    all_fields: true
+    all_fields: false
     fields:
       - field_additional_names
-      - index_will_voyages
       - title
     exceptions:
       mexican: mexic
@@ -205,10 +201,9 @@ processor_settings:
     weights:
       preprocess_index: -6
       preprocess_query: -6
-    all_fields: true
+    all_fields: false
     fields:
       - field_additional_names
-      - index_will_voyages
       - title
     spaces: ''
     ignored: ._-
@@ -218,13 +213,12 @@ processor_settings:
     weights:
       preprocess_index: -20
       preprocess_query: -20
-    all_fields: true
+    all_fields: false
     fields:
       - eiw_will_role_names
       - eiw_will_ship_names
       - eiw_will_voyage_names
       - field_additional_names
-      - index_will_voyages
       - title
 tracker_settings:
   default:

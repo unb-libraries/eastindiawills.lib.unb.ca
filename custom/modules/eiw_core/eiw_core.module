@@ -4,6 +4,7 @@ use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\file\Entity\File;
 use Drupal\Core\Link;
 use Drupal\Core\Url;
+use SearchApi\Item\ItemInterface;
 
 /**
  * Implements hook_ENTITY_TYPE_presave().
@@ -264,6 +265,24 @@ function eiw_core_preprocess_field(array &$variables) {
           $item['content']['#context']['value'] = t('Ship: @title', ['@title' => $original]);
         }
       }
+    }
+  }
+}
+
+/**
+ * Implements hook_search_api_result_item_alter().
+ */
+function eiw_core_search_api_result_item_alter(ItemInterface &$item) {
+  \Drupal::logger('eiw_core')->notice(print_r($item));
+  // Check for the correct index, entity type, or bundle.
+  if ($item->getIndex()->id() === 'eiw_wills_index') {
+    // Alter the rendered will voyages HTML.
+    if ($item->hasExtraData('rendered_item')) {
+      $rendered = $item->getExtraData('rendered_item');
+      // Alter the HTML.
+      exit;
+      //$altered_html = '<div class="custom">' . $rendered . '</div>';
+      //$item->setExtraData('rendered_item', $altered_html);
     }
   }
 }
