@@ -24,6 +24,11 @@ ul {
       margin-top: .5rem;
     }
   }
+  .views-field-field-will-voyages *, 
+  .views-field-index-will-voyages * {
+    padding-left: 0 !important;
+    margin-left: 0;
+  }
   .paragraph--type--eiw-will-voyage.paragraph--view-mode--default {
     margin-bottom: 1rem;
     padding-left: 1rem;

@@ -17,8 +17,8 @@ provider: null
 plugin: 'facet_block:will_voyage_names_facet'
 settings:
   id: 'facet_block:will_voyage_names_facet'
-  label: 'Will Voyage Names Facet'
-  label_display: '0'
+  label: Voyages
+  label_display: visible
   provider: facets
   context_mapping: {  }
   block_id: eastindiawills_unb_lib_ca_willvoyagenamesfacet
