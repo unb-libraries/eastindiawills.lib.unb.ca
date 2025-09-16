@@ -291,6 +291,68 @@ display:
           multi_type: ul
           multi_separator: ', '
           filter_type: xss_admin
+        field_year_of_probate:
+          id: field_year_of_probate
+          table: search_api_index_eiw_wills_index
+          field: field_year_of_probate
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_numeric
+          label: 'Probate Year'
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          set_precision: false
+          precision: 0
+          decimal: .
+          separator: ''
+          format_plural: false
+          format_plural_string: !!binary Aw==
+          prefix: ''
+          suffix: ''
+          link_to_item: false
+          use_highlighting: false
+          multi_type: separator
+          multi_separator: ', '
+          format_plural_values: {  }
       pager:
         type: full
         options:
@@ -505,7 +567,7 @@ display:
       display_extenders: {  }
       path: wills
     cache_metadata:
-      max-age: -1
+      max-age: 0
       contexts:
         - 'facets_filter:f'
         - 'languages:language_content'
@@ -514,6 +576,7 @@ display:
         - url.query_args
         - 'user.node_grants:view'
       tags:
+        - 'config:facets.facet.probate_year_facet'
         - 'config:facets.facet.will_role_names_facet'
         - 'config:facets.facet.will_ship_names_facet'
         - 'config:facets.facet.will_voyage_names_facet'

@@ -1,27 +1,27 @@
-uuid: a81556e4-213e-4a9b-baa8-c3fed28c6386
+uuid: 50de7ddc-765b-41ce-94bb-d6ea5915d240
 langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.will_role_names_facet
+    - facets.facet.probate_year_facet
   module:
     - facets
     - system
   theme:
     - eastindiawills_unb_lib_ca
-id: eastindiawills_unb_lib_ca_willrolenamesfacet
+id: eastindiawills_unb_lib_ca_probateyearfacet
 theme: eastindiawills_unb_lib_ca
 region: sidebar_first
-weight: -5
+weight: -6
 provider: null
-plugin: 'facet_block:will_role_names_facet'
+plugin: 'facet_block:probate_year_facet'
 settings:
-  id: 'facet_block:will_role_names_facet'
-  label: Roles
+  id: 'facet_block:probate_year_facet'
+  label: 'Year of Probate'
   label_display: visible
   provider: facets
   context_mapping: {  }
-  block_id: eastindiawills_unb_lib_ca_willrolenamesfacet
+  block_id: eastindiawills_unb_lib_ca_probateyearfacet
 visibility:
   response_status:
     id: response_status

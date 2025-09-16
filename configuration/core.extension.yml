@@ -15,7 +15,7 @@ module:
   eiw_core: 0
   entity_reference_revisions: 0
   facets: 0
-  facets_exposed_filters: 0
+  facets_range_widget: 0
   field: 0
   field_ui: 0
   file: 0
@@ -24,6 +24,9 @@ module:
   health_check: 0
   image: 0
   inline_entity_form: 0
+  jquery_ui: 0
+  jquery_ui_slider: 0
+  jquery_ui_touch_punch: 0
   link: 0
   menu_link_content: 0
   menu_ui: 0
