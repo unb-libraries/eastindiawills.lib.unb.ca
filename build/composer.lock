@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b0ce37a6799d516d8e88c9542a820df9",
+    "content-hash": "07a251fbfef8c62eb0ecff17d5252c4f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6421,14 +6421,11 @@
             "time": "2024-03-02T06:30:58+00:00"
         },
         {
-            "name": "simeydotme/svelte-range-slider-pips",
-            "version": "4.0.0",
+            "name": "simeydotme/jquery-ui-slider-pips",
+            "version": "2.0.0",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/simeydotme/svelte-range-slider-pips/archive/refs/tags/4.0.0.zip"
-            },
-            "require": {
-                "composer/installers": "^2"
+                "url": "https://github.com/simeydotme/jQuery-ui-Slider-Pips/archive/refs/tags/2.0.0.zip"
             },
             "type": "drupal-library"
         },

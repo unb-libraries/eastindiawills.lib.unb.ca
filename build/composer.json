@@ -120,19 +120,16 @@
       "type": "package"
     },
     {
+      "type": "package",
       "package": {
-        "dist": {
-          "type": "zip",
-          "url": "https://github.com/simeydotme/svelte-range-slider-pips/archive/refs/tags/4.0.0.zip"
-        },
-        "name": "simeydotme/svelte-range-slider-pips",
-        "require": {
-          "composer/installers": "^2"
-        },
+        "name": "simeydotme/jquery-ui-slider-pips",
+        "version": "2.0.0",
         "type": "drupal-library",
-        "version": "4.0.0"
-      },
-      "type": "package"
+        "dist": {
+          "url": "https://github.com/simeydotme/jQuery-ui-Slider-Pips/archive/refs/tags/2.0.0.zip",
+          "type": "zip"
+        }
+      }
     },
     {
       "type": "vcs",
@@ -177,7 +174,7 @@
     "drupal/unpublished_node_permissions": "^1",
     "fontawesome/fontawesome": "^6",
     "jacklmoore/colorbox": "dev-master",
-    "simeydotme/svelte-range-slider-pips": "^4",
+    "simeydotme/jquery-ui-slider-pips": "^2",
     "unb-libraries/saml_features": "dev-10.x-1.x",
     "unb-libraries/composer-drupal-scaffold": "^10"
   },
