@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9b51d85e55409b8ddf032446e71c6613",
+    "content-hash": "b0ce37a6799d516d8e88c9542a820df9",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6419,6 +6419,18 @@
                 }
             ],
             "time": "2024-03-02T06:30:58+00:00"
+        },
+        {
+            "name": "simeydotme/svelte-range-slider-pips",
+            "version": "4.0.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/simeydotme/svelte-range-slider-pips/archive/refs/tags/4.0.0.zip"
+            },
+            "require": {
+                "composer/installers": "^2"
+            },
+            "type": "drupal-library"
         },
         {
             "name": "solarium/solarium",
