@@ -65,11 +65,6 @@
       "themes/custom/{$name}": [
         "type:drupal-custom-theme"
       ]
-    },
-    "patches": {
-      "drupal/core": {
-        "Allow end date to be optional": "/build/patches/2794481-50--10.3.0.patch"
-      }
     }
   },
   "license": "MIT",
@@ -146,6 +141,9 @@
     "drupal/google_analytics": "^4",
     "drupal/health_check": "^3",
     "drupal/honeypot": "^2",
+    "drupal/jquery_ui": "^1",
+    "drupal/jquery_ui_touch_punch": "^1",
+    "drupal/jquery_ui_slider": "^2",
     "drupal/linkit": "^7.0",
     "drupal/media_entity_browser": "^2",
     "drupal/noreqnewpass": "^1",
