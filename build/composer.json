@@ -120,6 +120,21 @@
       "type": "package"
     },
     {
+      "package": {
+        "dist": {
+          "type": "zip",
+          "url": "https://github.com/simeydotme/jQuery-ui-Slider-Pips/archive/v1.11.4.zip"
+        },
+        "name": "simeydotme/jquery-ui-slider-pips",
+        "require": {
+          "composer/installers": "^2"
+        },
+        "type": "drupal-library",
+        "version": "4.0"
+      },
+      "type": "package"
+    },
+    {
       "type": "vcs",
       "url": "https://github.com/unb-libraries/fontawesome_iconpicker"
     }
@@ -162,6 +177,7 @@
     "drupal/unpublished_node_permissions": "^1",
     "fontawesome/fontawesome": "^6",
     "jacklmoore/colorbox": "dev-master",
+    "simeydotme/jquery-ui-slider-pips": "^4",
     "unb-libraries/saml_features": "dev-10.x-1.x",
     "unb-libraries/composer-drupal-scaffold": "^10"
   },
