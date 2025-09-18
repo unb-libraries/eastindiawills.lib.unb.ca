@@ -447,7 +447,7 @@ display:
           exposed: true
           expose:
             operator_id: search_api_fulltext_op
-            label: 'Fulltext search'
+            label: Search
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
@@ -541,8 +541,28 @@ display:
           preserve_facet_query_args: false
           query_tags: {  }
       relationships: {  }
-      header: {  }
-      footer: {  }
+      header:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: result
+          empty: false
+          content: 'Displaying @start - @end of @total'
+      footer:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: result
+          empty: false
+          content: 'Displaying @start - @end of @total'
       display_extenders: {  }
     cache_metadata:
       max-age: -1

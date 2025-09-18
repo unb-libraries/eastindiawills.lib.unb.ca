@@ -168,6 +168,7 @@
     "drupal/search_api_autocomplete": "^1",
     "drupal/search_api_solr": "^4",
     "drupal/simple_sitemap": "^4",
+    "drupal/tagify": "^1",
     "drupal/token": "^1",
     "drupal/twig_tweak": "^3",
     "drupal/view_unpublished": "^1",

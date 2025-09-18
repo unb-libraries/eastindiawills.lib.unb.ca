@@ -5,6 +5,7 @@ module:
   better_exposed_filters: 0
   block: 0
   breakpoint: 0
+  chosen_lib: 0
   ckeditor5: 0
   contextual: 0
   datetime: 0
@@ -42,6 +43,7 @@ module:
   search_api: 0
   search_api_db: 0
   system: 0
+  tagify: 0
   taxonomy: 0
   text: 0
   toolbar: 0
