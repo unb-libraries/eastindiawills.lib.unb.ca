@@ -1,7 +1,7 @@
-eiw_core.home:
-  title: 'Home'
-  description: 'Home'
+eiw_core.search:
+  title: 'Public Search'
+  description: 'Public Search'
   parent: main
   menu_name: main
-  route_name: eiw_core.home
+  route_name: view.wills.page_1
   weight: 10
