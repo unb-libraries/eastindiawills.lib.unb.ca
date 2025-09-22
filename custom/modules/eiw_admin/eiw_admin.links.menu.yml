@@ -38,9 +38,15 @@ eiw_admin.roles:
   url: internal:/admin/structure/taxonomy/manage/eiw_roles/overview
   parent: eiw_admin.root
   weight: 50
+eiw_admin.keywords:
+  title: 'Keywords'
+  description: 'Manage keywords.'
+  url: internal:/admin/structure/taxonomy/manage/eiw_keywords/overview
+  parent: eiw_admin.root
+  weight: 60
 eiw_admin.wills.audit:
   title: 'Audit Wills'
   description: 'Audit wills.'
   url: internal:/audit-wills
   parent: eiw_admin.root
-  weight: 60
+  weight: 70

@@ -12,7 +12,7 @@ login_error_keep_session: false
 local_login_saml_error: false
 logout_different_user: false
 drupal_login_roles: {  }
-sp_entity_id: 'https://eastindiawills.lib.unb.ca'
+sp_entity_id: 'https://dev-eastindiawills.lib.unb.ca'
 sp_x509_certificate: ''
 sp_new_certificate: ''
 sp_private_key: ''
