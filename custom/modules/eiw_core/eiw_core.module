@@ -287,6 +287,17 @@ function eiw_core_search_api_result_item_alter(ItemInterface &$item) {
 }
 
 /**
+ * Implements hook_form_FORM_ID_alter().
+ * Hides parent selection for taxonomy terms.
+ */
+function eiw_core_form_taxonomy_term_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $term = $form_state->getFormObject()->getEntity();
+  if (isset($form['relations'])) {
+    $form['relations']['#access'] = FALSE;
+  }
+}
+
+/**
  * Converts a string to a "slug" format.
  *
  * This function replaces all special characters in the input string with dashes,

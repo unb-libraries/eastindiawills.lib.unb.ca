@@ -11,7 +11,7 @@ _core:
 id: eastindiawills_unb_lib_ca_messages
 theme: eastindiawills_unb_lib_ca
 region: content
-weight: -7
+weight: -8
 provider: null
 plugin: system_messages_block
 settings:

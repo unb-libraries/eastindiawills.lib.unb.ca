@@ -7,12 +7,14 @@ dependencies:
     - field.storage.node.field_additional_names
     - field.storage.node.field_date_of_probate
     - field.storage.node.field_date_of_will
+    - field.storage.node.field_keywords
     - field.storage.node.field_shipboard_will
     - field.storage.node.field_source_type
     - search_api.server.eiw_local_server
   module:
     - eiw_core
     - node
+    - taxonomy
 id: eiw_wills_index
 name: 'EIW Wills Index'
 description: ''
@@ -97,6 +99,16 @@ field_settings:
         'entity:node':
           ':default': will_voyages
           eiw_will: will_voyages
+  name:
+    label: 'Keywords » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_keywords:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_keywords
+      module:
+        - taxonomy
   status:
     label: Published
     datasource_id: 'entity:node'

@@ -9,7 +9,7 @@ _core:
 id: eastindiawills_unb_lib_ca_local_tasks
 theme: eastindiawills_unb_lib_ca
 region: content
-weight: -4
+weight: -6
 provider: null
 plugin: local_tasks_block
 settings:

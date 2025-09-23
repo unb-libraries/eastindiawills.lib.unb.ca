@@ -9,7 +9,7 @@ _core:
 id: eastindiawills_unb_lib_ca_page_title
 theme: eastindiawills_unb_lib_ca
 region: content
-weight: -6
+weight: -7
 provider: null
 plugin: page_title_block
 settings:

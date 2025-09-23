@@ -11,7 +11,7 @@ _core:
 id: eastindiawills_unb_lib_ca_content
 theme: eastindiawills_unb_lib_ca
 region: content
-weight: -1
+weight: -4
 provider: null
 plugin: system_main_block
 settings:

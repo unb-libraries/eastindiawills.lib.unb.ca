@@ -1,27 +1,27 @@
-uuid: e02f028a-81a1-4e31-954f-c05c81daacad
+uuid: 3f319a0f-585d-4056-9e48-29c773513643
 langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.will_ship_names_facet
+    - facets.facet.will_keyword_names_facet
   module:
     - facets
     - system
   theme:
     - eastindiawills_unb_lib_ca
-id: eastindiawills_unb_lib_ca_willshipnamesfacet
+id: eastindiawills_unb_lib_ca_willkeywordnamesfacet
 theme: eastindiawills_unb_lib_ca
 region: sidebar_first
-weight: -5
+weight: 0
 provider: null
-plugin: 'facet_block:will_ship_names_facet'
+plugin: 'facet_block:will_keyword_names_facet'
 settings:
-  id: 'facet_block:will_ship_names_facet'
-  label: Ships
+  id: 'facet_block:will_keyword_names_facet'
+  label: Keywords
   label_display: visible
   provider: facets
   context_mapping: {  }
-  block_id: eastindiawills_unb_lib_ca_willshipnamesfacet
+  block_id: eastindiawills_unb_lib_ca_willkeywordnamesfacet
 visibility:
   response_status:
     id: response_status
