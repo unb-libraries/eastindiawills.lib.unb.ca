@@ -228,8 +228,8 @@ function eiw_core_preprocess_paragraph(array &$variables) {
           ->load($item->target_id);
 
         if ($term && $term->bundle() === 'eiw_roles') {
-          // Custom link to /audit-roles/$tid
-          $url = Url::fromUri('internal:/audit-wills/all/all/' . $term->id());
+          // Custom link to /wills faceted by role.
+          $url = Url::fromUri('internal:/wills/?f%5B0%5D=will_role_names_facet%3A' . urlencode($term->getName()));
           $link = Link::fromTextAndUrl($term->label(), $url)->toRenderable();
           $link['#attributes']['class'][] = 'custom-role-link';
           $variables['content']['field_role'][$delta] = $link;

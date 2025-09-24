@@ -182,9 +182,6 @@ processor_settings:
       preprocess_query: -10
     all_fields: false
     fields:
-      - eiw_will_role_names
-      - eiw_will_ship_names
-      - eiw_will_voyage_names
       - field_additional_names
       - title
     ignorable: "['¿¡!?,.:;]"
