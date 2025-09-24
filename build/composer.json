@@ -163,6 +163,7 @@
     "drupal/paragraphs": "^1",
     "drupal/pathauto": "^1",
     "drupal/redis": "^1",
+    "drupal/require_login": "^3",
     "drupal/samlauth": "^3",
     "drupal/search_api": "^1",
     "drupal/search_api_autocomplete": "^1",
