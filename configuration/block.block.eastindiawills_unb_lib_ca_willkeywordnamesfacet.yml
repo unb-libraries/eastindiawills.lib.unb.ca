@@ -12,7 +12,7 @@ dependencies:
 id: eastindiawills_unb_lib_ca_willkeywordnamesfacet
 theme: eastindiawills_unb_lib_ca
 region: sidebar_first
-weight: 0
+weight: -2
 provider: null
 plugin: 'facet_block:will_keyword_names_facet'
 settings:

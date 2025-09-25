@@ -1,27 +1,27 @@
-uuid: a81556e4-213e-4a9b-baa8-c3fed28c6386
+uuid: ca073eb7-c081-4627-91e5-10c408cb7010
 langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.will_role_names_facet
+    - facets.facet.will_court_names_facet
   module:
     - facets
     - system
   theme:
     - eastindiawills_unb_lib_ca
-id: eastindiawills_unb_lib_ca_willrolenamesfacet
+id: eastindiawills_unb_lib_ca_willcourtnamesfacet
 theme: eastindiawills_unb_lib_ca
 region: sidebar_first
-weight: -5
+weight: -6
 provider: null
-plugin: 'facet_block:will_role_names_facet'
+plugin: 'facet_block:will_court_names_facet'
 settings:
-  id: 'facet_block:will_role_names_facet'
-  label: Roles
+  id: 'facet_block:will_court_names_facet'
+  label: Courts
   label_display: visible
   provider: facets
   context_mapping: {  }
-  block_id: eastindiawills_unb_lib_ca_willrolenamesfacet
+  block_id: eastindiawills_unb_lib_ca_willcourtnamesfacet
 visibility:
   response_status:
     id: response_status

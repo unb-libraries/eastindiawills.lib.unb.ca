@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.will_voyages
     - field.storage.node.field_additional_names
+    - field.storage.node.field_court
     - field.storage.node.field_date_of_probate
     - field.storage.node.field_date_of_will
     - field.storage.node.field_keywords
@@ -48,6 +49,16 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_additional_names
+  field_court:
+    label: 'Court » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_court:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_court
+      module:
+        - taxonomy
   field_date_of_probate:
     label: 'Date of Probate'
     datasource_id: 'entity:node'
@@ -64,6 +75,16 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_date_of_will
+  field_keywords:
+    label: 'Keywords » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_keywords:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_keywords
+      module:
+        - taxonomy
   field_shipboard_will:
     label: 'Shipboard Will'
     datasource_id: 'entity:node'
@@ -99,16 +120,6 @@ field_settings:
         'entity:node':
           ':default': will_voyages
           eiw_will: will_voyages
-  name:
-    label: 'Keywords » Taxonomy term » Name'
-    datasource_id: 'entity:node'
-    property_path: 'field_keywords:entity:name'
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.field_keywords
-      module:
-        - taxonomy
   status:
     label: Published
     datasource_id: 'entity:node'

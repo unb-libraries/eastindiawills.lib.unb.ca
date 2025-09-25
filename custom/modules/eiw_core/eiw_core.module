@@ -157,12 +157,32 @@ function eiw_core_preprocess_node(array &$variables) {
 
         if ($term && $term->bundle() == 'eiw_courts') {
           // Build your custom link. Example: change to a custom path or alter the link text.
-          $url = Url::fromUri('internal:/audit-wills/all/all/all/' . $tid);
+          $url = Url::fromUri('internal:/wills/?f%5B0%5D=will_court_names_facet%3A' . urlencode($term->getName()));
           $link = Link::fromTextAndUrl($term->getName(), $url)->toRenderable();
           // Optionally, add custom classes or attributes.
-          $link['#attributes']['class'][] = 'my-custom-court-link';
+          $link['#attributes']['class'][] = 'custom-court-link';
           // Override the rendered field output.
           $variables['content']['field_court'][$delta] = $link;
+        }
+      }
+    }
+    if (!empty($variables['content']['field_keywords']) and isset($variables['content']['field_keywords']['#items'])) {
+      // Loop through all referenced entities (should be just one).
+      foreach ($variables['content']['field_keywords']['#items'] as $delta => $item) {
+        // Load the referenced node.
+        $tid = $item->target_id;
+        $term = \Drupal::entityTypeManager()
+          ->getStorage('taxonomy_term')
+          ->load($tid);
+
+        if ($term && $term->bundle() == 'eiw_keywords') {
+          // Build your custom link. Example: change to a custom path or alter the link text.
+          $url = Url::fromUri('internal:/wills/?f%5B0%5D=will_keyword_names_facet%3A' . urlencode($term->getName()));
+          $link = Link::fromTextAndUrl($term->getName(), $url)->toRenderable();
+          // Optionally, add custom classes or attributes.
+          $link['#attributes']['class'][] = 'custom-keyword-link';
+          // Override the rendered field output.
+          $variables['content']['field_keywords'][$delta] = $link;
         }
       }
     }
@@ -190,10 +210,10 @@ function eiw_core_preprocess_paragraph(array &$variables) {
 
         if ($node && $node->bundle() == 'eiw_voyage') {
           // Build your custom link. Example: change to a custom path or alter the link text.
-          $url = Url::fromUri('internal:/audit-wills/' . $nid);
+          $url = Url::fromUri('internal:/wills/?f%5B0%5D=will_voyage_names_facet%3A' . urlencode($node->getTitle()));
           $link = Link::fromTextAndUrl($node->label(), $url)->toRenderable();
           // Optionally, add custom classes or attributes.
-          $link['#attributes']['class'][] = 'my-custom-voyage-link';
+          $link['#attributes']['class'][] = 'custom-voyage-link';
           // Override the rendered field output.
           $variables['content']['field_voyage'][$delta] = $link;
         }
@@ -211,10 +231,10 @@ function eiw_core_preprocess_paragraph(array &$variables) {
 
         if ($node && $node->bundle() == 'eiw_ship') {
           // Build your custom link. Example: change to a custom path or alter the link text.
-          $url = Url::fromUri('internal:/audit-wills/all/' . $nid);
+          $url = Url::fromUri('internal:/wills/?f%5B0%5D=will_ship_names_facet%3A' . urlencode($node->getTitle()));
           $link = Link::fromTextAndUrl($node->label(), $url)->toRenderable();
           // Optionally, add custom classes or attributes.
-          $link['#attributes']['class'][] = 'my-custom-ship-link';
+          $link['#attributes']['class'][] = 'custom-ship-link';
           // Override the rendered field output.
           $variables['content']['field_ship'][$delta] = $link;
         }

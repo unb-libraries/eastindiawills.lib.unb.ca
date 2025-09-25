@@ -1,4 +1,4 @@
-uuid: 3e4ab8a1-0211-484f-837d-57c18d73473b
+uuid: 10628032-8eb0-4c62-9406-7328e0d1efdb
 langcode: en
 status: true
 dependencies:
@@ -7,15 +7,15 @@ dependencies:
     - views.view.wills
   module:
     - search_api
-id: will_keyword_names_facet
-name: 'Keywords » Taxonomy term » Name'
+id: will_court_names_facet
+name: 'Will Court Names Facet'
 weight: 0
 min_count: 1
 missing: true
 missing_label: ''
-url_alias: will_keyword_names_facet
+url_alias: will_court_names_facet
 facet_source_id: 'search_api:views_page__wills__page_1'
-field_identifier: field_keywords
+field_identifier: field_court
 query_operator: and
 hard_limit: 0
 exclude: false

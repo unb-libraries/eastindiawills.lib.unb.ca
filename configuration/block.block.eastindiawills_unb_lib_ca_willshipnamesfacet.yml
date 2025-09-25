@@ -12,7 +12,7 @@ dependencies:
 id: eastindiawills_unb_lib_ca_willshipnamesfacet
 theme: eastindiawills_unb_lib_ca
 region: sidebar_first
-weight: -5
+weight: -4
 provider: null
 plugin: 'facet_block:will_ship_names_facet'
 settings:
