@@ -4,14 +4,14 @@ login_path: ''
 login_message: ''
 login_destination: ''
 requirements:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /login
   response_status:
     id: response_status
     negate: false
     status_codes: {  }
-  request_path:
-    id: request_path
-    negate: false
-    pages: ''
   'entity_bundle:node':
     id: 'entity_bundle:node'
     negate: false
