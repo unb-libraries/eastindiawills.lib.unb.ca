@@ -6,8 +6,8 @@ login_destination: ''
 requirements:
   request_path:
     id: request_path
-    negate: false
-    pages: /login
+    negate: true
+    pages: "/saml/login*\r\n/user/login*\r\n/saml/acs"
   response_status:
     id: response_status
     negate: false
