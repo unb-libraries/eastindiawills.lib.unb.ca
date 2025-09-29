@@ -1,0 +1,22 @@
+uuid: 4324b9c6-7acb-4445-8073-1c05d4583cdb
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: eiw_will_paths
+label: 'EIW Will Paths'
+type: 'canonical_entities:node'
+pattern: 'wills/[node:title]'
+selection_criteria:
+  1894e537-9f27-4136-9353-f7103e73c92e:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 1894e537-9f27-4136-9353-f7103e73c92e
+    context_mapping:
+      node: node
+    bundles:
+      eiw_will: eiw_will
+selection_logic: and
+weight: -5
+relationships: {  }

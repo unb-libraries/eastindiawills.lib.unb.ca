@@ -1,0 +1,11 @@
+uuid: db181091-e1ba-400c-94ae-e16ebc9aebcc
+langcode: en
+status: true
+dependencies:
+  module:
+    - path_alias
+id: path_alias.token
+label: Token
+description: ''
+targetEntityType: path_alias
+cache: true
