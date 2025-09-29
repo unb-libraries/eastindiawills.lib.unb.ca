@@ -7,7 +7,7 @@ requirements:
   request_path:
     id: request_path
     negate: true
-    pages: "/saml/login*\r\n/user/login*\r\n/saml/acs"
+    pages: "/saml/login\r\n/saml/acs\r\n/user/login\r\n"
   response_status:
     id: response_status
     negate: false
