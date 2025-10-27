@@ -9,7 +9,7 @@ logout_redirect_url: ''
 error_redirect_url: ''
 error_throw: false
 login_error_keep_session: false
-local_login_saml_error: false
+local_login_saml_error: true
 logout_different_user: false
 drupal_login_roles: {  }
 sp_entity_id: 'https://eastindiawills.lib.unb.ca'
@@ -17,7 +17,7 @@ sp_x509_certificate: ''
 sp_new_certificate: ''
 sp_private_key: ''
 metadata_valid_secs: 1
-metadata_cache_http: false
+metadata_cache_http: true
 idp_entity_id: 'https://login.lib.unb.ca'
 idp_single_sign_on_service: 'https://login.lib.unb.ca/saml2/idp/SSOService.php'
 idp_single_log_out_service: 'https://login.lib.unb.ca/saml2/idp/SingleLogoutService.php'
