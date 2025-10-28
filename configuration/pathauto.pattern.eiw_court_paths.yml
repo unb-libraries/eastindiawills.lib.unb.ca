@@ -1,0 +1,22 @@
+uuid: d63f15f9-ee6b-41ba-9105-173e874b6453
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: eiw_court_paths
+label: 'EIW Court Paths'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'courts/[term:name]'
+selection_criteria:
+  686f989f-f228-4a4a-972f-dc281cd1a508:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 686f989f-f228-4a4a-972f-dc281cd1a508
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      eiw_courts: eiw_courts
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -1,0 +1,22 @@
+uuid: 9be00df3-6998-410d-afb8-9b62b22ec7e6
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: eiw_source_type_paths
+label: 'EIW Source Type Paths'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'source-types/[term:name]'
+selection_criteria:
+  dbe50a33-cc22-4d32-888d-b61acbd4cedd:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: dbe50a33-cc22-4d32-888d-b61acbd4cedd
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      eiw_source_types: eiw_source_types
+selection_logic: and
+weight: -5
+relationships: {  }

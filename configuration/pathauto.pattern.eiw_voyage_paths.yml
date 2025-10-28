@@ -1,0 +1,22 @@
+uuid: 37359d1e-0fcd-441d-bd72-ab753835a7a5
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: eiw_voyage_paths
+label: 'EIW Voyage Paths'
+type: 'canonical_entities:node'
+pattern: 'voyages/[node:title]'
+selection_criteria:
+  0594a779-63c7-466c-ad75-d3bccb403000:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 0594a779-63c7-466c-ad75-d3bccb403000
+    context_mapping:
+      node: node
+    bundles:
+      eiw_voyage: eiw_voyage
+selection_logic: and
+weight: -5
+relationships: {  }

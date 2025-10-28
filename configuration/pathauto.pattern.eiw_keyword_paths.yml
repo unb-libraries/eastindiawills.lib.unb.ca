@@ -1,0 +1,22 @@
+uuid: 91dd4656-ae79-45ff-8719-2974a83909a4
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: eiw_keyword_paths
+label: 'EIW Keyword Paths'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'keywords/[term:name]'
+selection_criteria:
+  7387ab57-67dd-421f-a9bf-f852ac6dc911:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 7387ab57-67dd-421f-a9bf-f852ac6dc911
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      eiw_keywords: eiw_keywords
+selection_logic: and
+weight: -5
+relationships: {  }

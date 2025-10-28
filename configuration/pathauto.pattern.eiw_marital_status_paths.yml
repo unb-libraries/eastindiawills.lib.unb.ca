@@ -1,0 +1,22 @@
+uuid: f3779183-0c8f-4678-9ec4-6f6079cee37c
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: eiw_marital_status_paths
+label: 'EIW Marital Status Paths'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'marital-status/[term:name]'
+selection_criteria:
+  5b7cc688-649f-4b3d-9084-3cf6e0485641:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 5b7cc688-649f-4b3d-9084-3cf6e0485641
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      eiw_marital_statuses: eiw_marital_statuses
+selection_logic: and
+weight: -5
+relationships: {  }
