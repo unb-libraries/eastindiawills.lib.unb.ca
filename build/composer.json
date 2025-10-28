@@ -144,6 +144,7 @@
     "drupal/better_exposed_filters": "^7",
     "drupal/bootstrap5": "^4",
     "drupal/ckeditor5_plugin_pack": "^1",
+    "drupal/easy_breadcrumb": "^2",
     "drupal/colorbox": "^2",
     "drupal/editor_file": "^1",
     "drupal/entity_browser": "^2",

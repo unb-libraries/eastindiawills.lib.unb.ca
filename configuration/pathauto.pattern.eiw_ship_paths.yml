@@ -1,0 +1,22 @@
+uuid: 10c0affd-a854-450e-9bc6-5cb72615d3ca
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: eiw_ship_paths
+label: 'EIW Ship Paths'
+type: 'canonical_entities:node'
+pattern: 'ships/[node:title]'
+selection_criteria:
+  8c749810-a0e2-4736-9921-3f52d81e4d65:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 8c749810-a0e2-4736-9921-3f52d81e4d65
+    context_mapping:
+      node: node
+    bundles:
+      eiw_ship: eiw_ship
+selection_logic: and
+weight: -5
+relationships: {  }
