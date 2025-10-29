@@ -58,8 +58,11 @@ function eiw_core_form_node_eiw_will_form_alter(&$form, \Drupal\Core\Form\FormSt
 }
 
 function eiw_core_form_taxonomy_overview_terms_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  // Remove form help (unusable for non-nested terms).
+  unset($form['help']);
   // Try to get the vocabulary from the route if not set in the form.
   $vocabulary_name = NULL;
+
   if (isset($form['#vocabulary'])) {
     $vocabulary_name = is_object($form['#vocabulary']) && method_exists($form['#vocabulary'], 'id') ? $form['#vocabulary']->id() : NULL;
   }
@@ -78,14 +81,13 @@ function eiw_core_form_taxonomy_overview_terms_alter(&$form, \Drupal\Core\Form\F
     }
   }
 
-  if (
-    $vocabulary_name === 'eiw_roles' &&
-    !empty($form['terms']) &&
-    is_array($form['terms'])
-  ) {
-    // Remove form help (unusable for non-nested terms).
-    unset($form['help']);
+  $items = [
+    'eiw_courts' => 'court',
+    'eiw_keywords' => 'keyword',
+    'eiw_roles' => 'role',
+  ];
 
+  if (in_array($vocabulary_name, array_keys($items)) and !empty($form['terms']) and is_array($form['terms'])) {
     foreach (array_keys($form['terms']) as $row_key) {
       if (strpos($row_key, 'tid:') === 0 && isset($form['terms'][$row_key]['term'])) {
         // Load the term for its label.
@@ -93,12 +95,12 @@ function eiw_core_form_taxonomy_overview_terms_alter(&$form, \Drupal\Core\Form\F
         $tid = $parts[1];
         $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($tid);
         if ($term) {
-          $url = \Drupal\Core\Url::fromUri('internal:/audit-wills/all/all/' . $tid);
+          $url = \Drupal\Core\Url::fromUri('internal:/wills/?f%5B0%5D=will_' . $items[$vocabulary_name] . '_names_facet%3A' . urlencode($term->getName()));
           $link = [
             '#type' => 'link',
             '#title' => $term->label(),
             '#url' => $url,
-            '#attributes' => ['class' => ['custom-admin-role-link']],
+            '#attributes' => ['class' => ['custom-admin-' . $items[$vocabulary_name] . '-role-link']],
           ];
           $form['terms'][$row_key]['term'] = $link;
         }

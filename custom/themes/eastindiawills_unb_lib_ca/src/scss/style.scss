@@ -14,6 +14,9 @@ ul {
 }
 .block-facets {
   margin-bottom: 1rem;
+  .facet-item label[for$="reset-all"] .facet-item__count {
+    display: none;
+  }
   .facet-item__value {
     margin-left: .5rem;
   }
