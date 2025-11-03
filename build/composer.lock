@@ -3809,17 +3809,17 @@
         },
         {
             "name": "drupal/search_api",
-            "version": "1.39.0",
+            "version": "1.40.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/search_api.git",
-                "reference": "8.x-1.39"
+                "reference": "8.x-1.40"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/search_api-8.x-1.39.zip",
-                "reference": "8.x-1.39",
-                "shasum": "faaf441950b7357203d3fa9ce92f3e59b55c0837"
+                "url": "https://ftp.drupal.org/files/projects/search_api-8.x-1.40.zip",
+                "reference": "8.x-1.40",
+                "shasum": "64ac71887786da63ced27a43e37342ea3b765a88"
             },
             "require": {
                 "drupal/core": "^10.3 || ^11"
@@ -3841,8 +3841,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.39",
-                    "datestamp": "1758968162",
+                    "version": "8.x-1.40",
+                    "datestamp": "1762031191",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3880,17 +3880,17 @@
         },
         {
             "name": "drupal/search_api_autocomplete",
-            "version": "1.10.0",
+            "version": "1.11.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/search_api_autocomplete.git",
-                "reference": "8.x-1.10"
+                "reference": "8.x-1.11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/search_api_autocomplete-8.x-1.10.zip",
-                "reference": "8.x-1.10",
-                "shasum": "bd7d4a35a595efb866f6f5e2230d62d93b074927"
+                "url": "https://ftp.drupal.org/files/projects/search_api_autocomplete-8.x-1.11.zip",
+                "reference": "8.x-1.11",
+                "shasum": "9c1d287cde328511f4e84dfd49bea401f5eddc6a"
             },
             "require": {
                 "drupal/core": "^10.2 || ^11",
@@ -3902,8 +3902,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.10",
-                    "datestamp": "1736941746",
+                    "version": "8.x-1.11",
+                    "datestamp": "1762031747",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -9390,12 +9390,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/unb-libraries/saml_features.git",
-                "reference": "1de09229fa9dcb3538e8da8f932c9d89b625ce55"
+                "reference": "9f00391cd8376a1c261b33707c8edcb81d48fb02"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unb-libraries/saml_features/zipball/1de09229fa9dcb3538e8da8f932c9d89b625ce55",
-                "reference": "1de09229fa9dcb3538e8da8f932c9d89b625ce55",
+                "url": "https://api.github.com/repos/unb-libraries/saml_features/zipball/9f00391cd8376a1c261b33707c8edcb81d48fb02",
+                "reference": "9f00391cd8376a1c261b33707c8edcb81d48fb02",
                 "shasum": ""
             },
             "require": {
@@ -9417,7 +9417,7 @@
                 "issues": "https://github.com/unb-libraries/saml_features/issues",
                 "source": "https://github.com/unb-libraries/saml_features/tree/10.x-1.x"
             },
-            "time": "2024-02-08T19:08:14+00:00"
+            "time": "2025-10-30T19:28:33+00:00"
         },
         {
             "name": "webflo/drupal-finder",
@@ -9467,16 +9467,16 @@
         },
         {
             "name": "webmozart/assert",
-            "version": "1.12.0",
+            "version": "1.12.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webmozarts/assert.git",
-                "reference": "541057574806f942c94662b817a50f63f7345360"
+                "reference": "9be6926d8b485f55b9229203f962b51ed377ba68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozarts/assert/zipball/541057574806f942c94662b817a50f63f7345360",
-                "reference": "541057574806f942c94662b817a50f63f7345360",
+                "url": "https://api.github.com/repos/webmozarts/assert/zipball/9be6926d8b485f55b9229203f962b51ed377ba68",
+                "reference": "9be6926d8b485f55b9229203f962b51ed377ba68",
                 "shasum": ""
             },
             "require": {
@@ -9519,9 +9519,9 @@
             ],
             "support": {
                 "issues": "https://github.com/webmozarts/assert/issues",
-                "source": "https://github.com/webmozarts/assert/tree/1.12.0"
+                "source": "https://github.com/webmozarts/assert/tree/1.12.1"
             },
-            "time": "2025-10-20T12:43:39+00:00"
+            "time": "2025-10-29T15:56:20+00:00"
         },
         {
             "name": "webmozart/path-util",
@@ -15726,7 +15726,7 @@
     },
     "prefer-stable": true,
     "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "platform": {},
+    "platform-dev": {},
+    "plugin-api-version": "2.6.0"
 }
