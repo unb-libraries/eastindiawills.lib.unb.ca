@@ -29,7 +29,7 @@
   "conflict": {
     "drupal/drupal": "*"
   },
-  "description": "Drupal 8 component of eastindiawills.lib.unb.ca",
+  "description": "Drupal 11 component of eastindiawills.lib.unb.ca",
   "extra": {
     "drupal-scaffold": {
       "locations": {
@@ -137,19 +137,17 @@
     }
   ],
   "require": {
-    "drupal/core-composer-scaffold": "^10",
-    "drupal/core-recommended": "^10",
-    "drupal/core": "^10",
     "drupal/admin_toolbar": "^3",
     "drupal/better_exposed_filters": "^7",
     "drupal/bootstrap5": "^4",
     "drupal/ckeditor5_plugin_pack": "^1",
-    "drupal/easy_breadcrumb": "^2",
+    "drupal/core": "^11",
+    "drupal/core-composer-scaffold": "^11",
+    "drupal/core-recommended": "^11",
     "drupal/colorbox": "^2",
-    "drupal/editor_file": "^1",
+    "drupal/easy_breadcrumb": "^2",
     "drupal/entity_browser": "^2",
     "drupal/facets": "^3",
-    "drupal/file_management": "^2",
     "drupal/fontawesome": "^3",
     "drupal/google_analytics": "^4",
     "drupal/health_check": "^3",
@@ -158,7 +156,6 @@
     "drupal/jquery_ui_touch_punch": "^1",
     "drupal/jquery_ui_slider": "^2",
     "drupal/linkit": "^7.0",
-    "drupal/media_entity_browser": "^2",
     "drupal/noreqnewpass": "^1",
     "drupal/override_node_options": "^2",
     "drupal/paragraphs": "^1",
@@ -179,10 +176,10 @@
     "jacklmoore/colorbox": "dev-master",
     "simeydotme/jquery-ui-slider-pips": "^2",
     "unb-libraries/saml_features": "dev-10.x-1.x",
-    "unb-libraries/composer-drupal-scaffold": "^10"
+    "unb-libraries/composer-drupal-scaffold": "^11.x-dev"
   },
   "require-dev": {
-    "unb-libraries/drupal-development-libraries": "^10"
+    "unb-libraries/drupal-development-libraries": "^11.x-dev"
   },
   "type": "project"
 }

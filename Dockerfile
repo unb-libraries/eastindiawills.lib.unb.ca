@@ -1,7 +1,7 @@
-FROM ghcr.io/unb-libraries/drupal:10.x-1.x-unblib
+FROM ghcr.io/unb-libraries/drupal:11.x-1.x-unblib
 
 # Install additional OS packages.
-ENV ADDITIONAL_OS_PACKAGES="postfix php-ldap php81-pecl-redis php81-xmlreader"
+ENV ADDITIONAL_OS_PACKAGES="postfix php-ldap php83-pecl-redis php83-xmlreader"
 
 ENV DRUPAL_SITE_ID="wills"
 ENV DRUPAL_SITE_URI="eastindiawills.lib.unb.ca"
@@ -24,7 +24,7 @@ COPY ./custom/themes ${DRUPAL_ROOT}/themes/custom
 COPY ./custom/modules ${DRUPAL_ROOT}/modules/custom
 
 # Container metadata.
-LABEL ca.unb.lib.generator="drupal10" \
+LABEL ca.unb.lib.generator="drupal11" \
   com.microscaling.docker.dockerfile="/Dockerfile" \
   com.microscaling.license="MIT" \
   org.label-schema.build-date=$BUILD_DATE \
