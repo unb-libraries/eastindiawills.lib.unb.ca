@@ -2,5 +2,5 @@ name: East India Wills Administration Module
 type: module
 description: Administration extension for eastindiawills.lib.unb.ca
 core: 8.x
-core_version_requirement: ^9 || ^10
+core_version_requirement: ^9 || ^10 || ^11
 package: EIW
