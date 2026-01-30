@@ -16,4 +16,3 @@ if (extension_loaded('newrelic')) {
 }
 
 $settings['config_sync_directory'] = 'DRUPAL_CONFIGURATION_DIR';
-$config['facets.settings']['debug'] = TRUE;
