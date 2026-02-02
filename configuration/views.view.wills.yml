@@ -462,7 +462,7 @@ display:
         options:
           submit_button: Apply
           reset_button: true
-          reset_button_label: Reset
+          reset_button_label: 'Show All'
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc
@@ -541,8 +541,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              eiw_editor: '0'
             expose_fields: false
             placeholder: ''
             searched_fields_id: search_api_fulltext_searched_fields
@@ -680,6 +678,8 @@ display:
         - 'user.node_grants:view'
       tags:
         - 'config:facets.facet.probate_year_facet'
+        - 'config:facets.facet.will_court_names_facet'
+        - 'config:facets.facet.will_keyword_names_facet'
         - 'config:facets.facet.will_role_names_facet'
         - 'config:facets.facet.will_ship_names_facet'
         - 'config:facets.facet.will_voyage_names_facet'
