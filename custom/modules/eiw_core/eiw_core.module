@@ -292,23 +292,6 @@ function eiw_core_preprocess_field(array &$variables) {
 }
 
 /**
- * Implements hook_search_api_result_item_alter().
- */
-function eiw_core_search_api_result_item_alter(ItemInterface &$item) {
-  \Drupal::logger('eiw_core')->notice("REACHED");
-  // Check for the correct index, entity type, or bundle.
-  if ($item->getIndex()->id() === 'eiw_wills_index') {
-    // Alter the rendered will voyages HTML.
-    if ($item->hasExtraData('rendered_item')) {
-      $rendered = $item->getExtraData('rendered_item');
-      // Alter the HTML.
-      //$altered_html = '<div class="custom">' . $rendered . '</div>';
-      //$item->setExtraData('rendered_item', $altered_html);
-    }
-  }
-}
-
-/**
  * Implements hook_form_FORM_ID_alter().
  * Hides parent selection for taxonomy terms.
  */
