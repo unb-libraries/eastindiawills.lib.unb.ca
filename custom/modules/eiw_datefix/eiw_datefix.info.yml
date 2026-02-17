@@ -1,0 +1,5 @@
+name: EIW Date Range Fix
+type: module
+description: 'Extends default date year range to fix validation errors.'
+core_version_requirement: ^11
+package: EIW

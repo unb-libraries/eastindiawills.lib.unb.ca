@@ -14,6 +14,7 @@ module:
   editor: 0
   eiw_admin: 0
   eiw_core: 0
+  eiw_datefix: 0
   entity_reference_revisions: 0
   facets: 0
   facets_range_widget: 0

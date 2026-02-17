@@ -1173,17 +1173,17 @@
         },
         {
             "name": "drupal/bootstrap5",
-            "version": "4.0.6",
+            "version": "4.0.7",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/bootstrap5.git",
-                "reference": "4.0.6"
+                "reference": "4.0.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/bootstrap5-4.0.6.zip",
-                "reference": "4.0.6",
-                "shasum": "600973f96a3ed1eb54b133d96b25b55f8ea58f9a"
+                "url": "https://ftp.drupal.org/files/projects/bootstrap5-4.0.7.zip",
+                "reference": "4.0.7",
+                "shasum": "1ed567303d843b1357c9d43b4b7340ae021e4619"
             },
             "require": {
                 "drupal/core": "^10.1 || ^11.0"
@@ -1191,8 +1191,8 @@
             "type": "drupal-theme",
             "extra": {
                 "drupal": {
-                    "version": "4.0.6",
-                    "datestamp": "1759216769",
+                    "version": "4.0.7",
+                    "datestamp": "1769612976",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2070,17 +2070,17 @@
         },
         {
             "name": "drupal/externalauth",
-            "version": "2.0.8",
+            "version": "2.0.9",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/externalauth.git",
-                "reference": "2.0.8"
+                "reference": "2.0.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/externalauth-2.0.8.zip",
-                "reference": "2.0.8",
-                "shasum": "e9c1b41d6b59d0674b2756361ec729b046759387"
+                "url": "https://ftp.drupal.org/files/projects/externalauth-2.0.9.zip",
+                "reference": "2.0.9",
+                "shasum": "cd4fe65f9a3cad1ad0812c65728a2372f90f4490"
             },
             "require": {
                 "drupal/core": "^9.5 || ^10 || ^11"
@@ -2088,8 +2088,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.8",
-                    "datestamp": "1743603496",
+                    "version": "2.0.9",
+                    "datestamp": "1770044599",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3596,17 +3596,17 @@
         },
         {
             "name": "drupal/tagify",
-            "version": "1.2.47",
+            "version": "1.2.48",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/tagify.git",
-                "reference": "1.2.47"
+                "reference": "1.2.48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/tagify-1.2.47.zip",
-                "reference": "1.2.47",
-                "shasum": "75f1608e3d64b6dfc30711ff1bb7a8ba42584425"
+                "url": "https://ftp.drupal.org/files/projects/tagify-1.2.48.zip",
+                "reference": "1.2.48",
+                "shasum": "49d547b103bdbc88c79ddae6fa3fb242ddac3962"
             },
             "require": {
                 "drupal/core": "^8.8 || ^9 || ^10 || ^11"
@@ -3622,8 +3622,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.2.47",
-                    "datestamp": "1768580848",
+                    "version": "1.2.48",
+                    "datestamp": "1770206135",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3912,16 +3912,16 @@
         },
         {
             "name": "drush/drush",
-            "version": "13.7.0",
+            "version": "13.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drush-ops/drush.git",
-                "reference": "70de523716de1125233de17e172a38c4ecdde397"
+                "reference": "4049dd4332bfc47d19ce849cb50380bd0498e4cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drush-ops/drush/zipball/70de523716de1125233de17e172a38c4ecdde397",
-                "reference": "70de523716de1125233de17e172a38c4ecdde397",
+                "url": "https://api.github.com/repos/drush-ops/drush/zipball/4049dd4332bfc47d19ce849cb50380bd0498e4cc",
+                "reference": "4049dd4332bfc47d19ce849cb50380bd0498e4cc",
                 "shasum": ""
             },
             "require": {
@@ -4049,7 +4049,7 @@
                 "issues": "https://github.com/drush-ops/drush/issues",
                 "security": "https://github.com/drush-ops/drush/security/advisories",
                 "slack": "https://drupal.slack.com/messages/C62H9CWQM",
-                "source": "https://github.com/drush-ops/drush/tree/13.7.0"
+                "source": "https://github.com/drush-ops/drush/tree/13.7.1"
             },
             "funding": [
                 {
@@ -4057,7 +4057,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-11-25T18:23:02+00:00"
+            "time": "2026-01-28T22:21:17+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -5972,16 +5972,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.12.18",
+            "version": "v0.12.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "ddff0ac01beddc251786fe70367cd8bbdb258196"
+                "reference": "a4f766e5c5b6773d8399711019bb7d90875a50ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/ddff0ac01beddc251786fe70367cd8bbdb258196",
-                "reference": "ddff0ac01beddc251786fe70367cd8bbdb258196",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/a4f766e5c5b6773d8399711019bb7d90875a50ee",
+                "reference": "a4f766e5c5b6773d8399711019bb7d90875a50ee",
                 "shasum": ""
             },
             "require": {
@@ -6045,9 +6045,9 @@
             ],
             "support": {
                 "issues": "https://github.com/bobthecow/psysh/issues",
-                "source": "https://github.com/bobthecow/psysh/tree/v0.12.18"
+                "source": "https://github.com/bobthecow/psysh/tree/v0.12.19"
             },
-            "time": "2025-12-17T14:35:46+00:00"
+            "time": "2026-01-30T17:33:13+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -9381,16 +9381,16 @@
         },
         {
             "name": "doctrine/event-manager",
-            "version": "2.1.0",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/event-manager.git",
-                "reference": "c07799fcf5ad362050960a0fd068dded40b1e312"
+                "reference": "dda33921b198841ca8dbad2eaa5d4d34769d18cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/event-manager/zipball/c07799fcf5ad362050960a0fd068dded40b1e312",
-                "reference": "c07799fcf5ad362050960a0fd068dded40b1e312",
+                "url": "https://api.github.com/repos/doctrine/event-manager/zipball/dda33921b198841ca8dbad2eaa5d4d34769d18cf",
+                "reference": "dda33921b198841ca8dbad2eaa5d4d34769d18cf",
                 "shasum": ""
             },
             "require": {
@@ -9452,7 +9452,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/event-manager/issues",
-                "source": "https://github.com/doctrine/event-manager/tree/2.1.0"
+                "source": "https://github.com/doctrine/event-manager/tree/2.1.1"
             },
             "funding": [
                 {
@@ -9468,7 +9468,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-01-17T22:40:21+00:00"
+            "time": "2026-01-29T07:11:08+00:00"
         },
         {
             "name": "doctrine/persistence",

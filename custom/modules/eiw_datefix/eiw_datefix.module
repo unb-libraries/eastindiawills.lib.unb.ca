@@ -1,0 +1,23 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Element;
+
+/**
+ * Implements hook_form_alter().
+ */
+function eiw_datefix_form_alter(array &$form, FormStateInterface $form_state, string $form_id): void {
+  _eiw_datefix_fix_date_year_range($form);
+}
+
+/**
+ * Recursively updates #date_year_range on all date elements.
+ */
+function _eiw_datefix_fix_date_year_range(array &$elements): void {
+  foreach (Element::children($elements) as $key) {
+    if (isset($elements[$key]['#type']) && in_array($elements[$key]['#type'], ['date', 'datetime', 'datelist'], TRUE)) {
+      $elements[$key]['#date_year_range'] = '1500:2100';
+    }
+    _eiw_datefix_fix_date_year_range($elements[$key]);
+  }
+}
