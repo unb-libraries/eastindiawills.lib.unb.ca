@@ -1,0 +1,86 @@
+eastindiawills_unb_lib_ca.settings:
+  type: config_object
+  label: 'EIW theme settings'
+  mapping:
+    features:
+      type: mapping
+      label: 'Theme features'
+      mapping:
+        node_user_picture:
+          type: boolean
+          label: 'Display node user picture'
+        comment_user_picture:
+          type: boolean
+          label: 'Display comment user picture'
+        comment_user_verification:
+          type: boolean
+          label: 'Display comment user verification'
+        favicon:
+          type: integer
+          label: 'Use favicon'
+
+    logo:
+      type: mapping
+      label: 'Logo'
+      mapping:
+        use_default:
+          type: integer
+          label: 'Use default logo'
+        path:
+          type: string
+          label: 'Logo path'
+
+    favicon:
+      type: mapping
+      label: 'Favicon'
+      mapping:
+        use_default:
+          type: integer
+          label: 'Use default favicon'
+        path:
+          type: string
+          label: 'Favicon path'
+
+    subtheme_folder:
+      type: string
+      label: 'Subtheme folder'
+
+    subtheme_name:
+      type: string
+      label: 'Subtheme name'
+
+    subtheme_machine_name:
+      type: string
+      label: 'Subtheme machine name'
+
+    b5_body_schema:
+      type: string
+      label: 'Body theme'
+
+    b5_body_bg_schema:
+      type: string
+      label: 'Body background'
+
+    b5_navbar_schema:
+      type: string
+      label: 'Navbar theme'
+
+    b5_navbar_bg_schema:
+      type: string
+      label: 'Navbar background'
+
+    b5_footer_schema:
+      type: string
+      label: 'Footer theme'
+
+    b5_footer_bg_schema:
+      type: string
+      label: 'Footer background'
+
+    b5_top_container:
+      type: string
+      label: 'Website container type'
+
+    b5_top_container_config:
+      type: string
+      label: 'Website container type configuration'

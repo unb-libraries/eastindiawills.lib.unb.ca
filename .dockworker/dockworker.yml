@@ -1,5 +1,11 @@
 dockworker:
   version: '6'
+  drupal:
+    schemas:
+      ignore_enforcement:
+        - system.*
+        - system.rss
+        - system.rss.*
   application:
     name: History of Information Technology at The University of New Brunswick
     uri: https://eastindiawills.lib.unb.ca
