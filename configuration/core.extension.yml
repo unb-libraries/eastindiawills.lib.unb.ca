@@ -8,7 +8,6 @@ module:
   ckeditor5: 0
   contextual: 0
   datetime: 0
-  dblog: 0
   dynamic_page_cache: 0
   easy_breadcrumb: 0
   editor: 0
@@ -19,7 +18,6 @@ module:
   facets: 0
   facets_range_widget: 0
   field: 0
-  field_ui: 0
   file: 0
   filter: 0
   fontawesome: 0
@@ -55,7 +53,6 @@ module:
   update: 0
   user: 0
   view_unpublished: 0
-  views_ui: 0
   pathauto: 1
   externalauth: 10
   views: 10
