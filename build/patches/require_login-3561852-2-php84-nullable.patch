@@ -1,0 +1,26 @@
+diff --git a/src/LoginRequirementsManager.php b/src/LoginRequirementsManager.php
+index 1234567..abcdefg 100644
+--- a/src/LoginRequirementsManager.php
++++ b/src/LoginRequirementsManager.php
+@@ -152,7 +152,7 @@ class LoginRequirementsManager implements LoginRequirementsManagerInterface {
+   /**
+    * {@inheritdoc}
+    */
+-  public function evaluate(HttpExceptionInterface $exception = NULL) {
++  public function evaluate(?HttpExceptionInterface $exception = NULL) {
+     if ($this->currentUser->isAuthenticated() || in_array($this->routeMatch->getRouteName(), static::PROTECTED_ROUTES, TRUE)) {
+       return FALSE;
+     }
+diff --git a/src/LoginRequirementsManagerInterface.php b/src/LoginRequirementsManagerInterface.php
+index 1234567..abcdefg 100644
+--- a/src/LoginRequirementsManagerInterface.php
++++ b/src/LoginRequirementsManagerInterface.php
+@@ -19,7 +19,7 @@ interface LoginRequirementsManagerInterface {
+    * @return \Drupal\Core\Url|false
+    *   Returns login URL if authentication is required. Otherwise, FALSE.
+    */
+-  public function evaluate(HttpExceptionInterface $exception = NULL);
++  public function evaluate(?HttpExceptionInterface $exception = NULL);
+
+   /**
+    * Get the login redirect and set message.
