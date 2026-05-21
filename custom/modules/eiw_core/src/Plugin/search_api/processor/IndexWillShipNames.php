@@ -27,7 +27,7 @@ class IndexWillShipNames extends ProcessorPluginBase {
   /**
    * {@inheritdoc}
    */
-  public function getPropertyDefinitions(DatasourceInterface $datasource = NULL) {
+  public function getPropertyDefinitions(?DatasourceInterface $datasource = NULL) {
     $properties = [];
     // Allow for either NULL or node datasource (robust).
     if (!$datasource || $datasource->getEntityTypeId() === 'node') {
