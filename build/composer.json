@@ -39,7 +39,7 @@
     "enable-patching": true,
     "patches": {
       "drupal/require_login": {
-        "PHP 8.4 nullable parameter deprecation (https://www.drupal.org/project/require_login/issues/3561852)": "patches/require_login-3561852-2-php84-nullable.patch"
+        "PHP 8.4 nullable parameter deprecation (https://www.drupal.org/project/require_login/issues/3561852)": "https://www.drupal.org/files/issues/2025-12-06/3561852-2-require_login-php84-nullable-parameter.patch"
       }
     },
     "installer-paths": {
