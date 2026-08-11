@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_date_of_probate
     - field.storage.node.field_date_of_will
     - field.storage.node.field_document_images
+    - field.storage.node.field_transcription
     - field.storage.node.field_will_voyages
     - node.type.eiw_will
   module:
@@ -13,6 +14,7 @@ dependencies:
     - file
     - node
     - paragraphs
+    - text
     - user
 id: audit_wills
 label: 'Audit Wills'
@@ -375,11 +377,11 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: ''
-          exclude: true
+          label: Images
+          exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: 'Yes'
             make_link: false
             path: ''
             absolute: false
@@ -412,14 +414,14 @@ display:
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
-          empty: ''
+          empty: 'No'
           hide_empty: false
           empty_zero: false
-          hide_alter_empty: true
+          hide_alter_empty: false
           click_sort_column: target_id
           type: file_default
           settings:
-            use_description_as_link_text: true
+            use_description_as_link_text: false
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -430,19 +432,19 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        nothing_1:
-          id: nothing_1
-          table: views
-          field: nothing
+        field_transcription:
+          id: field_transcription
+          table: node__field_transcription
+          field: field_transcription
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: custom
-          label: Images
+          plugin_id: field
+          label: Transcription
           exclude: false
           alter:
             alter_text: true
-            text: "{% if field_document_images %}\r\nYes\r\n{% else %}\r\nNo\r\n{% endif %}"
+            text: 'Yes'
             make_link: false
             path: ''
             absolute: false
@@ -471,14 +473,27 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
-          empty: ''
+          empty: 'No'
           hide_empty: false
           empty_zero: false
           hide_alter_empty: false
+          click_sort_column: value
+          type: text_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         field_will_voyages:
           id: field_will_voyages
           table: node__field_will_voyages
@@ -772,14 +787,8 @@ display:
             status: status
             changed: changed
             field_document_images: field_document_images
-            nothing_1: nothing_1
+            field_transcription: field_transcription
             field_will_voyages: field_will_voyages
-            field_voyage: field_voyage
-            field_ship: field_ship
-            field_role: field_role
-            field_voyage_1: field_voyage_1
-            field_role_1: field_role_1
-            field_ship_1: field_ship_1
           default: changed
           info:
             title:
@@ -818,62 +827,20 @@ display:
               empty_column: false
               responsive: ''
             field_document_images:
-              sortable: false
+              sortable: true
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
-            nothing_1:
+            field_transcription:
+              sortable: true
+              default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
             field_will_voyages:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            field_voyage:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            field_ship:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            field_role:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            field_voyage_1:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            field_role_1:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            field_ship_1:
-              sortable: false
-              default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
@@ -884,6 +851,7 @@ display:
           empty_table: false
           caption: ''
           description: ''
+          class: ''
       row:
         type: fields
       query:
@@ -940,6 +908,7 @@ display:
         - 'config:field.storage.node.field_date_of_probate'
         - 'config:field.storage.node.field_date_of_will'
         - 'config:field.storage.node.field_document_images'
+        - 'config:field.storage.node.field_transcription'
         - 'config:field.storage.node.field_will_voyages'
   page_1:
     id: page_1
@@ -962,4 +931,5 @@ display:
         - 'config:field.storage.node.field_date_of_probate'
         - 'config:field.storage.node.field_date_of_will'
         - 'config:field.storage.node.field_document_images'
+        - 'config:field.storage.node.field_transcription'
         - 'config:field.storage.node.field_will_voyages'

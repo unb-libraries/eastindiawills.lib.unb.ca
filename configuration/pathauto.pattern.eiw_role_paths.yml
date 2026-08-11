@@ -7,16 +7,16 @@ dependencies:
 id: eiw_role_paths
 label: 'EIW Role Paths'
 type: 'canonical_entities:taxonomy_term'
-pattern: 'roles/[term:name]'
+pattern: '/roles/[term:name]'
 selection_criteria:
   dda63875-2988-4015-a95c-f08425c63c80:
     id: 'entity_bundle:taxonomy_term'
     negate: false
-    uuid: dda63875-2988-4015-a95c-f08425c63c80
     context_mapping:
       taxonomy_term: taxonomy_term
     bundles:
       eiw_roles: eiw_roles
+    uuid: dda63875-2988-4015-a95c-f08425c63c80
 selection_logic: and
 weight: -5
 relationships: {  }

@@ -7,16 +7,16 @@ dependencies:
 id: eiw_voyage_paths
 label: 'EIW Voyage Paths'
 type: 'canonical_entities:node'
-pattern: 'voyages/[node:title]'
+pattern: '/voyages/[node:title]'
 selection_criteria:
   0594a779-63c7-466c-ad75-d3bccb403000:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 0594a779-63c7-466c-ad75-d3bccb403000
     context_mapping:
       node: node
     bundles:
       eiw_voyage: eiw_voyage
+    uuid: 0594a779-63c7-466c-ad75-d3bccb403000
 selection_logic: and
 weight: -5
 relationships: {  }
