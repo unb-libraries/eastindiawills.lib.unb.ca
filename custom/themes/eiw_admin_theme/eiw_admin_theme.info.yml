@@ -18,3 +18,5 @@ regions:
   footer: 'Footer'
 libraries:
   - eiw_admin_theme/global-styling
+ckeditor5-stylesheets:
+  - dist/css/ck5style.css
