@@ -2,3 +2,9 @@ global-styling:
   css:
     theme:
       dist/css/style.css:  { minified: true }
+  js:
+    # Bundled Bootstrap JS (includes Popper), required for navbar collapse,
+    # dropdowns, etc. The base theme (drupal/bootstrap) does not provide this
+    # itself; subthemes are expected to supply their own compiled Bootstrap
+    # JS. Copied from vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js.
+    dist/js/bootstrap.bundle.min.js: { minified: true, weight: -10 }

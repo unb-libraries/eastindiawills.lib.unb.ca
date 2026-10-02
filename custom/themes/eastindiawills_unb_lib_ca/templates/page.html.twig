@@ -1,0 +1,90 @@
+{#
+/**
+ * @file
+ * East India Wills theme override to display a single page.
+ *
+ * The doctype, html, head and body tags are not in this template. Instead
+ * they are in the html.html.twig template inherited from the base theme.
+ *
+ * Regions:
+ * - page.header: Items for the header region.
+ * - page.nav_branding: Items for the navigation branding region.
+ * - page.nav_main: Items for the main navigation region.
+ * - page.nav_additional: Items for the additional navigation region.
+ * - page.breadcrumb: Items for the breadcrumb region.
+ * - page.content: The main content of the current page.
+ * - page.sidebar_first: Items for the first sidebar.
+ * - page.sidebar_second: Items for the second sidebar.
+ * - page.footer: Items for the footer region.
+ *
+ * @see template_preprocess_page()
+ * @see html.html.twig
+ */
+#}
+<header role="banner">
+  {{ page.header }}
+
+  {% if page.nav_branding or page.nav_main or page.nav_additional %}
+    <nav class="navbar navbar-expand-lg navbar-dark text-light bg-dark">
+      <div class="container">
+        {{ page.nav_branding }}
+
+        {% if page.nav_main or page.nav_additional %}
+          <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                  aria-expanded="false" aria-label="{{ 'Toggle navigation'|t }}">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-md-end" id="navbarSupportedContent">
+            {{ page.nav_main }}
+            {{ page.nav_additional }}
+          </div>
+        {% endif %}
+      </div>
+    </nav>
+  {% endif %}
+</header>
+
+<main role="main">
+  <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+
+  {%
+    set sidebar_first_classes = (page.sidebar_first and page.sidebar_second) ? 'col-12 col-sm-6 col-lg-3' : 'col-12 col-lg-3'
+  %}
+  {%
+    set sidebar_second_classes = (page.sidebar_first and page.sidebar_second) ? 'col-12 col-sm-6 col-lg-3' : 'col-12 col-lg-3'
+  %}
+  {%
+    set content_classes = (page.sidebar_first and page.sidebar_second) ? 'col-12 col-lg-6' : ((page.sidebar_first or page.sidebar_second) ? 'col-12 col-lg-9' : 'col-12')
+  %}
+
+  <div class="container">
+    {% if page.breadcrumb %}
+      {{ page.breadcrumb }}
+    {% endif %}
+    <div class="row g-0">
+      {% if page.sidebar_first %}
+        <div class="order-2 order-lg-1 {{ sidebar_first_classes }}">
+          {{ page.sidebar_first }}
+        </div>
+      {% endif %}
+      <div class="order-1 order-lg-2 {{ content_classes }}">
+        {{ page.content }}
+      </div>
+      {% if page.sidebar_second %}
+        <div class="order-3 {{ sidebar_second_classes }}">
+          {{ page.sidebar_second }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</main>
+
+{% if page.footer %}
+  <footer role="contentinfo" class="site-footer mt-auto footer-dark text-light bg-secondary">
+    <div class="container">
+      {{ page.footer }}
+    </div>
+  </footer>
+{% endif %}

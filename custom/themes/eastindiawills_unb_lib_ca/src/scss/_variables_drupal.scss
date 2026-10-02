@@ -1,23 +1,50 @@
-// Theme variables.
+// Theme rules for Drupal-specific chrome (branding, regions, footer, local
+// tasks). drupal/bootstrap exposes no SCSS variable hooks for these
+// elements, so the rules target the actual markup it renders directly
+// (see themes/contrib/bootstrap/templates/block/block--system-branding-block.html.twig).
+//
+// This partial is imported by style.scss *after* Bootstrap's own SCSS, so
+// Bootstrap's mixins (e.g. media-breakpoint-up) are available here.
 
-$navbar-brand-image-height: 36px !default;
-$navbar-brand-image-height-lg: 60px !default;
-$navbar-brand-image-width: auto !default;
-$navbar-brand-image-margin: 0 1rem 0 0 !default;
+.navbar-brand {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
 
-$navbar-brand-site-title-text-transform: uppercase !default;
-$navbar-brand-site-title-font-size: 1.5rem !default;
-$navbar-brand-site-title-font-weight: bold !default;
-$navbar-brand-site-title-letter-spacing: 2px !default;
-$navbar-brand-site-slogan-font-size: .875rem !default;
+  img {
+    height: 36px;
+    width: auto;
+    margin: 0 1rem 0 0;
 
-$region-padding: 0 .5rem !default;
+    @include media-breakpoint-up(lg) {
+      height: 60px;
+    }
+  }
+}
 
-$footer-padding: 2rem 0 !default;
+.site-name-slogan {
+  font-size: .875rem;
+}
 
-$nav-tabs-link-active-bg-sm: #dee2e6 !default;
+.region {
+  padding: 0 .5rem;
+}
 
-$local-tasks-primary-margin: 1rem 0 !default;
-$local-tasks-secondary-margin: 0 0 1rem 0 !default;
+.site-footer {
+  padding: 2rem 0;
+}
 
-$table-striped-bg: #f9f9f9 !default;
+nav.tabs .nav-link.active {
+  @include media-breakpoint-down(sm) {
+    background: #dee2e6;
+  }
+}
+
+nav.tabs ul.primary {
+  margin: 1rem 0;
+}
+
+nav.tabs ul.secondary {
+  margin: 0 0 1rem 0;
+}
