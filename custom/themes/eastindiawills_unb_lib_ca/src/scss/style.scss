@@ -1,12 +1,20 @@
 // Sub theme styling.
-@import 'variables_drupal';
 
-// Bootstrap overridden variables.
-// @see https://getbootstrap.com/docs/5.2/customize/sass/#variable-defaults.
+// Bootstrap overridden variables. Must come before the Bootstrap import
+// below, since Bootstrap's own variables are only !default.
+// @see https://getbootstrap.com/docs/5.3/customize/sass/#variable-defaults.
 @import 'variables_bootstrap';
 
-// Include bootstrap.
-@import '../../../../../vendor/drupal/bootstrap5/scss/style';
+// Include the real Bootstrap framework (installed via composer as a
+// transitive dependency of drupal/bootstrap, the base theme, into the
+// Drupal docroot at build/). The base theme's own Drupal-chrome glue CSS
+// (forms, tabs, item lists, tables, etc.) is separate and stays active via
+// its always-on global-styling library.
+@import '../../../../../build/vendor/twbs/bootstrap/scss/bootstrap';
+
+// Theme rules for Drupal-specific chrome (branding, regions, footer, local
+// tasks, tables). Imported after Bootstrap so its mixins are available.
+@import 'variables_drupal';
 
 // Broad and site-wide rules (careful here).
 ul {

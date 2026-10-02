@@ -145,7 +145,7 @@
   "require": {
     "drupal/admin_toolbar": "^3",
     "drupal/better_exposed_filters": "^7",
-    "drupal/bootstrap5": "^4",
+    "drupal/bootstrap": "^5",
     "drupal/core": "^11",
     "drupal/core-composer-scaffold": "^11",
     "drupal/core-recommended": "^11",
