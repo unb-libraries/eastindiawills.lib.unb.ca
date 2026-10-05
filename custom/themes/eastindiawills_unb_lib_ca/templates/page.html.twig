@@ -25,7 +25,7 @@
   {{ page.header }}
 
   {% if page.nav_branding or page.nav_main or page.nav_additional %}
-    <nav class="navbar navbar-expand-lg navbar-dark text-light bg-dark">
+    <nav class="navbar navbar-expand-lg bg-white eiw-header">
       <div class="container">
         {{ page.nav_branding }}
 
@@ -36,11 +36,18 @@
             <span class="navbar-toggler-icon"></span>
           </button>
 
-          <div class="collapse navbar-collapse justify-content-md-end" id="navbarSupportedContent">
-            {{ page.nav_main }}
-            {{ page.nav_additional }}
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="eiw-header__nav-main">
+              {{ page.nav_main }}
+            </div>
+            <div class="eiw-header__nav-additional ms-lg-auto">
+              {{ page.nav_additional }}
+            </div>
           </div>
         {% endif %}
+
+        {# Decorative Company flag. #}
+        <img src="{{ base_path ~ directory }}/dist/img/flag-company-placeholder.webp" alt="" aria-hidden="true" class="eiw-header__flag d-none d-lg-block" width="600" height="508" />
       </div>
     </nav>
   {% endif %}

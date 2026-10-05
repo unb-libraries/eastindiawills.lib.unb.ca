@@ -23,6 +23,9 @@
 // Heading, paragraph and display type details.
 @import 'typography';
 
+// Site header: branding, navigation, flag.
+@import 'header';
+
 // Broad and site-wide rules (careful here).
 ul {
   list-style: none;
