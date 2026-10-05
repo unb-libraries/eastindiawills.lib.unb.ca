@@ -3,3 +3,40 @@ $form-text-margin-top: 0;
 $legend-font-size: 1rem;
 $table-cell-padding-x: .75rem;
 $table-striped-bg: #f9f9f9;
+
+// Colour palette, from the "Company flag & colour palette" frame of
+// doc/eastIndia-concepts-figma.pdf. Primary is the Company flag red,
+// secondary a contrasting blue, text a near-black; each ramp runs from
+// the base colour towards the darkest tone (shades) and towards white (tints).
+$eiw-red: #d0350e;
+$eiw-red-shades: (1: #b03919, 2: #903a21, 3: #713927, 4: #51352c);
+$eiw-red-tints: (1: #e1643f, 2: #ee8c6c, 3: #f8b39b, 4: #fed9cc);
+
+$eiw-blue: #1b67d1;
+$eiw-blue-shades: (1: #2059a9, 2: #264b81, 3: #2b3e58);
+$eiw-blue-tints: (1: #548ddd, 2: #8db3e8, 3: #c6d9f4);
+
+$eiw-ink: #303030;
+
+// Text-to-background grey ramp.
+$white: #fff;
+$gray-100: #e8e8e8;
+$gray-200: #d1d1d1;
+$gray-300: #bbb;
+$gray-400: #a6a6a6;
+$gray-500: #909090;
+$gray-600: #7c7c7c;
+$gray-700: #686868;
+$gray-800: #545454;
+$gray-900: #424242;
+
+$primary: $eiw-red;
+$secondary: $eiw-blue;
+$dark: $eiw-ink;
+
+$body-color: $eiw-ink;
+$body-bg: $white;
+$headings-color: $eiw-ink;
+
+$link-color: $eiw-red;
+$link-hover-color: map-get($eiw-red-shades, 2);
