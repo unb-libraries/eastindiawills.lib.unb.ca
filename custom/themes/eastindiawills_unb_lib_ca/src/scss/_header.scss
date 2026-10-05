@@ -1,0 +1,86 @@
+// Site header: lockup logo, main navigation, Company flag.
+// Sizes are the concept design's, scaled to a 1280px-wide viewport.
+
+.eiw-header {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+
+  // Region wrappers render as Bootstrap rows; neutralize inside the navbar.
+  .region {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.eiw-brand {
+  padding: 0;
+  margin-right: 0;
+
+  &__logo {
+    display: block;
+    height: 56px;
+    width: auto;
+
+    @include media-breakpoint-up(lg) {
+      height: 88px;
+    }
+  }
+}
+
+.eiw-header__nav-main {
+  @include media-breakpoint-up(lg) {
+    margin-left: 3rem;
+  }
+
+  .navbar-nav .nav-link {
+    position: relative;
+    padding: .5rem 0;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: $eiw-ink;
+
+    @include media-breakpoint-up(lg) {
+      margin-right: 1.75rem;
+    }
+
+    // Red underline marks the current and hovered sections.
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 3px;
+      background: $eiw-red;
+      transform: scaleX(0);
+      transition: transform .15s ease-in-out;
+    }
+
+    &:hover,
+    &:focus-visible,
+    &.active {
+      color: $eiw-ink;
+
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+}
+
+.eiw-header__nav-additional .nav-link {
+  font-size: .9375rem;
+  color: $gray-700;
+
+  &:hover,
+  &:focus-visible {
+    color: $eiw-red;
+  }
+}
+
+.eiw-header__flag {
+  width: 110px;
+  height: auto;
+  margin-left: 1.5rem;
+}

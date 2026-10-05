@@ -6,26 +6,7 @@
 // This partial is imported by style.scss *after* Bootstrap's own SCSS, so
 // Bootstrap's mixins (e.g. media-breakpoint-up) are available here.
 
-.navbar-brand {
-  text-transform: uppercase;
-  font-size: 1.5rem;
-  font-weight: bold;
-  letter-spacing: 2px;
-
-  img {
-    height: 36px;
-    width: auto;
-    margin: 0 1rem 0 0;
-
-    @include media-breakpoint-up(lg) {
-      height: 60px;
-    }
-  }
-}
-
-.site-name-slogan {
-  font-size: .875rem;
-}
+// Branding and header: see _header.scss.
 
 .region {
   padding: 0 .5rem;

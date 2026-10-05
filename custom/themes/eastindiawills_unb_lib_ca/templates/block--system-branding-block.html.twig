@@ -1,0 +1,22 @@
+{#
+/**
+ * @file
+ * East India Wills override for the branding block.
+ *
+ * Renders the "Wills of the East India Company" lockup from the theme instead
+ * of the site logo setting. The image carries the site's visible name, so the
+ * site name is only output for assistive technology.
+ *
+ * Available variables:
+ * - site_logo: Logo for site as defined in Appearance or theme settings.
+ * - site_name: Name for site as defined in Site information settings.
+ * - site_slogan: Slogan for site as defined in Site information settings.
+ */
+#}
+{% set attributes = attributes.addClass('site-branding') %}
+<a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="navbar-brand eiw-brand">
+  <img src="{{ base_path ~ directory }}/dist/img/logo-lockup-placeholder.svg" alt="{{ 'Wills of the East India Company'|t }}" class="eiw-brand__logo" width="338" height="111" />
+  {% if site_name %}
+    <span class="visually-hidden">{{ site_name }}</span>
+  {% endif %}
+</a>
