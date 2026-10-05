@@ -5,12 +5,13 @@
 // @see https://getbootstrap.com/docs/5.3/customize/sass/#variable-defaults.
 @import 'variables_bootstrap';
 
-// Include the real Bootstrap framework (installed via composer as a
-// transitive dependency of drupal/bootstrap, the base theme, into the
-// Drupal docroot at build/). The base theme's own Drupal-chrome glue CSS
+// Include the real Bootstrap framework. Dockworker compiles SCSS on the
+// host, so this resolves against the repo root vendor/, where twbs/bootstrap
+// is a require-dev pinned to the version drupal/bootstrap pulls into the
+// site (see build/composer.lock). The base theme's own Drupal-chrome glue CSS
 // (forms, tabs, item lists, tables, etc.) is separate and stays active via
 // its always-on global-styling library.
-@import '../../../../../build/vendor/twbs/bootstrap/scss/bootstrap';
+@import '../../../../../vendor/twbs/bootstrap/scss/bootstrap';
 
 // Theme rules for Drupal-specific chrome (branding, regions, footer, local
 // tasks, tables). Imported after Bootstrap so its mixins are available.
