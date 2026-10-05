@@ -1,0 +1,242 @@
+// Wills search page (/wills): hero, facet sidebar, results.
+// Follows the concept design's main page frame.
+
+// Hero engraving, decorative; only rendered on /wills (see the .theme file).
+.eiw-hero {
+  margin-bottom: 2.5rem;
+  text-align: center;
+
+  &__image {
+    width: 100%;
+    max-width: 760px;
+    height: auto;
+  }
+}
+
+// Facet sidebar.
+.block-facets {
+  margin-bottom: 2rem;
+
+  @include media-breakpoint-up(lg) {
+    padding-right: 2.5rem;
+  }
+
+  // Facet titles are small sans labels, not page headings.
+  > h2 {
+    font-family: $eiw-font-sans;
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.33;
+    margin-bottom: .75rem;
+  }
+
+  ul {
+    padding-left: 0;
+    margin-bottom: .5rem;
+  }
+
+  .facet-item {
+    display: flex;
+    align-items: baseline;
+    min-height: 0;
+    margin-bottom: .25rem;
+    padding-left: 0;
+    font-size: .9375rem;
+    line-height: 1.4;
+
+    .form-check-input {
+      flex-shrink: 0;
+      float: none;
+      margin: 0 .5rem 0 0;
+      width: .875em;
+      height: .875em;
+    }
+
+    label {
+      display: flex;
+      flex-grow: 1;
+      justify-content: space-between;
+      gap: .75rem;
+    }
+  }
+
+  .facet-item__value {
+    margin-left: 0;
+  }
+
+  .facet-item__count {
+    color: $eiw-red;
+    white-space: nowrap;
+  }
+
+  .facets-soft-limit-link {
+    font-size: .9375rem;
+  }
+}
+
+// Probate year range slider (jQuery UI slider with pips).
+.block-facet--range-slider {
+  .facet-slider.ui-slider-horizontal {
+    height: 2px;
+    margin: 2.5rem .5rem 3rem;
+    border: 0;
+    border-radius: 0;
+    background: $gray-200;
+  }
+
+  .ui-slider-range {
+    background: $eiw-ink;
+    border-radius: 0;
+  }
+
+  .ui-slider .ui-slider-handle {
+    top: -6px;
+    width: 14px;
+    height: 14px;
+    margin-left: -7px;
+    border: 2px solid $eiw-ink;
+    border-radius: 50%;
+    background: $white;
+    cursor: pointer;
+
+    &:focus-visible {
+      outline: 2px solid $eiw-red;
+      outline-offset: 2px;
+    }
+  }
+
+  // Value tooltips: small dark tags above the handles.
+  .ui-slider-tip {
+    top: -32px;
+    width: 38px;
+    margin-left: -19px;
+    height: 18px;
+    line-height: 18px;
+    font-size: .6875rem;
+    border: 0;
+    border-radius: 2px;
+    background: $eiw-ink;
+    color: $white;
+
+    &::before,
+    &::after {
+      border-top-color: $eiw-ink;
+    }
+  }
+
+  .ui-slider-pips .ui-slider-line {
+    background: $gray-400;
+  }
+
+  .ui-slider-pips .ui-slider-label {
+    font-size: .6875rem;
+    color: $gray-600;
+  }
+
+  // Replace the library's orange/pink selected-value colours.
+  .ui-slider-pips [class*=ui-slider-pip-selected],
+  .ui-slider-pips .ui-slider-pip-selected-2 {
+    color: $eiw-ink;
+    font-weight: 600;
+
+    .ui-slider-line {
+      background: $eiw-ink;
+    }
+  }
+}
+
+// Results.
+.view-id-wills.view-display-id-page_1 {
+  .views-exposed-form {
+    label {
+      font-size: 1.125rem;
+      font-weight: 600;
+    }
+
+    .form-control:not(.btn) {
+      @include media-breakpoint-up(md) {
+        min-width: 18rem;
+      }
+    }
+  }
+
+  .view-header {
+    font-size: $font-size-sm;
+    color: $gray-700;
+    margin-bottom: 1rem;
+  }
+
+  .views-table {
+    font-size: $font-size-sm;
+
+    th {
+      font-size: .9375rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .03em;
+      border-bottom: 2px solid $eiw-ink;
+
+      a {
+        color: $eiw-ink;
+        text-decoration: none;
+
+        &:hover {
+          color: $eiw-red;
+        }
+      }
+    }
+
+    .views-field-field-date-of-probate,
+    .views-field-field-date-of-will {
+      white-space: nowrap;
+    }
+
+    td {
+      vertical-align: top;
+      border-bottom-color: $gray-100;
+    }
+
+    .views-field-title a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// Voyages within a result row: plain "Ship: X  Role: Y" lines, no boxes.
+#block-eastindiawills-unb-lib-ca-content .view-id-wills .views-field-index-will-voyages {
+  // Drop the item list, field and paragraph spacing; rows stay compact.
+  .item-list ul,
+  .list-group,
+  .field,
+  .field__items,
+  .field__item,
+  .paragraph {
+    margin-top: 0 !important;
+    margin-bottom: 0;
+    border-radius: 0;
+  }
+
+  .list-group-item {
+    padding: 0;
+    border: 0;
+    background: none;
+  }
+
+  .paragraph--type--eiw-will-voyage.paragraph--view-mode--default {
+    margin-bottom: .25rem;
+    padding-left: 0;
+  }
+
+  .field {
+    display: inline-block;
+    margin-right: .75rem;
+  }
+
+  .field__label {
+    color: $gray-700;
+  }
+}

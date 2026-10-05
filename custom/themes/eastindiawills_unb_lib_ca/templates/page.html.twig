@@ -66,6 +66,12 @@
     set content_classes = (page.sidebar_first and page.sidebar_second) ? 'col-12 col-lg-6' : ((page.sidebar_first or page.sidebar_second) ? 'col-12 col-lg-9' : 'col-12')
   %}
 
+  {% if eiw_hero %}
+    <div class="container eiw-hero">
+      <img src="{{ file_url(directory ~ '/dist/img/hero-ships-battle-placeholder.webp') }}" alt="" aria-hidden="true" class="eiw-hero__image" width="1536" height="1024" />
+    </div>
+  {% endif %}
+
   <div class="container">
     {% if page.breadcrumb %}
       {{ page.breadcrumb }}
