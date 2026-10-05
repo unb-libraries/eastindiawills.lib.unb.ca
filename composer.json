@@ -23,7 +23,7 @@
     }
   ],
   "require-dev": {
-    "drupal/bootstrap5": "^3",
+    "twbs/bootstrap": "5.3.8",
     "unb-libraries/dockworker-drupal": "6.x-dev"
   },
   "scripts": {
