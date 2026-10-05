@@ -1,0 +1,39 @@
+// Stand-in web fonts (SIL OFL, see src/fonts/OFL-*.txt), self-hosted.
+// The concept design specifies two commercial faces; these free faces
+// stand in until licensed files are available:
+// - Caesura (serif headings, display) -> DM Serif Display
+// - Freight Sans (text, smaller headings) -> Source Sans 3
+// To swap, replace the files and family names here and the
+// $eiw-font-* variables in _variables_bootstrap.scss.
+
+@font-face {
+  font-family: 'DM Serif Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/dm-serif-display-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'DM Serif Display';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/dm-serif-display-italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 200 900;
+  font-display: swap;
+  src: url('../fonts/source-sans-3-variable.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: italic;
+  font-weight: 200 900;
+  font-display: swap;
+  src: url('../fonts/source-sans-3-variable-italic.woff2') format('woff2');
+}

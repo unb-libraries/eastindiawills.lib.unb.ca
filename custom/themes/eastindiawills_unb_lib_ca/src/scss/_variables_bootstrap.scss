@@ -40,3 +40,36 @@ $headings-color: $eiw-ink;
 
 $link-color: $eiw-red;
 $link-hover-color: map-get($eiw-red-shades, 2);
+
+// Typography, from the type specimen frame of the concept design.
+// Sizes are the design's px values in rem (16px root); comments give
+// size/line-height in px as specified.
+$eiw-font-serif: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+$eiw-font-sans: 'Source Sans 3', 'Helvetica Neue', Arial, sans-serif;
+
+$font-family-sans-serif: $eiw-font-sans;
+$font-size-base: 1.3125rem; // p: 21/27, book.
+$line-height-base: 1.2857;
+$font-size-lg: 1.5rem; // p large: 24/30.
+$font-size-sm: 1.125rem; // p small: 18/24.
+$small-font-size: .857em; // 18px within 21px text.
+$paragraph-margin-bottom: .75rem; // P spacing: 12.
+$lead-font-size: 1.5rem;
+$lead-font-weight: 400;
+
+// h1-h2 are serif (Caesura); h3-h6 sans semi-bold (Freight Sans).
+// Per-heading line heights and the serif override are in _typography.scss.
+$headings-font-family: $eiw-font-sans;
+$headings-font-weight: 600;
+$headings-margin-bottom: .75rem;
+$h1-font-size: 3rem; // 48/54.
+$h2-font-size: 2.4375rem; // 39/45.
+$h3-font-size: 2.25rem; // 36/42.
+$h4-font-size: 1.875rem; // 30/36.
+$h5-font-size: 1.5rem; // 24/30.
+$h6-font-size: 1.125rem; // 18/18, uppercase, 3% tracking.
+
+// Extra large "display" type for real emphasis.
+$display-font-family: $eiw-font-serif;
+$display-font-weight: 400;
+$display-line-height: 1.1;

@@ -1,0 +1,31 @@
+// Heading details Bootstrap has no per-heading variables for.
+h1, .h1,
+h2, .h2 {
+  font-family: $eiw-font-serif;
+  // DM Serif Display ships one weight; avoid faux bold.
+  font-weight: 400;
+}
+
+h1, .h1 { line-height: 1.125; }
+h2, .h2 { line-height: 1.154; }
+h3, .h3 { line-height: 1.167; }
+h4, .h4 { line-height: 1.2; }
+h5, .h5 { line-height: 1.25; }
+
+h6, .h6 {
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+}
+
+.lead {
+  line-height: 1.25;
+  margin-bottom: .9375rem; // P spacing: 15.
+}
+
+// p x-small: 15/21, medium.
+.text-x-small {
+  font-size: .9375rem;
+  line-height: 1.4;
+  font-weight: 500;
+}

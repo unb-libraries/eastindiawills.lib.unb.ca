@@ -1,5 +1,8 @@
 // Sub theme styling.
 
+// Self-hosted web fonts.
+@import 'fonts';
+
 // Bootstrap overridden variables. Must come before the Bootstrap import
 // below, since Bootstrap's own variables are only !default.
 // @see https://getbootstrap.com/docs/5.3/customize/sass/#variable-defaults.
@@ -16,6 +19,9 @@
 // Theme rules for Drupal-specific chrome (branding, regions, footer, local
 // tasks, tables). Imported after Bootstrap so its mixins are available.
 @import 'variables_drupal';
+
+// Heading, paragraph and display type details.
+@import 'typography';
 
 // Broad and site-wide rules (careful here).
 ul {
