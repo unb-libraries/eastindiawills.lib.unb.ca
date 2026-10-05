@@ -47,7 +47,7 @@
         {% endif %}
 
         {# Decorative Company flag. #}
-        <img src="{{ base_path ~ directory }}/dist/img/flag-company-placeholder.webp" alt="" aria-hidden="true" class="eiw-header__flag d-none d-lg-block" width="600" height="508" />
+        <img src="{{ file_url(directory ~ '/dist/img/flag-company-placeholder.webp') }}" alt="" aria-hidden="true" class="eiw-header__flag d-none d-lg-block" width="600" height="508" />
       </div>
     </nav>
   {% endif %}
