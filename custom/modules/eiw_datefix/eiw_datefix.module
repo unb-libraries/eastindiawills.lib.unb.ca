@@ -18,11 +18,20 @@ function eiw_datefix_form_alter(array &$form, FormStateInterface $form_state, st
 }
 
 /**
- * Recursively updates #date_year_range on all date elements.
+ * Recursively updates #date_year_range on date elements that leave it unset.
+ *
+ * Only touches elements with no #date_year_range of their own: core's
+ * Datetime element otherwise silently falls back to a hardcoded '1900:2050'
+ * (see Drupal\Core\Datetime\Element\Datetime::$defaultYearRange), which is
+ * the actual bug this works around. Some widgets set their own deliberate
+ * range before hook_form_alter() runs - e.g. the core "Authored on" field's
+ * TimestampDatetimeWidget uses '1902:2037' - and those are left alone.
  */
 function _eiw_datefix_fix_date_year_range(array &$elements): void {
   foreach (Element::children($elements) as $key) {
-    if (isset($elements[$key]['#type']) && in_array($elements[$key]['#type'], ['date', 'datetime', 'datelist'], TRUE)) {
+    if (isset($elements[$key]['#type'])
+      && in_array($elements[$key]['#type'], ['date', 'datetime', 'datelist'], TRUE)
+      && !isset($elements[$key]['#date_year_range'])) {
       $elements[$key]['#date_year_range'] = '1500:2100';
     }
     _eiw_datefix_fix_date_year_range($elements[$key]);

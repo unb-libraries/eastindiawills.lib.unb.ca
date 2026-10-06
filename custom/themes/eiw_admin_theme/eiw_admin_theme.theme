@@ -16,15 +16,31 @@ function eiw_admin_theme_element_info_alter(array &$info) {
 /**
  * Custom function to alter HTML5 date fields.
  *
- * Applies to every date field rather than an allowlist of field names, to
- * match the server-side year range in eiw_datefix (which validates any date
- * field on any form); otherwise a field left off this list would pass that
- * wider validation but still get clamped by the browser's native widget.
+ * Applies to every date field rather than an allowlist of field names, so
+ * any field's widget gets a usable native date picker.
+ *
+ * Derives min/max from the element's own #date_year_range rather than a
+ * hardcoded span, so a field with a deliberately different range - e.g.
+ * core's "Authored on" field uses '1902:2037' - gets HTML5 bounds that
+ * match, instead of being overridden with eiw_datefix's wider default.
+ * hook_form_alter() (where eiw_datefix widens #date_year_range) runs before
+ * #process callbacks like this one, so by this point #date_year_range
+ * already holds whichever value should win: a widget's own explicit range,
+ * or eiw_datefix's fix, in that order. Only the plain 'min:max' year form
+ * used across this site is handled; see
+ * Drupal\Core\Datetime\Element\DateElementBase::datetimeRangeYears() for
+ * the relative forms ("-5:+5" etc.) core itself also supports.
  */
 function datetime_settings($element) {
-  // Set HTML5 range attributes. Prevents defaulting to loaded value.
-  $element['date']['#attributes']['min'] = '1500-01-01';
-  $element['date']['#attributes']['max'] = '2100-01-01';
+  $range = explode(':', $element['#date_year_range'] ?? '', 2);
+  if (count($range) === 2 && ctype_digit($range[0]) && ctype_digit($range[1])) {
+    // Set HTML5 range attributes. Needed because core's own derivation
+    // (Datetime::processDatetime) is skipped entirely when the field has no
+    // current value yet (a new/empty widget), leaving the browser with no
+    // bound at all rather than defaulting to the loaded value's year.
+    $element['date']['#attributes']['min'] = $range[0] . '-01-01';
+    $element['date']['#attributes']['max'] = $range[1] . '-12-31';
+  }
 
   return $element;
 }
