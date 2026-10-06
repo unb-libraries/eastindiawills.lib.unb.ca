@@ -4,9 +4,21 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Element;
 
 /**
- * Implements hook_form_BASE_FORM_ID_alter().
+ * Implements hook_form_FORM_ID_alter() for the will add form.
  */
 function eiw_datefix_form_node_eiw_will_form_alter(array &$form, FormStateInterface $form_state, string $form_id): void {
+  _eiw_datefix_fix_date_year_range($form);
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter() for the will edit form.
+ *
+ * The add and edit forms for the same bundle have different full form IDs
+ * (node_eiw_will_form vs. node_eiw_will_edit_form; the base form ID they
+ * share, node_form, is generic to every content type), so both need their
+ * own alter to cover both operations.
+ */
+function eiw_datefix_form_node_eiw_will_edit_form_alter(array &$form, FormStateInterface $form_state, string $form_id): void {
   _eiw_datefix_fix_date_year_range($form);
 }
 
