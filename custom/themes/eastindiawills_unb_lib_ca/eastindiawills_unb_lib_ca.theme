@@ -39,12 +39,14 @@ function eastindiawills_unb_lib_ca_preprocess_menu__main(&$variables) {
 /**
  * Implements hook_preprocess_HOOK() for page.html.twig.
  *
- * The wills search page follows the concept design: a hero engraving above
- * the content, and no breadcrumb.
+ * The wills search page follows the concept design: no breadcrumb.
+ *
+ * The hero engraving (see page.html.twig's eiw_hero block) belongs on the
+ * homepage per the concept design; it's not wired up to any route for now
+ * since there's no homepage built yet.
  */
 function eastindiawills_unb_lib_ca_preprocess_page(&$variables) {
   if (\Drupal::routeMatch()->getRouteName() === 'view.wills.page_1') {
-    $variables['eiw_hero'] = TRUE;
     unset($variables['page']['breadcrumb']);
   }
   $variables['#cache']['contexts'][] = 'route.name';
