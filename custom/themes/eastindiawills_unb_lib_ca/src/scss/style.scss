@@ -48,26 +48,36 @@ ul {
       margin-top: .5rem;
     }
   }
-  .views-field-field-will-voyages *, 
-  .views-field-index-will-voyages * {
-    padding-left: 0 !important;
-    margin-left: 0;
-  }
-  .paragraph--type--eiw-will-voyage.paragraph--view-mode--default {
-    margin-bottom: 1rem;
-    padding-left: 1rem;
-    .field {
-      margin-top: 0 !important;
-      .field__label {
-        display: inline-block;
-        font-weight: normal;
-        &::after {
-          content: ':';
+  // Full node page display of a will's voyages (field_will_voyages). The
+  // Wills search listing's voyages (index_will_voyages) are a separate
+  // rendering context with its own layout - see _wills.scss - so it's kept
+  // out of this selector rather than fighting it on specificity.
+  .views-field-field-will-voyages {
+    * {
+      padding-left: 0 !important;
+      margin-left: 0;
+    }
+
+    .paragraph--type--eiw-will-voyage.paragraph--view-mode--default {
+      margin-bottom: 1rem;
+      padding-left: 1rem;
+
+      .field {
+        margin-top: 0 !important;
+
+        .field__label {
+          display: inline-block;
+          font-weight: normal;
+
+          &::after {
+            content: ':';
+          }
         }
-      }
-      .field__item {
-        display: inline-block;
-        margin-left: .2rem;
+
+        .field__item {
+          display: inline-block;
+          margin-left: .2rem;
+        }
       }
     }
   }

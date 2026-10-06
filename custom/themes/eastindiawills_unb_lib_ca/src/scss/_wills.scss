@@ -320,7 +320,6 @@
   }
 
   .paragraph--type--eiw-will-voyage.paragraph--view-mode--default {
-    margin-bottom: .25rem;
     padding-left: 0;
   }
 
@@ -329,7 +328,73 @@
     margin-right: .75rem;
   }
 
+  // Each field's own label ("Ship", "Role") reads inline as "Label: value".
+  // The voyage name's label is hidden instead (below): it stands on its own
+  // as the entry's heading, so repeating "Voyage:" ahead of it is noise.
   .field__label {
+    display: inline-block;
     color: $gray-700;
+    font-weight: normal;
+
+    &::after {
+      content: ':';
+    }
+  }
+
+  // The .field__item wrapping each individual field's value (nested inside
+  // .field--name-field-voyage/-ship/-role) vs. the one further out wrapping
+  // each whole voyage (direct child of .field__items, targeted below) - two
+  // different nesting levels share this same BEM class.
+  .field--name-field-voyage .field__item,
+  .field--name-field-ship .field__item,
+  .field--name-field-role .field__item {
+    display: inline-block;
+    margin-left: .2rem;
+  }
+
+  // One .field__item per voyage. A will with a single voyage stays as
+  // plain lines; with more than one, each is numbered and given room to
+  // breathe so the set reads as distinct entries rather than a run-on list.
+  .field__items {
+    counter-reset: voyage;
+
+    > .field__item {
+      position: relative;
+
+      &:not(:only-child) {
+        counter-increment: voyage;
+        padding-left: 1.25rem;
+
+        &:not(:last-child) {
+          margin-bottom: .75rem;
+        }
+
+        &::before {
+          content: counter(voyage) '.';
+          position: absolute;
+          left: 0;
+          color: $gray-500;
+          font-size: $font-size-sm;
+        }
+      }
+    }
+  }
+
+  // The voyage name is the entry's heading; ship/role are secondary detail
+  // on their own indented line underneath, rather than run on with it.
+  .field--name-field-voyage {
+    display: block;
+    margin-right: 0;
+    font-weight: 600;
+
+    .field__label {
+      display: none;
+    }
+  }
+
+  .field--name-field-voyage ~ .field--name-field-ship,
+  .field--name-field-voyage ~ .field--name-field-role {
+    margin-left: .75rem;
+    font-size: $font-size-sm;
   }
 }
