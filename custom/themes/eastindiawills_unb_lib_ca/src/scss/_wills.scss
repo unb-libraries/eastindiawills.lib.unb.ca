@@ -148,14 +148,43 @@
 // Results.
 .view-id-wills.view-display-id-page_1 {
   .views-exposed-form {
+    // The base theme's template wraps the field and the actions container
+    // in a plain d-flex with no gap, so they sit flush against each other.
+    .d-flex {
+      gap: .75rem;
+    }
+
     label {
       font-size: 1.125rem;
       font-weight: 600;
     }
 
     .form-control:not(.btn) {
+      border-color: $gray-300;
+
+      &:focus {
+        border-color: $eiw-ink;
+        box-shadow: none;
+      }
+
       @include media-breakpoint-up(md) {
         min-width: 18rem;
+      }
+    }
+
+    // Outlined rather than solid: everywhere else the red accent is a line
+    // (nav underline, facet counts, pager) rather than a filled block.
+    .btn-primary {
+      background: none;
+      border: 1px solid $eiw-red;
+      color: $eiw-red;
+      font-weight: 600;
+
+      &:hover,
+      &:focus-visible {
+        background: $eiw-red;
+        border-color: $eiw-red;
+        color: $white;
       }
     }
   }
