@@ -4,6 +4,14 @@ $legend-font-size: 1rem;
 $table-cell-padding-x: .75rem;
 $table-striped-bg: #f9f9f9;
 
+// Flat corners throughout: nothing in the concept design uses rounded
+// rectangles (the table, nav underline and pager are all flat/line-based);
+// this keeps buttons and inputs consistent with that rather than falling
+// back to Bootstrap's default pill-ish rounding.
+$border-radius: 0;
+$border-radius-sm: 0;
+$border-radius-lg: 0;
+
 // Colour palette, from the "Company flag & colour palette" frame of
 // doc/eastIndia-concepts-figma.pdf. Primary is the Company flag red,
 // secondary a contrasting blue, text a near-black; each ramp runs from
