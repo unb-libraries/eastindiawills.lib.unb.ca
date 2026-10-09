@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "45f770a86f15dfe27950a6c7af1635ce",
+    "content-hash": "c6eeb863efa882f1fa009f982dc1d7d1",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1006,6 +1006,51 @@
             "time": "2026-10-01T06:59:29+00:00"
         },
         {
+            "name": "dompdf/php-font-lib",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dompdf/php-font-lib.git",
+                "reference": "a6e9a688a2a80016ac080b97be73d3e10c444c9a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dompdf/php-font-lib/zipball/a6e9a688a2a80016ac080b97be73d3e10c444c9a",
+                "reference": "a6e9a688a2a80016ac080b97be73d3e10c444c9a",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": "^7.1 || ^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.5 || ^8 || ^9 || ^10 || ^11 || ^12"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "FontLib\\": "src/FontLib"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "The FontLib Community",
+                    "homepage": "https://github.com/dompdf/php-font-lib/blob/master/AUTHORS.md"
+                }
+            ],
+            "description": "A library to read, parse, export and make subsets of different types of font files.",
+            "homepage": "https://github.com/dompdf/php-font-lib",
+            "support": {
+                "issues": "https://github.com/dompdf/php-font-lib/issues",
+                "source": "https://github.com/dompdf/php-font-lib/tree/1.0.2"
+            },
+            "time": "2026-01-20T14:10:26+00:00"
+        },
+        {
             "name": "drupal/admin_toolbar",
             "version": "3.6.3",
             "source": {
@@ -1937,6 +1982,56 @@
             }
         },
         {
+            "name": "drupal/file_mdm",
+            "version": "3.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/file_mdm.git",
+                "reference": "3.2.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/file_mdm-3.2.0.zip",
+                "reference": "3.2.0",
+                "shasum": "0cb085a19b6ba9657f1e154ff3139b253945d054"
+            },
+            "require": {
+                "dompdf/php-font-lib": "^1.0.1",
+                "drupal/core": "^11.2",
+                "fileeye/pel": "^0.12"
+            },
+            "require-dev": {
+                "drupal/vendor_stream_wrapper": "^2.0.5",
+                "fileeye/linuxlibertine-fonts": "^5.3"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "3.2.0",
+                    "datestamp": "1752175711",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "mondrake",
+                    "homepage": "https://www.drupal.org/user/1307444"
+                }
+            ],
+            "description": "Provides a service to manage file metadata.",
+            "homepage": "https://www.drupal.org/project/file_mdm",
+            "support": {
+                "source": "https://git.drupalcode.org/project/file_mdm"
+            }
+        },
+        {
             "name": "drupal/fontawesome",
             "version": "3.0.0",
             "source": {
@@ -2109,6 +2204,92 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/health_check",
                 "issues": "https://www.drupal.org/project/issues/health_check"
+            }
+        },
+        {
+            "name": "drupal/imagemagick",
+            "version": "4.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/imagemagick.git",
+                "reference": "4.0.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/imagemagick-4.0.2.zip",
+                "reference": "4.0.2",
+                "shasum": "758bdf632dd8f2eeb97d198b692d20a59cdbdc13"
+            },
+            "require": {
+                "drupal/core": "^10.3 | ^11",
+                "drupal/file_mdm": "^3.1",
+                "drupal/sophron": "^2.1"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "4.0.2",
+                    "datestamp": "1724827811",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Charlton",
+                    "homepage": "https://www.drupal.org/user/17089"
+                },
+                {
+                    "name": "chx",
+                    "homepage": "https://www.drupal.org/user/9446"
+                },
+                {
+                    "name": "claudiu.cristea",
+                    "homepage": "https://www.drupal.org/user/56348"
+                },
+                {
+                    "name": "dman",
+                    "homepage": "https://www.drupal.org/user/33240"
+                },
+                {
+                    "name": "dopry",
+                    "homepage": "https://www.drupal.org/user/22202"
+                },
+                {
+                    "name": "drewish",
+                    "homepage": "https://www.drupal.org/user/34869"
+                },
+                {
+                    "name": "gdl",
+                    "homepage": "https://www.drupal.org/user/507326"
+                },
+                {
+                    "name": "mondrake",
+                    "homepage": "https://www.drupal.org/user/1307444"
+                },
+                {
+                    "name": "quicksketch",
+                    "homepage": "https://www.drupal.org/user/35821"
+                },
+                {
+                    "name": "sun",
+                    "homepage": "https://www.drupal.org/user/54136"
+                },
+                {
+                    "name": "walkah",
+                    "homepage": "https://www.drupal.org/user/1531"
+                }
+            ],
+            "description": "Provides an image toolkit to integrate ImageMagick with the Image API.",
+            "homepage": "https://www.drupal.org/project/imagemagick",
+            "support": {
+                "source": "https://git.drupalcode.org/project/imagemagick"
             }
         },
         {
@@ -2718,6 +2899,61 @@
             }
         },
         {
+            "name": "drupal/pdfpreview",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/pdfpreview.git",
+                "reference": "8.x-1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/pdfpreview-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "51320dc365d35b0b5b4525ccc0ccbb793a74b8fb"
+            },
+            "require": {
+                "drupal/core": "^10 || ^11",
+                "drupal/imagemagick": "^3.7 || ^4.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.2",
+                    "datestamp": "1717712996",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Strelan (mstrelan)",
+                    "homepage": "https://www.drupal.org/u/mstrelan",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "mstrelan",
+                    "homepage": "https://www.drupal.org/user/314289"
+                },
+                {
+                    "name": "pbuyle",
+                    "homepage": "https://www.drupal.org/user/215342"
+                }
+            ],
+            "description": "PDFPreview lets you show a preview of PDF files.",
+            "homepage": "https://drupal.org/project/pdfpreview",
+            "support": {
+                "source": "https://cgit.drupalcode.org/pdfpreview",
+                "issues": "https://drupal.org/project/issues/pdfpreview"
+            }
+        },
+        {
             "name": "drupal/rat",
             "version": "1.0.1",
             "source": {
@@ -3063,6 +3299,56 @@
             "support": {
                 "source": "https://cgit.drupalcode.org/simple_sitemap",
                 "issues": "https://drupal.org/project/issues/simple_sitemap"
+            }
+        },
+        {
+            "name": "drupal/sophron",
+            "version": "2.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/sophron.git",
+                "reference": "2.2.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/sophron-2.2.2.zip",
+                "reference": "2.2.2",
+                "shasum": "158dfc54ff3c16a03e87d8217f170e54ddb330af"
+            },
+            "require": {
+                "drupal/core": "^10.2 || ^11",
+                "fileeye/mimemap": "^2.2.1"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.2.2",
+                    "datestamp": "1781376759",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Drupal\\sophron\\": "src/"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "mondrake",
+                    "homepage": "https://www.drupal.org/user/1307444"
+                }
+            ],
+            "description": "Provides an extensive MIME types management API",
+            "homepage": "https://www.drupal.org/project/sophron",
+            "support": {
+                "source": "https://git.drupalcode.org/project/sophron"
             }
         },
         {
@@ -3602,6 +3888,126 @@
                 }
             ],
             "time": "2025-03-06T22:45:56+00:00"
+        },
+        {
+            "name": "fileeye/mimemap",
+            "version": "2.2.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FileEye/MimeMap.git",
+                "reference": "6c70e153a3de52de2bb90fb50445d8b006af1f78"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FileEye/MimeMap/zipball/6c70e153a3de52de2bb90fb50445d8b006af1f78",
+                "reference": "6c70e153a3de52de2bb90fb50445d8b006af1f78",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1"
+            },
+            "require-dev": {
+                "composer-runtime-api": "^2.0.0",
+                "sebastian/comparator": ">=5",
+                "sebastian/diff": ">=5",
+                "symfony/console": ">=6.4",
+                "symfony/filesystem": ">=6.4",
+                "symfony/var-dumper": ">=6.4",
+                "symfony/yaml": ">=6.4"
+            },
+            "bin": [
+                "bin/fileeye-mimemap"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "FileEye\\MimeMap\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0-or-later"
+            ],
+            "description": "A PHP library to handle MIME Content-Type fields and their related file extensions.",
+            "homepage": "https://github.com/FileEye/MimeMap",
+            "keywords": [
+                "mime",
+                "mime-database",
+                "mime-parser",
+                "mime-type"
+            ],
+            "support": {
+                "issues": "https://github.com/FileEye/MimeMap/issues",
+                "source": "https://github.com/FileEye/MimeMap/tree/2.2.6"
+            },
+            "time": "2026-08-30T15:12:50+00:00"
+        },
+        {
+            "name": "fileeye/pel",
+            "version": "0.12.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FileEye/pel.git",
+                "reference": "96cce8aef576c8fe3154282d9d37f3cace7455e9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FileEye/pel/zipball/96cce8aef576c8fe3154282d9d37f3cace7455e9",
+                "reference": "96cce8aef576c8fe3154282d9d37f3cace7455e9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1"
+            },
+            "require-dev": {
+                "ext-exif": "*",
+                "ext-gd": "*",
+                "phpstan/extension-installer": "^1.4",
+                "phpstan/phpstan": "^2",
+                "phpstan/phpstan-phpunit": "^2",
+                "phpunit/phpunit": "^10 || ^11 || ^12 || ^13",
+                "squizlabs/php_codesniffer": ">=3.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "lsolesen\\pel\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Lars Olesen",
+                    "email": "lars@intraface.dk",
+                    "homepage": "http://intraface.dk",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Martin Geisler",
+                    "email": "martin@geisler.net",
+                    "homepage": "http://geisler.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP Exif Library. A library for reading and writing Exif headers in JPEG and TIFF images using PHP.",
+            "homepage": "https://github.com/FileEye/pel",
+            "keywords": [
+                "exif",
+                "image"
+            ],
+            "support": {
+                "issues": "https://github.com/FileEye/pel/issues",
+                "source": "https://github.com/FileEye/pel/tree/0.12.1"
+            },
+            "time": "2026-03-19T18:27:55+00:00"
         },
         {
             "name": "fontawesome/fontawesome",
@@ -9495,12 +9901,12 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "unb-libraries/composer-drupal-scaffold": 20,
-        "unb-libraries/saml_features": 20,
-        "unb-libraries/drupal-development-libraries": 20
+        "unb-libraries/drupal-development-libraries": 20,
+        "unb-libraries/saml_features": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "platform": {},
+    "platform-dev": {},
+    "plugin-api-version": "2.9.0"
 }

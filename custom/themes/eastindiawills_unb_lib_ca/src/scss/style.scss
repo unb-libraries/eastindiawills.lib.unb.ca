@@ -43,9 +43,123 @@ ul {
   }
 }
 #block-eastindiawills-unb-lib-ca-content {
+  // A single will's detail fields, styled as an extension of the /wills
+  // table rather than a generic Drupal field dump: uppercase letter-spaced
+  // labels matching .views-table th, and hairline row dividers matching its
+  // td borders.
   .node--type-eiw-will.node--view-mode-full {
+    max-width: 40rem;
+
     .field {
-      margin-top: .5rem;
+      margin-top: 0;
+      padding: .75rem 0;
+      border-bottom: 1px solid $gray-100;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    .field__label {
+      margin-bottom: .125rem;
+      font-family: $eiw-font-sans;
+      font-size: .8125rem;
+      font-weight: 600;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+      color: $gray-600;
+    }
+
+    .field__item {
+      font-size: $font-size-base;
+    }
+
+    // One .field__item per voyage, same grouping as the /wills listing's
+    // index_will_voyages (see _wills.scss): a single voyage stays as plain
+    // lines, more than one are numbered and spaced apart as distinct
+    // entries, with ship/role indented under the voyage name.
+    .field--name-field-will-voyages {
+      // One .field__item per voyage. A single voyage stays as plain lines;
+      // more than one are numbered and spaced apart as distinct entries.
+      .field__items {
+        counter-reset: voyage;
+
+        > .field__item {
+          position: relative;
+
+          &:not(:only-child) {
+            counter-increment: voyage;
+            padding-left: 1.25rem;
+
+            &:not(:last-child) {
+              margin-bottom: .75rem;
+            }
+
+            &::before {
+              content: counter(voyage) '.';
+              position: absolute;
+              left: 0;
+              color: $gray-500;
+              font-size: $font-size-sm;
+            }
+          }
+        }
+      }
+
+      // Everything below is scoped to inside one voyage, so it can't reach
+      // the field's own top-level "Will Voyage(s)" label above.
+      .paragraph--type--eiw-will-voyage.paragraph--view-mode--default {
+        > .field {
+          display: inline-block;
+          margin-right: .75rem;
+
+          .field__item {
+            display: inline-block;
+            margin-left: .2rem;
+          }
+        }
+
+        // Ship/role read as inline "Label: value" rather than the outer
+        // uppercase section-label style.
+        .field__label {
+          display: inline-block;
+          margin-bottom: 0;
+          font-size: $font-size-sm;
+          font-weight: normal;
+          text-transform: none;
+          letter-spacing: normal;
+          color: $gray-700;
+
+          &::after {
+            content: ':';
+          }
+        }
+
+        // The voyage name is the entry's heading; ship/role are secondary
+        // detail run alongside it, so its own label would be redundant.
+        .field--name-field-voyage {
+          display: block;
+          margin-right: 0;
+          font-weight: 600;
+          color: $eiw-ink;
+
+          .field__label {
+            display: none;
+          }
+        }
+
+        .field--name-field-voyage ~ .field--name-field-ship,
+        .field--name-field-voyage ~ .field--name-field-role {
+          margin-left: .75rem;
+          font-size: $font-size-sm;
+        }
+      }
+    }
+
+    // First-page thumbnail of the uploaded document (pdfpreview module),
+    // linking to the full PDF.
+    .pdfpreview-file {
+      border: 1px solid $gray-200;
     }
   }
   // Full node page display of a will's voyages (field_will_voyages). The
