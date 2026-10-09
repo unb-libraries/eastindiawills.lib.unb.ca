@@ -1,7 +1,9 @@
 FROM ghcr.io/unb-libraries/drupal:11.x-1.x-unblib
 
 # Install additional OS packages.
-ENV ADDITIONAL_OS_PACKAGES="postfix php${PHP_VERSION}-ldap php${PHP_VERSION}-pecl-redis php${PHP_VERSION}-xmlreader"
+# imagemagick/ghostscript: rasterizes the first page of a will's uploaded
+# PDF into a thumbnail (see drupal/imagemagick + drupal/pdfpreview).
+ENV ADDITIONAL_OS_PACKAGES="postfix php${PHP_VERSION}-ldap php${PHP_VERSION}-pecl-redis php${PHP_VERSION}-xmlreader imagemagick ghostscript"
 
 ENV DRUPAL_SITE_ID="wills"
 ENV DRUPAL_SITE_URI="eastindiawills.lib.unb.ca"

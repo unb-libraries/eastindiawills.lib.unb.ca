@@ -19,11 +19,13 @@ module:
   facets_range_widget: 0
   field: 0
   file: 0
+  file_mdm: 0
   filter: 0
   fontawesome: 0
   google_analytics: 0
   health_check: 0
   image: 0
+  imagemagick: 0
   inline_entity_form: 0
   jquery_ui: 0
   jquery_ui_slider: 0
@@ -38,6 +40,7 @@ module:
   page_cache: 0
   path: 0
   path_alias: 0
+  pdfpreview: 0
   redis: 0
   require_login: 0
   saml_features: 0
@@ -45,6 +48,7 @@ module:
   search_api: 0
   search_api_db: 0
   simple_sitemap: 0
+  sophron: 0
   system: 0
   tagify: 0
   taxonomy: 0

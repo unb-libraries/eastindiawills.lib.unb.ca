@@ -23,10 +23,11 @@ dependencies:
     - field.field.node.eiw_will.field_will_voyages
     - field.field.node.eiw_will.field_year_only_probate
     - field.field.node.eiw_will.field_year_only_will
+    - image.style.pdf_preview
     - node.type.eiw_will
   module:
     - datetime
-    - file
+    - pdfpreview
     - text
     - user
 id: node.eiw_will.default
@@ -67,10 +68,16 @@ content:
     weight: 5
     region: content
   field_document_images:
-    type: file_default
+    type: pdfpreview
     label: above
     settings:
-      use_description_as_link_text: false
+      image_style: pdf_preview
+      image_link: file
+      show_description: '1'
+      tag: div
+      image_loading:
+        attribute: lazy
+      fallback_formatter: 0
     third_party_settings: {  }
     weight: 10
     region: content
@@ -112,13 +119,6 @@ content:
       link: true
     third_party_settings: {  }
     weight: 8
-    region: content
-  field_notes:
-    type: basic_string
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 16
     region: content
   field_reference:
     type: string
@@ -190,6 +190,7 @@ content:
     weight: 18
     region: content
 hidden:
+  field_notes: true
   field_tropy_title: true
   links: true
   search_api_excerpt: true
