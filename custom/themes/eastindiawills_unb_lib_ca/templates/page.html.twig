@@ -94,10 +94,14 @@
   </div>
 </main>
 
-{% if page.footer %}
-  <footer role="contentinfo" class="site-footer mt-auto footer-dark text-light bg-secondary">
-    <div class="container">
+{# Per the concept design: UNB Libraries lockup, copyright and footer links
+   on a dark bar, full-width. #}
+<footer role="contentinfo" class="site-footer mt-auto">
+  <div class="container eiw-footer">
+    <img src="{{ file_url(directory ~ '/dist/img/unb-libraries-white.png') }}" alt="UNB Libraries" class="eiw-footer__logo" />
+    <div class="eiw-footer__links">
+      <span class="eiw-footer__copyright">{{ 'Copyright © @year'|t({'@year': 'now'|date('Y')}) }}</span>
       {{ page.footer }}
     </div>
-  </footer>
-{% endif %}
+  </div>
+</footer>

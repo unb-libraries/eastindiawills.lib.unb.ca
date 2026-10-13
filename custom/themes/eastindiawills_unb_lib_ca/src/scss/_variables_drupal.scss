@@ -16,8 +16,58 @@ main[role="main"] {
   padding-bottom: 3rem;
 }
 
+// Per the concept design's footer bar: UNB Libraries lockup on the left,
+// copyright and footer links on the right. The dark background is on
+// .eiw-footer (the .container), not .site-footer itself, so it's limited
+// to the page's content width rather than running full-bleed. The base
+// theme's always-on site-footer.css sets .site-footer { background: black }
+// unconditionally, so that needs cancelling here or it shows full-width
+// around our narrower, lighter container.
 .site-footer {
-  padding: 2rem 0;
+  padding: 1.5rem 0;
+  background: none;
+}
+
+.eiw-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: $eiw-ink;
+  color: $white;
+
+  &__logo {
+    height: 28px;
+    width: auto;
+  }
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: $font-size-sm;
+  }
+
+  &__copyright {
+    color: $white;
+  }
+
+  .menu--footer {
+    .nav-link {
+      padding: 0;
+      color: $white;
+      text-decoration: underline;
+
+      &:hover,
+      &:focus-visible {
+        color: $white;
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 nav.tabs .nav-link.active {
