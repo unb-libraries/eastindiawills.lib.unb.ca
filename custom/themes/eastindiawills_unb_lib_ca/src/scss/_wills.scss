@@ -302,11 +302,11 @@
 // Will voyages table (field--field-will-voyages.html.twig), on both the
 // will page and inside the /wills "Will Voyages" results column.
 //
-// Wide: a quiet ledger-style table - small uppercase column heads like the
-// site's field labels, hairline rules between voyages, and a muted serif
-// number per voyage when there's more than one. Narrow (the /wills column,
-// phones): each voyage stacks into a short entry - voyage name, then
-// "Ship · Role" beneath - see eiw-voyages-stacked.
+// Wide: a quiet table - small uppercase column heads like the site's field
+// labels over a single hairline, with voyages separated by spacing rather
+// than rules. Narrow (the /wills column, phones): each voyage stacks into
+// a short entry - voyage name, then "Ship · Role" beneath - see
+// eiw-voyages-stacked.
 
 // Stacked layout. Empty values are dropped (there's no column to keep
 // aligned), and a voyage with no name lets its ship lead the entry.
@@ -316,36 +316,23 @@
   }
 
   tbody {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: .875rem;
   }
 
   tr {
-    position: relative;
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
-    column-gap: .75rem;
-    padding: .5rem 0;
-    border-bottom: 1px solid $gray-100;
-
-    &:first-child {
-      padding-top: 0;
-    }
-
-    &:last-child {
-      padding-bottom: 0;
-      border-bottom: 0;
-    }
-  }
-
-  &.eiw-voyages--multiple tr {
-    padding-left: 1.5rem;
+    gap: .125rem 1rem;
   }
 
   td {
     display: block;
     padding: 0;
     border: 0;
+    line-height: 1.35;
 
     &.is-empty {
       display: none;
@@ -355,12 +342,6 @@
     .field__item {
       display: inline;
     }
-  }
-
-  .eiw-voyages__num {
-    position: absolute;
-    left: 0;
-    width: auto;
   }
 
   .eiw-voyages__voyage {
@@ -373,22 +354,21 @@
 
     &::before {
       content: attr(data-label);
-      margin-right: .3rem;
-      font-size: .75rem;
+      margin-right: .375rem;
+      font-size: .6875rem;
+      font-style: normal;
       font-weight: 600;
-      letter-spacing: .04em;
+      letter-spacing: .05em;
       text-transform: uppercase;
-      color: $gray-600;
+      color: $gray-500;
     }
   }
-
 }
 
 .eiw-voyages {
   width: 100%;
-  margin-bottom: 0;
+  margin: 0;
   font-size: $font-size-sm;
-  counter-reset: eiw-voyage;
 
   // Bootstrap's table colours are CSS variables, which a nested table
   // inherits from its parent row (e.g. /wills striping); reset them.
@@ -397,16 +377,18 @@
   --bs-table-striped-bg: transparent;
   --bs-table-hover-bg: transparent;
 
-  // The base theme's table.css shades every tr.
+  // The base theme's table.css shades, pads and rules every tr.
   tr {
+    padding: 0;
     background: transparent;
+    border: 0;
   }
 
   th,
   td {
-    padding: .5rem 1.5rem .5rem 0;
+    padding: .375rem 1.5rem .375rem 0;
     vertical-align: baseline;
-    border-bottom: 1px solid $gray-100;
+    border: 0;
     background: transparent;
     box-shadow: none;
 
@@ -425,11 +407,11 @@
     text-transform: uppercase;
     white-space: nowrap;
     color: $gray-600;
-    border-bottom: 1px solid $gray-200;
+    border-bottom: 1px solid $gray-100;
   }
 
-  tbody tr:last-child td {
-    border-bottom: 0;
+  tbody tr:first-child td {
+    padding-top: .5rem;
   }
 
   // Each cell holds a label-hidden field wrapper; keep it inline-tight.
@@ -441,40 +423,18 @@
     font-size: inherit;
   }
 
-  // Every value links to a filtered /wills search, so links are kept
-  // quiet - ink text with a soft underline - and turn red on hover, rather
-  // than a table full of red.
+  // Every value links to a filtered /wills search. Links stay plain ink
+  // text and only show as links (red, underlined) on hover/focus, rather
+  // than a table full of red or underlines.
   a {
     color: inherit;
-    text-decoration: underline;
-    text-decoration-color: $gray-200;
-    text-decoration-thickness: 1px;
-    text-underline-offset: .2em;
+    text-decoration: none;
 
     &:hover,
     &:focus-visible {
       color: $eiw-red;
-      text-decoration-color: currentColor;
-    }
-  }
-
-  // Row numbers, only when there's more than one voyage.
-  .eiw-voyages__num {
-    display: none;
-    width: 1.5rem;
-    padding-right: 0;
-    font-family: $eiw-font-serif;
-    color: $gray-500;
-  }
-
-  &.eiw-voyages--multiple {
-    .eiw-voyages__num {
-      display: table-cell;
-    }
-
-    tbody .eiw-voyages__num::before {
-      counter-increment: eiw-voyage;
-      content: counter(eiw-voyage);
+      text-decoration: underline;
+      text-underline-offset: .2em;
     }
   }
 
@@ -503,6 +463,11 @@
   &.eiw-voyages--no-ship .eiw-voyages__ship,
   &.eiw-voyages--no-role .eiw-voyages__role {
     display: none;
+  }
+
+  // A little air below the field's own "Will Voyage(s)" label.
+  .field__label + & {
+    margin-top: .5rem;
   }
 
   @include media-breakpoint-down(sm) {
@@ -535,15 +500,8 @@
     @include eiw-voyages-stacked;
 
     td {
+      padding: 0;
       border: 0;
-    }
-
-    tr {
-      border-bottom: 1px solid $gray-100;
-
-      &:last-child {
-        border-bottom: 0;
-      }
     }
   }
 }

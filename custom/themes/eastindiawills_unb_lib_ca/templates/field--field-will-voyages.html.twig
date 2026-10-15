@@ -10,7 +10,6 @@
  * rendering falls back to the plain field markup.
  *
  * Modifier classes on the table drive the styling in _wills.scss:
- * - eiw-voyages--multiple: more than one voyage, so rows are numbered.
  * - eiw-voyages--no-voyage/-ship/-role: that column is empty for every
  *   voyage, so it's dropped rather than shown as a column of dashes.
  */
@@ -48,7 +47,6 @@
       set table_classes = [
         'table',
         'eiw-voyages',
-        items|length > 1 ? 'eiw-voyages--multiple',
         not has.voyage ? 'eiw-voyages--no-voyage',
         not has.ship ? 'eiw-voyages--no-ship',
         not has.role ? 'eiw-voyages--no-role',
@@ -57,7 +55,6 @@
     <table class="{{ table_classes|join(' ')|trim }}">
       <thead>
         <tr>
-          <th scope="col" class="eiw-voyages__num"><span class="visually-hidden">{{ 'Number'|t }}</span></th>
           <th scope="col" class="eiw-voyages__voyage">{{ 'Voyage'|t }}</th>
           <th scope="col" class="eiw-voyages__ship">{{ 'Ship'|t }}</th>
           <th scope="col" class="eiw-voyages__role">{{ 'Role'|t }}</th>
