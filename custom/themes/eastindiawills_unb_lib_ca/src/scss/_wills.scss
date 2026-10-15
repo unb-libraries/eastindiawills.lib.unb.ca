@@ -299,17 +299,63 @@
   }
 }
 
-// Voyages within a result row: plain "Ship: X  Role: Y" lines, no boxes.
+// Will voyages table (field--field-will-voyages.html.twig), on both the
+// will page and inside the /wills "Will Voyages" results column.
+.eiw-voyages {
+  margin-bottom: 0;
+  font-size: $font-size-sm;
+
+  // Bootstrap's table colours are CSS variables, which a nested table
+  // inherits from its parent row (e.g. /wills striping); reset them.
+  --bs-table-bg: transparent;
+  --bs-table-accent-bg: transparent;
+  --bs-table-striped-bg: transparent;
+  --bs-table-hover-bg: transparent;
+
+  // The base theme's table.css shades every tr.
+  tr {
+    background: transparent;
+  }
+
+  th,
+  td {
+    padding: .25rem .75rem .25rem 0;
+    vertical-align: top;
+    border-bottom: 1px solid $gray-100;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  th {
+    color: $gray-700;
+    font-size: $font-size-sm;
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: normal;
+    white-space: nowrap;
+    border-bottom-color: $gray-300;
+  }
+
+  tbody tr:last-child td {
+    border-bottom: 0;
+  }
+
+  // Each cell holds a label-hidden field wrapper; keep it inline-tight.
+  .field,
+  .field__item {
+    margin: 0;
+  }
+}
+
+// Inside a /wills result row the voyages table sits in a table cell, so
+// strip the list/field spacing the indexed markup arrives wrapped in.
 #block-eastindiawills-unb-lib-ca-content .view-id-wills .views-field-index-will-voyages {
-  // Drop the item list, field and paragraph spacing; rows stay compact.
   .item-list ul,
   .list-group,
-  .field,
-  .field__items,
-  .field__item,
-  .paragraph {
+  .field--name-field-will-voyages {
     margin-top: 0 !important;
     margin-bottom: 0;
+    padding-left: 0;
     border-radius: 0;
   }
 
@@ -319,82 +365,22 @@
     background: none;
   }
 
-  .paragraph--type--eiw-will-voyage.paragraph--view-mode--default {
-    padding-left: 0;
-  }
-
-  .field {
-    display: inline-block;
-    margin-right: .75rem;
-  }
-
-  // Each field's own label ("Ship", "Role") reads inline as "Label: value".
-  // The voyage name's label is hidden instead (below): it stands on its own
-  // as the entry's heading, so repeating "Voyage:" ahead of it is noise.
-  .field__label {
-    display: inline-block;
-    color: $gray-700;
-    font-weight: normal;
-
-    &::after {
-      content: ':';
+  // The results table's own (more specific) .views-table th/td rules would
+  // otherwise restyle the nested voyages table's header and cells.
+  .eiw-voyages {
+    th {
+      font-size: $font-size-sm;
+      text-transform: none;
+      letter-spacing: normal;
+      border-bottom: 1px solid $gray-300;
     }
-  }
 
-  // The .field__item wrapping each individual field's value (nested inside
-  // .field--name-field-voyage/-ship/-role) vs. the one further out wrapping
-  // each whole voyage (direct child of .field__items, targeted below) - two
-  // different nesting levels share this same BEM class.
-  .field--name-field-voyage .field__item,
-  .field--name-field-ship .field__item,
-  .field--name-field-role .field__item {
-    display: inline-block;
-    margin-left: .2rem;
-  }
-
-  // One .field__item per voyage. A will with a single voyage stays as
-  // plain lines; with more than one, each is numbered and given room to
-  // breathe so the set reads as distinct entries rather than a run-on list.
-  .field__items {
-    counter-reset: voyage;
-
-    > .field__item {
-      position: relative;
-
-      &:not(:only-child) {
-        counter-increment: voyage;
-        padding-left: 1.25rem;
-
-        &:not(:last-child) {
-          margin-bottom: .75rem;
-        }
-
-        &::before {
-          content: counter(voyage) '.';
-          position: absolute;
-          left: 0;
-          color: $gray-500;
-          font-size: $font-size-sm;
-        }
-      }
+    td {
+      border-bottom: 1px solid $gray-100;
     }
-  }
 
-  // The voyage name is the entry's heading; ship/role are secondary detail
-  // on their own indented line underneath, rather than run on with it.
-  .field--name-field-voyage {
-    display: block;
-    margin-right: 0;
-    font-weight: 600;
-
-    .field__label {
-      display: none;
+    tbody tr:last-child td {
+      border-bottom: 0;
     }
-  }
-
-  .field--name-field-voyage ~ .field--name-field-ship,
-  .field--name-field-voyage ~ .field--name-field-role {
-    margin-left: .75rem;
-    font-size: $font-size-sm;
   }
 }

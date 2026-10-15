@@ -1,0 +1,56 @@
+{#
+/**
+ * @file
+ * Renders a will's voyages as a Voyage | Ship | Role table.
+ *
+ * Applies when the voyages are rendered in the paragraph "table_row" view
+ * mode (paragraph--eiw-will-voyage--table-row.html.twig gives one <tr> per
+ * voyage): the will page (default display) and the will_voyages view mode
+ * that's indexed into Solr for the /wills results column. Any other
+ * rendering falls back to the plain field markup.
+ */
+#}
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+  ]
+%}
+{%
+  set title_classes = [
+    'field__label',
+    label_display == 'visually_hidden' ? 'visually-hidden',
+  ]
+%}
+{% set as_table = items|first.content['#view_mode'] == 'table_row' %}
+<div{{ attributes.addClass(classes) }}>
+  {% if not label_hidden %}
+    <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
+  {% endif %}
+  {% if as_table %}
+    <div class="table-responsive">
+      <table class="table table-sm eiw-voyages">
+        <thead>
+          <tr>
+            <th scope="col">{{ 'Voyage'|t }}</th>
+            <th scope="col">{{ 'Ship'|t }}</th>
+            <th scope="col">{{ 'Role'|t }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in items %}
+            {{ item.content }}
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% else %}
+    <div class="field__items">
+      {% for item in items %}
+        <div{{ item.attributes.addClass('field__item') }}>{{ item.content }}</div>
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>

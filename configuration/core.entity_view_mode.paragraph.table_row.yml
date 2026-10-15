@@ -1,0 +1,11 @@
+uuid: ddaa000b-628e-4792-8f51-e09c8c2e3c8e
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.table_row
+label: 'Table row'
+description: 'Renders a paragraph as a single table row (see the theme''s paragraph--BUNDLE--table-row templates).'
+targetEntityType: paragraph
+cache: true

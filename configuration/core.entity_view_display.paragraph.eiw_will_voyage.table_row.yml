@@ -1,0 +1,41 @@
+uuid: ee9e9cc1-57c8-4381-8c91-b41361460419
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.table_row
+    - field.field.paragraph.eiw_will_voyage.field_role
+    - field.field.paragraph.eiw_will_voyage.field_ship
+    - field.field.paragraph.eiw_will_voyage.field_voyage
+    - paragraphs.paragraphs_type.eiw_will_voyage
+id: paragraph.eiw_will_voyage.table_row
+targetEntityType: paragraph
+bundle: eiw_will_voyage
+mode: table_row
+content:
+  field_role:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_ship:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_voyage:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true
