@@ -499,6 +499,12 @@
   .eiw-voyages {
     @include eiw-voyages-stacked;
 
+    // Several stacked voyages in one row need clearer separation here
+    // than on the will page.
+    tbody {
+      gap: 1.25rem;
+    }
+
     td {
       padding: 0;
       border: 0;
