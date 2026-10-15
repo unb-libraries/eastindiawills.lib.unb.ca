@@ -8,6 +8,11 @@
  * voyage): the will page (default display) and the will_voyages view mode
  * that's indexed into Solr for the /wills results column. Any other
  * rendering falls back to the plain field markup.
+ *
+ * Modifier classes on the table drive the styling in _wills.scss:
+ * - eiw-voyages--multiple: more than one voyage, so rows are numbered.
+ * - eiw-voyages--no-voyage/-ship/-role: that column is empty for every
+ *   voyage, so it's dropped rather than shown as a column of dashes.
  */
 #}
 {%
@@ -30,22 +35,40 @@
     <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
   {% endif %}
   {% if as_table %}
-    <div class="table-responsive">
-      <table class="table table-sm eiw-voyages">
-        <thead>
-          <tr>
-            <th scope="col">{{ 'Voyage'|t }}</th>
-            <th scope="col">{{ 'Ship'|t }}</th>
-            <th scope="col">{{ 'Role'|t }}</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for item in items %}
-            {{ item.content }}
-          {% endfor %}
-        </tbody>
-      </table>
-    </div>
+    {% set has = {voyage: false, ship: false, role: false} %}
+    {% for item in items %}
+      {% set paragraph = item.content['#paragraph'] %}
+      {% for column in ['voyage', 'ship', 'role'] %}
+        {% if not paragraph.get('field_' ~ column).isEmpty() %}
+          {% set has = has|merge({(column): true}) %}
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+    {%
+      set table_classes = [
+        'table',
+        'eiw-voyages',
+        items|length > 1 ? 'eiw-voyages--multiple',
+        not has.voyage ? 'eiw-voyages--no-voyage',
+        not has.ship ? 'eiw-voyages--no-ship',
+        not has.role ? 'eiw-voyages--no-role',
+      ]
+    %}
+    <table class="{{ table_classes|join(' ')|trim }}">
+      <thead>
+        <tr>
+          <th scope="col" class="eiw-voyages__num"><span class="visually-hidden">{{ 'Number'|t }}</span></th>
+          <th scope="col" class="eiw-voyages__voyage">{{ 'Voyage'|t }}</th>
+          <th scope="col" class="eiw-voyages__ship">{{ 'Ship'|t }}</th>
+          <th scope="col" class="eiw-voyages__role">{{ 'Role'|t }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in items %}
+          {{ item.content }}
+        {% endfor %}
+      </tbody>
+    </table>
   {% else %}
     <div class="field__items">
       {% for item in items %}

@@ -2,12 +2,24 @@
 /**
  * @file
  * One will voyage as a table row (paragraph "table_row" view mode, whose
- * display hides the field labels). The table and its Voyage | Ship | Role
- * header come from field--field-will-voyages.html.twig.
+ * display hides the field labels). The table, its header and the row
+ * numbering come from field--field-will-voyages.html.twig.
+ *
+ * Empty values get a muted dash (read out as "Not recorded") and an
+ * is-empty class, so the stacked narrow layout can skip them.
  */
 #}
+{% set columns = {voyage: 'Voyage'|t, ship: 'Ship'|t, role: 'Role'|t} %}
 <tr{{ attributes.addClass('eiw-voyages__row') }}>
-  <td>{{ content.field_voyage }}</td>
-  <td>{{ content.field_ship }}</td>
-  <td>{{ content.field_role }}</td>
+  <td class="eiw-voyages__num" aria-hidden="true"></td>
+  {% for column, column_label in columns %}
+    {% set empty = paragraph.get('field_' ~ column).isEmpty() %}
+    <td class="eiw-voyages__{{ column }}{{ empty ? ' is-empty' }}" data-label="{{ column_label }}">
+      {% if empty %}
+        <span class="eiw-voyages__none" aria-hidden="true">&mdash;</span><span class="visually-hidden">{{ 'Not recorded'|t }}</span>
+      {% else %}
+        {{ content['field_' ~ column] }}
+      {% endif %}
+    </td>
+  {% endfor %}
 </tr>
