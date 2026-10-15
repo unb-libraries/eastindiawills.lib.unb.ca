@@ -301,9 +301,94 @@
 
 // Will voyages table (field--field-will-voyages.html.twig), on both the
 // will page and inside the /wills "Will Voyages" results column.
+//
+// Wide: a quiet ledger-style table - small uppercase column heads like the
+// site's field labels, hairline rules between voyages, and a muted serif
+// number per voyage when there's more than one. Narrow (the /wills column,
+// phones): each voyage stacks into a short entry - voyage name, then
+// "Ship · Role" beneath - see eiw-voyages-stacked.
+
+// Stacked layout. Empty values are dropped (there's no column to keep
+// aligned), and a voyage with no name lets its ship lead the entry.
+@mixin eiw-voyages-stacked {
+  thead {
+    @include visually-hidden;
+  }
+
+  tbody {
+    display: block;
+  }
+
+  tr {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: .75rem;
+    padding: .5rem 0;
+    border-bottom: 1px solid $gray-100;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+
+  &.eiw-voyages--multiple tr {
+    padding-left: 1.5rem;
+  }
+
+  td {
+    display: block;
+    padding: 0;
+    border: 0;
+
+    &.is-empty {
+      display: none;
+    }
+
+    .field,
+    .field__item {
+      display: inline;
+    }
+  }
+
+  .eiw-voyages__num {
+    position: absolute;
+    left: 0;
+    width: auto;
+  }
+
+  .eiw-voyages__voyage {
+    flex-basis: 100%;
+  }
+
+  .eiw-voyages__ship,
+  .eiw-voyages__role {
+    font-size: .9375rem;
+
+    &::before {
+      content: attr(data-label);
+      margin-right: .3rem;
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: $gray-600;
+    }
+  }
+
+}
+
 .eiw-voyages {
+  width: 100%;
   margin-bottom: 0;
   font-size: $font-size-sm;
+  counter-reset: eiw-voyage;
 
   // Bootstrap's table colours are CSS variables, which a nested table
   // inherits from its parent row (e.g. /wills striping); reset them.
@@ -319,21 +404,28 @@
 
   th,
   td {
-    padding: .25rem .75rem .25rem 0;
-    vertical-align: top;
+    padding: .5rem 1.5rem .5rem 0;
+    vertical-align: baseline;
     border-bottom: 1px solid $gray-100;
     background: transparent;
     box-shadow: none;
+
+    &:last-child {
+      padding-right: 0;
+    }
   }
 
-  th {
-    color: $gray-700;
-    font-size: $font-size-sm;
+  thead th {
+    padding-top: 0;
+    padding-bottom: .375rem;
+    font-family: $eiw-font-sans;
+    font-size: .75rem;
     font-weight: 600;
-    text-transform: none;
-    letter-spacing: normal;
+    letter-spacing: .04em;
+    text-transform: uppercase;
     white-space: nowrap;
-    border-bottom-color: $gray-300;
+    color: $gray-600;
+    border-bottom: 1px solid $gray-200;
   }
 
   tbody tr:last-child td {
@@ -344,11 +436,83 @@
   .field,
   .field__item {
     margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: inherit;
+  }
+
+  // Every value links to a filtered /wills search, so links are kept
+  // quiet - ink text with a soft underline - and turn red on hover, rather
+  // than a table full of red.
+  a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: $gray-200;
+    text-decoration-thickness: 1px;
+    text-underline-offset: .2em;
+
+    &:hover,
+    &:focus-visible {
+      color: $eiw-red;
+      text-decoration-color: currentColor;
+    }
+  }
+
+  // Row numbers, only when there's more than one voyage.
+  .eiw-voyages__num {
+    display: none;
+    width: 1.5rem;
+    padding-right: 0;
+    font-family: $eiw-font-serif;
+    color: $gray-500;
+  }
+
+  &.eiw-voyages--multiple {
+    .eiw-voyages__num {
+      display: table-cell;
+    }
+
+    tbody .eiw-voyages__num::before {
+      counter-increment: eiw-voyage;
+      content: counter(eiw-voyage);
+    }
+  }
+
+  td.eiw-voyages__voyage {
+    font-weight: 600;
+    color: $eiw-ink;
+  }
+
+  td.eiw-voyages__role {
+    color: $gray-800;
+  }
+
+  // Ship names in italics, the usual convention.
+  .eiw-voyages__ship a,
+  .eiw-voyages__ship .field__item {
+    font-style: italic;
+  }
+
+  .eiw-voyages__none {
+    color: $gray-300;
+    font-weight: normal;
+  }
+
+  // Columns that are empty for every voyage are dropped.
+  &.eiw-voyages--no-voyage .eiw-voyages__voyage,
+  &.eiw-voyages--no-ship .eiw-voyages__ship,
+  &.eiw-voyages--no-role .eiw-voyages__role {
+    display: none;
+  }
+
+  @include media-breakpoint-down(sm) {
+    @include eiw-voyages-stacked;
   }
 }
 
-// Inside a /wills result row the voyages table sits in a table cell, so
-// strip the list/field spacing the indexed markup arrives wrapped in.
+// Inside a /wills result row the voyages table sits in a narrow table cell,
+// so it always uses the stacked layout, and the list/field wrappers the
+// indexed markup arrives in lose their spacing.
 #block-eastindiawills-unb-lib-ca-content .view-id-wills .views-field-index-will-voyages {
   .item-list ul,
   .list-group,
@@ -365,22 +529,21 @@
     background: none;
   }
 
-  // The results table's own (more specific) .views-table th/td rules would
-  // otherwise restyle the nested voyages table's header and cells.
+  // Repeated at this specificity so the results table's own .views-table
+  // th/td rules don't restyle the nested table.
   .eiw-voyages {
-    th {
-      font-size: $font-size-sm;
-      text-transform: none;
-      letter-spacing: normal;
-      border-bottom: 1px solid $gray-300;
-    }
+    @include eiw-voyages-stacked;
 
     td {
-      border-bottom: 1px solid $gray-100;
+      border: 0;
     }
 
-    tbody tr:last-child td {
-      border-bottom: 0;
+    tr {
+      border-bottom: 1px solid $gray-100;
+
+      &:last-child {
+        border-bottom: 0;
+      }
     }
   }
 }
