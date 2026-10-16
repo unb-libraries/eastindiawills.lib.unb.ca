@@ -473,7 +473,20 @@ display:
       cache:
         type: search_api_tag
         options: {  }
-      empty: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: 'No matches were found.'
+            format: unb_libraries
+          tokenize: false
       sorts: {  }
       arguments: {  }
       filters:

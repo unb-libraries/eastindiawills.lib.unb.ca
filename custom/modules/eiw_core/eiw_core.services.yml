@@ -3,3 +3,8 @@ services:
     class: Drupal\eiw_core\EventSubscriber\ConfigImportSubscriber
     tags:
       - { name: event_subscriber }
+  eiw_core.authenticated_login_redirect_subscriber:
+    class: Drupal\eiw_core\EventSubscriber\AuthenticatedLoginRedirectSubscriber
+    arguments: ['@current_user']
+    tags:
+      - { name: event_subscriber }

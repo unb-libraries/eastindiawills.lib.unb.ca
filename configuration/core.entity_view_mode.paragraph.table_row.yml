@@ -6,6 +6,6 @@ dependencies:
     - paragraphs
 id: paragraph.table_row
 label: 'Table row'
-description: 'Renders a paragraph as a single table row (see the theme''s paragraph--BUNDLE--table-row templates).'
+description: "Renders a paragraph as a single table row (see the theme's paragraph--BUNDLE--table-row templates)."
 targetEntityType: paragraph
 cache: true

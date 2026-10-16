@@ -12,8 +12,40 @@
   padding: 0 .5rem;
 }
 
+// Sticky footer: header/main/footer are direct <body> children per the base
+// theme's html.html.twig - except Drupal core wraps {{ page }} in a
+// .dialog-off-canvas-main-canvas div whenever the off-canvas/contextual
+// links libraries are loaded, which is effectively always here (the site
+// has no anonymous access, so every visitor is a logged-in user with that
+// library attached). header/main/footer end up nested inside that wrapper
+// instead, so it needs the same flex treatment as body, or main's flex-grow
+// below has no flex container to actually grow within.
+//
+// The toolbar sets its own height as an inline padding-top on body (it's
+// position:fixed, so it needs that to avoid covering the content), and that
+// height changes when its tray is expanded/collapsed. box-sizing: border-box
+// on body folds that padding into its own min-height automatically, so the
+// wrapper can just grow to fill whatever's left (flex: 1 0 auto) without
+// this needing to separately track the toolbar's current height at all -
+// right instead of only matching whatever height it happened to be on page
+// load (the previous version read --drupal-displace-offset-top, which the
+// toolbar apparently doesn't keep in sync with its own expanded height).
+body {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+
+.dialog-off-canvas-main-canvas {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+}
+
 main[role="main"] {
   padding-bottom: 3rem;
+  flex: 1 0 auto;
 }
 
 // Per the concept design's footer bar: UNB Libraries lockup on the left,

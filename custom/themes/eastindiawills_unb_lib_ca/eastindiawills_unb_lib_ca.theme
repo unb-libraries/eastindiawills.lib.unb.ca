@@ -42,12 +42,20 @@ function eastindiawills_unb_lib_ca_preprocess_menu__main(&$variables) {
  * The wills search page follows the concept design: no breadcrumb.
  *
  * The hero engraving (see page.html.twig's eiw_hero block) belongs on the
- * homepage per the concept design; it's not wired up to any route for now
- * since there's no homepage built yet.
+ * homepage per the concept design - specifically the landing page node
+ * eiw_core creates (EIW_CORE_LANDING_PAGE_UUID), not just any node of its
+ * "page" type (e.g. a future "About this site" page shouldn't get it too).
  */
 function eastindiawills_unb_lib_ca_preprocess_page(&$variables) {
-  if (\Drupal::routeMatch()->getRouteName() === 'view.wills.page_1') {
+  $route_match = \Drupal::routeMatch();
+  if ($route_match->getRouteName() === 'view.wills.page_1') {
     unset($variables['page']['breadcrumb']);
+  }
+  elseif ($route_match->getRouteName() === 'entity.node.canonical') {
+    $node = $route_match->getParameter('node');
+    if ($node instanceof \Drupal\node\NodeInterface && $node->uuid() === EIW_CORE_LANDING_PAGE_UUID) {
+      $variables['eiw_hero'] = TRUE;
+    }
   }
   $variables['#cache']['contexts'][] = 'route.name';
 }
