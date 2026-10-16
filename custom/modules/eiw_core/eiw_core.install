@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file
+ * Install hooks for eiw_core.
+ */
+
+/**
+ * Implements hook_install().
+ *
+ * Covers a brand-new site install, where the "page" content type this needs
+ * is typically already in place by the time modules are installed. See
+ * eiw_core_create_landing_page_if_missing() for the case where it isn't -
+ * this project's normal deploys to already-existing environments.
+ */
+function eiw_core_install(): void {
+  eiw_core_create_landing_page_if_missing();
+}

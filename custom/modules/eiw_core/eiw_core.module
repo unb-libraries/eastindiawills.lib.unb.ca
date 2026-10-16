@@ -5,7 +5,18 @@ use Drupal\eiw_core\EiwCoreHelper;
 use Drupal\file\Entity\File;
 use Drupal\Core\Link;
 use Drupal\Core\Url;
+use Drupal\node\Entity\Node;
 use SearchApi\Item\ItemInterface;
+
+/**
+ * The landing page node's fixed UUID.
+ *
+ * Lets eiw_core_create_landing_page_if_missing() recognize "the landing
+ * page already exists" across every environment and every deploy, so it's
+ * only ever created once and an editor's later changes are never touched
+ * again.
+ */
+const EIW_CORE_LANDING_PAGE_UUID = '23b3a912-5ff5-4695-b5af-a5dbd2edd519';
 
 /**
  * Implements hook_ENTITY_TYPE_presave().
@@ -301,4 +312,78 @@ function eiw_core_form_taxonomy_term_form_alter(&$form, \Drupal\Core\Form\FormSt
   if (isset($form['relations'])) {
     $form['relations']['#access'] = FALSE;
   }
+}
+
+/**
+ * Creates the landing page node and its /home alias, if not already done.
+ *
+ * Safe to call repeatedly (hook_install(), and on every config import via
+ * EiwCoreConfigImportSubscriber) - a no-op once the node exists.
+ *
+ * node.type.page and field.field.node.page.body are plain site-wide
+ * configuration (configuration/), not this module's own config/install:
+ * this project's config:import has no config_ignore/config_split to exclude
+ * module-provided config from the sync comparison, and module-owned config
+ * missing from the sync directory gets flagged for deletion on every later
+ * import. That ordinary site config may or may not exist yet by the time
+ * this runs - in this project's deploy pipeline, hook_update() hooks run
+ * *before* configuration import (deploy.d/10 vs. deploy.d/40), so creating
+ * this unconditionally from hook_update() would hit the "page" bundle
+ * before it exists; the config-import event subscriber is what reliably
+ * runs after.
+ */
+function eiw_core_create_landing_page_if_missing(): void {
+  $entity_type_manager = \Drupal::entityTypeManager();
+
+  if (!$entity_type_manager->getStorage('node_type')->load('page')) {
+    return;
+  }
+
+  $existing = $entity_type_manager->getStorage('node')
+    ->loadByProperties(['uuid' => EIW_CORE_LANDING_PAGE_UUID]);
+  if ($existing) {
+    return;
+  }
+
+  Node::create([
+    'uuid' => EIW_CORE_LANDING_PAGE_UUID,
+    'type' => 'page',
+    'title' => 'Welcome',
+    'body' => [
+      'value' => '<p>Welcome to Wills of the East India Company. This is a placeholder landing page - replace this text by editing this page.</p>',
+      'format' => 'unb_libraries',
+    ],
+    'path' => [
+      'alias' => '/home',
+      // Disables Pathauto's own alias generation for this node, so its
+      // fixed /home alias isn't recomputed if the title is later edited.
+      'pathauto' => FALSE,
+    ],
+    'status' => 1,
+  ])->save();
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter() for user_login_form.
+ *
+ * The site has no anonymous access, and the front page is the login form
+ * itself (system.site.page.front), not a redirect bounced here from
+ * elsewhere - so there's no "destination" for Drupal's default post-login
+ * behavior (the user's own account page) to pick up. Send logged-in users
+ * to the landing page instead.
+ *
+ * This doesn't need to check for an explicit ?destination= query parameter
+ * itself: when one is present (e.g. require_login bounced an anonymous user
+ * here from a specific page), Drupal's core RedirectResponseSubscriber
+ * already overrides any redirect - including this one - to honor it.
+ */
+function eiw_core_form_user_login_form_alter(array &$form, \Drupal\Core\Form\FormStateInterface $form_state, string $form_id): void {
+  $form['#submit'][] = 'eiw_core_user_login_form_submit';
+}
+
+/**
+ * Form submit callback: redirects a logged-in user to the landing page.
+ */
+function eiw_core_user_login_form_submit(array &$form, \Drupal\Core\Form\FormStateInterface $form_state): void {
+  $form_state->setRedirectUrl(Url::fromUserInput('/home'));
 }
