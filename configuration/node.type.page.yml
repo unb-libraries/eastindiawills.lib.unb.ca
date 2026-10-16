@@ -1,0 +1,17 @@
+uuid: db8b54c1-ebc6-49da-bf90-b608913e0c8f
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Page
+type: page
+description: 'A general-purpose static page (landing page, about page, etc.).'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

@@ -1,0 +1,45 @@
+uuid: f9b33617-60d2-4d41-bad8-534c0df32107
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.page.body
+    - node.type.page
+  module:
+    - path
+    - text
+id: node.page.default
+targetEntityType: node
+bundle: page
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 1
+    region: content
+    settings:
+      rows: 20
+      summary_rows: 5
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true

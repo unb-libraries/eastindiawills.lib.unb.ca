@@ -1,0 +1,5 @@
+services:
+  eiw_core.config_import_subscriber:
+    class: Drupal\eiw_core\EventSubscriber\ConfigImportSubscriber
+    tags:
+      - { name: event_subscriber }
