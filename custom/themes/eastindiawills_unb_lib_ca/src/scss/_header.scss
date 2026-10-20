@@ -11,6 +11,16 @@
     margin: 0;
     padding: 0;
   }
+
+  // The base theme's slide-nav.css gives any .navigation-classed element
+  // (the menu block's own <nav role="navigation"> wrapper) 15px of
+  // left/right padding at >=768px, which throws off our own right-edge
+  // alignment of the links.
+  .navigation {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
 }
 
 .eiw-brand {
@@ -31,6 +41,24 @@
 .eiw-header__nav-main {
   @include media-breakpoint-up(lg) {
     margin-left: 3rem;
+  }
+
+  // On mobile the collapse panel drops open under the toggler, which sits
+  // on the right; align the links under it to match instead of the
+  // Bootstrap default of flush-left.
+  @include media-breakpoint-down(lg) {
+    // Padding lives on this inner element rather than .navbar-collapse
+    // itself (see .eiw-header__nav-additional below for why) - a fixed
+    // padding on the box Bootstrap's collapse JS animates height on creates
+    // a floor the rendered height can never shrink past (padding doesn't
+    // compress), so the animation stalls there until the JS's transitionend
+    // timer catches up and pops the panel shut.
+    padding-top: .75rem;
+
+    .navbar-nav {
+      align-items: flex-end;
+      text-align: right;
+    }
   }
 
   .navbar-nav .nav-link {
@@ -69,13 +97,34 @@
   }
 }
 
-.eiw-header__nav-additional .nav-link {
-  font-size: .9375rem;
-  color: $gray-700;
+.eiw-header__nav-additional {
+  @include media-breakpoint-down(lg) {
+    .navbar-nav {
+      align-items: flex-end;
+      text-align: right;
+    }
 
-  &:hover,
-  &:focus-visible {
-    color: $eiw-red;
+    // Hairline rule matching the will record display's field dividers
+    // (#block-eastindiawills-unb-lib-ca-content .field in style.scss),
+    // closing off the bottom of the opened panel. Placed on this inner
+    // element rather than .navbar-collapse itself: Bootstrap's collapse
+    // animation shrinks .navbar-collapse's own height via an inline style,
+    // and a border on that same box still paints at height: 0 until the JS
+    // finishes and hides it outright - a border on a child gets clipped by
+    // the parent's overflow: hidden as it shrinks, in step with the rest of
+    // the closing content instead of lingering and then popping away.
+    padding-bottom: .75rem;
+    border-bottom: 1px solid $gray-100;
+  }
+
+  .nav-link {
+    font-size: .9375rem;
+    color: $gray-700;
+
+    &:hover,
+    &:focus-visible {
+      color: $eiw-red;
+    }
   }
 }
 
