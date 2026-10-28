@@ -6,6 +6,7 @@ base theme: bootstrap
 package: EIW
 
 libraries:
+  - eastindiawills_unb_lib_ca/typekit
   - eastindiawills_unb_lib_ca/global-styling
 ckeditor5-stylesheets:
   - dist/css/ck5style.css

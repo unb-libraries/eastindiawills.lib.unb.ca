@@ -67,6 +67,8 @@
   .facet-item__count {
     color: $eiw-red;
     white-space: nowrap;
+    // Old-style figures, as in the concept design's "(660)".
+    font-variant-numeric: oldstyle-nums;
   }
 
   .facets-soft-limit-link {

@@ -2,8 +2,8 @@
 h1, .h1,
 h2, .h2 {
   font-family: $eiw-font-serif;
-  // DM Serif Display ships one weight; avoid faux bold.
-  font-weight: 400;
+  // Caesura bold, the only weight in the font kit.
+  font-weight: 700;
 }
 
 h1, .h1 { line-height: 1.125; }

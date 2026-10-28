@@ -1,3 +1,12 @@
+# Adobe Fonts (Typekit) kit with the concept design's licensed faces:
+# Caesura (bold) and Freight Sans Pro (book, medium, semibold + italics).
+# Loaded as an external stylesheet, like nbbib's kit link in its
+# html.html.twig. Family names are set in _variables_bootstrap.scss.
+typekit:
+  css:
+    base:
+      https://use.typekit.net/uzm7edc.css: { type: external }
+
 global-styling:
   css:
     theme:

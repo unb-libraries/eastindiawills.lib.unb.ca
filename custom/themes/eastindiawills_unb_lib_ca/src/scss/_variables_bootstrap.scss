@@ -52,8 +52,18 @@ $link-hover-color: map-get($eiw-red-shades, 2);
 // Typography, from the type specimen frame of the concept design.
 // Sizes are the design's px values in rem (16px root); comments give
 // size/line-height in px as specified.
-$eiw-font-serif: 'DM Serif Display', Georgia, 'Times New Roman', serif;
-$eiw-font-sans: 'Source Sans 3', 'Helvetica Neue', Arial, sans-serif;
+// Both faces come from the Adobe Fonts kit (the typekit library in
+// eastindiawills_unb_lib_ca.libraries.yml).
+$eiw-font-serif: caesura, Georgia, 'Times New Roman', serif;
+$eiw-font-sans: freight-sans-pro, 'Helvetica Neue', Arial, sans-serif;
+
+// The kit has Freight Sans in 400/500/600 only, so Bootstrap's bold
+// (700) and <strong>/<b> ("bolder") map to semibold rather than a
+// synthesized bold.
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 600;
+$font-weight-bolder: 600;
 
 $font-family-sans-serif: $eiw-font-sans;
 $font-size-base: 1.3125rem; // p: 21/27, book.
@@ -79,5 +89,5 @@ $h6-font-size: 1.125rem; // 18/18, uppercase, 3% tracking.
 
 // Extra large "display" type for real emphasis.
 $display-font-family: $eiw-font-serif;
-$display-font-weight: 400;
+$display-font-weight: 700; // Caesura bold, the kit's only weight.
 $display-line-height: 1.1;
