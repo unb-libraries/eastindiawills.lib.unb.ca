@@ -56,6 +56,9 @@ $link-hover-color: map-get($eiw-red-shades, 2);
 // eastindiawills_unb_lib_ca.libraries.yml).
 $eiw-font-serif: caesura, Georgia, 'Times New Roman', serif;
 $eiw-font-sans: freight-sans-pro, 'Helvetica Neue', Arial, sans-serif;
+// Plain system sans for numerals where Freight Sans's old-style figures
+// read as too decorative (e.g. the /wills pager).
+$eiw-font-plain: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 
 // The kit has Freight Sans in 400/500/600 only, so Bootstrap's bold
 // (700) and <strong>/<b> ("bolder") map to semibold rather than a

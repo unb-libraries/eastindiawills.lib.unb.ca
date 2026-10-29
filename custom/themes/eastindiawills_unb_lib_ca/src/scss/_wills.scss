@@ -263,8 +263,10 @@
       padding: .25rem 0;
       border: 0;
       background: none;
+      font-family: $eiw-font-plain;
       font-size: 1rem * $eiw-type-scale;
       font-weight: 500;
+      font-variant-numeric: lining-nums tabular-nums;
       color: $eiw-ink;
 
       &::after {
