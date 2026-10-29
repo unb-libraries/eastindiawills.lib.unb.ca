@@ -64,7 +64,7 @@
   .navbar-nav .nav-link {
     position: relative;
     padding: .5rem 0;
-    font-size: 1.125rem;
+    font-size: 1.125rem * $eiw-type-scale;
     font-weight: 500;
     color: $eiw-ink;
 
@@ -118,7 +118,7 @@
   }
 
   .nav-link {
-    font-size: .9375rem;
+    font-size: .9375rem * $eiw-type-scale;
     color: $gray-700;
 
     &:hover,

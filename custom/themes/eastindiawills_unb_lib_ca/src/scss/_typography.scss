@@ -25,7 +25,7 @@ h6, .h6 {
 
 // p x-small: 15/21, medium.
 .text-x-small {
-  font-size: .9375rem;
+  font-size: .9375rem * $eiw-type-scale;
   line-height: 1.4;
   font-weight: 500;
 }

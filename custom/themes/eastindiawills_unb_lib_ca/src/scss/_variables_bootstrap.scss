@@ -66,13 +66,21 @@ $font-weight-bold: 600;
 $font-weight-bolder: 600;
 
 $font-family-sans-serif: $eiw-font-sans;
-$font-size-base: 1.3125rem; // p: 21/27, book.
+
+// All text sizes in the theme are the concept design's px values (in rem)
+// times this scale. Freight Sans sets small for its size, so the design's
+// sizes read too small on screen; 1.2 brings 21px body text to ~25px.
+// Every font-size in the theme's partials is multiplied by it too, so
+// the whole type hierarchy scales together.
+$eiw-type-scale: 1.2;
+
+$font-size-base: 1.3125rem * $eiw-type-scale; // p: 21/27, book.
 $line-height-base: 1.2857;
-$font-size-lg: 1.5rem; // p large: 24/30.
-$font-size-sm: 1.125rem; // p small: 18/24.
+$font-size-lg: 1.5rem * $eiw-type-scale; // p large: 24/30.
+$font-size-sm: 1.125rem * $eiw-type-scale; // p small: 18/24.
 $small-font-size: .857em; // 18px within 21px text.
 $paragraph-margin-bottom: .75rem; // P spacing: 12.
-$lead-font-size: 1.5rem;
+$lead-font-size: 1.5rem * $eiw-type-scale;
 $lead-font-weight: 400;
 
 // h1-h2 are serif (Caesura); h3-h6 sans semi-bold (Freight Sans).
@@ -80,12 +88,12 @@ $lead-font-weight: 400;
 $headings-font-family: $eiw-font-sans;
 $headings-font-weight: 600;
 $headings-margin-bottom: .75rem;
-$h1-font-size: 3rem; // 48/54.
-$h2-font-size: 2.4375rem; // 39/45.
-$h3-font-size: 2.25rem; // 36/42.
-$h4-font-size: 1.875rem; // 30/36.
-$h5-font-size: 1.5rem; // 24/30.
-$h6-font-size: 1.125rem; // 18/18, uppercase, 3% tracking.
+$h1-font-size: 3rem * $eiw-type-scale; // 48/54.
+$h2-font-size: 2.4375rem * $eiw-type-scale; // 39/45.
+$h3-font-size: 2.25rem * $eiw-type-scale; // 36/42.
+$h4-font-size: 1.875rem * $eiw-type-scale; // 30/36.
+$h5-font-size: 1.5rem * $eiw-type-scale; // 24/30.
+$h6-font-size: 1.125rem * $eiw-type-scale; // 18/18, uppercase, 3% tracking.
 
 // Extra large "display" type for real emphasis.
 $display-font-family: $eiw-font-serif;

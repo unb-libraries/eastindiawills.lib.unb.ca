@@ -60,7 +60,7 @@ ul {
     .field__label {
       margin-bottom: .125rem;
       font-family: $eiw-font-sans;
-      font-size: .8125rem;
+      font-size: .8125rem * $eiw-type-scale;
       font-weight: 600;
       letter-spacing: .03em;
       text-transform: uppercase;
