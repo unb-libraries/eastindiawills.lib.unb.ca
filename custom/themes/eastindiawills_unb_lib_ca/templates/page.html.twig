@@ -98,7 +98,9 @@
    on a dark bar, full-width. #}
 <footer role="contentinfo" class="site-footer mt-auto">
   <div class="container eiw-footer">
-    <img src="{{ file_url(directory ~ '/dist/img/unb-libraries-white.png') }}" alt="UNB Libraries" class="eiw-footer__logo" />
+    <a href="https://lib.unb.ca" class="eiw-footer__logo-link">
+      <img src="{{ file_url(directory ~ '/dist/img/unb-libraries-white.png') }}" alt="UNB Libraries" class="eiw-footer__logo" />
+    </a>
     <div class="eiw-footer__links">
       <span class="eiw-footer__copyright">{{ 'Copyright © @year'|t({'@year': 'now'|date('Y')}) }}</span>
       {{ page.footer }}

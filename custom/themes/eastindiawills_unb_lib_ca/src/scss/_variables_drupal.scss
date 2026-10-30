@@ -70,6 +70,11 @@ main[role="main"] {
   background: $eiw-ink;
   color: $white;
 
+  &__logo-link {
+    display: block;
+    line-height: 0;
+  }
+
   &__logo {
     height: 28px;
     width: auto;
