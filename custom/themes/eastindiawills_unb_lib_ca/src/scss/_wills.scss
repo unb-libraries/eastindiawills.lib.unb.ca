@@ -233,6 +233,24 @@
       &:hover {
         text-decoration: underline;
       }
+
+      // The bracketed date is two words ("[ 1629-01-01 ]"), so plain
+      // wrapping can split it across lines wherever the column happens to
+      // run out of space. Keep it intact always, and only force the full
+      // surname/given-name/date break into three lines once the column's
+      // narrow enough that natural wrapping starts doing that anyway (see
+      // eastindiawills_unb_lib_ca_preprocess_views_view_field()).
+      .eiw-title__date {
+        white-space: nowrap;
+      }
+
+      @include media-breakpoint-down(sm) {
+        .eiw-title__surname,
+        .eiw-title__given,
+        .eiw-title__date {
+          display: block;
+        }
+      }
     }
   }
 

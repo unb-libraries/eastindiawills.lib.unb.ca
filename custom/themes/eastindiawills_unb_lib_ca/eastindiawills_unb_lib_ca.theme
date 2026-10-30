@@ -1,5 +1,8 @@
 <?php
 
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Render\Markup;
+
 /**
  * @file
  * East India Wills theme file.
@@ -58,4 +61,40 @@ function eastindiawills_unb_lib_ca_preprocess_page(&$variables) {
     }
   }
   $variables['#cache']['contexts'][] = 'route.name';
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for views-view-field.html.twig.
+ *
+ * The wills listing's title is always "{Surname}, {Given name} [ {date} ]"
+ * (the given name and comma are dropped if there's no first name - see
+ * eiw_core_node_presave()), rendered as a link to the record. Tagging the
+ * surname, given name and bracketed date as separate spans (rather than
+ * hard-breaking them here) lets the CSS decide when to stack them onto
+ * three lines - only once the column's narrow enough that it would
+ * otherwise wrap mid-bracket - while leaving them to wrap normally at
+ * wider widths (see .views-field-title in _wills.scss).
+ */
+function eastindiawills_unb_lib_ca_preprocess_views_view_field(&$variables) {
+  if ($variables['view']->id() !== 'wills' || $variables['field']->field !== 'title') {
+    return;
+  }
+  $variables['output'] = Markup::create(preg_replace_callback(
+    '#(<a\b[^>]*>)(.*?)(</a>)#s',
+    function (array $matches) {
+      $text = trim(strip_tags($matches[2]));
+      if (!preg_match('/^(.*?)(\s*\[[^\]]*\]\s*)$/', $text, $parts)) {
+        return $matches[0];
+      }
+      $name = trim($parts[1]);
+      $date = trim($parts[2]);
+      $comma_pos = strpos($name, ',');
+      $name_html = $comma_pos === FALSE
+        ? '<span class="eiw-title__surname">' . Html::escape($name) . '</span>'
+        : '<span class="eiw-title__surname">' . Html::escape(substr($name, 0, $comma_pos + 1)) . '</span> '
+          . '<span class="eiw-title__given">' . Html::escape(trim(substr($name, $comma_pos + 1))) . '</span>';
+      return $matches[1] . $name_html . ' <span class="eiw-title__date">' . Html::escape($date) . '</span>' . $matches[3];
+    },
+    (string) $variables['output']
+  ));
 }
