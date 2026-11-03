@@ -1,0 +1,81 @@
+{#
+/**
+ * @file
+ * Renders a voyage's itinerary as a Port | Leg | Arrival | Departure |
+ * Notes table.
+ *
+ * Applies when the stops are rendered in the paragraph "table_row" view
+ * mode (paragraph--eiw-voyage-stop--table-row.html.twig gives one <tr> per
+ * stop). Any other rendering falls back to the plain field markup. Mirrors
+ * field--field-will-voyages.html.twig one level down, on the Voyage node.
+ *
+ * Modifier classes on the table drive the styling in _wills.scss:
+ * - eiw-stops--no-port/-leg/-arrival/-departure/-notes: that column is
+ *   empty for every stop, so it's dropped rather than shown as a column of
+ *   dashes.
+ */
+#}
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+  ]
+%}
+{%
+  set title_classes = [
+    'field__label',
+    label_display == 'visually_hidden' ? 'visually-hidden',
+  ]
+%}
+{% set as_table = items|first.content['#view_mode'] == 'table_row' %}
+<div{{ attributes.addClass(classes) }}>
+  {% if not label_hidden %}
+    <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
+  {% endif %}
+  {% if as_table %}
+    {% set has = {port: false, homeward: false, arrival_date: false, departure_date: false, notes: false} %}
+    {% for item in items %}
+      {% set paragraph = item.content['#paragraph'] %}
+      {% for column in ['port', 'homeward', 'arrival_date', 'departure_date', 'notes'] %}
+        {% if not paragraph.get('field_' ~ column).isEmpty() %}
+          {% set has = has|merge({(column): true}) %}
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+    {%
+      set table_classes = [
+        'table',
+        'eiw-stops',
+        not has.port ? 'eiw-stops--no-port',
+        not has.homeward ? 'eiw-stops--no-leg',
+        not has.arrival_date ? 'eiw-stops--no-arrival',
+        not has.departure_date ? 'eiw-stops--no-departure',
+        not has.notes ? 'eiw-stops--no-notes',
+      ]
+    %}
+    <table class="{{ table_classes|join(' ')|trim }}">
+      <thead>
+        <tr>
+          <th scope="col" class="eiw-stops__port">{{ 'Port'|t }}</th>
+          <th scope="col" class="eiw-stops__leg">{{ 'Leg'|t }}</th>
+          <th scope="col" class="eiw-stops__arrival">{{ 'Arrival'|t }}</th>
+          <th scope="col" class="eiw-stops__departure">{{ 'Departure'|t }}</th>
+          <th scope="col" class="eiw-stops__notes">{{ 'Notes'|t }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in items %}
+          {{ item.content }}
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <div class="field__items">
+      {% for item in items %}
+        <div{{ item.attributes.addClass('field__item') }}>{{ item.content }}</div>
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>

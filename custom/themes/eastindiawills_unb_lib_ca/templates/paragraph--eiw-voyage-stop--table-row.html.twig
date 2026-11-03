@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * One voyage stop as a table row (paragraph "table_row" view mode, whose
+ * display hides the field labels). The table and its header come from
+ * field--field-voyage-stops.html.twig.
+ *
+ * Empty values get a muted dash (read out as "Not recorded") and an
+ * is-empty class, so a future narrow/stacked layout can skip them, the
+ * same convention as paragraph--eiw-will-voyage--table-row.html.twig.
+ * Arrival/departure render whatever precision was entered as-is (the
+ * field itself is a plain string, not a datetime - see
+ * eiw_core_entity_bundle_field_info_alter()).
+ */
+#}
+{% set columns = {port: 'Port'|t, homeward: 'Leg'|t, arrival_date: 'Arrival'|t, departure_date: 'Departure'|t, notes: 'Notes'|t} %}
+{% set column_classes = {port: 'port', homeward: 'leg', arrival_date: 'arrival', departure_date: 'departure', notes: 'notes'} %}
+<tr{{ attributes.addClass('eiw-stops__row') }}>
+  {% for column, column_label in columns %}
+    {% set empty = paragraph.get('field_' ~ column).isEmpty() %}
+    <td class="eiw-stops__{{ column_classes[column] }}{{ empty ? ' is-empty' }}" data-label="{{ column_label }}">
+      {% if empty %}
+        <span class="eiw-stops__none" aria-hidden="true">&mdash;</span><span class="visually-hidden">{{ 'Not recorded'|t }}</span>
+      {% else %}
+        {{ content['field_' ~ column] }}
+      {% endif %}
+    </td>
+  {% endfor %}
+</tr>

@@ -1,0 +1,29 @@
+uuid: d7cf7134-a047-4758-b474-9a6f80e96af3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_port
+    - paragraphs.paragraphs_type.eiw_voyage_stop
+    - taxonomy.vocabulary.eiw_ports
+id: paragraph.eiw_voyage_stop.field_port
+field_name: field_port
+entity_type: paragraph
+bundle: eiw_voyage_stop
+label: Port
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      eiw_ports: eiw_ports
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

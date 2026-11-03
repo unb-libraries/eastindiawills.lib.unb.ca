@@ -533,3 +533,92 @@
     }
   }
 }
+
+// Voyage itinerary table (field--field-voyage-stops.html.twig), on the
+// Voyage node page. Same quiet-table language as .eiw-voyages above (small
+// uppercase column heads over a single hairline), one level down.
+.eiw-stops {
+  width: 100%;
+  margin: 0;
+  font-size: $font-size-sm;
+
+  --bs-table-bg: transparent;
+  --bs-table-accent-bg: transparent;
+  --bs-table-striped-bg: transparent;
+  --bs-table-hover-bg: transparent;
+
+  tr {
+    padding: 0;
+    background: transparent;
+    border: 0;
+  }
+
+  th,
+  td {
+    padding: .375rem 1.5rem .375rem 0;
+    vertical-align: baseline;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  thead th {
+    padding-top: 0;
+    padding-bottom: .375rem;
+    font-family: $eiw-font-sans;
+    font-size: .75rem * $eiw-type-scale;
+    font-weight: 600;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: $gray-600;
+    border-bottom: 1px solid $gray-100;
+  }
+
+  tbody tr:first-child td {
+    padding-top: .5rem;
+  }
+
+  .field,
+  .field__item {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: inherit;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible {
+      color: $eiw-red;
+      text-decoration: underline;
+      text-underline-offset: .2em;
+    }
+  }
+
+  td.eiw-stops__port {
+    font-weight: 600;
+    color: $eiw-ink;
+  }
+
+  .eiw-stops__none {
+    color: $gray-300;
+    font-weight: normal;
+  }
+
+  // Columns that are empty for every stop are dropped.
+  &.eiw-stops--no-port .eiw-stops__port,
+  &.eiw-stops--no-leg .eiw-stops__leg,
+  &.eiw-stops--no-arrival .eiw-stops__arrival,
+  &.eiw-stops--no-departure .eiw-stops__departure,
+  &.eiw-stops--no-notes .eiw-stops__notes {
+    display: none;
+  }
+}

@@ -1,0 +1,19 @@
+uuid: 320ec0c0-da1f-45a1-ac61-cd3bee4e2877
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_arrival_date
+    - paragraphs.paragraphs_type.eiw_voyage_stop
+id: paragraph.eiw_voyage_stop.field_arrival_date
+field_name: field_arrival_date
+entity_type: paragraph
+bundle: eiw_voyage_stop
+label: Arrival
+description: 'The date the ship arrived at this port, at whatever precision the source gives: a year ("1751"), a year and month ("1751-03"), or a full date ("1751-03-09").'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

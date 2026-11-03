@@ -1,0 +1,21 @@
+uuid: 72a2f968-2cbf-4ce5-be05-f9c54f1491ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_homeward
+    - paragraphs.paragraphs_type.eiw_voyage_stop
+id: paragraph.eiw_voyage_stop.field_homeward
+field_name: field_homeward
+entity_type: paragraph
+bundle: eiw_voyage_stop
+label: 'Homeward Leg'
+description: 'Checked if this stop occurred on the homeward (return) leg of the voyage; leave unchecked for the outbound leg.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

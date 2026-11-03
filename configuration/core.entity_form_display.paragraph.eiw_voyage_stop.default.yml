@@ -1,0 +1,60 @@
+uuid: ddb899d1-80fd-46a4-86d5-22fe8c79d502
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.eiw_voyage_stop.field_arrival_date
+    - field.field.paragraph.eiw_voyage_stop.field_departure_date
+    - field.field.paragraph.eiw_voyage_stop.field_homeward
+    - field.field.paragraph.eiw_voyage_stop.field_notes
+    - field.field.paragraph.eiw_voyage_stop.field_port
+    - paragraphs.paragraphs_type.eiw_voyage_stop
+id: paragraph.eiw_voyage_stop.default
+targetEntityType: paragraph
+bundle: eiw_voyage_stop
+mode: default
+content:
+  field_arrival_date:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 10
+      placeholder: '1751 or 1751-03 or 1751-03-09'
+    third_party_settings: {  }
+  field_departure_date:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 10
+      placeholder: '1751 or 1751-03 or 1751-03-09'
+    third_party_settings: {  }
+  field_homeward:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_notes:
+    type: string_textarea
+    weight: 4
+    region: content
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  field_port:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

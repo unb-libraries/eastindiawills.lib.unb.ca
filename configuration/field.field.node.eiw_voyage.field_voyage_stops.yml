@@ -1,0 +1,29 @@
+uuid: a6fcfee2-46e9-44e6-951c-2f0bb9be4c22
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_voyage_stops
+    - node.type.eiw_voyage
+    - paragraphs.paragraphs_type.eiw_voyage_stop
+id: node.eiw_voyage.field_voyage_stops
+field_name: field_voyage_stops
+entity_type: node
+bundle: eiw_voyage
+label: 'Itinerary (Port Calls)'
+description: 'Enter each port call in chronological order (first departure to final arrival). Drag rows to reorder - order here is the voyage order; there is no separate sequence number.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      eiw_voyage_stop: eiw_voyage_stop
+    negate: 0
+    target_bundles_drag_drop:
+      eiw_voyage_stop:
+        weight: 1
+        enabled: true
+field_type: entity_reference

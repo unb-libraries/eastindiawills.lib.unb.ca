@@ -1,0 +1,20 @@
+uuid: 9caf264e-4942-4fd9-a96e-da7d5ed648bf
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - paragraphs
+id: node.field_voyage_stops
+field_name: field_voyage_stops
+entity_type: node
+type: entity_reference
+settings:
+  target_type: paragraph
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

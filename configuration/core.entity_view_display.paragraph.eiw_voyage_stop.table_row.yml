@@ -1,0 +1,58 @@
+uuid: 73946c7f-8a21-4882-9f0f-e81b69e66189
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.table_row
+    - field.field.paragraph.eiw_voyage_stop.field_arrival_date
+    - field.field.paragraph.eiw_voyage_stop.field_departure_date
+    - field.field.paragraph.eiw_voyage_stop.field_homeward
+    - field.field.paragraph.eiw_voyage_stop.field_notes
+    - field.field.paragraph.eiw_voyage_stop.field_port
+    - paragraphs.paragraphs_type.eiw_voyage_stop
+id: paragraph.eiw_voyage_stop.table_row
+targetEntityType: paragraph
+bundle: eiw_voyage_stop
+mode: table_row
+content:
+  field_arrival_date:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_departure_date:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_homeward:
+    type: boolean
+    label: hidden
+    settings:
+      format: custom
+      format_custom_false: Outbound
+      format_custom_true: Homeward
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_notes:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_port:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

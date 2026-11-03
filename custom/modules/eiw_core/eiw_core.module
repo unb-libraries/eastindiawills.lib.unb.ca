@@ -52,6 +52,38 @@ function eiw_core_node_presave($entity) {
 }
 
 /**
+ * Implements hook_entity_bundle_field_info_alter().
+ *
+ * The eiw_voyage_stop paragraph's arrival/departure dates are plain strings
+ * (not Drupal's datetime field type), so they can hold whatever precision
+ * the source actually records - a year, a year and month, or a full date -
+ * without a companion "year only" boolean. Constraining the stored value to
+ * one of those three shapes is enforced here rather than in config, since
+ * Drupal has no declarative way to attach an arbitrary regex constraint to
+ * a field via YAML.
+ */
+function eiw_core_entity_bundle_field_info_alter(array &$fields, \Drupal\Core\Entity\EntityTypeInterface $entity_type, string $bundle): void {
+  if ($entity_type->id() !== 'paragraph' || $bundle !== 'eiw_voyage_stop') {
+    return;
+  }
+  foreach (['field_arrival_date', 'field_departure_date'] as $field_name) {
+    if (isset($fields[$field_name])) {
+      // addConstraint() targets the field's item list as a whole (the
+      // right place for e.g. a Count constraint); a pattern constraint on
+      // the string value itself has to go on that property specifically,
+      // or the Regex validator receives the list object instead of a
+      // string and errors out.
+      $fields[$field_name]->addPropertyConstraints('value', [
+        'Regex' => [
+          'pattern' => '/^\d{4}(-\d{2}(-\d{2})?)?$/',
+          'message' => 'Enter a year ("1751"), a year and month ("1751-03"), or a full date ("1751-03-09").',
+        ],
+      ]);
+    }
+  }
+}
+
+/**
  * Implements hook_form_FORM_ID_alter().
  */
 function eiw_core_form_node_eiw_will_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {

@@ -1,0 +1,19 @@
+uuid: 0baeab1b-72d5-44b3-b57a-54cbd7c272e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_notes
+    - paragraphs.paragraphs_type.eiw_voyage_stop
+id: paragraph.eiw_voyage_stop.field_notes
+field_name: field_notes
+entity_type: paragraph
+bundle: eiw_voyage_stop
+label: Notes
+description: "Anything the arrival/departure fields can't capture, e.g. source uncertainty or conflicting records."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.eiw_voyage.field_description
     - field.field.node.eiw_voyage.field_notes
+    - field.field.node.eiw_voyage.field_voyage_stops
     - node.type.eiw_voyage
   module:
     - text
@@ -27,6 +28,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_voyage_stops:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: table_row
+      link: true
+    third_party_settings: {  }
+    weight: 2
     region: content
 hidden:
   links: true

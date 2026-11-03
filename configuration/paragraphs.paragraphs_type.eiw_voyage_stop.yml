@@ -1,0 +1,10 @@
+uuid: 747bbb1b-63f5-4e13-905b-4a2823c9007a
+langcode: en
+status: true
+dependencies: {  }
+id: eiw_voyage_stop
+label: 'Voyage Stop'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
