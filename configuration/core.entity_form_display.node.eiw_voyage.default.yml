@@ -8,8 +8,27 @@ dependencies:
     - field.field.node.eiw_voyage.field_voyage_stops
     - node.type.eiw_voyage
   module:
+    - field_group
     - inline_entity_form
     - text
+third_party_settings:
+  field_group:
+    group_voyage_stops:
+      children:
+        - field_voyage_stops
+      label: 'Itinerary (Port Calls)'
+      region: content
+      parent_name: ''
+      weight: 28
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        open: false
+        description: 'Optional. Enter each port call in chronological order.'
+        required_fields: true
 id: node.eiw_voyage.default
 targetEntityType: node
 bundle: eiw_voyage
