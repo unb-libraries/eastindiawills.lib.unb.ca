@@ -405,7 +405,7 @@ function eiw_core_create_landing_page_if_missing(): void {
  * to the landing page instead.
  *
  * This doesn't need to check for an explicit ?destination= query parameter
- * itself: when one is present (e.g. require_login bounced an anonymous user
+ * itself: when one is present (e.g. AnonymousAccessSubscriber bounced an anonymous user
  * here from a specific page), Drupal's core RedirectResponseSubscriber
  * already overrides any redirect - including this one - to honor it.
  */

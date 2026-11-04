@@ -11,3 +11,8 @@ services:
   eiw_core.voyage_map_builder:
     class: Drupal\eiw_core\VoyageMapBuilder
     arguments: ['@extension.list.module', '@file_url_generator']
+  eiw_core.anonymous_access_subscriber:
+    class: Drupal\eiw_core\EventSubscriber\AnonymousAccessSubscriber
+    arguments: ['@current_user', '@current_route_match', '@path.matcher']
+    tags:
+      - { name: event_subscriber }
