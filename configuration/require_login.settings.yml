@@ -1,8 +1,8 @@
 _core:
   default_config_hash: YLyaxFHFUutVkDm7EBj9rufllzT5wZKTmcdJeMFr4mk
-login_path: ''
+login_path: /saml/login
 login_message: ''
-login_destination: /home
+login_destination: ''
 requirements:
   request_path:
     id: request_path
