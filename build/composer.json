@@ -151,7 +151,7 @@
     "drupal/core-recommended": "^11",
     "drupal/easy_breadcrumb": "^2",
     "drupal/facets": "^3",
-    "drupal/field_group": "^3",
+    "drupal/field_group": "^4",
     "drupal/fontawesome": "^3",
     "drupal/google_analytics": "^4",
     "drupal/health_check": "^3",
