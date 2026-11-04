@@ -2,31 +2,37 @@
 
 namespace Drupal\eiw_core\EventSubscriber;
 
-use Drupal\Core\Path\PathMatcherInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Routing\TrustedRedirectResponse;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Url;
+use Drupal\node\NodeInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
 
 /**
- * Limits anonymous visitors to the front page; everything else needs login.
+ * Limits anonymous visitors to the landing page; everything else needs login.
  *
- * Anonymous users keep core's 'access content' permission (the front page
- * may be a node), so this does the gatekeeping instead: any other page
- * sends them to SAML login (samlauth), and back to that page afterwards.
- * Routes a visitor needs in order to log in at all - SAML, one-time login
- * links (drush uli), and CSS/JS/image asset generation - stay open.
+ * Anonymous users keep core's 'access content' permission (the landing page
+ * is a node), so this does the gatekeeping instead: any other page sends
+ * them to SAML login (samlauth), and back to that page afterwards. Routes a
+ * visitor needs in order to log in at all - SAML, one-time login links
+ * (drush uli), and CSS/JS/image asset generation - stay open.
+ *
+ * The landing page is recognized by its fixed UUID rather than as "the
+ * front page": the front page setting is its /home alias (its node ID
+ * differs per environment), and core's front page check compares internal
+ * /node/N paths, so it wouldn't match.
  */
 class AnonymousAccessSubscriber implements EventSubscriberInterface {
 
   /**
-   * Routes anonymous visitors may use, besides the front page.
+   * Routes anonymous visitors may use, besides the landing page.
    */
   const OPEN_ROUTES = [
     'user.login',
+    'saml_features.login',
     'user.reset',
     'user.reset.form',
     'user.reset.login',
@@ -40,7 +46,6 @@ class AnonymousAccessSubscriber implements EventSubscriberInterface {
   public function __construct(
     protected AccountInterface $account,
     protected RouteMatchInterface $routeMatch,
-    protected PathMatcherInterface $pathMatcher,
   ) {}
 
   /**
@@ -62,7 +67,7 @@ class AnonymousAccessSubscriber implements EventSubscriberInterface {
     if (
       in_array($route, static::OPEN_ROUTES, TRUE)
       || str_starts_with($route, 'samlauth.')
-      || $this->pathMatcher->isFrontPage()
+      || $this->isLandingPage()
     ) {
       return;
     }
@@ -70,6 +75,16 @@ class AnonymousAccessSubscriber implements EventSubscriberInterface {
       'query' => ['destination' => $event->getRequest()->getRequestUri()],
     ]);
     $event->setResponse(new TrustedRedirectResponse($url->toString()));
+  }
+
+  /**
+   * Whether the current route is the landing page node.
+   */
+  protected function isLandingPage(): bool {
+    $node = $this->routeMatch->getParameter('node');
+    return $this->routeMatch->getRouteName() === 'entity.node.canonical'
+      && $node instanceof NodeInterface
+      && $node->uuid() === \EIW_CORE_LANDING_PAGE_UUID;
   }
 
 }

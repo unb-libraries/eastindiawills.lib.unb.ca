@@ -13,6 +13,6 @@ services:
     arguments: ['@extension.list.module', '@file_url_generator']
   eiw_core.anonymous_access_subscriber:
     class: Drupal\eiw_core\EventSubscriber\AnonymousAccessSubscriber
-    arguments: ['@current_user', '@current_route_match', '@path.matcher']
+    arguments: ['@current_user', '@current_route_match']
     tags:
       - { name: event_subscriber }

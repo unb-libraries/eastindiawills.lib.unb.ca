@@ -470,6 +470,9 @@ function eiw_core_entity_extra_field_info(): array {
  * Implements hook_ENTITY_TYPE_view() for node entities.
  */
 function eiw_core_node_view(array &$build, \Drupal\Core\Entity\EntityInterface $node, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, string $view_mode): void {
+  if ($node->uuid() === EIW_CORE_LANDING_PAGE_UUID && $view_mode === 'full') {
+    eiw_core_landing_page_saml_notice($build);
+  }
   if (!$display->getComponent('eiw_voyage_map')) {
     return;
   }
@@ -495,4 +498,38 @@ function eiw_core_node_view(array &$build, \Drupal\Core\Entity\EntityInterface $
   if ($voyages && ($map = \Drupal::service('eiw_core.voyage_map_builder')->build(array_values($voyages)))) {
     $build['eiw_voyage_map'] = $map;
   }
+}
+
+/**
+ * Adds the "sign in with SAML" notice to the landing page for anonymous users.
+ *
+ * The landing page is the only page anonymous visitors can see (see
+ * AnonymousAccessSubscriber), so it carries the notice saml_features
+ * normally shows on the login form. It's rendered as a regular warning
+ * status message so it looks the same, but built into the page itself
+ * rather than queued with the messenger, which wouldn't survive the page
+ * being cached for anonymous users.
+ *
+ * @see saml_features_form_user_login_form_alter()
+ */
+function eiw_core_landing_page_saml_notice(array &$build): void {
+  $build['#cache']['contexts'][] = 'user.roles:anonymous';
+  if (!\Drupal::currentUser()->isAnonymous()) {
+    return;
+  }
+  $saml_config = \Drupal::config('saml_features.adminsettings');
+  $build['#cache']['tags'][] = 'config:saml_features.adminsettings';
+  $build['eiw_saml_notice'] = [
+    '#theme' => 'status_messages',
+    '#message_list' => [
+      'warning' => [
+        t('<strong>@institution accounts</strong> must sign in using <strong>@auth_link</strong>.', [
+          '@institution' => $saml_config->get('exclude_stu') ? 'UNB' : 'UNB/STU',
+          '@auth_link' => Link::fromTextAndUrl(t('Secure Services Login'), Url::fromRoute('samlauth.saml_controller_login'))->toString(),
+        ]),
+      ],
+    ],
+    '#status_headings' => ['warning' => t('Warning message')],
+    '#weight' => -100,
+  ];
 }
