@@ -1,0 +1,20 @@
+uuid: b2f30573-f84b-4e93-8232-a637ef001b67
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_latitude
+field_name: field_latitude
+entity_type: taxonomy_term
+type: decimal
+settings:
+  precision: 9
+  scale: 6
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

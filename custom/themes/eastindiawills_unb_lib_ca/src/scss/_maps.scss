@@ -1,0 +1,124 @@
+// Voyage maps (eiw_core's eiw-voyage-map.html.twig): routes drawn as SVG
+// over the engraved base map. One colour per voyage (.eiw-voyage-map--cN,
+// N cycling 1-6); outbound legs solid, homeward legs dashed.
+
+$eiw-route-colours: (
+  1: $eiw-red,
+  2: $eiw-blue,
+  3: $eiw-ink,
+  4: #8a6a1c,
+  5: #2c7a5c,
+  6: #7b3f88,
+);
+
+.eiw-voyage-map {
+  margin: .5rem 0 1.5rem;
+
+  @each $n, $colour in $eiw-route-colours {
+    .eiw-voyage-map--c#{$n} {
+      --eiw-route: #{$colour};
+    }
+  }
+
+  &__svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid $gray-200;
+  }
+
+  &__leg {
+    fill: none;
+    stroke: var(--eiw-route);
+    stroke-width: 2.25px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  &__leg--homeward {
+    stroke-dasharray: 7 5;
+  }
+
+  &__arrow {
+    fill: var(--eiw-route);
+  }
+
+  &__port {
+    circle {
+      fill: $white;
+      stroke: $eiw-ink;
+      stroke-width: .25px;
+    }
+
+    // Port names over a paper-coloured halo, so they stay legible where
+    // they cross a route or the coast.
+    text {
+      font-family: $eiw-font-sans;
+      font-weight: 600;
+      fill: $eiw-ink;
+      stroke: #f6f3ec;
+      stroke-width: .3em;
+      stroke-linejoin: round;
+      paint-order: stroke;
+    }
+  }
+
+  .is-hidden {
+    display: none;
+  }
+
+  &__legend {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .5rem 1.5rem;
+    margin-top: .5rem;
+    font-size: .9375rem * $eiw-type-scale;
+    color: $gray-800;
+  }
+
+  &__routes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .25rem 1.25rem;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  &__route-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    cursor: pointer;
+
+    input {
+      accent-color: var(--eiw-route);
+    }
+  }
+
+  &__swatch {
+    display: inline-block;
+    width: 1.25rem;
+    height: 3px;
+    background: var(--eiw-route);
+  }
+
+  &__key {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    color: $gray-700;
+  }
+
+  &__key-line {
+    display: inline-block;
+    width: 1.5rem;
+    border-top: 2px solid $gray-700;
+
+    &--homeward {
+      margin-left: .75rem;
+      border-top-style: dashed;
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{#
+/**
+ * @file
+ * A voyage map: routes drawn over the engraved base map, as static SVG.
+ *
+ * Built by \Drupal\eiw_core\VoyageMapBuilder. Colours and line styles are
+ * set in the theme (.eiw-voyage-map, _maps.scss): routes carry a
+ * .eiw-voyage-map--cN colour class, and outbound/homeward legs a
+ * .eiw-voyage-map__leg--outbound/--homeward class.
+ *
+ * Available variables:
+ * - map_id: A unique id for this map on the page.
+ * - routes: One per voyage: index, colour, label, url, and legs (each with
+ *   leg ('outbound'/'homeward'), path (SVG path data) and arrows).
+ * - ports: name, x, y, label (whether to print the name), routes (indexes
+ *   of the routes calling there) and calls (dates, for the tooltip).
+ * - viewbox: The zoomed-in part of the map to show.
+ * - width, height: The full base map size.
+ * - label_size: Port label size, in map units.
+ * - show_legend: Whether there's more than one route to toggle.
+ * - has_homeward: Whether any route has a homeward leg.
+ * - base_map: The base map image URL.
+ */
+#}
+{% set arrow_scale = (label_size / 14)|round(2) %}
+<figure class="eiw-voyage-map" id="{{ map_id }}">
+  <svg class="eiw-voyage-map__svg" viewBox="{{ viewbox }}" role="img" aria-labelledby="{{ map_id }}-title">
+    <title id="{{ map_id }}-title">{{ 'Map of voyage routes:'|t }} {{ routes|column('label')|join('; ') }}</title>
+    <image href="{{ base_map }}" width="{{ width }}" height="{{ height }}" preserveAspectRatio="none"/>
+    {% for route in routes %}
+      <g class="eiw-voyage-map__route eiw-voyage-map--c{{ route.colour }}" data-route="{{ route.index }}">
+        {% for leg in route.legs %}
+          <path class="eiw-voyage-map__leg eiw-voyage-map__leg--{{ leg.leg }}" d="{{ leg.path }}" vector-effect="non-scaling-stroke"/>
+          {% for arrow in leg.arrows %}
+            <path class="eiw-voyage-map__arrow" d="M-5 -3.5L4 0L-5 3.5Z" transform="translate({{ arrow.x }} {{ arrow.y }}) rotate({{ arrow.angle }}) scale({{ arrow_scale }})"/>
+          {% endfor %}
+        {% endfor %}
+      </g>
+    {% endfor %}
+    {% for port in ports %}
+      <g class="eiw-voyage-map__port" data-routes="{{ port.routes|join(' ') }}" transform="translate({{ port.x }} {{ port.y }})">
+        <title>{{ port.name }}{% for call in port.calls %}&#10;{{ call }}{% endfor %}</title>
+        <circle r="{{ (label_size / 4)|round(1) }}"/>
+        {% if port.label %}
+          <text x="{{ (label_size / 2.5)|round(1) }}" y="{{ (label_size / 3)|round(1) }}" font-size="{{ label_size }}">{{ port.name }}</text>
+        {% endif %}
+      </g>
+    {% endfor %}
+  </svg>
+  {% if show_legend or has_homeward %}
+    <figcaption class="eiw-voyage-map__legend">
+      {% if show_legend %}
+        <fieldset class="eiw-voyage-map__routes">
+          <legend class="visually-hidden">{{ 'Show routes'|t }}</legend>
+          {% for route in routes %}
+            <label class="eiw-voyage-map__route-toggle eiw-voyage-map--c{{ route.colour }}">
+              <input type="checkbox" class="eiw-voyage-map__toggle" value="{{ route.index }}" checked>
+              <span class="eiw-voyage-map__swatch" aria-hidden="true"></span>
+              {{ route.label }}
+            </label>
+          {% endfor %}
+        </fieldset>
+      {% endif %}
+      {% if has_homeward %}
+        <span class="eiw-voyage-map__key">
+          <span class="eiw-voyage-map__key-line eiw-voyage-map__key-line--outbound" aria-hidden="true"></span>{{ 'Outbound'|t }}
+          <span class="eiw-voyage-map__key-line eiw-voyage-map__key-line--homeward" aria-hidden="true"></span>{{ 'Homeward'|t }}
+        </span>
+      {% endif %}
+    </figcaption>
+  {% endif %}
+</figure>

@@ -1,0 +1,23 @@
+uuid: b4760a68-d8c6-4cd2-91eb-13334c31c455
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_latitude
+    - taxonomy.vocabulary.eiw_ports
+id: taxonomy_term.eiw_ports.field_latitude
+field_name: field_latitude
+entity_type: taxonomy_term
+bundle: eiw_ports
+label: Latitude
+description: 'Decimal degrees, north positive (e.g. 51.5074 for London). Used to place the port on voyage maps.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: '-90'
+  max: '90'
+  prefix: ''
+  suffix: ''
+field_type: decimal

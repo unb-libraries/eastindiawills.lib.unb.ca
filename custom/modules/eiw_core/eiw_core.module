@@ -419,3 +419,80 @@ function eiw_core_form_user_login_form_alter(array &$form, \Drupal\Core\Form\For
 function eiw_core_user_login_form_submit(array &$form, \Drupal\Core\Form\FormStateInterface $form_state): void {
   $form_state->setRedirectUrl(Url::fromUserInput('/home'));
 }
+
+/**
+ * Implements hook_theme().
+ */
+function eiw_core_theme(): array {
+  return [
+    'eiw_voyage_map' => [
+      'variables' => [
+        'map_id' => NULL,
+        'routes' => [],
+        'ports' => [],
+        'viewbox' => NULL,
+        'width' => NULL,
+        'height' => NULL,
+        'label_size' => NULL,
+        'show_legend' => FALSE,
+        'has_homeward' => FALSE,
+        'base_map' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_entity_extra_field_info().
+ *
+ * "Voyage map" pseudo-fields, placed and ordered under Manage display like
+ * any field: a voyage's itinerary, and all of a will's voyages combined
+ * (with route toggles). Hidden by default, so only displays that place
+ * them (the default ones) render a map.
+ */
+function eiw_core_entity_extra_field_info(): array {
+  $extra['node']['eiw_voyage']['display']['eiw_voyage_map'] = [
+    'label' => t('Voyage map'),
+    'description' => t('The itinerary drawn as a route on a map.'),
+    'weight' => 10,
+    'visible' => FALSE,
+  ];
+  $extra['node']['eiw_will']['display']['eiw_voyage_map'] = [
+    'label' => t('Voyage map'),
+    'description' => t("All of the will's voyages drawn on one map, with toggles to show/hide each route."),
+    'weight' => 10,
+    'visible' => FALSE,
+  ];
+  return $extra;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view() for node entities.
+ */
+function eiw_core_node_view(array &$build, \Drupal\Core\Entity\EntityInterface $node, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, string $view_mode): void {
+  if (!$display->getComponent('eiw_voyage_map')) {
+    return;
+  }
+  $voyages = [];
+  if ($node->bundle() === 'eiw_voyage') {
+    $voyages[] = ['voyage' => $node];
+  }
+  elseif ($node->bundle() === 'eiw_will') {
+    // One route per voyage the testator sailed on, labelled with the ship
+    // where known (a voyage name alone is often ambiguous).
+    foreach ($node->get('field_will_voyages')->referencedEntities() as $will_voyage) {
+      $voyage = $will_voyage->get('field_voyage')->entity;
+      if (!$voyage || isset($voyages[$voyage->id()])) {
+        continue;
+      }
+      $ship = $will_voyage->get('field_ship')->entity;
+      $voyages[$voyage->id()] = [
+        'voyage' => $voyage,
+        'label' => $ship ? t('@voyage (@ship)', ['@voyage' => $voyage->label(), '@ship' => $ship->label()]) : $voyage->label(),
+      ];
+    }
+  }
+  if ($voyages && ($map = \Drupal::service('eiw_core.voyage_map_builder')->build(array_values($voyages)))) {
+    $build['eiw_voyage_map'] = $map;
+  }
+}

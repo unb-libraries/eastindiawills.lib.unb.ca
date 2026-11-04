@@ -1,0 +1,61 @@
+uuid: 31c40de5-fc97-45fe-a7ce-df174976c10d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.eiw_ports.field_latitude
+    - field.field.taxonomy_term.eiw_ports.field_longitude
+    - taxonomy.vocabulary.eiw_ports
+  module:
+    - path
+    - text
+id: taxonomy_term.eiw_ports.default
+targetEntityType: taxonomy_term
+bundle: eiw_ports
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 3
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_latitude:
+    type: number
+    weight: 1
+    region: content
+    settings:
+      placeholder: '51.5074'
+    third_party_settings: {  }
+  field_longitude:
+    type: number
+    weight: 2
+    region: content
+    settings:
+      placeholder: '-0.1278'
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  langcode: true

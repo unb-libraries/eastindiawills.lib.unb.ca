@@ -36,13 +36,18 @@ targetEntityType: node
 bundle: eiw_will
 mode: default
 content:
+  eiw_voyage_map:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
   field_additional_names:
     type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 14
+    weight: 15
     region: content
   field_court:
     type: entity_reference_label
@@ -50,7 +55,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 7
+    weight: 8
     region: content
   field_date_of_probate:
     type: datetime_plain
@@ -58,7 +63,7 @@ content:
     settings:
       timezone_override: ''
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   field_date_of_will:
     type: datetime_plain
@@ -66,7 +71,7 @@ content:
     settings:
       timezone_override: ''
     third_party_settings: {  }
-    weight: 5
+    weight: 6
     region: content
   field_document_images:
     type: pdfpreview
@@ -80,7 +85,7 @@ content:
         attribute: lazy
       fallback_formatter: 0
     third_party_settings: {  }
-    weight: 10
+    weight: 11
     region: content
   field_first_name:
     type: string
@@ -95,7 +100,7 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 9
+    weight: 10
     region: content
   field_keywords:
     type: entity_reference_label
@@ -103,7 +108,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 15
+    weight: 16
     region: content
   field_last_name:
     type: string
@@ -119,7 +124,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 8
+    weight: 9
     region: content
   field_reference:
     type: string
@@ -127,7 +132,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   field_shipboard_will:
     type: boolean
@@ -137,7 +142,7 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 6
+    weight: 7
     region: content
   field_source_type:
     type: entity_reference_label
@@ -145,21 +150,21 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 11
+    weight: 12
     region: content
   field_summary:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 12
+    weight: 13
     region: content
   field_transcription:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 13
+    weight: 14
     region: content
   field_will_voyages:
     type: entity_reference_entity_view
@@ -178,7 +183,7 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 17
+    weight: 18
     region: content
   field_year_only_will:
     type: boolean
@@ -188,7 +193,7 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 18
+    weight: 19
     region: content
 hidden:
   field_notes: true

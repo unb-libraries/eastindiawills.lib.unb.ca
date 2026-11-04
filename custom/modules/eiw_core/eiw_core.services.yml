@@ -8,3 +8,6 @@ services:
     arguments: ['@current_user']
     tags:
       - { name: event_subscriber }
+  eiw_core.voyage_map_builder:
+    class: Drupal\eiw_core\VoyageMapBuilder
+    arguments: ['@extension.list.module', '@file_url_generator']

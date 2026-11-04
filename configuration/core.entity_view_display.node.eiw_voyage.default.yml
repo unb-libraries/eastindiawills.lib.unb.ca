@@ -15,6 +15,11 @@ targetEntityType: node
 bundle: eiw_voyage
 mode: default
 content:
+  eiw_voyage_map:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
   field_description:
     type: text_default
     label: above
@@ -36,7 +41,7 @@ content:
       view_mode: table_row
       link: true
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
 hidden:
   links: true

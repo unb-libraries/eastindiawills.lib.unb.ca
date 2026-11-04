@@ -1,0 +1,8 @@
+# Show/hide toggles for routes on a combined voyage map. The map itself is
+# static SVG and works without this; styles live in the theme (_maps.scss).
+voyage_map:
+  js:
+    js/voyage-map.js: {}
+  dependencies:
+    - core/drupal
+    - core/once

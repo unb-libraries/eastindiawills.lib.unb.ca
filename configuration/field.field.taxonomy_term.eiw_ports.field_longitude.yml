@@ -1,0 +1,23 @@
+uuid: 6a963210-9d40-4d16-8834-4f4ead3b1f6a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_longitude
+    - taxonomy.vocabulary.eiw_ports
+id: taxonomy_term.eiw_ports.field_longitude
+field_name: field_longitude
+entity_type: taxonomy_term
+bundle: eiw_ports
+label: Longitude
+description: 'Decimal degrees, east positive (e.g. 80.2785 for Madras, -0.1278 for London). Used to place the port on voyage maps.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: '-180'
+  max: '180'
+  prefix: ''
+  suffix: ''
+field_type: decimal

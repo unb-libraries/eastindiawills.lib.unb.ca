@@ -45,7 +45,11 @@ ul {
   // labels matching .views-table th, and hairline row dividers matching its
   // td borders.
   .node--type-eiw-will.node--view-mode-full {
-    max-width: 40rem;
+    // Fields keep a readable measure; the voyage map takes the full
+    // content width so port labels stay legible.
+    .node__content > :not(.eiw-voyage-map) {
+      max-width: 40rem;
+    }
 
     .field {
       margin-top: 0;
@@ -134,3 +138,5 @@ ul {
     }
   }
 }
+// Voyage maps: routes over the engraved base map.
+@import 'maps';
