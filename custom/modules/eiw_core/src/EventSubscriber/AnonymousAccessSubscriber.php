@@ -18,7 +18,8 @@ use Symfony\Component\HttpKernel\KernelEvents;
  * is a node), so this does the gatekeeping instead: any other page sends
  * them to SAML login (samlauth), and back to that page afterwards. Routes a
  * visitor needs in order to log in at all - SAML, one-time login links
- * (drush uli), and CSS/JS/image asset generation - stay open.
+ * (drush uli), and CSS/JS/image asset generation - stay open, as does the
+ * /health probe (health_check.content).
  *
  * The landing page is recognized by its fixed UUID rather than as "the
  * front page": the front page setting is its /home alias (its node ID
@@ -41,6 +42,7 @@ class AnonymousAccessSubscriber implements EventSubscriberInterface {
     'image.style_public',
     'system.403',
     'system.404',
+    'health_check.content',
   ];
 
   public function __construct(
