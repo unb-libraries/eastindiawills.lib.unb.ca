@@ -14,6 +14,19 @@ source:
   ids: [voyage_id]
 
 process:
+  # Existing voyages are matched by title, so re-running the import updates
+  # them in place (same node ID and URL) even after eiw_migrate has been
+  # uninstalled and its ID map lost. Replaced stop paragraphs are deleted by
+  # VoyageStopCleanup.
+  nid:
+    plugin: entity_lookup
+    source: title
+    entity_type: node
+    bundle_key: type
+    bundle: eiw_voyage
+    value_key: title
+    # Unpublished content must match too (drush runs as anonymous).
+    access_check: false
   type:
     plugin: default_value
     default_value: eiw_voyage
@@ -42,6 +55,12 @@ process:
 destination:
   plugin: entity:node
   default_bundle: eiw_voyage
+  # On voyages that already exist, only the imported content is replaced; the
+  # title and publishing status stay as editors left them.
+  overwrite_properties:
+    - field_description
+    - field_notes
+    - field_voyage_stops
 
 migration_dependencies:
   required:

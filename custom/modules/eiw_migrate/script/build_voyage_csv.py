@@ -65,25 +65,45 @@ def visit_date(x):
     return date_ok(x['arrival']) or date_ok(x['departure'])
 
 
-def sort_key(value, stage):
-    """Comparable key for a partial ISO date. A bare year sorts to the start of the
-    year on the outward leg and to the end of it on the homeward leg (a voyage's
-    'England 1603' is its return), so it doesn't jump ahead of dated calls."""
+def sort_key(value, stage, prev=''):
+    """Comparable key for a partial ISO date.
+
+    A bare year can't be placed within its year, so it doesn't jump ahead of
+    the call before it: if that call is in the same year it takes that call's
+    key (ties keep first-seen order). Otherwise it sorts to the start of the
+    year on the outward leg and to the end of it on the homeward leg (a
+    voyage's 'England 1603' is its return)."""
     if len(value) == 4:
+        if prev.startswith(value):
+            return prev
         return value + ('-13' if stage == 'homeward' else '-00')
     return value
 
 
-def order_stage(ports, stage):
+def home_water(lat, lon):
+    """Britain, Ireland and the Channel: where every voyage began and ended."""
+    return lat > 48 and -11 < lon < 3
+
+
+def order_stage(ports, stage, home=frozenset()):
     """Order one stage's port calls by the earliest date any ship called there.
-    Undated ports keep their place after the port first seen before them."""
+    Undated ports keep their place after the port first seen before them.
+
+    Home-water ports come first on the outward stage and last on the homeward
+    stage: a fleet's ships came home in different seasons, but its arrival in
+    England ends the voyage even when one ship got there before another called
+    at St Helena."""
+    group = {'outward': lambda p: 0 if p in home else 1,
+             'homeward': lambda p: 1 if p in home else 0}.get(stage, lambda p: 0)
     keyed, prev = [], ''
     for i, (port, visits) in enumerate(ports.items()):
-        dates = [sort_key(d, stage) for d in map(visit_date, visits) if d]
+        dates = [d for d in map(visit_date, visits) if d]
+        # A full date places a port better than a bare year from another ship.
+        dates = [sort_key(d, stage, prev) for d in ([d for d in dates if len(d) > 4] or dates)]
         key = min(dates) if dates else prev
         prev = key
-        keyed.append((key, i, port, visits))
-    return [(port, visits) for _, _, port, visits in sorted(keyed)]
+        keyed.append((group(port), key, i, port, visits))
+    return [(port, visits) for _, _, _, port, visits in sorted(keyed)]
 
 
 def main(src):
@@ -94,7 +114,10 @@ def main(src):
 
     # Ports are maintained by hand in eiw_ports.csv (names, descriptions, map
     # coordinates); this script only reads it to resolve each stop's port_id.
-    port_id = {p['name']: p['port_id'] for p in read(os.path.join(out, 'eiw_ports.csv'))}
+    port_list = read(os.path.join(out, 'eiw_ports.csv'))
+    port_id = {p['name']: p['port_id'] for p in port_list}
+    home = frozenset(p['name'] for p in port_list
+                     if p['latitude'] and home_water(float(p['latitude']), float(p['longitude'])))
     missing = sorted({s['port'] for s in stops if s['port_type'] != 'at_sea' and s['port']} - set(port_id))
     if missing:
         sys.exit('Ports missing from eiw_ports.csv (add them first): ' + '; '.join(missing))
@@ -126,12 +149,12 @@ def main(src):
         stop_ids = []
         n = 0
         for stage in STAGES:
-            for port, visits in order_stage(calls[stage], stage):
+            for port, visits in order_stage(calls[stage], stage, home):
                 n += 1
-                # Dates come from one ship's visit (the earliest dated one), so arrival and
+                # Dates come from one ship's visit (the earliest fully dated one), so arrival and
                 # departure stay consistent; every ship's own dates are in the notes.
                 dated = min((x for x in visits if visit_date(x)),
-                            key=lambda x: sort_key(visit_date(x), stage), default=None)
+                            key=lambda x: (len(visit_date(x)) <= 4, visit_date(x)), default=None)
                 arrival = date_ok(dated['arrival']) if dated else ''
                 departure = date_ok(dated['departure']) if dated else ''
                 lines = []

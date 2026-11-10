@@ -4,3 +4,8 @@ services:
     arguments: ['@entity_type.manager']
     tags:
       - { name: event_subscriber }
+  eiw_migrate.voyage_stop_cleanup:
+    class: Drupal\eiw_migrate\Event\VoyageStopCleanup
+    arguments: ['@entity_type.manager']
+    tags:
+      - { name: event_subscriber }

@@ -26,6 +26,8 @@ process:
     bundle: eiw_ports
     value_key: name
     ignore_case: true
+    # Unpublished content must match too (drush runs as anonymous).
+    access_check: false
   vid:
     plugin: default_value
     default_value: eiw_ports
