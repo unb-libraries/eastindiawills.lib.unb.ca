@@ -1,0 +1,224 @@
+port_id,name,description,latitude,longitude,map_precision,map_basis
+achin,Achin,"Banda Aceh, Sumatra, Indonesia. In sources: Acheen; Achin",5.5560,95.3170,place,Banda Aceh roadstead
+aden,Aden,"Aden, Yemen",12.7850,45.0190,place,Aden (Crater)
+amboyna,Amboyna,"Ambon, Maluku, Indonesia. In sources: Amboina; Amboyna",-3.6950,128.1810,place,Ambon town (Kota Ambon)
+anjer,Anjer,"Anyer, Banten, Indonesia",-6.0570,105.8870,place,Anyer
+antongil-bay,Antongil Bay,"Antongil Bay, Madagascar",-15.7500,49.8500,place,head of Antongil Bay
+armagon,Armagon,"Armagaon (Durgarajupatnam), Andhra Pradesh, India. Map position approximate: Durgarajupatnam (Armagon); site of the factory is approximate",14.0500,80.1500,approximate,Durgarajupatnam (Armagon); site of the factory is approximate
+ascension,Ascension,Ascension Island,-7.9270,-14.4100,place,Clarence Bay (Georgetown)
+assab,Assab,"Assab, Eritrea",13.0100,42.7400,place,Assab
+audierne,Audierne,"Audierne, Finistere, Brittany, France",48.0190,-4.5390,place,Audierne
+ayutthaya-siam,Ayutthaya (Siam),"Ayutthaya, Thailand. In sources: Ayutthaya (Siam); Siam",14.3550,100.5680,place,Ayutthaya
+azores,Azores,"Azores, Portugal. Map position representative: Angra, Terceira (main anchorage of the Azores)",38.6540,-27.2170,representative,"Angra, Terceira (main anchorage of the Azores)"
+bab-el-mandeb,Bab-el-Mandeb,"Bab-el-Mandeb strait, Yemen/Djibouti",12.5800,43.3300,place,the strait
+baccanor-barkur,Baccanor (Barkur),"Barkur, Karnataka, India",13.4800,74.7500,place,Barkur
+balasore,Balasore,"Balasore (Baleshwar), Odisha, India. In sources: Balasore; Balasore Road",21.4940,86.9330,place,Balasore
+banda,Banda,"Banda Islands, Maluku, Indonesia. In sources: Banda; Banda Islands. Map position representative: Neira, the main anchorage of the Banda Islands",-4.5250,129.8990,representative,"Neira, the main anchorage of the Banda Islands"
+bantam,Bantam,"Banten, Java, Indonesia. In sources: Bantam; Bantam (put back); Bantam (vicinity); Bantam Road",-6.0330,106.1550,place,Banten Lama
+basra-bussora,Basra (Bussora),"Basra, Iraq",30.5090,47.7840,place,Basra
+batavia-jacatra,Batavia (Jacatra),"Jakarta, Java, Indonesia. In sources: Batavia; Batavia (Jacatra); Jacatra; Jacatra (Batavia)",-6.1260,106.8100,place,Sunda Kelapa (old Batavia)
+bhatkal,Bhatkal,"Bhatkal, Karnataka, India",13.9690,74.5600,place,Bhatkal
+blackwall,Blackwall,"Blackwall, London, England",51.5080,-0.0050,place,Blackwall
+bombay,Bombay,"Mumbai, India",18.9300,72.8400,place,Bombay Castle
+bombay-trombay,Bombay (Trombay),"Mumbai, India",19.0050,72.9000,place,Trombay
+botun,Botun,"Buton, Sulawesi, Indonesia",-5.4700,122.6000,place,"Buton (Baubau, Wolio)"
+brinjan-brinjaun-bay,Brinjan (Brinjaun) bay,"Vizhinjam area, Travancore, Kerala, India. Map position approximate: Vizhinjam, as the source identifies it",8.3800,76.9900,approximate,"Vizhinjam, as the source identifies it"
+calicut,Calicut,"Kozhikode, Kerala, India",11.2500,75.7700,place,Kozhikode
+canaries,Canaries,"Canary Islands, Spain. Map position representative: Santa Cruz, Tenerife (main anchorage of the Canaries)",28.4700,-16.2500,representative,"Santa Cruz, Tenerife (main anchorage of the Canaries)"
+cannanore,Cannanore,"Kannur, Kerala, India",11.8640,75.3540,place,Kannur
+canquomorra-bay,Canquomorra Bay,bay on W coast of Madagascar (unidentified),,,,not mapped
+cape-of-good-hope,Cape of Good Hope,"Table Bay, Cape Town, South Africa. In sources: Cape of Good Hope; Saldanha (Table Bay); Saldanha / Cape; Saldanha Bay; Saldanha Road; Saldanha Road (Cape); Saldania (Table Bay); Table Bay; Table Bay (Saldania); The Cape (Table Bay)",-33.9200,18.4200,place,Table Bay
+cape-verde-islands,Cape Verde Islands,"Cape Verde. In sources: Cape Verde; Cape Verde Islands. Map position representative: Santiago (Praia / Ribeira Grande), main anchorage of the islands",14.9150,-23.5100,representative,"Santiago (Praia / Ribeira Grande), main anchorage of the islands"
+ceylon,Ceylon,"Sri Lanka. Map position representative: centre of Sri Lanka, no port given",7.8700,80.7700,representative,"centre of Sri Lanka, no port given"
+chaul,Chaul,"Chaul (Revdanda), Maharashtra, India",18.5500,72.9300,place,Revdanda (Chaul)
+chittagong,Chittagong,"Chittagong, Bangladesh",22.3300,91.8300,place,Chittagong
+cochin,Cochin,"Kochi, Kerala, India",9.9660,76.2420,place,Fort Kochi
+comoro,Comoro,"Grande Comore (Ngazidja), Comoros",-11.7000,43.2600,place,"Moroni, Grande Comore"
+comoros,Comoros,"Comoros. In sources: Comoro Islands; Comoros. Map position representative: centre of the Comoros, no island given",-12.0000,44.0000,representative,"centre of the Comoros, no island given"
+cowes,Cowes,"Cowes, Isle of Wight, England",50.7620,-1.2990,place,Cowes Roads
+dabhol,Dabhol,"Dabhol, Maharashtra, India. In sources: Dabhol; Dabul",17.5870,73.1800,place,Dabhol
+daman,Daman,"Daman, India. In sources: Daman; Damaun",20.4140,72.8330,place,Daman
+danda-rajpuri,Danda Rajpuri,"Murud-Janjira, Maharashtra, India. In sources: Danda Rajpuri; Danda-Rajpuri",18.3000,72.9600,place,Murud-Janjira
+dartmouth,Dartmouth,"Dartmouth, Devon, England",50.3500,-3.5790,place,Dartmouth
+dhufar,Dhufar,"Dhofar, Oman",17.0150,54.0920,place,Salalah (Dhofar coast)
+diu-off,Diu (off),"Diu, India",20.7140,70.9870,place,Diu
+dover-road,Dover Road,"Dover, Kent, England",51.1200,1.3300,place,Dover roads
+emeldee-near-masulipatam,Emeldee (near Masulipatam),"Coromandel coast near Machilipatnam, India. Map position approximate: unidentified place on the coast near Machilipatnam",16.1000,81.0500,approximate,unidentified place on the coast near Machilipatnam
+engano,Engano,"Enggano Island, Indonesia",-5.3500,102.2700,place,Enggano Island
+erith,Erith,"Erith, London, England",51.4810,0.1780,place,Erith reach
+falmouth,Falmouth,"Falmouth, Cornwall, England",50.1530,-5.0660,place,Falmouth
+fort-st-george-madraspatam,Fort St. George (Madraspatam),"Chennai, India",13.0800,80.2870,place,Fort St George
+gandevi,Gandevi,"Gandevi, Gujarat, India (wreck on shoal off Surat bar). Map position approximate: Gandevi; the wreck was on a shoal offshore, position not known",20.8100,72.9900,approximate,"Gandevi; the wreck was on a shoal offshore, position not known"
+goa,Goa,"Goa, India",15.4800,73.8100,place,off the Mandovi bar (Goa roads)
+gombroon,Gombroon,"Bandar Abbas, Iran. In sources: Gombroon; Gombroon (Persia); Persia (Gombroon)",27.1830,56.2670,place,Bandar Abbas
+gombroon-approaches,Gombroon approaches,"off Bandar Abbas, Iran. Map position approximate: off Bandar Abbas",27.1000,56.3000,approximate,off Bandar Abbas
+grand-canary,Grand Canary,"Gran Canaria, Canary Islands, Spain",28.1000,-15.4150,place,Las Palmas
+gravesend,Gravesend,"Gravesend, Kent, England",51.4416,0.3683,place,Gravesend
+gulagula-ceram,Gulagula (Ceram),"Seram, Indonesia. Map position approximate: unidentified place on Seram, shown on the Hoamoal peninsula",-3.2000,128.1000,approximate,"unidentified place on Seram, shown on the Hoamoal peninsula"
+hector-s-island,Hector's Island,"island in Sunda Strait near Lagundy (exact identification uncertain), Indonesia",,,,not mapped
+hirado-firando,Hirado (Firando),"Hirado, Nagasaki, Japan. In sources: Firando; Firando (Hirado); Firando (Hirado), via Cochi; Hirado (Firando)",33.3680,129.5530,place,Hirado
+hitto-amboyna,Hitto (Amboyna),"Hitu, Ambon, Maluku, Indonesia",-3.5900,128.1000,place,"Hitu, north coast of Ambon"
+ireland,Ireland,"Ireland. Map position representative: Kinsale, the usual Irish port of call; no port given",51.7060,-8.5220,representative,"Kinsale, the usual Irish port of call; no port given"
+isle-of-wight,Isle of Wight,"Isle of Wight, England. Map position representative: centre of the Isle of Wight, no anchorage given",50.6900,-1.3000,representative,"centre of the Isle of Wight, no anchorage given"
+jambi,Jambi,"Jambi, Sumatra, Indonesia",-1.6000,103.6100,place,Jambi
+japara,Japara,"Jepara, Java, Indonesia",-6.5900,110.6700,place,Jepara
+jask,Jask,"Jask, Iran. In sources: Jask; Jask (fights)",25.6400,57.7700,place,Jask
+johanna,Johanna,"Anjouan, Comoros. In sources: Johanna; Johanna (Comoros)",-12.1670,44.3990,place,"Mutsamudu, Anjouan"
+johore-river,Johore river,"Johor, Malaysia. Map position approximate: Johor Lama, on the Johor river",1.5800,104.0300,approximate,"Johor Lama, on the Johor river"
+kambelo,Kambelo,"Kambelo, Hoamoal peninsula, Seram, Indonesia. Map position approximate: Kambelo, Hoamoal peninsula, Seram",-3.2500,127.8500,approximate,"Kambelo, Hoamoal peninsula, Seram"
+karwar,Karwar,"Karwar, Karnataka, India",14.8100,74.1300,place,Karwar
+kishm,Kishm,"Qeshm Island, Iran",26.9500,56.2700,place,Qeshm town
+kottiyar-bay,Kottiyar Bay,"Koddiyar Bay, near Trincomalee, Sri Lanka",8.5000,81.2800,place,"Koddiyar Bay, Trincomalee"
+kuhistak,Kuhistak,"Kuhestak, Iran. Map position approximate: Kuhestak",26.8000,57.0300,approximate,Kuhestak
+lagundy,Lagundy,"Pulau Legundi, Lampung, Indonesia",-5.8300,105.2900,place,Pulau Legundi
+lahribandar-sind,Lahribandar (Sind),"Sindh, Pakistan. In sources: Lahribandar road; Laribandar (Sind); Scinda (Lahribandar); Sind (Lahribandar road); Sind (Laribandar). Map position approximate: Lahari Bandar, Indus delta; site of the port is approximate",24.6000,67.4000,approximate,"Lahari Bandar, Indus delta; site of the port is approximate"
+loehoe-ceram,Loehoe (Ceram),"Luhu, Seram, Maluku, Indonesia. Map position approximate: Luhu, Hoamoal peninsula, Seram",-3.3600,128.0000,approximate,"Luhu, Hoamoal peninsula, Seram"
+london,London,"London, England. In sources: England (London); London; Ratcliffe/Thames; Thames",51.5074,-0.1278,place,London
+macao,Macao,"Macau, China",22.1900,113.5400,place,Macau
+macassar,Macassar,"Makassar, Sulawesi, Indonesia",-5.1350,119.4100,place,Makassar
+madagascar,Madagascar,"Madagascar. In sources: Madagascar; Madagascar (St Lawrence); St Lawrence (Madagascar). Map position representative: St Augustine's Bay, the usual call on Madagascar; no port given",-23.5500,43.7300,representative,"St Augustine's Bay, the usual call on Madagascar; no port given"
+madras,Madras,"Chennai, Tamil Nadu, India. In sources: Fort St George; Fort St George (Madras); Fort St. George; Madras (Fort St George); Madraspatam",13.0800,80.2700,place,Chennai
+mahuva,Mahuva,"Mahuva, Gujarat, India",21.0900,71.7600,place,Mahuva
+maio-cape-verde,Maio (Cape Verde),"Maio, Cape Verde. In sources: Maio; Maio (Cape Verde Is.)",15.1400,-23.2100,place,"Porto Inglês, Maio"
+makian,Makian,"Makian, North Maluku, Indonesia",0.3300,127.4000,place,Makian
+malacca,Malacca,"Melaka, Malaysia",2.1900,102.2500,place,Melaka
+manila,Manila,"Manila, Philippines",14.5900,120.9700,place,Manila
+masira,Masira,"Masirah Island, Oman",20.4500,58.7500,place,Masirah Island
+masira-island,Masira island,"Masirah, Oman",20.4500,58.7500,place,Masirah Island
+masulipatam,Masulipatam,"Machilipatnam, Andhra Pradesh, India",16.1700,81.1300,place,Machilipatnam
+mauritius,Mauritius,Mauritius,-20.1600,57.5000,place,Port Louis
+mocha,Mocha,"Al-Mukha, Yemen. In sources: Mocha; Mokha; Red Sea (Mokha)",13.3200,43.2500,place,Al-Mukha
+mohilla,Mohilla,"Mohéli (Mwali), Comoros. In sources: Comoros (Mohilla); Moheli; Mohilla; Mohilla (Comoros)",-12.2900,43.7400,place,"Fomboni, Mohéli"
+mouth-of-the-indus,mouth of the Indus,"Indus delta, Sindh, Pakistan. Map position approximate: Indus delta",24.0000,67.4000,approximate,Indus delta
+mozambique,Mozambique,"Ilha de Moçambique, Mozambique",-15.0340,40.7350,place,Ilha de Moçambique
+muscat,Muscat,"Muscat, Oman",23.6140,58.5930,place,Muscat
+narsapur-godavari-river,Narsapur (Godavari river),"Narsapuram, Andhra Pradesh, India",16.4330,81.7000,place,Narsapuram
+neira-banda,Neira (Banda),"Banda Neira, Maluku, Indonesia",-4.5250,129.8990,place,Banda Neira
+nicobar-islands,Nicobar Islands,"Nicobar Islands, India. In sources: Nicobar; Nicobar Islands. Map position representative: centre of the Nicobar Islands, no island given",8.0000,93.5000,representative,"centre of the Nicobar Islands, no island given"
+ormus,Ormus,"Hormuz Island, Iran",27.0600,56.4600,place,Hormuz Island (fort)
+patani,Patani,"Pattani, Thailand",6.8700,101.2500,place,Pattani
+pemba,Pemba,"Pemba Island, Tanzania",-5.0300,39.7800,place,Pemba Island (west coast)
+petapoli,Petapoli,"Nizampatnam, Andhra Pradesh, India. In sources: Petapoli; Petapoli (Putapilly); Pettapoli",15.9000,80.6700,place,Nizampatnam
+plymouth,Plymouth,"Plymouth, Devon, England. In sources: Plymouth; Plymouth (homeward fleet)",50.3650,-4.1420,place,Plymouth Sound
+ponnani,Ponnani,"Ponnani, Kerala, India. In sources: Ponani; Ponnani; Ponnani/Calicut",10.7700,75.9200,place,Ponnani
+portland,Portland,"Dorset, England",50.5500,-2.4400,place,Portland roads
+portsmouth,Portsmouth,"Portsmouth, England",50.7990,-1.1060,place,Portsmouth
+priaman,Priaman,"Pariaman, West Sumatra, Indonesia",-0.6200,100.1200,place,Pariaman
+pulicat,Pulicat,"Pulicat, Tamil Nadu, India. In sources: Pulicat; Pullicate road",13.4200,80.3200,place,Pulicat
+pulo-ai,Pulo Ai,"Pulau Ai, Banda Islands, Maluku, Indonesia",-4.5200,129.7700,place,Pulau Ai
+pulo-bessee,Pulo Bessee,"Sunda Strait, Indonesia. In sources: Pulo Bessee; Pulo Bessie (watering place, Sunda Strait). Map position approximate: Pulau Sebesi, Sunda Strait (identification probable)",-5.9300,105.4900,approximate,"Pulau Sebesi, Sunda Strait (identification probable)"
+pulo-panian,Pulo Panian,"island in/near Sunda Strait (Pulau Panaitan?), Indonesia. Map position approximate: Pulau Panaitan, Sunda Strait (identification probable)",-6.5800,105.2200,approximate,"Pulau Panaitan, Sunda Strait (identification probable)"
+pulo-run,Pulo Run,"Pulau Run, Banda Is., Indonesia. In sources: Pulo Run; Pulo Run (Banda)",-4.5500,129.6800,place,Pulau Run
+rajapur,Rajapur,"Rajapur, Maharashtra, India",16.6500,73.5200,place,Rajapur
+reunion-england-s-forest,Reunion (England's Forest),Réunion,-21.0100,55.2700,place,"Saint-Paul bay, Réunion"
+sambas,Sambas,"Sambas, West Kalimantan, Indonesia",1.3600,109.3000,place,Sambas
+sangora,Sangora,"Songkhla, Thailand",7.2000,100.6000,place,Songkhla
+sebuku-sabacore,Sebuku (Sabacore),"Sebuku, south-east Sumatra/Sunda Strait, Indonesia. Map position approximate: Pulau Sebuku, Sunda Strait (identification probable)",-5.8800,105.5300,approximate,"Pulau Sebuku, Sunda Strait (identification probable)"
+sierra-leone,Sierra Leone,Sierra Leone,8.4800,-13.2300,place,Sierra Leone estuary (Freetown)
+sillebar,Sillebar,"Bengkulu (Silebar), Sumatra, Indonesia. Map position approximate: Silebar, south of Bengkulu",-3.9300,102.3000,approximate,"Silebar, south of Bengkulu"
+socotra,Socotra,"Socotra, Yemen. In sources: Socotra; Socotra (Delisa bay); Socotra (Tamarida). Map position representative: Hadibu (Tamrida), the usual anchorage on Socotra",12.6500,54.0200,representative,"Hadibu (Tamrida), the usual anchorage on Socotra"
+sombrero,Sombrero,"Sombrero Channel islands, Nicobar Islands, India. Map position approximate: Sombrero Channel, Nicobar Islands",7.7000,93.6000,approximate,"Sombrero Channel, Nicobar Islands"
+spithead,Spithead,"Spithead, England",50.7600,-1.1000,place,Spithead
+st-augustine-s-bay,St Augustine's Bay,"Baie de Saint-Augustin, Madagascar. In sources: St Augustine's Bay; St. Augustine's Bay",-23.5500,43.7300,place,St Augustine's Bay
+st-helena,St Helena,St Helena. In sources: St Helena; St. Helena,-15.9300,-5.7200,place,"Jamestown, St Helena"
+st-mary-s-scilly,"St Mary's, Scilly","Isles of Scilly, England",49.9150,-6.3150,place,"Hugh Town, St Mary's"
+st-jago,St. Jago,"Santiago, Cape Verde",14.9150,-23.5100,place,"Praia / Ribeira Grande, Santiago"
+st-mary,St. Mary,"Ile Sainte-Marie (Nosy Boraha), Madagascar",-17.0000,49.8500,place,Île Sainte-Marie (Nosy Boraha)
+sukadana,Sukadana,"Sukadana, West Kalimantan, Indonesia. In sources: Succadana; Sukadana",-1.2400,109.9600,place,Sukadana
+sur,Sur,"Sur, Oman",22.5700,59.5300,place,Sur
+surat,Surat,"Surat, India. In sources: Surat; Surat (Bar)",21.1700,72.8300,place,Surat
+swally,Swally,"Suvali (Swally Hole), near Surat, Gujarat, India. In sources: Surat / Swally; Surat bar / Swally; Swally; Swally (Surat). Map position approximate: Swally Hole (Suvali), at the mouth of the Tapti",21.0800,72.6300,approximate,"Swally Hole (Suvali), at the mouth of the Tapti"
+syriam-pegu,Syriam (Pegu),"Thanlyin, Myanmar",16.7700,96.2500,place,Thanlyin
+tamrida-socotra,Tamrida (Socotra),"Hadibu, Socotra, Yemen",12.6500,54.0200,place,Hadibu (Tamrida)
+tenerife,Tenerife,"Tenerife, Canary Islands, Spain",28.4700,-16.2500,place,Santa Cruz de Tenerife
+ternate,Ternate,"Ternate, North Maluku, Indonesia. In sources: Moluccas (Ternate); Ternate; Ternate (Moluccas)",0.7900,127.3800,place,Ternate
+the-downs,The Downs,"The Downs, Kent, England. In sources: England (Downs); The Downs; The Downs (Deal)",51.2300,1.4500,place,"The Downs, off Deal"
+the-lizard,The Lizard,"Lizard Point, Cornwall, England (point of departure). In sources: Lizard; Lizard (departure); The Lizard; off the Lizard",49.9600,-5.2000,place,Lizard Point
+the-london-s-hope-khor-jarama,The London's Hope (Khor Jarama),"Khor Jarama, near Ras al-Hadd, Oman. Map position approximate: Khor Jaramah, near Ras al-Hadd",22.5000,59.7300,approximate,"Khor Jaramah, near Ras al-Hadd"
+the-needles,The Needles,"Isle of Wight, England",50.6620,-1.5900,place,The Needles
+tidore,Tidore,"Tidore, North Maluku, Indonesia",0.6800,127.4000,place,Tidore
+tiku,Tiku,"Tiku, West Sumatra, Indonesia. In sources: Tiku; Tiku (Tecoo)",-0.4000,99.9300,place,Tiku
+tilbury,Tilbury,"Tilbury, Essex, England. In sources: Tilbury; Tilbury Hope",51.4600,0.3600,place,Tilbury Hope
+tonkin,Tonkin,"Hanoi/Pho Hien, Vietnam. Map position approximate: Pho Hien, the foreign traders' port for Tonkin (the factory later moved to Hanoi)",20.6500,106.0500,approximate,"Pho Hien, the foreign traders' port for Tonkin (the factory later moved to Hanoi)"
+torbay,Torbay,"Torbay, Devon, England",50.4500,-3.5300,place,Torbay
+trinidade,Trinidade,"Ilha da Trindade, Brazil (South Atlantic)",-20.5100,-29.3200,place,Ilha da Trindade
+tuticorin,Tuticorin,"Thoothukudi, Tamil Nadu, India",8.7900,78.1300,place,Thoothukudi
+waterford,Waterford,"Waterford, Ireland",52.2600,-7.1100,place,Waterford
+woolwich,Woolwich,"Woolwich, London, England",51.4900,0.0700,place,Woolwich
+zanzibar,Zanzibar,"Zanzibar, Tanzania",-6.1600,39.1900,place,Zanzibar Town
+armagon-masulipatam,Armagon / Masulipatam,"Durgarayapatnam / Machilipatnam, India. Map position approximate: first place named (Armagon)",14.0500,80.1500,approximate,first place named (Armagon)
+bab-el-mandeb-assab,Bab-el-Mandeb / Assab,"Assab, Eritrea. Map position approximate: Assab",13.0100,42.7400,approximate,Assab
+bab-el-mandeb-red-sea,Bab-el-Mandeb / Red Sea,"Bab-el-Mandeb, Yemen. Map position approximate: the strait",12.5800,43.3300,approximate,the strait
+balasore-the-bay,Balasore / the Bay,"Odisha, India. Map position approximate: Balasore",21.4940,86.9330,approximate,Balasore
+bantam-jacatra,Bantam / Jacatra,"Banten / Jakarta, Java. Map position approximate: first place named (Bantam)",-6.0330,106.1550,approximate,first place named (Bantam)
+bantam-straits-of-sunda,Bantam / Straits of Sunda,"Banten, Java, Indonesia. Map position approximate: Bantam",-6.0330,106.1550,approximate,Bantam
+bay-of-bengal,Bay of Bengal,"Bengal, India. Map position representative: Balasore, the usual English anchorage in the Bay",21.4940,86.9330,representative,"Balasore, the usual English anchorage in the Bay"
+bay-of-bengal-hugli-balasore,Bay of Bengal (Hugli/Balasore),"Bengal, India. Map position approximate: Balasore",21.4940,86.9330,approximate,Balasore
+bay-of-bengal-factories,Bay of Bengal factories,"Bengal / Orissa coast, India. Map position representative: Balasore, the usual English anchorage in the Bay",21.4940,86.9330,representative,"Balasore, the usual English anchorage in the Bay"
+bengal,Bengal,"Bengal. Map position representative: Balasore, the usual English anchorage in the Bay",21.4940,86.9330,representative,"Balasore, the usual English anchorage in the Bay"
+bengal-coast,Bengal coast,"Bay of Bengal coast (Orissa/Bengal), India. Map position representative: Balasore, the usual English anchorage in the Bay",21.4940,86.9330,representative,"Balasore, the usual English anchorage in the Bay"
+between-masulipatam-and-madapollam,between Masulipatam and Madapollam,"Machilipatnam-Narsapur coast, India. Map position approximate: midway between Machilipatnam and Narsapur",16.3000,81.4000,approximate,midway between Machilipatnam and Narsapur
+bombay-swally,Bombay / Swally,"Mumbai / Suvali near Surat, India. Map position approximate: first place named (Bombay)",18.9300,72.8400,approximate,first place named (Bombay)
+coast-of-china-near-macao,coast of China near Macao,"Guangdong coast near Macau, China. Map position approximate: Macau",22.1900,113.5400,approximate,Macau
+coast-of-india-comoros-madagascar,"Coast of India, Comoros, Madagascar",,,,,not mapped
+coast-of-sumatra,Coast of Sumatra,"Sumatra, Indonesia. Map position representative: Pariaman (Priaman), on the west-coast pepper ports",-0.6200,100.1200,representative,"Pariaman (Priaman), on the west-coast pepper ports"
+comoros-mohilla-grand-comoro,Comoros (Mohilla / Grand Comoro),"Mwali and Ngazidja, Comoros. Map position approximate: first place named (Mohéli)",-12.2900,43.7400,approximate,first place named (Mohéli)
+comoros-madagascar,Comoros / Madagascar,Comoros / Madagascar. Map position representative: centre of the Comoros,-12.0000,44.0000,representative,centre of the Comoros
+coromandel-armagon-madras,Coromandel (Armagon / Madras),"Tamil Nadu / Andhra, India. Map position approximate: first place named (Armagon)",14.0500,80.1500,approximate,first place named (Armagon)
+coromandel-tanjore-coast-tranquebar,Coromandel (Tanjore coast / Tranquebar),"Tamil Nadu, India. Map position approximate: Tranquebar (Tharangambadi)",11.0270,79.8550,approximate,Tranquebar (Tharangambadi)
+coromandel-coast,Coromandel Coast,"Coromandel Coast, India. Map position representative: Masulipatam, the main English port on the coast before Madras",16.1700,81.1300,representative,"Masulipatam, the main English port on the coast before Madras"
+coromandel-coast-coringa-masulipatam,"Coromandel coast (Coringa, Masulipatam)","Coringa / Machilipatnam, Andhra Pradesh, India. Map position approximate: first place named (Coringa)",16.8200,82.2400,approximate,first place named (Coringa)
+coromandel-coast-madras-masulipatam,Coromandel Coast (Madras / Masulipatam),"Chennai / Machilipatnam, India. Map position approximate: first place named (Madras)",13.0800,80.2700,approximate,first place named (Madras)
+coromandel-coast-madras,Coromandel Coast (Madras),"Chennai, India",13.0800,80.2700,place,Madras
+coromandel-landfall-near-tegnapatam,Coromandel landfall near Tegnapatam,"Cuddalore (Devanampattinam), Tamil Nadu, India. Map position approximate: Tegnapatam (Devanampattinam)",11.7500,79.7700,approximate,Tegnapatam (Devanampattinam)
+daman-and-goa,Daman and Goa,"Daman; Goa, India. Map position approximate: first place named (Daman)",20.4140,72.8330,approximate,first place named (Daman)
+england,England,"England. Map position representative: The Downs, the usual first or last anchorage in England",51.2300,1.4500,representative,"The Downs, the usual first or last anchorage in England"
+england-dover,England (Dover?),England. Map position approximate: Dover,51.1200,1.3300,approximate,Dover
+england-gravesend-downs,England (Gravesend/Downs),England. Map position approximate: first place named (Gravesend),51.4416,0.3683,approximate,first place named (Gravesend)
+england-thames-downs,England (Thames/Downs),"England. Map position approximate: Gravesend, in the Thames",51.4416,0.3683,approximate,"Gravesend, in the Thames"
+erith-blackwall,Erith / Blackwall,"Thames, England. Map position approximate: first place named (Erith)",51.4810,0.1780,approximate,first place named (Erith)
+erith-tilbury-hope,Erith / Tilbury Hope,"Thames, England. Map position approximate: first place named (Erith)",51.4810,0.1780,approximate,first place named (Erith)
+fort-st-george-bay-of-bengal,Fort St George / Bay of Bengal,"Chennai and Bengal, India. Map position approximate: first place named (Fort St George)",13.0800,80.2870,approximate,first place named (Fort St George)
+gombroon-ormus,Gombroon / Ormus,"Bandar Abbas, Iran. Map position approximate: first place named (Gombroon)",27.1830,56.2670,approximate,first place named (Gombroon)
+gravesend-erith,Gravesend / Erith,"Thames, England. Map position approximate: first place named (Gravesend)",51.4416,0.3683,approximate,first place named (Gravesend)
+gravesend-the-downs,Gravesend / The Downs,"The Downs, Kent, England. Map position approximate: first place named (Gravesend)",51.4416,0.3683,approximate,first place named (Gravesend)
+gravesend-tilbury-hope,Gravesend / Tilbury Hope,"Tilbury, Essex, England. Map position approximate: first place named (Gravesend)",51.4416,0.3683,approximate,first place named (Gravesend)
+guinea-coast,Guinea coast,"West Africa. Map position representative: Cape Coast, on the Gold Coast; no port given",5.1050,-1.2460,representative,"Cape Coast, on the Gold Coast; no port given"
+hudson-strait-area,Hudson Strait area,"Hudson Strait / Labrador coast, Canada",,,,not mapped
+jacatra-batavia,Jacatra/Batavia,"Jakarta, Java, Indonesia",-6.1260,106.8100,place,Jakarta (old Batavia)
+jask-ormuz,Jask / Ormuz,"Jask / Hormuz, Iran. Map position approximate: first place named (Jask)",25.6400,57.7700,approximate,first place named (Jask)
+java-landfall,Java (landfall),"Java, Indonesia. Map position representative: Bantam, the usual landfall on Java; no port given",-6.0330,106.1550,representative,"Bantam, the usual landfall on Java; no port given"
+johanna-mohilla,Johanna / Mohilla,"Anjouan / Mwali, Comoros. Map position approximate: first place named (Anjouan)",-12.1670,44.3990,approximate,first place named (Anjouan)
+komoro-gazidia-mohilla,Komoro (Gazidia) / Mohilla,"Grande Comore / Moheli, Comoros. Map position approximate: first place named (Grande Comore)",-11.7000,43.2600,approximate,first place named (Grande Comore)
+kung-gombroon,Kung/Gombroon,"Bandar-e Kong and Bandar Abbas, Iran. Map position approximate: first place named (Bandar-e Kong)",26.5900,54.9400,approximate,first place named (Bandar-e Kong)
+london-england,London/England,England. Map position approximate: London,51.5074,-0.1278,approximate,London
+malabar-coast-fleet-of-defence,Malabar coast (Fleet of Defence),"Malabar coast, India. Map position representative: Calicut, on the Malabar coast",11.2500,75.7700,representative,"Calicut, on the Malabar coast"
+maldives-ceylon,Maldives / Ceylon,Maldives; Sri Lanka. Map position approximate: first place named (Malé),4.1750,73.5100,approximate,first place named (Malé)
+manila-coast,Manila coast,Philippines. Map position approximate: Manila,14.5900,120.9700,approximate,Manila
+masulipatam-armagon,Masulipatam / Armagon,"Andhra Pradesh, India. Map position approximate: first place named (Masulipatam)",16.1700,81.1300,approximate,first place named (Masulipatam)
+masulipatam-bantam,Masulipatam / Bantam,India / Java,,,,not mapped
+masulipatam-fort-st-george,Masulipatam / Fort St George,"Coromandel Coast, India. Map position approximate: first place named (Masulipatam)",16.1700,81.1300,approximate,first place named (Masulipatam)
+moluccas,Moluccas,"Maluku, Indonesia. Map position representative: Ternate, in the Moluccas",0.7900,127.3800,representative,"Ternate, in the Moluccas"
+moluccas-tidore-bachian,Moluccas (Tidore/Bachian),"North Maluku, Indonesia. Map position approximate: first place named (Tidore)",0.6800,127.4000,approximate,first place named (Tidore)
+mouth-of-the-red-sea,Mouth of the Red Sea,Bab-el-Mandeb. Map position approximate: Bab-el-Mandeb,12.5800,43.3300,approximate,Bab-el-Mandeb
+passaman-and-tiku,Passaman and Tiku,"Pasaman and Tiku, West Sumatra, Indonesia. Map position approximate: first place named (Pasaman)",0.1300,99.7600,approximate,first place named (Pasaman)
+persia,Persia,"Iran. Map position representative: Gombroon (Bandar Abbas), the Company's Persian port",27.1830,56.2670,representative,"Gombroon (Bandar Abbas), the Company's Persian port"
+pippli-balasore-bengal,Pippli / Balasore (Bengal),"Pipli / Balasore, Odisha, India. Map position approximate: first place named (Pipli)",21.8600,87.3300,approximate,first place named (Pipli)
+plymouth-gravesend-erith,Plymouth / Gravesend / Erith,England. Map position approximate: first place named (Plymouth),50.3650,-4.1420,approximate,first place named (Plymouth)
+rajapur-goa,Rajapur/Goa,"Rajapur and Goa, India. Map position approximate: first place named (Rajapur)",16.6500,73.5200,approximate,first place named (Rajapur)
+red-sea-bab-el-mandeb-assab-aden,"Red Sea (Bab-el-Mandeb / Assab, Aden)","Bab-el-Mandeb strait; Assab, Eritrea; Aden, Yemen. Map position approximate: Bab-el-Mandeb",12.5800,43.3300,approximate,Bab-el-Mandeb
+rosengijn-and-wayer,Rosengijn and Wayer,"Pulau Hatta and Pulau Ay area, Banda, Indonesia. Map position approximate: first place named (Rozengain / Pulau Hatta)",-4.5800,130.0200,approximate,first place named (Rozengain / Pulau Hatta)
+south-coast-of-java-watering-bays,South coast of Java (watering bays),"Java, Indonesia. Map position approximate: south-west tip of Java, where ships watered after the Sunda Strait",-6.7000,105.5000,approximate,"south-west tip of Java, where ships watered after the Sunda Strait"
+south-coast-of-sumatra,South coast of Sumatra,"Sumatra, Indonesia. Map position approximate: Lampung coast, south Sumatra",-5.5000,104.6000,approximate,"Lampung coast, south Sumatra"
+st-augustine-s-bay-comoros,St Augustine's Bay / Comoros,Madagascar. Map position approximate: first place named (St Augustine's Bay),-23.5500,43.7300,approximate,first place named (St Augustine's Bay)
+straits-of-malacca,Straits of Malacca,"Strait of Malacca. Map position representative: Malacca, on the strait",2.1900,102.2500,representative,"Malacca, on the strait"
+sumatra-west-coast,Sumatra (west coast),"Sumatra, Indonesia. Map position representative: Pariaman (Priaman), on the west-coast pepper ports",-0.6200,100.1200,representative,"Pariaman (Priaman), on the west-coast pepper ports"
+sunda-strait,Sunda Strait,Indonesia. In sources: Straits of Sunda; Sunda Strait. Map position approximate: middle of the strait,-6.0000,105.7500,approximate,middle of the strait
+surat-bombay,Surat / Bombay,"Surat and Mumbai, India. Map position approximate: first place named (Surat)",21.1700,72.8300,approximate,first place named (Surat)
+sutanuti-hugli,Sutanuti/Hugli,"Kolkata, India. Map position approximate: first place named (Sutanuti / Kolkata)",22.5700,88.3600,approximate,first place named (Sutanuti / Kolkata)
+tenerife-and-mayo,Tenerife and Mayo,"Tenerife, Canary Is.; Maio, Cape Verde. Map position approximate: first place named (Tenerife)",28.4700,-16.2500,approximate,first place named (Tenerife)
+the-downs-erith,The Downs / Erith,"Kent, England. Map position approximate: first place named (The Downs)",51.2300,1.4500,approximate,first place named (The Downs)
+tiku-priaman,Tiku / Priaman,West Sumatra. Map position approximate: first place named (Tiku),-0.4000,99.9300,approximate,first place named (Tiku)
+vengurla-goa-coast,Vengurla/Goa coast,"Vengurla, Maharashtra, India. Map position approximate: Vengurla",15.8600,73.6300,approximate,Vengurla
+watering-place-4-leagues-w-of-bantam,Watering place 4 leagues W of Bantam,"west Java, Indonesia. Map position approximate: about 4 leagues west of Bantam",-6.0000,105.9500,approximate,about 4 leagues west of Bantam
+west-coast-of-sumatra,West coast of Sumatra,"West coast of Sumatra, Indonesia. Map position representative: Pariaman (Priaman), on the west-coast pepper ports",-0.6200,100.1200,representative,"Pariaman (Priaman), on the west-coast pepper ports"

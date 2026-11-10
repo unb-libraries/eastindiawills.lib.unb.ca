@@ -2,6 +2,7 @@
 
 namespace Drupal\eiw_core\Drush\Commands;
 
+use Drupal\Core\Database\Connection;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drush\Attributes as CLI;
 use Drush\Commands\AutowireTrait;
@@ -19,8 +20,8 @@ use Drush\Commands\DrushCommands;
  *
  * Ports are real places, so they're matched by name against existing
  * eiw_ports terms rather than duplicated; coordinates are only filled in
- * where a port has none. Ports are kept on --delete, since their
- * coordinates are genuine and useful beyond the demo.
+ * where a port has none. On --delete, a demo port is removed only if no
+ * remaining voyage stop uses it; ports real voyages use are kept.
  *
  * Refuses to run where DEPLOY_ENV is "prod" unless --force is given.
  */
@@ -73,6 +74,7 @@ final class VoyageMapDemoCommands extends DrushCommands {
 
   public function __construct(
     protected EntityTypeManagerInterface $entityTypeManager,
+    protected Connection $database,
   ) {
     parent::__construct();
   }
@@ -81,7 +83,7 @@ final class VoyageMapDemoCommands extends DrushCommands {
    * Creates demo voyages and a will for trying out voyage maps.
    */
   #[CLI\Command(name: 'eiw:voyage-map-demo', aliases: ['eiw-vmd'])]
-  #[CLI\Option(name: 'delete', description: 'Remove the demo voyages, ships and will (ports are kept).')]
+  #[CLI\Option(name: 'delete', description: 'Remove the demo voyages, ships, will, their paragraphs, and demo ports nothing else uses.')]
   #[CLI\Option(name: 'force', description: 'Allow running where DEPLOY_ENV is "prod".')]
   #[CLI\Usage(name: 'drush eiw:voyage-map-demo', description: 'Create the demo content.')]
   #[CLI\Usage(name: 'drush eiw:voyage-map-demo --delete', description: 'Remove it again.')]
@@ -160,20 +162,131 @@ final class VoyageMapDemoCommands extends DrushCommands {
   }
 
   /**
-   * Deletes the demo will, voyages and ships; their paragraphs go with them.
+   * Deletes the demo will, voyages and ships, their paragraphs, and demo ports
+   * that no voyage stop uses any more.
+   *
+   * Starts from the demo will(s) and the exact demo titles (by content type),
+   * then follows references: will -> will-voyage paragraphs -> voyages and
+   * ships; voyage -> stop paragraphs. The paragraph fields are plain entity
+   * references, so paragraphs are deleted explicitly rather than left orphaned.
+   * Lists everything and asks for confirmation first (-y to skip).
    */
   protected function deleteDemo(): void {
-    $nodes = $this->entityTypeManager->getStorage('node');
-    $titles = array_keys(static::VOYAGES);
-    foreach (static::VOYAGES as [$ship_title]) {
-      $titles[] = $ship_title;
+    $node_storage = $this->entityTypeManager->getStorage('node');
+    $paragraph_storage = $this->entityTypeManager->getStorage('paragraph');
+    $term_storage = $this->entityTypeManager->getStorage('taxonomy_term');
+
+    $nodes = $this->demoWills();
+    $nodes += $node_storage->loadByProperties(['type' => 'eiw_voyage', 'title' => array_keys(static::VOYAGES)]);
+    $nodes += $node_storage->loadByProperties(['type' => 'eiw_ship', 'title' => array_column(static::VOYAGES, 0)]);
+
+    $paragraphs = [];
+    foreach ($this->demoWills() as $will) {
+      foreach ($will->get('field_will_voyages')->referencedEntities() as $will_voyage) {
+        $paragraphs[$will_voyage->id()] = $will_voyage;
+        foreach (['field_voyage', 'field_ship'] as $field) {
+          foreach ($will_voyage->get($field)->referencedEntities() as $node) {
+            // Only follow into demo content, never into real voyages or ships.
+            if (in_array($node->label(), array_merge(array_keys(static::VOYAGES), array_column(static::VOYAGES, 0)), TRUE)) {
+              $nodes[$node->id()] = $node;
+            }
+          }
+        }
+      }
     }
-    $demo = $this->demoWills() + $nodes->loadByProperties(['title' => $titles]);
-    foreach ($demo as $node) {
-      $this->logger()->notice('Deleting ' . $node->bundle() . ' ' . $node->label() . '.');
+    $port_ids = [];
+    foreach ($nodes as $node) {
+      if ($node->bundle() === 'eiw_voyage') {
+        foreach ($node->get('field_voyage_stops')->referencedEntities() as $stop) {
+          $paragraphs[$stop->id()] = $stop;
+          $port_ids[$stop->get('field_port')->target_id] = TRUE;
+        }
+      }
     }
-    $nodes->delete($demo);
-    $this->logger()->success(count($demo) . ' demo nodes deleted; ports kept.');
+
+    // Leftovers of earlier demo deletes, which removed nodes but not their
+    // paragraphs: paragraphs no node references any more.
+    $demo_ports = $term_storage->loadByProperties(['vid' => 'eiw_ports', 'name' => array_keys(static::PORTS)]);
+    foreach ($paragraph_storage->loadMultiple($this->orphanedDemoParagraphIds(array_keys($demo_ports))) as $orphan) {
+      $paragraphs[$orphan->id()] = $orphan;
+    }
+
+    // Demo ports that nothing but the demo's own stops uses.
+    $ports = [];
+    foreach ($demo_ports as $port) {
+      $users = $paragraph_storage->getQuery()
+        ->accessCheck(FALSE)
+        ->condition('type', 'eiw_voyage_stop')
+        ->condition('field_port', $port->id())
+        ->execute();
+      if (!array_diff($users, array_keys($paragraphs))) {
+        $ports[$port->id()] = $port;
+      }
+    }
+
+    if (!$nodes && !$paragraphs && !$ports) {
+      $this->logger()->success('No demo content found.');
+      return;
+    }
+    foreach ($nodes as $node) {
+      $this->io()->writeln(sprintf('  node %d  %s  %s', $node->id(), $node->bundle(), $node->label()));
+    }
+    $this->io()->writeln(sprintf('  %d paragraphs (voyage stops and will voyages, including orphans of earlier deletes)', count($paragraphs)));
+    foreach ($ports as $port) {
+      $this->io()->writeln(sprintf('  term %d  eiw_ports  %s (unused once the demo is gone)', $port->id(), $port->label()));
+    }
+    if (!$this->io()->confirm('Delete the demo content listed above?', FALSE)) {
+      throw new \Drush\Exceptions\UserAbortException();
+    }
+
+    $node_storage->delete($nodes);
+    $paragraph_storage->delete($paragraphs);
+    $term_storage->delete($ports);
+    $this->logger()->success(sprintf('Deleted %d demo nodes, %d paragraphs and %d unused demo ports.',
+      count($nodes), count($paragraphs), count($ports)));
+  }
+
+  /**
+   * Finds paragraphs orphaned by earlier demo deletes.
+   *
+   * A voyage stop counts only if no voyage references it, its port is a demo
+   * port, and it isn't a migrated stop (eiw_3_voyage_stops creates stops
+   * before eiw_4_voyages attaches them). A will voyage counts only if no will
+   * references it and its voyage no longer exists.
+   *
+   * @param int[] $port_ids
+   *   The demo port term IDs.
+   *
+   * @return int[]
+   *   Paragraph IDs.
+   */
+  protected function orphanedDemoParagraphIds(array $port_ids): array {
+    $ids = [];
+    if ($port_ids) {
+      $stops = $this->database->select('paragraphs_item_field_data', 'p');
+      $stops->join('paragraph__field_port', 'fp', 'fp.entity_id = p.id');
+      $stops->fields('p', ['id'])
+        ->condition('p.type', 'eiw_voyage_stop')
+        ->condition('fp.field_port_target_id', $port_ids, 'IN');
+      $referenced = $this->database->select('node__field_voyage_stops', 'r')->fields('r', ['field_voyage_stops_target_id']);
+      $stops->condition('p.id', $referenced, 'NOT IN');
+      if ($this->database->schema()->tableExists('migrate_map_eiw_3_voyage_stops')) {
+        $migrated = $this->database->select('migrate_map_eiw_3_voyage_stops', 'm')->fields('m', ['destid1'])->isNotNull('m.destid1');
+        $stops->condition('p.id', $migrated, 'NOT IN');
+      }
+      $ids = $stops->execute()->fetchCol();
+    }
+
+    $will_voyages = $this->database->select('paragraphs_item_field_data', 'p');
+    $will_voyages->leftJoin('paragraph__field_voyage', 'fv', 'fv.entity_id = p.id');
+    $will_voyages->leftJoin('node', 'n', 'n.nid = fv.field_voyage_target_id');
+    $will_voyages->fields('p', ['id'])
+      ->condition('p.type', 'eiw_will_voyage')
+      ->isNull('n.nid');
+    $referenced = $this->database->select('node__field_will_voyages', 'r')->fields('r', ['field_will_voyages_target_id']);
+    $will_voyages->condition('p.id', $referenced, 'NOT IN');
+
+    return array_merge($ids, $will_voyages->execute()->fetchCol());
   }
 
   /**

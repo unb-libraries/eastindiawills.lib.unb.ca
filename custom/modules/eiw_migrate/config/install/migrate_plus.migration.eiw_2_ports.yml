@@ -1,0 +1,60 @@
+id: eiw_2_ports
+label: East India Wills ports (17th-century voyage research)
+
+migration_tags:
+  - Voyages
+  - CSV
+
+# eiw_ports.csv is the maintained port list, edited by hand: names,
+# descriptions and map coordinates (map_precision / map_basis record how exact
+# each position is, for editors; they are not imported).
+# Existing eiw_ports terms are matched by name (case-insensitive) and reused:
+# only their description is updated, so names and coordinates already entered
+# are kept, and rollback leaves them in place.
+source:
+  plugin: csv
+  path: '/app/html/modules/custom/eiw_migrate/data/csv/eiw_ports.csv'
+  header_offset: 0
+  ids: [port_id]
+
+process:
+  tid:
+    plugin: entity_lookup
+    source: name
+    entity_type: taxonomy_term
+    bundle_key: vid
+    bundle: eiw_ports
+    value_key: name
+    ignore_case: true
+  vid:
+    plugin: default_value
+    default_value: eiw_ports
+  name:
+    plugin: callback
+    callable: trim
+    source: name
+  description/value: description
+  description/format:
+    plugin: default_value
+    default_value: plain_text
+  field_latitude:
+    plugin: skip_on_empty
+    method: process
+    source: latitude
+  field_longitude:
+    plugin: skip_on_empty
+    method: process
+    source: longitude
+
+destination:
+  plugin: entity:taxonomy_term
+  default_bundle: eiw_ports
+  overwrite_properties:
+    - description
+
+dependencies:
+  module:
+    - eiw_migrate
+  enforced:
+    module:
+      - eiw_migrate

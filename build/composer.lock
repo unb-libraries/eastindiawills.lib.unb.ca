@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c8345a48b9e655b3a8cb5fecc495ae0c",
+    "content-hash": "dcfa5eca1f096fa30a74bcd2a50b7d2e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3629,80 +3629,6 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/twig_tweak",
                 "issues": "https://www.drupal.org/project/issues/twig_tweak"
-            }
-        },
-        {
-            "name": "drupal/unpublished_node_permissions",
-            "version": "1.8.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/unpublished_node_permissions.git",
-                "reference": "8.x-1.8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/unpublished_node_permissions-8.x-1.8.zip",
-                "reference": "8.x-1.8",
-                "shasum": "057667696e39524698a45dc10c827e0793fa3aeb"
-            },
-            "require": {
-                "drupal/core": "^8.9 || ^9 || ^10 || ^11"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-1.8",
-                    "datestamp": "1788366862",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Wietze Eilander (Islanderweedy)",
-                    "homepage": "https://www.drupal.org/u/islanderweedy",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Frans van der Meer (Frans)",
-                    "homepage": "https://www.drupal.org/u/frans",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Fabien Gutknecht (Fabsgugu)",
-                    "homepage": "https://www.drupal.org/u/fabsgugu",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Jeroen Bobbeldijk (jeroen.b)",
-                    "homepage": "https://www.drupal.org/u/jeroenb",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Matthias Glastra (matglas86)",
-                    "homepage": "https://www.drupal.org/u/matglas86",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Viktor Holovachek (AstonVictor)",
-                    "homepage": "https://www.drupal.org/u/astonvictor",
-                    "role": "Maintainer"
-                }
-            ],
-            "description": "Creates permisisons per node content type to control access to unpublished nodes per content type.",
-            "homepage": "https://www.drupal.org/project/unpublished_node_permissions",
-            "keywords": [
-                "Drupal"
-            ],
-            "support": {
-                "source": "https://git.drupalcode.org/project/unpublished_node_permissions",
-                "issues": "https://www.drupal.org/project/issues/unpublished_node_permissions"
             }
         },
         {
@@ -9994,5 +9920,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.3.0"
 }

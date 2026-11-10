@@ -4,7 +4,7 @@
 [![GitHub license](https://img.shields.io/github/license/unb-libraries/eastindiawills.lib.unb.ca)](https://github.com/unb-libraries/eastindiawills.lib.unb.ca/blob/prod/LICENSE)
 ![GitHub repo size](https://img.shields.io/github/repo-size/unb-libraries/eastindiawills.lib.unb.ca?label=lean%20repo%20size)
 
-s This repository contains the assets used to test, build, and deploy the [eastindiawills.lib.unb.ca](https://eastindiawills.lib.unb.ca) Drupal application. This repository extends the [unb-libraries/docker-drupal](https://github.com/unb-libraries/docker-drupal) base image, which deploys nginx and php-fpm in the service container.
+This repository contains the assets used to test, build, and deploy the [eastindiawills.lib.unb.ca](https://eastindiawills.lib.unb.ca) Drupal application. This repository extends the [unb-libraries/docker-drupal](https://github.com/unb-libraries/docker-drupal) base image, which deploys nginx and php-fpm in the service container.
 
 ## Deploy this Application Yourself!
 Local deployment, development and testing of eastindiawills.lib.unb.ca is easy, as we leverage [dockworker](https://github.com/unb-libraries/dockworker), our unified framework of [Robo](https://robo.li/) commands that streamline local development of our application on Linux or OSX.

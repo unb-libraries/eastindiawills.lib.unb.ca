@@ -56,7 +56,6 @@ module:
   token: 0
   toolbar: 0
   twig_tweak: 0
-  unpublished_node_permissions: 0
   update: 0
   user: 0
   view_unpublished: 0
