@@ -6,14 +6,39 @@ eiw_migrate.settings:
       type: sequence
       label: 'Courts'
       sequence:
-        - type: string
+        type: string
     marital_statuses:
       type: sequence
       label: 'Marital Statuses'
       sequence:
-        - type: string
+        type: string
     source_types:
       type: sequence
       label: 'Source Types'
       sequence:
-        - type: string
+        type: string
+    roles:
+      type: sequence
+      label: 'Roles'
+      sequence:
+        type: string
+    ships:
+      type: sequence
+      label: 'Ships'
+      sequence:
+        type: string
+    voyages:
+      type: sequence
+      label: 'Voyages'
+      sequence:
+        type: string
+    voyage_years:
+      type: mapping
+      label: 'Departure years of the voyages to import (inclusive)'
+      mapping:
+        from:
+          type: integer
+          label: 'From'
+        to:
+          type: integer
+          label: 'To'

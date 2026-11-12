@@ -9,3 +9,8 @@ services:
     arguments: ['@entity_type.manager']
     tags:
       - { name: event_subscriber }
+  eiw_migrate.voyage_year_filter:
+    class: Drupal\eiw_migrate\Event\VoyageYearFilter
+    arguments: ['@config.factory']
+    tags:
+      - { name: event_subscriber }

@@ -114,6 +114,8 @@ destination:
   plugin: entity:node
   default_bundle: eiw_will
 
+migration_dependencies: {}
+
 dependencies:
   module:
     - eiw_migrate

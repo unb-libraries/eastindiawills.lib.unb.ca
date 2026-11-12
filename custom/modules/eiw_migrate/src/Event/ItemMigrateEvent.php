@@ -6,7 +6,6 @@ use Drupal\Core\Entity\EntityTypeManager;
 use Drupal\eiw_migrate\EiwMigrationTrait;
 use Drupal\migrate\Event\MigrateEvents;
 use Drupal\migrate\Event\MigrateImportEvent;
-use Drupal\migrate_plus\Event\MigrateEvents as MigratePlusEvents;
 use Drupal\migrate_plus\Event\MigratePrepareRowEvent;
 use Drupal\node\Entity\Node;
 use Drupal\taxonomy\Entity\Term;
@@ -40,7 +39,10 @@ class ItemMigrateEvent implements EventSubscriberInterface {
    * {@inheritdoc}\Drupal\taxonomy\Entity\Term
    */
   public static function getSubscribedEvents() {
-    $events[MigratePlusEvents::PREPARE_ROW][] = ['onPrepareRow', 0];
+    // MigratePlusEvents::PREPARE_ROW, by value: if migrate_plus's code is gone
+    // while this module is still enabled (it is added with composer only for
+    // imports), loading its class here would stop Drupal from booting.
+    $events['migrate_plus.prepare_row'][] = ['onPrepareRow', 0];
     $events[MigrateEvents::POST_IMPORT][] = ['onPostImport', 0];
     return $events;
   }

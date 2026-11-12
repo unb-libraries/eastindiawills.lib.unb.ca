@@ -9,6 +9,10 @@ Output goes to ../data/csv/:
   eiw_voyage_stops.csv  one row per eiw_voyage_stop paragraph
   eiw_voyages.csv       one row per eiw_voyage node, with its ordered stop ids
 
+Both cover the whole research period. The years actually imported are set in
+eiw_migrate.settings (voyage_years) and applied by VoyageYearFilter at import,
+using the voyage's departure year (year / voyage_year columns).
+
 The site gives each voyage a single itinerary, but a 17th-century voyage was a fleet
 whose ships often split up after leaving England. So each voyage's stops are reduced
 to one port call per port per stage (outward, then in Asia, then homeward), in the
@@ -172,7 +176,7 @@ def main(src):
                 sid = f'{vslug}--{n:03d}'
                 stop_ids.append(sid)
                 stop_rows.append({
-                    'stop_id': sid, 'voyage_id': vslug, 'delta': n - 1,
+                    'stop_id': sid, 'voyage_id': vslug, 'voyage_year': v['year'], 'delta': n - 1,
                     'port_id': port_id.get(port, ''), 'port': port,
                     'arrival': arrival,
                     'departure': departure,
@@ -206,13 +210,15 @@ def main(src):
         notes.append('Compiled Nov 2026 from AI-assisted research; verify against Farrington, '
                      'Catalogue of East India Company Ships\' Journals and Logs (1999).')
 
-        voyage_rows.append({'voyage_id': vslug, 'title': v['voyage'][:255],
+        voyage_rows.append({'voyage_id': vslug, 'year': v['year'], 'title': v['voyage'][:255],
                             'description': ''.join(desc), 'notes': '\n'.join(notes),
                             'stop_ids': '|'.join(stop_ids)})
 
     write(os.path.join(out, 'eiw_voyage_stops.csv'),
-          ['stop_id', 'voyage_id', 'delta', 'port_id', 'port', 'arrival', 'departure', 'homeward', 'notes'], stop_rows)
-    write(os.path.join(out, 'eiw_voyages.csv'), ['voyage_id', 'title', 'description', 'notes', 'stop_ids'], voyage_rows)
+          ['stop_id', 'voyage_id', 'voyage_year', 'delta', 'port_id', 'port', 'arrival', 'departure', 'homeward', 'notes'],
+          stop_rows)
+    write(os.path.join(out, 'eiw_voyages.csv'), ['voyage_id', 'year', 'title', 'description', 'notes', 'stop_ids'],
+          voyage_rows)
     dup = len(voyage_rows) - len({r['voyage_id'] for r in voyage_rows})
     print(f'ports={len(port_id)} stops={len(stop_rows)} voyages={len(voyage_rows)} duplicate_voyage_ids={dup}')
 

@@ -135,3 +135,9 @@ source_types:
   - "Print"
 voyages:
   - "Unknown"
+# Departure years of the voyages the voyage migrations import (inclusive).
+# The CSVs in data/csv cover the whole 17th century; widen this and re-run
+# "drush mim --tag=Voyages --update --sync" to import more (or fewer).
+voyage_years:
+  from: 1600
+  to: 1630

@@ -11,6 +11,8 @@ migration_tags:
 # Existing eiw_ports terms are matched by name (case-insensitive) and reused:
 # only their description is updated, so names and coordinates already entered
 # are kept, and rollback leaves them in place.
+# Only ports used by a voyage departing in eiw_migrate.settings voyage_years are
+# imported (VoyageYearFilter); eiw_ports.csv itself lists every port.
 source:
   plugin: csv
   path: '/app/html/modules/custom/eiw_migrate/data/csv/eiw_ports.csv'
@@ -53,6 +55,8 @@ destination:
   default_bundle: eiw_ports
   overwrite_properties:
     - description
+
+migration_dependencies: {}
 
 dependencies:
   module:
