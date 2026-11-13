@@ -1,0 +1,20 @@
+uuid: 3cfd704c-63c2-4ea3-8250-5c5a047e2825
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_service_from
+field_name: field_service_from
+entity_type: paragraph
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

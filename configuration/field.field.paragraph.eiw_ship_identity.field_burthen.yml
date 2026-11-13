@@ -1,0 +1,23 @@
+uuid: e9804039-f0e8-4b7e-852a-ee6fae1ee7ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_burthen
+    - paragraphs.paragraphs_type.eiw_ship_identity
+id: paragraph.eiw_ship_identity.field_burthen
+field_name: field_burthen
+entity_type: paragraph
+bundle: eiw_ship_identity
+label: Burthen
+description: 'Carrying capacity in tons burthen, as the best source gives it.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ' tons'
+field_type: integer

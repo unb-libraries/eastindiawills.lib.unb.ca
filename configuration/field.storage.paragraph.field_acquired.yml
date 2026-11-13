@@ -1,0 +1,39 @@
+uuid: fcb967d2-2076-4fba-9cf0-4a30963706b8
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_acquired
+field_name: field_acquired
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: built
+      label: 'Built for the Company'
+    -
+      value: bought
+      label: Bought
+    -
+      value: hired/freighted
+      label: 'Hired or freighted'
+    -
+      value: prize
+      label: 'Taken as a prize'
+    -
+      value: licensed
+      label: 'Licensed private ship'
+    -
+      value: interloper
+      label: 'Interloper (not a Company ship)'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

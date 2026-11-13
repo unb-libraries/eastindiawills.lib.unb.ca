@@ -1,0 +1,19 @@
+uuid: 079616e0-28d2-43ce-bda9-d7920d13a18f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_burthen_note
+    - paragraphs.paragraphs_type.eiw_ship_identity
+id: paragraph.eiw_ship_identity.field_burthen_note
+field_name: field_burthen_note
+entity_type: paragraph
+bundle: eiw_ship_identity
+label: 'Burthen Note'
+description: 'Ranges or conflicting figures, e.g. "c.300 (Markham gives 500 for 1604)".'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

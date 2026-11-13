@@ -1,0 +1,22 @@
+uuid: 40eadb07-214a-4600-9f18-ab3159bc7f88
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image_caption
+    - paragraphs.paragraphs_type.eiw_ship_identity
+  module:
+    - text
+id: paragraph.eiw_ship_identity.field_image_caption
+field_name: field_image_caption
+entity_type: paragraph
+bundle: eiw_ship_identity
+label: 'Image Caption'
+description: 'Title, artist, date, holding institution and licence.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

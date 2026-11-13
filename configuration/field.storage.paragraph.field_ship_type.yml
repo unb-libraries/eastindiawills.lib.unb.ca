@@ -1,0 +1,45 @@
+uuid: cb59d794-6d98-445a-bd4f-fc5bc5487164
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_ship_type
+field_name: field_ship_type
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: ship
+      label: Ship
+    -
+      value: pinnace
+      label: Pinnace
+    -
+      value: victualler
+      label: Victualler
+    -
+      value: galliot
+      label: Galliot
+    -
+      value: frigate
+      label: Frigate
+    -
+      value: sloop
+      label: Sloop
+    -
+      value: 'country ship'
+      label: 'Country ship'
+    -
+      value: other
+      label: Other
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

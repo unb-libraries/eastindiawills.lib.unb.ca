@@ -1,0 +1,38 @@
+uuid: 72ae952c-d76c-4190-8baa-3592fea07033
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image
+    - paragraphs.paragraphs_type.eiw_ship_identity
+  module:
+    - image
+id: paragraph.eiw_ship_identity.field_image
+field_name: field_image
+entity_type: paragraph
+bundle: eiw_ship_identity
+label: Image
+description: 'A picture of this ship, or a representative picture of a ship of its type (tick "Representative image").'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: ship_images
+  file_extensions: 'png gif jpg jpeg webp'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: null
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

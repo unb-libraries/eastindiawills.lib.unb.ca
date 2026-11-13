@@ -1,0 +1,19 @@
+uuid: ec086bc7-b399-4665-b8f7-fac4139246b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_builder
+    - paragraphs.paragraphs_type.eiw_ship_identity
+id: paragraph.eiw_ship_identity.field_builder
+field_name: field_builder
+entity_type: paragraph
+bundle: eiw_ship_identity
+label: 'Builder or Yard'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

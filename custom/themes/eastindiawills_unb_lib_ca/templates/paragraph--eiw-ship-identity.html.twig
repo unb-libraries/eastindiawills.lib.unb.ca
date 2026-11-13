@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * One identified ship (eiw_ship_identity paragraph) on a Ship node page:
+ * a heading with the ship's identity ("Hector (1)"), its picture with
+ * caption, then the remaining facts as rendered by the view display.
+ *
+ * A representative picture (field_image_representative) shows a ship of
+ * the same type, not this ship; it is labelled as such, so readers never
+ * take it for a portrait of the vessel.
+ */
+#}
+{% set representative = paragraph.field_image_representative.value %}
+<section{{ attributes.addClass('eiw-ship') }}>
+  {% if content.field_identity_label|render|trim %}
+    <h3 class="eiw-ship__name">{{ content.field_identity_label }}</h3>
+  {% endif %}
+  {% if not paragraph.field_image.isEmpty() %}
+    <figure class="eiw-ship__figure{{ representative ? ' eiw-ship__figure--representative' }}">
+      {{ content.field_image }}
+      <figcaption class="eiw-ship__caption">
+        {% if representative %}
+          <strong class="eiw-ship__representative">{{ 'Representative image: a ship of this type, not this ship.'|t }}</strong>
+        {% endif %}
+        {{ content.field_image_caption }}
+      </figcaption>
+    </figure>
+  {% endif %}
+  <div class="eiw-ship__facts">
+    {{ content|without('field_identity_label', 'field_image', 'field_image_caption', 'field_image_representative') }}
+  </div>
+</section>

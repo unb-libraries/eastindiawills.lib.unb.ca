@@ -1,0 +1,214 @@
+uuid: ecef8d21-e1da-4c3f-ae68-28b91d27634d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.eiw_ship_identity.field_acquired
+    - field.field.paragraph.eiw_ship_identity.field_builder
+    - field.field.paragraph.eiw_ship_identity.field_burthen
+    - field.field.paragraph.eiw_ship_identity.field_burthen_note
+    - field.field.paragraph.eiw_ship_identity.field_fate
+    - field.field.paragraph.eiw_ship_identity.field_fate_place
+    - field.field.paragraph.eiw_ship_identity.field_fate_year
+    - field.field.paragraph.eiw_ship_identity.field_former_names
+    - field.field.paragraph.eiw_ship_identity.field_guns
+    - field.field.paragraph.eiw_ship_identity.field_identity_label
+    - field.field.paragraph.eiw_ship_identity.field_image
+    - field.field.paragraph.eiw_ship_identity.field_image_caption
+    - field.field.paragraph.eiw_ship_identity.field_image_representative
+    - field.field.paragraph.eiw_ship_identity.field_later_names
+    - field.field.paragraph.eiw_ship_identity.field_men
+    - field.field.paragraph.eiw_ship_identity.field_notes
+    - field.field.paragraph.eiw_ship_identity.field_service_from
+    - field.field.paragraph.eiw_ship_identity.field_service_to
+    - field.field.paragraph.eiw_ship_identity.field_ship_type
+    - field.field.paragraph.eiw_ship_identity.field_sources
+    - field.field.paragraph.eiw_ship_identity.field_voyages
+    - field.field.paragraph.eiw_ship_identity.field_year_acquired
+    - field.field.paragraph.eiw_ship_identity.field_year_built
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.eiw_ship_identity
+  module:
+    - image
+    - text
+id: paragraph.eiw_ship_identity.default
+targetEntityType: paragraph
+bundle: eiw_ship_identity
+mode: default
+content:
+  field_acquired:
+    type: options_select
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_builder:
+    type: string_textfield
+    weight: 7
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_burthen:
+    type: number
+    weight: 4
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_burthen_note:
+    type: string_textfield
+    weight: 5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_fate:
+    type: string_textfield
+    weight: 14
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_fate_place:
+    type: string_textfield
+    weight: 15
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_fate_year:
+    type: number
+    weight: 16
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_former_names:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_guns:
+    type: number
+    weight: 10
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_identity_label:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_image:
+    type: image_image
+    weight: 18
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_image_caption:
+    type: text_textarea
+    weight: 19
+    region: content
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  field_image_representative:
+    type: boolean_checkbox
+    weight: 20
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_later_names:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_men:
+    type: number
+    weight: 11
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_notes:
+    type: string_textarea
+    weight: 22
+    region: content
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  field_service_from:
+    type: number
+    weight: 12
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_service_to:
+    type: number
+    weight: 13
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_ship_type:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_sources:
+    type: text_textarea
+    weight: 21
+    region: content
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  field_voyages:
+    type: entity_reference_autocomplete
+    weight: 17
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_year_acquired:
+    type: number
+    weight: 9
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_year_built:
+    type: number
+    weight: 8
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

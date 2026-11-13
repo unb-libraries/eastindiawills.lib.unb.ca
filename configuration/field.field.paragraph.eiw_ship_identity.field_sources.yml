@@ -1,0 +1,22 @@
+uuid: b7534fa2-3d18-435c-aacd-606206f5899a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_sources
+    - paragraphs.paragraphs_type.eiw_ship_identity
+  module:
+    - text
+id: paragraph.eiw_ship_identity.field_sources
+field_name: field_sources
+entity_type: paragraph
+bundle: eiw_ship_identity
+label: Sources
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

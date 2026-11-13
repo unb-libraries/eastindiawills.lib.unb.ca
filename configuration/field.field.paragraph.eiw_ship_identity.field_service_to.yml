@@ -1,0 +1,23 @@
+uuid: 8c6361ed-7c14-49d7-9e20-6d2291358657
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_service_to
+    - paragraphs.paragraphs_type.eiw_ship_identity
+id: paragraph.eiw_ship_identity.field_service_to
+field_name: field_service_to
+entity_type: paragraph
+bundle: eiw_ship_identity
+label: 'In Service To'
+description: 'Last year of Company service (or last dated mention).'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1550
+  max: 1750
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,19 @@
+uuid: a6c81bdf-60a2-4888-b0ce-54560707566f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_identity_label
+    - paragraphs.paragraphs_type.eiw_ship_identity
+id: paragraph.eiw_ship_identity.field_identity_label
+field_name: field_identity_label
+entity_type: paragraph
+bundle: eiw_ship_identity
+label: Ship
+description: 'Which ship this is, numbered when several ships shared the name, e.g. "Hector (1)" or "Anne Royal".'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

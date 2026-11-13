@@ -4,8 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.eiw_ship.field_description
+    - field.field.node.eiw_ship.field_ship_identities
     - node.type.eiw_ship
   module:
+    - inline_entity_form
+    - path
     - text
 id: node.eiw_ship.default
 targetEntityType: node
@@ -19,6 +22,19 @@ content:
     settings:
       rows: 5
       placeholder: ''
+    third_party_settings: {  }
+  field_ship_identities:
+    type: inline_entity_form_simple
+    weight: 27
+    region: content
+    settings:
+      form_mode: default
+      override_labels: true
+      label_singular: 'Identified Ship'
+      label_plural: 'Identified Ships'
+      collapsible: false
+      collapsed: false
+      revision: false
     third_party_settings: {  }
   path:
     type: path

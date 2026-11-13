@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.eiw_ship.field_description
+    - field.field.node.eiw_ship.field_ship_identities
     - node.type.eiw_ship
   module:
     - text
@@ -19,6 +20,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_ship_identities:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 2
     region: content
 hidden:
   links: true

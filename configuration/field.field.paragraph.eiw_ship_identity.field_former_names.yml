@@ -1,0 +1,19 @@
+uuid: 36d4149b-d461-4306-830b-429e016150ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_former_names
+    - paragraphs.paragraphs_type.eiw_ship_identity
+id: paragraph.eiw_ship_identity.field_former_names
+field_name: field_former_names
+entity_type: paragraph
+bundle: eiw_ship_identity
+label: 'Former Names'
+description: 'Earlier names, separated by semicolons, e.g. Malice Scourge.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,23 @@
+uuid: d87b3186-6c06-455c-8ee2-d22d7deaeac9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_men
+    - paragraphs.paragraphs_type.eiw_ship_identity
+id: paragraph.eiw_ship_identity.field_men
+field_name: field_men
+entity_type: paragraph
+bundle: eiw_ship_identity
+label: Men
+description: 'Usual complement, or the figure for the first voyage (see notes).'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

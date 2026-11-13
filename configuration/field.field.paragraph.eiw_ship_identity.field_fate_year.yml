@@ -1,0 +1,23 @@
+uuid: ca6c462f-1e65-4065-affb-770867a66169
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fate_year
+    - paragraphs.paragraphs_type.eiw_ship_identity
+id: paragraph.eiw_ship_identity.field_fate_year
+field_name: field_fate_year
+entity_type: paragraph
+bundle: eiw_ship_identity
+label: 'Fate: Year'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1550
+  max: 1750
+  prefix: ''
+  suffix: ''
+field_type: integer

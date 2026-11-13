@@ -1,0 +1,21 @@
+uuid: b5698a98-fde5-4752-aff7-e608014f126b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image_representative
+    - paragraphs.paragraphs_type.eiw_ship_identity
+id: paragraph.eiw_ship_identity.field_image_representative
+field_name: field_image_representative
+entity_type: paragraph
+bundle: eiw_ship_identity
+label: 'Representative Image'
+description: 'Ticked when the image shows a ship of this type, not this ship.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

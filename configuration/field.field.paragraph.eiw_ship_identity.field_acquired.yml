@@ -1,0 +1,21 @@
+uuid: d031bd71-35ec-41ef-a1db-d6bda369abaa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_acquired
+    - paragraphs.paragraphs_type.eiw_ship_identity
+  module:
+    - options
+id: paragraph.eiw_ship_identity.field_acquired
+field_name: field_acquired
+entity_type: paragraph
+bundle: eiw_ship_identity
+label: Acquired
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

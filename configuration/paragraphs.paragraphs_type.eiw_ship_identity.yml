@@ -1,0 +1,10 @@
+uuid: 66be4309-b37f-40b8-af18-34a8f4a1c392
+langcode: en
+status: true
+dependencies: {  }
+id: eiw_ship_identity
+label: 'Identified Ship'
+icon_uuid: null
+icon_default: null
+description: 'One physical ship behind a ship name: ships of the same name are told apart by number, e.g. Hector (1).'
+behavior_plugins: {  }

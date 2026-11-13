@@ -1,0 +1,29 @@
+uuid: f1392d5c-acba-4324-9515-cef6feee9517
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_voyages
+    - node.type.eiw_voyage
+    - paragraphs.paragraphs_type.eiw_ship_identity
+id: paragraph.eiw_ship_identity.field_voyages
+field_name: field_voyages
+entity_type: paragraph
+bundle: eiw_ship_identity
+label: Voyages
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      eiw_voyage: eiw_voyage
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

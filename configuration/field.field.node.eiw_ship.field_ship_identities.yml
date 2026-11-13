@@ -1,0 +1,29 @@
+uuid: 8fc9e9b4-544d-4628-af3e-4d24a83d5631
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ship_identities
+    - node.type.eiw_ship
+    - paragraphs.paragraphs_type.eiw_ship_identity
+id: node.eiw_ship.field_ship_identities
+field_name: field_ship_identities
+entity_type: node
+bundle: eiw_ship
+label: 'Identified Ships'
+description: 'The physical ship or ships that sailed under this name. A will naming the ship needs its date to tell which one is meant.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      eiw_ship_identity: eiw_ship_identity
+    negate: 0
+    target_bundles_drag_drop:
+      eiw_ship_identity:
+        weight: 1
+        enabled: true
+field_type: entity_reference

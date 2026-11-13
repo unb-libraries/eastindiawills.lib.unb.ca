@@ -1,0 +1,20 @@
+uuid: 69f9603b-9750-4029-a3c5-16fcdea1cb42
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_men
+field_name: field_men
+entity_type: paragraph
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

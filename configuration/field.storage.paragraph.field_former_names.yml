@@ -1,0 +1,21 @@
+uuid: bccc841c-b4ac-4875-8967-94f1bd9d7643
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_former_names
+field_name: field_former_names
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,23 @@
+uuid: 4df32291-dc82-49f4-aa8b-3dc2abdb4e07
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_guns
+    - paragraphs.paragraphs_type.eiw_ship_identity
+id: paragraph.eiw_ship_identity.field_guns
+field_name: field_guns
+entity_type: paragraph
+bundle: eiw_ship_identity
+label: Guns
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

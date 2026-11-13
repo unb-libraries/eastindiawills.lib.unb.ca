@@ -1,0 +1,21 @@
+uuid: 8b4d5bf2-9f0b-4085-b3f6-d3e4e2bfc738
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ship_type
+    - paragraphs.paragraphs_type.eiw_ship_identity
+  module:
+    - options
+id: paragraph.eiw_ship_identity.field_ship_type
+field_name: field_ship_type
+entity_type: paragraph
+bundle: eiw_ship_identity
+label: Type
+description: 'A "ship" is an ordinary full-rigged merchantman; a "country ship" traded within Asia.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

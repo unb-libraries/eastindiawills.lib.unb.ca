@@ -622,3 +622,77 @@
     display: none;
   }
 }
+
+// Identified ships (paragraph--eiw-ship-identity.html.twig), on the Ship
+// node page: one section per physical ship, picture floated beside the
+// facts, inline labels kept small like the itinerary table above.
+.eiw-ship {
+  display: flow-root;
+  padding-block: 1rem;
+  border-top: 1px solid $border-color;
+
+  &:first-child {
+    border-top: 0;
+  }
+
+  &__name {
+    margin-bottom: .75rem;
+  }
+
+  &__figure {
+    margin: 0 0 1rem;
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    @include media-breakpoint-up(md) {
+      float: right;
+      width: 40%;
+      margin-left: 1.5rem;
+    }
+  }
+
+  &__caption {
+    margin-top: .375rem;
+    font-size: $font-size-sm;
+    color: $text-muted;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &__representative {
+    display: block;
+    font-weight: 600;
+  }
+
+  &__facts {
+    font-size: $font-size-sm;
+
+    .field--label-inline {
+      display: flex;
+      gap: .5rem;
+    }
+
+    .field--label-inline > .field__label {
+      flex: 0 0 9rem;
+      font-weight: 600;
+    }
+
+    .field--label-inline > .field__label::after {
+      content: none;
+    }
+
+    .field--label-above {
+      margin-top: .75rem;
+    }
+
+    .field--label-above > .field__label {
+      font-weight: 600;
+    }
+  }
+}
