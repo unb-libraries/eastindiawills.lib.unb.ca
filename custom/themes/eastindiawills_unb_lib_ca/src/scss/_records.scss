@@ -1,0 +1,244 @@
+// Record pages: wills, voyages and ships.
+//
+// Every record uses the will page's design: each field a row, with a small
+// uppercase sans label (matching the /wills table headings) above its
+// value, and hairline dividers between rows (matching the table's cell
+// borders). Labels that arrive inside migrated field values are restyled
+// to match (see eastindiawills_unb_lib_ca_preprocess_field()):
+// - Label paragraphs in formatted text ("Ships:", "Ports of call",
+//   "Sources") become rows of their own (.eiw-sectioned > .eiw-section).
+// - Labels leading a line of plain-text notes ("Confidence: ...") or a
+//   list item ("Outward: ...") become run-in labels (.eiw-runin).
+
+// A field label: also the related wills heading.
+@mixin eiw-record-label {
+  font-family: $eiw-font-sans;
+  font-size: .8125rem * $eiw-type-scale;
+  font-weight: 600;
+  letter-spacing: .03em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: $gray-600;
+}
+
+// A label leading a line of text, in the label style, e.g. "CONFIDENCE
+// unverified." Smaller where the text itself is small (tables).
+@mixin eiw-runin-label {
+  @include eiw-record-label;
+  margin-right: .375rem;
+  font-style: normal;
+}
+
+.eiw-runin {
+  @include eiw-runin-label;
+}
+
+// Text inside a field value: research notes and formatted text.
+@mixin eiw-record-text {
+  overflow-wrap: anywhere; // Long source URLs.
+
+  p,
+  ul,
+  ol {
+    margin-bottom: .5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  ul,
+  ol {
+    padding-left: 0;
+  }
+
+  li + li {
+    margin-top: .375rem;
+  }
+}
+
+// A list item's leading label in a sectioned field ("Outward", "In Asia",
+// "Homeward" under "Ports of call"). The text format strips classes, so
+// it's matched by position; see _eastindiawills_unb_lib_ca_text_sections().
+.eiw-section li > strong:first-child {
+  @include eiw-runin-label;
+}
+
+// One paragraph per line of plain-text notes.
+.eiw-note {
+  margin: 0 0 .375rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Field rows: the record's own fields, and each section of a sectioned
+// field (whose wrapper is not a row itself).
+@mixin eiw-record-rows {
+  > .field,
+  > .eiw-sectioned > .eiw-section {
+    margin: 0;
+    padding: .75rem 0;
+    border-bottom: 1px solid $gray-100;
+    font-size: $font-size-base;
+
+    > .field__label {
+      @include eiw-record-label;
+      margin: 0 0 .125rem;
+      padding: 0;
+
+      &::after {
+        content: none;
+      }
+    }
+
+    > .field__item,
+    > .field__items > .field__item {
+      @include eiw-record-text;
+    }
+  }
+
+  > .eiw-sectioned {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  > .field:last-child,
+  > .eiw-sectioned:last-child > .eiw-section:last-child {
+    border-bottom: 0;
+  }
+
+  // Inline labels (ship facts): a label column, otherwise the same.
+  > .field--label-inline {
+    display: grid;
+    grid-template-columns: minmax(7rem, 12rem) 1fr;
+    column-gap: 1rem;
+    align-items: baseline;
+
+    > .field__label {
+      margin: 0;
+    }
+
+    > .field__label,
+    > .field__items,
+    > .field__item {
+      display: block;
+    }
+  }
+}
+
+.eiw-record {
+  @include eiw-record-rows;
+
+  // Fields keep a readable measure; maps and tables take the full content
+  // width so port labels and columns stay legible.
+  > :not(.eiw-voyage-map, .field--name-field-voyage-stops, .field--name-field-ship-identities, .eiw-related) {
+    max-width: 40rem;
+  }
+
+  // First-page thumbnail of a will's uploaded document (pdfpreview module),
+  // linking to the full PDF.
+  .pdfpreview-file {
+    border: 1px solid $gray-200;
+  }
+}
+
+// Notes column of a voyage's itinerary (field--field-voyage-stops.html.twig):
+// one line per ship, led by its name.
+.eiw-stops {
+  .eiw-runin {
+    font-size: .6875rem * $eiw-type-scale;
+    letter-spacing: .05em;
+  }
+
+  .eiw-note {
+    margin-bottom: .25rem;
+  }
+}
+
+// Related wills (node--eiw_voyage/ship.html.twig): the last row of a voyage
+// or ship, a table of wills like the /wills results. Its voyages column's
+// labels are in style.scss.
+.eiw-related {
+  padding-top: .75rem;
+
+  &__label {
+    @include eiw-record-label;
+    margin: 0 0 .5rem;
+  }
+
+  .views-table {
+    @include eiw-results-table;
+  }
+}
+
+// Identified ships (paragraph--eiw-ship-identity.html.twig), on the Ship
+// page's "Ship identities" row: one section per physical ship, its name as
+// a heading, its picture floated beside its facts. The facts are rows like
+// the record's own, with a label column for the short inline facts.
+.eiw-ship {
+  display: flow-root;
+  padding-block: 1rem;
+  border-top: 1px solid $gray-200;
+
+  &:first-child {
+    padding-top: .5rem;
+    border-top: 0;
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  &__name {
+    margin-bottom: .5rem;
+  }
+
+  &__figure {
+    margin: 0 0 1rem;
+
+    // The base theme floats image fields in nodes.
+    .field--type-image {
+      float: none;
+      margin: 0;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 0;
+    }
+
+    @include media-breakpoint-up(md) {
+      float: right;
+      width: 40%;
+      margin-left: 1.5rem;
+    }
+  }
+
+  &__caption {
+    margin-top: .375rem;
+    font-size: $font-size-sm;
+    color: $text-muted;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &__representative {
+    display: block;
+    font-weight: 600;
+  }
+
+  &__facts {
+    @include eiw-record-rows;
+
+    > .field {
+      padding-block: .5rem;
+    }
+  }
+}

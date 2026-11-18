@@ -26,6 +26,9 @@
 // Wills search page: hero, facets, results.
 @import 'wills';
 
+// Will, voyage and ship pages.
+@import 'records';
+
 // Broad and site-wide rules (careful here).
 ul {
   list-style: none;
@@ -40,60 +43,6 @@ ul {
   }
 }
 #block-eastindiawills-unb-lib-ca-content {
-  // A single will's detail fields, styled as an extension of the /wills
-  // table rather than a generic Drupal field dump: uppercase letter-spaced
-  // labels matching .views-table th, and hairline row dividers matching its
-  // td borders.
-  .node--type-eiw-will.node--view-mode-full {
-    // Fields keep a readable measure; the voyage map takes the full
-    // content width so port labels stay legible.
-    .node__content > :not(.eiw-voyage-map) {
-      max-width: 40rem;
-    }
-
-    .field {
-      margin-top: 0;
-      padding: .75rem 0;
-      border-bottom: 1px solid $gray-100;
-
-      &:last-child {
-        border-bottom: 0;
-      }
-    }
-
-    .field__label {
-      margin-bottom: .125rem;
-      font-family: $eiw-font-sans;
-      font-size: .8125rem * $eiw-type-scale;
-      font-weight: 600;
-      letter-spacing: .03em;
-      text-transform: uppercase;
-      color: $gray-600;
-    }
-
-    .field__item {
-      font-size: $font-size-base;
-    }
-
-    // Voyages table (see .eiw-voyages in _wills.scss): sits flush under
-    // its "Will Voyage(s)" label.
-    .field--name-field-will-voyages {
-      .field {
-        padding: 0;
-        border-bottom: 0;
-      }
-
-      .field__item {
-        font-size: inherit;
-      }
-    }
-
-    // First-page thumbnail of the uploaded document (pdfpreview module),
-    // linking to the full PDF.
-    .pdfpreview-file {
-      border: 1px solid $gray-200;
-    }
-  }
   // Full node page display of a will's voyages (field_will_voyages). The
   // Wills search listing's voyages (index_will_voyages) are a separate
   // rendering context with its own layout - see _wills.scss - so it's kept
@@ -111,13 +60,12 @@ ul {
       .field {
         margin-top: 0 !important;
 
+        // Run-in labels, as on the record pages (_records.scss).
         .field__label {
+          @include eiw-runin-label;
           display: inline-block;
-          font-weight: normal;
-
-          &::after {
-            content: ':';
-          }
+          font-size: .6875rem * $eiw-type-scale;
+          letter-spacing: .05em;
         }
 
         .field__item {

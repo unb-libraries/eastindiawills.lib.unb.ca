@@ -147,6 +147,47 @@
   }
 }
 
+// A table of wills: the /wills results, and the related wills on voyage
+// and ship pages (see .eiw-related in _records.scss).
+@mixin eiw-results-table {
+  font-size: $font-size-sm;
+
+  th {
+    font-size: .9375rem * $eiw-type-scale;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+    border-bottom: 2px solid $eiw-ink;
+
+    a {
+      color: $eiw-ink;
+      text-decoration: none;
+
+      &:hover {
+        color: $eiw-red;
+      }
+    }
+  }
+
+  .views-field-field-date-of-probate,
+  .views-field-field-date-of-will {
+    white-space: nowrap;
+  }
+
+  td {
+    vertical-align: top;
+    border-bottom-color: $gray-100;
+  }
+
+  .views-field-title a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
 // Results.
 .view-id-wills.view-display-id-page_1 {
   .views-exposed-form {
@@ -198,42 +239,9 @@
   }
 
   .views-table {
-    font-size: $font-size-sm;
-
-    th {
-      font-size: .9375rem * $eiw-type-scale;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: .03em;
-      border-bottom: 2px solid $eiw-ink;
-
-      a {
-        color: $eiw-ink;
-        text-decoration: none;
-
-        &:hover {
-          color: $eiw-red;
-        }
-      }
-    }
-
-    .views-field-field-date-of-probate,
-    .views-field-field-date-of-will {
-      white-space: nowrap;
-    }
-
-    td {
-      vertical-align: top;
-      border-bottom-color: $gray-100;
-    }
+    @include eiw-results-table;
 
     .views-field-title a {
-      text-decoration: none;
-
-      &:hover {
-        text-decoration: underline;
-      }
-
       // The bracketed date is two words ("[ 1629-01-01 ]"), so plain
       // wrapping can split it across lines wherever the column happens to
       // run out of space. Keep it intact always, and only force the full
@@ -620,79 +628,5 @@
   &.eiw-stops--no-departure .eiw-stops__departure,
   &.eiw-stops--no-notes .eiw-stops__notes {
     display: none;
-  }
-}
-
-// Identified ships (paragraph--eiw-ship-identity.html.twig), on the Ship
-// node page: one section per physical ship, picture floated beside the
-// facts, inline labels kept small like the itinerary table above.
-.eiw-ship {
-  display: flow-root;
-  padding-block: 1rem;
-  border-top: 1px solid $border-color;
-
-  &:first-child {
-    border-top: 0;
-  }
-
-  &__name {
-    margin-bottom: .75rem;
-  }
-
-  &__figure {
-    margin: 0 0 1rem;
-
-    img {
-      display: block;
-      max-width: 100%;
-      height: auto;
-    }
-
-    @include media-breakpoint-up(md) {
-      float: right;
-      width: 40%;
-      margin-left: 1.5rem;
-    }
-  }
-
-  &__caption {
-    margin-top: .375rem;
-    font-size: $font-size-sm;
-    color: $text-muted;
-
-    p {
-      margin: 0;
-    }
-  }
-
-  &__representative {
-    display: block;
-    font-weight: 600;
-  }
-
-  &__facts {
-    font-size: $font-size-sm;
-
-    .field--label-inline {
-      display: flex;
-      gap: .5rem;
-    }
-
-    .field--label-inline > .field__label {
-      flex: 0 0 9rem;
-      font-weight: 600;
-    }
-
-    .field--label-inline > .field__label::after {
-      content: none;
-    }
-
-    .field--label-above {
-      margin-top: .75rem;
-    }
-
-    .field--label-above > .field__label {
-      font-weight: 600;
-    }
   }
 }

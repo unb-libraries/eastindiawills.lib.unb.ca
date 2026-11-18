@@ -92,11 +92,13 @@
   {% endif %}                                    
                                                            
   <div{{ content_attributes.addClass('node__content') }}>
-    {{ content }}                                             
-  </div>                                                                     
-                                                                             
-  <div{{ content_attributes.addClass('list-wills') }}>
-  <h3>Related Wills</h3>
-    {{ drupal_view('audit_wills', 'page_1', node.id()) }}                                            
-  </div>                                                                                                                                                  
-</article>                                                                   
+    {{ content }}
+
+    {# Laid out like a field row of the record (see .eiw-related in
+       _records.scss). #}
+    <section class="eiw-related">
+      <h2 class="eiw-related__label">{{ 'Related wills'|t }}</h2>
+      {{ drupal_view('audit_wills', 'page_1', node.id()) }}
+    </section>
+  </div>
+</article>

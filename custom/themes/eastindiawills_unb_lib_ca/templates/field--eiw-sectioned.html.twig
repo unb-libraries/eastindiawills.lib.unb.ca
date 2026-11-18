@@ -1,0 +1,37 @@
+{#
+/**
+ * @file
+ * A formatted text field whose value carries its own section labels, e.g. a
+ * voyage description's "Ships:", "Ports of call" and "Sources" paragraphs.
+ *
+ * Each section renders as its own field row, so it reads like any other
+ * field on the record page (see .eiw-record in _records.scss). Text before
+ * the first label, if any, keeps the field's own label.
+ *
+ * Available variables, besides those of field.html.twig:
+ * - eiw_sections: A list of sections, each with:
+ *   - label: The section's label, or NULL for text before the first label.
+ *   - content: The section's text, filtered by the field's text format.
+ *
+ * @see eastindiawills_unb_lib_ca_preprocess_field()
+ */
+#}
+{# The wrapper isn't a field row itself, so it has no "field" class. #}
+{%
+  set classes = [
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'eiw-sectioned',
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  {% for section in eiw_sections %}
+    {% set section_label = section.label ?: (label_hidden ? null : label) %}
+    <div class="field field--label-above eiw-section">
+      {% if section_label %}
+        <div class="field__label">{{ section_label }}</div>
+      {% endif %}
+      <div class="field__item">{{ section.content }}</div>
+    </div>
+  {% endfor %}
+</div>

@@ -98,3 +98,248 @@ function eastindiawills_unb_lib_ca_preprocess_views_view_field(&$variables) {
     (string) $variables['output']
   ));
 }
+
+/**
+ * Implements hook_preprocess_HOOK() for node.html.twig.
+ *
+ * Will, voyage and ship pages share one record design (.eiw-record in
+ * _records.scss): the will page's uppercase field labels over hairline
+ * row dividers.
+ */
+function eastindiawills_unb_lib_ca_preprocess_node(&$variables) {
+  $record_types = ['eiw_will', 'eiw_voyage', 'eiw_ship'];
+  if ($variables['view_mode'] === 'full' && in_array($variables['node']->bundle(), $record_types, TRUE)) {
+    $variables['content_attributes']['class'][] = 'eiw-record';
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for field.html.twig.
+ *
+ * A formatted text field whose HTML carries its own section labels (see
+ * _eastindiawills_unb_lib_ca_text_sections()) is rendered by
+ * field--eiw-sectioned.html.twig, one field row per section.
+ */
+function eastindiawills_unb_lib_ca_theme_suggestions_field_alter(array &$suggestions, array $variables) {
+  $element = $variables['element'];
+  if (!_eastindiawills_unb_lib_ca_is_record_field($element) || $element['#formatter'] !== 'text_default') {
+    return;
+  }
+  foreach ($element['#items'] as $item) {
+    if (_eastindiawills_unb_lib_ca_text_sections((string) $item->value) !== NULL) {
+      $suggestions[] = 'field__eiw_sectioned';
+      return;
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for field.html.twig.
+ *
+ * Much of the migrated voyage and ship research carries its own labels
+ * inside the field value, which would otherwise render as bold or plain
+ * "Label:" text under the field's real label. Restyle them to match:
+ * - Formatted text (text_default): top-level "<p><strong>Label</strong>"
+ *   headings split the value into sections, each rendered as its own field
+ *   row (eiw_sections, for field--eiw-sectioned.html.twig).
+ * - Plain text notes (basic_string): one paragraph per line, and a leading
+ *   "Label: " on a line becomes a run-in label (.eiw-runin).
+ */
+function eastindiawills_unb_lib_ca_preprocess_field(&$variables) {
+  $element = $variables['element'];
+  if (!_eastindiawills_unb_lib_ca_is_record_field($element)) {
+    return;
+  }
+
+  if ($element['#formatter'] === 'basic_string') {
+    foreach ($element['#items'] as $delta => $item) {
+      if (!isset($variables['items'][$delta])) {
+        continue;
+      }
+      $variables['items'][$delta]['content'] = [
+        '#type' => 'inline_template',
+        '#template' => '{% for line in lines %}<p class="eiw-note">{% if line.label %}<span class="eiw-runin">{{ line.label }}</span> {% endif %}{{ line.text }}</p>{% endfor %}',
+        '#context' => ['lines' => _eastindiawills_unb_lib_ca_note_lines((string) $item->value)],
+      ];
+    }
+    return;
+  }
+
+  if ($element['#formatter'] === 'text_default') {
+    $sections = [];
+    $split = FALSE;
+    foreach ($element['#items'] as $delta => $item) {
+      if (!isset($variables['items'][$delta])) {
+        continue;
+      }
+      $item_sections = _eastindiawills_unb_lib_ca_text_sections((string) $item->value);
+      if ($item_sections === NULL) {
+        $sections[] = ['label' => NULL, 'content' => $variables['items'][$delta]['content']];
+        continue;
+      }
+      $split = TRUE;
+      foreach ($item_sections as $section) {
+        // Each section still goes through the field's text format.
+        $sections[] = [
+          'label' => $section['label'],
+          'content' => [
+            '#type' => 'processed_text',
+            '#text' => $section['html'],
+            '#format' => $item->format,
+            '#langcode' => $item->getLangcode(),
+          ],
+        ];
+      }
+    }
+    if ($split) {
+      $variables['eiw_sections'] = $sections;
+    }
+  }
+}
+
+/**
+ * Whether a field belongs to one of the East India Wills record entities.
+ *
+ * @param array $element
+ *   The field render element.
+ */
+function _eastindiawills_unb_lib_ca_is_record_field(array $element): bool {
+  return in_array($element['#entity_type'] ?? '', ['node', 'paragraph'], TRUE)
+    && str_starts_with($element['#bundle'] ?? '', 'eiw_');
+}
+
+/**
+ * Splits plain-text notes into lines, separating any leading run-in label.
+ *
+ * A label is a short phrase followed by ": " at the start of a line:
+ * "Ships identified: ...", "Confidence: ...", "Hector (1): arr. ...". It
+ * starts with a letter, runs to at most 40 characters and six words, and
+ * has no sentence punctuation, quotes or unclosed brackets, so prose that
+ * happens to contain a colon ("Capt. Smith: ...", "Usually 'the Hope'
+ * (Foster: ...") is left as text.
+ *
+ * @param string $text
+ *   The plain-text field value.
+ *
+ * @return array
+ *   One ['label' => ?string, 'text' => string] per non-empty line.
+ */
+function _eastindiawills_unb_lib_ca_note_lines(string $text): array {
+  $lines = [];
+  foreach (preg_split('/\R/u', $text) as $line) {
+    $line = trim($line);
+    if ($line === '') {
+      continue;
+    }
+    if (preg_match('/^(\p{L}(?:[^:.;,!?"\'()]|\([^():]*\))*):\s+(\S.*)$/u', $line, $matches)
+      && mb_strlen($matches[1]) <= 40
+      && count(preg_split('/\s+/u', trim($matches[1]))) <= 6) {
+      $lines[] = ['label' => trim($matches[1]), 'text' => $matches[2]];
+    }
+    else {
+      $lines[] = ['label' => NULL, 'text' => $line];
+    }
+  }
+  return $lines;
+}
+
+/**
+ * Splits formatted text into labelled sections at its own label paragraphs.
+ *
+ * A top-level paragraph that opens with a short <strong> label starts a
+ * section, if the label ends with a colon ("<p><strong>Ships:</strong>
+ * Mary</p>": the rest of the paragraph is the section's first content) or
+ * is the whole paragraph ("<p><strong>Sources</strong></p>"). Everything
+ * up to the next label paragraph belongs to that section.
+ *
+ * Within sections, the trailing colon is dropped from a list item's leading
+ * <strong> label ("<li><strong>Outward:</strong> ..."), which _records.scss
+ * styles as a run-in label. (The text format strips classes, so they can't
+ * be marked up here.)
+ *
+ * @param string $html
+ *   The unfiltered field value; the caller filters each section's HTML.
+ *
+ * @return array|null
+ *   One ['label' => ?string, 'html' => string] per section (the first has
+ *   no label if text precedes the first label paragraph), or NULL if the
+ *   value has no label paragraphs.
+ */
+function _eastindiawills_unb_lib_ca_text_sections(string $html): ?array {
+  // Called for the same values from the suggestions alter and preprocess.
+  static $cache = [];
+  $key = hash('sha256', $html);
+  if (array_key_exists($key, $cache)) {
+    return $cache[$key];
+  }
+  if (!preg_match('/<(strong|b)\b/i', $html)) {
+    return $cache[$key] = NULL;
+  }
+
+  $dom = Html::load($html);
+  $body = $dom->getElementsByTagName('body')->item(0);
+
+  foreach (iterator_to_array($dom->getElementsByTagName('li')) as $li) {
+    $strong = _eastindiawills_unb_lib_ca_leading_strong($li);
+    if ($strong && str_ends_with(trim($strong->textContent), ':')) {
+      $label = rtrim(trim($strong->textContent), ':');
+      while ($strong->firstChild) {
+        $strong->removeChild($strong->firstChild);
+      }
+      $strong->appendChild($dom->createTextNode($label));
+    }
+  }
+
+  $sections = [];
+  $labelled = FALSE;
+  foreach (iterator_to_array($body->childNodes) as $node) {
+    $strong = ($node instanceof \DOMElement && strtolower($node->nodeName) === 'p')
+      ? _eastindiawills_unb_lib_ca_leading_strong($node)
+      : NULL;
+    $label = $strong ? trim($strong->textContent) : '';
+    if ($strong && (str_ends_with($label, ':') || trim($node->textContent) === $label)) {
+      $labelled = TRUE;
+      $node->removeChild($strong);
+      $sections[] = ['label' => rtrim($label, ': '), 'html' => ''];
+      if (trim($node->textContent) === '') {
+        continue;
+      }
+    }
+    if (!$sections) {
+      $sections[] = ['label' => NULL, 'html' => ''];
+    }
+    $sections[array_key_last($sections)]['html'] .= $dom->saveHTML($node);
+  }
+
+  if (!$labelled) {
+    return $cache[$key] = NULL;
+  }
+  return $cache[$key] = array_values(array_filter(
+    $sections,
+    fn(array $section) => trim(strip_tags($section['html'])) !== '',
+  ));
+}
+
+/**
+ * Returns an element's leading <strong>/<b> label, if it opens with one.
+ *
+ * @param \DOMElement $element
+ *   A paragraph or list item.
+ *
+ * @return \DOMElement|null
+ *   The label element: the first non-whitespace child, if it's a <strong>
+ *   or <b> of 1-60 characters.
+ */
+function _eastindiawills_unb_lib_ca_leading_strong(\DOMElement $element): ?\DOMElement {
+  foreach ($element->childNodes as $child) {
+    if ($child instanceof \DOMText && trim($child->textContent) === '') {
+      continue;
+    }
+    if ($child instanceof \DOMElement && in_array(strtolower($child->nodeName), ['strong', 'b'], TRUE)) {
+      $length = mb_strlen(trim($child->textContent));
+      return ($length > 0 && $length <= 60) ? $child : NULL;
+    }
+    return NULL;
+  }
+  return NULL;
+}
