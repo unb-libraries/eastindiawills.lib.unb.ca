@@ -234,7 +234,10 @@ function _eastindiawills_unb_lib_ca_note_lines(string $text): array {
     if (preg_match('/^(\p{L}(?:[^:.;,!?"\'()]|\([^():]*\))*):\s+(\S.*)$/u', $line, $matches)
       && mb_strlen($matches[1]) <= 40
       && count(preg_split('/\s+/u', trim($matches[1]))) <= 6) {
-      $lines[] = ['label' => trim($matches[1]), 'text' => $matches[2]];
+      $lines[] = [
+        'label' => trim($matches[1]),
+        'text' => _eastindiawills_unb_lib_ca_capitalize($matches[2]),
+      ];
     }
     else {
       $lines[] = ['label' => NULL, 'text' => $line];
@@ -254,8 +257,8 @@ function _eastindiawills_unb_lib_ca_note_lines(string $text): array {
  *
  * Within sections, the trailing colon is dropped from a list item's leading
  * <strong> label ("<li><strong>Outward:</strong> ..."), which _records.scss
- * styles as a run-in label. (The text format strips classes, so they can't
- * be marked up here.)
+ * styles as a run-in label, and the text after it is capitalized. (The text
+ * format strips classes, so they can't be marked up here.)
  *
  * @param string $html
  *   The unfiltered field value; the caller filters each section's HTML.
@@ -287,6 +290,10 @@ function _eastindiawills_unb_lib_ca_text_sections(string $html): ?array {
         $strong->removeChild($strong->firstChild);
       }
       $strong->appendChild($dom->createTextNode($label));
+      $next = $strong->nextSibling;
+      if ($next instanceof \DOMText) {
+        $next->data = _eastindiawills_unb_lib_ca_capitalize($next->data);
+      }
     }
   }
 
@@ -342,4 +349,17 @@ function _eastindiawills_unb_lib_ca_leading_strong(\DOMElement $element): ?\DOME
     return NULL;
   }
   return NULL;
+}
+
+/**
+ * Capitalizes the first letter of text following a run-in label.
+ *
+ * "CONFIDENCE confirmed." reads as a fragment; "CONFIDENCE Confirmed." as
+ * a labelled value. Leading whitespace is kept.
+ *
+ * @param string $text
+ *   The text after the label.
+ */
+function _eastindiawills_unb_lib_ca_capitalize(string $text): string {
+  return preg_replace_callback('/^(\s*)(\p{Ll})/u', fn(array $m) => $m[1] . mb_strtoupper($m[2]), $text);
 }
