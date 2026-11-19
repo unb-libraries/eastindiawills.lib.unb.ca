@@ -11,12 +11,16 @@
  * Arrival/departure render whatever precision was entered as-is (the
  * field itself is a plain string, not a datetime - see
  * eiw_core_entity_bundle_field_info_alter()).
+ *
+ * Columns the viewer may not see (eiw_denied_columns: private notes, for
+ * anyone but editors) aren't output, matching the table header.
  */
 #}
-{% set columns = {port: 'Port'|t, homeward: 'Leg'|t, arrival_date: 'Arrival'|t, departure_date: 'Departure'|t, notes: 'Notes'|t} %}
-{% set column_classes = {port: 'port', homeward: 'leg', arrival_date: 'arrival', departure_date: 'departure', notes: 'notes'} %}
+{% set columns = {port: 'Port'|t, homeward: 'Leg'|t, arrival_date: 'Arrival'|t, departure_date: 'Departure'|t, notes_public: 'Notes'|t, notes: 'Notes (Private)'|t} %}
+{% set column_classes = {port: 'port', homeward: 'leg', arrival_date: 'arrival', departure_date: 'departure', notes_public: 'notes', notes: 'notes-private'} %}
+{% set denied = eiw_denied_columns|default([]) %}
 <tr{{ attributes.addClass('eiw-stops__row') }}>
-  {% for column, column_label in columns %}
+  {% for column, column_label in columns|filter((label, column) => column not in denied) %}
     {% set empty = paragraph.get('field_' ~ column).isEmpty() %}
     <td class="eiw-stops__{{ column_classes[column] }}{{ empty ? ' is-empty' }}" data-label="{{ column_label }}">
       {% if empty %}

@@ -1,6 +1,10 @@
 <?php
 
+use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Datetime\DrupalDateTime;
+use Drupal\Core\Field\FieldDefinitionInterface;
+use Drupal\Core\Field\FieldItemListInterface;
+use Drupal\Core\Session\AccountInterface;
 use Drupal\eiw_core\EiwCoreHelper;
 use Drupal\file\Entity\File;
 use Drupal\Core\Link;
@@ -17,6 +21,35 @@ use SearchApi\Item\ItemInterface;
  * again.
  */
 const EIW_CORE_LANDING_PAGE_UUID = '23b3a912-5ff5-4695-b5af-a5dbd2edd519';
+
+/**
+ * Bundles whose field_notes is the private, editors-only notes field.
+ */
+const EIW_CORE_PRIVATE_NOTES_BUNDLES = [
+  'node' => ['eiw_will', 'eiw_voyage'],
+  'paragraph' => ['eiw_ship_identity', 'eiw_voyage_stop'],
+];
+
+/**
+ * Implements hook_entity_field_access().
+ *
+ * "Notes (Private)" (field_notes) on wills, voyages, ship identities and
+ * voyage stops is only shown, and only editable, with the "view eiw private
+ * notes" permission (granted to EIW Editors). Everyone else sees the public
+ * "Notes" field (field_notes_public) only.
+ */
+function eiw_core_entity_field_access(string $operation, FieldDefinitionInterface $field_definition, AccountInterface $account, ?FieldItemListInterface $items = NULL): AccessResult {
+  if ($field_definition->getName() !== 'field_notes') {
+    return AccessResult::neutral();
+  }
+  $entity_type = $field_definition->getTargetEntityTypeId();
+  $bundle = $field_definition->getTargetBundle();
+  if (!in_array($bundle, EIW_CORE_PRIVATE_NOTES_BUNDLES[$entity_type] ?? [], TRUE)) {
+    return AccessResult::neutral();
+  }
+  return AccessResult::forbiddenIf(!$account->hasPermission('view eiw private notes'))
+    ->cachePerPermissions();
+}
 
 /**
  * Implements hook_ENTITY_TYPE_presave().

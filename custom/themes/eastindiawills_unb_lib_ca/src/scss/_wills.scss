@@ -626,7 +626,8 @@
   &.eiw-stops--no-leg .eiw-stops__leg,
   &.eiw-stops--no-arrival .eiw-stops__arrival,
   &.eiw-stops--no-departure .eiw-stops__departure,
-  &.eiw-stops--no-notes .eiw-stops__notes {
+  &.eiw-stops--no-notes .eiw-stops__notes,
+  &.eiw-stops--no-private-notes .eiw-stops__notes-private {
     display: none;
   }
 }

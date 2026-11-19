@@ -9,8 +9,8 @@ id: paragraph.eiw_ship_identity.field_notes
 field_name: field_notes
 entity_type: paragraph
 bundle: eiw_ship_identity
-label: Notes
-description: 'Ambiguities, gaps in the sources, identity caveats.'
+label: 'Notes (Private)'
+description: 'These notes can only be seen by site editors and administrators.'
 required: false
 translatable: true
 default_value: {  }

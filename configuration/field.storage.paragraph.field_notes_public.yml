@@ -1,0 +1,19 @@
+uuid: 733d4101-4a77-44dc-a5f6-88157db2bd35
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_notes_public
+field_name: field_notes_public
+entity_type: paragraph
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

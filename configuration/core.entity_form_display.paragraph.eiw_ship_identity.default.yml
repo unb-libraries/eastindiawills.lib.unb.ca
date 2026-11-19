@@ -19,6 +19,7 @@ dependencies:
     - field.field.paragraph.eiw_ship_identity.field_later_names
     - field.field.paragraph.eiw_ship_identity.field_men
     - field.field.paragraph.eiw_ship_identity.field_notes
+    - field.field.paragraph.eiw_ship_identity.field_notes_public
     - field.field.paragraph.eiw_ship_identity.field_service_from
     - field.field.paragraph.eiw_ship_identity.field_service_to
     - field.field.paragraph.eiw_ship_identity.field_ship_type
@@ -150,6 +151,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_notes:
+    type: string_textarea
+    weight: 23
+    region: content
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  field_notes_public:
     type: string_textarea
     weight: 22
     region: content

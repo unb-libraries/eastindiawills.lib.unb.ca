@@ -1,0 +1,19 @@
+uuid: 29d17c11-5ae4-443f-aa4f-bed7c3c77c83
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_notes_public
+    - paragraphs.paragraphs_type.eiw_ship_identity
+id: paragraph.eiw_ship_identity.field_notes_public
+field_name: field_notes_public
+entity_type: paragraph
+bundle: eiw_ship_identity
+label: Notes
+description: 'These notes are shown to everyone who can see this record.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

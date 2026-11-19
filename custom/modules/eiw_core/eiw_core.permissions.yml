@@ -1,0 +1,3 @@
+view eiw private notes:
+  title: 'View and edit private notes'
+  description: 'See and edit the "Notes (Private)" field on wills, voyages, ship identities and voyage stops. Without it, those notes are hidden on pages and edit forms.'

@@ -7,6 +7,7 @@ dependencies:
     - field.field.paragraph.eiw_voyage_stop.field_departure_date
     - field.field.paragraph.eiw_voyage_stop.field_homeward
     - field.field.paragraph.eiw_voyage_stop.field_notes
+    - field.field.paragraph.eiw_voyage_stop.field_notes_public
     - field.field.paragraph.eiw_voyage_stop.field_port
     - paragraphs.paragraphs_type.eiw_voyage_stop
 id: paragraph.eiw_voyage_stop.default
@@ -38,6 +39,14 @@ content:
       display_label: true
     third_party_settings: {  }
   field_notes:
+    type: string_textarea
+    weight: 5
+    region: content
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  field_notes_public:
     type: string_textarea
     weight: 4
     region: content

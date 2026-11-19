@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.eiw_will.field_last_name
     - field.field.node.eiw_will.field_marital_status
     - field.field.node.eiw_will.field_notes
+    - field.field.node.eiw_will.field_notes_public
     - field.field.node.eiw_will.field_reference
     - field.field.node.eiw_will.field_shipboard_will
     - field.field.node.eiw_will.field_source_type
@@ -113,6 +114,14 @@ content:
     third_party_settings: {  }
   field_notes:
     type: string_textarea
+    weight: 19
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_notes_public:
+    type: string_textarea
     weight: 18
     region: content
     settings:
@@ -191,7 +200,7 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 19
+    weight: 20
     region: content
     settings:
       display_label: true

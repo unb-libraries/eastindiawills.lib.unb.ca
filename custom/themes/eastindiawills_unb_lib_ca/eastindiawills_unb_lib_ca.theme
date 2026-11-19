@@ -1,6 +1,8 @@
 <?php
 
 use Drupal\Component\Utility\Html;
+use Drupal\Core\Cache\CacheableMetadata;
+use Drupal\Core\Entity\FieldableEntityInterface;
 use Drupal\Core\Render\Markup;
 
 /**
@@ -147,6 +149,16 @@ function eastindiawills_unb_lib_ca_theme_suggestions_field_alter(array &$suggest
  */
 function eastindiawills_unb_lib_ca_preprocess_field(&$variables) {
   $element = $variables['element'];
+
+  // The itinerary table leaves out columns the viewer can't see (private
+  // notes), rather than showing a column of dashes.
+  if ($element['#field_name'] === 'field_voyage_stops') {
+    $first_stop = $element['#items']->first()?->entity;
+    $variables['eiw_denied_columns'] = $first_stop
+      ? _eastindiawills_unb_lib_ca_denied_columns($first_stop, $variables)
+      : [];
+  }
+
   if (!_eastindiawills_unb_lib_ca_is_record_field($element)) {
     return;
   }
@@ -195,6 +207,50 @@ function eastindiawills_unb_lib_ca_preprocess_field(&$variables) {
       $variables['eiw_sections'] = $sections;
     }
   }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for paragraph.html.twig.
+ *
+ * Itinerary table rows leave out the same columns as the table header (see
+ * eastindiawills_unb_lib_ca_preprocess_field()).
+ */
+function eastindiawills_unb_lib_ca_preprocess_paragraph(&$variables) {
+  if ($variables['paragraph']->bundle() === 'eiw_voyage_stop' && $variables['view_mode'] === 'table_row') {
+    $variables['eiw_denied_columns'] = _eastindiawills_unb_lib_ca_denied_columns($variables['paragraph'], $variables);
+  }
+}
+
+/**
+ * Lists a voyage stop's table columns that the current user may not view.
+ *
+ * Only the notes columns are access-controlled (field_notes is editors-only;
+ * see eiw_core_entity_field_access()). The access results' cacheability is
+ * added to $variables, so the table varies by permissions.
+ *
+ * @param \Drupal\Core\Entity\FieldableEntityInterface $stop
+ *   A voyage stop paragraph.
+ * @param array $variables
+ *   The template variables, to receive the cacheability metadata.
+ *
+ * @return string[]
+ *   Column names ("notes", "notes_public") the user can't view.
+ */
+function _eastindiawills_unb_lib_ca_denied_columns(FieldableEntityInterface $stop, array &$variables): array {
+  $denied = [];
+  $cacheability = CacheableMetadata::createFromRenderArray($variables);
+  foreach (['notes_public', 'notes'] as $column) {
+    if (!$stop->hasField('field_' . $column)) {
+      continue;
+    }
+    $access = $stop->get('field_' . $column)->access('view', NULL, TRUE);
+    $cacheability->addCacheableDependency($access);
+    if (!$access->isAllowed()) {
+      $denied[] = $column;
+    }
+  }
+  $cacheability->applyTo($variables);
+  return $denied;
 }
 
 /**

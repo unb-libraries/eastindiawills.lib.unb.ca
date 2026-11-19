@@ -9,8 +9,8 @@ id: paragraph.eiw_voyage_stop.field_notes
 field_name: field_notes
 entity_type: paragraph
 bundle: eiw_voyage_stop
-label: Notes
-description: "Anything the arrival/departure fields can't capture, e.g. source uncertainty or conflicting records."
+label: 'Notes (Private)'
+description: 'These notes can only be seen by site editors and administrators.'
 required: false
 translatable: false
 default_value: {  }

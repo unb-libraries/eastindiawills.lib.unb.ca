@@ -9,8 +9,8 @@ id: node.eiw_voyage.field_notes
 field_name: field_notes
 entity_type: node
 bundle: eiw_voyage
-label: Notes
-description: ''
+label: 'Notes (Private)'
+description: 'These notes can only be seen by site editors and administrators.'
 required: false
 translatable: false
 default_value: {  }

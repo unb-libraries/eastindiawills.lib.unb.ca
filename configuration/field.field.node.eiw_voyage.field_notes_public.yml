@@ -1,0 +1,19 @@
+uuid: 421b21a2-9408-436a-9dd7-7c597424d9b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_notes_public
+    - node.type.eiw_voyage
+id: node.eiw_voyage.field_notes_public
+field_name: field_notes_public
+entity_type: node
+bundle: eiw_voyage
+label: Notes
+description: 'These notes are shown to everyone who can see this record.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

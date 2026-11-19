@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.eiw_voyage.field_description
     - field.field.node.eiw_voyage.field_notes
+    - field.field.node.eiw_voyage.field_notes_public
     - field.field.node.eiw_voyage.field_voyage_stops
     - node.type.eiw_voyage
   module:
@@ -37,6 +38,14 @@ content:
   field_description:
     type: text_textarea
     weight: 26
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_notes_public:
+    type: string_textarea
+    weight: 28
     region: content
     settings:
       rows: 5
