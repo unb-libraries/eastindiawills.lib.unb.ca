@@ -30,8 +30,140 @@ dependencies:
     - image.style.thumbnail
     - paragraphs.paragraphs_type.eiw_ship_identity
   module:
+    - field_group
     - image
     - text
+third_party_settings:
+  field_group:
+    group_identity:
+      children:
+        - field_identity_label
+        - field_former_names
+        - field_later_names
+      label: Identity
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        open: true
+        description: ''
+        required_fields: true
+    group_type_size:
+      children:
+        - field_ship_type
+        - field_burthen
+        - field_burthen_note
+        - field_guns
+        - field_men
+      label: 'Type and Size'
+      region: content
+      parent_name: ''
+      weight: 3
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        open: true
+        description: ''
+        required_fields: true
+    group_origin:
+      children:
+        - field_builder
+        - field_year_built
+        - field_acquired
+        - field_year_acquired
+      label: Origin
+      region: content
+      parent_name: ''
+      weight: 8
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        open: true
+        description: ''
+        required_fields: true
+    group_service:
+      children:
+        - field_service_from
+        - field_service_to
+        - field_voyages
+      label: Service
+      region: content
+      parent_name: ''
+      weight: 12
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        open: true
+        description: ''
+        required_fields: true
+    group_fate:
+      children:
+        - field_fate
+        - field_fate_place
+        - field_fate_year
+      label: Fate
+      region: content
+      parent_name: ''
+      weight: 15
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        open: true
+        description: ''
+        required_fields: true
+    group_image:
+      children:
+        - field_image
+        - field_image_representative
+        - field_image_caption
+      label: Image
+      region: content
+      parent_name: ''
+      weight: 18
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        open: true
+        description: ''
+        required_fields: true
+    group_sources_notes:
+      children:
+        - field_sources
+        - field_notes_public
+        - field_notes
+      label: 'Sources and Notes'
+      region: content
+      parent_name: ''
+      weight: 21
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        open: true
+        description: ''
+        required_fields: true
 id: paragraph.eiw_ship_identity.default
 targetEntityType: paragraph
 bundle: eiw_ship_identity
@@ -39,13 +171,13 @@ mode: default
 content:
   field_acquired:
     type: options_select
-    weight: 6
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   field_builder:
     type: string_textfield
-    weight: 7
+    weight: 8
     region: content
     settings:
       size: 60
@@ -68,7 +200,7 @@ content:
     third_party_settings: {  }
   field_fate:
     type: string_textfield
-    weight: 14
+    weight: 15
     region: content
     settings:
       size: 60
@@ -76,7 +208,7 @@ content:
     third_party_settings: {  }
   field_fate_place:
     type: string_textfield
-    weight: 15
+    weight: 16
     region: content
     settings:
       size: 60
@@ -84,7 +216,7 @@ content:
     third_party_settings: {  }
   field_fate_year:
     type: number
-    weight: 16
+    weight: 17
     region: content
     settings:
       placeholder: ''
@@ -99,7 +231,7 @@ content:
     third_party_settings: {  }
   field_guns:
     type: number
-    weight: 10
+    weight: 6
     region: content
     settings:
       placeholder: ''
@@ -122,7 +254,7 @@ content:
     third_party_settings: {  }
   field_image_caption:
     type: text_textarea
-    weight: 19
+    weight: 20
     region: content
     settings:
       rows: 3
@@ -130,7 +262,7 @@ content:
     third_party_settings: {  }
   field_image_representative:
     type: boolean_checkbox
-    weight: 20
+    weight: 19
     region: content
     settings:
       display_label: true
@@ -145,7 +277,7 @@ content:
     third_party_settings: {  }
   field_men:
     type: number
-    weight: 11
+    weight: 7
     region: content
     settings:
       placeholder: ''
@@ -196,7 +328,7 @@ content:
     third_party_settings: {  }
   field_voyages:
     type: entity_reference_autocomplete
-    weight: 17
+    weight: 14
     region: content
     settings:
       match_operator: CONTAINS
@@ -206,14 +338,14 @@ content:
     third_party_settings: {  }
   field_year_acquired:
     type: number
-    weight: 9
+    weight: 11
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_year_built:
     type: number
-    weight: 8
+    weight: 9
     region: content
     settings:
       placeholder: ''

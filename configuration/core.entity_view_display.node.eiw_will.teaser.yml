@@ -15,7 +15,6 @@ dependencies:
     - field.field.node.eiw_will.field_last_name
     - field.field.node.eiw_will.field_marital_status
     - field.field.node.eiw_will.field_notes
-    - field.field.node.eiw_will.field_notes_public
     - field.field.node.eiw_will.field_reference
     - field.field.node.eiw_will.field_shipboard_will
     - field.field.node.eiw_will.field_source_type
@@ -50,7 +49,6 @@ hidden:
   field_last_name: true
   field_marital_status: true
   field_notes: true
-  field_notes_public: true
   field_reference: true
   field_shipboard_will: true
   field_source_type: true
