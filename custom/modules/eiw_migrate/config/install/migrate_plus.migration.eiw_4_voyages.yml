@@ -39,10 +39,25 @@ process:
   status:
     plugin: default_value
     default_value: 0
-  field_description/value: description
-  field_description/format:
+  # Generated sections (ships, ports of call, references) used to be packed
+  # into field_description. Ships and references now have fields of their
+  # own and the ports are the itinerary, so the import clears any generated
+  # description left on existing voyages. Editors' own description prose is
+  # overwritten by a re-import, like the other imported fields.
+  field_description:
+    plugin: default_value
+    default_value: []
+  field_voyage_ships:
+    - plugin: skip_on_empty
+      method: process
+      source: ships
+    - plugin: explode
+      delimiter: '|'
+  field_references/value: references
+  field_references/format:
     plugin: default_value
     default_value: unb_libraries
+  field_confidence: confidence
   field_notes: notes
   field_voyage_stops:
     - plugin: skip_on_empty
@@ -61,6 +76,9 @@ destination:
   # title and publishing status stay as editors left them.
   overwrite_properties:
     - field_description
+    - field_voyage_ships
+    - field_references
+    - field_confidence
     - field_notes
     - field_voyage_stops
 

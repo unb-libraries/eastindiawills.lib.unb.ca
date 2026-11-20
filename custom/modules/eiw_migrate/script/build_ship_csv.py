@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Build the CSV sources for the eiw_5_ship_images, eiw_6_ship_identities and
-eiw_7_ships migrations.
+"""Build the CSV sources for the eiw_5_ship_images, eiw_5_ship_types,
+eiw_6_ship_identities and eiw_7_ships migrations.
 
 Input is the merged 17th-century ship research in the research "final"
 directory: ship_details.csv (one row per physical ship), type_images.csv (one
@@ -9,6 +9,7 @@ voyages.csv (to turn research voyage IDs into the voyage migration's IDs).
 Output goes to ../data/csv/ and ../data/images/:
 
   eiw_ship_images.csv       one row per picture file (named-ship and type pictures)
+  eiw_ship_types.csv        one row per ship type, with its representative picture
   eiw_ship_identities.csv   one row per eiw_ship_identity paragraph
   eiw_ships.csv             one row per ship name, with its ships' keys
 
@@ -20,8 +21,9 @@ Only ship names in eiw_migrate.settings (ships, the names in the wills) are
 output, with the ships that sailed under them; the research also covers a few
 other names (e.g. Reformation), which stay in the research data.
 
-A ship with no picture of its own gets its type's representative picture,
-flagged as representative so the site captions it as "a ship of this type".
+A ship's own picture, if research found one, is on its identity row. A ship
+without one shows its type's representative picture (the ship type term's),
+which the site captions as "a ship of this type".
 
 Usage:
   python3 build_ship_csv.py /path/to/research/final
@@ -38,6 +40,7 @@ from build_voyage_csv import read, short_ship, slug, write
 
 TYPES = ('ship', 'pinnace', 'victualler', 'galliot', 'frigate', 'sloop', 'country ship', 'other')
 ACQUIRED = ('built', 'bought', 'hired/freighted', 'prize', 'licensed', 'interloper')
+CONFIDENCE = ('confirmed', 'probable', 'unverified')
 
 
 def integer(value):
@@ -68,11 +71,9 @@ def sources_html(text):
 
 
 def label(ship):
-    """'Hector (1), c.300 tons ...' + 1600-1616 -> 'Hector (1), 1600–1616'."""
-    name = short_ship(ship['ship_identity'])
-    start, end = integer(ship['service_from']), integer(ship['service_to'])
-    span = f'{start}–{end}' if start and end and start != end else (start or end)
-    return f'{name}, {span}' if span else name
+    """'Hector (1), c.300 tons ...' -> 'Hector (1)'. The service years are
+    fields of their own, which the site shows beside the name."""
+    return short_ship(ship['ship_identity'])
 
 
 def main(src):
@@ -102,6 +103,24 @@ def main(src):
         shutil.copyfile(path, os.path.join(image_out, file))
         images[image_id] = {'image_id': image_id, 'file': file, 'alt': alt}
 
+    # Ship type terms (eiw_5_ship_types), each with its representative
+    # picture. The site labels these pictures itself (see
+    # paragraph--eiw-ship-identity.html.twig), so the research caption's own
+    # disclaimer is dropped.
+    type_rows = []
+    for weight, ship_type in enumerate(TYPES):
+        t = types.get(ship_type)
+        if not t:
+            continue
+        image_id = 'type-' + slug(ship_type)
+        add_image(image_id, t['file'], f"{t['title']}, {t['artist']}, {t['date']}".strip(', '))
+        caption = html.escape(re.sub(r'\s*A ship of this kind, not this ship\.?\s*$', '', t['caption']))
+        if t.get('page_url'):
+            caption += f' <a href="{html.escape(t["page_url"])}">{html.escape(t["institution"] or "Source")}</a>'
+        type_rows.append({'type_id': ship_type, 'name': ship_type.capitalize(), 'weight': weight,
+                          'image_id': image_id, 'image_alt': images[image_id]['alt'][:512],
+                          'image_caption': f'<p>{caption}</p>'})
+
     identity_rows, names = [], {}
     problems = []
     for s in ships:
@@ -119,27 +138,14 @@ def main(src):
             vids.append(slug(voyages[vid]['voyage'])[:120])
             vyears.append(voyages[vid]['year'])
 
-        # The ship's own picture if research found one (file in images/ named
-        # by ship key), else its type's representative picture.
-        image_id, caption, representative = '', '', 0
+        # The ship's own picture, if research found one (file in images/).
+        # Without one, the site shows the ship type's picture instead.
+        image_id, caption = '', ''
         own = s.get('image_file', '')
         if own:
             image_id = key
             add_image(key, own, s.get('image_alt') or f'{label(s)}')
             caption = s.get('image_caption', '')
-        else:
-            t = types.get(ship_type or 'ship')
-            if t:
-                image_id = 'type-' + slug(t['type'])
-                if image_id not in images:
-                    add_image(image_id, t['file'], f"{t['title']}, {t['artist']}, {t['date']}".strip(', '))
-                # The site labels representative pictures itself (see
-                # paragraph--eiw-ship-identity.html.twig), so drop the
-                # research caption's own disclaimer.
-                caption = html.escape(re.sub(r'\s*A ship of this kind, not this ship\.?\s*$', '', t['caption']))
-                if t.get('page_url'):
-                    caption += f' <a href="{html.escape(t["page_url"])}">{html.escape(t["institution"] or "Source")}</a>'
-                representative = 1
 
         identity_rows.append({
             'ship_key': key,
@@ -165,17 +171,16 @@ def main(src):
             'image_id': image_id,
             'image_alt': images[image_id]['alt'][:512] if image_id else '',
             'image_caption': f'<p>{caption}</p>' if caption else '',
-            'image_representative': representative,
             'sources': sources_html(s['sources']),
-            'notes': '\n'.join(filter(None, [
-                f"Confidence: {s['confidence']}." if s['confidence'] else '',
-                s['notes'],
-            ])),
+            'confidence': s['confidence'] if s['confidence'] in CONFIDENCE else '',
+            'notes': s['notes'],
         })
         for name in listed(s):
             names.setdefault(name, []).append(key)
 
     write(os.path.join(out, 'eiw_ship_images.csv'), ['image_id', 'file', 'alt'], images.values())
+    write(os.path.join(out, 'eiw_ship_types.csv'),
+          ['type_id', 'name', 'weight', 'image_id', 'image_alt', 'image_caption'], type_rows)
     write(os.path.join(out, 'eiw_ship_identities.csv'), list(identity_rows[0]), identity_rows)
     write(os.path.join(out, 'eiw_ships.csv'), ['name', 'ship_keys'],
           [{'name': n, 'ship_keys': '|'.join(dict.fromkeys(k))} for n, k in sorted(names.items())])

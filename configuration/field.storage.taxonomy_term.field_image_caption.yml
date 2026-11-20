@@ -1,0 +1,19 @@
+uuid: 3a822f66-39f2-46a0-a564-b940e8c261ca
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+    - text
+id: taxonomy_term.field_image_caption
+field_name: field_image_caption
+entity_type: taxonomy_term
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,21 @@
+uuid: 5bfef74e-5b5f-4e3b-ae67-04ba2f5392cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_confidence
+    - paragraphs.paragraphs_type.eiw_ship_identity
+  module:
+    - options
+id: paragraph.eiw_ship_identity.field_confidence
+field_name: field_confidence
+entity_type: paragraph
+bundle: eiw_ship_identity
+label: Confidence
+description: "How sure the research is that this is the ship named in the records. Only site editors can see it."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

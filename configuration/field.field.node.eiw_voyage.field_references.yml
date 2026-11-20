@@ -1,0 +1,24 @@
+uuid: b7b85a35-7643-459c-af01-fedd952cb06a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_references
+    - filter.format.unb_libraries
+    - node.type.eiw_voyage
+  module:
+    - text
+id: node.eiw_voyage.field_references
+field_name: field_references
+entity_type: node
+bundle: eiw_voyage
+label: References
+description: 'Sources for this voyage, one per list item. Web addresses are shown as "Source" links.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - unb_libraries
+field_type: text_long

@@ -4,9 +4,12 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.eiw_voyage.field_confidence
     - field.field.node.eiw_voyage.field_description
     - field.field.node.eiw_voyage.field_notes
     - field.field.node.eiw_voyage.field_notes_public
+    - field.field.node.eiw_voyage.field_references
+    - field.field.node.eiw_voyage.field_voyage_ships
     - field.field.node.eiw_voyage.field_voyage_stops
     - node.type.eiw_voyage
   module:
@@ -22,8 +25,11 @@ content:
     weight: 100
     region: content
 hidden:
+  field_confidence: true
   field_description: true
   field_notes: true
   field_notes_public: true
+  field_references: true
+  field_voyage_ships: true
   field_voyage_stops: true
   search_api_excerpt: true

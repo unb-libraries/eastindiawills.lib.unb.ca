@@ -11,7 +11,7 @@ id: paragraph.eiw_ship_identity.field_sources
 field_name: field_sources
 entity_type: paragraph
 bundle: eiw_ship_identity
-label: Sources
+label: References
 description: ''
 required: false
 translatable: true

@@ -599,7 +599,8 @@
     font-size: inherit;
   }
 
-  a {
+  // Source links in the notes keep their own chip style (.eiw-source).
+  a:not(.eiw-source) {
     color: inherit;
     text-decoration: none;
 

@@ -1,0 +1,24 @@
+uuid: f542b037-9081-492e-9756-94da206fd0f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_image_caption
+    - filter.format.unb_libraries
+    - taxonomy.vocabulary.eiw_ship_types
+  module:
+    - text
+id: taxonomy_term.eiw_ship_types.field_image_caption
+field_name: field_image_caption
+entity_type: taxonomy_term
+bundle: eiw_ship_types
+label: 'Image caption'
+description: 'What the picture shows, who made it and when, and where it is held, with a link.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - unb_libraries
+field_type: text_long

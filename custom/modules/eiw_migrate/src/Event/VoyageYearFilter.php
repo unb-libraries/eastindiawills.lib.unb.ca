@@ -14,8 +14,10 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
  *
  * The CSVs cover the whole research period; only voyages departing in
  * voyage_years (inclusive), their stops, the ports those stops use, the ships
- * in service in those years, and those ships' pictures are imported. Rows are skipped as they are read, without touching the ID map,
- * so "drush mim --sync" also rolls back anything imported from them earlier.
+ * in service in those years, and those ships' own pictures are imported
+ * (every ship type, with its picture, is imported regardless). Rows are
+ * skipped as they are read, without touching the ID map, so "drush mim
+ * --sync" also rolls back anything imported from them earlier.
  *
  * Rows matched to content that existed before the import (ID map marked
  * "preserve", e.g. a port term already on the site) are never skipped:
@@ -30,7 +32,7 @@ class VoyageYearFilter implements EventSubscriberInterface {
   protected ?array $ports = NULL;
 
   /**
-   * Image IDs used by in-range ships, built once per request.
+   * Image IDs used by ship types and in-range ships, built once per request.
    */
   protected ?array $images = NULL;
 
@@ -82,7 +84,7 @@ class VoyageYearFilter implements EventSubscriberInterface {
       case 'eiw_5_ship_images':
         if (!isset($this->usedImages()[$row->getSourceProperty('image_id')])) {
           [$from, $to] = $this->range();
-          throw new MigrateSkipRowException("image not used by any ship in service {$from}–{$to}", FALSE);
+          throw new MigrateSkipRowException("image not used by a ship type or any ship in service {$from}–{$to}", FALSE);
         }
         break;
     }
@@ -147,11 +149,16 @@ class VoyageYearFilter implements EventSubscriberInterface {
   }
 
   /**
-   * Image IDs used by in-range ships, from the ship identities CSV.
+   * Image IDs used by ship types and in-range ships, from their CSVs.
    */
   protected function usedImages(): array {
     if ($this->images === NULL) {
       $this->images = [];
+      foreach ($this->sourceRows('eiw_5_ship_types') as $type) {
+        if ($type['image_id'] !== '') {
+          $this->images[$type['image_id']] = TRUE;
+        }
+      }
       foreach ($this->sourceRows('eiw_6_ship_identities') as $ship) {
         if ($ship['image_id'] !== '' && $this->shipInRange($ship)) {
           $this->images[$ship['image_id']] = TRUE;

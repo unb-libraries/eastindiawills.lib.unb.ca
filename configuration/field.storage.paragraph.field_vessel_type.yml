@@ -1,14 +1,16 @@
-uuid: a70875ea-7a00-477f-be42-7e7d5bb02c08
+uuid: bfdf15fa-869f-4007-9bb9-64b992b51df8
 langcode: en
 status: true
 dependencies:
   module:
     - paragraphs
-id: paragraph.field_image_representative
-field_name: field_image_representative
+    - taxonomy
+id: paragraph.field_vessel_type
+field_name: field_vessel_type
 entity_type: paragraph
-type: boolean
-settings: {  }
+type: entity_reference
+settings:
+  target_type: taxonomy_term
 module: core
 locked: false
 cardinality: 1

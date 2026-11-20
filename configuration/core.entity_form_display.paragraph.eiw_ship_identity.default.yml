@@ -7,6 +7,7 @@ dependencies:
     - field.field.paragraph.eiw_ship_identity.field_builder
     - field.field.paragraph.eiw_ship_identity.field_burthen
     - field.field.paragraph.eiw_ship_identity.field_burthen_note
+    - field.field.paragraph.eiw_ship_identity.field_confidence
     - field.field.paragraph.eiw_ship_identity.field_fate
     - field.field.paragraph.eiw_ship_identity.field_fate_place
     - field.field.paragraph.eiw_ship_identity.field_fate_year
@@ -15,15 +16,14 @@ dependencies:
     - field.field.paragraph.eiw_ship_identity.field_identity_label
     - field.field.paragraph.eiw_ship_identity.field_image
     - field.field.paragraph.eiw_ship_identity.field_image_caption
-    - field.field.paragraph.eiw_ship_identity.field_image_representative
     - field.field.paragraph.eiw_ship_identity.field_later_names
     - field.field.paragraph.eiw_ship_identity.field_men
     - field.field.paragraph.eiw_ship_identity.field_notes
     - field.field.paragraph.eiw_ship_identity.field_notes_public
     - field.field.paragraph.eiw_ship_identity.field_service_from
     - field.field.paragraph.eiw_ship_identity.field_service_to
-    - field.field.paragraph.eiw_ship_identity.field_ship_type
     - field.field.paragraph.eiw_ship_identity.field_sources
+    - field.field.paragraph.eiw_ship_identity.field_vessel_type
     - field.field.paragraph.eiw_ship_identity.field_voyages
     - field.field.paragraph.eiw_ship_identity.field_year_acquired
     - field.field.paragraph.eiw_ship_identity.field_year_built
@@ -55,7 +55,7 @@ third_party_settings:
         required_fields: true
     group_type_size:
       children:
-        - field_ship_type
+        - field_vessel_type
         - field_burthen
         - field_burthen_note
         - field_guns
@@ -131,7 +131,6 @@ third_party_settings:
     group_image:
       children:
         - field_image
-        - field_image_representative
         - field_image_caption
       label: Image
       region: content
@@ -148,10 +147,11 @@ third_party_settings:
         required_fields: true
     group_sources_notes:
       children:
+        - field_confidence
         - field_sources
         - field_notes_public
         - field_notes
-      label: 'Sources and Notes'
+      label: Research
       region: content
       parent_name: ''
       weight: 21
@@ -197,6 +197,12 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_confidence:
+    type: options_select
+    weight: 21
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_fate:
     type: string_textfield
@@ -254,18 +260,11 @@ content:
     third_party_settings: {  }
   field_image_caption:
     type: text_textarea
-    weight: 20
+    weight: 19
     region: content
     settings:
       rows: 3
       placeholder: ''
-    third_party_settings: {  }
-  field_image_representative:
-    type: boolean_checkbox
-    weight: 19
-    region: content
-    settings:
-      display_label: true
     third_party_settings: {  }
   field_later_names:
     type: string_textfield
@@ -284,7 +283,7 @@ content:
     third_party_settings: {  }
   field_notes:
     type: string_textarea
-    weight: 23
+    weight: 24
     region: content
     settings:
       rows: 3
@@ -292,7 +291,7 @@ content:
     third_party_settings: {  }
   field_notes_public:
     type: string_textarea
-    weight: 22
+    weight: 23
     region: content
     settings:
       rows: 3
@@ -312,19 +311,19 @@ content:
     settings:
       placeholder: ''
     third_party_settings: {  }
-  field_ship_type:
-    type: options_select
-    weight: 3
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_sources:
     type: text_textarea
-    weight: 21
+    weight: 22
     region: content
     settings:
       rows: 3
       placeholder: ''
+    third_party_settings: {  }
+  field_vessel_type:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_voyages:
     type: entity_reference_autocomplete

@@ -30,7 +30,6 @@ import sys
 from collections import OrderedDict, defaultdict
 
 STAGES = ('outward', 'in_asia', 'homeward')
-STAGE_LABEL = {'outward': 'Outward', 'in_asia': 'In Asia', 'homeward': 'Homeward'}
 CONF_RANK = {'confirmed': 0, 'probable': 1, 'unverified': 2}
 MAX_DATE = 10  # field_arrival_date / field_departure_date are string(10)
 
@@ -184,22 +183,17 @@ def main(src):
                     'notes': '\n'.join(lines),
                 })
 
-        ships = [s.strip() for s in v['fleet_ships'].split(';') if s.strip()]
+        # Ships, references and the lowest confidence of any stop are fields
+        # of their own (field_voyage_ships, field_references, field_confidence). The voyage's ports are its itinerary, so they
+        # aren't repeated; field_description is left for editors' prose.
+        ships = [s.strip() for s in v['fleet_ships'].split(';') if s.strip()] or [v['ships_researched']]
         e = html.escape
-        desc = [f"<p><strong>Ships:</strong> {e(', '.join(ships) or v['ships_researched'])}</p>"]
-        stage_cols = {'outward': 'ports_outward', 'in_asia': 'ports_in_asia', 'homeward': 'ports_homeward'}
-        items = [f"<li><strong>{STAGE_LABEL[st]}:</strong> {e(v[col].replace('; ', ', '))}</li>"
-                 for st, col in stage_cols.items() if v[col]]
-        if items:
-            desc.append('<p><strong>Ports of call</strong></p><ul>' + ''.join(items) + '</ul>')
         sources = [s.strip() for s in v['sources'].split(' | ') if s.strip()]
-        if sources:
-            desc.append('<p><strong>Sources</strong></p><ul>' + ''.join(f'<li>{e(s)}</li>' for s in sources) + '</ul>')
+        references = '<ul>' + ''.join(f'<li>{e(s)}</li>' for s in sources) + '</ul>' if sources else ''
 
         notes = [
             f"Ships identified: {v['ships_researched']}.",
             f"Ship names in the project list: {v['names_in_list']}.",
-            f"Lowest confidence of any stop: {v['lowest_confidence']}.",
             'Itinerary condensed to one call per port per stage; see each stop\'s notes for per-ship dates.',
         ]
         if at_sea:
@@ -211,13 +205,14 @@ def main(src):
                      'Catalogue of East India Company Ships\' Journals and Logs (1999).')
 
         voyage_rows.append({'voyage_id': vslug, 'year': v['year'], 'title': v['voyage'][:255],
-                            'description': ''.join(desc), 'notes': '\n'.join(notes),
-                            'stop_ids': '|'.join(stop_ids)})
+                            'ships': '|'.join(ships), 'references': references,
+                            'confidence': v['lowest_confidence'],
+                            'notes': '\n'.join(notes), 'stop_ids': '|'.join(stop_ids)})
 
     write(os.path.join(out, 'eiw_voyage_stops.csv'),
           ['stop_id', 'voyage_id', 'voyage_year', 'delta', 'port_id', 'port', 'arrival', 'departure', 'homeward', 'notes'],
           stop_rows)
-    write(os.path.join(out, 'eiw_voyages.csv'), ['voyage_id', 'year', 'title', 'description', 'notes', 'stop_ids'],
+    write(os.path.join(out, 'eiw_voyages.csv'), ['voyage_id', 'year', 'title', 'ships', 'references', 'confidence', 'notes', 'stop_ids'],
           voyage_rows)
     dup = len(voyage_rows) - len({r['voyage_id'] for r in voyage_rows})
     print(f'ports={len(port_id)} stops={len(stop_rows)} voyages={len(voyage_rows)} duplicate_voyage_ids={dup}')

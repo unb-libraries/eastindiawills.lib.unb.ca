@@ -1,0 +1,21 @@
+uuid: 8f23ae5c-c6c8-4f85-8139-b69e61242524
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_confidence
+    - node.type.eiw_voyage
+  module:
+    - options
+id: node.eiw_voyage.field_confidence
+field_name: field_confidence
+entity_type: node
+bundle: eiw_voyage
+label: Confidence
+description: "The lowest confidence of any of the voyage's port calls. Only site editors can see it."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

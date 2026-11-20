@@ -1,0 +1,52 @@
+uuid: 8f2b80f6-5116-403c-a093-ef7eacf15844
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.eiw_ship_types.field_image
+    - field.field.taxonomy_term.eiw_ship_types.field_image_caption
+    - image.style.thumbnail
+    - taxonomy.vocabulary.eiw_ship_types
+  module:
+    - image
+    - text
+id: taxonomy_term.eiw_ship_types.default
+targetEntityType: taxonomy_term
+bundle: eiw_ship_types
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_image:
+    type: image_image
+    weight: 2
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_image_caption:
+    type: text_textarea
+    weight: 3
+    region: content
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  path: true
+  status: true

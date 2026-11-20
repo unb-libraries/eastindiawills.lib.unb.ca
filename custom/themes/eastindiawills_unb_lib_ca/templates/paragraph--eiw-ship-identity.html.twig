@@ -2,31 +2,42 @@
 /**
  * @file
  * One identified ship (eiw_ship_identity paragraph) on a Ship node page:
- * a heading with the ship's identity ("Hector (1)"), its picture with
- * caption, then the remaining facts as rendered by the view display.
+ * a heading with the ship's identity and service years ("Hector (1)
+ * 1600–1616"), its picture with caption, then the remaining facts as
+ * rendered by the view display.
  *
- * A representative picture (field_image_representative) shows a ship of
- * the same type, not this ship; it is labelled as such, so readers never
- * take it for a portrait of the vessel.
+ * A ship with no picture of its own shows its type's representative picture
+ * (eiw_type_image, from the Ship types term; see
+ * _eastindiawills_unb_lib_ca_preprocess_ship_identity()). That picture shows
+ * a ship of the same type, not this ship; it is labelled as such, so readers
+ * never take it for a portrait of the vessel.
  */
 #}
-{% set representative = paragraph.field_image_representative.value %}
+{% set own_image = not paragraph.field_image.isEmpty() %}
 <section{{ attributes.addClass('eiw-ship') }}>
   {% if content.field_identity_label|render|trim %}
-    <h3 class="eiw-ship__name">{{ content.field_identity_label }}</h3>
+    <h3 class="eiw-ship__name">
+      {{ content.field_identity_label }}
+      {% if eiw_years %}<span class="eiw-ship__years">{{ eiw_years }}</span>{% endif %}
+    </h3>
   {% endif %}
-  {% if not paragraph.field_image.isEmpty() %}
-    <figure class="eiw-ship__figure{{ representative ? ' eiw-ship__figure--representative' }}">
+  {% if own_image %}
+    <figure class="eiw-ship__figure">
       {{ content.field_image }}
       <figcaption class="eiw-ship__caption">
-        {% if representative %}
-          <strong class="eiw-ship__representative">{{ 'Representative image: a ship of this type, not this ship.'|t }}</strong>
-        {% endif %}
         {{ content.field_image_caption }}
+      </figcaption>
+    </figure>
+  {% elseif eiw_type_image %}
+    <figure class="eiw-ship__figure eiw-ship__figure--representative">
+      {{ eiw_type_image }}
+      <figcaption class="eiw-ship__caption">
+        <strong class="eiw-ship__representative">{{ 'Representative image: a ship of this type, not this ship.'|t }}</strong>
+        {{ eiw_type_caption }}
       </figcaption>
     </figure>
   {% endif %}
   <div class="eiw-ship__facts">
-    {{ content|without('field_identity_label', 'field_image', 'field_image_caption', 'field_image_representative') }}
+    {{ content|without('field_identity_label', 'field_image', 'field_image_caption') }}
   </div>
 </section>

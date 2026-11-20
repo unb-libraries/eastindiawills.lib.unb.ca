@@ -3,12 +3,9 @@
 // Every record uses the will page's design: each field a row, with a small
 // uppercase sans label (matching the /wills table headings) above its
 // value, and hairline dividers between rows (matching the table's cell
-// borders). Labels that arrive inside migrated field values are restyled
-// to match (see eastindiawills_unb_lib_ca_preprocess_field()):
-// - Label paragraphs in formatted text ("Ships:", "Ports of call",
-//   "Sources") become rows of their own (.eiw-sectioned > .eiw-section).
-// - Labels leading a line of plain-text notes ("Confidence: ...") or a
-//   list item ("Outward: ...") become run-in labels (.eiw-runin).
+// borders). Labels leading a line of migrated plain-text notes
+// ("Confidence: ...") are restyled to match, as run-in labels (.eiw-runin;
+// see eastindiawills_unb_lib_ca_preprocess_field()).
 
 // A field label: also the related wills heading. Uppercase sets large, so
 // it sits a step below the value text (~19px over ~23px), not far below:
@@ -61,18 +58,15 @@
   }
 }
 
-// A list item's leading label in a sectioned field ("Outward", "In Asia",
-// "Homeward" under "Ports of call"). The text format strips classes, so
-// it's matched by position; see _eastindiawills_unb_lib_ca_text_sections().
-.eiw-section li > strong:first-child {
-  @include eiw-runin-label;
-}
-
 // A source citation's link (see _eastindiawills_unb_lib_ca_source_links()):
 // a small outlined chip, "SOURCE ↗", in the run-in label's type, that fills
 // on hover. The arrow marks it as leaving the site; it's hidden from screen
 // readers, which hear "Source: archive.org" instead.
-.eiw-source {
+//
+// It looks the same wherever it appears (field rows, ship facts, the
+// itinerary table), so it sets every property a surrounding link or text
+// style could change, at link-element specificity.
+a.eiw-source {
   display: inline-block;
   margin-left: .125rem;
   padding: .0625rem .4375rem;
@@ -101,6 +95,17 @@
     border-color: $link-color;
     background-color: $link-color;
     color: $white;
+    text-decoration: none;
+  }
+}
+
+// A voyage's ships (field_voyage_ships): one line, comma-separated, rather
+// than a stacked list. Names with a Ship record link to it.
+.field--name-field-voyage-ships .field__item {
+  display: inline;
+
+  &:not(:last-child)::after {
+    content: ', ';
   }
 }
 
@@ -113,11 +118,9 @@
   }
 }
 
-// Field rows: the record's own fields, and each section of a sectioned
-// field (whose wrapper is not a row itself).
+// Field rows: the record's own fields.
 @mixin eiw-record-rows {
-  > .field,
-  > .eiw-sectioned > .eiw-section {
+  > .field {
     margin: 0;
     padding: 1.25rem 0;
     border-bottom: 1px solid $gray-100;
@@ -139,14 +142,7 @@
     }
   }
 
-  > .eiw-sectioned {
-    margin: 0;
-    padding: 0;
-    border: 0;
-  }
-
-  > .field:last-child,
-  > .eiw-sectioned:last-child > .eiw-section:last-child {
+  > .field:last-child {
     border-bottom: 0;
   }
 
@@ -234,6 +230,23 @@
 
   &__name {
     margin-bottom: .5rem;
+
+    // The identity label is a field: keep it on the heading's line.
+    .field,
+    .field__item {
+      display: inline;
+    }
+  }
+
+  // Service years beside the name, a step down, like a subtitle.
+  &__years {
+    margin-left: .5rem;
+    font-family: $eiw-font-sans;
+    font-size: .6em;
+    font-weight: 600;
+    letter-spacing: .03em;
+    color: $gray-600;
+    white-space: nowrap;
   }
 
   &__figure {

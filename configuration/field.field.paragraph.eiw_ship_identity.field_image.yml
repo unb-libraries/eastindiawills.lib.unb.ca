@@ -12,7 +12,7 @@ field_name: field_image
 entity_type: paragraph
 bundle: eiw_ship_identity
 label: Image
-description: 'A picture of this ship, or a representative picture of a ship of its type (tick "Representative image").'
+description: 'A picture of this ship itself. Leave empty to show its type''s representative picture (set on the ship type).'
 required: false
 translatable: true
 default_value: {  }

@@ -117,36 +117,14 @@ function eastindiawills_unb_lib_ca_preprocess_node(&$variables) {
 }
 
 /**
- * Implements hook_theme_suggestions_HOOK_alter() for field.html.twig.
- *
- * A formatted text field whose HTML carries its own section labels (see
- * _eastindiawills_unb_lib_ca_text_sections()) is rendered by
- * field--eiw-sectioned.html.twig, one field row per section.
- */
-function eastindiawills_unb_lib_ca_theme_suggestions_field_alter(array &$suggestions, array $variables) {
-  $element = $variables['element'];
-  if (!_eastindiawills_unb_lib_ca_is_record_field($element) || $element['#formatter'] !== 'text_default') {
-    return;
-  }
-  foreach ($element['#items'] as $item) {
-    if (_eastindiawills_unb_lib_ca_text_sections((string) $item->value) !== NULL) {
-      $suggestions[] = 'field__eiw_sectioned';
-      return;
-    }
-  }
-}
-
-/**
  * Implements hook_preprocess_HOOK() for field.html.twig.
  *
- * Much of the migrated voyage and ship research carries its own labels
- * inside the field value, which would otherwise render as bold or plain
- * "Label:" text under the field's real label. Restyle them to match:
- * - Formatted text (text_default): top-level "<p><strong>Label</strong>"
- *   headings split the value into sections, each rendered as its own field
- *   row (eiw_sections, for field--eiw-sectioned.html.twig).
+ * Record fields (wills, voyages, ships and their paragraphs):
  * - Plain text notes (basic_string): one paragraph per line, and a leading
  *   "Label: " on a line becomes a run-in label (.eiw-runin).
+ * - Formatted text (text_default) and notes: source URLs become "Source"
+ *   links (see _eastindiawills_unb_lib_ca_source_links()).
+ * - A voyage's ship names link to their Ship pages.
  */
 function eastindiawills_unb_lib_ca_preprocess_field(&$variables) {
   $element = $variables['element'];
@@ -161,6 +139,11 @@ function eastindiawills_unb_lib_ca_preprocess_field(&$variables) {
   }
 
   if (!_eastindiawills_unb_lib_ca_is_record_field($element)) {
+    return;
+  }
+
+  if ($element['#field_name'] === 'field_voyage_ships') {
+    _eastindiawills_unb_lib_ca_link_ship_names($variables);
     return;
   }
 
@@ -179,33 +162,15 @@ function eastindiawills_unb_lib_ca_preprocess_field(&$variables) {
   }
 
   if ($element['#formatter'] === 'text_default') {
-    $sections = [];
-    $split = FALSE;
     foreach ($element['#items'] as $delta => $item) {
       if (!isset($variables['items'][$delta])) {
         continue;
       }
-      $item_sections = _eastindiawills_unb_lib_ca_text_sections((string) $item->value);
-      if ($item_sections === NULL) {
-        $content = &$variables['items'][$delta]['content'];
-        if (($content['#type'] ?? NULL) === 'processed_text') {
-          $content = _eastindiawills_unb_lib_ca_processed_text_with_sources((string) $content['#text'], $content['#format'], $content['#langcode'] ?? $item->getLangcode());
-        }
-        $sections[] = ['label' => NULL, 'content' => $content];
-        unset($content);
-        continue;
+      $content = &$variables['items'][$delta]['content'];
+      if (($content['#type'] ?? NULL) === 'processed_text') {
+        $content = _eastindiawills_unb_lib_ca_processed_text_with_sources((string) $content['#text'], $content['#format'], $content['#langcode'] ?? $item->getLangcode());
       }
-      $split = TRUE;
-      foreach ($item_sections as $section) {
-        // Each section still goes through the field's text format.
-        $sections[] = [
-          'label' => $section['label'],
-          'content' => _eastindiawills_unb_lib_ca_processed_text_with_sources($section['html'], $item->format, $item->getLangcode()),
-        ];
-      }
-    }
-    if ($split) {
-      $variables['eiw_sections'] = $sections;
+      unset($content);
     }
   }
 }
@@ -220,6 +185,46 @@ function eastindiawills_unb_lib_ca_preprocess_paragraph(&$variables) {
   if ($variables['paragraph']->bundle() === 'eiw_voyage_stop' && $variables['view_mode'] === 'table_row') {
     $variables['eiw_denied_columns'] = _eastindiawills_unb_lib_ca_denied_columns($variables['paragraph'], $variables);
   }
+  if ($variables['paragraph']->bundle() === 'eiw_ship_identity') {
+    _eastindiawills_unb_lib_ca_preprocess_ship_identity($variables);
+  }
+}
+
+/**
+ * Adds a ship identity's service years and type picture to its template.
+ *
+ * - eiw_years: "1622–1631" (or one year) from In Service From/To, shown
+ *   beside the ship's name.
+ * - eiw_type_image, eiw_type_caption: for a ship with no picture of its
+ *   own, its type's representative picture and caption (from the Ship types
+ *   term), shown in the same place and size as an own picture would be.
+ *
+ * @param array $variables
+ *   The paragraph template variables.
+ */
+function _eastindiawills_unb_lib_ca_preprocess_ship_identity(array &$variables): void {
+  $paragraph = $variables['paragraph'];
+
+  $from = $paragraph->get('field_service_from')->value;
+  $to = $paragraph->get('field_service_to')->value;
+  $variables['eiw_years'] = ($from && $to && $from != $to) ? "{$from}–{$to}" : ($from ?: $to);
+
+  if (!$paragraph->get('field_image')->isEmpty()) {
+    return;
+  }
+  $type = $paragraph->get('field_vessel_type')->entity;
+  if (!$type || !$type->hasField('field_image') || $type->get('field_image')->isEmpty()) {
+    return;
+  }
+  // The type's picture is formatted like the identity's own would be.
+  $display = \Drupal::service('entity_display.repository')
+    ->getViewDisplay('paragraph', 'eiw_ship_identity', $variables['view_mode']);
+  $image_options = $display->getComponent('field_image') ?? ['type' => 'image'];
+  $variables['eiw_type_image'] = $type->get('field_image')->view(['label' => 'hidden'] + $image_options);
+  $variables['eiw_type_caption'] = $type->get('field_image_caption')->view(['label' => 'hidden', 'type' => 'text_default']);
+  CacheableMetadata::createFromRenderArray($variables)
+    ->addCacheableDependency($type)
+    ->applyTo($variables);
 }
 
 /**
@@ -252,6 +257,50 @@ function _eastindiawills_unb_lib_ca_denied_columns(FieldableEntityInterface $sto
   }
   $cacheability->applyTo($variables);
   return $denied;
+}
+
+/**
+ * Links a voyage's ship names to their Ship pages.
+ *
+ * field_voyage_ships keeps the fleet's names as researched, since many of
+ * its ships have no Ship record. A name matching a Ship's title (ignoring
+ * case) that the viewer can see links to it; the others stay text. The
+ * field varies with the Ship list, so it's cached against it.
+ *
+ * @param array $variables
+ *   The field template variables.
+ */
+function _eastindiawills_unb_lib_ca_link_ship_names(array &$variables): void {
+  $cacheability = CacheableMetadata::createFromRenderArray($variables)
+    ->addCacheTags(['node_list:eiw_ship']);
+  $names = [];
+  foreach ($variables['element']['#items'] as $item) {
+    $names[] = (string) $item->value;
+  }
+  $ships = [];
+  if ($names) {
+    $storage = \Drupal::entityTypeManager()->getStorage('node');
+    $ids = $storage->getQuery()
+      ->accessCheck(TRUE)
+      ->condition('type', 'eiw_ship')
+      ->condition('title', $names, 'IN')
+      ->execute();
+    foreach ($storage->loadMultiple($ids) as $ship) {
+      $ships[mb_strtolower($ship->label())] = $ship;
+    }
+  }
+  foreach ($names as $delta => $name) {
+    $ship = $ships[mb_strtolower($name)] ?? NULL;
+    if ($ship && isset($variables['items'][$delta])) {
+      $variables['items'][$delta]['content'] = [
+        '#type' => 'link',
+        '#title' => $name,
+        '#url' => $ship->toUrl(),
+      ];
+      $cacheability->addCacheableDependency($ship);
+    }
+  }
+  $cacheability->applyTo($variables);
 }
 
 /**
@@ -449,111 +498,6 @@ function _eastindiawills_unb_lib_ca_processed_text_with_sources(string $text, ?s
   $build = ['#markup' => Markup::create(_eastindiawills_unb_lib_ca_source_links($html))];
   BubbleableMetadata::createFromRenderArray($processed)->applyTo($build);
   return $build;
-}
-
-/**
- * Splits formatted text into labelled sections at its own label paragraphs.
- *
- * A top-level paragraph that opens with a short <strong> label starts a
- * section, if the label ends with a colon ("<p><strong>Ships:</strong>
- * Mary</p>": the rest of the paragraph is the section's first content) or
- * is the whole paragraph ("<p><strong>Sources</strong></p>"). Everything
- * up to the next label paragraph belongs to that section.
- *
- * Within sections, the trailing colon is dropped from a list item's leading
- * <strong> label ("<li><strong>Outward:</strong> ..."), which _records.scss
- * styles as a run-in label, and the text after it is capitalized. (The text
- * format strips classes, so they can't be marked up here.)
- *
- * @param string $html
- *   The unfiltered field value; the caller filters each section's HTML.
- *
- * @return array|null
- *   One ['label' => ?string, 'html' => string] per section (the first has
- *   no label if text precedes the first label paragraph), or NULL if the
- *   value has no label paragraphs.
- */
-function _eastindiawills_unb_lib_ca_text_sections(string $html): ?array {
-  // Called for the same values from the suggestions alter and preprocess.
-  static $cache = [];
-  $key = hash('sha256', $html);
-  if (array_key_exists($key, $cache)) {
-    return $cache[$key];
-  }
-  if (!preg_match('/<(strong|b)\b/i', $html)) {
-    return $cache[$key] = NULL;
-  }
-
-  $dom = Html::load($html);
-  $body = $dom->getElementsByTagName('body')->item(0);
-
-  foreach (iterator_to_array($dom->getElementsByTagName('li')) as $li) {
-    $strong = _eastindiawills_unb_lib_ca_leading_strong($li);
-    if ($strong && str_ends_with(trim($strong->textContent), ':')) {
-      $label = rtrim(trim($strong->textContent), ':');
-      while ($strong->firstChild) {
-        $strong->removeChild($strong->firstChild);
-      }
-      $strong->appendChild($dom->createTextNode($label));
-      $next = $strong->nextSibling;
-      if ($next instanceof \DOMText) {
-        $next->data = _eastindiawills_unb_lib_ca_capitalize($next->data);
-      }
-    }
-  }
-
-  $sections = [];
-  $labelled = FALSE;
-  foreach (iterator_to_array($body->childNodes) as $node) {
-    $strong = ($node instanceof \DOMElement && strtolower($node->nodeName) === 'p')
-      ? _eastindiawills_unb_lib_ca_leading_strong($node)
-      : NULL;
-    $label = $strong ? trim($strong->textContent) : '';
-    if ($strong && (str_ends_with($label, ':') || trim($node->textContent) === $label)) {
-      $labelled = TRUE;
-      $node->removeChild($strong);
-      $sections[] = ['label' => rtrim($label, ': '), 'html' => ''];
-      if (trim($node->textContent) === '') {
-        continue;
-      }
-    }
-    if (!$sections) {
-      $sections[] = ['label' => NULL, 'html' => ''];
-    }
-    $sections[array_key_last($sections)]['html'] .= $dom->saveHTML($node);
-  }
-
-  if (!$labelled) {
-    return $cache[$key] = NULL;
-  }
-  return $cache[$key] = array_values(array_filter(
-    $sections,
-    fn(array $section) => trim(strip_tags($section['html'])) !== '',
-  ));
-}
-
-/**
- * Returns an element's leading <strong>/<b> label, if it opens with one.
- *
- * @param \DOMElement $element
- *   A paragraph or list item.
- *
- * @return \DOMElement|null
- *   The label element: the first non-whitespace child, if it's a <strong>
- *   or <b> of 1-60 characters.
- */
-function _eastindiawills_unb_lib_ca_leading_strong(\DOMElement $element): ?\DOMElement {
-  foreach ($element->childNodes as $child) {
-    if ($child instanceof \DOMText && trim($child->textContent) === '') {
-      continue;
-    }
-    if ($child instanceof \DOMElement && in_array(strtolower($child->nodeName), ['strong', 'b'], TRUE)) {
-      $length = mb_strlen(trim($child->textContent));
-      return ($length > 0 && $length <= 60) ? $child : NULL;
-    }
-    return NULL;
-  }
-  return NULL;
 }
 
 /**

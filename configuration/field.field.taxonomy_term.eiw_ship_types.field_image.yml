@@ -1,0 +1,38 @@
+uuid: b8407a70-b9c4-4547-9cc9-4871d9956e78
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_image
+    - taxonomy.vocabulary.eiw_ship_types
+  module:
+    - image
+id: taxonomy_term.eiw_ship_types.field_image
+field_name: field_image
+entity_type: taxonomy_term
+bundle: eiw_ship_types
+label: 'Representative image'
+description: 'A picture of a ship of this type, shown for ships of this type that have no picture of their own.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: ship_images
+  file_extensions: 'png gif jpg jpeg webp'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: null
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

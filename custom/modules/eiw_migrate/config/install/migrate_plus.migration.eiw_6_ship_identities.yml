@@ -23,7 +23,13 @@ process:
   field_identity_label: label
   field_former_names: former_names
   field_later_names: later_names
-  field_ship_type: ship_type
+  field_vessel_type:
+    - plugin: skip_on_empty
+      method: process
+      source: ship_type
+    - plugin: migration_lookup
+      migration: eiw_5_ship_types
+      no_stub: true
   field_burthen: burthen_tons
   field_burthen_note: burthen_note
   field_acquired: acquired
@@ -58,11 +64,11 @@ process:
   field_image_caption/format:
     plugin: default_value
     default_value: unb_libraries
-  field_image_representative: image_representative
   field_sources/value: sources
   field_sources/format:
     plugin: default_value
     default_value: unb_libraries
+  field_confidence: confidence
   field_notes: notes
 
 destination:
@@ -75,6 +81,7 @@ migration_dependencies:
   optional:
     - eiw_4_voyages
     - eiw_5_ship_images
+    - eiw_5_ship_types
 
 dependencies:
   module:

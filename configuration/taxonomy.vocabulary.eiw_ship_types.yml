@@ -1,0 +1,9 @@
+uuid: 2b9643b6-dc9d-4cf5-b97d-50bec83b00e2
+langcode: en
+status: true
+dependencies: {  }
+name: 'Ship types'
+vid: eiw_ship_types
+description: 'Kinds of vessel (ship, pinnace, ...), each with a representative picture shown for ships that have no picture of their own.'
+weight: 0
+new_revision: false

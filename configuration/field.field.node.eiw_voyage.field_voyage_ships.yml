@@ -1,0 +1,19 @@
+uuid: f34e94d8-0668-4c5c-9581-6146801ecfa3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_voyage_ships
+    - node.type.eiw_voyage
+id: node.eiw_voyage.field_voyage_ships
+field_name: field_voyage_ships
+entity_type: node
+bundle: eiw_voyage
+label: Ships
+description: 'The ships of the fleet, one per entry, named as in the research. A name that matches a Ship record links to it.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,30 @@
+uuid: 75273e64-38dd-4ff3-8853-86188be08456
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_confidence
+field_name: field_confidence
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: confirmed
+      label: Confirmed
+    -
+      value: probable
+      label: Probable
+    -
+      value: unverified
+      label: Unverified
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

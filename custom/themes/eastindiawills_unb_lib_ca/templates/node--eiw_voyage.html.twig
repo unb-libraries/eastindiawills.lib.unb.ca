@@ -76,7 +76,7 @@
   {{ title_prefix }}                                                     
   {% if label and not page %}                                        
     <h2{{ title_attributes }}>                             
-      <a href="{{ url }}" rel="bookmark">{{ 'Voyage: ' ~ label }}</a>                      
+      <a href="{{ url }}" rel="bookmark">{% if view_mode != 'full' %}{{ 'Voyage:'|t }} {% endif %}{{ label }}</a>                      
     </h2>                                                                    
   {% endif %}                          
   {{ title_suffix }}                       
