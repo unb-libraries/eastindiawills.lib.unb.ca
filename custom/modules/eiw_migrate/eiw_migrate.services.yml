@@ -14,3 +14,8 @@ services:
     arguments: ['@config.factory']
     tags:
       - { name: event_subscriber }
+  eiw_migrate.test_wills_builder:
+    class: Drupal\eiw_migrate\Event\TestWillsBuilder
+    arguments: ['@entity_type.manager', '@file.repository', '@file_system', '@extension.list.module']
+    tags:
+      - { name: event_subscriber }

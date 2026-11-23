@@ -1,0 +1,313 @@
+# Test wills, for checking the will page with every field filled in:
+# summary, a transcription of two or three paragraphs (placeholder text),
+# health notes, voyages, the original document, keywords, and so on.
+#
+# Not part of the data import: run it by itself, and roll it back to remove
+# the test wills:
+#   drush mim eiw_9_test_wills
+#   drush mr eiw_9_test_wills
+#
+# Voyages, ships and roles are looked up by name among existing records
+# (src/Event/TestWillsBuilder.php), so import the voyages first; one that
+# isn't found is left out. Keywords are created if they don't exist.
+id: eiw_9_test_wills
+label: Test wills with complete data
+
+migration_tags:
+  - Test
+
+source:
+  plugin: embedded_data
+  ids:
+    id:
+      type: string
+  constants:
+    format: unb_libraries
+    notes: 'Test record (eiw_9_test_wills migration). Remove with: drush mr eiw_9_test_wills'
+  data_rows:
+    # Long transcription: shown collapsed, with "Show full transcription".
+    - id: test-1
+      first_name: Richard
+      last_name: Hale
+      additional_names:
+        - 'Executor: Margaret Hale'
+        - 'Overseer: Thomas Wilkes'
+        - 'Witness: John Cole'
+      date_of_will: '1601-03-14'
+      date_of_probate: '1604-07-02'
+      year_only_will: 0
+      year_only_probate: 0
+      court: Prerogative Court of Canterbury
+      shipboard: 1
+      marital_status: Married
+      source_type: Digital
+      reference: 'PROB 11/104/212'
+      keywords: 'Debts, Wages, Pepper, Clothing'
+      pdf: 00443457728d84dd788caac1ff49b7d1.pdf
+      voyages:
+        - voyage: '1601 First Separate Voyage (Lancaster)'
+          ship: Red Dragon
+          role: Merchant
+      summary: >-
+        <p>A merchant aboard the Red Dragon leaves his wages and a share of
+        pepper to his wife Margaret, with small bequests of clothing to
+        shipmates and a sum for the poor of his home parish.</p>
+      transcription: >-
+        <p>In the name of God Amen. Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Integer posuere erat a ante venenatis dapibus
+        posuere velit aliquet. Maecenas faucibus mollis interdum. Cras justo
+        odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper
+        nulla non metus auctor fringilla. Vestibulum id ligula porta felis
+        euismod semper. Nullam quis risus eget urna mollis ornare vel eu
+        leo. Cum sociis natoque penatibus et magnis dis parturient montes,
+        nascetur ridiculus mus. Aenean lacinia bibendum nulla sed
+        consectetur. Praesent commodo cursus magna, vel scelerisque nisl
+        consectetur et. Etiam porta sem malesuada magna mollis euismod.
+        Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
+        eget lacinia odio sem nec elit.</p>
+        <p>Item I give and bequeath unto my loving wife Margaret Hale all my
+        wages due unto me from the Company. Sed posuere consectetur est at
+        lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+        condimentum nibh, ut fermentum massa justo sit amet risus. Morbi leo
+        risus, porta ac consectetur ac, vestibulum at eros. Vivamus sagittis
+        lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur
+        blandit tempus porttitor. Nulla vitae elit libero, a pharetra augue.
+        Maecenas sed diam eget risus varius blandit sit amet non magna.
+        Donec id elit non mi porta gravida at eget metus. Aenean eu leo quam.
+        Pellentesque ornare sem lacinia quam venenatis vestibulum. Integer
+        posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+        <p>Item I give unto John Cole my best suit of apparel and my sea
+        chest. Etiam porta sem malesuada magna mollis euismod. Cras mattis
+        consectetur purus sit amet fermentum. Vestibulum id ligula porta
+        felis euismod semper. Donec sed odio dui. Nullam id dolor id nibh
+        ultricies vehicula ut id elit. Fusce dapibus, tellus ac cursus
+        commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
+        amet risus. Cras justo odio, dapibus ac facilisis in, egestas eget
+        quam. Maecenas faucibus mollis interdum. Sed posuere consectetur est
+        at lobortis. In witness whereof I have hereunto set my hand and seal
+        the fourteenth day of March in the three and fortieth year of the
+        reign of our sovereign lady Elizabeth.</p>
+      health_notes: >-
+        <p>Described as "sick in body but of perfect memory". Lorem ipsum
+        dolor sit amet, consectetur adipiscing elit.</p>
+
+    # Short transcription: shown in full, no toggle.
+    - id: test-2
+      first_name: William
+      last_name: Ashby
+      additional_names:
+        - 'Executor: Robert Ashby'
+        - 'Witness: Henry Dale'
+      date_of_will: '1607-05-20'
+      date_of_probate: '1610-11-08'
+      year_only_will: 0
+      year_only_probate: 0
+      court: Commissary Court of London
+      shipboard: 0
+      marital_status: Single
+      source_type: Microfilm
+      reference: 'MS 9171/21, f. 144'
+      keywords: 'Tools, Brother, Debts'
+      pdf: 19fafcc97e78ccc428e5f46cbab958fb.pdf
+      voyages:
+        - voyage: '1607 Third Separate Voyage (Keeling)'
+          ship: Hector
+          role: Carpenter
+      summary: >-
+        <p>A carpenter about to sail on the Hector leaves his tools and
+        goods to his brother Robert, who is to pay his debts.</p>
+      transcription: >-
+        <p>In the name of God Amen. Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Donec ullamcorper nulla non metus auctor fringilla.
+        Vestibulum id ligula porta felis euismod semper. Cum sociis natoque
+        penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        Aenean lacinia bibendum nulla sed consectetur.</p>
+        <p>Item I give unto my brother Robert Ashby all my tools and chest.
+        Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+        Etiam porta sem malesuada magna mollis euismod. Duis mollis, est non
+        commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec
+        elit. Sealed and delivered in the presence of Henry Dale.</p>
+      health_notes: >-
+        <p>No mention of illness; made "being bound on a voyage to the East
+        Indies".</p>
+
+    # Year-only dates and two voyages.
+    - id: test-3
+      first_name: Edmund
+      last_name: Thorne
+      additional_names:
+        - 'Executrix: Joan Thorne'
+        - 'Witness: Nicholas Payne'
+        - 'Witness: Giles Barker'
+      date_of_will: '1610-01-01'
+      date_of_probate: '1613-01-01'
+      year_only_will: 1
+      year_only_probate: 1
+      court: Archdeaconry Court of London
+      shipboard: 1
+      marital_status: Widowed
+      source_type: Original
+      reference: 'MS 9052/4'
+      keywords: 'Children, Cloves, Wages, Charity'
+      pdf: 36dfb009a3b04c105a3c8eb43cb9e4e8.pdf
+      voyages:
+        - voyage: '1610 Sixth Separate Voyage (Henry Middleton)'
+          ship: Peppercorn
+          role: Purser
+        - voyage: '1611 Eighth Separate Voyage (Saris)'
+          ship: Clove
+          role: Purser
+      summary: >-
+        <p>A widowed purser, who served on two voyages, provides for his
+        children through his sister-in-law Joan, and leaves cloves bought
+        on his own account to be sold for the poor.</p>
+      transcription: >-
+        <p>In the name of God Amen. Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Nullam quis risus eget urna mollis ornare vel eu
+        leo. Maecenas sed diam eget risus varius blandit sit amet non magna.
+        Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
+        Curabitur blandit tempus porttitor. Donec id elit non mi porta
+        gravida at eget metus.</p>
+        <p>Item I will that my cloves be sold and the money thereof given to
+        the poor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus
+        dolor auctor. Morbi leo risus, porta ac consectetur ac, vestibulum at
+        eros. Nulla vitae elit libero, a pharetra augue. Aenean eu leo quam.
+        Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+        <p>The rest of my goods I give unto Joan Thorne, whom I make my
+        executrix, for the bringing up of my children. Cras mattis
+        consectetur purus sit amet fermentum. Donec sed odio dui. Fusce
+        dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
+        Witnesses Nicholas Payne and Giles Barker.</p>
+      health_notes: >-
+        <p>"Weak in body." Sed posuere consectetur est at lobortis.</p>
+
+    # Transcription just under the 2,000-character collapse threshold,
+    # shown in full; probate long after the will.
+    - id: test-4
+      first_name: Christopher
+      last_name: Langley
+      additional_names:
+        - 'Executor: Anne Langley'
+        - 'Overseer: Captain Thomas Best'
+      date_of_will: '1612-02-09'
+      date_of_probate: '1617-06-23'
+      year_only_will: 0
+      year_only_probate: 0
+      court: Prerogative Court of Canterbury
+      shipboard: 1
+      marital_status: Married
+      source_type: Print
+      reference: 'PROB 11/129/488'
+      keywords: 'Gunpowder, Wages, Ring, Debts'
+      pdf: 5221f7d03d84565d8a55f577224baedf.pdf
+      voyages:
+        - voyage: '1612 Tenth Separate Voyage (Best)'
+          ship: Red Dragon
+          role: Gunner
+      summary: >-
+        <p>The gunner of the Red Dragon leaves his wages and a gold ring to
+        his wife Anne, names his captain as overseer, and forgives the
+        debts of two of his mates.</p>
+      transcription: >-
+        <p>In the name of God Amen. Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Cras justo odio, dapibus ac facilisis in, egestas
+        eget quam. Donec ullamcorper nulla non metus auctor fringilla.
+        Vestibulum id ligula porta felis euismod semper. Nullam quis risus
+        eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et
+        magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia
+        bibendum nulla sed consectetur. Praesent commodo cursus magna, vel
+        scelerisque nisl consectetur et. Etiam porta sem malesuada magna
+        mollis euismod. Duis mollis, est non commodo luctus, nisi erat
+        porttitor ligula, eget lacinia odio sem nec elit. Maecenas faucibus
+        mollis interdum.</p>
+        <p>Item I give unto my wife Anne Langley my gold ring and all such
+        wages as shall be due unto me. Sed posuere consectetur est at
+        lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+        condimentum nibh, ut fermentum massa justo sit amet risus. Morbi leo
+        risus, porta ac consectetur ac, vestibulum at eros. Vivamus sagittis
+        lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur
+        blandit tempus porttitor. Nulla vitae elit libero, a pharetra augue.
+        Maecenas sed diam eget risus varius blandit sit amet non magna. Donec
+        id elit non mi porta gravida at eget metus. Aenean eu leo quam.</p>
+        <p>Item I forgive unto my mates all such sums as they owe me. Etiam
+        porta sem malesuada magna mollis euismod. Cras mattis consectetur
+        purus sit amet fermentum. Vestibulum id ligula porta felis euismod
+        semper. Donec sed odio dui. Nullam id dolor id nibh ultricies
+        vehicula ut id elit. Cras justo odio, dapibus ac facilisis in,
+        egestas eget quam. Maecenas faucibus mollis interdum. And I desire
+        Captain Thomas Best to be overseer of this my last will. Written
+        aboard the Red Dragon the ninth of February 1611.</p>
+      health_notes: >-
+        <p>Wounded in the fight with the Portuguese off Swally; lorem ipsum
+        dolor sit amet.</p>
+
+process:
+  # The title is set from the name and probate date on save
+  # (eiw_core_node_presave()); this just fills the required field.
+  title: last_name
+  status:
+    plugin: default_value
+    default_value: 1
+  field_tropy_title: id
+  field_first_name: first_name
+  field_last_name: last_name
+  field_additional_names: additional_names
+  field_date_of_will: date_of_will
+  field_date_of_probate: date_of_probate
+  field_year_only_will: year_only_will
+  field_year_only_probate: year_only_probate
+  field_shipboard_will: shipboard
+  field_reference: reference
+  field_court:
+    plugin: entity_lookup
+    source: court
+    entity_type: taxonomy_term
+    bundle_key: vid
+    bundle: eiw_courts
+    value_key: name
+  field_marital_status:
+    plugin: entity_lookup
+    source: marital_status
+    entity_type: taxonomy_term
+    bundle_key: vid
+    bundle: eiw_marital_statuses
+    value_key: name
+  field_source_type:
+    plugin: entity_lookup
+    source: source_type
+    entity_type: taxonomy_term
+    bundle_key: vid
+    bundle: eiw_source_types
+    value_key: name
+  field_keywords:
+    - plugin: explode
+      source: keywords
+      delimiter: ', '
+    - plugin: entity_generate
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: eiw_keywords
+      value_key: name
+  field_summary/value: summary
+  field_summary/format: constants/format
+  field_transcription/value: transcription
+  field_transcription/format: constants/format
+  field_health_notes/value: health_notes
+  field_health_notes/format: constants/format
+  field_notes: constants/notes
+  # Created by TestWillsBuilder.
+  field_will_voyages: will_voyage_refs
+  field_document_images: document_ref
+
+destination:
+  plugin: entity:node
+  default_bundle: eiw_will
+
+migration_dependencies: {}
+
+dependencies:
+  module:
+    - eiw_migrate
+  enforced:
+    module:
+      - eiw_migrate
