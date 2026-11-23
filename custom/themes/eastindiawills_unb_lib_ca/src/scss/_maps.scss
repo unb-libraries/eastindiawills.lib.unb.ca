@@ -1,6 +1,8 @@
 // Voyage maps (eiw_core's eiw-voyage-map.html.twig): routes drawn as SVG
 // over the engraved base map. One colour per voyage (.eiw-voyage-map--cN,
-// N cycling 1-6); outbound legs solid, homeward legs dashed.
+// N cycling 1-6); outbound legs solid, homeward legs dashed. A map of a
+// single voyage, where colour needn't tell voyages apart, draws its
+// homeward leg in the secondary blue too.
 
 $eiw-route-colours: (
   1: $eiw-red,
@@ -41,6 +43,18 @@ $eiw-route-colours: (
 
   &__arrow {
     fill: var(--eiw-route);
+  }
+
+  &--single &__route {
+    --eiw-route-homeward: #{$eiw-blue};
+  }
+
+  &--single &__leg--homeward {
+    stroke: var(--eiw-route-homeward);
+  }
+
+  &--single &__arrow--homeward {
+    fill: var(--eiw-route-homeward);
   }
 
   &__port {
@@ -120,5 +134,14 @@ $eiw-route-colours: (
       margin-left: .75rem;
       border-top-style: dashed;
     }
+  }
+
+  // Single voyage: the key shows the route's colours.
+  &--single &__key-line--outbound {
+    border-top-color: $eiw-red;
+  }
+
+  &--single &__key-line--homeward {
+    border-top-color: $eiw-blue;
   }
 }

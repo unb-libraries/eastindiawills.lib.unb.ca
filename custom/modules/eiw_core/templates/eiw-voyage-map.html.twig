@@ -6,7 +6,9 @@
  * Built by \Drupal\eiw_core\VoyageMapBuilder. Colours and line styles are
  * set in the theme (.eiw-voyage-map, _maps.scss): routes carry a
  * .eiw-voyage-map--cN colour class, and outbound/homeward legs a
- * .eiw-voyage-map__leg--outbound/--homeward class.
+ * .eiw-voyage-map__leg--outbound/--homeward class (and their arrows
+ * .eiw-voyage-map__arrow--outbound/--homeward). A map with one route is
+ * .eiw-voyage-map--single.
  *
  * Available variables:
  * - map_id: A unique id for this map on the page.
@@ -23,7 +25,7 @@
  */
 #}
 {% set arrow_scale = (label_size / 14)|round(2) %}
-<figure class="eiw-voyage-map" id="{{ map_id }}">
+<figure class="eiw-voyage-map{{ not show_legend ? ' eiw-voyage-map--single' }}" id="{{ map_id }}">
   <svg class="eiw-voyage-map__svg" viewBox="{{ viewbox }}" role="img" aria-labelledby="{{ map_id }}-title">
     <title id="{{ map_id }}-title">{{ 'Map of voyage routes:'|t }} {{ routes|column('label')|join('; ') }}</title>
     <image href="{{ base_map }}" width="{{ width }}" height="{{ height }}" preserveAspectRatio="none"/>
@@ -32,7 +34,7 @@
         {% for leg in route.legs %}
           <path class="eiw-voyage-map__leg eiw-voyage-map__leg--{{ leg.leg }}" d="{{ leg.path }}" vector-effect="non-scaling-stroke"/>
           {% for arrow in leg.arrows %}
-            <path class="eiw-voyage-map__arrow" d="M-5 -3.5L4 0L-5 3.5Z" transform="translate({{ arrow.x }} {{ arrow.y }}) rotate({{ arrow.angle }}) scale({{ arrow_scale }})"/>
+            <path class="eiw-voyage-map__arrow eiw-voyage-map__arrow--{{ leg.leg }}" d="M-5 -3.5L4 0L-5 3.5Z" transform="translate({{ arrow.x }} {{ arrow.y }}) rotate({{ arrow.angle }}) scale({{ arrow_scale }})"/>
           {% endfor %}
         {% endfor %}
       </g>

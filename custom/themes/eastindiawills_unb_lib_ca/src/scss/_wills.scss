@@ -64,8 +64,9 @@
     margin-left: 0;
   }
 
+  // In the secondary blue, beside the red of the search button.
   .facet-item__count {
-    color: $eiw-red;
+    color: $eiw-blue;
     white-space: nowrap;
     // Old-style figures, as in the concept design's "(660)".
     font-variant-numeric: oldstyle-nums;
@@ -105,6 +106,11 @@
       outline: 2px solid $eiw-red;
       outline-offset: 2px;
     }
+  }
+
+  // The minimum (from) handle in blue, so the two ends are told apart.
+  .ui-slider .ui-slider-handle:first-of-type {
+    border-color: $eiw-blue;
   }
 
   // Value tooltips: small dark tags above the handles.

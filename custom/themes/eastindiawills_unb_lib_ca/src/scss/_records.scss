@@ -60,7 +60,8 @@
 
 // A source citation's link (see _eastindiawills_unb_lib_ca_source_links()):
 // a small outlined chip, "SOURCE ↗", in the run-in label's type, that fills
-// on hover. The arrow marks it as leaving the site; it's hidden from screen
+// on hover, in the palette's secondary blue (red stays for links in
+// the text). The arrow marks it as leaving the site; it's hidden from screen
 // readers, which hear "Source: archive.org" instead.
 //
 // It looks the same wherever it appears (field rows, ship facts, the
@@ -70,7 +71,7 @@ a.eiw-source {
   display: inline-block;
   margin-left: .125rem;
   padding: .0625rem .4375rem;
-  border: 1px solid rgba($link-color, .45);
+  border: 1px solid rgba($eiw-blue, .45);
   border-radius: 999px;
   font-family: $eiw-font-sans;
   font-size: .75rem * $eiw-type-scale;
@@ -83,7 +84,7 @@ a.eiw-source {
   white-space: nowrap;
   vertical-align: .1em;
   overflow-wrap: normal;
-  color: $link-color;
+  color: $eiw-blue;
 
   &::after {
     content: '\2197' / '';
@@ -92,8 +93,8 @@ a.eiw-source {
 
   &:hover,
   &:focus-visible {
-    border-color: $link-color;
-    background-color: $link-color;
+    border-color: $eiw-blue;
+    background-color: $eiw-blue;
     color: $white;
     text-decoration: none;
   }
