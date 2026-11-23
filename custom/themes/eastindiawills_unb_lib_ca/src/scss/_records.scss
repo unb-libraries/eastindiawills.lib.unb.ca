@@ -296,21 +296,22 @@ a.eiw-source {
   }
 }
 
-// Buttons on record pages: outlined in the red accent, like the /wills
-// search button, filled on hover.
+// Secondary buttons on record pages (show more, copy): outlined like the
+// /wills search button, but in the palette's secondary blue, leaving red
+// for links and the main action. Filled on hover.
 .eiw-btn {
   padding: .375rem 1rem;
   background: none;
-  border: 1px solid $eiw-red;
+  border: 1px solid $eiw-blue;
   font-family: $eiw-font-sans;
   font-size: .9375rem * $eiw-type-scale;
   font-weight: 600;
-  color: $eiw-red;
+  color: $eiw-blue;
 
   &:hover,
   &:focus-visible {
-    background: $eiw-red;
-    border-color: $eiw-red;
+    background: $eiw-blue;
+    border-color: $eiw-blue;
     color: $white;
   }
 }
@@ -415,15 +416,18 @@ a.eiw-source {
 }
 
 // "Cite this record" box in the will sidebar (eiw-citation.js adds the
-// access date and the Copy button).
+// access date and the Copy button). The palette's lightest and darkest
+// blues (its "darkest / lightest tones" pairing): a pale blue ground, the
+// label in navy.
 .eiw-citation {
   margin: 1.25rem 0;
   padding: 1.25rem 1.5rem;
-  background: mix($white, map-get($eiw-red-tints, 4), 55%);
+  background: mix($white, map-get($eiw-blue-tints, 3), 55%);
 
   &__label {
     @include eiw-record-label;
     margin-bottom: .5rem;
+    color: map-get($eiw-blue-shades, 3);
   }
 
   &__text {
