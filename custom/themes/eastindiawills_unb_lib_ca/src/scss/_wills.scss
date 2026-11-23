@@ -108,9 +108,10 @@
     }
   }
 
-  // The minimum (from) handle in blue, so the two ends are told apart.
-  .ui-slider .ui-slider-handle:first-of-type {
-    border-color: $eiw-blue;
+  // The minimum (from) handle's highlight in blue, so the two ends are
+  // told apart while moving them.
+  .ui-slider .ui-slider-handle:first-of-type:focus-visible {
+    outline-color: $eiw-blue;
   }
 
   // Value tooltips: small dark tags above the handles.
