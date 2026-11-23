@@ -295,3 +295,149 @@ a.eiw-source {
     }
   }
 }
+
+// Buttons on record pages: outlined in the red accent, like the /wills
+// search button, filled on hover.
+.eiw-btn {
+  padding: .375rem 1rem;
+  background: none;
+  border: 1px solid $eiw-red;
+  font-family: $eiw-font-sans;
+  font-size: .9375rem * $eiw-type-scale;
+  font-weight: 600;
+  color: $eiw-red;
+
+  &:hover,
+  &:focus-visible {
+    background: $eiw-red;
+    border-color: $eiw-red;
+    color: $white;
+  }
+}
+
+// Will page (node--eiw-will--full.html.twig): two columns, after the law
+// pages of Laws of Enslavement and Freedom. The will and what it says on
+// the left, the facts about the record (and a citation) on the right; each
+// column is a column of record rows (.eiw-record).
+.eiw-will {
+  &__row {
+    --bs-gutter-x: 0;
+  }
+
+  // The columns set the measure, not the single-column record width.
+  .eiw-record > * {
+    max-width: none;
+  }
+
+  // Summary as a lead paragraph, without its label, like a law's abstract.
+  &__lead {
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid $gray-100;
+    font-size: 1.5rem * $eiw-type-scale;
+    font-style: italic;
+    line-height: 1.45;
+    color: $eiw-ink;
+
+    .field__label {
+      @include visually-hidden;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  // Long transcriptions show their first part, fading out, until expanded.
+  &__transcript-body {
+    position: relative;
+
+    &.collapse:not(.show) {
+      display: block;
+      max-height: 32rem;
+      overflow: hidden;
+    }
+
+    // Bootstrap animates from zero height, which would jump from the
+    // preview down to nothing first; just open.
+    &.collapsing {
+      height: auto !important;
+      transition: none;
+    }
+  }
+
+  &__fade {
+    display: none;
+
+    .collapse:not(.show) > & {
+      display: block;
+      position: absolute;
+      inset: auto 0 0;
+      height: 6rem;
+      background: linear-gradient(rgba($white, 0), $white);
+      pointer-events: none;
+    }
+  }
+
+  &__transcript-actions {
+    margin-top: .75rem;
+
+    .eiw-will__collapse {
+      display: none;
+    }
+
+    .eiw-btn:not(.collapsed) {
+      .eiw-will__expand {
+        display: none;
+      }
+
+      .eiw-will__collapse {
+        display: inline;
+      }
+    }
+  }
+
+  &__aside {
+    margin-top: 2rem;
+
+    @include media-breakpoint-up(lg) {
+      margin-top: 0;
+    }
+
+    // Line the sidebar's first row up with the top of the main column.
+    > .field:first-child {
+      padding-top: 0;
+    }
+  }
+
+  &__original .pdfpreview {
+    margin: 0;
+  }
+}
+
+// "Cite this record" box in the will sidebar (eiw-citation.js adds the
+// access date and the Copy button).
+.eiw-citation {
+  margin: 1.25rem 0;
+  padding: 1.25rem 1.5rem;
+  background: mix($white, map-get($eiw-red-tints, 4), 55%);
+
+  &__label {
+    @include eiw-record-label;
+    margin-bottom: .5rem;
+  }
+
+  &__text {
+    margin: 0 0 1rem;
+    font-size: $font-size-sm;
+    font-style: italic;
+    overflow-wrap: anywhere;
+
+    em {
+      font-style: normal;
+    }
+  }
+
+  &__url {
+    font-style: normal;
+  }
+}

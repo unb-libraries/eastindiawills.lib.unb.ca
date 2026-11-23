@@ -1,0 +1,142 @@
+{#
+/**
+ * @file
+ * A will's full page, in two columns after the law pages of Laws of
+ * Enslavement and Freedom (slaveryandfreedomlaws.lib.unb.ca):
+ * - Main column: the will itself and what it tells us. The summary as a
+ *   lead paragraph, the transcription (collapsed behind Expand/Collapse when
+ *   long), the voyages and their map, health notes, notes, and the source.
+ * - Sidebar: the facts about the record. Testator, dates, court and status,
+ *   a citation to copy, the original document, and keywords.
+ *
+ * Both columns use the shared record design (.eiw-record in _records.scss);
+ * the will-specific layout is .eiw-will in _records.scss. Fields the layout
+ * doesn't place explicitly are shown at the end of the main column, so a
+ * newly added field isn't silently hidden.
+ *
+ * Available variables, besides those of node.html.twig:
+ * - eiw_testator: The testator's given name and surname.
+ * - eiw_citation: title, site and url of the citation line.
+ *
+ * @see _eastindiawills_unb_lib_ca_preprocess_will()
+ */
+#}
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    not node.isPublished() ? 'node--unpublished',
+    'node--view-mode-full',
+    'eiw-will',
+  ]
+%}
+{% set placed = [
+  'field_first_name', 'field_last_name', 'field_additional_names',
+  'field_summary', 'field_transcription', 'field_will_voyages', 'eiw_voyage_map',
+  'field_health_notes', 'field_notes',
+  'field_source_type', 'field_reference',
+  'field_date_of_will', 'field_date_of_probate', 'field_year_only_will', 'field_year_only_probate',
+  'field_court', 'field_shipboard_will', 'field_marital_status',
+  'field_document_images', 'field_keywords', 'links',
+] %}
+{% set transcript_id = 'eiw-transcript-' ~ node.id() %}
+{% set long_transcript = node.field_transcription.value|length > 2000 %}
+{{ attach_library('eastindiawills_unb_lib_ca/citation') }}
+<article{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+
+  <div class="row eiw-will__row">
+    <div class="col-12 col-lg-7 eiw-will__main eiw-record">
+      {% if content.field_summary|render|striptags|trim %}
+        <div class="eiw-will__lead">{{ content.field_summary }}</div>
+      {% endif %}
+
+      {% if content.field_transcription|render|striptags|trim %}
+        {% if long_transcript %}
+          <div class="field field--label-above eiw-will__transcript">
+            <div class="field__label">{{ 'Transcription'|t }}</div>
+            <div class="eiw-will__transcript-body collapse" id="{{ transcript_id }}">
+              {{ content.field_transcription|merge({'#label_display': 'hidden'}) }}
+              <div class="eiw-will__fade" aria-hidden="true"></div>
+            </div>
+            <div class="eiw-will__transcript-actions">
+              <button type="button" class="btn eiw-btn collapsed" data-bs-toggle="collapse" data-bs-target="#{{ transcript_id }}" aria-expanded="false" aria-controls="{{ transcript_id }}">
+                <span class="eiw-will__expand">{{ 'Show full transcription'|t }}</span>
+                <span class="eiw-will__collapse">{{ 'Show less'|t }}</span>
+              </button>
+            </div>
+          </div>
+        {% else %}
+          {{ content.field_transcription }}
+        {% endif %}
+      {% endif %}
+
+      {{ content.field_will_voyages }}
+      {{ content.eiw_voyage_map }}
+      {{ content.field_health_notes }}
+      {{ content.field_notes }}
+
+      {% set source_type = content.field_source_type|render|striptags|trim %}
+      {% if source_type or node.field_reference.value %}
+        <div class="field field--label-above eiw-will__source">
+          <div class="field__label">{{ 'Source'|t }}</div>
+          <div class="field__item">
+            {%- if source_type -%}
+              {{ content.field_source_type.0 }}
+            {%- endif -%}
+            {%- if source_type and node.field_reference.value -%}, {% endif -%}
+            {%- if node.field_reference.value -%}
+              {{ node.field_reference.value }}
+            {%- endif -%}
+          </div>
+        </div>
+      {% endif %}
+
+      {{ content|without(placed) }}
+    </div>
+
+    <aside class="col-12 col-lg-4 offset-lg-1 eiw-will__aside eiw-record" aria-label="{{ 'About this record'|t }}">
+      {% if eiw_testator %}
+        <div class="field field--label-above">
+          <div class="field__label">{{ 'Testator'|t }}</div>
+          <div class="field__item">{{ eiw_testator }}</div>
+        </div>
+      {% endif %}
+      {{ content.field_additional_names }}
+      {{ content.field_date_of_will }}
+      {{ content.field_date_of_probate }}
+      {{ content.field_court }}
+      {{ content.field_shipboard_will }}
+      {{ content.field_marital_status }}
+
+      <div class="eiw-citation">
+        <div class="eiw-citation__label">{{ 'Citation'|t }}</div>
+        <p class="eiw-citation__text">
+          &ldquo;{{ eiw_citation.title }}&rdquo; <em>{{ eiw_citation.site }}</em><span class="eiw-citation__accessed" hidden></span>, <span class="eiw-citation__url">{{ eiw_citation.url }}</span>
+        </p>
+        <button type="button" class="btn eiw-btn eiw-citation__copy" hidden>{{ 'Copy citation'|t }}</button>
+        <span class="eiw-citation__status visually-hidden" role="status"></span>
+      </div>
+
+      {% if content.field_document_images|render|trim %}
+        <div class="field field--label-above eiw-will__original">
+          <div class="field__label">{{ 'Original document'|t }}</div>
+          <div class="field__item">{{ content.field_document_images|merge({'#label_display': 'hidden'}) }}</div>
+        </div>
+      {% endif %}
+
+      {% set keywords = content.field_keywords|children %}
+      {% if keywords %}
+        <div class="field field--label-above eiw-will__keywords">
+          <div class="field__label">{{ 'Keywords'|t }}</div>
+          <div class="field__item">
+            {%- for keyword in keywords -%}
+              {{ keyword }}{{ not loop.last ? ', ' }}
+            {%- endfor -%}
+          </div>
+        </div>
+      {% endif %}
+    </aside>
+  </div>
+</article>

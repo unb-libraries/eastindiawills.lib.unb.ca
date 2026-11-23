@@ -106,14 +106,53 @@ function eastindiawills_unb_lib_ca_preprocess_views_view_field(&$variables) {
  * Implements hook_preprocess_HOOK() for node.html.twig.
  *
  * Will, voyage and ship pages share one record design (.eiw-record in
- * _records.scss): the will page's uppercase field labels over hairline
- * row dividers.
+ * _records.scss): uppercase field labels over hairline row dividers. Voyages
+ * and ships are a single column of fields; wills are two columns (see
+ * node--eiw-will--full.html.twig), each column styled the same way.
  */
 function eastindiawills_unb_lib_ca_preprocess_node(&$variables) {
-  $record_types = ['eiw_will', 'eiw_voyage', 'eiw_ship'];
-  if ($variables['view_mode'] === 'full' && in_array($variables['node']->bundle(), $record_types, TRUE)) {
+  if ($variables['view_mode'] !== 'full') {
+    return;
+  }
+  $node = $variables['node'];
+  if (in_array($node->bundle(), ['eiw_voyage', 'eiw_ship'], TRUE)) {
     $variables['content_attributes']['class'][] = 'eiw-record';
   }
+  elseif ($node->bundle() === 'eiw_will') {
+    _eastindiawills_unb_lib_ca_preprocess_will($variables);
+  }
+}
+
+/**
+ * Prepares a will's full page (node--eiw-will--full.html.twig).
+ *
+ * - eiw_testator: the given name and surname, for the sidebar.
+ * - eiw_citation: the parts of a "cite this record" line; the access date is
+ *   filled in by eiw-citation.js, so cached pages don't carry a stale one.
+ *
+ * @param array $variables
+ *   The node template variables.
+ */
+function _eastindiawills_unb_lib_ca_preprocess_will(array &$variables) {
+  $node = $variables['node'];
+
+  // Year-only dates are already shown as just the year by
+  // eiw_core_preprocess_node(), so the template leaves out the yes/no
+  // "Year only" fields.
+  $variables['eiw_testator'] = trim(implode(' ', array_filter([
+    $node->get('field_first_name')->value,
+    $node->get('field_last_name')->value,
+  ])));
+
+  $url = $node->toUrl('canonical', ['absolute' => TRUE])->toString(TRUE);
+  $variables['eiw_citation'] = [
+    'title' => $node->label(),
+    'site' => t('Wills of the East India Company'),
+    'url' => $url->getGeneratedUrl(),
+  ];
+  CacheableMetadata::createFromRenderArray($variables)
+    ->addCacheableDependency($url)
+    ->applyTo($variables);
 }
 
 /**
@@ -161,7 +200,10 @@ function eastindiawills_unb_lib_ca_preprocess_field(&$variables) {
     return;
   }
 
-  if ($element['#formatter'] === 'text_default') {
+  // "Source" chips are for the migrated voyage and ship research. A will's
+  // formatted text (transcription, summary, health notes) is entered by
+  // hand, so it's shown exactly as entered, links included.
+  if ($element['#formatter'] === 'text_default' && $element['#bundle'] !== 'eiw_will') {
     foreach ($element['#items'] as $delta => $item) {
       if (!isset($variables['items'][$delta])) {
         continue;

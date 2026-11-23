@@ -17,3 +17,12 @@ global-styling:
     # itself; subthemes are expected to supply their own compiled Bootstrap
     # JS. Copied from vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js.
     dist/js/bootstrap.bundle.min.js: { minified: true, weight: -10 }
+
+# "Cite this record" box on will pages: fills in the access date and adds a
+# Copy button. Attached by node--eiw-will--full.html.twig.
+citation:
+  js:
+    dist/js/eiw-citation.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
