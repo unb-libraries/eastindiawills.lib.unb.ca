@@ -5,6 +5,7 @@ use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Entity\FieldableEntityInterface;
 use Drupal\Core\Render\BubbleableMetadata;
 use Drupal\Core\Render\Markup;
+use Drupal\eiw_core\EiwCoreHelper;
 
 /**
  * @file
@@ -67,39 +68,22 @@ function eastindiawills_unb_lib_ca_preprocess_page(&$variables) {
 }
 
 /**
- * Implements hook_preprocess_HOOK() for views-view-field.html.twig.
+ * Implements hook_preprocess_HOOK() for page-title.html.twig.
  *
- * The wills listing's title is always "{Surname}, {Given name} [ {date} ]"
- * (the given name and comma are dropped if there's no first name - see
- * eiw_core_node_presave()), rendered as a link to the record. Tagging the
- * surname, given name and bracketed date as separate spans (rather than
- * hard-breaking them here) lets the CSS decide when to stack them onto
- * three lines - only once the column's narrow enough that it would
- * otherwise wrap mid-bracket - while leaving them to wrap normally at
- * wider widths (see .views-field-title in _wills.scss).
+ * Everywhere else, a will's title is just "Last, First" (see
+ * eiw_core_node_presave()) - but the will's own page still shows the
+ * probate date next to the name, same as before it was dropped from the
+ * node title itself (see EiwCoreHelper::eiwWillDisplayTitle()).
  */
-function eastindiawills_unb_lib_ca_preprocess_views_view_field(&$variables) {
-  if ($variables['view']->id() !== 'wills' || $variables['field']->field !== 'title') {
+function eastindiawills_unb_lib_ca_preprocess_page_title(&$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if (!$node instanceof \Drupal\node\NodeInterface || $node->bundle() !== 'eiw_will') {
     return;
   }
-  $variables['output'] = Markup::create(preg_replace_callback(
-    '#(<a\b[^>]*>)(.*?)(</a>)#s',
-    function (array $matches) {
-      $text = trim(strip_tags($matches[2]));
-      if (!preg_match('/^(.*?)(\s*\[[^\]]*\]\s*)$/', $text, $parts)) {
-        return $matches[0];
-      }
-      $name = trim($parts[1]);
-      $date = trim($parts[2]);
-      $comma_pos = strpos($name, ',');
-      $name_html = $comma_pos === FALSE
-        ? '<span class="eiw-title__surname">' . Html::escape($name) . '</span>'
-        : '<span class="eiw-title__surname">' . Html::escape(substr($name, 0, $comma_pos + 1)) . '</span> '
-          . '<span class="eiw-title__given">' . Html::escape(trim(substr($name, $comma_pos + 1))) . '</span>';
-      return $matches[1] . $name_html . ' <span class="eiw-title__date">' . Html::escape($date) . '</span>' . $matches[3];
-    },
-    (string) $variables['output']
-  ));
+  $variables['title'] = EiwCoreHelper::eiwWillDisplayTitle($node);
+  CacheableMetadata::createFromRenderArray($variables)
+    ->addCacheableDependency($node)
+    ->applyTo($variables);
 }
 
 /**
@@ -146,7 +130,7 @@ function _eastindiawills_unb_lib_ca_preprocess_will(array &$variables) {
 
   $url = $node->toUrl('canonical', ['absolute' => TRUE])->toString(TRUE);
   $variables['eiw_citation'] = [
-    'title' => $node->label(),
+    'title' => EiwCoreHelper::eiwWillDisplayTitle($node),
     'site' => t('Wills of the East India Company'),
     'url' => $url->getGeneratedUrl(),
   ];

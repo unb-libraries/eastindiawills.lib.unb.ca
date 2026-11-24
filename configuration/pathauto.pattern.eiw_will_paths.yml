@@ -7,7 +7,7 @@ dependencies:
 id: eiw_will_paths
 label: 'EIW Will Paths'
 type: 'canonical_entities:node'
-pattern: '/wills/[node:title]'
+pattern: '/wills/[node:field_last_name]-[node:field_first_name]-[node:field_date_of_probate:date:custom:Y-m-d]'
 selection_criteria:
   1894e537-9f27-4136-9353-f7103e73c92e:
     id: 'entity_bundle:node'

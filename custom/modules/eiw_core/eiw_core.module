@@ -56,31 +56,35 @@ function eiw_core_entity_field_access(string $operation, FieldDefinitionInterfac
 
 /**
  * Implements hook_ENTITY_TYPE_presave().
+ *
+ * A will's title is just "Last, First" (no probate date - admin listings,
+ * breadcrumbs, the <title> tag, the /wills listing, the URL alias, etc.
+ * don't need it). The two displays that still show the date
+ * (EiwCoreHelper::eiwWillDisplayTitle(): the will's own page title and the
+ * citation line) build it fresh from the fields instead of reading it back
+ * off the title.
  */
 function eiw_core_node_presave($entity) {
   // Check if the entity is a node of type 'eiw_will'.
   if ($entity->bundle() === 'eiw_will') {
-    // Set title to name/date values (single value fields).
-    $last_name = $entity->get('field_last_name')->value != '' ? 
+    $last_name = $entity->get('field_last_name')->value != '' ?
       trim($entity->get('field_last_name')->value) :
       'N/A';
-    $first_name = !$entity->get('field_first_name')->isEmpty() ? 
+    $first_name = !$entity->get('field_first_name')->isEmpty() ?
       ', ' . trim($entity->get('field_first_name')->value) :
       ''
     ;
-    $date = !$entity->get('field_date_of_probate')->isEmpty() ?
-      ' [ ' . $entity->get('field_date_of_probate')->value . ' ]': 
-      ' [ n.d. ]'
-    ;
-    
-    $entity->setTitle($last_name . $first_name . $date);
-    // Update document images PDF filename.
-    if ($entity->hasField('field_document_images') && 
+
+    $entity->setTitle($last_name . $first_name);
+    // Update document images PDF filename. Built from the dated display
+    // title (not the plain node title) so wills sharing a name across
+    // different years don't collide on the same filename.
+    if ($entity->hasField('field_document_images') &&
     !$entity->get('field_document_images')->isEmpty()) {
       $file = $entity->get('field_document_images')->entity;
       if ($file instanceof File) {
         // Set new filename
-        $file->setFilename(strtolower(EiwCoreHelper::eiwCoreSlugify($entity->getTitle())) . '.pdf');
+        $file->setFilename(strtolower(EiwCoreHelper::eiwCoreSlugify(EiwCoreHelper::eiwWillDisplayTitle($entity))) . '.pdf');
         $file->save();
       }
     }
