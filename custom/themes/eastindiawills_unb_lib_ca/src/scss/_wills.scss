@@ -185,14 +185,6 @@
     vertical-align: top;
     border-bottom-color: $gray-100;
   }
-
-  .views-field-title a {
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
 }
 
 // Results.
@@ -440,21 +432,6 @@
     font-size: inherit;
   }
 
-  // Every value links to a filtered /wills search. Links stay plain ink
-  // text and only show as links (red, underlined) on hover/focus, rather
-  // than a table full of red or underlines.
-  a {
-    color: inherit;
-    text-decoration: none;
-
-    &:hover,
-    &:focus-visible {
-      color: $eiw-red;
-      text-decoration: underline;
-      text-underline-offset: .2em;
-    }
-  }
-
   td.eiw-voyages__voyage {
     font-weight: 600;
     color: $eiw-ink;
@@ -482,7 +459,7 @@
     display: none;
   }
 
-  // A little air below the field's own "Will Voyage(s)" label.
+  // A little air below the field's own label.
   .field__label + & {
     margin-top: .5rem;
   }
@@ -586,19 +563,6 @@
     font-size: inherit;
   }
 
-  // Source links in the notes keep their own chip style (.eiw-source).
-  a:not(.eiw-source) {
-    color: inherit;
-    text-decoration: none;
-
-    &:hover,
-    &:focus-visible {
-      color: $eiw-red;
-      text-decoration: underline;
-      text-underline-offset: .2em;
-    }
-  }
-
   td.eiw-stops__port {
     font-weight: 600;
     color: $eiw-ink;
@@ -614,8 +578,7 @@
   &.eiw-stops--no-leg .eiw-stops__leg,
   &.eiw-stops--no-arrival .eiw-stops__arrival,
   &.eiw-stops--no-departure .eiw-stops__departure,
-  &.eiw-stops--no-notes .eiw-stops__notes,
-  &.eiw-stops--no-private-notes .eiw-stops__notes-private {
+  &.eiw-stops--no-notes .eiw-stops__notes {
     display: none;
   }
 }

@@ -39,13 +39,6 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_notes:
-    type: basic_string
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 5
-    region: content
   field_notes_public:
     type: basic_string
     label: above
@@ -62,4 +55,5 @@ content:
     weight: 0
     region: content
 hidden:
+  field_notes: true
   search_api_excerpt: true

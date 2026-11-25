@@ -12,7 +12,6 @@ dependencies:
     - taxonomy.vocabulary.eiw_roles
     - taxonomy.vocabulary.eiw_source_types
   module:
-    - eiw_core
     - node
     - override_node_options
     - system
@@ -61,7 +60,6 @@ permissions:
   - 'revert eiw_will revisions'
   - 'view any unpublished content'
   - 'view any unpublished eiw_will content'
-  - 'view eiw private notes'
   - 'view eiw_ship revisions'
   - 'view eiw_voyage revisions'
   - 'view eiw_will revisions'

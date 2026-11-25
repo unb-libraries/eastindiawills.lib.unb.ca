@@ -10,7 +10,7 @@ id: node.eiw_will.field_will_voyages
 field_name: field_will_voyages
 entity_type: node
 bundle: eiw_will
-label: 'Will Voyage(s)'
+label: 'Voyages, Ships and Roles'
 description: 'Enter each combination of voyage, ship, and role covered by the current will. Click the button below to add a new set.'
 required: false
 translatable: false

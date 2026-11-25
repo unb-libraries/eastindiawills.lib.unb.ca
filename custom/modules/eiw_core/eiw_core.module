@@ -1,10 +1,6 @@
 <?php
 
-use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Datetime\DrupalDateTime;
-use Drupal\Core\Field\FieldDefinitionInterface;
-use Drupal\Core\Field\FieldItemListInterface;
-use Drupal\Core\Session\AccountInterface;
 use Drupal\eiw_core\EiwCoreHelper;
 use Drupal\file\Entity\File;
 use Drupal\Core\Link;
@@ -21,38 +17,6 @@ use SearchApi\Item\ItemInterface;
  * again.
  */
 const EIW_CORE_LANDING_PAGE_UUID = '23b3a912-5ff5-4695-b5af-a5dbd2edd519';
-
-/**
- * Private, editors-only research fields, by field name and entity type.
- */
-const EIW_CORE_PRIVATE_FIELDS = [
-  'field_notes' => [
-    'node' => ['eiw_will', 'eiw_voyage'],
-    'paragraph' => ['eiw_ship_identity', 'eiw_voyage_stop'],
-  ],
-  'field_confidence' => [
-    'node' => ['eiw_voyage'],
-    'paragraph' => ['eiw_ship_identity'],
-  ],
-];
-
-/**
- * Implements hook_entity_field_access().
- *
- * The private research fields (EIW_CORE_PRIVATE_FIELDS: "Notes (Private)"
- * on wills, voyages, ship identities and voyage stops, and "Confidence" on
- * voyages and ship identities) are only shown, and only editable, with the
- * "view eiw private notes" permission (granted to EIW Editors). Everyone
- * else sees the public "Notes" field (field_notes_public) only.
- */
-function eiw_core_entity_field_access(string $operation, FieldDefinitionInterface $field_definition, AccountInterface $account, ?FieldItemListInterface $items = NULL): AccessResult {
-  $bundles = EIW_CORE_PRIVATE_FIELDS[$field_definition->getName()][$field_definition->getTargetEntityTypeId()] ?? [];
-  if (!in_array($field_definition->getTargetBundle(), $bundles, TRUE)) {
-    return AccessResult::neutral();
-  }
-  return AccessResult::forbiddenIf(!$account->hasPermission('view eiw private notes'))
-    ->cachePerPermissions();
-}
 
 /**
  * Implements hook_ENTITY_TYPE_presave().

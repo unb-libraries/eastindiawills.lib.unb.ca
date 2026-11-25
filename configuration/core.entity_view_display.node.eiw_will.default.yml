@@ -126,13 +126,6 @@ content:
     third_party_settings: {  }
     weight: 9
     region: content
-  field_notes:
-    type: basic_string
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 20
-    region: content
   field_reference:
     type: string
     label: above
@@ -203,6 +196,7 @@ content:
     weight: 19
     region: content
 hidden:
+  field_notes: true
   field_tropy_title: true
   links: true
   search_api_excerpt: true

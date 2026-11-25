@@ -11,7 +11,7 @@ id: node.eiw_will.field_transcription
 field_name: field_transcription
 entity_type: node
 bundle: eiw_will
-label: Transcription
+label: 'Will Transcription'
 description: ''
 required: false
 translatable: false

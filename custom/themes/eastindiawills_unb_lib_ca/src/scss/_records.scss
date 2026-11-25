@@ -331,22 +331,10 @@ a.eiw-source {
     max-width: none;
   }
 
-  // Summary as a lead paragraph, without its label, like a law's abstract.
-  &__lead {
-    padding-bottom: 1.25rem;
-    border-bottom: 1px solid $gray-100;
-    font-size: 1.5rem * $eiw-type-scale;
-    font-style: italic;
-    line-height: 1.45;
-    color: $eiw-ink;
-
-    .field__label {
-      @include visually-hidden;
-    }
-
-    p:last-child {
-      margin-bottom: 0;
-    }
+  // Line the columns' first rows up at the top.
+  &__main > .field:first-child,
+  &__aside > .field:first-child {
+    padding-top: 0;
   }
 
   // Long transcriptions show their first part, fading out, until expanded.
@@ -403,11 +391,6 @@ a.eiw-source {
 
     @include media-breakpoint-up(lg) {
       margin-top: 0;
-    }
-
-    // Line the sidebar's first row up with the top of the main column.
-    > .field:first-child {
-      padding-top: 0;
     }
   }
 

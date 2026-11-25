@@ -3,11 +3,16 @@
  * @file
  * A will's full page, in two columns after the law pages of Laws of
  * Enslavement and Freedom (slaveryandfreedomlaws.lib.unb.ca):
- * - Main column: the will itself and what it tells us. The summary as a
- *   lead paragraph, the transcription (collapsed behind Expand/Collapse when
- *   long), the voyages and their map, health notes, notes, and the source.
- * - Sidebar: the facts about the record. Testator, dates, court and status,
- *   a citation to copy, the original document, and keywords.
+ * - Main column: the will itself and what it tells us. The transcription
+ *   (collapsed behind "Show full transcription" when long), the voyages,
+ *   ships and roles and their map, notes, health notes, and the source.
+ * - Sidebar: the facts about the record. Date of will (marked if made on
+ *   board), date of probate, court, marital status, a citation to copy,
+ *   additional names, the original document, and keywords last.
+ *
+ * The testator's name is the page title, so it isn't repeated. Private
+ * notes (field_notes) are hidden in the display; they're only for the edit
+ * form.
  *
  * Both columns use the shared record design (.eiw-record in _records.scss);
  * the will-specific layout is .eiw-will in _records.scss. Fields the layout
@@ -15,7 +20,6 @@
  * newly added field isn't silently hidden.
  *
  * Available variables, besides those of node.html.twig:
- * - eiw_testator: The testator's given name and surname.
  * - eiw_citation: title, site and url of the citation line.
  *
  * @see _eastindiawills_unb_lib_ca_preprocess_will()
@@ -41,6 +45,7 @@
 ] %}
 {% set transcript_id = 'eiw-transcript-' ~ node.id() %}
 {% set long_transcript = node.field_transcription.value|length > 2000 %}
+{% set shipboard = node.field_shipboard_will.value %}
 {{ attach_library('eastindiawills_unb_lib_ca/citation') }}
 <article{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
@@ -48,14 +53,10 @@
 
   <div class="row eiw-will__row">
     <div class="col-12 col-lg-7 eiw-will__main eiw-record">
-      {% if content.field_summary|render|striptags|trim %}
-        <div class="eiw-will__lead">{{ content.field_summary }}</div>
-      {% endif %}
-
       {% if content.field_transcription|render|striptags|trim %}
         {% if long_transcript %}
           <div class="field field--label-above eiw-will__transcript">
-            <div class="field__label">{{ 'Transcription'|t }}</div>
+            <div class="field__label">{{ content.field_transcription['#title'] }}</div>
             <div class="eiw-will__transcript-body collapse" id="{{ transcript_id }}">
               {{ content.field_transcription|merge({'#label_display': 'hidden'}) }}
               <div class="eiw-will__fade" aria-hidden="true"></div>
@@ -74,8 +75,8 @@
 
       {{ content.field_will_voyages }}
       {{ content.eiw_voyage_map }}
+      {{ content.field_summary }}
       {{ content.field_health_notes }}
-      {{ content.field_notes }}
 
       {% set source_type = content.field_source_type|render|striptags|trim %}
       {% if source_type or node.field_reference.value %}
@@ -97,17 +98,21 @@
     </div>
 
     <aside class="col-12 col-lg-4 offset-lg-1 eiw-will__aside eiw-record" aria-label="{{ 'About this record'|t }}">
-      {% if eiw_testator %}
-        <div class="field field--label-above">
-          <div class="field__label">{{ 'Testator'|t }}</div>
-          <div class="field__item">{{ eiw_testator }}</div>
+      {# Date of will, with "(shipboard)" for a will made on board. #}
+      {% if content.field_date_of_will.0 or shipboard %}
+        <div class="field field--label-above eiw-will__date">
+          <div class="field__label">{{ 'Date of Will'|t }}</div>
+          <div class="field__item">
+            {%- if content.field_date_of_will.0 -%}
+              {{ content.field_date_of_will.0 }}{{ shipboard ? ' (' ~ 'shipboard'|t ~ ')' }}
+            {%- else -%}
+              {{ 'Shipboard'|t }}
+            {%- endif -%}
+          </div>
         </div>
       {% endif %}
-      {{ content.field_additional_names }}
-      {{ content.field_date_of_will }}
       {{ content.field_date_of_probate }}
       {{ content.field_court }}
-      {{ content.field_shipboard_will }}
       {{ content.field_marital_status }}
 
       <div class="eiw-citation">
@@ -118,6 +123,8 @@
         <button type="button" class="btn eiw-btn eiw-citation__copy" hidden>{{ 'Copy citation'|t }}</button>
         <span class="eiw-citation__status visually-hidden" role="status"></span>
       </div>
+
+      {{ content.field_additional_names }}
 
       {% if content.field_document_images|render|trim %}
         <div class="field field--label-above eiw-will__original">
