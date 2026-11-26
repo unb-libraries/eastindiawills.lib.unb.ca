@@ -36,13 +36,18 @@ function eastindiawills_unb_lib_ca_views_post_render($view, &$output, &$cache) {
 function eastindiawills_unb_lib_ca_preprocess_menu__main(&$variables) {
   $route_match = \Drupal::routeMatch();
   $current_route = $route_match->getRouteName();
-  // Route parameters as strings, to compare with the link's: the menu links
-  // to pages are all entity.node.canonical, told apart only by their node.
+  // The link's route parameters must match the current page's too: the menu
+  // links to pages are all entity.node.canonical, told apart only by their
+  // node. Only the link's own parameters are compared, since a page can have
+  // more (e.g. /wills has the view and display IDs; its link has none).
   $current_parameters = array_map('strval', $route_match->getRawParameters()->all());
   foreach ($variables['items'] as &$item) {
     $url = $item['url'];
-    if ($url->isRouted() && $url->getRouteName() === $current_route
-      && array_map('strval', $url->getRouteParameters()) == $current_parameters) {
+    if (!$url->isRouted() || $url->getRouteName() !== $current_route) {
+      continue;
+    }
+    $link_parameters = array_map('strval', $url->getRouteParameters());
+    if (array_intersect_key($current_parameters, $link_parameters) == $link_parameters) {
       $item['in_active_trail'] = TRUE;
     }
   }
