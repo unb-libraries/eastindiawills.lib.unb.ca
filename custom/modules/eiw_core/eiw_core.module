@@ -27,6 +27,13 @@ const EIW_CORE_LANDING_PAGE_UUID = '23b3a912-5ff5-4695-b5af-a5dbd2edd519';
 const EIW_CORE_VOYAGES_SHIPS_PAGE_UUID = 'd91cd68f-1976-4dcf-a0d4-cc332f83f803';
 
 /**
+ * The project introduction: the default text of the landing and About pages.
+ */
+const EIW_CORE_INTRO_TEXT = '<p>This collection brings together nearly 1,500 wills belonging to men who sailed aboard the East India Company’s ships during its formative years (1600–1625). These were arduous, multi-year voyages, often marked by extraordinarily high mortality rates. Estimates suggest that as many as 60% of those who embarked on these early voyages did not survive the journey. While this human toll was devastating for the men involved and the families they left behind, the wills they created offer an exceptional and largely untapped resource for historical research.</p>'
+  . '<p>By bringing together digitized wills, transcriptions and carefully curated metadata, this project aims to facilitate large-scale analysis of these remarkable primary sources. Collectively, these final testaments provide a window into the lives, relationships and experiences of early East India Company voyagers, offering insights into marital status and family structures, commercial activities and trading goods, networks of debt and credit aboard ship, apprenticeship and employment, religious beliefs, and the provision of medical care at sea.</p>'
+  . '<p>Much more than records of death and inheritance, these documents offer a rare opportunity to reconstruct the social, economic and personal worlds of the men who participated in the Company’s earliest voyages. We hope this collection will support new avenues of inquiry and provide historians and other researchers with a rich foundation for exploring the human experience behind the expansion of early English maritime trade.</p>';
+
+/**
  * The site's own pages, created once by eiw_core_create_pages_if_missing().
  *
  * Keyed by fixed UUID, like the landing page: each starts with placeholder
@@ -35,9 +42,9 @@ const EIW_CORE_VOYAGES_SHIPS_PAGE_UUID = 'd91cd68f-1976-4dcf-a0d4-cc332f83f803';
  */
 const EIW_CORE_PAGES = [
   EIW_CORE_LANDING_PAGE_UUID => [
-    'title' => 'Welcome',
+    'title' => 'The East India Company Wills Project',
     'alias' => '/home',
-    'body' => '<p>Welcome to Wills of the East India Company. This is a placeholder landing page - replace this text by editing this page.</p>',
+    'body' => EIW_CORE_INTRO_TEXT,
   ],
   EIW_CORE_VOYAGES_SHIPS_PAGE_UUID => [
     'title' => 'Voyages and Ships',
@@ -47,7 +54,7 @@ const EIW_CORE_PAGES = [
   'ecee8c28-918f-4504-af33-3f8cbaebce02' => [
     'title' => 'About the Project',
     'alias' => '/about',
-    'body' => '<p>This is placeholder text - replace it by editing this page.</p><p>This page will describe the Wills of the East India Company project: its aims, the sources the wills are drawn from, how they were transcribed and described, the people involved, and how to cite the site.</p>',
+    'body' => EIW_CORE_INTRO_TEXT,
   ],
 ];
 

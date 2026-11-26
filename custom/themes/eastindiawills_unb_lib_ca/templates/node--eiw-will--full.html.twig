@@ -6,9 +6,9 @@
  * - Main column: the will itself and what it tells us. The transcription
  *   (collapsed behind "Show full transcription" when long), the voyages,
  *   ships and roles and their map, notes, health notes, and the source.
- * - Sidebar: the facts about the record. Date of will (marked if made on
- *   board), date of probate, court, marital status, a citation to copy,
- *   additional names, the original document, and keywords last.
+ * - Sidebar: the facts about the record. The original document, date of
+ *   will (marked if made on board), date of probate, court, marital status,
+ *   additional names, keywords, and a citation to copy last.
  *
  * The testator's name is the page title, so it isn't repeated. Private
  * notes (field_notes) are hidden in the display; they're only for the edit
@@ -98,6 +98,13 @@
     </div>
 
     <aside class="col-12 col-lg-4 offset-lg-1 eiw-will__aside eiw-record" aria-label="{{ 'About this record'|t }}">
+      {% if content.field_document_images|render|trim %}
+        <div class="field field--label-above eiw-will__original">
+          <div class="field__label">{{ 'Original document'|t }}</div>
+          <div class="field__item">{{ content.field_document_images|merge({'#label_display': 'hidden'}) }}</div>
+        </div>
+      {% endif %}
+
       {# Date of will, with "(shipboard)" for a will made on board. #}
       {% if content.field_date_of_will.0 or shipboard %}
         <div class="field field--label-above eiw-will__date">
@@ -115,23 +122,7 @@
       {{ content.field_court }}
       {{ content.field_marital_status }}
 
-      <div class="eiw-citation">
-        <div class="eiw-citation__label">{{ 'Citation'|t }}</div>
-        <p class="eiw-citation__text">
-          &ldquo;{{ eiw_citation.title }}&rdquo; <em>{{ eiw_citation.site }}</em><span class="eiw-citation__accessed" hidden></span>, <span class="eiw-citation__url">{{ eiw_citation.url }}</span>
-        </p>
-        <button type="button" class="btn eiw-btn eiw-citation__copy" hidden>{{ 'Copy citation'|t }}</button>
-        <span class="eiw-citation__status visually-hidden" role="status"></span>
-      </div>
-
       {{ content.field_additional_names }}
-
-      {% if content.field_document_images|render|trim %}
-        <div class="field field--label-above eiw-will__original">
-          <div class="field__label">{{ 'Original document'|t }}</div>
-          <div class="field__item">{{ content.field_document_images|merge({'#label_display': 'hidden'}) }}</div>
-        </div>
-      {% endif %}
 
       {% set keywords = content.field_keywords|children %}
       {% if keywords %}
@@ -144,6 +135,15 @@
           </div>
         </div>
       {% endif %}
+
+      <div class="eiw-citation">
+        <div class="eiw-citation__label">{{ 'Citation'|t }}</div>
+        <p class="eiw-citation__text">
+          &ldquo;{{ eiw_citation.title }}&rdquo; <em>{{ eiw_citation.site }}</em><span class="eiw-citation__accessed" hidden></span>, <span class="eiw-citation__url">{{ eiw_citation.url }}</span>
+        </p>
+        <button type="button" class="btn eiw-btn eiw-citation__copy" hidden>{{ 'Copy citation'|t }}</button>
+        <span class="eiw-citation__status visually-hidden" role="status"></span>
+      </div>
     </aside>
   </div>
 </article>

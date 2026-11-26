@@ -17,10 +17,9 @@ eiw_core.about:
   menu_name: main
   url: 'internal:/about'
   weight: 30
-# Contact will be a mailto: link once the address is decided; until then
-# it points to the landing page.
+# A plain email link for now, to UNB Libraries systems.
 eiw_core.contact:
   title: 'Contact'
   menu_name: main
-  url: 'internal:/home'
+  url: 'mailto:systems@lib.unb.ca'
   weight: 40

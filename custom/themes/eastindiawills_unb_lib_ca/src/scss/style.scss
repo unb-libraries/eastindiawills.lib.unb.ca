@@ -34,6 +34,13 @@
 
 // Broad and site-wide rules (careful here).
 
+// Always reserve room for the vertical scrollbar, so the centred header,
+// content and footer don't jump sideways between pages that scroll (e.g.
+// /wills) and pages that don't (e.g. /about).
+html {
+  scrollbar-gutter: stable;
+}
+
 // Focus: no coloured shadow on anything (the Bootstrap variables above turn
 // off its focus rings; this catches the rest, e.g. the base theme's and
 // jQuery UI's). Bootstrap also removes the outline from focused buttons,
