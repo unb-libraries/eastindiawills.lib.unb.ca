@@ -29,6 +29,9 @@
 // Will, voyage and ship pages.
 @import 'records';
 
+// The site's own pages: landing page search, Voyages and Ships.
+@import 'pages';
+
 // Broad and site-wide rules (careful here).
 ul {
   list-style: none;

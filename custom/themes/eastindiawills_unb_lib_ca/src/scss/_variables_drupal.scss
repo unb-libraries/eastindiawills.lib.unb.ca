@@ -121,3 +121,18 @@ nav.tabs ul.primary {
 nav.tabs ul.secondary {
   margin: 0 0 1rem 0;
 }
+
+// Breadcrumb (templates/breadcrumb.html.twig): small sans, a step below
+// the body text, like the facet labels. The home link is a house icon
+// (Font Awesome, loaded site-wide by the fontawesome module).
+nav .breadcrumb {
+  font-family: $eiw-font-sans;
+  font-size: .9375rem * $eiw-type-scale;
+  line-height: 1.4;
+
+  .eiw-breadcrumb__home svg,
+  .eiw-breadcrumb__home i {
+    font-size: .9em;
+    vertical-align: -.05em;
+  }
+}

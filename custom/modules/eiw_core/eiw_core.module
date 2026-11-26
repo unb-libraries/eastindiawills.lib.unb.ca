@@ -6,17 +6,49 @@ use Drupal\file\Entity\File;
 use Drupal\Core\Link;
 use Drupal\Core\Url;
 use Drupal\node\Entity\Node;
+use Drupal\views\Views;
 use SearchApi\Item\ItemInterface;
 
 /**
  * The landing page node's fixed UUID.
  *
- * Lets eiw_core_create_landing_page_if_missing() recognize "the landing
+ * Lets eiw_core_create_pages_if_missing() recognize "the landing
  * page already exists" across every environment and every deploy, so it's
  * only ever created once and an editor's later changes are never touched
  * again.
  */
 const EIW_CORE_LANDING_PAGE_UUID = '23b3a912-5ff5-4695-b5af-a5dbd2edd519';
+
+/**
+ * The "Voyages and Ships" page's fixed UUID: an editable preamble, followed
+ * by lists of the voyages and ships (see eiw_core_node_view()).
+ */
+const EIW_CORE_VOYAGES_SHIPS_PAGE_UUID = 'd91cd68f-1976-4dcf-a0d4-cc332f83f803';
+
+/**
+ * The site's own pages, created once by eiw_core_create_pages_if_missing().
+ *
+ * Keyed by fixed UUID, like the landing page: each starts with placeholder
+ * text that editors then replace, and is linked from the main menu by its
+ * alias (eiw_core.links.menu.yml).
+ */
+const EIW_CORE_PAGES = [
+  EIW_CORE_LANDING_PAGE_UUID => [
+    'title' => 'Welcome',
+    'alias' => '/home',
+    'body' => '<p>Welcome to Wills of the East India Company. This is a placeholder landing page - replace this text by editing this page.</p>',
+  ],
+  EIW_CORE_VOYAGES_SHIPS_PAGE_UUID => [
+    'title' => 'Voyages and Ships',
+    'alias' => '/voyages-and-ships',
+    'body' => '<p>This is placeholder text - replace it by editing this page.</p><p>The men whose wills are gathered here sailed on the East India Company\'s early voyages to the East Indies. This introduction will describe the voyages and ships these wills cover: which years and voyages are included, where the itineraries come from, and how ships are identified. Every voyage and ship with a record on this site is listed below.</p>',
+  ],
+  'ecee8c28-918f-4504-af33-3f8cbaebce02' => [
+    'title' => 'About the Project',
+    'alias' => '/about',
+    'body' => '<p>This is placeholder text - replace it by editing this page.</p><p>This page will describe the Wills of the East India Company project: its aims, the sources the wills are drawn from, how they were transcribed and described, the people involved, and how to cite the site.</p>',
+  ],
+];
 
 /**
  * Implements hook_ENTITY_TYPE_presave().
@@ -351,7 +383,7 @@ function eiw_core_form_taxonomy_term_form_alter(&$form, \Drupal\Core\Form\FormSt
 }
 
 /**
- * Creates the landing page node and its /home alias, if not already done.
+ * Creates the site's own pages (EIW_CORE_PAGES), those not already created.
  *
  * Safe to call repeatedly (hook_install(), and on every config import via
  * EiwCoreConfigImportSubscriber) - a no-op once the node exists.
@@ -368,35 +400,35 @@ function eiw_core_form_taxonomy_term_form_alter(&$form, \Drupal\Core\Form\FormSt
  * before it exists; the config-import event subscriber is what reliably
  * runs after.
  */
-function eiw_core_create_landing_page_if_missing(): void {
+function eiw_core_create_pages_if_missing(): void {
   $entity_type_manager = \Drupal::entityTypeManager();
 
   if (!$entity_type_manager->getStorage('node_type')->load('page')) {
     return;
   }
 
-  $existing = $entity_type_manager->getStorage('node')
-    ->loadByProperties(['uuid' => EIW_CORE_LANDING_PAGE_UUID]);
-  if ($existing) {
-    return;
+  $storage = $entity_type_manager->getStorage('node');
+  foreach (EIW_CORE_PAGES as $uuid => $page) {
+    if ($storage->loadByProperties(['uuid' => $uuid])) {
+      continue;
+    }
+    $storage->create([
+      'uuid' => $uuid,
+      'type' => 'page',
+      'title' => $page['title'],
+      'body' => [
+        'value' => $page['body'],
+        'format' => 'unb_libraries',
+      ],
+      'path' => [
+        'alias' => $page['alias'],
+        // Disables Pathauto's own alias generation for this node, so its
+        // fixed alias isn't recomputed if the title is later edited.
+        'pathauto' => FALSE,
+      ],
+      'status' => 1,
+    ])->save();
   }
-
-  Node::create([
-    'uuid' => EIW_CORE_LANDING_PAGE_UUID,
-    'type' => 'page',
-    'title' => 'Welcome',
-    'body' => [
-      'value' => '<p>Welcome to Wills of the East India Company. This is a placeholder landing page - replace this text by editing this page.</p>',
-      'format' => 'unb_libraries',
-    ],
-    'path' => [
-      'alias' => '/home',
-      // Disables Pathauto's own alias generation for this node, so its
-      // fixed /home alias isn't recomputed if the title is later edited.
-      'pathauto' => FALSE,
-    ],
-    'status' => 1,
-  ])->save();
 }
 
 /**
@@ -443,6 +475,11 @@ function eiw_core_theme(): array {
         'base_map' => NULL,
       ],
     ],
+    'eiw_voyages_ships' => [
+      'variables' => [
+        'lists' => [],
+      ],
+    ],
   ];
 }
 
@@ -476,6 +513,10 @@ function eiw_core_entity_extra_field_info(): array {
 function eiw_core_node_view(array &$build, \Drupal\Core\Entity\EntityInterface $node, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, string $view_mode): void {
   if ($node->uuid() === EIW_CORE_LANDING_PAGE_UUID && $view_mode === 'full') {
     eiw_core_landing_page_saml_notice($build);
+    eiw_core_landing_page_search($build);
+  }
+  if ($node->uuid() === EIW_CORE_VOYAGES_SHIPS_PAGE_UUID && $view_mode === 'full') {
+    eiw_core_voyages_ships_lists($build);
   }
   if (!$display->getComponent('eiw_voyage_map')) {
     return;
@@ -527,7 +568,7 @@ function eiw_core_landing_page_saml_notice(array &$build): void {
     '#theme' => 'status_messages',
     '#message_list' => [
       'warning' => [
-        t('<strong>@institution accounts</strong> must sign in using <strong>@auth_link</strong>.', [
+        t('<strong class="d-block mb-1">Access restricted (under development)</strong> This site is under development and access to its features is restricted. <strong>@institution accounts</strong> must sign in using <strong>@auth_link</strong>.', [
           '@institution' => $saml_config->get('exclude_stu') ? 'UNB' : 'UNB/STU',
           '@auth_link' => Link::fromTextAndUrl(t('Secure Services Login'), Url::fromRoute('samlauth.saml_controller_login'))->toString(),
         ]),
@@ -535,5 +576,79 @@ function eiw_core_landing_page_saml_notice(array &$build): void {
     ],
     '#status_headings' => ['warning' => t('Warning message')],
     '#weight' => -100,
+  ];
+}
+
+/**
+ * Adds the /wills search box to the landing page, after its text.
+ *
+ * It's the wills view's own exposed form, so it submits to /wills with the
+ * same query parameter as searching there. The "Show All" reset button is
+ * left out: there's nothing to reset on the landing page.
+ */
+function eiw_core_landing_page_search(array &$build): void {
+  $build['#cache']['tags'][] = 'config:views.view.wills';
+  $view = Views::getView('wills');
+  if (!$view || !$view->access('page_1')) {
+    return;
+  }
+  $view->setDisplay('page_1');
+  $view->initHandlers();
+  $form = $view->display_handler->getPlugin('exposed_form')->renderExposedForm(TRUE);
+  if (!$form) {
+    return;
+  }
+  unset($form['actions']['reset']);
+  if (isset($form['actions']['submit'])) {
+    $form['actions']['submit']['#value'] = t('Search');
+  }
+  if (isset($form['search_api_fulltext'])) {
+    $form['search_api_fulltext']['#title'] = t('Search the wills');
+  }
+  $build['eiw_search'] = [
+    '#type' => 'container',
+    '#attributes' => ['class' => ['eiw-home-search']],
+    'form' => $form,
+    '#weight' => 50,
+  ];
+}
+
+/**
+ * Lists the voyages and ships on the "Voyages and Ships" page.
+ *
+ * Two columns after the page's editable preamble: every published voyage
+ * (by title, which starts with its year, so in date order) and ship (by
+ * name), each linking to its page. The placeholder "Unknown" records that
+ * wills point at when the voyage or ship isn't known are left out.
+ */
+function eiw_core_voyages_ships_lists(array &$build): void {
+  $storage = \Drupal::entityTypeManager()->getStorage('node');
+  $lists = [];
+  foreach (['eiw_voyage' => t('Voyages'), 'eiw_ship' => t('Ships')] as $bundle => $title) {
+    $ids = $storage->getQuery()
+      ->accessCheck(TRUE)
+      ->condition('type', $bundle)
+      ->condition('status', 1)
+      ->condition('title', 'Unknown', '<>')
+      ->sort('title')
+      ->execute();
+    $items = [];
+    foreach ($storage->loadMultiple($ids) as $node) {
+      $items[] = $node->toLink()->toRenderable();
+    }
+    $lists[$bundle] = [
+      'title' => $title,
+      'count' => count($items),
+      'items' => $items,
+    ];
+  }
+  $build['eiw_voyages_ships'] = [
+    '#theme' => 'eiw_voyages_ships',
+    '#lists' => $lists,
+    '#weight' => 50,
+    '#cache' => [
+      'tags' => ['node_list'],
+      'contexts' => ['user.permissions'],
+    ],
   ];
 }

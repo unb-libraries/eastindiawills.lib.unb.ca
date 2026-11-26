@@ -1,0 +1,55 @@
+// The site's own pages (EIW_CORE_PAGES in eiw_core.module).
+
+// Landing page: the /wills search box after the welcome text.
+.eiw-home-search {
+  margin: 2rem 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid $gray-100;
+
+  .views-exposed-form {
+    @include eiw-search-form;
+  }
+}
+
+// "Voyages and Ships": the voyages and ships, side by side after the
+// preamble, each a plain list of links.
+.eiw-voyages-ships {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid $gray-100;
+
+  &__list {
+    margin-bottom: 2rem;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      padding: .375rem 0;
+      border-bottom: 1px solid $gray-100;
+    }
+  }
+
+  &__title {
+    font-family: $eiw-font-sans;
+    font-size: 1.0625rem * $eiw-type-scale;
+    font-weight: 600;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+    color: $gray-700;
+    margin-bottom: .75rem;
+  }
+
+  &__count {
+    font-weight: normal;
+    color: $gray-600;
+  }
+
+  // Ship names in italics, as in the voyages tables.
+  &__list--eiw-ship a {
+    font-style: italic;
+  }
+}

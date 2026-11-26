@@ -10,9 +10,20 @@
  *
  * Covers a brand-new site install, where the "page" content type this needs
  * is typically already in place by the time modules are installed. See
- * eiw_core_create_landing_page_if_missing() for the case where it isn't -
+ * eiw_core_create_pages_if_missing() for the case where it isn't -
  * this project's normal deploys to already-existing environments.
  */
 function eiw_core_install(): void {
-  eiw_core_create_landing_page_if_missing();
+  eiw_core_create_pages_if_missing();
+}
+
+/**
+ * Creates the Voyages and Ships and About the Project pages.
+ *
+ * On existing sites the "page" content type is already in place, so this
+ * doesn't have to wait for a config import (which only creates them when
+ * there's configuration to import).
+ */
+function eiw_core_update_10001(): void {
+  eiw_core_create_pages_if_missing();
 }

@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * The voyages and ships lists on the "Voyages and Ships" page, side by side.
+ *
+ * Built by eiw_core_voyages_ships_lists(); styled in the theme
+ * (.eiw-voyages-ships).
+ *
+ * Available variables:
+ * - lists: Keyed by bundle (eiw_voyage, eiw_ship), each with title, count
+ *   and items (links).
+ */
+#}
+<div class="row eiw-voyages-ships">
+  {% for bundle, list in lists %}
+    <section class="col-12 col-md-6 eiw-voyages-ships__list eiw-voyages-ships__list--{{ bundle|clean_class }}">
+      <h2 class="eiw-voyages-ships__title">{{ list.title }} <span class="eiw-voyages-ships__count">({{ list.count }})</span></h2>
+      {% if list.items %}
+        <ul>
+          {% for item in list.items %}
+            <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p>{{ 'None yet.'|t }}</p>
+      {% endif %}
+    </section>
+  {% endfor %}
+</div>

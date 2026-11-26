@@ -6,7 +6,7 @@ use Drupal\Core\Config\ConfigEvents;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
- * Creates the landing page node once the "page" bundle it needs is ready.
+ * Creates the site's own pages (EIW_CORE_PAGES) once the "page" bundle is ready.
  *
  * hook_install() handles a brand-new site install, but this project's
  * deploy pipeline runs hook_update() hooks *before* configuration import
@@ -30,7 +30,7 @@ class ConfigImportSubscriber implements EventSubscriberInterface {
    * Reacts to a completed config import.
    */
   public function onConfigImport(): void {
-    eiw_core_create_landing_page_if_missing();
+    eiw_core_create_pages_if_missing();
   }
 
 }

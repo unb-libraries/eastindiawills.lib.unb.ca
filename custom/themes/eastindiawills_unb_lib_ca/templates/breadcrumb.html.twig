@@ -1,0 +1,34 @@
+{#
+/**
+ * @file
+ * Breadcrumb trail: the base theme's (bootstrap:breadcrumb), with the home
+ * link shown as a house icon (Font Awesome, loaded site-wide by the
+ * fontawesome module) and the word "Home" kept for screen readers.
+ *
+ * Available variables:
+ * - breadcrumb: Breadcrumb trail items.
+ * - breadcrumb_divider: Breadcrumb divider character.
+ */
+#}
+{% if breadcrumb %}
+  {% set front = path('<front>') %}
+  <nav role="navigation" aria-label="{{ 'Breadcrumb'|t }}" style="{{ breadcrumb_divider }}">
+    <ol class="breadcrumb">
+    {% for item in breadcrumb %}
+      {% if item.url %}
+        <li class="breadcrumb-item">
+          {% if loop.first and item.url == front %}
+            <a href="{{ item.url }}" class="eiw-breadcrumb__home"><i class="fa-solid fa-house" aria-hidden="true"></i><span class="visually-hidden">{{ item.text }}</span></a>
+          {% else %}
+            <a href="{{ item.url }}">{{ item.text }}</a>
+          {% endif %}
+        </li>
+      {% else %}
+        <li class="breadcrumb-item active" aria-current="page">
+          {{ item.text }}
+        </li>
+      {% endif %}
+    {% endfor %}
+    </ol>
+  </nav>
+{% endif %}

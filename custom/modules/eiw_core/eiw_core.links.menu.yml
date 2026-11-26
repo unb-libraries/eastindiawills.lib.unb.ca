@@ -1,7 +1,26 @@
 eiw_core.search:
-  title: 'Public Search'
-  description: 'Public Search'
+  title: 'Wills'
+  description: 'Search the wills'
   parent: main
   menu_name: main
   route_name: view.wills.page_1
   weight: 10
+# The site's own pages (EIW_CORE_PAGES in eiw_core.module), by their fixed
+# aliases, since their node IDs differ per environment.
+eiw_core.voyages_ships:
+  title: 'Voyages and Ships'
+  menu_name: main
+  url: 'internal:/voyages-and-ships'
+  weight: 20
+eiw_core.about:
+  title: 'About the Project'
+  menu_name: main
+  url: 'internal:/about'
+  weight: 30
+# Contact will be a mailto: link once the address is decided; until then
+# it points to the landing page.
+eiw_core.contact:
+  title: 'Contact'
+  menu_name: main
+  url: 'internal:/home'
+  weight: 40
