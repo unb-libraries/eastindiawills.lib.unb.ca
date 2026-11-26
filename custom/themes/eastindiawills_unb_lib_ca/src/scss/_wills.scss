@@ -188,7 +188,7 @@
 }
 
 // The wills search box: the /wills view's exposed form, on /wills and on
-// the landing page (eiw_core_landing_page_search()).
+// the landing page (eiw_core_wills_search_box()).
 @mixin eiw-search-form {
   // The base theme's template wraps the field and the actions container
   // in a plain d-flex with no gap, so they sit flush against each other.

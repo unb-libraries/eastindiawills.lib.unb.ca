@@ -1,10 +1,11 @@
 // The site's own pages (EIW_CORE_PAGES in eiw_core.module).
 
-// Landing page: the /wills search box after the welcome text.
+// Landing page: the /wills search box under the hero engraving, above the
+// page title, as wide as the engraving and left-aligned within it.
 .eiw-home-search {
-  margin: 2rem 0;
-  padding-top: 1.5rem;
-  border-top: 1px solid $gray-100;
+  max-width: 760px;
+  margin: 1.5rem auto 0;
+  text-align: left;
 
   .views-exposed-form {
     @include eiw-search-form;

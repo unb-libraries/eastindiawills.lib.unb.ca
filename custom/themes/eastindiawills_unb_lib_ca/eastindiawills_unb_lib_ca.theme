@@ -51,6 +51,7 @@ function eastindiawills_unb_lib_ca_preprocess_menu__main(&$variables) {
  * homepage per the concept design - specifically the landing page node
  * eiw_core creates (EIW_CORE_LANDING_PAGE_UUID), not just any node of its
  * "page" type (e.g. a future "About this site" page shouldn't get it too).
+ * The /wills search box goes under it, above the page title.
  */
 function eastindiawills_unb_lib_ca_preprocess_page(&$variables) {
   $route_match = \Drupal::routeMatch();
@@ -61,6 +62,7 @@ function eastindiawills_unb_lib_ca_preprocess_page(&$variables) {
     $node = $route_match->getParameter('node');
     if ($node instanceof \Drupal\node\NodeInterface && $node->uuid() === EIW_CORE_LANDING_PAGE_UUID) {
       $variables['eiw_hero'] = TRUE;
+      $variables['eiw_hero_search'] = eiw_core_wills_search_box();
     }
   }
   $variables['#cache']['contexts'][] = 'route.name';

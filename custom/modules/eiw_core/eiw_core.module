@@ -513,7 +513,6 @@ function eiw_core_entity_extra_field_info(): array {
 function eiw_core_node_view(array &$build, \Drupal\Core\Entity\EntityInterface $node, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, string $view_mode): void {
   if ($node->uuid() === EIW_CORE_LANDING_PAGE_UUID && $view_mode === 'full') {
     eiw_core_landing_page_saml_notice($build);
-    eiw_core_landing_page_search($build);
   }
   if ($node->uuid() === EIW_CORE_VOYAGES_SHIPS_PAGE_UUID && $view_mode === 'full') {
     eiw_core_voyages_ships_lists($build);
@@ -568,35 +567,41 @@ function eiw_core_landing_page_saml_notice(array &$build): void {
     '#theme' => 'status_messages',
     '#message_list' => [
       'warning' => [
-        t('<strong class="d-block mb-1">Access restricted (under development)</strong> This site is under development and access to its features is restricted. <strong>@institution accounts</strong> must sign in using <strong>@auth_link</strong>.', [
+        t('<strong>@institution accounts</strong> must sign in using <strong>@auth_link</strong>.', [
           '@institution' => $saml_config->get('exclude_stu') ? 'UNB' : 'UNB/STU',
           '@auth_link' => Link::fromTextAndUrl(t('Secure Services Login'), Url::fromRoute('samlauth.saml_controller_login'))->toString(),
         ]),
       ],
     ],
-    '#status_headings' => ['warning' => t('Warning message')],
+    '#status_headings' => ['warning' => t('Access restricted (under development)')],
     '#weight' => -100,
   ];
 }
 
 /**
- * Adds the /wills search box to the landing page, after its text.
+ * Builds the /wills search box shown on the landing page.
  *
  * It's the wills view's own exposed form, so it submits to /wills with the
  * same query parameter as searching there. The "Show All" reset button is
- * left out: there's nothing to reset on the landing page.
+ * left out: there's nothing to reset on the landing page. The theme places
+ * it between the hero engraving and the page title (see
+ * eastindiawills_unb_lib_ca_preprocess_page()).
+ *
+ * @return array
+ *   A render array; empty but for cacheability if the user can't search.
  */
-function eiw_core_landing_page_search(array &$build): void {
-  $build['#cache']['tags'][] = 'config:views.view.wills';
+function eiw_core_wills_search_box(): array {
+  $build = ['#cache' => ['tags' => ['config:views.view.wills']]];
   $view = Views::getView('wills');
   if (!$view || !$view->access('page_1')) {
-    return;
+    $build['#cache']['contexts'][] = 'user.permissions';
+    return $build;
   }
   $view->setDisplay('page_1');
   $view->initHandlers();
   $form = $view->display_handler->getPlugin('exposed_form')->renderExposedForm(TRUE);
   if (!$form) {
-    return;
+    return $build;
   }
   unset($form['actions']['reset']);
   if (isset($form['actions']['submit'])) {
@@ -605,11 +610,10 @@ function eiw_core_landing_page_search(array &$build): void {
   if (isset($form['search_api_fulltext'])) {
     $form['search_api_fulltext']['#title'] = t('Search the wills');
   }
-  $build['eiw_search'] = [
+  return $build + [
     '#type' => 'container',
     '#attributes' => ['class' => ['eiw-home-search']],
     'form' => $form,
-    '#weight' => 50,
   ];
 }
 
