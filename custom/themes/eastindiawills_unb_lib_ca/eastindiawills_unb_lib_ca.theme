@@ -30,16 +30,23 @@ function eastindiawills_unb_lib_ca_views_post_render($view, &$output, &$cache) {
  *
  * Marks main menu links pointing at the current route as active, so the
  * header can underline the current section regardless of query strings
- * (e.g. facet filters on /wills).
+ * (e.g. facet filters on /wills). The route's parameters must match too, or
+ * every page link would be active on every node page.
  */
 function eastindiawills_unb_lib_ca_preprocess_menu__main(&$variables) {
-  $current_route = \Drupal::routeMatch()->getRouteName();
+  $route_match = \Drupal::routeMatch();
+  $current_route = $route_match->getRouteName();
+  // Route parameters as strings, to compare with the link's: the menu links
+  // to pages are all entity.node.canonical, told apart only by their node.
+  $current_parameters = array_map('strval', $route_match->getRawParameters()->all());
   foreach ($variables['items'] as &$item) {
-    if ($item['url']->isRouted() && $item['url']->getRouteName() === $current_route) {
+    $url = $item['url'];
+    if ($url->isRouted() && $url->getRouteName() === $current_route
+      && array_map('strval', $url->getRouteParameters()) == $current_parameters) {
       $item['in_active_trail'] = TRUE;
     }
   }
-  $variables['#cache']['contexts'][] = 'route.name';
+  $variables['#cache']['contexts'][] = 'route';
 }
 
 /**

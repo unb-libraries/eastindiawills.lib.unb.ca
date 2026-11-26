@@ -201,6 +201,18 @@
     font-weight: 600;
   }
 
+  // Search and, once there's a search, Reset, side by side. The base theme
+  // gives both buttons .form-control, which makes each full width.
+  .form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem;
+
+    .btn.form-control {
+      width: auto;
+    }
+  }
+
   .form-control:not(.btn) {
     border-color: $gray-300;
 

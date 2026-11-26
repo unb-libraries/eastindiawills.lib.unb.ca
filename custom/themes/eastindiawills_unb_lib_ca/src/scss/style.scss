@@ -33,6 +33,36 @@
 @import 'pages';
 
 // Broad and site-wide rules (careful here).
+
+// Focus: no coloured shadow on anything (the Bootstrap variables above turn
+// off its focus rings; this catches the rest, e.g. the base theme's and
+// jQuery UI's). Bootstrap also removes the outline from focused buttons,
+// links and checkboxes, so keyboard focus gets a plain ink outline back.
+// Text inputs keep their darker border on focus instead.
+*:focus,
+*:focus-visible {
+  box-shadow: none !important;
+}
+
+.btn,
+.btn-close,
+.nav-link,
+.page-link,
+.navbar-toggler,
+.form-check-input,
+.form-select,
+.accordion-button {
+  &:focus-visible {
+    outline: 2px solid $eiw-ink;
+    outline-offset: 2px;
+  }
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: $eiw-ink;
+}
+
 ul {
   list-style: none;
 }

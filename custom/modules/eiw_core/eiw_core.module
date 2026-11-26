@@ -1,5 +1,6 @@
 <?php
 
+use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\eiw_core\EiwCoreHelper;
 use Drupal\file\Entity\File;
@@ -624,21 +625,38 @@ function eiw_core_wills_search_box(): array {
  * (by title, which starts with its year, so in date order) and ship (by
  * name), each linking to its page. The placeholder "Unknown" records that
  * wills point at when the voyage or ship isn't known are left out.
+ *
+ * Voyages are imported unpublished for editors to review, so the lists
+ * aren't limited to published records: each viewer sees the ones they can
+ * open, with unpublished ones marked as such.
  */
 function eiw_core_voyages_ships_lists(array &$build): void {
   $storage = \Drupal::entityTypeManager()->getStorage('node');
+  $cacheability = (new CacheableMetadata())
+    ->addCacheTags(['node_list'])
+    ->addCacheContexts(['user.permissions']);
   $lists = [];
   foreach (['eiw_voyage' => t('Voyages'), 'eiw_ship' => t('Ships')] as $bundle => $title) {
     $ids = $storage->getQuery()
       ->accessCheck(TRUE)
       ->condition('type', $bundle)
-      ->condition('status', 1)
       ->condition('title', 'Unknown', '<>')
       ->sort('title')
       ->execute();
     $items = [];
     foreach ($storage->loadMultiple($ids) as $node) {
-      $items[] = $node->toLink()->toRenderable();
+      $access = $node->access('view', NULL, TRUE);
+      $cacheability->addCacheableDependency($access);
+      if (!$access->isAllowed()) {
+        continue;
+      }
+      $item = ['link' => $node->toLink()->toRenderable()];
+      if (!$node->isPublished()) {
+        $item['unpublished'] = [
+          '#markup' => ' <span class="eiw-voyages-ships__unpublished">(' . t('unpublished') . ')</span>',
+        ];
+      }
+      $items[] = $item;
     }
     $lists[$bundle] = [
       'title' => $title,
@@ -650,9 +668,6 @@ function eiw_core_voyages_ships_lists(array &$build): void {
     '#theme' => 'eiw_voyages_ships',
     '#lists' => $lists,
     '#weight' => 50,
-    '#cache' => [
-      'tags' => ['node_list'],
-      'contexts' => ['user.permissions'],
-    ],
   ];
+  $cacheability->applyTo($build['eiw_voyages_ships']);
 }

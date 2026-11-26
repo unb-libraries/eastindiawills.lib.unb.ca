@@ -8,7 +8,8 @@
  *
  * Available variables:
  * - lists: Keyed by bundle (eiw_voyage, eiw_ship), each with title, count
- *   and items (links).
+ *   and items, each with a link and, if the record is unpublished, an
+ *   "(unpublished)" note.
  */
 #}
 <div class="row eiw-voyages-ships">
@@ -18,7 +19,7 @@
       {% if list.items %}
         <ul>
           {% for item in list.items %}
-            <li>{{ item }}</li>
+            <li>{{ item.link }}{{ item.unpublished }}</li>
           {% endfor %}
         </ul>
       {% else %}

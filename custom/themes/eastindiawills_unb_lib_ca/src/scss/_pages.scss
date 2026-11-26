@@ -49,6 +49,11 @@
     color: $gray-600;
   }
 
+  &__unpublished {
+    font-size: .875em;
+    color: $gray-600;
+  }
+
   // Ship names in italics, as in the voyages tables.
   &__list--eiw-ship a {
     font-style: italic;

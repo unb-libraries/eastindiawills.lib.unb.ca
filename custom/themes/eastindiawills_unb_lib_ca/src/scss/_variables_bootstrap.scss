@@ -12,6 +12,26 @@ $border-radius: 0;
 $border-radius-sm: 0;
 $border-radius-lg: 0;
 
+// No coloured glow around focused buttons, inputs, checkboxes, links etc.
+// anywhere: focus is shown with a plain outline instead (see "Focus" in
+// style.scss).
+$focus-ring-width: 0;
+$focus-ring-box-shadow: none;
+$input-btn-focus-width: 0;
+$input-btn-focus-box-shadow: none;
+$btn-focus-width: 0;
+$btn-focus-box-shadow: none;
+$input-focus-box-shadow: none;
+$form-select-focus-width: 0;
+$form-select-focus-box-shadow: none;
+$form-check-input-focus-box-shadow: none;
+$form-range-thumb-focus-box-shadow: none;
+$nav-link-focus-box-shadow: none;
+$pagination-focus-box-shadow: none;
+$accordion-button-focus-box-shadow: none;
+$btn-close-focus-shadow: none;
+$navbar-toggler-focus-width: 0;
+
 // Colour palette, from the "Company flag & colour palette" frame of
 // doc/eastIndia-concepts-figma.pdf. Primary is the Company flag red,
 // secondary a contrasting blue, text a near-black; each ramp runs from
