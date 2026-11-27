@@ -22,6 +22,12 @@
     justify-content: center;
   }
 
+  // The field's label sits directly above its input; keep it flush with the
+  // input's left edge rather than inheriting the centered text-align above.
+  label {
+    text-align: left;
+  }
+
   .form-actions {
     justify-content: center;
   }

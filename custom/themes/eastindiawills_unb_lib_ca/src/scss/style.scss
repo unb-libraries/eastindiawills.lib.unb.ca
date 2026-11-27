@@ -41,6 +41,13 @@ html {
   scrollbar-gutter: stable;
 }
 
+// Breathing room above every page's title (the page_title_block - see
+// block.block.eastindiawills_unb_lib_ca_page_title.yml), whatever precedes
+// it: breadcrumb, the /wills hero and search box, or nothing at all.
+#block-eastindiawills-unb-lib-ca-page-title {
+  margin-top: 2rem;
+}
+
 // Focus: no coloured shadow on anything (the Bootstrap variables above turn
 // off its focus rings; this catches the rest, e.g. the base theme's and
 // jQuery UI's). Bootstrap also removes the outline from focused buttons,

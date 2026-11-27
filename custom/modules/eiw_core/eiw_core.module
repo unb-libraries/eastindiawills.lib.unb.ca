@@ -284,52 +284,18 @@ function eiw_core_preprocess_node(array &$variables) {
  */
 function eiw_core_preprocess_paragraph(array &$variables) {
   /**
-   * Override voyage, ship, and role links to audit-wills when paragraph is displayed.
+   * Override role links to audit-wills when paragraph is displayed.
    * Only target the 'eiw_will_voyage' paragraph type.
-   */ 
+   *
+   * field_voyage and field_ship are left at their default rendering
+   * (entity_reference_label, link: true - see
+   * core.entity_view_display.paragraph.eiw_will_voyage.*.yml), which links
+   * to the Voyage/Ship node's own page. Both are complex entities now (an
+   * itinerary, ship identities, etc.), so that's worth visiting directly;
+   * only roles (a plain taxonomy term with nothing of its own to show) stay
+   * faceted to /wills.
+   */
   if ($variables['paragraph']->bundle() === 'eiw_will_voyage') {
-    // Handle field_voyage.
-    if (!empty($variables['content']['field_voyage']) and isset($variables['content']['field_voyage']['#items'])) {
-      // Loop through all referenced entities (should be just one).
-      foreach ($variables['content']['field_voyage']['#items'] as $delta => $item) {
-        // Load the referenced node.
-        $nid = $item->target_id;
-        $node = \Drupal::entityTypeManager()
-          ->getStorage('node')
-          ->load($nid);
-
-        if ($node && $node->bundle() == 'eiw_voyage') {
-          // Build your custom link. Example: change to a custom path or alter the link text.
-          $url = Url::fromUri('internal:/wills/?f%5B0%5D=will_voyage_names_facet%3A' . urlencode($node->getTitle()));
-          $link = Link::fromTextAndUrl($node->label(), $url)->toRenderable();
-          // Optionally, add custom classes or attributes.
-          $link['#attributes']['class'][] = 'custom-voyage-link';
-          // Override the rendered field output.
-          $variables['content']['field_voyage'][$delta] = $link;
-        }
-      }
-    }
-    // Handle field_ship.
-    if (!empty($variables['content']['field_ship']) and isset($variables['content']['field_ship']['#items'])) {
-      // Loop through all referenced entities (should be just one).
-      foreach ($variables['content']['field_ship']['#items'] as $delta => $item) {
-        // Load the referenced node.
-        $nid = $item->target_id;
-        $node = \Drupal::entityTypeManager()
-          ->getStorage('node')
-          ->load($nid);
-
-        if ($node && $node->bundle() == 'eiw_ship') {
-          // Build your custom link. Example: change to a custom path or alter the link text.
-          $url = Url::fromUri('internal:/wills/?f%5B0%5D=will_ship_names_facet%3A' . urlencode($node->getTitle()));
-          $link = Link::fromTextAndUrl($node->label(), $url)->toRenderable();
-          // Optionally, add custom classes or attributes.
-          $link['#attributes']['class'][] = 'custom-ship-link';
-          // Override the rendered field output.
-          $variables['content']['field_ship'][$delta] = $link;
-        }
-      }
-    }
     // Handle field_role for taxonomy term references.
     if (!empty($variables['content']['field_role']) and isset($variables['content']['field_role']['#items'])) {
       foreach ($variables['content']['field_role']['#items'] as $delta => $item) {
