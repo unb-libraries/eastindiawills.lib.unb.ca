@@ -12,7 +12,7 @@
 // it has to hold its own above long values (notes, sources).
 @mixin eiw-record-label {
   font-family: $eiw-font-sans;
-  font-size: 1.0625rem * $eiw-type-scale;
+  font-size: .9375rem * $eiw-type-scale;
   font-weight: 600;
   letter-spacing: .03em;
   line-height: 1.4;
@@ -26,7 +26,7 @@
 @mixin eiw-runin-label {
   @include eiw-record-label;
   margin-right: .375rem;
-  font-size: .9375rem * $eiw-type-scale;
+  font-size: .8125rem * $eiw-type-scale;
   font-style: normal;
 }
 

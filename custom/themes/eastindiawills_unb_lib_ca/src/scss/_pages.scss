@@ -1,23 +1,42 @@
 // The site's own pages (EIW_CORE_PAGES in eiw_core.module).
 
 // Landing page: the /wills search box under the hero engraving, above the
-// page title, as wide as the engraving and left-aligned within it.
+// page title, as wide as the engraving and centered within it. The "Show
+// All" reset button is already left out here (see
+// eiw_core_wills_search_box()) - the search always leads to /wills, so
+// there's nothing to reset on this page - which is why centering the field
+// and Search button as a group reads balanced, with nothing off to one side.
 .eiw-home-search {
   max-width: 760px;
   margin: 1.5rem auto 0;
-  text-align: left;
+  text-align: center;
 
   .views-exposed-form {
     @include eiw-search-form;
   }
+
+  // The base theme's template wraps the field and the actions container in
+  // a single flush d-flex row (see eiw-search-form above); center that row
+  // itself, not just the text inside it.
+  .d-flex {
+    justify-content: center;
+  }
+
+  .form-actions {
+    justify-content: center;
+  }
 }
 
 // "Voyages and Ships": the voyages and ships, side by side after the
-// preamble, each a plain list of links.
+// preamble, each a plain list of links. Body text matches the /wills
+// results table (eiw-results-table) so the two listings read as one
+// consistent "small, dense list" scale rather than the page's regular
+// (larger) body copy.
 .eiw-voyages-ships {
   margin-top: 2rem;
   padding-top: 1.5rem;
   border-top: 1px solid $gray-100;
+  font-size: $font-size-sm;
 
   &__list {
     margin-bottom: 2rem;
@@ -35,7 +54,7 @@
 
   &__title {
     font-family: $eiw-font-sans;
-    font-size: 1.0625rem * $eiw-type-scale;
+    font-size: .9375rem * $eiw-type-scale;
     font-weight: 600;
     letter-spacing: .03em;
     text-transform: uppercase;
