@@ -159,6 +159,10 @@
 @mixin eiw-results-table {
   font-size: $font-size-sm;
 
+  // The hovered row, in the citation box's pale blue tint (.eiw-citation in
+  // _records.scss) rather than Bootstrap's default grey.
+  --bs-table-hover-bg: #{mix($white, map-get($eiw-blue-tints, 3), 55%)};
+
   th {
     font-size: .9375rem * $eiw-type-scale;
     font-weight: 600;

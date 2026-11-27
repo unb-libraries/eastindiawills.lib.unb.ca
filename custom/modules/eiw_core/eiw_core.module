@@ -597,15 +597,16 @@ function eiw_core_wills_search_box(): array {
  * Two columns after the page's editable preamble: every published voyage
  * (by title, which starts with its year, so in date order) and ship (by
  * name), each linking to its page. The placeholder "Unknown" records that
- * wills point at when the voyage or ship isn't known are left out. Each ship
- * also shows its overall years of service, spanning all of its identities
- * (field_ship_identities) - the same "In Service From/To" facts shown on the
- * ship's own page (see _eastindiawills_unb_lib_ca_preprocess_ship_identity()),
- * just rolled up across every name the ship served under.
+ * wills point at when the voyage or ship isn't known are left out. A ship's
+ * link text also carries its overall years of service, spanning all of its
+ * identities (field_ship_identities) - the same "In Service From/To" facts
+ * shown on the ship's own page (see
+ * _eastindiawills_unb_lib_ca_preprocess_ship_identity()), just rolled up
+ * across every name the ship served under.
  *
- * Voyages are imported unpublished for editors to review, so the lists
- * aren't limited to published records: each viewer sees the ones they can
- * open, with unpublished ones marked as such.
+ * Unpublished voyages and ships (voyages are imported unpublished for
+ * editors to review) are left out of both lists entirely - this page is a
+ * plain public index, not an editorial review queue.
  */
 function eiw_core_voyages_ships_lists(array &$build): void {
   $storage = \Drupal::entityTypeManager()->getStorage('node');
@@ -617,6 +618,7 @@ function eiw_core_voyages_ships_lists(array &$build): void {
     $ids = $storage->getQuery()
       ->accessCheck(TRUE)
       ->condition('type', $bundle)
+      ->condition('status', 1)
       ->condition('title', 'Unknown', '<>')
       ->sort('title')
       ->execute();
@@ -627,12 +629,7 @@ function eiw_core_voyages_ships_lists(array &$build): void {
       if (!$access->isAllowed()) {
         continue;
       }
-      $item = ['link' => $node->toLink()->toRenderable()];
-      if (!$node->isPublished()) {
-        $item['unpublished'] = [
-          '#markup' => ' <span class="eiw-voyages-ships__unpublished">(' . t('unpublished') . ')</span>',
-        ];
-      }
+      $label = $node->label();
       if ($bundle === 'eiw_ship' && $node->hasField('field_ship_identities')) {
         $from = $to = NULL;
         foreach ($node->get('field_ship_identities')->referencedEntities() as $identity) {
@@ -648,10 +645,10 @@ function eiw_core_voyages_ships_lists(array &$build): void {
         }
         if ($from || $to) {
           $years = ($from && $to && $from != $to) ? "{$from}–{$to}" : ($from ?: $to);
-          $item['years'] = ['#markup' => ' <span class="eiw-voyages-ships__years">(' . $years . ')</span>'];
+          $label .= " ({$years})";
         }
       }
-      $items[] = $item;
+      $items[] = ['link' => Link::fromTextAndUrl($label, $node->toUrl())->toRenderable()];
     }
     $lists[$bundle] = [
       'title' => $title,

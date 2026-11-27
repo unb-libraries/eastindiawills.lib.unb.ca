@@ -37,12 +37,17 @@
 // preamble, each a plain list of links. Body text matches the /wills
 // results table (eiw-results-table) so the two listings read as one
 // consistent "small, dense list" scale rather than the page's regular
-// (larger) body copy.
+// (larger) body copy. Rows get the same hairline divider as a /wills row
+// (td border-bottom) and the same hover highlight as the /wills table (see
+// eiw-results-table in _wills.scss); the two columns sit flush against each
+// other (--bs-gutter-x, like .eiw-will__row in _records.scss) so a row's
+// highlight isn't interrupted by the grid gutter partway across it.
 .eiw-voyages-ships {
   margin-top: 2rem;
   padding-top: 1.5rem;
   border-top: 1px solid $gray-100;
   font-size: $font-size-sm;
+  --bs-gutter-x: 0;
 
   &__list {
     margin-bottom: 2rem;
@@ -54,14 +59,14 @@
     }
 
     li {
-      padding: .375rem .5rem;
-      // Offsets the horizontal padding, so the stripe can bleed past the
-      // text without shifting it out of line with the title above.
-      margin: 0 -.5rem;
+      padding: .375rem 0;
+      border-bottom: 1px solid $gray-100;
 
-      // Mild zebra striping, in the citation box's pale blue tint
-      // (.eiw-citation in _records.scss) rather than a plain grey.
-      &:nth-child(even) {
+      &:last-child {
+        border-bottom: 0;
+      }
+
+      &:hover {
         background: mix($white, map-get($eiw-blue-tints, 3), 55%);
       }
     }
@@ -81,15 +86,5 @@
   &__count {
     font-weight: normal;
     color: $eiw-blue;
-  }
-
-  &__unpublished {
-    font-size: .875em;
-    color: $gray-600;
-  }
-
-  // A ship's overall years of service, e.g. "(1600-1610)".
-  &__years {
-    color: $gray-600;
   }
 }
