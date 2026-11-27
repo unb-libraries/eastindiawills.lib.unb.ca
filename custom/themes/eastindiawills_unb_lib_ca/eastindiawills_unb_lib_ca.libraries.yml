@@ -26,3 +26,12 @@ citation:
   dependencies:
     - core/drupal
     - core/once
+
+# "Voyages and Ships" page: mirrors a hovered row's highlight across both
+# columns. Attached by eiw-voyages-ships.html.twig.
+voyages-ships:
+  js:
+    dist/js/eiw-voyages-ships.js: {}
+  dependencies:
+    - core/drupal
+    - core/once

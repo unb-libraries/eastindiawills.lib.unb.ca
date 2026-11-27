@@ -159,6 +159,15 @@
 @mixin eiw-results-table {
   font-size: $font-size-sm;
 
+  // Collapsed borders (the default) can leave a hairline gap of the page's
+  // white background between adjacent cells in the hovered row - each
+  // cell's background is painted via its own box-shadow (see below), and
+  // those don't merge across the shared border the way actual borders do.
+  // Separate borders paint each cell's box-shadow right up to its own
+  // edge, closing the gap.
+  border-collapse: separate;
+  border-spacing: 0;
+
   // The hovered row, in the citation box's pale blue tint (.eiw-citation in
   // _records.scss) rather than Bootstrap's default grey. Set directly on
   // --bs-table-bg-state (the variable Bootstrap's own cell background

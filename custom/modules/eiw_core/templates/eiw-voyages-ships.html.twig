@@ -12,6 +12,7 @@
  *   span of service, e.g. "Hector (1600–1610)").
  */
 #}
+{{ attach_library('eastindiawills_unb_lib_ca/voyages-ships') }}
 <div class="row eiw-voyages-ships">
   {% for bundle, list in lists %}
     <section class="col-12 col-md-6 eiw-voyages-ships__list eiw-voyages-ships__list--{{ bundle|clean_class }}">
