@@ -600,9 +600,6 @@ function eiw_core_wills_search_box(): array {
   if (isset($form['actions']['submit'])) {
     $form['actions']['submit']['#value'] = t('Search');
   }
-  if (isset($form['search_api_fulltext'])) {
-    $form['search_api_fulltext']['#title'] = t('Search the wills');
-  }
   return $build + [
     '#type' => 'container',
     '#attributes' => ['class' => ['eiw-home-search']],

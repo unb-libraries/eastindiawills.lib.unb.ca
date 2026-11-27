@@ -6,8 +6,15 @@
 // to /wills, so there's nothing to reset on this page - which is why
 // centering the field and Search button as a group reads balanced, with
 // nothing off to one side.
+//
+// 960px, not a literal double of the previous 900px (1800px): /wills'
+// own exposed form sits in a 9-of-12-column content area beside the facets
+// sidebar (page.html.twig), which - at Bootstrap's default container
+// widths - only ever measures 720px (lg), 855px (xl) or 990px (xxl). 1800px
+// would overshoot that at every breakpoint; 960px stays close to the top
+// of that range so the two don't look wildly mismatched in width.
 .eiw-home-search {
-  max-width: 900px;
+  max-width: 960px;
   margin: 1.5rem auto 0;
   text-align: center;
 
