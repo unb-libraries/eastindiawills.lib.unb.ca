@@ -159,23 +159,14 @@
 @mixin eiw-results-table {
   font-size: $font-size-sm;
 
-  // Collapsed borders (the default) can leave a hairline gap of the page's
-  // white background between adjacent cells in the hovered row - each
-  // cell's background is painted via its own box-shadow (see below), and
-  // those don't merge across the shared border the way actual borders do.
-  // Separate borders paint each cell's box-shadow right up to its own
-  // edge, closing the gap.
-  border-collapse: separate;
-  border-spacing: 0;
-
   // The hovered row, in a mild grey (same shade as the Voyages and Ships
   // list hover, .eiw-voyages-ships in _pages.scss) rather than Bootstrap's
-  // default. Set directly on --bs-table-bg-state (the variable Bootstrap's
-  // own cell background reads), rather than --bs-table-hover-bg - this
-  // table has no .table-hover class, so nothing would ever read that
-  // variable.
+  // default. A plain background-color, not Bootstrap's --bs-table-bg-state
+  // + box-shadow mechanism - that box-shadow is what left a hairline
+  // seam of the page's white background between columns in the hovered
+  // row (a known rendering quirk of Bootstrap 5's table colour variables).
   tbody tr:hover > * {
-    --bs-table-bg-state: #{$gray-200};
+    background-color: mix($white, $gray-100, 50%);
   }
 
   th {

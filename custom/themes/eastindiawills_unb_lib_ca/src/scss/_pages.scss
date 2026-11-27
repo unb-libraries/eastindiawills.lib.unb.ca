@@ -63,10 +63,10 @@
     li {
       padding: .375rem 0;
 
-      // A step darker than the hairline dividers this replaced ($gray-100),
+      // A touch lighter than the hairline dividers this replaced ($gray-100),
       // same shade as the /wills row hover (eiw-results-table).
       &:hover {
-        background: $gray-200;
+        background: mix($white, $gray-100, 50%);
       }
     }
   }
