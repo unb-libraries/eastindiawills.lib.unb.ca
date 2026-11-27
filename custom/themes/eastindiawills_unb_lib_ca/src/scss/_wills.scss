@@ -160,8 +160,13 @@
   font-size: $font-size-sm;
 
   // The hovered row, in the citation box's pale blue tint (.eiw-citation in
-  // _records.scss) rather than Bootstrap's default grey.
-  --bs-table-hover-bg: #{mix($white, map-get($eiw-blue-tints, 3), 55%)};
+  // _records.scss) rather than Bootstrap's default grey. Set directly on
+  // --bs-table-bg-state (the variable Bootstrap's own cell background
+  // reads), rather than --bs-table-hover-bg - this table has no
+  // .table-hover class, so nothing would ever read that variable.
+  tbody tr:hover > * {
+    --bs-table-bg-state: #{mix($white, map-get($eiw-blue-tints, 3), 55%)};
+  }
 
   th {
     font-size: .9375rem * $eiw-type-scale;
@@ -402,11 +407,13 @@
   font-size: $font-size-sm;
 
   // Bootstrap's table colours are CSS variables, which a nested table
-  // inherits from its parent row (e.g. /wills striping); reset them.
+  // inherits from its parent row (e.g. /wills striping, and the hovered-row
+  // highlight set directly on --bs-table-bg-state above); reset them.
   --bs-table-bg: transparent;
   --bs-table-accent-bg: transparent;
   --bs-table-striped-bg: transparent;
   --bs-table-hover-bg: transparent;
+  --bs-table-bg-state: transparent;
 
   // The base theme's table.css shades, pads and rules every tr.
   tr {
@@ -540,6 +547,7 @@
   --bs-table-accent-bg: transparent;
   --bs-table-striped-bg: transparent;
   --bs-table-hover-bg: transparent;
+  --bs-table-bg-state: transparent;
 
   tr {
     padding: 0;
