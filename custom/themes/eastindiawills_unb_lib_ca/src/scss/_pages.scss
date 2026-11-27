@@ -39,12 +39,11 @@
 // consistent "small, dense list" scale rather than the page's regular
 // (larger) body copy. No hairline divider between rows: the two lists
 // rarely have the same number of items, so a per-row border in one column
-// drifts out of line with the other almost immediately. Hovering either
-// column highlights the same row position in both (eiw-voyages-ships.js,
-// since nothing in CSS ties two separate lists' rows together); the two
-// columns sit flush against each other (--bs-gutter-x, like .eiw-will__row
-// in _records.scss) so that highlight isn't interrupted by the grid gutter
-// partway across it.
+// drifts out of line with the other almost immediately. Hovering a row
+// highlights only that row, in its own column - the two lists are
+// unrelated (a voyage and the ship at the same position have nothing to
+// do with each other), so highlighting both together would wrongly imply
+// a pairing.
 .eiw-voyages-ships {
   margin-top: 2rem;
   padding-top: 1.5rem;
@@ -64,10 +63,10 @@
     li {
       padding: .375rem 0;
 
-      // Same mild grey as the hairline dividers this replaced.
-      &:hover,
-      &.is-row-hover {
-        background: $gray-100;
+      // A step darker than the hairline dividers this replaced ($gray-100),
+      // same shade as the /wills row hover (eiw-results-table).
+      &:hover {
+        background: $gray-200;
       }
     }
   }

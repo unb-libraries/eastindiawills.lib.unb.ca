@@ -168,13 +168,14 @@
   border-collapse: separate;
   border-spacing: 0;
 
-  // The hovered row, in the citation box's pale blue tint (.eiw-citation in
-  // _records.scss) rather than Bootstrap's default grey. Set directly on
-  // --bs-table-bg-state (the variable Bootstrap's own cell background
-  // reads), rather than --bs-table-hover-bg - this table has no
-  // .table-hover class, so nothing would ever read that variable.
+  // The hovered row, in a mild grey (same shade as the Voyages and Ships
+  // list hover, .eiw-voyages-ships in _pages.scss) rather than Bootstrap's
+  // default. Set directly on --bs-table-bg-state (the variable Bootstrap's
+  // own cell background reads), rather than --bs-table-hover-bg - this
+  // table has no .table-hover class, so nothing would ever read that
+  // variable.
   tbody tr:hover > * {
-    --bs-table-bg-state: #{mix($white, map-get($eiw-blue-tints, 3), 55%)};
+    --bs-table-bg-state: #{$gray-200};
   }
 
   th {
