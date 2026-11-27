@@ -604,9 +604,12 @@ function eiw_core_wills_search_box(): array {
  * _eastindiawills_unb_lib_ca_preprocess_ship_identity()), just rolled up
  * across every name the ship served under.
  *
- * Unpublished voyages and ships (voyages are imported unpublished for
- * editors to review) are left out of both lists entirely - this page is a
- * plain public index, not an editorial review queue.
+ * Voyages are imported unpublished for editors to review, so the lists
+ * aren't limited to published records: each viewer sees the ones they can
+ * open (the node access check below already keeps unpublished records from
+ * anonymous visitors - an editor with "view any unpublished content" sees
+ * them too). Publication status isn't called out here; an editor can tell
+ * which is which from the content admin view (/admin/content).
  */
 function eiw_core_voyages_ships_lists(array &$build): void {
   $storage = \Drupal::entityTypeManager()->getStorage('node');
@@ -618,7 +621,6 @@ function eiw_core_voyages_ships_lists(array &$build): void {
     $ids = $storage->getQuery()
       ->accessCheck(TRUE)
       ->condition('type', $bundle)
-      ->condition('status', 1)
       ->condition('title', 'Unknown', '<>')
       ->sort('title')
       ->execute();
