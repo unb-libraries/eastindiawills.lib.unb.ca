@@ -597,7 +597,11 @@ function eiw_core_wills_search_box(): array {
  * Two columns after the page's editable preamble: every published voyage
  * (by title, which starts with its year, so in date order) and ship (by
  * name), each linking to its page. The placeholder "Unknown" records that
- * wills point at when the voyage or ship isn't known are left out.
+ * wills point at when the voyage or ship isn't known are left out. Each ship
+ * also shows its overall years of service, spanning all of its identities
+ * (field_ship_identities) - the same "In Service From/To" facts shown on the
+ * ship's own page (see _eastindiawills_unb_lib_ca_preprocess_ship_identity()),
+ * just rolled up across every name the ship served under.
  *
  * Voyages are imported unpublished for editors to review, so the lists
  * aren't limited to published records: each viewer sees the ones they can
@@ -628,6 +632,24 @@ function eiw_core_voyages_ships_lists(array &$build): void {
         $item['unpublished'] = [
           '#markup' => ' <span class="eiw-voyages-ships__unpublished">(' . t('unpublished') . ')</span>',
         ];
+      }
+      if ($bundle === 'eiw_ship' && $node->hasField('field_ship_identities')) {
+        $from = $to = NULL;
+        foreach ($node->get('field_ship_identities')->referencedEntities() as $identity) {
+          $cacheability->addCacheableDependency($identity);
+          if ($identity->hasField('field_service_from') && !$identity->get('field_service_from')->isEmpty()) {
+            $year = (int) $identity->get('field_service_from')->value;
+            $from = $from === NULL ? $year : min($from, $year);
+          }
+          if ($identity->hasField('field_service_to') && !$identity->get('field_service_to')->isEmpty()) {
+            $year = (int) $identity->get('field_service_to')->value;
+            $to = $to === NULL ? $year : max($to, $year);
+          }
+        }
+        if ($from || $to) {
+          $years = ($from && $to && $from != $to) ? "{$from}–{$to}" : ($from ?: $to);
+          $item['years'] = ['#markup' => ' <span class="eiw-voyages-ships__years">(' . $years . ')</span>'];
+        }
       }
       $items[] = $item;
     }

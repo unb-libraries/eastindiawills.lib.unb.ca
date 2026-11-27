@@ -54,7 +54,16 @@
     }
 
     li {
-      padding: .375rem 0;
+      padding: .375rem .5rem;
+      // Offsets the horizontal padding, so the stripe can bleed past the
+      // text without shifting it out of line with the title above.
+      margin: 0 -.5rem;
+
+      // Mild zebra striping, in the citation box's pale blue tint
+      // (.eiw-citation in _records.scss) rather than a plain grey.
+      &:nth-child(even) {
+        background: mix($white, map-get($eiw-blue-tints, 3), 55%);
+      }
     }
   }
 
@@ -68,9 +77,10 @@
     margin-bottom: .75rem;
   }
 
+  // In the secondary blue, like the facet counts (.block-facets in _wills.scss).
   &__count {
     font-weight: normal;
-    color: $gray-600;
+    color: $eiw-blue;
   }
 
   &__unpublished {
@@ -78,8 +88,8 @@
     color: $gray-600;
   }
 
-  // Ship names in italics, as in the voyages tables.
-  &__list--eiw-ship a {
-    font-style: italic;
+  // A ship's overall years of service, e.g. "(1600-1610)".
+  &__years {
+    color: $gray-600;
   }
 }

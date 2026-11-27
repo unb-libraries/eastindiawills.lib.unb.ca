@@ -9,7 +9,8 @@
  * Available variables:
  * - lists: Keyed by bundle (eiw_voyage, eiw_ship), each with title, count
  *   and items, each with a link and, if the record is unpublished, an
- *   "(unpublished)" note.
+ *   "(unpublished)" note. A ship's item also has years: its overall span of
+ *   service, e.g. "(1600–1610)".
  */
 #}
 <div class="row eiw-voyages-ships">
@@ -19,7 +20,7 @@
       {% if list.items %}
         <ul>
           {% for item in list.items %}
-            <li>{{ item.link }}{{ item.unpublished }}</li>
+            <li>{{ item.link }}{{ item.years }}{{ item.unpublished }}</li>
           {% endfor %}
         </ul>
       {% else %}

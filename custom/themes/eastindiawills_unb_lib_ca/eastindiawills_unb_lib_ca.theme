@@ -442,10 +442,14 @@ function _eastindiawills_unb_lib_ca_source_links(string $html): string {
  */
 function _eastindiawills_unb_lib_ca_source_link_label(\DOMElement $link, string $label): void {
   $dom = $link->ownerDocument;
+  $href = $link->getAttribute('href');
   $classes = trim($link->getAttribute('class') . ' eiw-source');
   $link->setAttribute('class', $classes);
+  // The chip's label is always just "Source"; the title attribute gives a
+  // native tooltip with the actual address it points to.
+  $link->setAttribute('title', $href);
   $link->appendChild($dom->createTextNode($label));
-  $host = preg_replace('/^www\./i', '', (string) parse_url($link->getAttribute('href'), PHP_URL_HOST));
+  $host = preg_replace('/^www\./i', '', (string) parse_url($href, PHP_URL_HOST));
   if ($host !== '') {
     $hidden = $dom->createElement('span');
     $hidden->setAttribute('class', 'visually-hidden');
