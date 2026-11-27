@@ -553,6 +553,25 @@ function eiw_core_landing_page_saml_notice(array &$build): void {
 }
 
 /**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Gives the wills search field a placeholder and a style hook
+ * (eiw-search-field), so its label can float like placeholder text at rest
+ * and animate up out of the way once the field is focused or filled in
+ * (see .eiw-search-field in _wills.scss). Covers both /wills itself and the
+ * copy of this same exposed form embedded on the landing page
+ * (eiw_core_wills_search_box()), since both go through this form.
+ */
+function eiw_core_form_views_exposed_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $view = $form_state->get('view');
+  if (!$view || $view->id() !== 'wills' || !isset($form['search_api_fulltext'])) {
+    return;
+  }
+  $form['search_api_fulltext']['#attributes']['placeholder'] = ' ';
+  $form['search_api_fulltext']['#wrapper_attributes']['class'][] = 'eiw-search-field';
+}
+
+/**
  * Builds the /wills search box shown on the landing page.
  *
  * It's the wills view's own exposed form, so it submits to /wills with the

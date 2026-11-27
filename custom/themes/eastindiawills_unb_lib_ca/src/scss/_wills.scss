@@ -211,6 +211,44 @@
     font-weight: 600;
   }
 
+  // The search field's label: sits over the input like placeholder text at
+  // rest, then floats up to straddle the input's top border - shrunk, and
+  // out of the way - once the field is focused or has a value (the
+  // placeholder attribute making :not(:placeholder-shown) possible comes
+  // from eiw_core_form_views_exposed_form_alter()). Uses :has() to react
+  // to the input from the label, which comes before it in the markup,
+  // rather than Bootstrap's own .form-floating, which needs the label
+  // after the input.
+  .eiw-search-field {
+    position: relative;
+
+    label {
+      position: absolute;
+      top: 50%;
+      left: calc(#{$input-padding-x} + #{$input-border-width});
+      transform: translateY(-50%);
+      transform-origin: left center;
+      margin: 0;
+      font-size: inherit;
+      font-weight: normal;
+      color: $gray-600;
+      white-space: nowrap;
+      pointer-events: none;
+      transition: top .15s ease-in-out, transform .15s ease-in-out, color .15s ease-in-out;
+    }
+
+    &:has(.form-control:focus) label,
+    &:has(.form-control:not(:placeholder-shown)) label {
+      top: 0;
+      transform: translateY(-50%) scale(.75);
+      color: $eiw-ink;
+      font-weight: 600;
+      background: $white;
+      padding: 0 .25rem;
+      margin-left: -.25rem;
+    }
+  }
+
   // Search and, once there's a search, Reset, side by side. The base theme
   // gives both buttons .form-control, which makes each full width.
   .form-actions {

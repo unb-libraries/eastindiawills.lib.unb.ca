@@ -1,13 +1,13 @@
 // The site's own pages (EIW_CORE_PAGES in eiw_core.module).
 
 // Landing page: the /wills search box under the hero engraving, above the
-// page title, as wide as the engraving and centered within it. The "Show
-// All" reset button is already left out here (see
-// eiw_core_wills_search_box()) - the search always leads to /wills, so
-// there's nothing to reset on this page - which is why centering the field
-// and Search button as a group reads balanced, with nothing off to one side.
+// page title, centered beneath it. The "Show All" reset button is already
+// left out here (see eiw_core_wills_search_box()) - the search always leads
+// to /wills, so there's nothing to reset on this page - which is why
+// centering the field and Search button as a group reads balanced, with
+// nothing off to one side.
 .eiw-home-search {
-  max-width: 760px;
+  max-width: 900px;
   margin: 1.5rem auto 0;
   text-align: center;
 
@@ -22,8 +22,9 @@
     justify-content: center;
   }
 
-  // The field's label sits directly above its input; keep it flush with the
-  // input's left edge rather than inheriting the centered text-align above.
+  // The field's label floats over its input (see .eiw-search-field in
+  // _wills.scss); keep it flush with the input's left edge rather than
+  // inheriting the centered text-align above.
   label {
     text-align: left;
   }
