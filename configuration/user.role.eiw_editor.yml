@@ -6,6 +6,7 @@ dependencies:
     - node.type.eiw_ship
     - node.type.eiw_voyage
     - node.type.eiw_will
+    - node.type.page
     - taxonomy.vocabulary.eiw_courts
     - taxonomy.vocabulary.eiw_keywords
     - taxonomy.vocabulary.eiw_marital_statuses
@@ -48,6 +49,7 @@ permissions:
   - 'edit any eiw_ship content'
   - 'edit any eiw_voyage content'
   - 'edit any eiw_will content'
+  - 'edit any page content'
   - 'edit terms in eiw_courts'
   - 'edit terms in eiw_keywords'
   - 'edit terms in eiw_marital_statuses'
